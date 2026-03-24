@@ -155,53 +155,52 @@ export default function Home() {
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateY(0)" : "translateY(20px)",
               transition: "opacity 1.2s ease, transform 1.2s ease",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-            {/* Logo badge */}
-            <div className="flex justify-center mb-6">
-              <img
-                src="/images/logo.png"
-                alt="Hard House Coffee"
-                style={{
-                  height: "clamp(80px, 14vw, 140px)",
-                  width: "auto",
-                  filter:
-                    "sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.85)",
-                  dropShadow: "0 4px 24px rgba(0,0,0,0.8)",
-                }}
-              />
-            </div>
-            <p className="section-subtitle mb-4" style={{ color: "#a14f1f" }}>
-              Premium Coffee Brand
-            </p>
-            <h1
-              className="font-cinzel mb-4"
+            {/* Centered logo — large and dominant */}
+            <img
+              src="/images/logo.png"
+              alt="Hard House Coffee"
               style={{
-                fontSize: "clamp(2rem, 6vw, 5rem)",
+                height: "clamp(140px, 20vw, 220px)",
+                width: "auto",
+                filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.7)) sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.85)",
+                marginBottom: "1.6rem",
+              }}
+            />
+
+            {/* Single-line brand title */}
+            <h1
+              style={{
                 fontFamily: "'Cinzel Decorative', serif",
+                fontSize: "clamp(1.3rem, 3.5vw, 3.2rem)",
                 color: "#f2f2f2",
                 textShadow: "0 2px 20px rgba(0,0,0,0.8)",
-                lineHeight: 1.15,
-                letterSpacing: "0.04em",
+                letterSpacing: "0.12em",
+                whiteSpace: "nowrap",
+                lineHeight: 1,
+                marginBottom: "1.2rem",
               }}
             >
-              HARD HOUSE
-              <br />
-              COFFEE
+              HARD HOUSE COFFEE
             </h1>
+
             <div
               style={{
-                width: "80px",
+                width: "70px",
                 height: "2px",
                 background: "linear-gradient(to right, #8b2f2f, #a14f1f)",
-                margin: "1.5rem auto",
+                marginBottom: "1.2rem",
               }}
             />
             <p
               style={{
-                fontSize: "clamp(0.9rem, 2vw, 1.2rem)",
+                fontSize: "clamp(0.75rem, 1.6vw, 1rem)",
                 color: "#f2f2f2",
-                letterSpacing: "0.15em",
+                letterSpacing: "0.2em",
                 textTransform: "uppercase",
                 fontWeight: 300,
                 textShadow: "0 1px 8px rgba(0,0,0,0.7)",

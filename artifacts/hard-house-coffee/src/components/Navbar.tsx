@@ -25,73 +25,24 @@ export default function Navbar() {
       style={{
         background: scrolled
           ? "rgba(11,11,11,0.97)"
-          : "linear-gradient(to bottom, rgba(11,11,11,0.8) 0%, transparent 100%)",
+          : "transparent",
         borderBottom: scrolled ? "1px solid rgba(161,79,31,0.25)" : "none",
         backdropFilter: scrolled ? "blur(14px)" : "none",
       }}
     >
       <div
         className="max-w-6xl mx-auto px-6 flex items-center justify-between"
-        style={{ height: "76px" }}
+        style={{ height: "68px" }}
       >
-        {/* Logo */}
-        <Link href="/">
-          <div className="flex items-center gap-3 cursor-pointer">
-            <img
-              src="/images/logo.png"
-              alt="Hard House Coffee Logo"
-              style={{
-                height: "52px",
-                width: "auto",
-                filter:
-                  "sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.75)",
-                transition: "filter 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLImageElement).style.filter =
-                  "sepia(1) saturate(3) hue-rotate(330deg) brightness(0.9)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLImageElement).style.filter =
-                  "sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.75)";
-              }}
-            />
-            <div className="flex flex-col">
-              <span
-                style={{
-                  fontFamily: "'Cinzel Decorative', serif",
-                  fontSize: "0.82rem",
-                  color: "#f2f2f2",
-                  letterSpacing: "0.1em",
-                  lineHeight: 1.1,
-                }}
-              >
-                HARD HOUSE
-              </span>
-              <span
-                style={{
-                  fontFamily: "'Cinzel Decorative', serif",
-                  fontSize: "0.62rem",
-                  color: "#a14f1f",
-                  letterSpacing: "0.2em",
-                }}
-              >
-                COFFEE
-              </span>
-            </div>
-          </div>
-        </Link>
-
-        {/* Desktop nav */}
+        {/* Desktop nav links — left */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {navLinks.slice(0, 2).map((link) => (
             <Link key={link.href} href={link.href}>
               <span
                 className="nav-link"
                 style={{
                   color: location === link.href ? "#a14f1f" : "#f2f2f2",
-                  borderBottom:
-                    location === link.href ? "1px solid #a14f1f" : "none",
+                  borderBottom: location === link.href ? "1px solid #a14f1f" : "none",
                   paddingBottom: "2px",
                 }}
               >
@@ -101,9 +52,26 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA + hamburger */}
-        <div className="flex items-center gap-4">
-          <Link href="/products" className="hidden md:block">
+        {/* Center spacer (desktop) */}
+        <div className="flex-1 hidden md:block" />
+
+        {/* Desktop nav links — right */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.slice(2).map((link) => (
+            <Link key={link.href} href={link.href}>
+              <span
+                className="nav-link"
+                style={{
+                  color: location === link.href ? "#a14f1f" : "#f2f2f2",
+                  borderBottom: location === link.href ? "1px solid #a14f1f" : "none",
+                  paddingBottom: "2px",
+                }}
+              >
+                {link.label}
+              </span>
+            </Link>
+          ))}
+          <Link href="/products">
             <button
               className="btn-primary"
               style={{ padding: "0.45rem 1.2rem", fontSize: "0.75rem" }}
@@ -111,10 +79,24 @@ export default function Navbar() {
               Shop Gear
             </button>
           </Link>
+        </div>
 
-          {/* Mobile hamburger */}
+        {/* Mobile: just hamburger */}
+        <div className="md:hidden flex items-center justify-between w-full">
+          <Link href="/">
+            <span
+              style={{
+                fontFamily: "'Cinzel Decorative', serif",
+                fontSize: "0.75rem",
+                color: "#f2f2f2",
+                letterSpacing: "0.1em",
+              }}
+            >
+              HHC
+            </span>
+          </Link>
           <button
-            className="md:hidden flex flex-col gap-1.5 p-2"
+            className="flex flex-col gap-1.5 p-2"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
