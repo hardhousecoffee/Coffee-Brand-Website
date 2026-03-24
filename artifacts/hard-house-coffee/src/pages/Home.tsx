@@ -148,9 +148,9 @@ export default function Home() {
             <filter id="bloody-orange" colorInterpolationFilters="sRGB">
               <feColorMatrix
                 type="matrix"
-                values="0.182 0.182 0.182 0 0
-                        0.061 0.061 0.061 0 0
-                        0.061 0.061 0.061 0 0
+                values="0.333 0.333 0.333 0 0
+                        0     0     0     0 0
+                        0     0     0     0 0
                         0     0     0     1 0"
               />
             </filter>
@@ -223,7 +223,7 @@ export default function Home() {
             />
             <p
               style={{
-                fontSize: "clamp(0.75rem, 1.6vw, 1rem)",
+                fontSize: "clamp(1.5rem, 3.2vw, 2rem)",
                 color: "#f2f2f2",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
