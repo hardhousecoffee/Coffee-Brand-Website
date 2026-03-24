@@ -157,6 +157,20 @@ export default function Home() {
               transition: "opacity 1.2s ease, transform 1.2s ease",
             }}
           >
+            {/* Logo badge */}
+            <div className="flex justify-center mb-6">
+              <img
+                src="/images/logo.png"
+                alt="Hard House Coffee"
+                style={{
+                  height: "clamp(80px, 14vw, 140px)",
+                  width: "auto",
+                  filter:
+                    "sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.85)",
+                  dropShadow: "0 4px 24px rgba(0,0,0,0.8)",
+                }}
+              />
+            </div>
             <p className="section-subtitle mb-4" style={{ color: "#a14f1f" }}>
               Premium Coffee Brand
             </p>

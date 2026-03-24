@@ -25,52 +25,45 @@ export default function Navbar() {
       style={{
         background: scrolled
           ? "rgba(11,11,11,0.97)"
-          : "linear-gradient(to bottom, rgba(11,11,11,0.85) 0%, transparent 100%)",
-        borderBottom: scrolled ? "1px solid rgba(161,79,31,0.2)" : "none",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
+          : "linear-gradient(to bottom, rgba(11,11,11,0.8) 0%, transparent 100%)",
+        borderBottom: scrolled ? "1px solid rgba(161,79,31,0.25)" : "none",
+        backdropFilter: scrolled ? "blur(14px)" : "none",
       }}
     >
       <div
         className="max-w-6xl mx-auto px-6 flex items-center justify-between"
-        style={{ height: "72px" }}
+        style={{ height: "76px" }}
       >
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-3 cursor-pointer">
-            <div
+            <img
+              src="/images/logo.png"
+              alt="Hard House Coffee Logo"
               style={{
-                width: "36px",
-                height: "36px",
-                background: "linear-gradient(135deg, #8b2f2f, #2b1e16)",
-                borderRadius: "4px",
-                border: "1px solid #a14f1f",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexShrink: 0,
+                height: "52px",
+                width: "auto",
+                filter:
+                  "sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.75)",
+                transition: "filter 0.3s ease",
               }}
-            >
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLImageElement).style.filter =
+                  "sepia(1) saturate(3) hue-rotate(330deg) brightness(0.9)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLImageElement).style.filter =
+                  "sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.75)";
+              }}
+            />
+            <div className="flex flex-col">
               <span
                 style={{
                   fontFamily: "'Cinzel Decorative', serif",
-                  fontSize: "0.75rem",
-                  color: "#f2f2f2",
-                  fontWeight: 700,
-                  lineHeight: 1,
-                }}
-              >
-                HH
-              </span>
-            </div>
-            <div>
-              <span
-                style={{
-                  fontFamily: "'Cinzel Decorative', serif",
-                  fontSize: "0.85rem",
+                  fontSize: "0.82rem",
                   color: "#f2f2f2",
                   letterSpacing: "0.1em",
                   lineHeight: 1.1,
-                  display: "block",
                 }}
               >
                 HARD HOUSE
@@ -78,10 +71,9 @@ export default function Navbar() {
               <span
                 style={{
                   fontFamily: "'Cinzel Decorative', serif",
-                  fontSize: "0.65rem",
+                  fontSize: "0.62rem",
                   color: "#a14f1f",
-                  letterSpacing: "0.18em",
-                  display: "block",
+                  letterSpacing: "0.2em",
                 }}
               >
                 COFFEE
@@ -98,7 +90,8 @@ export default function Navbar() {
                 className="nav-link"
                 style={{
                   color: location === link.href ? "#a14f1f" : "#f2f2f2",
-                  borderBottom: location === link.href ? "1px solid #a14f1f" : "none",
+                  borderBottom:
+                    location === link.href ? "1px solid #a14f1f" : "none",
                   paddingBottom: "2px",
                 }}
               >
@@ -111,7 +104,10 @@ export default function Navbar() {
         {/* CTA + hamburger */}
         <div className="flex items-center gap-4">
           <Link href="/products" className="hidden md:block">
-            <button className="btn-primary" style={{ padding: "0.45rem 1.2rem", fontSize: "0.75rem" }}>
+            <button
+              className="btn-primary"
+              style={{ padding: "0.45rem 1.2rem", fontSize: "0.75rem" }}
+            >
               Shop Gear
             </button>
           </Link>
@@ -136,10 +132,10 @@ export default function Navbar() {
                     menuOpen && i === 0
                       ? "translateY(7px) rotate(45deg)"
                       : menuOpen && i === 2
-                      ? "translateY(-7px) rotate(-45deg)"
-                      : menuOpen && i === 1
-                      ? "scaleX(0)"
-                      : "none",
+                        ? "translateY(-7px) rotate(-45deg)"
+                        : menuOpen && i === 1
+                          ? "scaleX(0)"
+                          : "none",
                 }}
               />
             ))}

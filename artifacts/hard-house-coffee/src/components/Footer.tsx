@@ -7,21 +7,52 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3
+            <div className="flex items-center gap-4 mb-4">
+              <img
+                src="/images/logo.png"
+                alt="Hard House Coffee Logo"
+                style={{
+                  height: "64px",
+                  width: "auto",
+                  filter: "sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.75)",
+                }}
+              />
+              <div>
+                <h3
+                  style={{
+                    fontFamily: "'Cinzel Decorative', serif",
+                    fontSize: "1rem",
+                    color: "#f2f2f2",
+                    letterSpacing: "0.08em",
+                    marginBottom: "0.2rem",
+                    lineHeight: 1.2,
+                  }}
+                >
+                  HARD HOUSE
+                  <br />
+                  COFFEE
+                </h3>
+              </div>
+            </div>
+            <p
               style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                fontSize: "1.1rem",
-                color: "#f2f2f2",
-                letterSpacing: "0.08em",
-                marginBottom: "0.25rem",
+                color: "#a14f1f",
+                fontSize: "0.7rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                marginBottom: "1rem",
               }}
             >
-              HARD HOUSE COFFEE
-            </h3>
-            <p style={{ color: "#a14f1f", fontSize: "0.7rem", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "1rem" }}>
               Aroma From the Ground Up
             </p>
-            <p style={{ color: "#b0a090", fontSize: "0.85rem", lineHeight: 1.7, maxWidth: "300px" }}>
+            <p
+              style={{
+                color: "#b0a090",
+                fontSize: "0.85rem",
+                lineHeight: 1.7,
+                maxWidth: "300px",
+              }}
+            >
               A premium coffee brand built for people who refuse to settle. Bold, dark, and always deliberate.
             </p>
             <div
@@ -63,8 +94,12 @@ export default function Footer() {
                     cursor: "pointer",
                     transition: "color 0.2s",
                   }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#a14f1f")}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#b0a090")}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLElement).style.color = "#a14f1f")
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLElement).style.color = "#b0a090")
+                  }
                 >
                   {link.label}
                 </div>
@@ -102,8 +137,12 @@ export default function Footer() {
                   cursor: "pointer",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#a14f1f")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#b0a090")}
+                onMouseEnter={(e) =>
+                  ((e.currentTarget as HTMLElement).style.color = "#a14f1f")
+                }
+                onMouseLeave={(e) =>
+                  ((e.currentTarget as HTMLElement).style.color = "#b0a090")
+                }
               >
                 {cat}
               </div>
