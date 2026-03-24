@@ -142,6 +142,21 @@ export default function Home() {
           </div>
         ))}
 
+        {/* SVG filter: bloody dark orange colorization */}
+        <svg style={{ position: "absolute", width: 0, height: 0 }}>
+          <defs>
+            <filter id="bloody-orange" colorInterpolationFilters="sRGB">
+              <feColorMatrix
+                type="matrix"
+                values="0.49 0.49 0.49 0 0
+                        0.13 0.13 0.13 0 0
+                        0    0    0    0 0
+                        0    0    0    1 0"
+              />
+            </filter>
+          </defs>
+        </svg>
+
         {/* Dark gradient overlay */}
         <div className="hero-overlay absolute inset-0" style={{ zIndex: 2 }} />
 
@@ -176,7 +191,7 @@ export default function Home() {
                 style={{
                   height: "clamp(700px, 100vw, 1100px)",
                   width: "auto",
-                  filter: "drop-shadow(0 0 28px rgba(139,47,47,0.95)) drop-shadow(0 0 8px rgba(139,47,47,0.7)) sepia(0.5) saturate(0.5) brightness(1.08)",
+                  filter: "url(#bloody-orange) drop-shadow(0 4px 20px rgba(0,0,0,0.9))",
                   flexShrink: 0,
                 }}
               />
