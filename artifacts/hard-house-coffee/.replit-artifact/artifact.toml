@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Hard House Coffee"
+version = "1.0.0"
+id = "artifacts/hard-house-coffee"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18347
+
+[services.development]
+run = "pnpm --filter @workspace/hard-house-coffee run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/hard-house-coffee", "run", "build" ]
+publicDir = "artifacts/hard-house-coffee/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18347"
+BASE_PATH = "/"

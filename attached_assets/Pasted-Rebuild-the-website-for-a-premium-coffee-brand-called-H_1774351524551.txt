@@ -1,0 +1,103 @@
+Rebuild the website for a premium coffee brand called "Hard House Coffee".
+
+Brand Identity:
+- Use "Cinzel Decorative" font for the main title/logo text: HARD HOUSE COFFEE
+- Use a clean modern sans-serif font for body text and navigation
+- Tagline: Aroma From the Ground Up
+
+Images:
+- Use the images and logo that I uploaded in this project
+- Use at least 5 of my uploaded images in a rotating hero slideshow on the homepage
+- The hero slideshow should automatically change from one image to another and loop continuously
+- Use the best uploaded image selections for the hero slideshow
+- Use more of my uploaded images throughout the homepage as the user scrolls down
+- Use my uploaded images again on the following pages where they fit the brand and layout
+
+Logo Styling:
+- Use my uploaded logo
+- Style it with brick red and black tones
+- Make the hat / brim dark brown
+- Keep the logo bold, dark, and premium
+
+Color Palette:
+- Deep espresso black background (#0b0b0b)
+- Dark brown sections (#2b1e16)
+- Brick red accents (#8b2f2f)
+- Dark orange / burnt orange trims and highlights (#a14f1f)
+- Off-white text (#f2f2f2)
+
+Design Style:
+- Bold, cinematic, luxury coffee brand
+- Dark, warm, rich atmosphere
+- Strong contrast with subtle gradients and shadows
+- Premium spacing and typography
+
+Layout:
+1. Hero Section:
+   - Full screen rotating slideshow using at least 5 of my uploaded images
+   - Dark overlay for contrast
+   - Large HARD HOUSE COFFEE title in Cinzel Decorative
+   - Tagline: Aroma From the Ground Up
+   - Smooth automatic transitions between images
+   - Loop continuously
+
+2. Featured Section:
+   - Grid layout using uploaded images
+   - Premium spacing and alignment
+
+3. Culture Section:
+   - Lifestyle / coffee vibe using uploaded images
+   - Warm and immersive presentation
+
+4. Stay Grounded Section:
+   - Strong visual section using one uploaded image
+   - Consistent styling with the rest of the site
+
+Navigation:
+- Create a clean, premium menu
+- Include smooth dropdown behavior if appropriate
+- Keep navigation polished and modern
+
+Buttons:
+- Use premium buttons with slightly rounded / oval edges
+- Shape should feel rectangular with soft curves
+- Use brick red, dark brown, black, and dark orange tones
+- Add smooth hover effects and transitions
+
+Visual Details:
+- Use orange as a trim or highlight color throughout the design
+- Keep all elements cohesive, bold, and premium
+
+Monetization Features:
+- Add a Blog / Reviews section to the website
+- Create sections for coffee-related blog posts and product reviews
+- Include example categories such as:
+  - Coffee gear reviews
+  - Best espresso machines
+  - Best coffee machines
+  - Coffee bean recommendations
+  - Brewing guides
+
+- Each post card should include:
+  - title
+  - short description
+  - image
+  - “Read More” button
+
+- Add a Product Recommendation section for affiliate marketing
+- Include espresso machine and coffee machine recommendations
+- Use relevant product images for those sections
+- For espresso machines and coffee machine recommendation sections, use appropriate product images such as Breville, De’Longhi, and similar premium espresso machine styles
+- Use relevant product-style images for those machine review sections and recommendation sections
+
+- Include affiliate-style buttons such as:
+  - View Product
+  - Buy Now
+  - Read Review
+
+- Design these sections to match the same dark premium theme
+- Keep spacing clean and readable
+- Make the layout suitable for future blog content and product review expansion
+
+Goal:
+Create a dark, cinematic, high-end coffee website that feels strong, warm, visually premium, and built for affiliate marketing, reviews, blog content, and future monetization.
