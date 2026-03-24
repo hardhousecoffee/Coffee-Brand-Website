@@ -32,7 +32,7 @@ export default function Navbar() {
     >
       <div
         className="max-w-6xl mx-auto px-6 flex items-center justify-between"
-        style={{ height: "68px" }}
+        style={{ height: "110px" }}
       >
         {/* Desktop nav links — left */}
         <div className="hidden md:flex items-center gap-8">
@@ -74,7 +74,7 @@ export default function Navbar() {
           <Link href="/products">
             <button
               className="btn-primary"
-              style={{ padding: "0.45rem 1.2rem", fontSize: "0.75rem" }}
+              style={{ padding: "0.75rem 2rem", fontSize: "2rem" }}
             >
               Shop Gear
             </button>
