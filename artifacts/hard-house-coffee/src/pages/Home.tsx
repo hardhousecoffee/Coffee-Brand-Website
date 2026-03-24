@@ -176,7 +176,7 @@ export default function Home() {
                 style={{
                   height: "clamp(700px, 100vw, 1100px)",
                   width: "auto",
-                  filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.7)) sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.85)",
+                  filter: "drop-shadow(0 0 28px rgba(139,47,47,0.95)) drop-shadow(0 0 8px rgba(139,47,47,0.7)) sepia(0.5) saturate(0.5) brightness(1.08)",
                   flexShrink: 0,
                 }}
               />
