@@ -165,7 +165,7 @@ export default function Home() {
               src="/images/logo.png"
               alt="Hard House Coffee"
               style={{
-                height: "clamp(140px, 20vw, 220px)",
+                height: "clamp(700px, 100vw, 1100px)",
                 width: "auto",
                 filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.7)) sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.85)",
                 marginBottom: "1.6rem",
