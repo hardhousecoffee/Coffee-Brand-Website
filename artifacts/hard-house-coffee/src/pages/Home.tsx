@@ -180,7 +180,7 @@ export default function Home() {
               src="/images/logo-icon.png"
               alt="Hard House Coffee"
               style={{
-                height: "clamp(510px, 72vw, 870px)",
+                height: "clamp(765px, 108vw, 1305px)",
                 width: "auto",
                 filter: "url(#bloody-orange)",
                 mixBlendMode: "screen",
