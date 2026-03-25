@@ -30,6 +30,7 @@ export default function Footer() {
                   width: "auto",
                   filter: "url(#footer-logo-red)",
                   mixBlendMode: "screen",
+                  marginTop: "8px",
                 }}
               />
               <h3
@@ -39,7 +40,7 @@ export default function Footer() {
                   color: "#f2f2f2",
                   letterSpacing: "0.08em",
                   lineHeight: 1.2,
-                  marginLeft: "-22px",
+                  marginLeft: "-28px",
                 }}
               >
                 HARD HOUSE COFFEE
