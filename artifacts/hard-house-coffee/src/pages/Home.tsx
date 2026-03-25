@@ -162,20 +162,20 @@ export default function Home() {
 
         {/* Hero content */}
         <div
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+          className="absolute inset-0 text-center px-6"
           style={{ zIndex: 3 }}
         >
+          {/* Logo — centered horizontally, sits in upper portion */}
           <div
             style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -52%)",
               opacity: isVisible ? 1 : 0,
-              transform: isVisible ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 1.2s ease, transform 1.2s ease",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
+              transition: "opacity 1.2s ease",
             }}
           >
-            {/* Centered logo — icon only, no clipping needed */}
             <img
               src="/images/logo-icon.png"
               alt="Hard House Coffee"
@@ -184,10 +184,25 @@ export default function Home() {
                 width: "auto",
                 filter: "url(#bloody-orange)",
                 mixBlendMode: "screen",
-                marginBottom: "1.6rem",
               }}
             />
+          </div>
 
+          {/* Text block — pinned toward bottom of hero */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "10%",
+              left: 0,
+              right: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? "translateY(0)" : "translateY(20px)",
+              transition: "opacity 1.2s ease 0.3s, transform 1.2s ease 0.3s",
+            }}
+          >
             {/* Single-line brand title */}
             <h1
               style={{
@@ -198,7 +213,7 @@ export default function Home() {
                 letterSpacing: "0.12em",
                 whiteSpace: "nowrap",
                 lineHeight: 1,
-                marginBottom: "1.2rem",
+                marginBottom: "1rem",
               }}
             >
               HARD HOUSE COFFEE
@@ -209,7 +224,7 @@ export default function Home() {
                 width: "70px",
                 height: "2px",
                 background: "linear-gradient(to right, #8b2f2f, #a14f1f)",
-                marginBottom: "1.2rem",
+                marginBottom: "1rem",
               }}
             />
             <p
@@ -220,7 +235,7 @@ export default function Home() {
                 textTransform: "uppercase",
                 fontWeight: 300,
                 textShadow: "0 1px 8px rgba(0,0,0,0.7)",
-                marginBottom: "2.5rem",
+                marginBottom: "2rem",
               }}
             >
               Aroma From the Ground Up
