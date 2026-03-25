@@ -175,27 +175,18 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            {/* Centered logo — large and dominant, text clipped */}
-            <div
+            {/* Centered logo — icon only, no clipping needed */}
+            <img
+              src="/images/logo-icon.png"
+              alt="Hard House Coffee"
               style={{
-                height: "clamp(420px, 60vw, 660px)",
-                overflow: "hidden",
-                display: "flex",
-                justifyContent: "center",
+                height: "clamp(340px, 48vw, 580px)",
+                width: "auto",
+                filter: "url(#bloody-orange)",
+                mixBlendMode: "screen",
                 marginBottom: "1.6rem",
               }}
-            >
-              <img
-                src="/images/logo.png"
-                alt="Hard House Coffee"
-                style={{
-                  height: "clamp(700px, 100vw, 1100px)",
-                  width: "auto",
-                  filter: "url(#bloody-orange) drop-shadow(0 4px 20px rgba(0,0,0,0.9))",
-                  flexShrink: 0,
-                }}
-              />
-            </div>
+            />
 
             {/* Single-line brand title */}
             <h1
