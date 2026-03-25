@@ -230,16 +230,16 @@ export default function Home() {
             />
             <p
               style={{
-                fontSize: "clamp(0.75rem, 1.6vw, 1rem)",
-                color: "#f2f2f2",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                fontWeight: 300,
-                textShadow: "0 1px 8px rgba(0,0,0,0.7)",
+                fontFamily: "'Dancing Script', cursive",
+                fontSize: "clamp(2rem, 4.5vw, 3.8rem)",
+                color: "#d4b896",
+                fontWeight: 600,
+                textShadow: "0 2px 12px rgba(0,0,0,0.8)",
                 marginBottom: "2rem",
+                lineHeight: 1.2,
               }}
             >
-              Aroma From the Ground Up
+              Aroma From the Ground Up!
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Link href="/blog">
