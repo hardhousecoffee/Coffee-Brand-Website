@@ -397,15 +397,16 @@ export default function Home() {
       {/* STAY GROUNDED */}
       <section
         className="relative py-16 px-6 text-center overflow-hidden"
-        style={{ backgroundColor: "#0b0b0b" }}
+        style={{ backgroundColor: "#0b0b0b", minHeight: "75vh" }}
       >
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: "url('/images/coffee-oclock.png')",
-            backgroundSize: "cover",
+            backgroundSize: "contain",
             backgroundPosition: "center",
-            filter: "brightness(0.25)",
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(0.45)",
           }}
         />
         <div className="absolute inset-0" style={{ background: "rgba(11,11,11,0.6)" }} />
