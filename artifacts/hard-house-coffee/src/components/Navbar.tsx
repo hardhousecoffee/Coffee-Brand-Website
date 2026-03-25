@@ -52,7 +52,7 @@ export default function Navbar() {
           ))}
 
           {/* Spacer between groups */}
-          <div style={{ width: "3rem" }} />
+          <div style={{ width: "6rem" }} />
 
           {/* Right group: About, Shop Gear */}
           {navLinks.slice(2).map((link) => (
