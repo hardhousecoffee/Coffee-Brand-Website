@@ -396,7 +396,7 @@ export default function Home() {
 
       {/* STAY GROUNDED */}
       <section
-        className="relative py-32 px-6 text-center overflow-hidden"
+        className="relative py-16 px-6 text-center overflow-hidden"
         style={{ backgroundColor: "#0b0b0b" }}
       >
         <div
