@@ -1,0 +1,120 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- OUTER RINGS - deep brick red -->
+  <circle cx="200" cy="200" r="190" fill="none" stroke="#8B2020" stroke-width="3.5"/>
+  <circle cx="200" cy="200" r="166" fill="none" stroke="#8B2020" stroke-width="2"/>
+
+  <!-- COFFEE BEANS - cream, 18 evenly spaced between rings -->
+  <g fill="#E8D8B5">
+    <g transform="rotate(0,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(20,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(40,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(60,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(80,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(100,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(120,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(140,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(160,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(180,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(200,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(220,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(240,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(260,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(280,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(300,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(320,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+    <g transform="rotate(340,200,200) translate(178,0) rotate(90)"><ellipse cx="0" cy="0" rx="10" ry="6"/><line x1="0" y1="-10" x2="0" y2="10" stroke="#5C2A0A" stroke-width="0.9"/></g>
+  </g>
+
+  <!-- VERTICAL BACKGROUND STRIPES - subtle brick red -->
+  <g stroke="#8B2020" stroke-width="1.2" opacity="0.35" stroke-dasharray="none">
+    <line x1="164" y1="134" x2="164" y2="355"/>
+    <line x1="172" y1="130" x2="172" y2="358"/>
+    <line x1="180" y1="128" x2="180" y2="360"/>
+    <line x1="188" y1="126" x2="188" y2="362"/>
+    <line x1="196" y1="125" x2="196" y2="363"/>
+    <line x1="204" y1="125" x2="204" y2="363"/>
+    <line x1="212" y1="126" x2="212" y2="362"/>
+    <line x1="220" y1="128" x2="220" y2="360"/>
+    <line x1="228" y1="130" x2="228" y2="358"/>
+    <line x1="236" y1="134" x2="236" y2="355"/>
+  </g>
+
+  <!-- TOP HAT - brick red #8B2020 -->
+  <!-- Hat crown -->
+  <rect x="164" y="44" width="72" height="74" fill="none" stroke="#8B2020" stroke-width="2.8" rx="1"/>
+  <!-- Hat crown top band -->
+  <rect x="164" y="44" width="72" height="11" fill="#8B2020" rx="1"/>
+  <!-- Hat brim -->
+  <rect x="136" y="118" width="128" height="14" fill="none" stroke="#8B2020" stroke-width="2.8" rx="1"/>
+  <!-- Hat crown inner vertical lines -->
+  <line x1="182" y1="55" x2="182" y2="118" stroke="#8B2020" stroke-width="1.2" opacity="0.6"/>
+  <line x1="200" y1="55" x2="200" y2="118" stroke="#8B2020" stroke-width="1.2" opacity="0.6"/>
+  <line x1="218" y1="55" x2="218" y2="118" stroke="#8B2020" stroke-width="1.2" opacity="0.6"/>
+
+  <!-- HEAD - cream outline -->
+  <ellipse cx="200" cy="158" rx="34" ry="28" fill="none" stroke="#E8D8B5" stroke-width="2.2"/>
+
+  <!-- EYES - cream -->
+  <ellipse cx="187" cy="151" rx="5" ry="4" fill="none" stroke="#E8D8B5" stroke-width="1.8"/>
+  <ellipse cx="213" cy="151" rx="5" ry="4" fill="none" stroke="#E8D8B5" stroke-width="1.8"/>
+  <!-- Eye pupils -->
+  <circle cx="187" cy="151" r="2" fill="#E8D8B5"/>
+  <circle cx="213" cy="151" r="2" fill="#E8D8B5"/>
+
+  <!-- NOSE -->
+  <line x1="200" y1="156" x2="200" y2="164" stroke="#E8D8B5" stroke-width="1.5"/>
+  <line x1="196" y1="164" x2="204" y2="164" stroke="#E8D8B5" stroke-width="1.5"/>
+
+  <!-- MUSTACHE - cream -->
+  <path d="M 190 168 Q 196 165 200 168 Q 204 165 210 168" fill="none" stroke="#E8D8B5" stroke-width="2"/>
+
+  <!-- LONG BEARD - cream lines -->
+  <!-- Outer beard shape -->
+  <path d="M 174 175 C 158 205 152 240 162 278 Q 178 308 200 314 Q 222 308 238 278 C 248 240 242 205 226 175"
+        fill="none" stroke="#E8D8B5" stroke-width="2.2"/>
+  <!-- Beard texture lines -->
+  <line x1="186" y1="178" x2="176" y2="290" stroke="#E8D8B5" stroke-width="1.3"/>
+  <line x1="193" y1="180" x2="188" y2="295" stroke="#E8D8B5" stroke-width="1.3"/>
+  <line x1="200" y1="181" x2="200" y2="297" stroke="#E8D8B5" stroke-width="1.3"/>
+  <line x1="207" y1="180" x2="212" y2="295" stroke="#E8D8B5" stroke-width="1.3"/>
+  <line x1="214" y1="178" x2="224" y2="290" stroke="#E8D8B5" stroke-width="1.3"/>
+  <!-- Beard tip -->
+  <path d="M 178 288 Q 200 320 222 288" fill="none" stroke="#E8D8B5" stroke-width="1.8"/>
+
+  <!-- SHOULDERS & JACKET BODY - brick red -->
+  <!-- Left shoulder sweep -->
+  <path d="M 170 185 L 104 252 L 100 318 L 156 322"
+        fill="none" stroke="#8B2020" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Right shoulder sweep -->
+  <path d="M 230 185 L 296 252 L 300 318 L 244 322"
+        fill="none" stroke="#8B2020" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Left lapel -->
+  <path d="M 170 185 L 186 215 L 200 204" fill="none" stroke="#8B2020" stroke-width="2"/>
+  <!-- Right lapel -->
+  <path d="M 230 185 L 214 215 L 200 204" fill="none" stroke="#8B2020" stroke-width="2"/>
+  <!-- Center chest line -->
+  <line x1="200" y1="204" x2="200" y2="322" stroke="#8B2020" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Shoulder vertical lines -->
+  <line x1="118" y1="260" x2="114" y2="315" stroke="#8B2020" stroke-width="1.2"/>
+  <line x1="133" y1="255" x2="130" y2="320" stroke="#8B2020" stroke-width="1.2"/>
+  <line x1="148" y1="251" x2="147" y2="322" stroke="#8B2020" stroke-width="1.2"/>
+  <line x1="270" y1="251" x2="253" y2="322" stroke="#8B2020" stroke-width="1.2"/>
+  <line x1="282" y1="255" x2="270" y2="320" stroke="#8B2020" stroke-width="1.2"/>
+  <line x1="282" y1="260" x2="286" y2="315" stroke="#8B2020" stroke-width="1.2"/>
+
+  <!-- COFFEE CUP - cream outline, dark brown fill -->
+  <!-- Cup body -->
+  <path d="M 180 318 L 176 350 L 224 350 L 220 318 Z"
+        fill="#3B2A1A" stroke="#E8D8B5" stroke-width="2.2"/>
+  <!-- Cup rim line -->
+  <line x1="178" y1="318" x2="222" y2="318" stroke="#E8D8B5" stroke-width="2.2"/>
+  <!-- Handle -->
+  <path d="M 222 326 Q 244 326 244 338 Q 244 350 222 350"
+        fill="none" stroke="#E8D8B5" stroke-width="2.2"/>
+  <!-- Saucer -->
+  <ellipse cx="200" cy="352" rx="32" ry="6" fill="none" stroke="#E8D8B5" stroke-width="1.8"/>
+  <!-- Coffee surface highlight -->
+  <ellipse cx="200" cy="320" rx="19" ry="3" fill="none" stroke="#E8D8B5" stroke-width="1" opacity="0.6"/>
+
+</svg>
