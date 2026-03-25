@@ -40,7 +40,7 @@ export default function Footer() {
                   color: "#f2f2f2",
                   letterSpacing: "0.08em",
                   lineHeight: 1.2,
-                  marginLeft: "-28px",
+                  marginLeft: "-36px",
                 }}
               >
                 HARD HOUSE COFFEE
