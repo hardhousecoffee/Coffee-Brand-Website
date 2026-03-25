@@ -21,7 +21,7 @@ export default function Footer() {
                 </filter>
               </defs>
             </svg>
-            <div className="flex items-center gap-0 mb-4">
+            <div className="flex items-center gap-0 mb-4" style={{ marginLeft: "-12px" }}>
               <img
                 src="/images/logo-icon.png"
                 alt="Hard House Coffee Logo"
