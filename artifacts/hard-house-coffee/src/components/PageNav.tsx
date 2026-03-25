@@ -22,9 +22,9 @@ export default function PageNav({ nextPath, nextLabel }: PageNavProps) {
         onClick={() => setLocation(nextPath)}
         style={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
           alignItems: "center",
-          gap: "0.6rem",
+          gap: "0.75rem",
           background: "none",
           border: "none",
           cursor: "pointer",
@@ -34,12 +34,12 @@ export default function PageNav({ nextPath, nextLabel }: PageNavProps) {
         onMouseEnter={e => {
           (e.currentTarget as HTMLButtonElement).style.color = "#f2f2f2";
           const arrow = (e.currentTarget as HTMLButtonElement).querySelector(".page-nav-arrow") as HTMLElement;
-          if (arrow) arrow.style.transform = "translateY(6px)";
+          if (arrow) arrow.style.transform = "translateX(6px)";
         }}
         onMouseLeave={e => {
           (e.currentTarget as HTMLButtonElement).style.color = "#b0a090";
           const arrow = (e.currentTarget as HTMLButtonElement).querySelector(".page-nav-arrow") as HTMLElement;
-          if (arrow) arrow.style.transform = "translateY(0)";
+          if (arrow) arrow.style.transform = "translateX(0)";
         }}
       >
         <span
@@ -65,8 +65,8 @@ export default function PageNav({ nextPath, nextLabel }: PageNavProps) {
           strokeLinejoin="round"
           style={{ transition: "transform 0.3s ease" }}
         >
-          <line x1="12" y1="5" x2="12" y2="19" />
-          <polyline points="19 12 12 19 5 12" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
         </svg>
       </button>
     </div>
