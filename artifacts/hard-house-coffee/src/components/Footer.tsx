@@ -21,7 +21,7 @@ export default function Footer() {
                 </filter>
               </defs>
             </svg>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-1 mb-4">
               <img
                 src="/images/logo-icon.png"
                 alt="Hard House Coffee Logo"
@@ -41,22 +41,9 @@ export default function Footer() {
                   lineHeight: 1.2,
                 }}
               >
-                HARD HOUSE
-                <br />
-                COFFEE
+                HARD HOUSE COFFEE
               </h3>
             </div>
-            <p
-              style={{
-                color: "#a14f1f",
-                fontSize: "0.7rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                marginBottom: "1rem",
-              }}
-            >
-              Aroma From the Ground Up
-            </p>
             <p
               style={{
                 color: "#b0a090",
