@@ -207,7 +207,7 @@ export default function Home() {
             <h1
               style={{
                 fontFamily: "'Cinzel Decorative', serif",
-                fontSize: "clamp(2.6rem, 7vw, 6.4rem)",
+                fontSize: "clamp(1.3rem, 3.5vw, 3.2rem)",
                 color: "#f2f2f2",
                 textShadow: "0 2px 20px rgba(0,0,0,0.8)",
                 letterSpacing: "0.12em",
@@ -229,7 +229,7 @@ export default function Home() {
             />
             <p
               style={{
-                fontSize: "clamp(1.5rem, 3.2vw, 2rem)",
+                fontSize: "clamp(0.75rem, 1.6vw, 1rem)",
                 color: "#f2f2f2",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
