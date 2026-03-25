@@ -17,7 +17,7 @@ const products = [
     reviews: 3247,
     badge: "Editor's Pick",
     badgeColor: "#8b2f2f",
-    image: "/images/espresso-machine.jpg",
+    image: "/images/product-breville.jpg",
     pros: ["Built-in conical burr grinder", "Precise espresso extraction", "Steam wand for milk frothing"],
   },
   {
@@ -32,7 +32,7 @@ const products = [
     reviews: 1823,
     badge: "Best Value",
     badgeColor: "#a14f1f",
-    image: "/images/bar-mug.jpg",
+    image: "/images/product-delonghi.jpg",
     pros: ["Smart tamping station", "Dual heating system", "Active temperature control"],
   },
   {
@@ -47,7 +47,7 @@ const products = [
     reviews: 2418,
     badge: "Top Rated",
     badgeColor: "#5a3a1a",
-    image: "/images/steamy-mug.jpg",
+    image: "/images/product-gaggia.jpg",
     pros: ["Commercial 58mm portafilter", "3-way solenoid valve", "Commercial steam wand"],
   },
   {
@@ -62,7 +62,7 @@ const products = [
     reviews: 876,
     badge: "Premium Pick",
     badgeColor: "#8b2f2f",
-    image: "/images/barista-serve.jpg",
+    image: "/images/product-rancilio.jpg",
     pros: ["Dual boiler system", "PID temperature control", "No wait between steam and brew"],
   },
   {
@@ -77,7 +77,7 @@ const products = [
     reviews: 5621,
     badge: "Most Popular",
     badgeColor: "#8b2f2f",
-    image: "/images/aroma-beans.jpg",
+    image: "/images/product-fellow.jpg",
     pros: ["±0.5° temperature accuracy", "Hold mode up to 60 min", "Precision pour spout"],
   },
   {
@@ -92,7 +92,7 @@ const products = [
     reviews: 3102,
     badge: "Best Drip",
     badgeColor: "#a14f1f",
-    image: "/images/coffee-cheers.jpg",
+    image: "/images/product-moccamaster.jpg",
     pros: ["Brews in 4-6 minutes", "Built to last decades", "Certified by ECBC"],
   },
 ];
