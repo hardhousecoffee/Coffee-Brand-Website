@@ -21,7 +21,7 @@ export default function Footer() {
                 </filter>
               </defs>
             </svg>
-            <div className="flex items-center mb-4">
+            <div className="flex items-center gap-3 mb-4">
               <img
                 src="/images/logo-icon.png"
                 alt="Hard House Coffee Logo"
@@ -32,6 +32,19 @@ export default function Footer() {
                   mixBlendMode: "screen",
                 }}
               />
+              <h3
+                style={{
+                  fontFamily: "'Cinzel Decorative', serif",
+                  fontSize: "1rem",
+                  color: "#f2f2f2",
+                  letterSpacing: "0.08em",
+                  lineHeight: 1.2,
+                }}
+              >
+                HARD HOUSE
+                <br />
+                COFFEE
+              </h3>
             </div>
             <p
               style={{
