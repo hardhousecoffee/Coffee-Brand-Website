@@ -142,6 +142,21 @@ export default function Home() {
           </div>
         ))}
 
+        {/* SVG filter: red colorization */}
+        <svg style={{ position: "absolute", width: 0, height: 0 }}>
+          <defs>
+            <filter id="bloody-orange" colorInterpolationFilters="sRGB">
+              <feColorMatrix
+                type="matrix"
+                values="0.333 0.333 0.333 0 0
+                        0     0     0     0 0
+                        0     0     0     0 0
+                        0     0     0     1 0"
+              />
+            </filter>
+          </defs>
+        </svg>
+
         {/* Dark gradient overlay */}
         <div className="hero-overlay absolute inset-0" style={{ zIndex: 2 }} />
 
@@ -162,11 +177,13 @@ export default function Home() {
             }}
           >
             <img
-              src="/images/logo.svg"
+              src="/images/logo-icon.png"
               alt="Hard House Coffee"
               style={{
                 height: "clamp(300px, 45vw, 550px)",
                 width: "auto",
+                filter: "url(#bloody-orange)",
+                mixBlendMode: "screen",
               }}
             />
           </div>
