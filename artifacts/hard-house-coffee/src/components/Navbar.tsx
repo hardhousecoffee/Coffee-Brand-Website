@@ -35,7 +35,27 @@ export default function Navbar() {
       >
         {/* Desktop nav links — centered */}
         <div className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
+          {/* Left group: Home, Blog */}
+          {navLinks.slice(0, 2).map((link) => (
+            <Link key={link.href} href={link.href}>
+              <span
+                className="nav-link"
+                style={{
+                  color: location === link.href ? "#a14f1f" : "#f2f2f2",
+                  borderBottom: location === link.href ? "1px solid #a14f1f" : "none",
+                  paddingBottom: "2px",
+                }}
+              >
+                {link.label}
+              </span>
+            </Link>
+          ))}
+
+          {/* Spacer between groups */}
+          <div style={{ width: "3rem" }} />
+
+          {/* Right group: About, Shop Gear */}
+          {navLinks.slice(2).map((link) => (
             <Link key={link.href} href={link.href}>
               <span
                 className="nav-link"
