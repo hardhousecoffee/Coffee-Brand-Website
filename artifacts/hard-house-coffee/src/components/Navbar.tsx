@@ -32,10 +32,10 @@ export default function Navbar() {
     >
       <div
         className="max-w-7xl mx-auto px-10 flex items-center justify-between"
-        style={{ height: "110px" }}
+        style={{ height: "68px" }}
       >
         {/* Desktop nav links — left */}
-        <div className="hidden md:flex items-center gap-16">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.slice(0, 2).map((link) => (
             <Link key={link.href} href={link.href}>
               <span
@@ -56,7 +56,7 @@ export default function Navbar() {
         <div className="flex-1 hidden md:block" />
 
         {/* Desktop nav links — right */}
-        <div className="hidden md:flex items-center gap-16">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.slice(2).map((link) => (
             <Link key={link.href} href={link.href}>
               <span
@@ -74,7 +74,7 @@ export default function Navbar() {
           <Link href="/products">
             <button
               className="btn-primary"
-              style={{ padding: "0.6rem 1.6rem", fontSize: "1.4rem" }}
+              style={{ padding: "0.45rem 1.2rem", fontSize: "0.75rem" }}
             >
               Shop Gear
             </button>
