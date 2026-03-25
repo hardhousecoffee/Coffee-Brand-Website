@@ -148,7 +148,7 @@ export default function Home() {
             <filter id="bloody-orange" colorInterpolationFilters="sRGB">
               <feColorMatrix
                 type="matrix"
-                values="0.333 0.333 0.333 0 0
+                values="0.140 0.140 0.140 0 0
                         0     0     0     0 0
                         0     0     0     0 0
                         0     0     0     1 0"
