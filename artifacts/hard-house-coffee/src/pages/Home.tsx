@@ -404,7 +404,7 @@ export default function Home() {
           style={{
             backgroundImage: "url('/images/coffee-oclock.png')",
             backgroundSize: "cover",
-            backgroundPosition: "65% center",
+            backgroundPosition: "65% 35%",
             filter: "brightness(0.25)",
           }}
         />
