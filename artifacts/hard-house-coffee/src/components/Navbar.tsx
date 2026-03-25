@@ -30,33 +30,12 @@ export default function Navbar() {
       }}
     >
       <div
-        className="max-w-7xl mx-auto px-10 flex items-center justify-between"
+        className="max-w-7xl mx-auto px-10 flex items-center justify-center"
         style={{ height: "68px" }}
       >
-        {/* Desktop nav links — left */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.slice(0, 2).map((link) => (
-            <Link key={link.href} href={link.href}>
-              <span
-                className="nav-link"
-                style={{
-                  color: location === link.href ? "#a14f1f" : "#f2f2f2",
-                  borderBottom: location === link.href ? "1px solid #a14f1f" : "none",
-                  paddingBottom: "2px",
-                }}
-              >
-                {link.label}
-              </span>
-            </Link>
-          ))}
-        </div>
-
-        {/* Center spacer (desktop) */}
-        <div className="flex-1 hidden md:block" />
-
-        {/* Desktop nav links — right */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.slice(2).map((link) => (
+        {/* Desktop nav links — centered */}
+        <div className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
               <span
                 className="nav-link"
