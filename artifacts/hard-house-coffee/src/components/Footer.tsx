@@ -21,26 +21,25 @@ export default function Footer() {
                 </filter>
               </defs>
             </svg>
-            <div className="flex items-center gap-0 mb-4" style={{ marginLeft: "-20px" }}>
+            <div className="flex items-center gap-0 mb-1" style={{ marginLeft: "-14px" }}>
               <img
                 src="/images/logo-icon.png"
                 alt="Hard House Coffee Logo"
                 style={{
-                  height: "100px",
+                  height: "72px",
                   width: "auto",
                   filter: "url(#footer-logo-red)",
                   mixBlendMode: "screen",
-                  marginTop: "8px",
                 }}
               />
               <h3
                 style={{
                   fontFamily: "'Cinzel Decorative', serif",
-                  fontSize: "1.15rem",
+                  fontSize: "1.1rem",
                   color: "#f2f2f2",
                   letterSpacing: "0.08em",
                   lineHeight: 1.2,
-                  marginLeft: "-36px",
+                  marginLeft: "-26px",
                 }}
               >
                 HARD HOUSE COFFEE
