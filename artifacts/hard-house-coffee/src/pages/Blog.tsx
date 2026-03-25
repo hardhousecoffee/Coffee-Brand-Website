@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageNav from "@/components/PageNav";
 
 const categories = ["All", "Gear Reviews", "Brewing Guides", "Bean Picks", "Espresso Machines", "Coffee Culture"];
 
@@ -263,6 +264,7 @@ export default function Blog() {
         </div>
       </div>
 
+      <PageNav nextPath="/products" nextLabel="Shop Gear" />
       <Footer />
     </div>
   );

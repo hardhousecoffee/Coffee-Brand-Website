@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageNav from "@/components/PageNav";
 
 const categories = ["All", "Espresso Machines", "Coffee Machines", "Grinders", "Accessories"];
 
@@ -319,6 +320,7 @@ export default function Products() {
         </div>
       </div>
 
+      <PageNav nextPath="/about" nextLabel="Our Story" />
       <Footer />
     </div>
   );

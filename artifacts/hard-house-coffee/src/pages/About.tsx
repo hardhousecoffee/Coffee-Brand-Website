@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageNav from "@/components/PageNav";
 import { Link } from "wouter";
 
 export default function About() {
@@ -187,6 +188,7 @@ export default function About() {
         </div>
       </div>
 
+      <PageNav nextPath="/" nextLabel="Back to Home" />
       <Footer />
     </div>
   );
