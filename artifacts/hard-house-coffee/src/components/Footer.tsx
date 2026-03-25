@@ -26,7 +26,7 @@ export default function Footer() {
                 src="/images/logo-icon.png"
                 alt="Hard House Coffee Logo"
                 style={{
-                  height: "72px",
+                  height: "100px",
                   width: "auto",
                   filter: "url(#footer-logo-red)",
                   mixBlendMode: "screen",
@@ -35,7 +35,7 @@ export default function Footer() {
               <h3
                 style={{
                   fontFamily: "'Cinzel Decorative', serif",
-                  fontSize: "1rem",
+                  fontSize: "1.15rem",
                   color: "#f2f2f2",
                   letterSpacing: "0.08em",
                   lineHeight: 1.2,
