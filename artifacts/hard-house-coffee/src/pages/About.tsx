@@ -52,7 +52,7 @@ export default function About() {
               className="mt-4 mb-6"
               style={{
                 fontFamily: "'Cinzel Decorative', serif",
-                fontSize: "clamp(1.4rem, 3vw, 2.2rem)",
+                fontSize: "clamp(1rem, 2vw, 1.4rem)",
                 color: "#f2f2f2",
                 lineHeight: 1.3,
               }}
