@@ -7,32 +7,31 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-4 mb-4">
+            {/* Hidden SVG filter — same red colorization as hero */}
+            <svg style={{ position: "absolute", width: 0, height: 0 }}>
+              <defs>
+                <filter id="footer-logo-red" colorInterpolationFilters="sRGB">
+                  <feColorMatrix
+                    type="matrix"
+                    values="0.333 0.333 0.333 0 0
+                            0     0     0     0 0
+                            0     0     0     0 0
+                            0     0     0     1 0"
+                  />
+                </filter>
+              </defs>
+            </svg>
+            <div className="flex items-center mb-4">
               <img
-                src="/images/logo.png"
+                src="/images/logo-icon.png"
                 alt="Hard House Coffee Logo"
                 style={{
-                  height: "64px",
+                  height: "72px",
                   width: "auto",
-                  filter: "sepia(1) saturate(2.5) hue-rotate(330deg) brightness(0.75)",
+                  filter: "url(#footer-logo-red)",
+                  mixBlendMode: "screen",
                 }}
               />
-              <div>
-                <h3
-                  style={{
-                    fontFamily: "'Cinzel Decorative', serif",
-                    fontSize: "1rem",
-                    color: "#f2f2f2",
-                    letterSpacing: "0.08em",
-                    marginBottom: "0.2rem",
-                    lineHeight: 1.2,
-                  }}
-                >
-                  HARD HOUSE
-                  <br />
-                  COFFEE
-                </h3>
-              </div>
             </div>
             <p
               style={{
