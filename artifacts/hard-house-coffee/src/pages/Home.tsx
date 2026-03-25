@@ -231,7 +231,7 @@ export default function Home() {
             <p
               style={{
                 fontFamily: "'Dancing Script', cursive",
-                fontSize: "clamp(2rem, 4.5vw, 3.8rem)",
+                fontSize: "clamp(1.5rem, 3.2vw, 2.8rem)",
                 color: "#d4b896",
                 fontWeight: 600,
                 textShadow: "0 2px 12px rgba(0,0,0,0.8)",
