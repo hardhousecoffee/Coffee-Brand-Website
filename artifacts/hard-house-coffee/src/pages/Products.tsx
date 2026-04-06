@@ -115,7 +115,7 @@ const products = [
     badge: "Premium Build",
     badgeColor: "#8b2f2f",
     image: "/images/products/p10.jpg",
-    hoverImage: "/images/products/p13.jpg",
+    hoverImage: "/images/products/bosch-800-hover.jpg",
     pros: ["Milk Express Plus frother", "AROMA+ brewing technology", "HomeConnect app control", "Fully automatic cleaning program"],
   },
   {
