@@ -215,6 +215,8 @@ const products = [
     badgeColor: "#a14f1f",
     image: "/images/products/oxo-brew-main.jpg",
     hoverImage: "/images/products/oxo-brew-hover.jpg",
+    hoverImage2: "/images/products/oxo-brew-hover2.jpg",
+    hoverImage3: "/images/products/oxo-brew-hover3.jpg",
     pros: ["Rainmaker showerhead", "SCA Gold Cup certified", "Stainless thermal carafe", "Brew pause feature"],
   },
   {
@@ -276,7 +278,7 @@ export default function Products() {
   const handleMouseEnter = (product: any) => {
     setHoveredId(product.id);
     setCycleIndex(0);
-    const hoverImages = [product.hoverImage, product.hoverImage2].filter(Boolean);
+    const hoverImages = [product.hoverImage, product.hoverImage2, product.hoverImage3].filter(Boolean);
     if (hoverImages.length > 1) {
       cycleTimerRef.current = setInterval(() => {
         setCycleIndex((prev) => prev + 1);
@@ -390,7 +392,7 @@ export default function Products() {
                 {/* Image with hover swap */}
                 <div className="relative overflow-hidden" style={{ height: "220px" }}>
                   {(() => {
-                    const hoverImages = [product.hoverImage, (product as any).hoverImage2].filter(Boolean) as string[];
+                    const hoverImages = [product.hoverImage, (product as any).hoverImage2, (product as any).hoverImage3].filter(Boolean) as string[];
                     const activeCycleIdx = hoverImages.length > 0 ? cycleIndex % hoverImages.length : 0;
                     return (
                       <>
