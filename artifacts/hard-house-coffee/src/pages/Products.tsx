@@ -146,9 +146,8 @@ const products = [
     reviews: 5341,
     badge: "Easy Clean",
     badgeColor: "#5a3a1a",
-    image: "/images/products/p18.jpg",
+    image: "/images/products/philips-5500-main.jpg",
     hoverImage: "/images/products/philips-5500-hover.jpg",
-    hoverScale: 0.82,
     pros: ["LatteGo milk system (2-part only)", "My Beverage app integration", "5 grind settings", "Auto descaling & cleaning"],
   },
   {
