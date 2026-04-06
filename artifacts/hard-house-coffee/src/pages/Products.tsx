@@ -349,8 +349,8 @@ const products = [
     image: "/images/products/oxo-conical-main.jpg",
     hoverImage: "/images/products/oxo-conical-hover.jpg",
     hoverImage2: "/images/products/oxo-conical-hover2.jpg",
-    mainFit: "contain",
-    mainPosition: "center",
+    mainFit: "cover",
+    mainPosition: "center 40%",
     pros: ["40mm stainless steel conical burrs", "15 grind settings for all brew methods", "Anti-static grounds container for easy use", "One-button start with auto shutoff"],
     specs: [
       { label: "Burr Size", value: "40mm conical" },
