@@ -83,7 +83,7 @@ const products = [
     badge: "Fan Favorite",
     badgeColor: "#a14f1f",
     image: "/images/products/p14.jpg",
-    hoverImage: "/images/products/p12.jpg",
+    hoverImage: "/images/products/barista-touch-hover.jpg",
     pros: ["Guided touchscreen display", "Built-in conical burr grinder", "Auto milk texturing wand", "30 grind settings"],
   },
   {
