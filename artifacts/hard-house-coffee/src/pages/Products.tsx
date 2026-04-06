@@ -98,8 +98,8 @@ const products = [
     reviews: 6823,
     badge: "Best Value",
     badgeColor: "#5a3a1a",
-    image: "/images/products/p15.jpg",
-    hoverImage: "/images/products/p16.jpg",
+    image: "/images/products/ninja-luxe-main.jpg",
+    hoverImage: "/images/products/ninja-luxe-hover.jpg",
     pros: ["20-bar pressure pump", "5 brew styles in one machine", "Built-in steam frother", "Compact countertop footprint"],
   },
   {
