@@ -267,7 +267,8 @@ const products = [
     badgeColor: "#8b2f2f",
     image: "/images/products/fellow-ode-main.jpg",
     hoverImage: "/images/products/fellow-ode-hover.jpg",
-    mainFit: "contain",
+    hoverImage2: "/images/products/fellow-ode-hover2.webp",
+    mainFit: "cover",
     mainPosition: "center",
     pros: ["64mm flat steel burrs for exceptional clarity", "Single-dose hopper with 0.3g retention", "31 grind settings — filter to AeroPress", "Acaia scale compatible anti-static grounds cup"],
     specs: [
