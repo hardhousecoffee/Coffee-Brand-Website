@@ -131,7 +131,7 @@ const products = [
     badge: "Italian Craft",
     badgeColor: "#a14f1f",
     image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6587/6587174_sd.jpg",
-    hoverImage: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6587/6587175cv18d.jpg",
+    hoverImage: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6587/6587174cv1d.jpg",
     pros: ["Ceramic flat burr grinder", "One-touch specialty beverages", "Automatic steam wand", "Compact, stylish footprint"],
   },
   {
@@ -147,7 +147,7 @@ const products = [
     badge: "Easy Clean",
     badgeColor: "#5a3a1a",
     image: "https://assets.wsimgs.com/wsimgs/rk/images/dp/wcm/202543/0004/philips-5500-fully-automatic-espresso-machine-with-lattego-j.jpg",
-    hoverImage: "https://assets.wsimgs.com/wsimgs/rk/images/dp/wcm/202541/0299/philips-5500-fully-automatic-espresso-machine-with-lattego-j.jpg",
+    hoverImage: "https://assets.wsimgs.com/wsimgs/rk/images/dp/wcm/202543/0143/philips-5500-fully-automatic-espresso-machine-with-lattego-1-j.jpg",
     pros: ["LatteGo milk system (2-part only)", "My Beverage app integration", "5 grind settings", "Auto descaling & cleaning"],
   },
   {
