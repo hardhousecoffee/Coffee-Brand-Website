@@ -66,8 +66,8 @@ const products = [
     reviews: 987,
     badge: "Ultra Premium",
     badgeColor: "#8b2f2f",
-    image: "/images/products/p11.jpg",
-    hoverImage: "/images/products/p17.jpg",
+    image: "/images/products/oracle-jet-main.jpg",
+    hoverImage: "/images/products/oracle-jet-hover.jpg",
     pros: ["Fully automated grinding & tamping", "Hands-free milk texturing", "Dual boiler system", "Heated group head for precision"],
   },
   {
