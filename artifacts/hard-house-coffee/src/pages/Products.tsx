@@ -148,7 +148,7 @@ const products = [
     badgeColor: "#5a3a1a",
     image: "/images/products/p18.jpg",
     hoverImage: "/images/products/philips-5500-hover.jpg",
-    mainFit: "contain" as const,
+    hoverScale: 0.82,
     pros: ["LatteGo milk system (2-part only)", "My Beverage app integration", "5 grind settings", "Auto descaling & cleaning"],
   },
   {
@@ -303,7 +303,9 @@ export default function Products() {
                         objectFit: "cover",
                         objectPosition: "center",
                         opacity: isHovered ? 1 : 0,
-                        transform: isHovered ? "scale(1.03)" : "scale(1.01)",
+                        transform: isHovered
+                          ? `scale(${(product as any).hoverScale ?? 1.03})`
+                          : `scale(${(product as any).hoverScale ?? 1.01})`,
                         transition: "opacity 0.55s ease, transform 0.55s ease",
                         filter: "brightness(0.85)",
                       }}
