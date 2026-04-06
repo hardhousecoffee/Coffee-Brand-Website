@@ -152,7 +152,7 @@ const products = [
   },
   {
     id: 10,
-    category: "Coffee Machines",
+    category: "Accessories",
     name: "Fellow Stagg EKG Electric Kettle",
     tagline: "Pour-over perfection. Built for precision.",
     desc: "The Stagg EKG offers precision pour control with a temperature range of 135°F-212°F and a hold mode that maintains your desired temperature for 60 minutes.",
@@ -179,7 +179,7 @@ const products = [
     badge: "Best Drip",
     badgeColor: "#a14f1f",
     image: "/images/product-moccamaster.png",
-    hoverImage: "",
+    hoverImage: "/images/product-moccamaster.jpg",
     pros: ["Brews in 4-6 minutes", "Built to last decades", "Certified by ECBC"],
   },
   {
@@ -194,8 +194,8 @@ const products = [
     reviews: 12847,
     badge: "SCA Certified",
     badgeColor: "#8b2f2f",
-    image: "https://assets.breville.com/cdn-cgi/image/width=1300,format=auto/BDC450/BDC450BSS1BUS1/pdp.png",
-    hoverImage: "https://assets.breville.com/cdn-cgi/image/width=1300,format=auto/BDC450/BDC450BSS1BUS1/carousel-1.png",
+    image: "/images/products/breville-precision-main.jpg",
+    hoverImage: "/images/products/breville-precision-hover.jpg",
     pros: ["SCA Gold Cup certified", "Bloom & brew technology", "60 oz thermal carafe", "Precise temp control 200°F"],
   },
   {
@@ -210,8 +210,8 @@ const products = [
     reviews: 8934,
     badge: "SCA Certified",
     badgeColor: "#a14f1f",
-    image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6405/6405185_sd.jpg",
-    hoverImage: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6405/6405185cv1d.jpg",
+    image: "/images/products/oxo-brew-main.jpg",
+    hoverImage: "/images/products/oxo-brew-hover.jpg",
     pros: ["Rainmaker showerhead", "SCA Gold Cup certified", "Stainless thermal carafe", "Brew pause feature"],
   },
   {
@@ -226,8 +226,8 @@ const products = [
     reviews: 21503,
     badge: "Best Value",
     badgeColor: "#5a3a1a",
-    image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/BVDC/BVDC18OB_sd.jpg",
-    hoverImage: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/BVDC/BVDC18OBcv11d.jpg",
+    image: "/images/products/bonavita-main.jpg",
+    hoverImage: "/images/products/bonavita-hover.jpg",
     pros: ["SCA Gold Cup certified", "Optimal 205°F brew temp", "Flat-bottom brew basket", "Simple one-touch operation"],
   },
   {
@@ -242,8 +242,8 @@ const products = [
     reviews: 89241,
     badge: "Top Seller",
     badgeColor: "#a14f1f",
-    image: "https://www.cuisinart.com/globalassets/cuisinart/products/images/coffee-and-espresso/brewers/dcc-3200p1/dcc-3200p1.jpg",
-    hoverImage: "https://www.cuisinart.com/globalassets/cuisinart/products/images/coffee-and-espresso/brewers/dcc-3200p1/dcc-3200p1-2.jpg",
+    image: "/images/products/cuisinart-3200-main.jpg",
+    hoverImage: "/images/products/cuisinart-3200-hover.jpg",
     pros: ["14-cup capacity", "Adjustable brew strength", "24-hour programmable", "Brew-pause feature"],
   },
   {
@@ -258,8 +258,8 @@ const products = [
     reviews: 34872,
     badge: "Most Versatile",
     badgeColor: "#8b2f2f",
-    image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6313/6313510_sd.jpg",
-    hoverImage: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6313/6313510cv11d.jpg",
+    image: "/images/products/ninja-cm401-main.jpg",
+    hoverImage: "/images/products/ninja-cm401-hover.jpg",
     pros: ["6 brew sizes & styles", "Built-in fold-away frother", "Thermal & glass carafe options", "Specialty concentrate brew"],
   },
 ];
