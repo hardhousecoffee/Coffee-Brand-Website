@@ -18,8 +18,8 @@ const products = [
     reviews: 2134,
     badge: "Editor's Pick",
     badgeColor: "#8b2f2f",
-    image: "/images/products/p1.jpg",
-    hoverImage: "/images/products/p7.jpg",
+    image: "/images/products/la-specialista-main.jpg",
+    hoverImage: "/images/products/la-specialista-hover.jpg",
     pros: ["Sensor grinding with zero retention", "Cold brew extraction built-in", "Active temperature control", "Auto milk frothing system"],
   },
   {
