@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
@@ -197,6 +197,7 @@ const products = [
     badgeColor: "#8b2f2f",
     image: "/images/products/breville-precision-main.jpg",
     hoverImage: "/images/products/breville-precision-hover.jpg",
+    hoverImage2: "/images/products/breville-precision-hover2.jpg",
     pros: ["SCA Gold Cup certified", "Bloom & brew technology", "60 oz thermal carafe", "Precise temp control 200°F"],
   },
   {
@@ -268,6 +269,34 @@ const products = [
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [cycleIndex, setCycleIndex] = useState(0);
+  const cycleTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const handleMouseEnter = (product: any) => {
+    setHoveredId(product.id);
+    setCycleIndex(0);
+    const hoverImages = [product.hoverImage, product.hoverImage2].filter(Boolean);
+    if (hoverImages.length > 1) {
+      cycleTimerRef.current = setInterval(() => {
+        setCycleIndex((prev) => prev + 1);
+      }, 1800);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredId(null);
+    setCycleIndex(0);
+    if (cycleTimerRef.current) {
+      clearInterval(cycleTimerRef.current);
+      cycleTimerRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (cycleTimerRef.current) clearInterval(cycleTimerRef.current);
+    };
+  }, []);
 
   const filtered = activeCategory === "All"
     ? products
@@ -354,43 +383,52 @@ export default function Products() {
                   boxShadow: isHovered ? "0 8px 32px rgba(161,79,31,0.25)" : "none",
                   borderColor: isHovered ? "rgba(161,79,31,0.5)" : "rgba(161,79,31,0.25)",
                 }}
-                onMouseEnter={() => setHoveredId(product.id)}
-                onMouseLeave={() => setHoveredId(null)}
+                onMouseEnter={() => handleMouseEnter(product)}
+                onMouseLeave={handleMouseLeave}
               >
                 {/* Image with hover swap */}
                 <div className="relative overflow-hidden" style={{ height: "220px" }}>
-                  {/* Main image */}
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full absolute inset-0"
-                    style={{
-                      objectFit: (product as any).mainFit || "cover",
-                      objectPosition: (product as any).mainPosition || "center",
-                      opacity: isHovered && product.hoverImage ? 0 : 1,
-                      transform: isHovered ? `scale(${((product as any).mainScale ?? 1) * 1.06})` : `scale(${(product as any).mainScale ?? 1})`,
-                      transition: "opacity 0.55s ease, transform 0.55s ease",
-                      filter: "brightness(0.65)",
-                    }}
-                  />
-                  {/* Hover image */}
-                  {product.hoverImage && (
-                    <img
-                      src={product.hoverImage}
-                      alt={`${product.name} lifestyle`}
-                      className="w-full h-full absolute inset-0"
-                      style={{
-                        objectFit: "cover",
-                        objectPosition: "center",
-                        opacity: isHovered ? 1 : 0,
-                        transform: isHovered
-                          ? `scale(${(product as any).hoverScale ?? 1.03})`
-                          : `scale(${(product as any).hoverScale ?? 1.01})`,
-                        transition: "opacity 0.55s ease, transform 0.55s ease",
-                        filter: "brightness(0.85)",
-                      }}
-                    />
-                  )}
+                  {(() => {
+                    const hoverImages = [product.hoverImage, (product as any).hoverImage2].filter(Boolean) as string[];
+                    const activeCycleIdx = hoverImages.length > 0 ? cycleIndex % hoverImages.length : 0;
+                    return (
+                      <>
+                        {/* Main image */}
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full absolute inset-0"
+                          style={{
+                            objectFit: (product as any).mainFit || "cover",
+                            objectPosition: (product as any).mainPosition || "center",
+                            opacity: isHovered && hoverImages.length > 0 ? 0 : 1,
+                            transform: isHovered ? `scale(${((product as any).mainScale ?? 1) * 1.06})` : `scale(${(product as any).mainScale ?? 1})`,
+                            transition: "opacity 0.55s ease, transform 0.55s ease",
+                            filter: "brightness(0.65)",
+                          }}
+                        />
+                        {/* Hover images — cycle through on timer */}
+                        {hoverImages.map((src, idx) => (
+                          <img
+                            key={idx}
+                            src={src}
+                            alt={`${product.name} view ${idx + 1}`}
+                            className="w-full h-full absolute inset-0"
+                            style={{
+                              objectFit: "cover",
+                              objectPosition: "center",
+                              opacity: isHovered && activeCycleIdx === idx ? 1 : 0,
+                              transform: isHovered && activeCycleIdx === idx
+                                ? `scale(${(product as any).hoverScale ?? 1.03})`
+                                : `scale(${(product as any).hoverScale ?? 1.01})`,
+                              transition: "opacity 0.55s ease, transform 0.55s ease",
+                              filter: "brightness(0.85)",
+                            }}
+                          />
+                        ))}
+                      </>
+                    );
+                  })()}
 
                   {/* Badges */}
                   <div
