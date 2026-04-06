@@ -348,7 +348,8 @@ const products = [
     badgeColor: "#2b6cb0",
     image: "/images/products/oxo-conical-main.jpg",
     hoverImage: "/images/products/oxo-conical-hover.jpg",
-    mainFit: "contain",
+    hoverImage2: "/images/products/oxo-conical-hover2.jpg",
+    mainFit: "cover",
     mainPosition: "center",
     pros: ["40mm stainless steel conical burrs", "15 grind settings for all brew methods", "Anti-static grounds container for easy use", "One-button start with auto shutoff"],
     specs: [
