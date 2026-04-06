@@ -178,8 +178,8 @@ const products = [
     reviews: 3102,
     badge: "Best Drip",
     badgeColor: "#a14f1f",
-    image: "/images/product-moccamaster.png",
-    hoverImage: "/images/product-moccamaster.jpg",
+    image: "/images/products/moccamaster-main.jpg",
+    hoverImage: "/images/products/moccamaster-hover.webp",
     pros: ["Brews in 4-6 minutes", "Built to last decades", "Certified by ECBC"],
   },
   {
