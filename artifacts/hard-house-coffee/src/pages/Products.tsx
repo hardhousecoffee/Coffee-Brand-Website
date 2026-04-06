@@ -297,14 +297,12 @@ export default function Products() {
                       alt={`${product.name} lifestyle`}
                       className="w-full h-full absolute inset-0"
                       style={{
-                        objectFit: "contain",
+                        objectFit: "cover",
                         objectPosition: "center",
                         opacity: isHovered ? 1 : 0,
                         transform: isHovered ? "scale(1.03)" : "scale(1.01)",
                         transition: "opacity 0.55s ease, transform 0.55s ease",
                         filter: "brightness(0.85)",
-                        background: "#131313",
-                        padding: "12px",
                       }}
                     />
                   )}
