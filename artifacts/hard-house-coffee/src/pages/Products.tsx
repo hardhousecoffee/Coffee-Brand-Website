@@ -368,6 +368,36 @@ const products = [
     ],
   },
 
+  {
+    id: 49,
+    category: "Accessories",
+    subcategory: "Grinders",
+    name: "Turin DF54 Single Dose Flat Burr Grinder",
+    tagline: "54mm flat burrs. Single-dose precision. Unbeatable value.",
+    desc: "The Turin DF54 V3/V4 delivers specialty-grade flat burr performance at an entry-level price. Its 54mm stainless steel burrs produce an exceptionally uniform grind with low retention — rivaling grinders twice the price. The magnetic grounds cup, stepless adjustment collar, and cork-topped single-dose funnel make it the sleekest budget-to-mid grinder on the market.",
+    price: "$229",
+    originalPrice: "$279",
+    rating: 4.8,
+    reviews: 2841,
+    badge: "Best Value Flat Burr",
+    badgeColor: "#8b2f2f",
+    image: "/images/products/turin-df54-main.jpg",
+    hoverImage: "/images/products/turin-df54-hover.jpg",
+    hoverImage2: "/images/products/turin-df54-hover2.webp",
+    hoverImage3: "/images/products/turin-df54-hover3.jpg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["54mm stainless steel flat burrs", "Stepless micro-adjustment collar", "Near-zero retention single-dose design", "Magnetic grounds cup with anti-static coating"],
+    specs: [
+      { label: "Burr Size", value: "54mm flat steel" },
+      { label: "Adjustment", value: "Stepless collar" },
+      { label: "Retention", value: "<0.2g" },
+      { label: "RPM", value: "1350 rpm" },
+      { label: "Hopper", value: "Single-dose funnel" },
+      { label: "Weight", value: "4.1 lbs" },
+    ],
+  },
+
   // ── COASTERS ──────────────────────────────────────────────
   {
     id: 21,
