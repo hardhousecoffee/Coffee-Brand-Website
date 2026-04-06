@@ -180,7 +180,7 @@ const products = [
     badgeColor: "#a14f1f",
     image: "/images/products/moccamaster-main.jpg",
     hoverImage: "/images/products/moccamaster-hover.webp",
-    mainScale: 0.82,
+    mainPosition: "center 30%",
     pros: ["Brews in 4-6 minutes", "Built to last decades", "Certified by ECBC"],
   },
   {
@@ -366,7 +366,7 @@ export default function Products() {
                     className="w-full h-full absolute inset-0"
                     style={{
                       objectFit: (product as any).mainFit || "cover",
-                      objectPosition: "center",
+                      objectPosition: (product as any).mainPosition || "center",
                       opacity: isHovered && product.hoverImage ? 0 : 1,
                       transform: isHovered ? `scale(${((product as any).mainScale ?? 1) * 1.06})` : `scale(${(product as any).mainScale ?? 1})`,
                       transition: "opacity 0.55s ease, transform 0.55s ease",
