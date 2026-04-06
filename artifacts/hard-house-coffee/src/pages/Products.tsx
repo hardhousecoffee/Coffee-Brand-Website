@@ -99,7 +99,7 @@ const products = [
     badge: "Best Value",
     badgeColor: "#5a3a1a",
     image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/c3a8b2d5-2788-441e-979f-d49086c35c84.jpg",
-    hoverImage: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/8d69ecc3-20ad-40f6-af10-5cc57c3536b8.jpg",
+    hoverImage: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/d4924496-945c-4224-8e70-4c296aa4e128.jpg",
     pros: ["20-bar pressure pump", "5 brew styles in one machine", "Built-in steam frother", "Compact countertop footprint"],
   },
   {
