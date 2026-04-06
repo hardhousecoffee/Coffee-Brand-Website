@@ -319,8 +319,10 @@ const products = [
     badge: "Best Value",
     badgeColor: "#2b6cb0",
     image: "/images/products/breville-smart-grinder-main.jpg",
-    hoverImage: "/images/products/breville-smart-grinder-hover.jpg",
-    mainFit: "contain",
+    hoverImage: "/images/products/breville-smart-grinder-hover.webp",
+    hoverImage2: "/images/products/breville-smart-grinder-hover2.jpg",
+    hoverImage3: "/images/products/breville-smart-grinder-hover3.jpg",
+    mainFit: "cover",
     mainPosition: "center",
     pros: ["60 precise grind settings via LCD dial", "Dose by time for shots, cups, or carafes", "60mm conical stainless steel burrs", "18oz sealed hopper with safety lock"],
     specs: [
