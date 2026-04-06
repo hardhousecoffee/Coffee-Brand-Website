@@ -180,6 +180,7 @@ const products = [
     badgeColor: "#a14f1f",
     image: "/images/products/moccamaster-main.jpg",
     hoverImage: "/images/products/moccamaster-hover.webp",
+    hoverImage2: "/images/products/moccamaster-hover2.webp",
     mainPosition: "center 30%",
     pros: ["Brews in 4-6 minutes", "Built to last decades", "Certified by ECBC"],
   },
