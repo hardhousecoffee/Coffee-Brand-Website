@@ -35,7 +35,7 @@ const products = [
     badge: "Best Seller",
     badgeColor: "#a14f1f",
     image: "/images/products/p2.jpg",
-    hoverImage: "/images/products/p4.jpg",
+    hoverImage: "/images/products/eletta-explore-hover.jpg",
     pros: ["One-touch cold brew", "LatteCrema Hot & Cold frother", "12 beverages on demand", "Built-in conical grinder"],
   },
   {
