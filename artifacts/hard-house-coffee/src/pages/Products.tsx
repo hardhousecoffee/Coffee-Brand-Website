@@ -130,7 +130,7 @@ const products = [
     reviews: 1876,
     badge: "Italian Craft",
     badgeColor: "#a14f1f",
-    image: "/images/products/p9.jpg",
+    image: "/images/products/gaggia-magenta-main.jpg",
     hoverImage: "/images/products/p8.jpg",
     pros: ["Ceramic flat burr grinder", "One-touch specialty beverages", "Automatic steam wand", "Compact, stylish footprint"],
   },
