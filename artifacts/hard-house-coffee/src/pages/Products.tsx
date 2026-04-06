@@ -3,8 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
 
-const categories = ["All", "Espresso Machines", "Coffee Machines", "Accessories"];
-const accessorySubcategories = ["All Accessories", "Kettles", "Grinders", "Coasters", "Barista Sets", "Milk Frothers", "Stirring Spoons", "Insulated Mugs", "Steaming Pitchers", "Glass Mugs"];
+const categories = ["All", "Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories"];
+const accessorySubcategories = ["All Accessories", "Kettles", "Coasters", "Barista Sets", "Milk Frothers", "Stirring Spoons", "Insulated Mugs", "Steaming Pitchers", "Glass Mugs"];
 
 const products = [
   {
@@ -257,8 +257,7 @@ const products = [
   },
   {
     id: 17,
-    category: "Accessories",
-    subcategory: "Grinders",
+    category: "Coffee Grinders",
     name: "Fellow Ode Brew Grinder Gen 2",
     tagline: "Precision flat burrs. Barista-grade results at home.",
     desc: "The Ode Gen 2 is Fellow's acclaimed flat burr grinder, rebuilt with next-generation 64mm steel burrs for stunning clarity and consistency in every cup. Single-dose focused with near-zero retention, it's the grinder coffee enthusiasts actually save up for.",
@@ -285,8 +284,7 @@ const products = [
   },
   {
     id: 18,
-    category: "Accessories",
-    subcategory: "Grinders",
+    category: "Coffee Grinders",
     name: "Baratza Encore ESP",
     tagline: "Espresso-grade precision. Everyday approachability.",
     desc: "The Encore ESP is Baratza's most complete entry-level grinder — engineered with a stepped micro-adjustment ring for espresso-level control. With 40 grind settings spanning Turkish to French press, it covers every brew method with professional-grade Mahlkönig-sourced burrs.",
@@ -312,8 +310,7 @@ const products = [
   },
   {
     id: 19,
-    category: "Accessories",
-    subcategory: "Grinders",
+    category: "Coffee Grinders",
     name: "Breville Smart Grinder Pro",
     tagline: "60 grind settings. One perfect cup.",
     desc: "The Smart Grinder Pro brings professional consistency to your kitchen countertop. With 60 grind settings dialed via an intuitive LCD display, you can dose by time for single or double shots, cups of drip, or full carafes. The 18oz hopper handles family-sized demands.",
@@ -341,8 +338,7 @@ const products = [
   },
   {
     id: 20,
-    category: "Accessories",
-    subcategory: "Grinders",
+    category: "Coffee Grinders",
     name: "OXO Brew Conical Burr Grinder",
     tagline: "Simple operation. Specialty-grade results.",
     desc: "The OXO Brew Conical Burr delivers barista-quality grinding at an accessible price point. Its stainless steel burrs produce an even, uniform grind across 15 settings from espresso-fine to French press coarse. One button. One cup. No fuss.",
@@ -370,8 +366,7 @@ const products = [
 
   {
     id: 49,
-    category: "Accessories",
-    subcategory: "Grinders",
+    category: "Coffee Grinders",
     name: "Turin DF54 Single Dose Flat Burr Grinder",
     tagline: "54mm flat burrs. Single-dose precision. Unbeatable value.",
     desc: "The Turin DF54 V3/V4 delivers specialty-grade flat burr performance at an entry-level price. Its 54mm stainless steel burrs produce an exceptionally uniform grind with low retention — rivaling grinders twice the price. The magnetic grounds cup, stepless adjustment collar, and cork-topped single-dose funnel make it the sleekest budget-to-mid grinder on the market.",
