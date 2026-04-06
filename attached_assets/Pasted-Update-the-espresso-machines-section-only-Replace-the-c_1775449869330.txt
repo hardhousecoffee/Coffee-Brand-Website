@@ -1,0 +1,48 @@
+Update the espresso machines section only.
+
+Replace the current espresso machine listings with these 9 espresso machines:
+
+1. De’Longhi La Specialista Touch Espresso Machine with Cold Brew & Automatic Frothing
+2. De’Longhi Eletta Explore Fully Automatic Espresso Machine with Cold Brew Technology
+3. De’Longhi Dinamica Plus Fully Automatic Espresso Machine
+4. Breville Oracle Jet Espresso Machine
+5. Breville Barista Touch Espresso Machine
+6. Ninja Luxe Café Pro Espresso Machine
+7. Bosch 800 Series Fully Automatic Espresso Machine with Milk Express Plus, Black
+8. Gaggia Magenta Prestige Super-Automatic Espresso Machine
+9. Philips 5500 LatteGo Super Automatic Espresso Machine
+
+For each espresso machine card:
+- keep the existing premium card layout
+- keep product title
+- add a short premium tagline
+- add a detailed description paragraph
+- add 3 to 4 feature bullet points
+- add star rating and review count
+- add current price and original crossed-out price
+- keep the View Product and Read Review buttons
+
+Images:
+- use catalog lifestyle images only
+- use professionally shot brand or retailer style images
+- use real kitchen or countertop scenes
+- show the machine clearly
+- use drinks in the scene when appropriate
+- do not use social media style images
+- do not use user-generated images
+- do not use plain white background product cutouts
+
+Image behavior:
+- use 2 images per espresso machine card
+- main image = clean front-facing catalog lifestyle image
+- hover image = second angle or drinks/lifestyle catalog image of the same machine
+- on hover, smoothly switch from the main image to the hover image
+- add a slight premium zoom effect on hover
+
+Style:
+- keep the current dark premium Hard House Coffee design
+- keep the current black, dark brown, brick red, and dark orange palette
+- keep the current spacing, typography, and premium feel
+
+Goal:
+Create a fully upgraded espresso machines section with 9 premium espresso machine cards, each with full product details, catalog lifestyle images, and hover image swap.

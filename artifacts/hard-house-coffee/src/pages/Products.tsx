@@ -9,65 +9,149 @@ const products = [
   {
     id: 1,
     category: "Espresso Machines",
-    name: "Breville Barista Express",
-    tagline: "Built-in grinder. Cafe-quality espresso at home.",
-    desc: "The Barista Express delivers third wave specialty coffee at home using the 4 keys formula and a revolutionary grinding cradle which allows you to grind directly into the portafilter.",
-    price: "$699",
-    originalPrice: "$799",
+    name: "De'Longhi La Specialista Touch",
+    tagline: "Cold brew to espresso. One machine, limitless craft.",
+    desc: "The La Specialista Touch combines sensor grinding, active temperature control, and cold brew extraction in a single machine. Designed for those who demand full creative control without sacrificing convenience.",
+    price: "$999",
+    originalPrice: "$1,199",
     rating: 4.8,
-    reviews: 3247,
+    reviews: 2134,
     badge: "Editor's Pick",
     badgeColor: "#8b2f2f",
-    image: "/images/product-breville.png",
-    pros: ["Built-in conical burr grinder", "Precise espresso extraction", "Steam wand for milk frothing"],
+    image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
+    pros: ["Sensor grinding with zero retention", "Cold brew extraction built-in", "Active temperature control", "Auto milk frothing system"],
   },
   {
     id: 2,
     category: "Espresso Machines",
-    name: "De'Longhi La Specialista Arte",
-    tagline: "Precision grinding meets barista-level control.",
-    desc: "With its sensor grinding technology, you can grind with absolute precision for a consistent grind every time, with zero retention. Pair with the active temperature control for perfect espresso shots.",
-    price: "$799",
-    originalPrice: "$999",
+    name: "De'Longhi Eletta Explore",
+    tagline: "Full automation. Cold brew reimagined.",
+    desc: "The Eletta Explore is a fully automatic machine that brings cold brew technology into your daily routine. With LatteCrema Hot & Cold, it crafts 12 signature beverages at the touch of a button.",
+    price: "$1,299",
+    originalPrice: "$1,499",
     rating: 4.7,
-    reviews: 1823,
-    badge: "Best Value",
+    reviews: 1456,
+    badge: "Best Seller",
     badgeColor: "#a14f1f",
-    image: "/images/product-delonghi.png",
-    pros: ["Smart tamping station", "Dual heating system", "Active temperature control"],
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+    pros: ["One-touch cold brew", "LatteCrema Hot & Cold frother", "12 beverages on demand", "Built-in conical grinder"],
   },
   {
     id: 3,
     category: "Espresso Machines",
-    name: "Gaggia Classic Pro",
-    tagline: "Timeless Italian engineering. Serious espresso.",
-    desc: "The Gaggia Classic Pro is a commercial-grade home espresso machine with a commercial 58mm portafilter and a 3-way solenoid valve, allowing you to pull perfect espresso shots every time.",
-    price: "$499",
-    originalPrice: "$549",
+    name: "De'Longhi Dinamica Plus",
+    tagline: "Smart brewing. Endless possibilities.",
+    desc: "The Dinamica Plus features an intuitive 8.9\" touchscreen and the My LatteCrema system for perfectly textured hot and cold milk. Create and save your custom drink recipes with ease.",
+    price: "$749",
+    originalPrice: "$899",
     rating: 4.6,
-    reviews: 2418,
-    badge: "Top Rated",
+    reviews: 3211,
+    badge: "Smart Pick",
     badgeColor: "#5a3a1a",
-    image: "/images/product-gaggia.png",
-    pros: ["Commercial 58mm portafilter", "3-way solenoid valve", "Commercial steam wand"],
+    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+    pros: ["8.9\" TFT color touchscreen", "My LatteCrema milk system", "Customizable saved recipes", "Integrated bean-to-cup grinder"],
   },
   {
     id: 4,
     category: "Espresso Machines",
-    name: "Rancilio Silvia Pro X",
-    tagline: "Professional dual boiler. Home barista's dream.",
-    desc: "The Silvia Pro X features a dual boiler system with independent temperature control for both the brew boiler and the steam boiler, eliminating heat-up time between steam and brew.",
-    price: "$1,299",
-    originalPrice: "$1,499",
+    name: "Breville Oracle Jet",
+    tagline: "Hands-free barista. Zero compromise.",
+    desc: "The Oracle Jet automates every step of the espresso-making process — from grinding and tamping to milk texturing — delivering third-wave specialty coffee at the press of a button.",
+    price: "$1,999",
+    originalPrice: "$2,299",
     rating: 4.9,
-    reviews: 876,
-    badge: "Premium Pick",
+    reviews: 987,
+    badge: "Ultra Premium",
     badgeColor: "#8b2f2f",
-    image: "/images/product-rancilio.png",
-    pros: ["Dual boiler system", "PID temperature control", "No wait between steam and brew"],
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+    pros: ["Fully automated grinding & tamping", "Hands-free milk texturing", "Dual boiler system", "Heated group head for precision"],
   },
   {
     id: 5,
+    category: "Espresso Machines",
+    name: "Breville Barista Touch",
+    tagline: "Guided espresso. Effortless mastery.",
+    desc: "The Barista Touch features a guided touchscreen interface that walks you through every step of the brew process, from grind size to milk temperature — making barista-level espresso approachable for all.",
+    price: "$999",
+    originalPrice: "$1,199",
+    rating: 4.8,
+    reviews: 4562,
+    badge: "Fan Favorite",
+    badgeColor: "#a14f1f",
+    image: "https://images.unsplash.com/photo-1542181961-9590d0c79dab?w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1512568400610-1c4dc68ee2f0?w=800&q=80",
+    pros: ["Guided touchscreen display", "Built-in conical burr grinder", "Auto milk texturing wand", "30 grind settings"],
+  },
+  {
+    id: 6,
+    category: "Espresso Machines",
+    name: "Ninja Luxe Café Pro",
+    tagline: "Premium café drinks. Ninja-engineered precision.",
+    desc: "The Ninja Luxe Café Pro delivers up to 20 bars of pressure for rich, authentic espresso. Five brew styles and a built-in frother make it the most versatile machine in its class.",
+    price: "$279",
+    originalPrice: "$349",
+    rating: 4.5,
+    reviews: 6823,
+    badge: "Best Value",
+    badgeColor: "#5a3a1a",
+    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&q=80",
+    pros: ["20-bar pressure pump", "5 brew styles in one machine", "Built-in steam frother", "Compact countertop footprint"],
+  },
+  {
+    id: 7,
+    category: "Espresso Machines",
+    name: "Bosch 800 Series Espresso",
+    tagline: "German engineering. Barista perfection.",
+    desc: "The Bosch 800 Series brings Milk Express Plus technology and AROMA+ brewing to your countertop. Control every setting remotely with the Home Connect app for a seamless coffee ritual.",
+    price: "$1,499",
+    originalPrice: "$1,699",
+    rating: 4.7,
+    reviews: 1234,
+    badge: "Premium Build",
+    badgeColor: "#8b2f2f",
+    image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&q=80",
+    pros: ["Milk Express Plus frother", "AROMA+ brewing technology", "HomeConnect app control", "Fully automatic cleaning program"],
+  },
+  {
+    id: 8,
+    category: "Espresso Machines",
+    name: "Gaggia Magenta Prestige",
+    tagline: "Super-automatic. Authentically Italian.",
+    desc: "The Magenta Prestige combines Gaggia's legendary Italian espresso heritage with modern super-automatic convenience. Its ceramic flat burr grinder ensures a consistent, flavorful grind every time.",
+    price: "$599",
+    originalPrice: "$749",
+    rating: 4.6,
+    reviews: 1876,
+    badge: "Italian Craft",
+    badgeColor: "#a14f1f",
+    image: "https://images.unsplash.com/photo-1554502078-ef0fc409efce?w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1521302200778-33500af27a8c?w=800&q=80",
+    pros: ["Ceramic flat burr grinder", "One-touch specialty beverages", "Automatic steam wand", "Compact, stylish footprint"],
+  },
+  {
+    id: 9,
+    category: "Espresso Machines",
+    name: "Philips 5500 LatteGo",
+    tagline: "LatteGo frother. Effortless milk magic.",
+    desc: "The Philips 5500 features the award-winning LatteGo milk system — the fastest, easiest-to-clean frother on the market. Paired with 5 grind settings and app connectivity, it's precision without pretension.",
+    price: "$699",
+    originalPrice: "$849",
+    rating: 4.7,
+    reviews: 5341,
+    badge: "Easy Clean",
+    badgeColor: "#5a3a1a",
+    image: "https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1533923156502-be31530547c4?w=800&q=80",
+    pros: ["LatteGo milk system (2-part only)", "My Beverage app integration", "5 grind settings", "Auto descaling & cleaning"],
+  },
+  {
+    id: 10,
     category: "Coffee Machines",
     name: "Fellow Stagg EKG Electric Kettle",
     tagline: "Pour-over perfection. Built for precision.",
@@ -79,10 +163,11 @@ const products = [
     badge: "Most Popular",
     badgeColor: "#8b2f2f",
     image: "/images/product-fellow.png",
+    hoverImage: "",
     pros: ["±0.5° temperature accuracy", "Hold mode up to 60 min", "Precision pour spout"],
   },
   {
-    id: 6,
+    id: 11,
     category: "Coffee Machines",
     name: "Technivorm Moccamaster KB",
     tagline: "Dutch precision. Perfect drip every time.",
@@ -94,12 +179,14 @@ const products = [
     badge: "Best Drip",
     badgeColor: "#a14f1f",
     image: "/images/product-moccamaster.png",
+    hoverImage: "",
     pros: ["Brews in 4-6 minutes", "Built to last decades", "Certified by ECBC"],
   },
 ];
 
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const filtered = activeCategory === "All"
     ? products
@@ -169,154 +256,162 @@ export default function Products() {
 
         {/* Product grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((product) => (
-            <div
-              key={product.id}
-              style={{
-                background: "#131313",
-                borderRadius: "10px",
-                border: "1px solid rgba(161,79,31,0.25)",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = "translateY(-4px)";
-                el.style.boxShadow = "0 8px 32px rgba(161,79,31,0.25)";
-                el.style.borderColor = "rgba(161,79,31,0.5)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = "translateY(0)";
-                el.style.boxShadow = "none";
-                el.style.borderColor = "rgba(161,79,31,0.25)";
-              }}
-            >
+          {filtered.map((product) => {
+            const isHovered = hoveredId === product.id;
+            return (
               <div
-                className="relative overflow-hidden"
-                style={{ height: "220px" }}
+                key={product.id}
+                style={{
+                  background: "#131313",
+                  borderRadius: "10px",
+                  border: "1px solid rgba(161,79,31,0.25)",
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+                  transform: isHovered ? "translateY(-4px)" : "translateY(0)",
+                  boxShadow: isHovered ? "0 8px 32px rgba(161,79,31,0.25)" : "none",
+                  borderColor: isHovered ? "rgba(161,79,31,0.5)" : "rgba(161,79,31,0.25)",
+                }}
+                onMouseEnter={() => setHoveredId(product.id)}
+                onMouseLeave={() => setHoveredId(null)}
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                  style={{ filter: "brightness(0.6)", transition: "transform 0.5s ease" }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "scale(1.05)";
-                    e.currentTarget.style.filter = "brightness(0.75)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "scale(1)";
-                    e.currentTarget.style.filter = "brightness(0.6)";
-                  }}
-                />
-                <div
-                  className="absolute top-3 left-3 px-2 py-1"
-                  style={{
-                    background: product.badgeColor,
-                    borderRadius: "4px",
-                    fontSize: "0.6rem",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    color: "#f2f2f2",
-                    fontWeight: 700,
-                    zIndex: 2,
-                  }}
-                >
-                  {product.badge}
-                </div>
-                <div
-                  className="absolute top-3 right-3 px-2 py-1"
-                  style={{
-                    background: "rgba(11,11,11,0.8)",
-                    borderRadius: "4px",
-                    fontSize: "0.65rem",
-                    color: "#a14f1f",
-                    fontWeight: 600,
-                    zIndex: 2,
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  {product.category}
-                </div>
-              </div>
-
-              <div className="p-6 flex flex-col flex-1">
-                <h3
-                  style={{
-                    fontSize: "1rem",
-                    fontWeight: 700,
-                    color: "#f2f2f2",
-                    marginBottom: "0.3rem",
-                  }}
-                >
-                  {product.name}
-                </h3>
-                <p style={{ fontSize: "0.78rem", color: "#a14f1f", marginBottom: "0.8rem", fontStyle: "italic" }}>
-                  {product.tagline}
-                </p>
-                <p style={{ fontSize: "0.8rem", color: "#b0a090", lineHeight: 1.6, marginBottom: "1rem" }}>
-                  {product.desc}
-                </p>
-
-                {/* Pros */}
-                <ul className="mb-4">
-                  {product.pros.map((pro) => (
-                    <li
-                      key={pro}
+                {/* Image with hover swap */}
+                <div className="relative overflow-hidden" style={{ height: "220px" }}>
+                  {/* Main image */}
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover absolute inset-0"
+                    style={{
+                      opacity: isHovered && product.hoverImage ? 0 : 1,
+                      transform: isHovered ? "scale(1.06)" : "scale(1)",
+                      transition: "opacity 0.55s ease, transform 0.55s ease",
+                      filter: "brightness(0.65)",
+                    }}
+                  />
+                  {/* Hover image */}
+                  {product.hoverImage && (
+                    <img
+                      src={product.hoverImage}
+                      alt={`${product.name} lifestyle`}
+                      className="w-full h-full object-cover absolute inset-0"
                       style={{
-                        fontSize: "0.78rem",
-                        color: "#c0a880",
-                        marginBottom: "0.3rem",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
+                        opacity: isHovered ? 1 : 0,
+                        transform: isHovered ? "scale(1.06)" : "scale(1.01)",
+                        transition: "opacity 0.55s ease, transform 0.55s ease",
+                        filter: "brightness(0.65)",
                       }}
-                    >
-                      <span style={{ color: "#a14f1f", fontSize: "0.9rem" }}>✓</span>
-                      {pro}
-                    </li>
-                  ))}
-                </ul>
+                    />
+                  )}
 
-                {/* Stars */}
-                <div className="flex items-center gap-2 mb-3">
-                  <div style={{ color: "#a14f1f", fontSize: "0.9rem" }}>
-                    {"★".repeat(Math.floor(product.rating))}
+                  {/* Badges */}
+                  <div
+                    className="absolute top-3 left-3 px-2 py-1"
+                    style={{
+                      background: product.badgeColor,
+                      borderRadius: "4px",
+                      fontSize: "0.6rem",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "#f2f2f2",
+                      fontWeight: 700,
+                      zIndex: 2,
+                    }}
+                  >
+                    {product.badge}
                   </div>
-                  <span style={{ fontSize: "0.75rem", color: "#b0a090" }}>
-                    {product.rating} ({product.reviews.toLocaleString()} reviews)
-                  </span>
+                  <div
+                    className="absolute top-3 right-3 px-2 py-1"
+                    style={{
+                      background: "rgba(11,11,11,0.8)",
+                      borderRadius: "4px",
+                      fontSize: "0.65rem",
+                      color: "#a14f1f",
+                      fontWeight: 600,
+                      zIndex: 2,
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    {product.category}
+                  </div>
                 </div>
 
-                {/* Price */}
-                <div className="flex items-center gap-3 mb-4">
-                  <span style={{ fontSize: "1.4rem", fontWeight: 700, color: "#f2f2f2" }}>
-                    {product.price}
-                  </span>
-                  <span style={{ fontSize: "0.9rem", color: "#6b5a4e", textDecoration: "line-through" }}>
-                    {product.originalPrice}
-                  </span>
-                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3
+                    style={{
+                      fontSize: "1rem",
+                      fontWeight: 700,
+                      color: "#f2f2f2",
+                      marginBottom: "0.3rem",
+                    }}
+                  >
+                    {product.name}
+                  </h3>
+                  <p style={{ fontSize: "0.78rem", color: "#a14f1f", marginBottom: "0.8rem", fontStyle: "italic" }}>
+                    {product.tagline}
+                  </p>
+                  <p style={{ fontSize: "0.8rem", color: "#b0a090", lineHeight: 1.6, marginBottom: "1rem" }}>
+                    {product.desc}
+                  </p>
 
-                <div className="flex flex-col gap-2 mt-auto">
-                  <button className="btn-primary w-full" style={{ fontSize: "0.78rem" }}>
-                    Buy Now
-                  </button>
-                  <div className="flex gap-2">
-                    <button className="btn-secondary flex-1" style={{ fontSize: "0.72rem" }}>
-                      View Product
+                  {/* Pros */}
+                  <ul className="mb-4">
+                    {product.pros.map((pro) => (
+                      <li
+                        key={pro}
+                        style={{
+                          fontSize: "0.78rem",
+                          color: "#c0a880",
+                          marginBottom: "0.3rem",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "0.5rem",
+                        }}
+                      >
+                        <span style={{ color: "#a14f1f", fontSize: "0.9rem" }}>✓</span>
+                        {pro}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Stars */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <div style={{ color: "#a14f1f", fontSize: "0.9rem" }}>
+                      {"★".repeat(Math.floor(product.rating))}
+                    </div>
+                    <span style={{ fontSize: "0.75rem", color: "#b0a090" }}>
+                      {product.rating} ({product.reviews.toLocaleString()} reviews)
+                    </span>
+                  </div>
+
+                  {/* Price */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <span style={{ fontSize: "1.4rem", fontWeight: 700, color: "#f2f2f2" }}>
+                      {product.price}
+                    </span>
+                    <span style={{ fontSize: "0.9rem", color: "#6b5a4e", textDecoration: "line-through" }}>
+                      {product.originalPrice}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col gap-2 mt-auto">
+                    <button className="btn-primary w-full" style={{ fontSize: "0.78rem" }}>
+                      Buy Now
                     </button>
-                    <button className="btn-dark flex-1" style={{ fontSize: "0.72rem" }}>
-                      Read Review
-                    </button>
+                    <div className="flex gap-2">
+                      <button className="btn-secondary flex-1" style={{ fontSize: "0.72rem" }}>
+                        View Product
+                      </button>
+                      <button className="btn-dark flex-1" style={{ fontSize: "0.72rem" }}>
+                        Read Review
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
