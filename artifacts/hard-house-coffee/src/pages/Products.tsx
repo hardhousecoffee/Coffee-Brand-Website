@@ -163,7 +163,7 @@ const products = [
     badge: "Most Popular",
     badgeColor: "#8b2f2f",
     image: "/images/product-fellow.png",
-    hoverImage: "",
+    hoverImage: "/images/products/fellow-stagg-hover.webp",
     pros: ["±0.5° temperature accuracy", "Hold mode up to 60 min", "Precision pour spout"],
   },
   {
