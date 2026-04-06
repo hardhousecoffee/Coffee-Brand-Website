@@ -147,7 +147,8 @@ const products = [
     badge: "Easy Clean",
     badgeColor: "#5a3a1a",
     image: "/images/products/p18.jpg",
-    hoverImage: "/images/products/p3.jpg",
+    hoverImage: "/images/products/philips-5500-hover.jpg",
+    mainFit: "contain" as const,
     pros: ["LatteGo milk system (2-part only)", "My Beverage app integration", "5 grind settings", "Auto descaling & cleaning"],
   },
   {
@@ -282,8 +283,10 @@ export default function Products() {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover absolute inset-0"
+                    className="w-full h-full absolute inset-0"
                     style={{
+                      objectFit: (product as any).mainFit || "cover",
+                      objectPosition: "center",
                       opacity: isHovered && product.hoverImage ? 0 : 1,
                       transform: isHovered ? "scale(1.06)" : "scale(1)",
                       transition: "opacity 0.55s ease, transform 0.55s ease",
