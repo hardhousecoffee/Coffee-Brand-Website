@@ -50,7 +50,7 @@ const products = [
     reviews: 3211,
     badge: "Smart Pick",
     badgeColor: "#5a3a1a",
-    image: "/images/products/p5.jpg",
+    image: "/images/products/dinamica-plus-main.jpg",
     hoverImage: "/images/products/p6.jpg",
     pros: ["8.9\" TFT color touchscreen", "My LatteCrema milk system", "Customizable saved recipes", "Integrated bean-to-cup grinder"],
   },
