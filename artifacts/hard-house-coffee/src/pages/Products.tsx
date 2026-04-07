@@ -552,6 +552,26 @@ const products = [
     mainPosition: "center",
     pros: ["4-in-1: hot foam, cold foam, hot milk, hot choc", "Detachable jug for easy pour & clean", "Brushed stainless steel construction", "Silent operation with auto shut-off"],
   },
+  {
+    id: 62,
+    category: "Accessories",
+    subcategory: "Milk Frothers",
+    name: "Nespresso Aeroccino 4 Milk Frother",
+    tagline: "Four modes. One iconic frother.",
+    desc: "The Nespresso Aeroccino 4 is the frother that defined the category. Four touch-button modes — cold foam, hot milk, dense hot foam, and light hot foam — are all accessible via illuminated icons on the base. The mirror-polished ribbed stainless body makes it the most striking frother on any counter, and the cordless jug pours with complete freedom.",
+    price: "$99.00",
+    rating: 4.8,
+    reviews: 19432,
+    badge: "Iconic Design",
+    badgeColor: "#8b2f2f",
+    image: "/images/products/nespresso-aeroccino4-main.jpeg",
+    hoverImage: "/images/products/nespresso-aeroccino4-hover1.jpeg",
+    hoverImage2: "/images/products/nespresso-aeroccino4-hover2.jpeg",
+    hoverImage3: "/images/products/nespresso-aeroccino4-hover3.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["4 illuminated touch-button modes", "Cold foam, hot milk & two hot foam settings", "Cordless mirror-polished ribbed jug", "Auto shut-off with keep-warm base"],
+  },
 ];
 
 export default function Products() {
