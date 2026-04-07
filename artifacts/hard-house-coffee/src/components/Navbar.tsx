@@ -5,6 +5,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
+  { label: "Merch", href: "/merch" },
 ];
 
 const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });

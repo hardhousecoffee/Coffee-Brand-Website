@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
 
-const categories = ["All", "Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories"];
+const categories = ["All", "Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories", "Merch"];
 const accessorySubcategories = ["All Accessories", "Kettles", "Milk Frothers", "Barista Sets", "Coffee Mugs"];
+const merchSubcategories = ["All Merch", "Apparel", "Hats", "Drinkware", "Stickers"];
 
 const products = [
   {
@@ -700,8 +702,10 @@ const products = [
 ];
 
 export default function Products() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [activeSubcategory, setActiveSubcategory] = useState("All Accessories");
+  const [location] = useLocation();
+  const isMerchRoute = location === "/merch";
+  const [activeCategory, setActiveCategory] = useState(isMerchRoute ? "Merch" : "All");
+  const [activeSubcategory, setActiveSubcategory] = useState(isMerchRoute ? "All Merch" : "All Accessories");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [cycleIndex, setCycleIndex] = useState(0);
   const cycleTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -734,10 +738,17 @@ export default function Products() {
 
   const filtered = (() => {
     if (activeCategory === "All") return products;
-    if (activeCategory !== "Accessories") return products.filter((p) => p.category === activeCategory);
-    const acc = products.filter((p) => p.category === "Accessories");
-    if (activeSubcategory === "All Accessories") return acc;
-    return acc.filter((p) => (p as any).subcategory === activeSubcategory);
+    if (activeCategory === "Accessories") {
+      const acc = products.filter((p) => p.category === "Accessories");
+      if (activeSubcategory === "All Accessories") return acc;
+      return acc.filter((p) => (p as any).subcategory === activeSubcategory);
+    }
+    if (activeCategory === "Merch") {
+      const merch = products.filter((p) => p.category === "Merch");
+      if (activeSubcategory === "All Merch") return merch;
+      return merch.filter((p) => (p as any).subcategory === activeSubcategory);
+    }
+    return products.filter((p) => p.category === activeCategory);
   })();
 
   return (
@@ -768,7 +779,12 @@ export default function Products() {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => { setActiveCategory(cat); setActiveSubcategory("All Accessories"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              onClick={() => {
+                setActiveCategory(cat);
+                if (cat === "Merch") setActiveSubcategory("All Merch");
+                else setActiveSubcategory("All Accessories");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               style={{
                 padding: "0.45rem 1.2rem",
                 borderRadius: "6px",
@@ -815,6 +831,33 @@ export default function Products() {
           </div>
         )}
 
+        {/* Merch subcategory filter */}
+        {activeCategory === "Merch" && (
+          <div className="flex flex-wrap gap-2 mb-10">
+            {merchSubcategories.map((sub) => (
+              <button
+                key={sub}
+                onClick={() => { setActiveSubcategory(sub); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                style={{
+                  padding: "0.3rem 0.9rem",
+                  borderRadius: "20px",
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  transition: "all 0.25s ease",
+                  background: activeSubcategory === sub ? "rgba(161,79,31,0.2)" : "transparent",
+                  color: activeSubcategory === sub ? "#d4b896" : "#7a6a5a",
+                  border: activeSubcategory === sub ? "1px solid rgba(161,79,31,0.5)" : "1px solid rgba(161,79,31,0.12)",
+                }}
+              >
+                {sub}
+              </button>
+            ))}
+          </div>
+        )}
+
         {/* Affiliate disclosure */}
         <div
           className="mb-8 p-4"
@@ -828,6 +871,30 @@ export default function Products() {
         >
           <strong style={{ color: "#a14f1f" }}>Affiliate Disclosure:</strong> Hard House Coffee may earn a commission when you purchase through our links — at no extra cost to you. We only recommend gear we've personally tested and trust.
         </div>
+
+        {/* Empty state for categories with no products */}
+        {filtered.length === 0 && (
+          <div
+            className="flex flex-col items-center justify-center py-24 text-center"
+            style={{ borderRadius: "10px", border: "1px dashed rgba(161,79,31,0.25)", background: "#0f0f0f" }}
+          >
+            <div style={{ fontSize: "3rem", marginBottom: "1rem", opacity: 0.4 }}>☕</div>
+            <h3
+              style={{
+                fontFamily: "'Cinzel Decorative', serif",
+                fontSize: "1.1rem",
+                color: "#d4b896",
+                letterSpacing: "0.08em",
+                marginBottom: "0.75rem",
+              }}
+            >
+              Coming Soon
+            </h3>
+            <p style={{ color: "#7a6a5a", fontSize: "0.9rem", maxWidth: "340px", lineHeight: 1.7 }}>
+              We're curating something worth wearing. Hard House Coffee merch drops soon — check back shortly.
+            </p>
+          </div>
+        )}
 
         {/* Product grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
