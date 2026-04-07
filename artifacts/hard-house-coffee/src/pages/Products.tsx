@@ -164,8 +164,8 @@ const products = [
     reviews: 5621,
     badge: "Most Popular",
     badgeColor: "#8b2f2f",
-    image: "https://clivecoffee.com/cdn/shop/files/StaggEKGPro-MatteBlack-Base.jpg?v=1684379925&width=640",
-    hoverImage: "https://grandmotherroastery.com/wp-content/uploads/2023/01/Fellow-Stagg-EKG-Electric-Pour-Over-Kettle-%E2%80%93-Black-1536x1536.jpg",
+    image: "/images/product-fellow.png",
+    hoverImage: "/images/products/fellow-stagg-hover.webp",
     pros: ["±0.5° temperature accuracy", "Hold mode up to 60 min", "Precision pour spout"],
   },
   {
