@@ -613,6 +613,27 @@ const products = [
     mainPosition: "center",
     pros: ["16 oz capacity — Ember's largest vessel", "3-hour battery life with app temperature control", "IPX7 waterproof — fully submersible", "Carry handle & sip-through travel lid"],
   },
+  {
+    id: 65,
+    category: "Accessories",
+    subcategory: "Coffee Mugs",
+    name: "Ember Travel Mug 2",
+    tagline: "Precision temperature. Built for the commute.",
+    desc: "The Ember Travel Mug 2 is the smart mug engineered for life on the move. The built-in LED temperature display lets you read the exact heat of your drink at a glance — no phone needed. The tapered grip fits most car cup holders, and the leak-proof lid keeps every sip contained. With up to 3 hours of battery and all-day warmth on the included charging coaster, your coffee never gets cold again.",
+    price: "$199.95",
+    rating: 4.6,
+    reviews: 11284,
+    badge: "LED Display",
+    badgeColor: "#5a3a1a",
+    image: "/images/products/ember-travel-mug2-main.jpeg",
+    hoverImage: "/images/products/ember-travel-mug2-hover1.jpeg",
+    hoverImage2: "/images/products/ember-travel-mug2-hover2.jpeg",
+    hoverImage3: "/images/products/ember-travel-mug2-hover3.jpeg",
+    hoverImage4: "/images/products/ember-travel-mug2-hover4.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["On-mug LED temperature display", "Tapered design fits car cup holders", "Leak-proof lid for on-the-go sipping", "3-hour battery + charging coaster included"],
+  },
 ];
 
 export default function Products() {
