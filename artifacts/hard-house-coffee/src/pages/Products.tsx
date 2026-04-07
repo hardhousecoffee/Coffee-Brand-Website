@@ -634,6 +634,27 @@ const products = [
     mainPosition: "center",
     pros: ["On-mug LED temperature display", "Tapered design fits car cup holders", "Leak-proof lid for on-the-go sipping", "3-hour battery + charging coaster included"],
   },
+  {
+    id: 66,
+    category: "Accessories",
+    subcategory: "Coffee Mugs",
+    name: "Nextmug Self-Heating Coffee Mug",
+    tagline: "Three heat settings. Zero cold coffee.",
+    desc: "The Nextmug by Nextboom takes a refreshingly simple approach to smart heating — three clearly labelled heat modes (Warm 130°F, Hot 140°F, Piping 150°F) selectable with a single button press on the base. No app required. The wireless charging coaster keeps it topped up between sips, and the wide-mouth barrel shape feels like a proper coffee mug rather than a gadget.",
+    price: "$79.95",
+    rating: 4.4,
+    reviews: 6218,
+    badge: "No App Needed",
+    badgeColor: "#2b1e16",
+    image: "/images/products/nextmug-main.jpeg",
+    hoverImage: "/images/products/nextmug-hover1.jpeg",
+    hoverImage2: "/images/products/nextmug-hover2.jpeg",
+    hoverImage3: "/images/products/nextmug-hover3.jpeg",
+    hoverImage4: "/images/products/nextmug-hover4.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["3 heat settings: Warm / Hot / Piping", "Single-button control — no app required", "Wireless charging coaster included", "Wide-mouth barrel for a proper mug feel"],
+  },
 ];
 
 export default function Products() {
