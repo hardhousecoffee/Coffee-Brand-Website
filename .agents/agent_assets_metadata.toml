@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "IBMqFi3pRM8pwFhrKRsj-"
+uri = "file://artifacts/hard-house-coffee/public/images/products/merch-tshirt-main.png"
+type = "image"
+title = "black tshirt flat lay merch"
+
+[[generated]]
+id = "aI7UkZK5qO1yO8tnAzsOK"
+uri = "file://artifacts/hard-house-coffee/public/images/products/merch-hoodie-main.png"
+type = "image"
+title = "black hoodie flat lay merch"
+
+[[generated]]
+id = "R0fSsIDf3hZdGyGhfte5X"
+uri = "file://artifacts/hard-house-coffee/public/images/products/merch-tshirt-hover1.png"
+type = "image"
+title = "black tshirt on rack dark"
+
+[[generated]]
+id = "pBgI8NMX9pp8Sdj5R006S"
+uri = "file://artifacts/hard-house-coffee/public/images/products/merch-hoodie-hover1.png"
+type = "image"
+title = "black hoodie on rack dark"
