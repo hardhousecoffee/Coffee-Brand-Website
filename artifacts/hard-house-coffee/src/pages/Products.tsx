@@ -533,6 +533,25 @@ const products = [
     mainPosition: "center",
     pros: ["Hot & cold frothing modes", "One-touch button controls", "Large-capacity stainless jug", "Quiet induction heating system"],
   },
+  {
+    id: 61,
+    category: "Accessories",
+    subcategory: "Milk Frothers",
+    name: "Secura Detachable Milk Frother (Hot & Cold Foam)",
+    tagline: "4-in-1 frothing. Detachable. Effortless.",
+    desc: "The Secura Detachable Milk Frother is a 4-in-1 powerhouse that handles hot milk foam, cold milk foam, hot milk, and hot chocolate — all from a single brushed stainless vessel. The detachable jug lifts straight off the base for easy pouring and dishwasher-safe cleanup, making it the most practical frother on any serious coffee counter.",
+    price: "$45.99",
+    rating: 4.6,
+    reviews: 12847,
+    badge: "4-in-1",
+    badgeColor: "#5a3a1a",
+    image: "/images/products/secura-frother-main.jpeg",
+    hoverImage: "/images/products/secura-frother-hover1.webp",
+    hoverImage2: "/images/products/secura-frother-hover2.webp",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["4-in-1: hot foam, cold foam, hot milk, hot choc", "Detachable jug for easy pour & clean", "Brushed stainless steel construction", "Silent operation with auto shut-off"],
+  },
 ];
 
 export default function Products() {
