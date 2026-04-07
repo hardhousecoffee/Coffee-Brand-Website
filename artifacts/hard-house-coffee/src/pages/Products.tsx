@@ -513,6 +513,26 @@ const products = [
     mainPosition: "center",
     pros: ["Induction heating — no scorching", "Dial control for latte, cap & flat", "Stainless jug with non-stick interior", "Works with dairy & non-dairy milks"],
   },
+  {
+    id: 60,
+    category: "Accessories",
+    subcategory: "Milk Frothers",
+    name: "DeLonghi LatteMix Cold & Hot Frother",
+    tagline: "Hot or cold. Froth on demand.",
+    desc: "The De'Longhi LatteMix does it all — hot foam for lattes and cappuccinos, warm milk for flat whites, and cold froth for iced drinks, all at the touch of a button. Its large-capacity stainless jug, one-touch controls, and quiet induction motor make it the most versatile countertop frother for serious coffee drinkers.",
+    price: "$89.95",
+    rating: 4.6,
+    reviews: 5234,
+    badge: "Hot & Cold",
+    badgeColor: "#2b6cb0",
+    image: "/images/products/delonghi-lattemix-main.jpeg",
+    hoverImage: "/images/products/delonghi-lattemix-hover1.jpeg",
+    hoverImage2: "/images/products/delonghi-lattemix-hover2.jpeg",
+    hoverImage3: "/images/products/delonghi-lattemix-hover3.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["Hot & cold frothing modes", "One-touch button controls", "Large-capacity stainless jug", "Quiet induction heating system"],
+  },
 ];
 
 export default function Products() {
