@@ -877,6 +877,27 @@ const products = [
     pros: ["V4 tamper + leveler/distributor combo", "WDT needle stirrer & dosing ring", "Puck screen included", "Org mat keeps tools station-ready"],
   },
   {
+    id: 55,
+    category: "Accessories",
+    subcategory: "Barista Sets",
+    name: "Normcore Barista Complete Essentials Kit - With Portafilter",
+    tagline: "The full barista station. Portafilter included.",
+    desc: "Normcore's Complete Barista Essentials Kit takes their precision-engineered tool lineup one step further — adding a bottomless portafilter to the set. Includes the V4 tamper, leveler/distributor, WDT needle stirrer, portafilter brush, and an oak organizational board. Crafted from stainless steel and finished in matte white, this is the complete counter setup for the serious home barista.",
+    price: "$389.00",
+    rating: 4.9,
+    reviews: 1563,
+    badge: "Complete Set",
+    badgeColor: "#8b2f2f",
+    image: "/images/products/normcore-complete-main.jpeg",
+    hoverImage: "/images/products/normcore-complete-hover1.jpeg",
+    hoverImage2: "/images/products/normcore-complete-hover2.jpeg",
+    hoverImage3: "/images/products/normcore-complete-hover3.jpeg",
+    hoverImage4: "/images/products/normcore-complete-hover4.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["Bottomless portafilter included", "V4 tamper + leveler/distributor", "WDT needle stirrer & portafilter brush", "Oak organizational display board"],
+  },
+  {
     id: 46,
     category: "Accessories",
     subcategory: "Barista Sets",
@@ -1016,7 +1037,7 @@ export default function Products() {
   const handleMouseEnter = (product: any) => {
     setHoveredId(product.id);
     setCycleIndex(0);
-    const hoverImages = [product.hoverImage, product.hoverImage2, product.hoverImage3].filter(Boolean);
+    const hoverImages = [product.hoverImage, product.hoverImage2, product.hoverImage3, product.hoverImage4].filter(Boolean);
     if (hoverImages.length > 1) {
       cycleTimerRef.current = setInterval(() => {
         setCycleIndex((prev) => prev + 1);
@@ -1161,7 +1182,7 @@ export default function Products() {
                 {/* Image with hover swap */}
                 <div className="relative overflow-hidden" style={{ height: "220px" }}>
                   {(() => {
-                    const hoverImages = [product.hoverImage, (product as any).hoverImage2, (product as any).hoverImage3].filter(Boolean) as string[];
+                    const hoverImages = [product.hoverImage, (product as any).hoverImage2, (product as any).hoverImage3, (product as any).hoverImage4].filter(Boolean) as string[];
                     const activeCycleIdx = hoverImages.length > 0 ? cycleIndex % hoverImages.length : 0;
                     return (
                       <>
