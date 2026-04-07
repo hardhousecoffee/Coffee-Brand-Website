@@ -1,5 +1,7 @@
 import { Link } from "wouter";
 
+const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: "#0b0b0b", borderTop: "1px solid rgba(161,79,31,0.2)" }}>
@@ -87,6 +89,7 @@ export default function Footer() {
             ].map((link) => (
               <Link key={link.href} href={link.href}>
                 <div
+                  onClick={scrollTop}
                   style={{
                     color: "#b0a090",
                     fontSize: "0.85rem",
@@ -150,6 +153,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Bottom bar */}
         <div
           style={{
             borderTop: "1px solid rgba(161,79,31,0.15)",
@@ -158,12 +162,63 @@ export default function Footer() {
             justifyContent: "space-between",
             alignItems: "center",
             flexWrap: "wrap",
-            gap: "0.5rem",
+            gap: "0.75rem",
           }}
         >
           <p style={{ color: "#6b5a4e", fontSize: "0.78rem" }}>
             © 2025 Hard House Coffee. All rights reserved.
           </p>
+
+          {/* Back to Top button */}
+          <button
+            onClick={scrollTop}
+            aria-label="Back to top"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.45rem",
+              background: "transparent",
+              border: "1px solid rgba(161,79,31,0.35)",
+              borderRadius: "6px",
+              padding: "0.4rem 0.9rem",
+              color: "#b0a090",
+              fontSize: "0.72rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              cursor: "pointer",
+              transition: "all 0.25s ease",
+              fontWeight: 600,
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "#a14f1f";
+              (e.currentTarget as HTMLElement).style.color = "#d4b896";
+              (e.currentTarget as HTMLElement).style.background = "rgba(161,79,31,0.1)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.35)";
+              (e.currentTarget as HTMLElement).style.color = "#b0a090";
+              (e.currentTarget as HTMLElement).style.background = "transparent";
+            }}
+          >
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ flexShrink: 0 }}
+            >
+              <path
+                d="M6 9.5V2.5M6 2.5L2.5 6M6 2.5L9.5 6"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Back to Top
+          </button>
+
           <p style={{ color: "#6b5a4e", fontSize: "0.78rem" }}>
             This site may contain affiliate links.
           </p>

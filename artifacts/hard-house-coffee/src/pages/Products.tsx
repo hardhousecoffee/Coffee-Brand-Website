@@ -1055,7 +1055,7 @@ export default function Products() {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => { setActiveCategory(cat); setActiveSubcategory("All Accessories"); }}
+              onClick={() => { setActiveCategory(cat); setActiveSubcategory("All Accessories"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
               style={{
                 padding: "0.45rem 1.2rem",
                 borderRadius: "6px",
@@ -1081,7 +1081,7 @@ export default function Products() {
             {accessorySubcategories.map((sub) => (
               <button
                 key={sub}
-                onClick={() => setActiveSubcategory(sub)}
+                onClick={() => { setActiveSubcategory(sub); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                 style={{
                   padding: "0.3rem 0.9rem",
                   borderRadius: "20px",

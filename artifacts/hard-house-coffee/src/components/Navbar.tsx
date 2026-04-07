@@ -7,6 +7,8 @@ const navLinks = [
   { label: "About", href: "/about" },
 ];
 
+const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,10 +42,12 @@ export default function Navbar() {
             <Link key={link.href} href={link.href}>
               <span
                 className="nav-link"
+                onClick={scrollTop}
                 style={{
                   color: location === link.href ? "#a14f1f" : "#f2f2f2",
                   borderBottom: location === link.href ? "1px solid #a14f1f" : "none",
                   paddingBottom: "2px",
+                  cursor: "pointer",
                 }}
               >
                 {link.label}
@@ -59,10 +63,12 @@ export default function Navbar() {
             <Link key={link.href} href={link.href}>
               <span
                 className="nav-link"
+                onClick={scrollTop}
                 style={{
                   color: location === link.href ? "#a14f1f" : "#f2f2f2",
                   borderBottom: location === link.href ? "1px solid #a14f1f" : "none",
                   paddingBottom: "2px",
+                  cursor: "pointer",
                 }}
               >
                 {link.label}
@@ -72,6 +78,7 @@ export default function Navbar() {
           <Link href="/products">
             <button
               className="btn-primary"
+              onClick={scrollTop}
               style={{ padding: "0.45rem 1.2rem", fontSize: "0.75rem" }}
             >
               Shop Gear
@@ -83,11 +90,13 @@ export default function Navbar() {
         <div className="md:hidden flex items-center justify-between w-full">
           <Link href="/">
             <span
+              onClick={scrollTop}
               style={{
                 fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.75rem",
                 color: "#f2f2f2",
                 letterSpacing: "0.1em",
+                cursor: "pointer",
               }}
             >
               HHC
@@ -135,7 +144,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
               <div
-                onClick={() => setMenuOpen(false)}
+                onClick={() => { setMenuOpen(false); scrollTop(); }}
                 style={{
                   padding: "0.8rem 0",
                   borderBottom: "1px solid rgba(161,79,31,0.1)",
@@ -153,7 +162,7 @@ export default function Navbar() {
           <Link href="/products">
             <button
               className="btn-primary w-full mt-4"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => { setMenuOpen(false); scrollTop(); }}
             >
               Shop Gear
             </button>
