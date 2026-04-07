@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
 
 const categories = ["All", "Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories"];
-const accessorySubcategories = ["All Accessories", "Kettles", "Barista Sets"];
+const accessorySubcategories = ["All Accessories", "Kettles", "Milk Frothers", "Barista Sets"];
 
 const products = [
   {
@@ -493,6 +493,25 @@ const products = [
     mainFit: "cover",
     mainPosition: "center",
     pros: ["Integrated knock box + puck prep station", "Tamper, distributor & puck screen included", "Portafilter holder & dosing funnel slots", "Available in walnut wood or matte black"],
+  },
+  {
+    id: 59,
+    category: "Accessories",
+    subcategory: "Milk Frothers",
+    name: "Breville Milk Café Electric Frother",
+    tagline: "Café-quality foam. Every single cup.",
+    desc: "The Breville Milk Café is the gold standard in countertop milk frothing. Its induction heating system brings milk to the perfect temperature without scorching, while the dial-controlled frothing disc lets you choose between silky microfoam for lattes, thick froth for cappuccinos, or a flat warm milk for cortados. All stainless, all precise, all Breville.",
+    price: "$99.95",
+    rating: 4.7,
+    reviews: 8412,
+    badge: "Best Frother",
+    badgeColor: "#8b2f2f",
+    image: "/images/products/breville-milk-cafe-main.jpeg",
+    hoverImage: "/images/products/breville-milk-cafe-hover1.jpeg",
+    hoverImage2: "/images/products/breville-milk-cafe-hover2.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["Induction heating — no scorching", "Dial control for latte, cap & flat", "Stainless jug with non-stick interior", "Works with dairy & non-dairy milks"],
   },
 ];
 
