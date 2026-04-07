@@ -453,6 +453,27 @@ const products = [
     mainPosition: "center",
     pros: ["Hand-assembled walnut & maple hardwood", "Integrated knock box + tamp station", "SAI precision-machined stainless tools", "Lifetime heirloom quality build"],
   },
+  {
+    id: 57,
+    category: "Accessories",
+    subcategory: "Barista Sets",
+    name: "IKAPE 3-Piece Precision Extraction Bundle with Impact Coffee Tamper Dual-Bearing Distributor",
+    tagline: "Impact tamper. Gyroscope distributor. Zero compromise.",
+    desc: "IKAPE's 3-Piece Precision Extraction Bundle is built for baristas who demand exactness from every pull. The bundle pairs IKAPE's signature Impact Tamper — featuring a precision spring mechanism for consistent 30lb pressure — with their Gyroscope Dual-Bearing Distributor for perfectly leveled pucks, plus a walnut-board tamp station that keeps everything organized on your counter.",
+    price: "$249.00",
+    rating: 4.8,
+    reviews: 1874,
+    badge: "Precision Bundle",
+    badgeColor: "#8b2f2f",
+    image: "/images/products/ikape-bundle-main.png",
+    hoverImage: "/images/products/ikape-bundle-hover1.jpeg",
+    hoverImage2: "/images/products/ikape-bundle-hover2.png",
+    hoverImage3: "/images/products/ikape-bundle-hover3.png",
+    hoverImage4: "/images/products/ikape-bundle-hover4.png",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["Impact tamper with 30lb spring pressure", "Gyroscope dual-bearing distributor", "Walnut tamp station included", "CNC-machined aluminum & stainless steel"],
+  },
 ];
 
 export default function Products() {
