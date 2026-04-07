@@ -593,6 +593,26 @@ const products = [
     mainPosition: "center",
     pros: ["Maintains temp 120°F–145°F for up to 80 min", "All-day warmth on included charging coaster", "Control via app or touch on mug", "Matte ceramic-coated stainless interior"],
   },
+  {
+    id: 64,
+    category: "Accessories",
+    subcategory: "Coffee Mugs",
+    name: "Ember Tumbler with Temperature Control",
+    tagline: "Grande capacity. Precise temperature. On the go.",
+    desc: "The Ember Tumbler is Ember's biggest and most capable vessel yet — a 16 oz travel tumbler that keeps your drink at the exact temperature you set for up to 3 hours on a single charge. IPX7 waterproof rated, so it survives a full soak or rinse. The carry handle and sip-through lid make it the ideal commute companion for anyone serious about their coffee temperature.",
+    price: "$179.95",
+    rating: 4.7,
+    reviews: 8923,
+    badge: "16 oz",
+    badgeColor: "#2b1e16",
+    image: "/images/products/ember-tumbler-main.jpeg",
+    hoverImage: "/images/products/ember-tumbler-hover1.jpeg",
+    hoverImage2: "/images/products/ember-tumbler-hover2.jpeg",
+    hoverImage3: "/images/products/ember-tumbler-hover3.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["16 oz capacity — Ember's largest vessel", "3-hour battery life with app temperature control", "IPX7 waterproof — fully submersible", "Carry handle & sip-through travel lid"],
+  },
 ];
 
 export default function Products() {
