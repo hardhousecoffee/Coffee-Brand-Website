@@ -433,6 +433,26 @@ const products = [
     mainPosition: "center",
     pros: ["Bottomless portafilter included", "V4 tamper + leveler/distributor", "WDT needle stirrer & portafilter brush", "Oak organizational display board"],
   },
+  {
+    id: 56,
+    category: "Accessories",
+    subcategory: "Barista Sets",
+    name: "Saint Anthony Industries Barista Kit - The Bloc Party Espresso Tool Kit + Knock Box + Tamp Station",
+    tagline: "Handcrafted hardwood. Studio-grade espresso prep.",
+    desc: "Saint Anthony Industries' Bloc Party is the most refined barista workstation in the world. Hand-assembled from walnut and maple hardwood, it integrates a tamper station, distribution tool holder, and a built-in knock box into a single solid-wood block. Every SAI tool is machined to aerospace tolerances and designed to last a lifetime — this is counter craft at its finest.",
+    price: "$595.00",
+    rating: 5.0,
+    reviews: 312,
+    badge: "Artisan Craft",
+    badgeColor: "#5a3a1a",
+    image: "/images/products/sai-bloc-party-main.jpeg",
+    hoverImage: "/images/products/sai-bloc-party-hover1.jpeg",
+    hoverImage2: "/images/products/sai-bloc-party-hover2.jpeg",
+    hoverImage3: "/images/products/sai-bloc-party-hover3.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["Hand-assembled walnut & maple hardwood", "Integrated knock box + tamp station", "SAI precision-machined stainless tools", "Lifetime heirloom quality build"],
+  },
 ];
 
 export default function Products() {
