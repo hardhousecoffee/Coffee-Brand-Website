@@ -474,6 +474,26 @@ const products = [
     mainPosition: "center",
     pros: ["Impact tamper with 30lb spring pressure", "Gyroscope dual-bearing distributor", "Walnut tamp station included", "CNC-machined aluminum & stainless steel"],
   },
+  {
+    id: 58,
+    category: "Accessories",
+    subcategory: "Barista Sets",
+    name: "IKAPE V5 Knock Box Puck Prep Set",
+    tagline: "All-in-one puck prep. Station built-in.",
+    desc: "The IKAPE V5 Knock Box Puck Prep Set is a complete espresso workflow station — tamper, distributor, puck screen, dosing funnel, portafilter holder, and a large integrated knock box, all housed in a single handsome wood or matte-black unit. Every tool snaps into its own dedicated slot so your counter stays clean and your workflow stays efficient shot after shot.",
+    price: "$189.00",
+    rating: 4.8,
+    reviews: 2103,
+    badge: "All-in-One",
+    badgeColor: "#8b2f2f",
+    image: "/images/products/ikape-v5-main.webp",
+    hoverImage: "/images/products/ikape-v5-hover1.jpeg",
+    hoverImage2: "/images/products/ikape-v5-hover2.jpeg",
+    hoverImage3: "/images/products/ikape-v5-hover3.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["Integrated knock box + puck prep station", "Tamper, distributor & puck screen included", "Portafilter holder & dosing funnel slots", "Available in walnut wood or matte black"],
+  },
 ];
 
 export default function Products() {
