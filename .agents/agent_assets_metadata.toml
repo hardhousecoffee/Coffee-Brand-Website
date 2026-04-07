@@ -24,3 +24,27 @@ id = "pBgI8NMX9pp8Sdj5R006S"
 uri = "file://artifacts/hard-house-coffee/public/images/products/merch-hoodie-hover1.png"
 type = "image"
 title = "black hoodie on rack dark"
+
+[[generated]]
+id = "yLiepMy4TcSyWAmpEzPS8"
+uri = "file://artifacts/hard-house-coffee/public/images/products/blank-tshirt.png"
+type = "image"
+title = "plain blank black tshirt"
+
+[[generated]]
+id = "g9XxQvTrea1KhgW_-RI6J"
+uri = "file://artifacts/hard-house-coffee/public/images/products/blank-hoodie.png"
+type = "image"
+title = "plain blank black hoodie"
+
+[[generated]]
+id = "dpiqGAsCMGgzSXE1n-MyT"
+uri = "file://artifacts/hard-house-coffee/public/images/products/blank-tshirt-dark.png"
+type = "image"
+title = "plain black tshirt dark background"
+
+[[generated]]
+id = "Tr6R0djkCGKFYuP7V2KAa"
+uri = "file://artifacts/hard-house-coffee/public/images/products/blank-hoodie-dark.png"
+type = "image"
+title = "plain black hoodie dark background"
