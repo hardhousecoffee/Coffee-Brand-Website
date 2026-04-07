@@ -676,6 +676,27 @@ const products = [
     mainPosition: "center",
     pros: ["Hand-glazed artist-series ceramic exterior", "Wireless coaster doubles as Qi phone charger", "Continuous heat — no buttons or app needed", "Multiple colorway glazes available"],
   },
+  {
+    id: 68,
+    category: "Accessories",
+    subcategory: "Coffee Mugs",
+    name: "OHOM Ui Self-Heating Ceramic Mug Set",
+    tagline: "Minimalist ceramic. Infinite warmth.",
+    desc: "The OHOM Ui Self-Heating Ceramic Mug Set strips smart heating back to its purest form. Set the mug on its brushed aluminium coaster and your drink stays at the perfect temperature — indefinitely, automatically, silently. The same coaster wirelessly charges your phone, AirPods, or any Qi-compatible device. Clean matte ceramic, no display, no app, no noise. Just warmth, exactly when you need it.",
+    price: "$118.00",
+    rating: 4.6,
+    reviews: 5872,
+    badge: "Always Warm",
+    badgeColor: "#8b2f2f",
+    image: "/images/products/ohom-ui-ceramic-main.jpeg",
+    hoverImage: "/images/products/ohom-ui-ceramic-hover1.jpeg",
+    hoverImage2: "/images/products/ohom-ui-ceramic-hover2.jpeg",
+    hoverImage3: "/images/products/ohom-ui-ceramic-hover3.jpeg",
+    hoverImage4: "/images/products/ohom-ui-ceramic-hover4.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["Continuous warmth — no timer, no shutoff", "Brushed aluminium Qi charging coaster", "Charges phone, AirPods & Qi devices", "Matte ceramic with ceramic lid included"],
+  },
 ];
 
 export default function Products() {
