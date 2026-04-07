@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
 
 const categories = ["All", "Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories"];
-const accessorySubcategories = ["All Accessories", "Kettles", "Milk Frothers", "Barista Sets"];
+const accessorySubcategories = ["All Accessories", "Kettles", "Milk Frothers", "Barista Sets", "Coffee Mugs"];
 
 const products = [
   {
@@ -571,6 +571,27 @@ const products = [
     mainFit: "cover",
     mainPosition: "center",
     pros: ["4 illuminated touch-button modes", "Cold foam, hot milk & two hot foam settings", "Cordless mirror-polished ribbed jug", "Auto shut-off with keep-warm base"],
+  },
+  {
+    id: 63,
+    category: "Accessories",
+    subcategory: "Coffee Mugs",
+    name: "Ember Smart Mug 2 Temperature Control",
+    tagline: "Your perfect temperature. Always.",
+    desc: "The Ember Smart Mug 2 keeps your coffee or tea at the exact temperature you set — from 120°F to 145°F — for up to 80 minutes on a single charge or all day on the included charging coaster. Control it from the Ember app or right on the mug itself. Minimal, matte-finished, and built for the serious coffee drinker who refuses to drink it cold.",
+    price: "$149.95",
+    rating: 4.7,
+    reviews: 28341,
+    badge: "App-Controlled",
+    badgeColor: "#8b2f2f",
+    image: "/images/products/ember-mug2-main.jpeg",
+    hoverImage: "/images/products/ember-mug2-hover1.jpeg",
+    hoverImage2: "/images/products/ember-mug2-hover2.jpeg",
+    hoverImage3: "/images/products/ember-mug2-hover3.jpeg",
+    hoverImage4: "/images/products/ember-mug2-hover4.jpeg",
+    mainFit: "cover",
+    mainPosition: "center",
+    pros: ["Maintains temp 120°F–145°F for up to 80 min", "All-day warmth on included charging coaster", "Control via app or touch on mug", "Matte ceramic-coated stainless interior"],
   },
 ];
 
