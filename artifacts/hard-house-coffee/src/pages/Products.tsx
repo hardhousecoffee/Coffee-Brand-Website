@@ -659,7 +659,7 @@ const products = [
     id: 67,
     category: "Accessories",
     subcategory: "Coffee Mugs",
-    name: "OHOM Ui Artist Self-Heating Mug Set",
+    name: "OHOM Ui Artist Collection Self-Heating Mug Set",
     tagline: "Art-glazed ceramic. Precision heat. Dual purpose.",
     desc: "The OHOM Ui Artist Mug Set is where craft pottery meets smart technology. Each mug is finished in a hand-glazed artist-series ceramic exterior — speckled stone, ocean blue, blush gradient — and pairs with a wireless charging coaster that doubles as a Qi phone charger. Temperature is maintained continuously while the mug sits on its coaster, no buttons, no apps, no compromise.",
     price: "$128.00",
