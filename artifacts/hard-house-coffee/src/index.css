@@ -401,7 +401,7 @@ a, button {
      *   500px → max(-136px,-136px) = -136px  (12px gap) ✓
      *   768px → max(-216px,-136px) = -136px  (12px gap) ✓  no overlap
      */
-    margin-top: max(calc(-29.7vw + 12px), -136px) !important;
+    margin-top: max(calc(-29.7vw + 36px), -112px) !important;
   }
 
   /* Tighten title */
