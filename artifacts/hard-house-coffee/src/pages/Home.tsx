@@ -100,6 +100,7 @@ function VideoSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [loaded, setLoaded] = useState(false);
+  const [muted, setMuted] = useState(true);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -124,6 +125,13 @@ function VideoSection() {
     observer.observe(container);
     return () => observer.disconnect();
   }, []);
+
+  function toggleMute() {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setMuted(video.muted);
+  }
 
   return (
     <section style={{ backgroundColor: "#0b0b0b" }}>
@@ -154,7 +162,8 @@ function VideoSection() {
             transition: "opacity 0.8s ease",
           }}
         />
-        {/* Bottom fade into the next section */}
+
+        {/* Bottom fade */}
         <div
           style={{
             position: "absolute",
@@ -164,6 +173,35 @@ function VideoSection() {
             pointerEvents: "none",
           }}
         />
+
+        {/* Mute toggle */}
+        {loaded && (
+          <button
+            onClick={toggleMute}
+            title={muted ? "Unmute" : "Mute"}
+            style={{
+              position: "absolute",
+              bottom: "20px",
+              right: "20px",
+              background: "rgba(11,11,11,0.65)",
+              border: "1px solid rgba(242,242,242,0.2)",
+              borderRadius: "50%",
+              width: "40px",
+              height: "40px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              backdropFilter: "blur(8px)",
+              transition: "background 0.2s ease",
+              zIndex: 3,
+              color: "#f2f2f2",
+              fontSize: "16px",
+            }}
+          >
+            {muted ? "🔇" : "🔊"}
+          </button>
+        )}
       </div>
     </section>
   );
