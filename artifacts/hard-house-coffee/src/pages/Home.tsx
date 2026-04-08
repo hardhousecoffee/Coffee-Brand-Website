@@ -297,6 +297,7 @@ export default function Home() {
         >
           {/* Logo — centered horizontally, sits in upper portion */}
           <div
+            className="hero-logo-wrap"
             style={{
               position: "absolute",
               top: "50%",
@@ -309,6 +310,7 @@ export default function Home() {
             <img
               src="/images/logo-icon.png"
               alt="Hard House Coffee"
+              className="hero-logo-img"
               style={{
                 height: "clamp(300px, 45vw, 550px)",
                 width: "auto",
@@ -341,10 +343,11 @@ export default function Home() {
                 fontWeight: 700,
                 color: "#f2f2f2",
                 textShadow: [
-                  "0 2px 18px rgba(0,0,0,0.75)",
-                  "0 0 18px rgba(164,87,58,0.28)",
-                  "0 0 35px rgba(164,87,58,0.16)",
-                  "0 0 60px rgba(164,87,58,0.08)",
+                  "0 2px 16px rgba(0,0,0,0.8)",
+                  "0 0 12px rgba(164,87,58,0.55)",
+                  "0 0 28px rgba(164,87,58,0.35)",
+                  "0 0 55px rgba(164,87,58,0.18)",
+                  "0 0 90px rgba(164,87,58,0.09)",
                 ].join(", "),
                 letterSpacing: "0.12em",
                 whiteSpace: "nowrap",
@@ -828,7 +831,7 @@ export default function Home() {
                 lineHeight: 1.3,
               }}
             >
-              Join the Hard House Movement
+              Join the Hard House Coffee Movement
             </h2>
             <p style={{ color: "#b0a090", lineHeight: 1.7, marginBottom: "2rem" }}>
               Follow along for weekly brewing guides, gear breakdowns, and stories from the coffee world. 

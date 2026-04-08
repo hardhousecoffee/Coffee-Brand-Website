@@ -332,3 +332,24 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #a14f1f;
 }
+
+/* Mobile: shrink hero logo so it doesn't crowd the title text */
+@media (max-width: 768px) {
+  .hero-logo-wrap {
+    top: 36% !important;
+    transform: translate(-50%, -60%) !important;
+  }
+  .hero-logo-img {
+    height: 170px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo-wrap {
+    top: 33% !important;
+    transform: translate(-50%, -60%) !important;
+  }
+  .hero-logo-img {
+    height: 145px !important;
+  }
+}
