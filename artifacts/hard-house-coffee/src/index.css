@@ -335,7 +335,7 @@
 
 /* ─── Hero logo — base size (desktop) ──────────────────────────────────────── */
 .hero-logo-img {
-  height: clamp(300px, 45vw, 550px);
+  height: clamp(360px, 48vw, 700px);
 }
 
 /* ─── Mobile hero layout (≤ 768 px wide) ────────────────────────────────────
@@ -365,8 +365,8 @@
   /* Logo image: width-based so the circle fills the screen width */
   .hero-logo-img {
     height: auto !important;
-    width: 78vw !important;
-    max-width: 380px !important;
+    width: 88vw !important;
+    max-width: 440px !important;
   }
 
   /* Text block: back into normal flow, pull up to close PNG transparent gap */
