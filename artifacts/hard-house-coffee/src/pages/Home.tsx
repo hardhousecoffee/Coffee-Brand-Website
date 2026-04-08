@@ -338,8 +338,14 @@ export default function Home() {
               style={{
                 fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "clamp(1.3rem, 3.5vw, 3.2rem)",
+                fontWeight: 700,
                 color: "#f2f2f2",
-                textShadow: "0 2px 20px rgba(0,0,0,0.8)",
+                textShadow: [
+                  "0 2px 18px rgba(0,0,0,0.75)",
+                  "0 0 18px rgba(164,87,58,0.28)",
+                  "0 0 35px rgba(164,87,58,0.16)",
+                  "0 0 60px rgba(164,87,58,0.08)",
+                ].join(", "),
                 letterSpacing: "0.12em",
                 whiteSpace: "nowrap",
                 lineHeight: 1,
