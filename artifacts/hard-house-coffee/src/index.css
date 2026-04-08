@@ -473,6 +473,6 @@
     right: auto !important;
     width: 100% !important;
     transform: none !important;
-    margin-top: -370px !important; /* ~42% of 900px max logo height */
+    margin-top: -290px !important; /* balanced gap between emblem and title */
   }
 }
