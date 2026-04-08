@@ -447,8 +447,9 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: flex-start !important;
-    padding-top: 5% !important;
+    justify-content: center !important;
+    padding-top: 0 !important;
+    margin-top: -8% !important; /* shift the centred group upward so it clears the video */
   }
 
   /* Logo wrapper: in-flow */
