@@ -48,3 +48,9 @@ id = "Tr6R0djkCGKFYuP7V2KAa"
 uri = "file://artifacts/hard-house-coffee/public/images/products/blank-hoodie-dark.png"
 type = "image"
 title = "plain black hoodie dark background"
+
+[[generated]]
+id = "dqFYyLkI0wbhqmG_ieK1U"
+uri = "file://artifacts/hard-house-coffee/public/images/breville-vs-delonghi.png"
+type = "image"
+title = "breville-vs-delonghi-espresso-machines"

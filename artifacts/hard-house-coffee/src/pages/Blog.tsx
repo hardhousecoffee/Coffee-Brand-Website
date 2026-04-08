@@ -48,7 +48,7 @@ const posts = [
     category: "Espresso Machines",
     title: "Breville vs. De'Longhi: Which Brand Wins in 2025?",
     desc: "Two of the biggest names in home espresso go head-to-head across price, performance, durability and ease of use.",
-    image: "/images/bar-mug.jpg",
+    image: "/images/breville-vs-delonghi.png",
     readTime: "10 min read",
     featured: false,
   },
