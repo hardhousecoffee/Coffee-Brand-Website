@@ -65,33 +65,42 @@ const blogPosts = [
 const products = [
   {
     id: 1,
-    name: "Breville Barista Express",
-    tagline: "Built-in grinder. Cafe-quality at home.",
-    price: "$699",
+    name: "De'Longhi La Specialista Touch",
+    tagline: "Cold brew to espresso. One machine, limitless craft.",
+    price: "$999",
+    originalPrice: "$1,199",
     rating: 4.8,
-    reviews: 3200,
-    badge: "Editor's Pick",
+    reviews: 2134,
+    badge: "Editor's Choice",
     badgeColor: "#8b2f2f",
+    image: "/images/products/la-specialista-main.jpg",
+    hoverImage: "/images/products/la-specialista-hover.jpg",
   },
   {
     id: 2,
-    name: "De'Longhi La Specialista",
-    tagline: "Precision grinding. Barista-level results.",
-    price: "$799",
-    rating: 4.7,
-    reviews: 1800,
+    name: "Ninja Luxe Café Pro",
+    tagline: "Premium café drinks. Ninja-engineered precision.",
+    price: "$279",
+    originalPrice: "$349",
+    rating: 4.5,
+    reviews: 6823,
     badge: "Best Value",
     badgeColor: "#a14f1f",
+    image: "/images/products/ninja-luxe-main.jpg",
+    hoverImage: "/images/products/ninja-luxe-hover.jpg",
   },
   {
     id: 3,
-    name: "Gaggia Classic Pro",
-    tagline: "Timeless Italian espresso engineering.",
-    price: "$499",
-    rating: 4.6,
-    reviews: 2400,
+    name: "Breville Oracle Jet",
+    tagline: "Hands-free barista. Zero compromise.",
+    price: "$1,999",
+    originalPrice: "$2,299",
+    rating: 4.9,
+    reviews: 987,
     badge: "Top Rated",
     badgeColor: "#5a3a1a",
+    image: "/images/products/oracle-jet-main.jpg",
+    hoverImage: "/images/products/oracle-jet-hover.jpg",
   },
 ];
 
@@ -687,20 +696,32 @@ export default function Home() {
                   el.style.borderColor = "rgba(161,79,31,0.25)";
                 }}
               >
-                {/* Product image placeholder with espresso machine themed visual */}
+                {/* Product image with hover swap */}
                 <div
-                  className="relative flex items-center justify-center"
+                  className="relative"
                   style={{
-                    height: "200px",
-                    background: "linear-gradient(135deg, #1a1008 0%, #2b1e16 100%)",
+                    height: "220px",
+                    overflow: "hidden",
                     borderBottom: "1px solid rgba(161,79,31,0.2)",
+                  }}
+                  onMouseEnter={(e) => {
+                    const imgs = e.currentTarget.querySelectorAll("img");
+                    if (imgs[1]) { (imgs[0] as HTMLElement).style.opacity = "0"; (imgs[1] as HTMLElement).style.opacity = "1"; }
+                  }}
+                  onMouseLeave={(e) => {
+                    const imgs = e.currentTarget.querySelectorAll("img");
+                    if (imgs[1]) { (imgs[0] as HTMLElement).style.opacity = "1"; (imgs[1] as HTMLElement).style.opacity = "0"; }
                   }}
                 >
                   <img
-                    src="/images/espresso-machine.jpg"
+                    src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover"
-                    style={{ filter: "brightness(0.5)" }}
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transition: "opacity 0.4s ease" }}
+                  />
+                  <img
+                    src={product.hoverImage}
+                    alt={product.name}
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0, transition: "opacity 0.4s ease" }}
                   />
                   <div
                     className="absolute top-3 left-3 px-2 py-1"
@@ -745,16 +766,16 @@ export default function Home() {
                     </span>
                   </div>
 
-                  <p
-                    style={{
-                      fontSize: "1.3rem",
-                      fontWeight: 700,
-                      color: "#f2f2f2",
-                      marginBottom: "1.2rem",
-                    }}
-                  >
-                    {product.price}
-                  </p>
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <p style={{ fontSize: "1.3rem", fontWeight: 700, color: "#f2f2f2" }}>
+                      {product.price}
+                    </p>
+                    {product.originalPrice && (
+                      <p style={{ fontSize: "0.85rem", color: "#7a6a5a", textDecoration: "line-through" }}>
+                        {product.originalPrice}
+                      </p>
+                    )}
+                  </div>
 
                   <div className="flex flex-col gap-2 mt-auto">
                     <Link href="/products">
