@@ -199,7 +199,16 @@ function VideoSection() {
               fontSize: "16px",
             }}
           >
-            {muted ? "🔇" : "🔊"}
+            {muted ? (
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <polygon points="3,1 15,8 3,15" />
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <rect x="2" y="1" width="4" height="14" rx="1" />
+                <rect x="10" y="1" width="4" height="14" rx="1" />
+              </svg>
+            )}
           </button>
         )}
       </div>
