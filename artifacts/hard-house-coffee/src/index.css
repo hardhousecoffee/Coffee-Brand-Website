@@ -418,29 +418,60 @@ a, button {
   }
 }
 
-/* Landscape (short viewport, height ≤ 500 px) — compact everything */
+/* Landscape (short viewport, height ≤ 500 px — e.g. iPhone rotated sideways) */
 @media (max-height: 500px) {
+  /* Same flex-column approach as mobile portrait */
   .hero-content-root {
-    padding-top: 2% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 0 !important;
   }
+
+  /* Logo: in-flow */
+  .hero-logo-wrap {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    flex-shrink: 0;
+  }
+
+  /* Logo: bigger than before — width-based so the emblem is clearly visible */
   .hero-logo-img {
     height: auto !important;
-    width: 30vw !important;
-    max-width: 160px !important;
+    width: 26vw !important;
+    max-width: 240px !important;
   }
+
+  /* Text block: in-flow, pull up to close the PNG transparent bottom (~42%) */
   .hero-text-block {
-    margin-top: -5% !important;
+    position: relative !important;
+    bottom: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    transform: none !important;
+    margin-top: -11% !important; /* ~42% of 26vw closes the transparent gap */
   }
+
   .hero-text-block h1 {
-    font-size: clamp(1.2rem, 5vw, 1.8rem) !important;
+    font-size: clamp(1.2rem, 4.5vw, 1.9rem) !important;
     letter-spacing: 0.06em !important;
-    margin-bottom: 0.2rem !important;
+    margin-bottom: 0.15rem !important;
     padding: 0 0.5rem !important;
   }
   .hero-text-block p {
-    font-size: clamp(0.85rem, 3.5vw, 1.1rem) !important;
-    margin-top: 0.2rem !important;
-    margin-bottom: 0.6rem !important;
+    font-size: clamp(0.85rem, 3vw, 1.1rem) !important;
+    margin-top: 0.15rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .hero-buttons-row .btn-primary,
+  .hero-buttons-row .btn-secondary {
+    padding: 0.4rem 1rem !important;
+    font-size: 0.68rem !important;
   }
 }
 
