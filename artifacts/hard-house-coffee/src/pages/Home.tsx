@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -95,10 +95,85 @@ const products = [
   },
 ];
 
+function usePianoAmbience() {
+  const ctxRef = useRef<AudioContext | null>(null);
+  const loopTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const CHORDS: number[][] = [
+    [130.81, 155.56, 196.00, 233.08],
+    [155.56, 196.00, 233.08, 293.66],
+    [207.65, 261.63, 311.13, 392.00],
+    [233.08, 293.66, 349.23, 415.30],
+  ];
+  const CHORD_DUR = 2.2;
+  const LOOP_DUR = CHORD_DUR * CHORDS.length;
+
+  const playChord = useCallback((ctx: AudioContext, freqs: number[], start: number) => {
+    freqs.forEach((freq) => {
+      const osc = ctx.createOscillator();
+      const harm = ctx.createOscillator();
+      const gain = ctx.createGain();
+      const master = ctx.createGain();
+      master.gain.value = 0.07;
+      osc.type = "sine";
+      osc.frequency.value = freq;
+      harm.type = "triangle";
+      harm.frequency.value = freq * 2;
+      gain.gain.setValueAtTime(0, start);
+      gain.gain.linearRampToValueAtTime(1, start + 0.06);
+      gain.gain.exponentialRampToValueAtTime(0.55, start + 0.4);
+      gain.gain.setValueAtTime(0.55, start + CHORD_DUR - 0.5);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + CHORD_DUR + 0.1);
+      osc.connect(gain);
+      harm.connect(gain);
+      gain.connect(master);
+      master.connect(ctx.destination);
+      osc.start(start);
+      osc.stop(start + CHORD_DUR + 0.2);
+      harm.start(start);
+      harm.stop(start + CHORD_DUR + 0.2);
+    });
+  }, []);
+
+  const scheduleLoop = useCallback((ctx: AudioContext, fromTime: number) => {
+    CHORDS.forEach((chord, i) => {
+      playChord(ctx, chord, fromTime + i * CHORD_DUR);
+    });
+  }, [playChord]);
+
+  const toggle = useCallback(() => {
+    if (playing) {
+      if (loopTimerRef.current) clearInterval(loopTimerRef.current);
+      ctxRef.current?.close();
+      ctxRef.current = null;
+      setPlaying(false);
+    } else {
+      const ctx = new AudioContext();
+      ctxRef.current = ctx;
+      let loopStart = ctx.currentTime;
+      scheduleLoop(ctx, loopStart);
+      loopTimerRef.current = setInterval(() => {
+        loopStart += LOOP_DUR;
+        scheduleLoop(ctx, loopStart);
+      }, LOOP_DUR * 1000);
+      setPlaying(true);
+    }
+  }, [playing, scheduleLoop]);
+
+  useEffect(() => () => {
+    if (loopTimerRef.current) clearInterval(loopTimerRef.current);
+    ctxRef.current?.close();
+  }, []);
+
+  return { playing, toggle };
+}
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const { playing, toggle } = usePianoAmbience();
 
   useEffect(() => {
     setIsVisible(true);
@@ -272,6 +347,82 @@ export default function Home() {
               }}
             />
           ))}
+        </div>
+      </section>
+
+      {/* VIDEO SECTION */}
+      <section
+        style={{
+          position: "relative",
+          backgroundColor: "#0b0b0b",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            maxWidth: "1280px",
+            margin: "0 auto",
+            aspectRatio: "16/9",
+            overflow: "hidden",
+            boxShadow: "0 0 80px rgba(139,47,47,0.15)",
+          }}
+        >
+          <video
+            src="/videos/barista-latte-art.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
+          />
+
+          {/* Dark vignette overlay */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(to bottom, rgba(11,11,11,0.25) 0%, transparent 30%, transparent 70%, rgba(11,11,11,0.4) 100%)",
+              pointerEvents: "none",
+            }}
+          />
+
+          {/* Sound toggle */}
+          <button
+            onClick={toggle}
+            title={playing ? "Pause music" : "Play ambient piano music"}
+            style={{
+              position: "absolute",
+              bottom: "20px",
+              right: "20px",
+              background: playing
+                ? "rgba(139,47,47,0.85)"
+                : "rgba(11,11,11,0.7)",
+              border: "1px solid rgba(139,47,47,0.6)",
+              borderRadius: "50px",
+              color: "#f2f2f2",
+              padding: "8px 16px",
+              cursor: "pointer",
+              fontSize: "12px",
+              letterSpacing: "0.08em",
+              fontFamily: "'Inter', sans-serif",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+              backdropFilter: "blur(8px)",
+              transition: "all 0.3s ease",
+              zIndex: 3,
+            }}
+          >
+            {playing ? "♪ MUSIC ON" : "♪ PLAY MUSIC"}
+          </button>
         </div>
       </section>
 
