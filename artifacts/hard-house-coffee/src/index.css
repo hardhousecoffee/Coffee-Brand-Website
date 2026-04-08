@@ -459,7 +459,12 @@
     transform: none !important;
   }
 
-  /* Text block: in-flow, pull up to eat the PNG transparent bottom (~42%) */
+  /* Larger logo on 16:9 */
+  .hero-logo-img {
+    height: clamp(500px, 52vw, 900px) !important;
+  }
+
+  /* Text block: in-flow, pull up to eat the PNG transparent bottom (~42% of logo height) */
   .hero-text-block {
     position: relative !important;
     bottom: auto !important;
@@ -468,6 +473,6 @@
     right: auto !important;
     width: 100% !important;
     transform: none !important;
-    margin-top: -270px !important; /* fixed px matches the ~42% transparent bottom at 700px logo height */
+    margin-top: -370px !important; /* ~42% of 900px max logo height */
   }
 }
