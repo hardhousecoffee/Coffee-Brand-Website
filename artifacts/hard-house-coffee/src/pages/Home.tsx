@@ -322,6 +322,7 @@ export default function Home() {
 
           {/* Text block — pinned toward bottom of hero */}
           <div
+            className="hero-text-block"
             style={{
               position: "absolute",
               bottom: "10%",

@@ -333,23 +333,79 @@
   background: #a14f1f;
 }
 
-/* Mobile: shrink hero logo so it doesn't crowd the title text */
+/* ─── Mobile hero layout ──────────────────────────────────────────────────── */
+
+/* Tablet / large-phone (≤768 px wide) */
 @media (max-width: 768px) {
+  /* Logo: larger, drop the vertical-centering shift, anchor near top */
   .hero-logo-wrap {
-    top: 36% !important;
-    transform: translate(-50%, -60%) !important;
+    top: 7% !important;
+    transform: translate(-50%, 0) !important;
   }
   .hero-logo-img {
-    height: 170px !important;
+    height: 220px !important;
+  }
+
+  /* Text block: switch from bottom-anchor to top-anchor, sit under the logo */
+  .hero-text-block {
+    bottom: auto !important;
+    top: calc(7% + 228px) !important; /* logo-offset + logo-height + 8 px gap */
+    transform: none !important;
+  }
+
+  /* Tighten internal spacing & stop title overflow */
+  .hero-text-block h1 {
+    font-size: clamp(1.35rem, 6.5vw, 2.1rem) !important;
+    letter-spacing: 0.07em !important;
+    margin-bottom: 0.5rem !important;
+    padding: 0 0.5rem !important;
+  }
+  .hero-text-block p {
+    font-size: clamp(1rem, 4.5vw, 1.3rem) !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 1.2rem !important;
   }
 }
 
-@media (max-width: 480px) {
+/* Small phone (≤430 px wide) — push logo up a touch, keep height */
+@media (max-width: 430px) {
   .hero-logo-wrap {
-    top: 33% !important;
-    transform: translate(-50%, -60%) !important;
+    top: 6% !important;
+    transform: translate(-50%, 0) !important;
   }
   .hero-logo-img {
-    height: 145px !important;
+    height: 205px !important;
+  }
+  .hero-text-block {
+    bottom: auto !important;
+    top: calc(6% + 213px) !important;
+    transform: none !important;
+  }
+}
+
+/* Landscape (short viewport, height ≤ 500 px) — compact everything */
+@media (max-height: 500px) {
+  .hero-logo-wrap {
+    top: 3% !important;
+    transform: translate(-50%, 0) !important;
+  }
+  .hero-logo-img {
+    height: 105px !important;
+  }
+  .hero-text-block {
+    bottom: auto !important;
+    top: calc(3% + 112px) !important;
+    transform: none !important;
+  }
+  .hero-text-block h1 {
+    font-size: clamp(1.2rem, 5vw, 1.8rem) !important;
+    letter-spacing: 0.06em !important;
+    margin-bottom: 0.25rem !important;
+    padding: 0 0.5rem !important;
+  }
+  .hero-text-block p {
+    font-size: clamp(0.85rem, 3.5vw, 1.1rem) !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.7rem !important;
   }
 }
