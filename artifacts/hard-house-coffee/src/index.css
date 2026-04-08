@@ -458,8 +458,12 @@ a, button {
     max-width: 300px !important;
   }
 
-  /* Text block: in-flow, fixed-px pull-up (% is relative to viewport width — too aggressive) */
-  /* 300px logo → height ≈ 240px → transparent bottom 42% ≈ 100px → pull up 95px */
+  /* Text block: in-flow, proportional pull-up matching portrait logic.
+   * Logo width = min(35vw, 300px). Transparent bottom = width × 0.336.
+   *   When uncapped (vw < 857px): transparent = 11.76vw → pull = calc(-11.76vw + 28px)
+   *   When capped at 300px:       transparent = 101px  → pull = max -73px
+   * Gives a consistent ~28px gap between visible emblem and title in landscape.
+   */
   .hero-text-block {
     position: relative !important;
     bottom: auto !important;
@@ -468,7 +472,7 @@ a, button {
     right: auto !important;
     width: 100% !important;
     transform: none !important;
-    margin-top: -95px !important;
+    margin-top: max(calc(-11.76vw + 28px), -73px) !important;
   }
 
   .hero-text-block h1 {
