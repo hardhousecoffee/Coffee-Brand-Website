@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -95,76 +95,32 @@ const products = [
   },
 ];
 
-function usePianoAmbience() {
-  const ctxRef = useRef<AudioContext | null>(null);
-  const loopTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+function useJazzAudio() {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
-  const CHORDS: number[][] = [
-    [130.81, 155.56, 196.00, 233.08],
-    [155.56, 196.00, 233.08, 293.66],
-    [207.65, 261.63, 311.13, 392.00],
-    [233.08, 293.66, 349.23, 415.30],
-  ];
-  const CHORD_DUR = 2.2;
-  const LOOP_DUR = CHORD_DUR * CHORDS.length;
-
-  const playChord = useCallback((ctx: AudioContext, freqs: number[], start: number) => {
-    freqs.forEach((freq) => {
-      const osc = ctx.createOscillator();
-      const harm = ctx.createOscillator();
-      const gain = ctx.createGain();
-      const master = ctx.createGain();
-      master.gain.value = 0.07;
-      osc.type = "sine";
-      osc.frequency.value = freq;
-      harm.type = "triangle";
-      harm.frequency.value = freq * 2;
-      gain.gain.setValueAtTime(0, start);
-      gain.gain.linearRampToValueAtTime(1, start + 0.06);
-      gain.gain.exponentialRampToValueAtTime(0.55, start + 0.4);
-      gain.gain.setValueAtTime(0.55, start + CHORD_DUR - 0.5);
-      gain.gain.exponentialRampToValueAtTime(0.0001, start + CHORD_DUR + 0.1);
-      osc.connect(gain);
-      harm.connect(gain);
-      gain.connect(master);
-      master.connect(ctx.destination);
-      osc.start(start);
-      osc.stop(start + CHORD_DUR + 0.2);
-      harm.start(start);
-      harm.stop(start + CHORD_DUR + 0.2);
-    });
+  useEffect(() => {
+    const audio = new Audio("/audio/jazz.mp3");
+    audio.loop = true;
+    audio.volume = 0.45;
+    audioRef.current = audio;
+    return () => {
+      audio.pause();
+      audio.src = "";
+    };
   }, []);
 
-  const scheduleLoop = useCallback((ctx: AudioContext, fromTime: number) => {
-    CHORDS.forEach((chord, i) => {
-      playChord(ctx, chord, fromTime + i * CHORD_DUR);
-    });
-  }, [playChord]);
-
-  const toggle = useCallback(() => {
+  function toggle() {
+    const audio = audioRef.current;
+    if (!audio) return;
     if (playing) {
-      if (loopTimerRef.current) clearInterval(loopTimerRef.current);
-      ctxRef.current?.close();
-      ctxRef.current = null;
+      audio.pause();
       setPlaying(false);
     } else {
-      const ctx = new AudioContext();
-      ctxRef.current = ctx;
-      let loopStart = ctx.currentTime;
-      scheduleLoop(ctx, loopStart);
-      loopTimerRef.current = setInterval(() => {
-        loopStart += LOOP_DUR;
-        scheduleLoop(ctx, loopStart);
-      }, LOOP_DUR * 1000);
+      audio.play().catch(() => {});
       setPlaying(true);
     }
-  }, [playing, scheduleLoop]);
-
-  useEffect(() => () => {
-    if (loopTimerRef.current) clearInterval(loopTimerRef.current);
-    ctxRef.current?.close();
-  }, []);
+  }
 
   return { playing, toggle };
 }
@@ -173,7 +129,7 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const { playing, toggle } = usePianoAmbience();
+  const { playing, toggle } = useJazzAudio();
 
   useEffect(() => {
     setIsVisible(true);
@@ -421,9 +377,12 @@ export default function Home() {
               zIndex: 3,
             }}
           >
-            {playing ? "♪ MUSIC ON" : "♪ PLAY MUSIC"}
+            {playing ? "♪ JAZZ ON" : "♪ PLAY JAZZ"}
           </button>
         </div>
+        <p style={{ textAlign: "center", fontSize: "10px", color: "rgba(242,242,242,0.2)", margin: "6px 0 0", letterSpacing: "0.05em", fontFamily: "'Inter', sans-serif" }}>
+          Music: "Night Owl" by Broke For Free — CC BY 3.0
+        </p>
       </section>
 
       {/* FEATURED GRID */}
