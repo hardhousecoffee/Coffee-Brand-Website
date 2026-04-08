@@ -292,7 +292,7 @@ export default function Home() {
 
         {/* Hero content */}
         <div
-          className="absolute inset-0 text-center px-6"
+          className="hero-content-root absolute inset-0 text-center px-6"
           style={{ zIndex: 3 }}
         >
           {/* Logo — centered horizontally, sits in upper portion */}
@@ -379,7 +379,7 @@ export default function Home() {
             >
               Aroma From the Ground Up!
             </p>
-            <div className="flex gap-4 justify-center flex-wrap">
+            <div className="flex gap-3 justify-center flex-nowrap hero-buttons-row">
               <Link href="/blog">
                 <button className="btn-primary">Explore the Blog</button>
               </Link>

@@ -338,79 +338,98 @@
   height: clamp(300px, 45vw, 550px);
 }
 
-/* ─── Mobile hero layout ──────────────────────────────────────────────────── */
-
-/* Tablet / large-phone (≤768 px wide) */
+/* ─── Mobile hero layout (≤ 768 px wide) ────────────────────────────────────
+   Switch to a flex-column so logo + text stack naturally in one unit.
+   This eliminates the dead-space caused by two independent absolute elements.
+──────────────────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  /* Logo: bigger, drop the vertical-centering shift, anchor near top */
+
+  /* Root: flex column, centred, start from top with padding */
+  .hero-content-root {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-top: 7% !important;
+  }
+
+  /* Logo wrapper: pull it back into normal flow */
   .hero-logo-wrap {
-    top: 6% !important;
-    transform: translate(-50%, 0) !important;
-  }
-  .hero-logo-img {
-    height: 290px !important;
-  }
-
-  /* Text block: switch from bottom-anchor to top-anchor, sit under the logo */
-  .hero-text-block {
-    bottom: auto !important;
-    top: calc(6% + 295px) !important; /* logo-offset + logo-height + 5 px gap */
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
     transform: none !important;
+    flex-shrink: 0;
   }
 
-  /* Tighten internal spacing & stop title overflow */
+  /* Logo image: width-based so the circle fills the screen width */
+  .hero-logo-img {
+    height: auto !important;
+    width: 78vw !important;
+    max-width: 380px !important;
+  }
+
+  /* Text block: back into normal flow, pull up to close PNG transparent gap */
+  .hero-text-block {
+    position: relative !important;
+    bottom: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    transform: none !important;
+    margin-top: -14% !important; /* compensates for transparent bottom of logo PNG */
+  }
+
+  /* Tighten title */
   .hero-text-block h1 {
-    font-size: clamp(1.35rem, 6.5vw, 2.1rem) !important;
+    font-size: clamp(1.4rem, 7vw, 2.2rem) !important;
     letter-spacing: 0.07em !important;
     margin-bottom: 0.5rem !important;
     padding: 0 0.5rem !important;
   }
+
+  /* Tighten slogan */
   .hero-text-block p {
     font-size: clamp(1rem, 4.5vw, 1.3rem) !important;
     margin-top: 0.4rem !important;
     margin-bottom: 1.2rem !important;
   }
-}
 
-/* Small phone (≤430 px wide) */
-@media (max-width: 430px) {
-  .hero-logo-wrap {
-    top: 5% !important;
-    transform: translate(-50%, 0) !important;
+  /* Keep buttons on one row */
+  .hero-buttons-row {
+    flex-wrap: nowrap !important;
   }
-  .hero-logo-img {
-    height: 265px !important;
-  }
-  .hero-text-block {
-    bottom: auto !important;
-    top: calc(5% + 270px) !important;
-    transform: none !important;
+  .hero-buttons-row .btn-primary,
+  .hero-buttons-row .btn-secondary {
+    padding: 0.55rem 1.1rem !important;
+    font-size: 0.72rem !important;
+    white-space: nowrap;
   }
 }
 
 /* Landscape (short viewport, height ≤ 500 px) — compact everything */
 @media (max-height: 500px) {
-  .hero-logo-wrap {
-    top: 3% !important;
-    transform: translate(-50%, 0) !important;
+  .hero-content-root {
+    padding-top: 2% !important;
   }
   .hero-logo-img {
-    height: 115px !important;
+    height: auto !important;
+    width: 30vw !important;
+    max-width: 160px !important;
   }
   .hero-text-block {
-    bottom: auto !important;
-    top: calc(3% + 122px) !important;
-    transform: none !important;
+    margin-top: -5% !important;
   }
   .hero-text-block h1 {
     font-size: clamp(1.2rem, 5vw, 1.8rem) !important;
     letter-spacing: 0.06em !important;
-    margin-bottom: 0.25rem !important;
+    margin-bottom: 0.2rem !important;
     padding: 0 0.5rem !important;
   }
   .hero-text-block p {
     font-size: clamp(0.85rem, 3.5vw, 1.1rem) !important;
-    margin-top: 0.25rem !important;
-    margin-bottom: 0.7rem !important;
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.6rem !important;
   }
 }
