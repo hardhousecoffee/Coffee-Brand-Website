@@ -337,6 +337,7 @@ export default function Home() {
           >
             {/* Single-line brand title */}
             <h1
+              className="hero-title"
               style={{
                 fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "clamp(1.3rem, 3.5vw, 3.2rem)",

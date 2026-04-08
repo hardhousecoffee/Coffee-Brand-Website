@@ -433,3 +433,11 @@
     margin-bottom: 0.6rem !important;
   }
 }
+
+/* ─── Large / 16:9 screens (≥ 1440 px wide) — scale up hero title ──────────── */
+@media (min-width: 1440px) {
+  .hero-title {
+    font-size: clamp(3.8rem, 4.5vw, 5.5rem) !important;
+    letter-spacing: 0.14em !important;
+  }
+}
