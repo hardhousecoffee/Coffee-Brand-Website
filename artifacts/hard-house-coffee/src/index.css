@@ -388,7 +388,20 @@ a, button {
     right: auto !important;
     width: 100% !important;
     transform: none !important;
-    margin-top: -27% !important; /* PNG has ~42% transparent bottom; pull text up to close it */
+    /*
+     * Pull text up to close the PNG transparent bottom gap, but cap it so we
+     * never exceed the actual transparent area and overlap the visible emblem.
+     *
+     * Logo width = min(88vw, 440px).  Transparent bottom = width × 0.336.
+     *   When width = 88vw  →  transparent = 29.7vw  →  pull = -(29.7vw - 12px)
+     *   When width capped at 440px → transparent = 148px → pull = max -136px
+     * max() picks the less-negative value, so the cap kicks in at ~500px wide.
+     *   375px → max(-99px, -136px) = -99px   (12px gap) ✓
+     *   430px → max(-115px,-136px) = -115px  (12px gap) ✓
+     *   500px → max(-136px,-136px) = -136px  (12px gap) ✓
+     *   768px → max(-216px,-136px) = -136px  (12px gap) ✓  no overlap
+     */
+    margin-top: max(calc(-29.7vw + 12px), -136px) !important;
   }
 
   /* Tighten title */
