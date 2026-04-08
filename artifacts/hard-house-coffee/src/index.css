@@ -438,14 +438,15 @@ a, button {
     flex-shrink: 0;
   }
 
-  /* Logo: bigger than before — width-based so the emblem is clearly visible */
+  /* Logo: much bigger — height-based so it fills the landscape viewport well */
   .hero-logo-img {
     height: auto !important;
-    width: 26vw !important;
-    max-width: 240px !important;
+    width: 35vw !important;
+    max-width: 300px !important;
   }
 
-  /* Text block: in-flow, pull up to close the PNG transparent bottom (~42%) */
+  /* Text block: in-flow, fixed-px pull-up (% is relative to viewport width — too aggressive) */
+  /* 300px logo → height ≈ 240px → transparent bottom 42% ≈ 100px → pull up 95px */
   .hero-text-block {
     position: relative !important;
     bottom: auto !important;
@@ -454,7 +455,7 @@ a, button {
     right: auto !important;
     width: 100% !important;
     transform: none !important;
-    margin-top: -11% !important; /* ~42% of 26vw closes the transparent gap */
+    margin-top: -95px !important;
   }
 
   .hero-text-block h1 {
