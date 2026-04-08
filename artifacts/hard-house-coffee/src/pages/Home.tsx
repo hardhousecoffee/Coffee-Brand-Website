@@ -95,42 +95,11 @@ const products = [
   },
 ];
 
-function useJazzAudio() {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [playing, setPlaying] = useState(false);
-
-  useEffect(() => {
-    const audio = new Audio("/audio/jazz.mp3");
-    audio.loop = true;
-    audio.volume = 0.45;
-    audioRef.current = audio;
-    return () => {
-      audio.pause();
-      audio.src = "";
-    };
-  }, []);
-
-  function toggle() {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (playing) {
-      audio.pause();
-      setPlaying(false);
-    } else {
-      audio.play().catch(() => {});
-      setPlaying(true);
-    }
-  }
-
-  return { playing, toggle };
-}
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const { playing, toggle } = useJazzAudio();
-
   useEffect(() => {
     setIsVisible(true);
     intervalRef.current = setInterval(() => {
@@ -304,85 +273,6 @@ export default function Home() {
             />
           ))}
         </div>
-      </section>
-
-      {/* VIDEO SECTION */}
-      <section
-        style={{
-          position: "relative",
-          backgroundColor: "#0b0b0b",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            maxWidth: "1280px",
-            margin: "0 auto",
-            aspectRatio: "16/9",
-            overflow: "hidden",
-            boxShadow: "0 0 80px rgba(139,47,47,0.15)",
-          }}
-        >
-          <video
-            src="/videos/barista-latte-art.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              display: "block",
-            }}
-          />
-
-          {/* Dark vignette overlay */}
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(to bottom, rgba(11,11,11,0.25) 0%, transparent 30%, transparent 70%, rgba(11,11,11,0.4) 100%)",
-              pointerEvents: "none",
-            }}
-          />
-
-          {/* Sound toggle */}
-          <button
-            onClick={toggle}
-            title={playing ? "Pause music" : "Play ambient piano music"}
-            style={{
-              position: "absolute",
-              bottom: "20px",
-              right: "20px",
-              background: playing
-                ? "rgba(139,47,47,0.85)"
-                : "rgba(11,11,11,0.7)",
-              border: "1px solid rgba(139,47,47,0.6)",
-              borderRadius: "50px",
-              color: "#f2f2f2",
-              padding: "8px 16px",
-              cursor: "pointer",
-              fontSize: "12px",
-              letterSpacing: "0.08em",
-              fontFamily: "'Inter', sans-serif",
-              display: "flex",
-              alignItems: "center",
-              gap: "6px",
-              backdropFilter: "blur(8px)",
-              transition: "all 0.3s ease",
-              zIndex: 3,
-            }}
-          >
-            {playing ? "♪ JAZZ ON" : "♪ PLAY JAZZ"}
-          </button>
-        </div>
-        <p style={{ textAlign: "center", fontSize: "10px", color: "rgba(242,242,242,0.2)", margin: "6px 0 0", letterSpacing: "0.05em", fontFamily: "'Inter', sans-serif" }}>
-          Music: "Night Owl" by Broke For Free — CC BY 3.0
-        </p>
       </section>
 
       {/* FEATURED GRID */}
