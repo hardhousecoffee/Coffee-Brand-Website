@@ -348,22 +348,19 @@ a, button {
   height: clamp(360px, 48vw, 700px);
 }
 
-/* ─── Mobile hero layout (≤ 768 px wide) ────────────────────────────────────
-   Switch to a flex-column so logo + text stack naturally in one unit.
-   This eliminates the dead-space caused by two independent absolute elements.
-──────────────────────────────────────────────────────────────────────────── */
+/* ─── Mobile (≤ 768 px wide) ─────────────────────────────────────────────── */
 @media (max-width: 768px) {
 
-  /* Root: flex column, centred, start from top with padding */
+  /* ── Hero: flex-column so logo + text are one in-flow unit ───────────── */
+
   .hero-content-root {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    padding-top: 7% !important;
+    padding-top: 6% !important;
   }
 
-  /* Logo wrapper: pull it back into normal flow */
   .hero-logo-wrap {
     position: relative !important;
     top: auto !important;
@@ -372,14 +369,26 @@ a, button {
     flex-shrink: 0;
   }
 
-  /* Logo image: width-based so the circle fills the screen width */
+  /*
+   * Logo: cap at 340 px wide on wider mobiles.
+   * 340 px wide → height 272 px → transparent bottom ~114 px.
+   * At 375 px: 88 vw = 330 px (under cap) → height 264 px → transparent bottom ~111 px.
+   */
   .hero-logo-img {
     height: auto !important;
-    width: 88vw !important;
-    max-width: 440px !important;
+    width: min(88vw, 340px) !important;
+    max-width: 340px !important;
   }
 
-  /* Text block: back into normal flow, pull up to close PNG transparent gap */
+  /*
+   * Text block: use max() to cap the upward pull at exactly the transparent
+   * bottom height (-114 px) so the title never overlaps the visible emblem
+   * circle at any mobile width.
+   * max(-114px, -27vw):
+   *   375 px → max(-114, -101) = -101 px  ✓ 13 px breathing gap
+   *   430 px → max(-114, -116) = -114 px  ✓ right at emblem bottom
+   *   768 px → max(-114, -207) = -114 px  ✓ capped, no overlap
+   */
   .hero-text-block {
     position: relative !important;
     bottom: auto !important;
@@ -388,33 +397,76 @@ a, button {
     right: auto !important;
     width: 100% !important;
     transform: none !important;
-    margin-top: -27% !important; /* PNG has ~42% transparent bottom; pull text up to close it */
+    margin-top: max(-114px, -27vw) !important;
   }
 
-  /* Tighten title */
+  /* Title: allow wrapping on very narrow screens */
   .hero-text-block h1 {
-    font-size: clamp(1.4rem, 7vw, 2.2rem) !important;
+    white-space: normal !important;
+    font-size: clamp(1.25rem, 6.5vw, 2rem) !important;
     letter-spacing: 0.07em !important;
-    margin-bottom: 0.5rem !important;
-    padding: 0 0.5rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.4rem !important;
+    padding: 0 0.75rem !important;
   }
 
-  /* Tighten slogan */
+  /* Slogan */
   .hero-text-block p {
-    font-size: clamp(1rem, 4.5vw, 1.3rem) !important;
-    margin-top: 0.4rem !important;
-    margin-bottom: 1.2rem !important;
+    font-size: clamp(0.95rem, 4.2vw, 1.3rem) !important;
+    margin-top: 0.3rem !important;
+    margin-bottom: 1rem !important;
   }
 
-  /* Keep buttons on one row */
+  /* Buttons: stay on one row, compact */
   .hero-buttons-row {
     flex-wrap: nowrap !important;
   }
   .hero-buttons-row .btn-primary,
   .hero-buttons-row .btn-secondary {
-    padding: 0.55rem 1.1rem !important;
+    padding: 0.55rem 1.2rem !important;
     font-size: 0.72rem !important;
     white-space: nowrap;
+  }
+
+  /* ── Sections: reduce oversized Tailwind padding on small screens ─────── */
+
+  /* py-32 (8 rem) → 3.5 rem each side */
+  .py-32 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  /* py-24 (6 rem) → 2.5 rem each side */
+  .py-24 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* py-20 (5 rem) → 2.5 rem each side */
+  .py-20 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* Section heading area: tighten large bottom margin */
+  .mb-14 {
+    margin-bottom: 2rem !important;
+  }
+
+  /* Section titles: scale for small screens */
+  .section-title {
+    font-size: clamp(1.15rem, 5.5vw, 1.8rem) !important;
+  }
+
+  /* Blog CTA two-column gap → tighter on single-column stack */
+  .gap-12 {
+    gap: 2rem !important;
+  }
+
+  /* Blog / product CTA: ensure text is readable at smaller widths */
+  .px-6 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 }
 
