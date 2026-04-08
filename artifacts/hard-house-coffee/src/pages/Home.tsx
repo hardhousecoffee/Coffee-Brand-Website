@@ -96,6 +96,79 @@ const products = [
 ];
 
 
+function VideoSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const video = videoRef.current;
+    if (!container || !video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.src = "/videos/homepage.mp4";
+            video.load();
+            video.play().catch(() => {});
+            setLoaded(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: "200px" }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section style={{ backgroundColor: "#0b0b0b" }}>
+      <div
+        ref={containerRef}
+        style={{
+          position: "relative",
+          width: "100%",
+          maxWidth: "1280px",
+          margin: "0 auto",
+          aspectRatio: "16/9",
+          overflow: "hidden",
+          backgroundColor: "#0b0b0b",
+        }}
+      >
+        <video
+          ref={videoRef}
+          loop
+          muted
+          playsInline
+          preload="none"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+            opacity: loaded ? 1 : 0,
+            transition: "opacity 0.8s ease",
+          }}
+        />
+        {/* Bottom fade into the next section */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to bottom, rgba(11,11,11,0.1) 0%, transparent 15%, transparent 80%, rgba(11,11,11,0.6) 100%)",
+            pointerEvents: "none",
+          }}
+        />
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -274,6 +347,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* VIDEO SECTION */}
+      <VideoSection />
 
       {/* FEATURED GRID */}
       <section className="py-20 px-6" style={{ backgroundColor: "#0b0b0b" }}>
