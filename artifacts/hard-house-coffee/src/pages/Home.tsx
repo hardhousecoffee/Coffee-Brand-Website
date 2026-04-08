@@ -312,7 +312,6 @@ export default function Home() {
               alt="Hard House Coffee"
               className="hero-logo-img"
               style={{
-                height: "clamp(300px, 45vw, 550px)",
                 width: "auto",
                 filter: "url(#bloody-orange)",
                 mixBlendMode: "screen",
