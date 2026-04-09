@@ -79,6 +79,16 @@ const posts = [
     readTime: "8 min read",
     featured: false,
   },
+  {
+    id: 9,
+    category: "Espresso Machines",
+    title: "Best Espresso Machines for Beginners",
+    desc: "So many machines, so much confusion. Here's a straight-talking guide to the types that exist, what actually matters, and what we recommend when you're just starting out.",
+    image: "/images/espresso-machine.jpg",
+    readTime: "5 min read",
+    featured: false,
+    slug: "best-espresso-machines-for-beginners",
+  },
 ];
 
 export default function Blog() {
@@ -255,9 +265,17 @@ export default function Blog() {
                 >
                   {post.desc}
                 </p>
-                <button className="btn-primary w-full" style={{ fontSize: "0.75rem" }}>
-                  Read More
-                </button>
+                {(post as any).slug ? (
+                  <Link href={`/blog/${(post as any).slug}`}>
+                    <button className="btn-primary w-full" style={{ fontSize: "0.75rem" }}>
+                      Read More
+                    </button>
+                  </Link>
+                ) : (
+                  <button className="btn-primary w-full" style={{ fontSize: "0.75rem" }}>
+                    Read More
+                  </button>
+                )}
               </div>
             </div>
           ))}
