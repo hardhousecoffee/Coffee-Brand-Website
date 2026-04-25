@@ -89,6 +89,16 @@ const posts = [
     featured: false,
     slug: "best-espresso-machines-for-beginners",
   },
+  {
+    id: 10,
+    category: "Espresso Machines",
+    title: "Best Espresso Machines for Beginners (2026 Guide)",
+    desc: "Not all machines are beginner-friendly. Here's our updated 2026 guide — three solid picks that won't overwhelm you, with honest takes on what to look for before you buy.",
+    image: "/images/espresso-machine.jpg",
+    readTime: "6 min read",
+    featured: false,
+    slug: "best-espresso-machines-for-beginners-2026-guide",
+  },
 ];
 
 export default function Blog() {
