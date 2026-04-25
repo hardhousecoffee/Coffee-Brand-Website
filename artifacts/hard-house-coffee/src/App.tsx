@@ -8,6 +8,10 @@ import Blog from "@/pages/Blog";
 import BlogPostBeginnersEspresso from "@/pages/BlogPostBeginnersEspresso";
 import Products from "@/pages/Products";
 import About from "@/pages/About";
+import Contact from "@/pages/Contact";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import Disclaimer from "@/pages/Disclaimer";
+import TermsOfUse from "@/pages/TermsOfUse";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +24,10 @@ function Router() {
       <Route path="/products" component={Products} />
       <Route path="/merch" component={Products} />
       <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/disclaimer" component={Disclaimer} />
+      <Route path="/terms-of-use" component={TermsOfUse} />
       <Route component={NotFound} />
     </Switch>
   );

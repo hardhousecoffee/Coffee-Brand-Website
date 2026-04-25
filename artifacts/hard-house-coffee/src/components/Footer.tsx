@@ -223,6 +223,53 @@ export default function Footer() {
             This site may contain affiliate links.
           </p>
         </div>
+
+        {/* Legal nav */}
+        <div
+          style={{
+            marginTop: "1.5rem",
+            paddingTop: "1.25rem",
+            borderTop: "1px solid rgba(255,255,255,0.04)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "0",
+          }}
+        >
+          {[
+            { label: "About", href: "/about" },
+            { label: "Contact", href: "/contact" },
+            { label: "Privacy Policy", href: "/privacy-policy" },
+            { label: "Disclaimer", href: "/disclaimer" },
+            { label: "Terms of Use", href: "/terms-of-use" },
+          ].map((link, i, arr) => (
+            <span key={link.href} style={{ display: "flex", alignItems: "center" }}>
+              <Link href={link.href}>
+                <span
+                  onClick={scrollTop}
+                  style={{
+                    color: "#6b5a4e",
+                    fontSize: "0.72rem",
+                    letterSpacing: "0.04em",
+                    cursor: "pointer",
+                    transition: "color 0.2s",
+                    padding: "0 0.1rem",
+                  }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#b0a090")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#6b5a4e")}
+                >
+                  {link.label}
+                </span>
+              </Link>
+              {i < arr.length - 1 && (
+                <span style={{ color: "rgba(161,79,31,0.3)", margin: "0 0.6rem", fontSize: "0.65rem" }}>
+                  |
+                </span>
+              )}
+            </span>
+          ))}
+        </div>
       </div>
     </footer>
   );
