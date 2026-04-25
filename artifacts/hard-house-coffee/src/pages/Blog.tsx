@@ -28,7 +28,7 @@ const posts = [
   {
     id: 3,
     category: "Bean Picks",
-    title: "Top 5 Dark Roast Beans for Espresso in 2025",
+    title: "Top 5 Dark Roast Beans for Espresso in 2026",
     desc: "Sourced from Ethiopia, Colombia and Sumatra — these dark roasts deliver the bold, complex intensity serious espresso drinkers crave.",
     image: "/images/coffee-cheers.jpg",
     readTime: "5 min read",
@@ -46,7 +46,7 @@ const posts = [
   {
     id: 5,
     category: "Espresso Machines",
-    title: "Breville vs. De'Longhi: Which Brand Wins in 2025?",
+    title: "Breville vs. De'Longhi: Which Brand Wins in 2026?",
     desc: "Two of the biggest names in home espresso go head-to-head across price, performance, durability and ease of use.",
     image: "/images/breville-vs-delonghi.png",
     readTime: "10 min read",
