@@ -166,7 +166,7 @@ export default function Footer() {
           }}
         >
           <p style={{ color: "#6b5a4e", fontSize: "0.78rem" }}>
-            © 2025 Hard House Coffee. All rights reserved.
+            © 2026 Hard House Coffee. All rights reserved.
           </p>
 
           {/* Back to Top button */}

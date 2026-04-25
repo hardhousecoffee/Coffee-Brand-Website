@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
             Privacy Policy
           </h1>
           <p style={{ color: "#6b5a4e", fontSize: "0.78rem", marginTop: "1rem" }}>
-            Last updated: January 1, 2025
+            Last updated: January 1, 2026
           </p>
         </div>
       </div>
