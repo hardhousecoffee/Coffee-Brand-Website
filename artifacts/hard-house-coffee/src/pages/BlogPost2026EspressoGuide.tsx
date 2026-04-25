@@ -13,8 +13,8 @@ export default function BlogPost2026EspressoGuide() {
         style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}
       >
         <img
-          src="/images/espresso-machine.jpg"
-          alt="Espresso Machine"
+          src="/images/espresso-pour-cup.jpg"
+          alt="Espresso Pouring into Cup"
           className="w-full h-full object-cover"
           style={{ filter: "brightness(0.35)" }}
         />
