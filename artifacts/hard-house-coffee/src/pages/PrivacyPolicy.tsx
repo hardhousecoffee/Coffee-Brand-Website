@@ -100,9 +100,12 @@ export default function PrivacyPolicy() {
             Our website may use cookies and similar tracking technologies to improve your browsing
             experience and analyze site traffic. Cookies are small data files stored on your device.
           </p>
-          <p>
+          <p style={{ marginBottom: "1rem" }}>
             You can instruct your browser to refuse all cookies or to indicate when a cookie is
             being sent. However, some parts of the site may not function properly without cookies.
+          </p>
+          <p>
+            By using this website, you consent to the use of cookies as described in this policy.
           </p>
         </Section>
 
@@ -124,6 +127,10 @@ export default function PrivacyPolicy() {
               </li>
             ))}
           </ul>
+          <p style={{ marginTop: "1rem" }}>
+            We may also use advertising partners such as Google AdSense, which may use cookies and
+            similar technologies to display relevant ads based on your browsing behavior.
+          </p>
         </Section>
 
         <Section title="How We Use Your Information">
