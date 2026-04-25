@@ -80,16 +80,6 @@ const posts = [
     featured: false,
   },
   {
-    id: 9,
-    category: "Espresso Machines",
-    title: "Best Espresso Machines for Beginners",
-    desc: "So many machines, so much confusion. Here's a straight-talking guide to the types that exist, what actually matters, and what we recommend when you're just starting out.",
-    image: "/images/espresso-machine.jpg",
-    readTime: "5 min read",
-    featured: false,
-    slug: "best-espresso-machines-for-beginners",
-  },
-  {
     id: 10,
     category: "Espresso Machines",
     title: "Best Espresso Machines for Beginners (2026 Guide)",
@@ -201,10 +191,10 @@ export default function Blog() {
                 </p>
                 <h2
                   style={{
-                    fontFamily: "'Cinzel Decorative', serif",
-                    fontSize: "clamp(1.2rem, 2.5vw, 2.4rem)",
+                    fontSize: "clamp(1.1rem, 2.2vw, 1.6rem)",
+                    fontWeight: 700,
                     color: "#f2f2f2",
-                    lineHeight: 1.25,
+                    lineHeight: 1.4,
                     marginBottom: "1rem",
                   }}
                 >
