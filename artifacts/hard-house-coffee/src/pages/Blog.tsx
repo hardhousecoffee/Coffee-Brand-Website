@@ -10,7 +10,7 @@ const posts = [
   {
     id: 1,
     category: "Gear Reviews",
-    title: "Best Espresso Machines of 2025: Tested & Ranked",
+    title: "Best Espresso Machines (2026 Guide): Tested & Ranked",
     desc: "We spent 3 months testing 12 machines from Breville, De'Longhi, Gaggia and more. Here's everything you need to know before buying.",
     image: "/images/espresso-machine.jpg",
     readTime: "8 min read",
@@ -202,9 +202,9 @@ export default function Blog() {
                 <h2
                   style={{
                     fontFamily: "'Cinzel Decorative', serif",
-                    fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
+                    fontSize: "clamp(1.2rem, 2.5vw, 2.4rem)",
                     color: "#f2f2f2",
-                    lineHeight: 1.3,
+                    lineHeight: 1.25,
                     marginBottom: "1rem",
                   }}
                 >
