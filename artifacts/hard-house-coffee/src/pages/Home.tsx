@@ -33,7 +33,7 @@ const blogPosts = [
     category: "Gear Reviews",
     title: "Best Espresso Machines of 2026",
     desc: "We tested 12 machines from Breville, De'Longhi and more. Here's what stood out in taste, ease and value.",
-    image: "/images/espresso-machine.jpg",
+    image: "/images/espresso-tattooed-hands.jpg",
     readTime: "8 min read",
   },
   {
