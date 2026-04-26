@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
 import BlogPost2026EspressoGuide from "@/pages/BlogPost2026EspressoGuide";
+import BlogPostPourOver from "@/pages/BlogPostPourOver";
 import Products from "@/pages/Products";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/best-espresso-machines-for-beginners-2026-guide" component={BlogPost2026EspressoGuide} />
+      <Route path="/blog/the-art-of-the-perfect-pour-over" component={BlogPostPourOver} />
       <Route path="/products" component={Products} />
       <Route path="/merch" component={Products} />
       <Route path="/about" component={About} />

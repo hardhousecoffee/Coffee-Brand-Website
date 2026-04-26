@@ -24,6 +24,7 @@ const posts = [
     image: "/images/aroma-beans.jpg",
     readTime: "6 min read",
     featured: false,
+    slug: "the-art-of-the-perfect-pour-over",
   },
   {
     id: 3,
