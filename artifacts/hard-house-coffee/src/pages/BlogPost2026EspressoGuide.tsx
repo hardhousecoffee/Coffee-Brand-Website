@@ -45,128 +45,132 @@ export default function BlogPost2026EspressoGuide() {
 
         {/* Intro */}
         <p style={{ color: "#d4cfc9", fontSize: "1.05rem", marginBottom: "1.25rem" }}>
-          If you're getting into espresso for the first time, let me save you some frustration —
-          not all machines are beginner-friendly, and a lot of them will make you feel like you
-          need a barista certification just to make a decent shot.
+          If you've been thinking about getting into espresso at home, you've probably already
+          realized something — there are a lot of machines out there, and not all of them make
+          sense for beginners.
         </p>
         <p style={{ color: "#b0a090", marginBottom: "1.25rem" }}>
-          The truth is, the "best" espresso machine isn't about price. It's about how easy it is
-          to use, how consistent it is, and whether it actually helps you learn instead of
-          overwhelming you.
+          Some are overly complicated, some are cheaply made, and others look great but don't
+          actually deliver a good shot. So instead of getting lost in all the options, let's
+          break this down the way you would if we were just talking it through over coffee.
         </p>
         <p style={{ color: "#b0a090", marginBottom: "2.5rem" }}>
-          So here are a few beginner-friendly options that actually make sense.
+          The goal here isn't to find the "most expensive" machine. It's to find something
+          that's consistent, easy to use, and actually helps you learn the process without
+          making it frustrating.
         </p>
 
         <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
-        {/* What to look for */}
-        <Section title="What to Look for as a Beginner">
+        {/* What actually matters */}
+        <Section title="What Actually Matters in a Beginner Espresso Machine">
           <p style={{ marginBottom: "1rem" }}>
-            Before jumping into specific machines, here's what really matters:
+            Before getting into specific machines, it helps to understand what you should be
+            looking for.
           </p>
-          <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1rem 0" }}>
-            {[
-              "Easy controls (you don't want to fight the machine)",
-              "Consistent pressure and temperature",
-              "A decent steam wand (if you like lattes or cappuccinos)",
-              "Not overly complicated",
-            ].map((item) => (
-              <li
-                key={item}
-                style={{
-                  display: "flex",
-                  gap: "0.75rem",
-                  alignItems: "flex-start",
-                  marginBottom: "0.75rem",
-                  color: "#d4cfc9",
-                }}
-              >
-                <span
-                  style={{
-                    width: "6px",
-                    height: "6px",
-                    borderRadius: "50%",
-                    background: "#a14f1f",
-                    marginTop: "0.58rem",
-                    flexShrink: 0,
-                  }}
-                />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <p style={{ marginBottom: "1rem" }}>
+            First, simplicity matters more than anything. If a machine feels complicated every
+            time you turn it on, you're not going to use it consistently. And consistency is
+            what makes your coffee better over time.
+          </p>
+          <p style={{ marginBottom: "1rem" }}>
+            Second, you want something that produces stable pressure and temperature. That's
+            what separates a decent shot from something that tastes thin or overly bitter.
+          </p>
           <p>
-            A lot of people make the mistake of buying something too advanced and end up never
-            using it.
+            And third, you want a machine that gives you room to improve. You don't need full
+            control right away, but having some flexibility helps as you get more comfortable.
           </p>
         </Section>
 
         {/* Machine 1 */}
         <Section title="1. Breville Bambino Plus">
           <p style={{ marginBottom: "1rem" }}>
-            This is one of the best starting points.
+            If you want something that just works without a steep learning curve, this is one
+            of the best places to start.
           </p>
           <p style={{ marginBottom: "1rem" }}>
-            It heats up fast, the controls are simple, and it produces real espresso without a
-            huge learning curve. The automatic milk frothing is a big bonus if you don't want to
-            deal with manual steaming right away.
+            It heats up quickly, the controls are straightforward, and it produces surprisingly
+            solid espresso for its size. The automatic milk frothing is also a big plus if you
+            like lattes or cappuccinos but don't want to deal with manual steaming right away.
           </p>
           <p>
-            It's not the cheapest option, but it's one of those machines you won't outgrow
-            immediately.
+            It's one of those machines that feels beginner-friendly but doesn't hold you back
+            once you start improving.
           </p>
         </Section>
 
         {/* Machine 2 */}
         <Section title="2. De'Longhi Stilosa">
           <p style={{ marginBottom: "1rem" }}>
-            If you're trying to stay on a budget, this one gets the job done.
+            If you're trying to stay on a tighter budget, this is a solid entry point.
           </p>
           <p style={{ marginBottom: "1rem" }}>
-            It's more manual, so you'll have to learn a bit, but that's not necessarily a bad
-            thing. It teaches you the basics without being overly complicated.
+            It's more manual, which means you'll have to pay a bit more attention to grind size
+            and timing, but that's not a bad thing. It actually helps you understand the basics
+            of espresso better.
           </p>
           <p>
-            Just know it takes a little more effort to dial things in.
+            Just keep in mind — it takes a little patience at first. Once you dial it in,
+            though, it can produce a really enjoyable shot.
           </p>
         </Section>
 
         {/* Machine 3 */}
         <Section title="3. Breville Barista Express">
           <p style={{ marginBottom: "1rem" }}>
-            This is for beginners who want an all-in-one setup.
+            This is more of an all-in-one setup, and for a lot of people, that's exactly what
+            they want.
           </p>
           <p style={{ marginBottom: "1rem" }}>
-            It comes with a built-in grinder, which saves you from buying one separately. That
-            alone makes your life easier when you're starting out.
+            It comes with a built-in grinder, which simplifies your setup and makes it easier
+            to control your coffee from start to finish. That alone makes a big difference in
+            consistency.
           </p>
           <p>
-            There's a bit more of a learning curve compared to the Bambino, but it gives you
-            more control once you get comfortable.
+            There's a bit more of a learning curve compared to the Bambino, but once you get
+            comfortable, it gives you a lot more control over your espresso.
+          </p>
+        </Section>
+
+        {/* Common Mistakes */}
+        <Section title="Common Mistakes to Avoid">
+          <p style={{ marginBottom: "1rem" }}>
+            A lot of beginners make the same mistakes when starting out.
+          </p>
+          <p style={{ marginBottom: "1rem" }}>
+            One of the biggest ones is buying a machine that's too advanced too soon. It might
+            look impressive, but if it's difficult to use, it ends up sitting there unused.
+          </p>
+          <p style={{ marginBottom: "1rem" }}>
+            Another mistake is ignoring the quality of your coffee beans. Even the best machine
+            won't fix low-quality or stale beans.
+          </p>
+          <p>
+            And finally, not cleaning your machine regularly. Espresso machines need
+            maintenance, and skipping that step affects both flavor and performance.
           </p>
         </Section>
 
         {/* Final Thoughts */}
         <Section title="Final Thoughts">
           <p style={{ marginBottom: "1rem" }}>
-            Don't overthink it.
+            Getting into espresso at home doesn't have to be complicated.
           </p>
           <p style={{ marginBottom: "1rem" }}>
-            Your first machine doesn't need to be perfect — it just needs to get you started and
-            make good coffee consistently.
+            You don't need the most expensive machine, and you don't need to master everything
+            on day one. What matters is finding something reliable, using it consistently, and
+            learning as you go.
           </p>
           <p style={{ marginBottom: "1rem" }}>
-            The biggest mistake people make is trying to skip the learning phase by buying
-            something too advanced. Keep it simple, learn the basics, and upgrade later if you
-            want to.
+            Over time, you'll start to notice the difference — not just in taste, but in how
+            much more enjoyable the whole process becomes.
           </p>
           <p style={{ marginBottom: "1rem" }}>
-            If anything, focus more on using the machine regularly than chasing the "perfect"
-            setup.
+            If anything, think of this as building a routine, not just making coffee.
           </p>
           <p>
-            That's what actually makes the difference.
+            That's what makes it worth it.
           </p>
         </Section>
 
