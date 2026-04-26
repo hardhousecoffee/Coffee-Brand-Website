@@ -21,7 +21,7 @@ const posts = [
     category: "Brewing Guides",
     title: "The Art of the Perfect Pour-Over",
     desc: "Unlock nuanced flavors from single-origin beans with our step-by-step guide to the perfect pour-over brewing technique.",
-    image: "/images/aroma-beans.jpg",
+    image: "/images/pour-over-kettle.jpg",
     readTime: "6 min read",
     featured: false,
     slug: "the-art-of-the-perfect-pour-over",

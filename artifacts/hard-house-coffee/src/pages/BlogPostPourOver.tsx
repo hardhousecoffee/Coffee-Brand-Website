@@ -13,7 +13,7 @@ export default function BlogPostPourOver() {
         style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}
       >
         <img
-          src="/images/aroma-beans.jpg"
+          src="/images/pour-over-kettle.jpg"
           alt="The Art of the Perfect Pour-Over"
           className="w-full h-full object-cover"
           style={{ filter: "brightness(0.35)" }}
