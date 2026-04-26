@@ -25,8 +25,9 @@ export default function BlogPost2026EspressoGuide() {
           <p className="section-subtitle mb-3">Espresso Machines</p>
           <h1
             style={{
-              fontFamily: "'Cinzel Decorative', serif",
+              fontFamily: "Inter, sans-serif",
               fontSize: "clamp(1.2rem, 3.5vw, 2.4rem)",
+              fontWeight: 700,
               color: "#f2f2f2",
               lineHeight: 1.25,
               maxWidth: "820px",
@@ -221,8 +222,9 @@ function Section({ title, children }: { title: string; children: React.ReactNode
     <div style={{ marginBottom: "2.5rem" }}>
       <h2
         style={{
-          fontFamily: "'Cinzel Decorative', serif",
+          fontFamily: "Inter, sans-serif",
           fontSize: "clamp(1rem, 2.5vw, 1.3rem)",
+          fontWeight: 700,
           color: "#f2f2f2",
           marginBottom: "1rem",
           paddingBottom: "0.5rem",
