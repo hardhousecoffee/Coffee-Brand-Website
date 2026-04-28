@@ -15,6 +15,7 @@ const posts = [
     image: "/images/espresso-tattooed-hands.jpg",
     readTime: "8 min read",
     featured: true,
+    slug: "best-espresso-machines-2026-guide-tested-and-ranked",
   },
   {
     id: 2,
@@ -205,9 +206,17 @@ export default function Blog() {
                 <p style={{ color: "#b0a090", lineHeight: 1.7, marginBottom: "1.5rem" }}>
                   {featured.desc}
                 </p>
-                <button className="btn-primary" style={{ alignSelf: "flex-start" }}>
-                  Read Full Article
-                </button>
+                {(featured as any).slug ? (
+                  <Link href={`/blog/${(featured as any).slug}`}>
+                    <button className="btn-primary" style={{ alignSelf: "flex-start" }}>
+                      Read Full Article
+                    </button>
+                  </Link>
+                ) : (
+                  <button className="btn-primary" style={{ alignSelf: "flex-start" }}>
+                    Read Full Article
+                  </button>
+                )}
               </div>
             </div>
           </div>
