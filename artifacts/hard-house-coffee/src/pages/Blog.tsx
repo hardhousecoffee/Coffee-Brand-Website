@@ -84,6 +84,7 @@ const posts = [
     image: "/images/outdoor-coffee.jpg",
     readTime: "8 min read",
     featured: false,
+    slug: "ethiopia-vs-colombia-a-complete-coffee-origin-guide",
   },
   {
     id: 10,
