@@ -35,6 +35,7 @@ const posts = [
     image: "/images/coffee-cheers.jpg",
     readTime: "5 min read",
     featured: false,
+    slug: "top-5-dark-roast-beans-for-espresso-in-2026",
   },
   {
     id: 4,
