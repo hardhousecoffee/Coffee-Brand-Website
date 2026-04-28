@@ -13,7 +13,7 @@ export default function BlogPostGrinder() {
         style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}
       >
         <img
-          src="/images/coffee-grinder-beans.png"
+          src="/images/coffee-grinder-closeup.jpg"
           alt="Why Every Coffee Lover Needs a Grinder First"
           className="w-full h-full object-cover"
           style={{ filter: "brightness(0.35)" }}
