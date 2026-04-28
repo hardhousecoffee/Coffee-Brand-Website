@@ -45,6 +45,7 @@ const posts = [
     image: "/images/black-cafe.jpg",
     readTime: "7 min read",
     featured: false,
+    slug: "the-rise-of-specialty-coffee-bars",
   },
   {
     id: 5,
