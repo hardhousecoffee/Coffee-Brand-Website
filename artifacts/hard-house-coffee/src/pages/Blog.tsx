@@ -48,15 +48,6 @@ const posts = [
     slug: "the-rise-of-specialty-coffee-bars",
   },
   {
-    id: 5,
-    category: "Espresso Machines",
-    title: "Breville vs. De'Longhi: Which Brand Wins in 2026?",
-    desc: "Two of the biggest names in home espresso go head-to-head across price, performance, durability and ease of use.",
-    image: "/images/breville-vs-delonghi.png",
-    readTime: "10 min read",
-    featured: false,
-  },
-  {
     id: 6,
     category: "Brewing Guides",
     title: "Cold Brew Mastery: A Complete Home Guide",
