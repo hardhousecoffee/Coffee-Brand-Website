@@ -64,6 +64,7 @@ const posts = [
     image: "/images/milk-pour.png",
     readTime: "9 min read",
     featured: false,
+    slug: "cold-brew-mastery-a-complete-home-guide",
   },
   {
     id: 7,

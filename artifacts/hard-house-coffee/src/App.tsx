@@ -11,6 +11,7 @@ import BlogPostGrinder from "@/pages/BlogPostGrinder";
 import BlogPostEspressoRanked from "@/pages/BlogPostEspressoRanked";
 import BlogPostDarkRoast from "@/pages/BlogPostDarkRoast";
 import BlogPostSpecialtyCoffeeBars from "@/pages/BlogPostSpecialtyCoffeeBars";
+import BlogPostColdBrew from "@/pages/BlogPostColdBrew";
 import Products from "@/pages/Products";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
@@ -31,6 +32,7 @@ function Router() {
       <Route path="/blog/best-espresso-machines-2026-guide-tested-and-ranked" component={BlogPostEspressoRanked} />
       <Route path="/blog/top-5-dark-roast-beans-for-espresso-in-2026" component={BlogPostDarkRoast} />
       <Route path="/blog/the-rise-of-specialty-coffee-bars" component={BlogPostSpecialtyCoffeeBars} />
+      <Route path="/blog/cold-brew-mastery-a-complete-home-guide" component={BlogPostColdBrew} />
       <Route path="/products" component={Products} />
       <Route path="/merch" component={Products} />
       <Route path="/about" component={About} />
