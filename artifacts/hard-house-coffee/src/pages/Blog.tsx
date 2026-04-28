@@ -65,11 +65,12 @@ const posts = [
   {
     id: 7,
     category: "Coffee Culture",
-    title: "Why Every Coffee Lover Needs a Grinder First",
+    title: "Why Every Coffee Lover Needs a Grinder First (2026 Guide)",
     desc: "Before you buy a machine, invest in a quality grinder. Here's why freshly ground beans make all the difference.",
     image: "/images/steamy-mug.jpg",
     readTime: "4 min read",
     featured: false,
+    slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide",
   },
   {
     id: 8,
