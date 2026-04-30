@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { useLocation } from "wouter";
+
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
 
-const categories = ["All", "Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories", "Merch"];
+const categories = ["All", "Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories"];
 const accessorySubcategories = ["All Accessories", "Kettles", "Milk Frothers", "Barista Sets", "Coffee Mugs"];
-const merchSubcategories = ["All Merch", "Apparel", "Hats", "Drinkware", "Stickers"];
 
 const products = [
   {
@@ -700,49 +699,11 @@ const products = [
     mainPosition: "center",
     pros: ["Continuous warmth — no timer, no shutoff", "Brushed aluminium Qi charging coaster", "Charges phone, AirPods & Qi devices", "Matte ceramic with ceramic lid included"],
   },
-  {
-    id: 69,
-    category: "Merch",
-    subcategory: "Apparel",
-    name: "Hard House Coffee Logo Tee",
-    tagline: "Wear the obsession.",
-    desc: "The official Hard House Coffee Logo Tee. Heavyweight 100% ring-spun cotton in jet black, screen-printed with the full HHC emblem — the bearded man in a top hat, coffee bean ring, and Hard House Coffee wordmark in white. Built to be worn to your local café, your home setup, or anywhere you take your coffee seriously.",
-    price: "$34.99",
-    rating: 4.9,
-    reviews: 142,
-    badge: "Official Merch",
-    badgeColor: "#8b2f2f",
-    image: "/images/products/merch-tshirt-main.png",
-    hoverImage: "/images/products/merch-tshirt-hover1.png",
-    mainFit: "cover",
-    mainPosition: "center",
-    pros: ["Heavyweight 100% ring-spun cotton", "Screen-printed HHC logo in white", "Available in sizes XS–3XL", "Preshrunk — wash cold, tumble dry low"],
-  },
-  {
-    id: 70,
-    category: "Merch",
-    subcategory: "Apparel",
-    name: "Hard House Coffee Logo Hoodie",
-    tagline: "Pull it on. Stay in the zone.",
-    desc: "The Hard House Coffee Logo Hoodie is built for long sessions at the grinder and early morning espresso rituals. 420gsm heavyweight fleece with an oversized fit, kangaroo pocket, and the full HHC emblem screen-printed in white across the chest. Double-lined hood, ribbed cuffs. This is the hoodie your coffee setup deserves.",
-    price: "$64.99",
-    rating: 4.9,
-    reviews: 98,
-    badge: "Official Merch",
-    badgeColor: "#8b2f2f",
-    image: "/images/products/merch-hoodie-main.png",
-    hoverImage: "/images/products/merch-hoodie-hover1.png",
-    mainFit: "cover",
-    mainPosition: "center",
-    pros: ["420gsm heavyweight fleece", "Screen-printed HHC logo in white", "Oversized fit with double-lined hood", "Available in sizes XS–3XL"],
-  },
 ];
 
 export default function Products() {
-  const [location] = useLocation();
-  const isMerchRoute = location === "/merch";
-  const [activeCategory, setActiveCategory] = useState(isMerchRoute ? "Merch" : "All");
-  const [activeSubcategory, setActiveSubcategory] = useState(isMerchRoute ? "All Merch" : "All Accessories");
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeSubcategory, setActiveSubcategory] = useState("All Accessories");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [cycleIndex, setCycleIndex] = useState(0);
   const cycleTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -779,11 +740,6 @@ export default function Products() {
       const acc = products.filter((p) => p.category === "Accessories");
       if (activeSubcategory === "All Accessories") return acc;
       return acc.filter((p) => (p as any).subcategory === activeSubcategory);
-    }
-    if (activeCategory === "Merch") {
-      const merch = products.filter((p) => p.category === "Merch");
-      if (activeSubcategory === "All Merch") return merch;
-      return merch.filter((p) => (p as any).subcategory === activeSubcategory);
     }
     return products.filter((p) => p.category === activeCategory);
   })();
@@ -824,8 +780,7 @@ export default function Products() {
               key={cat}
               onClick={() => {
                 setActiveCategory(cat);
-                if (cat === "Merch") setActiveSubcategory("All Merch");
-                else setActiveSubcategory("All Accessories");
+                setActiveSubcategory("All Accessories");
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
               style={{
@@ -874,32 +829,6 @@ export default function Products() {
           </div>
         )}
 
-        {/* Merch subcategory filter */}
-        {activeCategory === "Merch" && (
-          <div className="flex flex-wrap gap-2 mb-10">
-            {merchSubcategories.map((sub) => (
-              <button
-                key={sub}
-                onClick={() => { setActiveSubcategory(sub); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                style={{
-                  padding: "0.3rem 0.9rem",
-                  borderRadius: "20px",
-                  fontSize: "0.7rem",
-                  letterSpacing: "0.05em",
-                  textTransform: "uppercase",
-                  fontWeight: 600,
-                  cursor: "pointer",
-                  transition: "all 0.25s ease",
-                  background: activeSubcategory === sub ? "rgba(161,79,31,0.2)" : "transparent",
-                  color: activeSubcategory === sub ? "#d4b896" : "#7a6a5a",
-                  border: activeSubcategory === sub ? "1px solid rgba(161,79,31,0.5)" : "1px solid rgba(161,79,31,0.12)",
-                }}
-              >
-                {sub}
-              </button>
-            ))}
-          </div>
-        )}
 
         {/* Affiliate disclosure */}
         <div
@@ -934,7 +863,7 @@ export default function Products() {
               Coming Soon
             </h3>
             <p style={{ color: "#7a6a5a", fontSize: "0.9rem", maxWidth: "340px", lineHeight: 1.7 }}>
-              We're curating something worth wearing. Hard House Coffee merch drops soon — check back shortly.
+              More gear is on its way. Check back soon.
             </p>
           </div>
         )}

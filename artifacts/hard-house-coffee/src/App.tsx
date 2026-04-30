@@ -47,7 +47,6 @@ function Router() {
       <Route path="/blog/cold-brew-mastery-a-complete-home-guide" component={BlogPostColdBrew} />
       <Route path="/blog/ethiopia-vs-colombia-a-complete-coffee-origin-guide" component={BlogPostCoffeeOrigins} />
       <Route path="/products" component={Products} />
-      <Route path="/merch" component={Products} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
