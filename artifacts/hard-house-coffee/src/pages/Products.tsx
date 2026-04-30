@@ -21,6 +21,7 @@ const products = [
     reviews: 2134,
     badge: "Editor's Pick",
     badgeColor: "#8b2f2f",
+    affiliateUrl: "https://amzn.to/4dfl8y3",
     image: "/images/products/la-specialista-main.jpg",
     hoverImage: "/images/products/la-specialista-hover.jpg",
     pros: ["Sensor grinding with zero retention", "Cold brew extraction built-in", "Active temperature control", "Auto milk frothing system"],
@@ -971,11 +972,19 @@ export default function Products() {
                     style={{
                       fontSize: "1rem",
                       fontWeight: 700,
-                      color: "#f2f2f2",
                       marginBottom: "0.3rem",
                     }}
                   >
-                    {product.name}
+                    <a
+                      href={(product as any).affiliateUrl || "#"}
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      style={{ color: "#f2f2f2", textDecoration: "none", transition: "color 0.2s" }}
+                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#d4b896")}
+                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#f2f2f2")}
+                    >
+                      {product.name}
+                    </a>
                   </h3>
                   <p style={{ fontSize: "0.78rem", color: "#a14f1f", marginBottom: "0.8rem", fontStyle: "italic" }}>
                     {product.tagline}
@@ -1025,17 +1034,16 @@ export default function Products() {
                   </div>
 
                   <div className="flex flex-col gap-2 mt-auto">
-                    <button className="btn-primary w-full" style={{ fontSize: "0.78rem" }}>
-                      Buy Now
-                    </button>
-                    <div className="flex gap-2">
-                      <button className="btn-secondary flex-1" style={{ fontSize: "0.72rem" }}>
-                        View Product
+                    <a
+                      href={(product as any).affiliateUrl || "#"}
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <button className="btn-primary w-full" style={{ fontSize: "0.78rem" }}>
+                        Buy Now on Amazon
                       </button>
-                      <button className="btn-dark flex-1" style={{ fontSize: "0.72rem" }}>
-                        Read Review
-                      </button>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>

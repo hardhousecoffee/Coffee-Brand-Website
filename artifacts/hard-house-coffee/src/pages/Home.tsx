@@ -74,6 +74,7 @@ const products = [
     reviews: 2134,
     badge: "Editor's Choice",
     badgeColor: "#8b2f2f",
+    affiliateUrl: "https://amzn.to/4dfl8y3",
     image: "/images/products/la-specialista-main.jpg",
     hoverImage: "/images/products/la-specialista-hover.jpg",
   },
@@ -780,11 +781,19 @@ export default function Home() {
                     style={{
                       fontSize: "1rem",
                       fontWeight: 700,
-                      color: "#f2f2f2",
                       marginBottom: "0.4rem",
                     }}
                   >
-                    {product.name}
+                    <a
+                      href={(product as any).affiliateUrl || "#"}
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      style={{ color: "#f2f2f2", textDecoration: "none", transition: "color 0.2s" }}
+                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#d4b896")}
+                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#f2f2f2")}
+                    >
+                      {product.name}
+                    </a>
                   </h3>
                   <p style={{ fontSize: "0.8rem", color: "#b0a090", marginBottom: "0.8rem" }}>
                     {product.tagline}
@@ -813,16 +822,16 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-col gap-2 mt-auto">
-                    <Link href="/products">
+                    <a
+                      href={(product as any).affiliateUrl || "#"}
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      style={{ textDecoration: "none" }}
+                    >
                       <button className="btn-primary w-full" style={{ fontSize: "0.75rem" }}>
-                        Buy Now
+                        Buy Now on Amazon
                       </button>
-                    </Link>
-                    <Link href="/products">
-                      <button className="btn-dark w-full" style={{ fontSize: "0.75rem" }}>
-                        Read Review
-                      </button>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
