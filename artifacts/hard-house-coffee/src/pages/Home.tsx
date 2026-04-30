@@ -33,6 +33,7 @@ const blogPosts = [
     id: 1,
     category: "Gear Reviews",
     title: "Best Espresso Machines of 2026",
+    slug: "best-espresso-machines-2026-guide-tested-and-ranked",
     desc: "We tested 12 machines from Breville, De'Longhi and more. Here's what stood out in taste, ease and value.",
     image: "/images/espresso-tattooed-hands.jpg",
     readTime: "8 min read",
@@ -41,6 +42,7 @@ const blogPosts = [
     id: 2,
     category: "Brewing Guides",
     title: "The Art of the Perfect Pour-Over",
+    slug: "the-art-of-the-perfect-pour-over",
     desc: "Unlock the nuanced flavors of single-origin beans with our step-by-step pour-over brewing guide.",
     image: "/images/aroma-beans.jpg",
     readTime: "6 min read",
@@ -49,6 +51,7 @@ const blogPosts = [
     id: 3,
     category: "Bean Recommendations",
     title: "Top 5 Dark Roast Beans for Espresso",
+    slug: "top-5-dark-roast-beans-for-espresso-in-2026",
     desc: "Sourced from Ethiopia, Colombia and Sumatra — these dark roasts deliver the bold intensity you crave.",
     image: "/images/coffee-cheers.jpg",
     readTime: "5 min read",
@@ -57,6 +60,7 @@ const blogPosts = [
     id: 4,
     category: "Coffee Culture",
     title: "The Rise of Specialty Coffee Bars",
+    slug: "the-rise-of-specialty-coffee-bars",
     desc: "Third-wave coffee culture is reshaping how we experience our daily brew. We explore the movement.",
     image: "/images/black-cafe.jpg",
     readTime: "7 min read",
@@ -677,7 +681,7 @@ export default function Home() {
                   >
                     {post.desc}
                   </p>
-                  <Link href="/blog">
+                  <Link href={`/blog/${post.slug}`}>
                     <button className="btn-primary w-full" style={{ fontSize: "0.75rem" }}>
                       Read More
                     </button>
