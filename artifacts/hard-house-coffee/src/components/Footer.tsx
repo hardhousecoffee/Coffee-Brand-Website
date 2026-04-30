@@ -1,6 +1,16 @@
 import { Link } from "wouter";
+import { FaXTwitter, FaInstagram, FaFacebook, FaPinterest, FaTiktok, FaYoutube } from "react-icons/fa6";
 
 const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+const SOCIAL_LINKS = [
+  { icon: FaInstagram,  label: "Instagram", href: "#" },
+  { icon: FaXTwitter,   label: "X (Twitter)", href: "#" },
+  { icon: FaTiktok,     label: "TikTok", href: "#" },
+  { icon: FaFacebook,   label: "Facebook", href: "#" },
+  { icon: FaPinterest,  label: "Pinterest", href: "#" },
+  { icon: FaYoutube,    label: "YouTube", href: "#" },
+];
 
 export default function Footer() {
   return (
@@ -65,6 +75,46 @@ export default function Footer() {
                 marginTop: "1.2rem",
               }}
             />
+
+            {/* Social Icons */}
+            <div style={{ display: "flex", gap: "0.85rem", marginTop: "1.4rem", flexWrap: "wrap" }}>
+              {SOCIAL_LINKS.map(({ icon: Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "34px",
+                    height: "34px",
+                    borderRadius: "8px",
+                    border: "1px solid rgba(161,79,31,0.3)",
+                    color: "#b0a090",
+                    fontSize: "15px",
+                    transition: "all 0.22s ease",
+                    textDecoration: "none",
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = "#a14f1f";
+                    el.style.color = "#d4b896";
+                    el.style.background = "rgba(161,79,31,0.12)";
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = "rgba(161,79,31,0.3)";
+                    el.style.color = "#b0a090";
+                    el.style.background = "transparent";
+                  }}
+                >
+                  <Icon />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Links */}
