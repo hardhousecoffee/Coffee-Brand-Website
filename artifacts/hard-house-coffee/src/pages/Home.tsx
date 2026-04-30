@@ -279,19 +279,7 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [activeExperience, setActiveExperience] = useState<number | null>(null);
-  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const openExperience = (idx: number) => {
-    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
-    setActiveExperience(idx);
-  };
-  const scheduleClose = () => {
-    closeTimerRef.current = setTimeout(() => setActiveExperience(null), 180);
-  };
-  const cancelClose = () => {
-    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
-  };
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -500,12 +488,7 @@ export default function Home() {
         className="py-20 px-6"
         style={{ backgroundColor: "#0b0b0b", position: "relative" }}
       >
-        <div
-          className="max-w-6xl mx-auto"
-          style={{ position: "relative" }}
-          onMouseLeave={scheduleClose}
-          onMouseEnter={cancelClose}
-        >
+        <div className="max-w-6xl mx-auto" style={{ position: "relative" }}>
           <div className="text-center mb-14">
             <p className="section-subtitle">Our World</p>
             <div className="divider-orange mx-auto" />
@@ -526,6 +509,7 @@ export default function Home() {
             {experienceTiles.map((item, idx) => (
               <button
                 key={idx}
+                onClick={() => setActiveExperience(idx)}
                 className="group relative overflow-hidden text-left"
                 style={{
                   borderRadius: "8px",
@@ -537,17 +521,8 @@ export default function Home() {
                   padding: 0,
                   width: "100%",
                 }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.7)";
-                  openExperience(idx);
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)";
-                }}
-                onTouchStart={(e) => {
-                  e.preventDefault();
-                  openExperience(idx);
-                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.7)")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)")}
               >
                 <img
                   src={item.src}
@@ -599,9 +574,18 @@ export default function Home() {
             const tile = experienceTiles[activeExperience];
             const m = tile.modal;
             return (
+              <>
+                {/* Click-outside backdrop */}
+                <div
+                  onClick={() => setActiveExperience(null)}
+                  style={{
+                    position: "fixed",
+                    inset: 0,
+                    zIndex: 40,
+                    cursor: "default",
+                  }}
+                />
               <div
-                onMouseEnter={cancelClose}
-                onMouseLeave={scheduleClose}
                 style={{
                   position: "absolute",
                   top: "50%",
@@ -796,6 +780,7 @@ export default function Home() {
                 </div>
 
               </div>
+              </>
             );
           })()}
         </div>
