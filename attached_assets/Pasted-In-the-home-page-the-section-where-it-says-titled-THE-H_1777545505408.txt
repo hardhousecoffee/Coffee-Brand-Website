@@ -1,0 +1,36 @@
+In the home page, the section where it says/titled: THE HARD HOUSE COFFEE EXPERIENCE, there are four posts below:
+COMMUNITY, CRAFTMANSHIP, PRECISON, and ATMOSPHERE, can you make it where instead of opening to the blog articles when clicked, you create new content. Update the Hard House Experience section.
+
+Do not link the four tiles directly to blog posts anymore.
+
+When each tile is clicked, open a clean modal or slide-out panel instead.
+
+Use the following content and image direction: Community  
+Title: The Culture Behind Coffee  
+Text: Coffee isn’t just a drink — it’s a ritual. It’s early mornings, conversations, ideas, and moments that stick. This is where coffee becomes more than caffeine. It becomes connection.  
+Image: Use a warm coffee shop scene with people interacting or sharing coffee.  
+Button: Explore Coffee Culture
+
+2. Craftsmanship  
+Title: How Great Coffee Is Made  
+Text: Great coffee does not happen by accident. It starts with quality beans, continues through the roast, comes alive in the grind, and finishes in the brew. Every step matters.  
+Image: Use a close-up of coffee preparation (grinding, brewing, or beans).  
+Include four mini steps: Beans, Roast, Grind, Brew  
+Button: See Recommended Gear
+
+3. Precision  
+Title: Dialing In the Perfect Cup  
+Text: Small changes make a big difference. Grind size, water temperature, brew time, and coffee ratio all shape the final cup. Once you understand those details, your coffee becomes more consistent and more enjoyable.  
+Image: Use a clean, minimal coffee setup showing measurements or brewing tools.  
+Include four mini points: Grind Size, Water Temperature, Brew Time, Ratio  
+Button: View Brewing Guides
+
+4. Atmosphere  
+Title: The Hard House Feel  
+Text: It’s not just about coffee. It’s about how it feels. The glow of the room, the smell of fresh grounds, the first sip, and the quiet moment before the day starts.  
+Image: Use a moody coffee shop or café interior with warm lighting.  
+Button: Discover the Experience
+
+Make sure you use the design dark, premium, and consistent with the site.
+
+Also make sure you do not reuse blog post images in this section. Let me know if you need my help with anything. Do you understand the instructions?

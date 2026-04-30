@@ -14,11 +14,55 @@ const heroSlides = [
   { src: "/images/espresso-machine.jpg", alt: "Espresso Machine" },
 ];
 
-const featuredImages = [
-  { src: "/images/coffee-cheers.jpg", label: "Community", href: "/blog/the-rise-of-specialty-coffee-bars" },
-  { src: "/images/barista-serve.jpg", label: "Craftsmanship", href: "/blog/best-espresso-machines-2026-guide-tested-and-ranked" },
-  { src: "/images/milk-pour.png", label: "Precision", href: "/blog/the-art-of-the-perfect-pour-over" },
-  { src: "/images/black-cafe.jpg", label: "Atmosphere", href: "/blog/the-rise-of-specialty-coffee-bars" },
+const experienceTiles = [
+  {
+    src: "/images/man-drinking.jpg",
+    label: "Community",
+    modal: {
+      title: "The Culture Behind Coffee",
+      text: "Coffee isn't just a drink — it's a ritual. It's early mornings, conversations, ideas, and moments that stick. This is where coffee becomes more than caffeine. It becomes connection.",
+      image: "/images/couple-coffee.jpg",
+      buttonLabel: "Explore Coffee Culture",
+      buttonHref: "/blog",
+      steps: null as string[] | null,
+    },
+  },
+  {
+    src: "/images/barista-serve.jpg",
+    label: "Craftsmanship",
+    modal: {
+      title: "How Great Coffee Is Made",
+      text: "Great coffee does not happen by accident. It starts with quality beans, continues through the roast, comes alive in the grind, and finishes in the brew. Every step matters.",
+      image: "/images/coffee-grinder-closeup.jpg",
+      buttonLabel: "See Recommended Gear",
+      buttonHref: "/products",
+      steps: ["Beans", "Roast", "Grind", "Brew"] as string[] | null,
+    },
+  },
+  {
+    src: "/images/milk-pour.png",
+    label: "Precision",
+    modal: {
+      title: "Dialing In the Perfect Cup",
+      text: "Small changes make a big difference. Grind size, water temperature, brew time, and coffee ratio all shape the final cup. Once you understand those details, your coffee becomes more consistent and more enjoyable.",
+      image: "/images/pour-over-kettle.jpg",
+      buttonLabel: "View Brewing Guides",
+      buttonHref: "/blog",
+      steps: ["Grind Size", "Water Temp", "Brew Time", "Ratio"] as string[] | null,
+    },
+  },
+  {
+    src: "/images/dark-latte.jpg",
+    label: "Atmosphere",
+    modal: {
+      title: "The Hard House Feel",
+      text: "It's not just about coffee. It's about how it feels. The glow of the room, the smell of fresh grounds, the first sip, and the quiet moment before the day starts.",
+      image: "/images/cafe-alley.jpg",
+      buttonLabel: "Discover the Experience",
+      buttonHref: null,
+      steps: null as string[] | null,
+    },
+  },
 ];
 
 const cultureImages = [
@@ -234,7 +278,22 @@ function VideoSection() {
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [activeExperience, setActiveExperience] = useState<number | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveExperience(null);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = activeExperience !== null ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [activeExperience]);
+
   useEffect(() => {
     setIsVisible(true);
     intervalRef.current = setInterval(() => {
@@ -442,63 +501,66 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {featuredImages.map((item, idx) => (
-              <Link key={idx} href={item.href}>
+            {experienceTiles.map((item, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveExperience(idx)}
+                className="group relative overflow-hidden text-left"
+                style={{
+                  borderRadius: "8px",
+                  border: "1px solid rgba(161,79,31,0.2)",
+                  aspectRatio: "3/4",
+                  cursor: "pointer",
+                  transition: "border-color 0.3s ease",
+                  background: "none",
+                  padding: 0,
+                  width: "100%",
+                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.7)")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)")}
+              >
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  className="w-full h-full object-cover"
+                  style={{ transition: "transform 0.6s ease", display: "block" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.06)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                />
                 <div
-                  className="relative overflow-hidden group"
+                  className="absolute inset-0 flex flex-col items-start justify-end p-4"
                   style={{
-                    borderRadius: "8px",
-                    border: "1px solid rgba(161,79,31,0.2)",
-                    aspectRatio: "3/4",
-                    cursor: "pointer",
-                    transition: "border-color 0.3s ease",
+                    background: "linear-gradient(to top, rgba(11,11,11,0.92) 0%, transparent 60%)",
                   }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.6)")}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)")}
                 >
-                  <img
-                    src={item.src}
-                    alt={item.label}
-                    className="w-full h-full object-cover"
-                    style={{ transition: "transform 0.6s ease" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.06)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                  />
-                  <div
-                    className="absolute inset-0 flex flex-col items-start justify-end p-4"
+                  <p
                     style={{
-                      background: "linear-gradient(to top, rgba(11,11,11,0.9) 0%, transparent 60%)",
+                      fontFamily: "'Cinzel Decorative', serif",
+                      fontSize: "0.7rem",
+                      letterSpacing: "0.15em",
+                      color: "#a14f1f",
+                      textTransform: "uppercase",
+                      marginBottom: "0.35rem",
                     }}
                   >
-                    <p
-                      style={{
-                        fontFamily: "'Cinzel Decorative', serif",
-                        fontSize: "0.7rem",
-                        letterSpacing: "0.15em",
-                        color: "#a14f1f",
-                        textTransform: "uppercase",
-                        marginBottom: "0.35rem",
-                      }}
-                    >
-                      {item.label}
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "0.68rem",
-                        color: "#d4b896",
-                        letterSpacing: "0.06em",
-                        opacity: 0,
-                        transform: "translateY(6px)",
-                        transition: "opacity 0.3s ease, transform 0.3s ease",
-                        fontWeight: 500,
-                      }}
-                      className="read-more-hint"
-                    >
-                      Read More →
-                    </p>
-                  </div>
+                    {item.label}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "0.68rem",
+                      color: "#d4b896",
+                      letterSpacing: "0.06em",
+                      opacity: 0,
+                      transform: "translateY(6px)",
+                      transition: "opacity 0.3s ease, transform 0.3s ease",
+                      fontWeight: 500,
+                    }}
+                    className="read-more-hint"
+                  >
+                    Explore →
+                  </p>
                 </div>
-              </Link>
+              </button>
             ))}
           </div>
         </div>
@@ -902,6 +964,217 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* EXPERIENCE MODALS */}
+      {activeExperience !== null && (() => {
+        const tile = experienceTiles[activeExperience];
+        const m = tile.modal;
+        return (
+          <div
+            onClick={() => setActiveExperience(null)}
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 9999,
+              backgroundColor: "rgba(0,0,0,0.82)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "1.5rem",
+              backdropFilter: "blur(6px)",
+            }}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                background: "#140e0a",
+                border: "1px solid rgba(161,79,31,0.35)",
+                borderRadius: "12px",
+                maxWidth: "860px",
+                width: "100%",
+                maxHeight: "90vh",
+                overflowY: "auto",
+                display: "flex",
+                flexDirection: "row",
+                boxShadow: "0 30px 80px rgba(0,0,0,0.7)",
+              }}
+            >
+              {/* LEFT — image */}
+              <div
+                style={{
+                  flex: "0 0 42%",
+                  position: "relative",
+                  overflow: "hidden",
+                  borderRadius: "12px 0 0 12px",
+                  minHeight: "420px",
+                }}
+              >
+                <img
+                  src={m.image}
+                  alt={m.title}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                    filter: "brightness(0.8)",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(to right, transparent 60%, #140e0a)",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "1.5rem",
+                    left: "1.5rem",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "'Cinzel Decorative', serif",
+                      fontSize: "0.65rem",
+                      letterSpacing: "0.18em",
+                      color: "#a14f1f",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {tile.label}
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT — content */}
+              <div
+                style={{
+                  flex: 1,
+                  padding: "2.5rem 2rem 2rem 2rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  gap: "1.5rem",
+                }}
+              >
+                {/* Close button */}
+                <button
+                  onClick={() => setActiveExperience(null)}
+                  style={{
+                    alignSelf: "flex-end",
+                    background: "none",
+                    border: "none",
+                    color: "#7a6050",
+                    fontSize: "1.4rem",
+                    cursor: "pointer",
+                    lineHeight: 1,
+                    padding: "0.25rem",
+                    transition: "color 0.2s",
+                  }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#d4b896")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#7a6050")}
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+
+                <div style={{ flex: 1 }}>
+                  <h3
+                    style={{
+                      fontFamily: "'Cinzel Decorative', serif",
+                      fontSize: "1.3rem",
+                      color: "#f2f2f2",
+                      marginBottom: "1.1rem",
+                      lineHeight: 1.35,
+                    }}
+                  >
+                    {m.title}
+                  </h3>
+                  <p
+                    style={{
+                      color: "#b0a090",
+                      fontSize: "0.93rem",
+                      lineHeight: 1.75,
+                      marginBottom: m.steps ? "1.6rem" : "0",
+                    }}
+                  >
+                    {m.text}
+                  </p>
+
+                  {m.steps && (
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr",
+                        gap: "0.75rem",
+                      }}
+                    >
+                      {m.steps.map((step, i) => (
+                        <div
+                          key={i}
+                          style={{
+                            background: "rgba(161,79,31,0.1)",
+                            border: "1px solid rgba(161,79,31,0.25)",
+                            borderRadius: "6px",
+                            padding: "0.6rem 0.9rem",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.6rem",
+                          }}
+                        >
+                          <span
+                            style={{
+                              width: "22px",
+                              height: "22px",
+                              borderRadius: "50%",
+                              background: "rgba(161,79,31,0.25)",
+                              border: "1px solid rgba(161,79,31,0.5)",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              fontSize: "0.6rem",
+                              color: "#a14f1f",
+                              fontWeight: 700,
+                              flexShrink: 0,
+                            }}
+                          >
+                            {i + 1}
+                          </span>
+                          <span style={{ color: "#d4b896", fontSize: "0.78rem", letterSpacing: "0.04em", fontWeight: 500 }}>
+                            {step}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {m.buttonHref ? (
+                  <Link href={m.buttonHref}>
+                    <button
+                      onClick={() => setActiveExperience(null)}
+                      className="btn-primary"
+                      style={{ width: "100%", fontSize: "0.78rem", letterSpacing: "0.1em" }}
+                    >
+                      {m.buttonLabel}
+                    </button>
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => setActiveExperience(null)}
+                    className="btn-primary"
+                    style={{ width: "100%", fontSize: "0.78rem", letterSpacing: "0.1em" }}
+                  >
+                    {m.buttonLabel}
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        );
+      })()}
 
       <PageNav nextPath="/blog" nextLabel="Read the Blog" />
       <Footer />
