@@ -15,10 +15,10 @@ const heroSlides = [
 ];
 
 const featuredImages = [
-  { src: "/images/coffee-cheers.jpg", label: "Community" },
-  { src: "/images/barista-serve.jpg", label: "Craftsmanship" },
-  { src: "/images/milk-pour.png", label: "Precision" },
-  { src: "/images/black-cafe.jpg", label: "Atmosphere" },
+  { src: "/images/coffee-cheers.jpg", label: "Community", href: "/blog/the-rise-of-specialty-coffee-bars" },
+  { src: "/images/barista-serve.jpg", label: "Craftsmanship", href: "/blog/best-espresso-machines-2026-guide-tested-and-ranked" },
+  { src: "/images/milk-pour.png", label: "Precision", href: "/blog/the-art-of-the-perfect-pour-over" },
+  { src: "/images/black-cafe.jpg", label: "Atmosphere", href: "/blog/the-rise-of-specialty-coffee-bars" },
 ];
 
 const cultureImages = [
@@ -438,44 +438,62 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {featuredImages.map((item, idx) => (
-              <div
-                key={idx}
-                className="relative overflow-hidden"
-                style={{
-                  borderRadius: "8px",
-                  border: "1px solid rgba(161,79,31,0.2)",
-                  aspectRatio: "3/4",
-                }}
-              >
-                <img
-                  src={item.src}
-                  alt={item.label}
-                  className="w-full h-full object-cover"
-                  style={{
-                    transition: "transform 0.6s ease",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.06)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                />
+              <Link key={idx} href={item.href}>
                 <div
-                  className="absolute inset-0 flex items-end p-4"
+                  className="relative overflow-hidden group"
                   style={{
-                    background: "linear-gradient(to top, rgba(11,11,11,0.85) 0%, transparent 60%)",
+                    borderRadius: "8px",
+                    border: "1px solid rgba(161,79,31,0.2)",
+                    aspectRatio: "3/4",
+                    cursor: "pointer",
+                    transition: "border-color 0.3s ease",
                   }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.6)")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)")}
                 >
-                  <p
+                  <img
+                    src={item.src}
+                    alt={item.label}
+                    className="w-full h-full object-cover"
+                    style={{ transition: "transform 0.6s ease" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.06)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                  />
+                  <div
+                    className="absolute inset-0 flex flex-col items-start justify-end p-4"
                     style={{
-                      fontFamily: "'Cinzel Decorative', serif",
-                      fontSize: "0.7rem",
-                      letterSpacing: "0.15em",
-                      color: "#a14f1f",
-                      textTransform: "uppercase",
+                      background: "linear-gradient(to top, rgba(11,11,11,0.9) 0%, transparent 60%)",
                     }}
                   >
-                    {item.label}
-                  </p>
+                    <p
+                      style={{
+                        fontFamily: "'Cinzel Decorative', serif",
+                        fontSize: "0.7rem",
+                        letterSpacing: "0.15em",
+                        color: "#a14f1f",
+                        textTransform: "uppercase",
+                        marginBottom: "0.35rem",
+                      }}
+                    >
+                      {item.label}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "0.68rem",
+                        color: "#d4b896",
+                        letterSpacing: "0.06em",
+                        opacity: 0,
+                        transform: "translateY(6px)",
+                        transition: "opacity 0.3s ease, transform 0.3s ease",
+                        fontWeight: 500,
+                      }}
+                      className="read-more-hint"
+                    >
+                      Read More →
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

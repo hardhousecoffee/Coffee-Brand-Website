@@ -536,3 +536,9 @@ a, button {
     margin-top: -290px !important; /* balanced gap between emblem and title */
   }
 }
+
+/* Featured image cards — Read More hint on hover */
+.group:hover .read-more-hint {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
