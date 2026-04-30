@@ -537,25 +537,14 @@ export default function Home() {
                   padding: 0,
                   width: "100%",
                 }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.7)";
-                  openTile(idx);
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)";
-                }}
-                onTouchStart={(e) => {
-                  e.preventDefault();
-                  openTile(idx);
-                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.5)")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)")}
               >
                 <img
                   src={item.src}
                   alt={item.label}
                   className="w-full h-full object-cover"
                   style={{ transition: "transform 0.6s ease", display: "block" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.06)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
                 />
                 <div
                   className="absolute inset-0 flex flex-col items-start justify-end p-4"
@@ -563,7 +552,19 @@ export default function Home() {
                     background: "linear-gradient(to top, rgba(11,11,11,0.92) 0%, transparent 60%)",
                   }}
                 >
+                  {/* Label — ONLY this triggers the popup */}
                   <p
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "#d4b896";
+                      openTile(idx);
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "#a14f1f";
+                    }}
+                    onTouchStart={(e) => {
+                      e.preventDefault();
+                      openTile(idx);
+                    }}
                     style={{
                       fontFamily: "'Cinzel Decorative', serif",
                       fontSize: "0.7rem",
@@ -571,6 +572,9 @@ export default function Home() {
                       color: "#a14f1f",
                       textTransform: "uppercase",
                       marginBottom: "0.35rem",
+                      cursor: "pointer",
+                      transition: "color 0.2s ease",
+                      userSelect: "none",
                     }}
                   >
                     {item.label}
