@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
@@ -249,6 +250,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2" }}>
+      <Helmet>
+        <title>Hard House Coffee | Premium Espresso Gear, Reviews & Brewing Guides</title>
+        <meta name="description" content="Hard House Coffee — gear reviews, brewing guides, and bean picks for serious espresso lovers. Find your perfect coffee setup and elevate every cup." />
+        <meta property="og:title" content="Hard House Coffee | Premium Espresso Gear, Reviews & Brewing Guides" />
+        <meta property="og:description" content="Gear reviews, brewing guides, and bean picks for serious espresso lovers." />
+      </Helmet>
       <Navbar />
 
       {/* HERO SLIDESHOW */}

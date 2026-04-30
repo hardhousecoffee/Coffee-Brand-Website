@@ -1,10 +1,19 @@
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export default function BlogPostPourOver() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>The Art of the Perfect Pour-Over | Hard House Coffee</title>
+        <meta name="description" content="Master the pour-over brewing technique with our step-by-step guide. Unlock nuanced flavors from single-origin beans and elevate your home brew." />
+        <meta property="og:title" content="The Art of the Perfect Pour-Over | Hard House Coffee" />
+        <meta property="og:description" content="Step-by-step guide to the perfect pour-over brewing technique at home." />
+      </Helmet>
       <Navbar />
 
       {/* Hero banner */}
@@ -43,6 +52,7 @@ export default function BlogPostPourOver() {
 
       {/* Article body */}
       <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85 }}>
+        <AuthorByline />
 
         {/* Intro */}
         <p style={{ color: "#d4cfc9", fontSize: "1.05rem", marginBottom: "1.25rem" }}>
@@ -256,6 +266,11 @@ export default function BlogPostPourOver() {
           </p>
           <p>And honestly, that's what makes it enjoyable.</p>
         </Section>
+
+        <RelatedPosts posts={[
+          { title: "Cold Brew Mastery: A Complete Home Guide", slug: "cold-brew-mastery-a-complete-home-guide", image: "/images/milk-pour.png", category: "Brewing Guides" },
+          { title: "Ethiopia vs. Colombia: A Complete Coffee Origin Guide", slug: "ethiopia-vs-colombia-a-complete-coffee-origin-guide", image: "/images/outdoor-coffee.jpg", category: "Bean Picks" },
+        ]} />
 
         {/* CTA */}
         <div

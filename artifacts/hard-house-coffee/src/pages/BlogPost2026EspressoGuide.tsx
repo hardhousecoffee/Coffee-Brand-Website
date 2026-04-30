@@ -1,10 +1,19 @@
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export default function BlogPost2026EspressoGuide() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Best Espresso Machines for Beginners (2026 Guide) | Hard House Coffee</title>
+        <meta name="description" content="Not sure which espresso machine to buy first? Our 2026 beginner guide covers three solid picks with honest reviews on what to look for before you buy." />
+        <meta property="og:title" content="Best Espresso Machines for Beginners (2026 Guide) | Hard House Coffee" />
+        <meta property="og:description" content="Three solid espresso machine picks for beginners in 2026, with honest takes on what matters." />
+      </Helmet>
       <Navbar />
 
       {/* Hero banner */}
@@ -43,6 +52,7 @@ export default function BlogPost2026EspressoGuide() {
 
       {/* Article body */}
       <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85 }}>
+        <AuthorByline />
 
         {/* Intro */}
         <p style={{ color: "#d4cfc9", fontSize: "1.05rem", marginBottom: "1.25rem" }}>
@@ -174,6 +184,11 @@ export default function BlogPost2026EspressoGuide() {
             That's what makes it worth it.
           </p>
         </Section>
+
+        <RelatedPosts posts={[
+          { title: "Best Espresso Machines (2026): Tested & Ranked", slug: "best-espresso-machines-2026-guide-tested-and-ranked", image: "/images/espresso-tattooed-hands.jpg", category: "Gear Reviews" },
+          { title: "Why Every Coffee Lover Needs a Grinder First", slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide", image: "/images/coffee-grinder-beans.png", category: "Coffee Culture" },
+        ]} />
 
         {/* CTA */}
         <div

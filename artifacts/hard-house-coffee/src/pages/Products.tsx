@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
@@ -789,6 +790,12 @@ export default function Products() {
 
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Shop Coffee Gear & Espresso Equipment | Hard House Coffee</title>
+        <meta name="description" content="Shop our curated selection of espresso machines, coffee grinders, and accessories at Hard House Coffee. Gear reviewed and recommended by coffee obsessives." />
+        <meta property="og:title" content="Shop Coffee Gear & Espresso Equipment | Hard House Coffee" />
+        <meta property="og:description" content="Espresso machines, grinders, and accessories — curated and reviewed by coffee obsessives." />
+      </Helmet>
       <Navbar />
 
       {/* Page header */}

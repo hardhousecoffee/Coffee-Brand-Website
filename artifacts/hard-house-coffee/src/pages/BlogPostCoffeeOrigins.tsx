@@ -1,10 +1,19 @@
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export default function BlogPostCoffeeOrigins() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Ethiopia vs. Colombia: A Complete Coffee Origin Guide | Hard House Coffee</title>
+        <meta name="description" content="Ethiopia or Colombia? Compare two of the world's most popular coffee origins and discover which one matches your taste, brewing style, and flavor preferences." />
+        <meta property="og:title" content="Ethiopia vs. Colombia: A Complete Coffee Origin Guide | Hard House Coffee" />
+        <meta property="og:description" content="Compare Ethiopia and Colombia coffee origins to find your perfect match." />
+      </Helmet>
       <Navbar />
 
       {/* Hero banner */}
@@ -43,6 +52,7 @@ export default function BlogPostCoffeeOrigins() {
 
       {/* Article body */}
       <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85 }}>
+        <AuthorByline />
 
         {/* Intro */}
         <p style={{ color: "#d4cfc9", fontSize: "1.05rem", marginBottom: "1.25rem" }}>
@@ -165,6 +175,11 @@ export default function BlogPostCoffeeOrigins() {
             Exploring different origins is one of the easiest ways to better understand coffee.
           </p>
         </Section>
+
+        <RelatedPosts posts={[
+          { title: "Top 5 Dark Roast Beans for Espresso in 2026", slug: "top-5-dark-roast-beans-for-espresso-in-2026", image: "/images/coffee-cheers.jpg", category: "Bean Picks" },
+          { title: "The Art of the Perfect Pour-Over", slug: "the-art-of-the-perfect-pour-over", image: "/images/pour-over-kettle.jpg", category: "Brewing Guides" },
+        ]} />
 
         {/* CTA */}
         <div

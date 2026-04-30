@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
@@ -6,6 +7,12 @@ import { Link } from "wouter";
 export default function About() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>About Us | Hard House Coffee</title>
+        <meta name="description" content="Learn the story behind Hard House Coffee — built by coffee obsessives for people who refuse to settle for ordinary. Our mission, values, and why we love coffee." />
+        <meta property="og:title" content="About Us | Hard House Coffee" />
+        <meta property="og:description" content="Built by coffee obsessives for people who refuse to settle for ordinary." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

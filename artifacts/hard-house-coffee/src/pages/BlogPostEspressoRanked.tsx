@@ -1,10 +1,19 @@
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export default function BlogPostEspressoRanked() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Best Espresso Machines (2026 Guide): Tested & Ranked | Hard House Coffee</title>
+        <meta name="description" content="We tested 12 espresso machines from Breville, De'Longhi, and Gaggia. Read our full 2026 ranked guide with honest reviews before you buy." />
+        <meta property="og:title" content="Best Espresso Machines (2026 Guide): Tested & Ranked | Hard House Coffee" />
+        <meta property="og:description" content="We tested 12 espresso machines. Here is everything you need to know before buying." />
+      </Helmet>
       <Navbar />
 
       {/* Hero banner */}
@@ -43,6 +52,7 @@ export default function BlogPostEspressoRanked() {
 
       {/* Article body */}
       <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85 }}>
+        <AuthorByline />
 
         {/* Intro */}
         <p style={{ color: "#d4cfc9", fontSize: "1.05rem", marginBottom: "1.25rem" }}>
@@ -169,6 +179,11 @@ export default function BlogPostEspressoRanked() {
           </p>
           <p>That is when your coffee actually starts tasting like it should.</p>
         </Section>
+
+        <RelatedPosts posts={[
+          { title: "Best Espresso Machines for Beginners (2026 Guide)", slug: "best-espresso-machines-for-beginners-2026-guide", image: "/images/espresso-pour-cup.jpg", category: "Espresso Machines" },
+          { title: "Why Every Coffee Lover Needs a Grinder First", slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide", image: "/images/coffee-grinder-beans.png", category: "Coffee Culture" },
+        ]} />
 
         {/* CTA */}
         <div

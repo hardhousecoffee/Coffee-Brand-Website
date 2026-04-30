@@ -1,10 +1,19 @@
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export default function BlogPostGrinder() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Why Every Coffee Lover Needs a Grinder First (2026 Guide) | Hard House Coffee</title>
+        <meta name="description" content="Before buying an espresso machine, invest in a quality grinder. Our 2026 guide covers the best espresso grinders and why grind quality changes everything." />
+        <meta property="og:title" content="Why Every Coffee Lover Needs a Grinder First (2026 Guide) | Hard House Coffee" />
+        <meta property="og:description" content="The grinder makes more difference than the machine. Here is why — and which ones to buy." />
+      </Helmet>
       <Navbar />
 
       {/* Hero banner */}
@@ -43,6 +52,7 @@ export default function BlogPostGrinder() {
 
       {/* Article body */}
       <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85 }}>
+        <AuthorByline />
 
         {/* Subtitle */}
         <p
@@ -314,6 +324,11 @@ export default function BlogPostGrinder() {
             actually look forward to making.
           </p>
         </Section>
+
+        <RelatedPosts posts={[
+          { title: "Best Espresso Machines (2026): Tested & Ranked", slug: "best-espresso-machines-2026-guide-tested-and-ranked", image: "/images/espresso-tattooed-hands.jpg", category: "Gear Reviews" },
+          { title: "Best Espresso Machines for Beginners (2026 Guide)", slug: "best-espresso-machines-for-beginners-2026-guide", image: "/images/espresso-pour-cup.jpg", category: "Espresso Machines" },
+        ]} />
 
         {/* CTA */}
         <div

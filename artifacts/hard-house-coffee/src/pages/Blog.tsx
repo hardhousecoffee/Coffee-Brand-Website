@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
@@ -101,6 +102,12 @@ export default function Blog() {
 
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Blog & Reviews | Hard House Coffee</title>
+        <meta name="description" content="Explore the Hard House Coffee blog — espresso machine reviews, brewing guides, bean picks, and coffee culture articles for serious coffee lovers." />
+        <meta property="og:title" content="Blog & Reviews | Hard House Coffee" />
+        <meta property="og:description" content="Espresso machine reviews, brewing guides, bean picks, and coffee culture from Hard House Coffee." />
+      </Helmet>
       <Navbar />
 
       {/* Page header */}

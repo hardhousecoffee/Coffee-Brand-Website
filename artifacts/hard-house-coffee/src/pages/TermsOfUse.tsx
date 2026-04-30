@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -26,6 +27,10 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 export default function TermsOfUse() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Terms of Use | Hard House Coffee</title>
+        <meta name="description" content="Read the Hard House Coffee Terms of Use — the rules and guidelines for using our website, content, and services." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

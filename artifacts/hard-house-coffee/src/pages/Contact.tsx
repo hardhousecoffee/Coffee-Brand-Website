@@ -1,9 +1,16 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function Contact() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Contact Us | Hard House Coffee</title>
+        <meta name="description" content="Get in touch with the Hard House Coffee team. Have a question, product suggestion, or partnership inquiry? We would love to hear from you." />
+        <meta property="og:title" content="Contact Us | Hard House Coffee" />
+        <meta property="og:description" content="Reach out to Hard House Coffee for questions, partnerships, and coffee talk." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

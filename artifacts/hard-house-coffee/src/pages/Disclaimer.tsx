@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -26,6 +27,10 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 export default function Disclaimer() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Disclaimer | Hard House Coffee</title>
+        <meta name="description" content="Read the Hard House Coffee Disclaimer — affiliate disclosure, accuracy of information, external links policy, and limitation of liability." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

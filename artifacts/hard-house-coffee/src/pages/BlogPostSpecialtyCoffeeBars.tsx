@@ -1,10 +1,19 @@
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export default function BlogPostSpecialtyCoffeeBars() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>The Rise of Specialty Coffee Bars | Hard House Coffee</title>
+        <meta name="description" content="Specialty coffee is reshaping how we experience our daily brew. Explore what makes specialty coffee bars different, why the movement is growing, and what sets them apart." />
+        <meta property="og:title" content="The Rise of Specialty Coffee Bars | Hard House Coffee" />
+        <meta property="og:description" content="What makes specialty coffee bars different — and why the movement keeps growing." />
+      </Helmet>
       <Navbar />
 
       {/* Hero banner */}
@@ -43,6 +52,7 @@ export default function BlogPostSpecialtyCoffeeBars() {
 
       {/* Article body */}
       <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85 }}>
+        <AuthorByline />
 
         {/* Intro */}
         <p style={{ color: "#d4cfc9", fontSize: "1.05rem", marginBottom: "1.25rem" }}>
@@ -137,6 +147,11 @@ export default function BlogPostSpecialtyCoffeeBars() {
             Once you get used to higher quality coffee, it becomes hard to go back to basic options.
           </p>
         </Section>
+
+        <RelatedPosts posts={[
+          { title: "The Art of the Perfect Pour-Over", slug: "the-art-of-the-perfect-pour-over", image: "/images/pour-over-kettle.jpg", category: "Brewing Guides" },
+          { title: "Ethiopia vs. Colombia: A Complete Coffee Origin Guide", slug: "ethiopia-vs-colombia-a-complete-coffee-origin-guide", image: "/images/outdoor-coffee.jpg", category: "Bean Picks" },
+        ]} />
 
         {/* CTA */}
         <div

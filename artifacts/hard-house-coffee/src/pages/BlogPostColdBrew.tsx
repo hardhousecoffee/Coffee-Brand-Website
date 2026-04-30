@@ -1,10 +1,19 @@
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export default function BlogPostColdBrew() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Cold Brew Mastery: A Complete Home Guide | Hard House Coffee</title>
+        <meta name="description" content="Learn how to make smooth, low-acid cold brew coffee at home with our complete step-by-step guide. Minimal effort, consistent results — especially in warmer weather." />
+        <meta property="og:title" content="Cold Brew Mastery: A Complete Home Guide | Hard House Coffee" />
+        <meta property="og:description" content="Cold brew is easier than you think. Here is the complete home guide." />
+      </Helmet>
       <Navbar />
 
       {/* Hero banner */}
@@ -43,6 +52,7 @@ export default function BlogPostColdBrew() {
 
       {/* Article body */}
       <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85 }}>
+        <AuthorByline />
 
         {/* Intro */}
         <p style={{ color: "#d4cfc9", fontSize: "1.05rem", marginBottom: "1.25rem" }}>
@@ -140,6 +150,11 @@ export default function BlogPostColdBrew() {
             It requires minimal effort and delivers consistent results, especially in warmer weather.
           </p>
         </Section>
+
+        <RelatedPosts posts={[
+          { title: "The Art of the Perfect Pour-Over", slug: "the-art-of-the-perfect-pour-over", image: "/images/pour-over-kettle.jpg", category: "Brewing Guides" },
+          { title: "Why Every Coffee Lover Needs a Grinder First", slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide", image: "/images/coffee-grinder-beans.png", category: "Coffee Culture" },
+        ]} />
 
         {/* CTA */}
         <div

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -26,6 +27,10 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 export default function PrivacyPolicy() {
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Privacy Policy | Hard House Coffee</title>
+        <meta name="description" content="Read the Hard House Coffee Privacy Policy — how we collect, use, and protect your information, including our use of cookies and third-party services." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}
