@@ -21,7 +21,7 @@ const experienceTiles = [
     modal: {
       title: "The Culture Behind Coffee",
       text: "Coffee isn't just a drink — it's a ritual. It's early mornings, conversations, ideas, and moments that stick. This is where coffee becomes more than caffeine. It becomes connection.",
-      image: "/images/couple-coffee.jpg",
+      image: "/images/exp-community.jpg",
       buttonLabel: "Explore Coffee Culture",
       buttonHref: "/blog",
       steps: null as string[] | null,
@@ -33,7 +33,7 @@ const experienceTiles = [
     modal: {
       title: "How Great Coffee Is Made",
       text: "Great coffee does not happen by accident. It starts with quality beans, continues through the roast, comes alive in the grind, and finishes in the brew. Every step matters.",
-      image: "/images/coffee-grinder-closeup.jpg",
+      image: "/images/exp-craftsmanship.jpg",
       buttonLabel: "See Recommended Gear",
       buttonHref: "/products",
       steps: ["Beans", "Roast", "Grind", "Brew"] as string[] | null,
@@ -45,7 +45,7 @@ const experienceTiles = [
     modal: {
       title: "Dialing In the Perfect Cup",
       text: "Small changes make a big difference. Grind size, water temperature, brew time, and coffee ratio all shape the final cup. Once you understand those details, your coffee becomes more consistent and more enjoyable.",
-      image: "/images/pour-over-kettle.jpg",
+      image: "/images/exp-precision.jpg",
       buttonLabel: "View Brewing Guides",
       buttonHref: "/blog",
       steps: ["Grind Size", "Water Temp", "Brew Time", "Ratio"] as string[] | null,
@@ -57,7 +57,7 @@ const experienceTiles = [
     modal: {
       title: "The Hard House Feel",
       text: "It's not just about coffee. It's about how it feels. The glow of the room, the smell of fresh grounds, the first sip, and the quiet moment before the day starts.",
-      image: "/images/cafe-alley.jpg",
+      image: "/images/exp-atmosphere.jpg",
       buttonLabel: "Discover the Experience",
       buttonHref: null,
       steps: null as string[] | null,
@@ -290,11 +290,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = activeExperience !== null ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [activeExperience]);
-
-  useEffect(() => {
     setIsVisible(true);
     intervalRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -489,8 +484,11 @@ export default function Home() {
       <VideoSection />
 
       {/* FEATURED GRID */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#0b0b0b" }}>
-        <div className="max-w-6xl mx-auto">
+      <section
+        className="py-20 px-6"
+        style={{ backgroundColor: "#0b0b0b", position: "relative" }}
+      >
+        <div className="max-w-6xl mx-auto" style={{ position: "relative" }}>
           <div className="text-center mb-14">
             <p className="section-subtitle">Our World</p>
             <div className="divider-orange mx-auto" />
@@ -500,7 +498,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {/* Tile grid */}
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+            style={{
+              transition: "opacity 0.3s ease",
+              opacity: activeExperience !== null ? 0.18 : 1,
+              pointerEvents: activeExperience !== null ? "none" : "auto",
+            }}
+          >
             {experienceTiles.map((item, idx) => (
               <button
                 key={idx}
@@ -563,6 +569,219 @@ export default function Home() {
               </button>
             ))}
           </div>
+
+          {/* Hovering pop-up tile */}
+          {activeExperience !== null && (() => {
+            const tile = experienceTiles[activeExperience];
+            const m = tile.modal;
+            return (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  zIndex: 50,
+                  width: "min(780px, 95vw)",
+                  animation: "popIn 0.25s cubic-bezier(0.34,1.56,0.64,1) forwards",
+                }}
+              >
+                <style>{`
+                  @keyframes popIn {
+                    from { opacity: 0; transform: translate(-50%, -46%) scale(0.94); }
+                    to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                  }
+                `}</style>
+
+                <div
+                  style={{
+                    background: "linear-gradient(145deg, #1a110a, #0f0a07)",
+                    border: "1px solid rgba(161,79,31,0.45)",
+                    borderRadius: "14px",
+                    boxShadow: "0 24px 70px rgba(0,0,0,0.85), 0 0 0 1px rgba(161,79,31,0.1)",
+                    display: "flex",
+                    flexDirection: "row",
+                    overflow: "hidden",
+                    minHeight: "360px",
+                  }}
+                >
+                  {/* Left image panel */}
+                  <div style={{ flex: "0 0 38%", position: "relative", overflow: "hidden" }}>
+                    <img
+                      src={m.image}
+                      alt={m.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: "block",
+                        filter: "brightness(0.75) saturate(0.9)",
+                      }}
+                    />
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        background: "linear-gradient(to right, transparent 55%, #1a110a)",
+                      }}
+                    />
+                    <div style={{ position: "absolute", bottom: "1.25rem", left: "1.25rem" }}>
+                      <p
+                        style={{
+                          fontFamily: "'Cinzel Decorative', serif",
+                          fontSize: "0.6rem",
+                          letterSpacing: "0.2em",
+                          color: "#a14f1f",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {tile.label}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right content panel */}
+                  <div
+                    style={{
+                      flex: 1,
+                      padding: "2rem 1.75rem 1.75rem",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "1.1rem",
+                    }}
+                  >
+                    {/* Close */}
+                    <button
+                      onClick={() => setActiveExperience(null)}
+                      style={{
+                        alignSelf: "flex-end",
+                        background: "rgba(161,79,31,0.12)",
+                        border: "1px solid rgba(161,79,31,0.25)",
+                        borderRadius: "50%",
+                        width: "28px",
+                        height: "28px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#8a6a50",
+                        fontSize: "0.8rem",
+                        cursor: "pointer",
+                        transition: "all 0.2s",
+                        flexShrink: 0,
+                      }}
+                      onMouseEnter={(e) => {
+                        const el = e.currentTarget as HTMLElement;
+                        el.style.background = "rgba(161,79,31,0.28)";
+                        el.style.color = "#d4b896";
+                      }}
+                      onMouseLeave={(e) => {
+                        const el = e.currentTarget as HTMLElement;
+                        el.style.background = "rgba(161,79,31,0.12)";
+                        el.style.color = "#8a6a50";
+                      }}
+                      aria-label="Close"
+                    >
+                      ✕
+                    </button>
+
+                    {/* Title */}
+                    <h3
+                      style={{
+                        fontFamily: "'Cinzel Decorative', serif",
+                        fontSize: "1.1rem",
+                        color: "#f2f2f2",
+                        lineHeight: 1.4,
+                        marginTop: "-0.4rem",
+                      }}
+                    >
+                      {m.title}
+                    </h3>
+
+                    {/* Body text */}
+                    <p style={{ color: "#a89880", fontSize: "0.88rem", lineHeight: 1.75 }}>
+                      {m.text}
+                    </p>
+
+                    {/* Step pills */}
+                    {m.steps && (
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                        {m.steps.map((step, i) => (
+                          <span
+                            key={i}
+                            style={{
+                              background: "rgba(161,79,31,0.13)",
+                              border: "1px solid rgba(161,79,31,0.3)",
+                              borderRadius: "20px",
+                              padding: "0.28rem 0.75rem",
+                              fontSize: "0.72rem",
+                              color: "#d4b896",
+                              letterSpacing: "0.06em",
+                              fontWeight: 500,
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "0.4rem",
+                            }}
+                          >
+                            <span
+                              style={{
+                                width: "16px",
+                                height: "16px",
+                                borderRadius: "50%",
+                                background: "rgba(161,79,31,0.3)",
+                                fontSize: "0.55rem",
+                                display: "inline-flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                color: "#a14f1f",
+                                fontWeight: 700,
+                              }}
+                            >
+                              {i + 1}
+                            </span>
+                            {step}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* CTA button */}
+                    <div style={{ marginTop: "auto" }}>
+                      {m.buttonHref ? (
+                        <Link href={m.buttonHref}>
+                          <button
+                            onClick={() => setActiveExperience(null)}
+                            className="btn-primary"
+                            style={{ width: "100%", fontSize: "0.74rem", letterSpacing: "0.1em" }}
+                          >
+                            {m.buttonLabel}
+                          </button>
+                        </Link>
+                      ) : (
+                        <button
+                          onClick={() => setActiveExperience(null)}
+                          className="btn-primary"
+                          style={{ width: "100%", fontSize: "0.74rem", letterSpacing: "0.1em" }}
+                        >
+                          {m.buttonLabel}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Click-outside to close */}
+                <div
+                  onClick={() => setActiveExperience(null)}
+                  style={{
+                    position: "fixed",
+                    inset: 0,
+                    zIndex: -1,
+                    cursor: "default",
+                  }}
+                />
+              </div>
+            );
+          })()}
         </div>
       </section>
 
@@ -964,217 +1183,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* EXPERIENCE MODALS */}
-      {activeExperience !== null && (() => {
-        const tile = experienceTiles[activeExperience];
-        const m = tile.modal;
-        return (
-          <div
-            onClick={() => setActiveExperience(null)}
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 9999,
-              backgroundColor: "rgba(0,0,0,0.82)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "1.5rem",
-              backdropFilter: "blur(6px)",
-            }}
-          >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              style={{
-                background: "#140e0a",
-                border: "1px solid rgba(161,79,31,0.35)",
-                borderRadius: "12px",
-                maxWidth: "860px",
-                width: "100%",
-                maxHeight: "90vh",
-                overflowY: "auto",
-                display: "flex",
-                flexDirection: "row",
-                boxShadow: "0 30px 80px rgba(0,0,0,0.7)",
-              }}
-            >
-              {/* LEFT — image */}
-              <div
-                style={{
-                  flex: "0 0 42%",
-                  position: "relative",
-                  overflow: "hidden",
-                  borderRadius: "12px 0 0 12px",
-                  minHeight: "420px",
-                }}
-              >
-                <img
-                  src={m.image}
-                  alt={m.title}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                    filter: "brightness(0.8)",
-                  }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background: "linear-gradient(to right, transparent 60%, #140e0a)",
-                  }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "1.5rem",
-                    left: "1.5rem",
-                  }}
-                >
-                  <p
-                    style={{
-                      fontFamily: "'Cinzel Decorative', serif",
-                      fontSize: "0.65rem",
-                      letterSpacing: "0.18em",
-                      color: "#a14f1f",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    {tile.label}
-                  </p>
-                </div>
-              </div>
-
-              {/* RIGHT — content */}
-              <div
-                style={{
-                  flex: 1,
-                  padding: "2.5rem 2rem 2rem 2rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  gap: "1.5rem",
-                }}
-              >
-                {/* Close button */}
-                <button
-                  onClick={() => setActiveExperience(null)}
-                  style={{
-                    alignSelf: "flex-end",
-                    background: "none",
-                    border: "none",
-                    color: "#7a6050",
-                    fontSize: "1.4rem",
-                    cursor: "pointer",
-                    lineHeight: 1,
-                    padding: "0.25rem",
-                    transition: "color 0.2s",
-                  }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#d4b896")}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#7a6050")}
-                  aria-label="Close"
-                >
-                  ✕
-                </button>
-
-                <div style={{ flex: 1 }}>
-                  <h3
-                    style={{
-                      fontFamily: "'Cinzel Decorative', serif",
-                      fontSize: "1.3rem",
-                      color: "#f2f2f2",
-                      marginBottom: "1.1rem",
-                      lineHeight: 1.35,
-                    }}
-                  >
-                    {m.title}
-                  </h3>
-                  <p
-                    style={{
-                      color: "#b0a090",
-                      fontSize: "0.93rem",
-                      lineHeight: 1.75,
-                      marginBottom: m.steps ? "1.6rem" : "0",
-                    }}
-                  >
-                    {m.text}
-                  </p>
-
-                  {m.steps && (
-                    <div
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr",
-                        gap: "0.75rem",
-                      }}
-                    >
-                      {m.steps.map((step, i) => (
-                        <div
-                          key={i}
-                          style={{
-                            background: "rgba(161,79,31,0.1)",
-                            border: "1px solid rgba(161,79,31,0.25)",
-                            borderRadius: "6px",
-                            padding: "0.6rem 0.9rem",
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.6rem",
-                          }}
-                        >
-                          <span
-                            style={{
-                              width: "22px",
-                              height: "22px",
-                              borderRadius: "50%",
-                              background: "rgba(161,79,31,0.25)",
-                              border: "1px solid rgba(161,79,31,0.5)",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              fontSize: "0.6rem",
-                              color: "#a14f1f",
-                              fontWeight: 700,
-                              flexShrink: 0,
-                            }}
-                          >
-                            {i + 1}
-                          </span>
-                          <span style={{ color: "#d4b896", fontSize: "0.78rem", letterSpacing: "0.04em", fontWeight: 500 }}>
-                            {step}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {m.buttonHref ? (
-                  <Link href={m.buttonHref}>
-                    <button
-                      onClick={() => setActiveExperience(null)}
-                      className="btn-primary"
-                      style={{ width: "100%", fontSize: "0.78rem", letterSpacing: "0.1em" }}
-                    >
-                      {m.buttonLabel}
-                    </button>
-                  </Link>
-                ) : (
-                  <button
-                    onClick={() => setActiveExperience(null)}
-                    className="btn-primary"
-                    style={{ width: "100%", fontSize: "0.78rem", letterSpacing: "0.1em" }}
-                  >
-                    {m.buttonLabel}
-                  </button>
-                )}
-              </div>
-            </div>
-          </div>
-        );
-      })()}
 
       <PageNav nextPath="/blog" nextLabel="Read the Blog" />
       <Footer />
