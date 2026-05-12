@@ -67,8 +67,8 @@ const experienceTiles = [
       buttonLabel: "Watch the Experience",
       buttonHref: null,
       steps: null as string[] | null,
-      videoId: null as string | null,
-      videoSrc: "/videos/atmosphere.mp4" as string | null,
+      videoId: "Z6Dx-o3vfJY" as string | null,
+      videoSrc: null as string | null,
     },
   },
 ];
