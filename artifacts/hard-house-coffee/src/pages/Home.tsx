@@ -26,6 +26,7 @@ const experienceTiles = [
       buttonHref: "/blog?cat=Coffee+Culture",
       steps: null as string[] | null,
       videoId: null as string | null,
+      videoSrc: null as string | null,
     },
   },
   {
@@ -39,6 +40,7 @@ const experienceTiles = [
       buttonHref: "/products",
       steps: ["Beans", "Roast", "Grind", "Brew"] as string[] | null,
       videoId: null as string | null,
+      videoSrc: null as string | null,
     },
   },
   {
@@ -52,6 +54,7 @@ const experienceTiles = [
       buttonHref: "/blog?cat=Brewing+Guides",
       steps: ["Grind Size", "Water Temp", "Brew Time", "Ratio"] as string[] | null,
       videoId: null as string | null,
+      videoSrc: null as string | null,
     },
   },
   {
@@ -64,7 +67,8 @@ const experienceTiles = [
       buttonLabel: "Watch the Experience",
       buttonHref: null,
       steps: null as string[] | null,
-      videoId: "Z6Dx-o3vfJY" as string | null,
+      videoId: null as string | null,
+      videoSrc: "/videos/atmosphere.mp4" as string | null,
     },
   },
 ];
@@ -723,7 +727,7 @@ export default function Home() {
                     </button>
 
                     {/* Video player — shown only for Atmosphere after clicking the button */}
-                    {showAtmosphereVideo && m.videoId ? (
+                    {showAtmosphereVideo && (m.videoId || m.videoSrc) ? (
                       <>
                         <h3
                           style={{
@@ -740,7 +744,6 @@ export default function Home() {
                           style={{
                             position: "relative",
                             width: "100%",
-                            paddingBottom: "56.25%",
                             borderRadius: "10px",
                             overflow: "hidden",
                             border: "1px solid rgba(161,79,31,0.35)",
@@ -748,20 +751,36 @@ export default function Home() {
                             flexShrink: 0,
                           }}
                         >
-                          <iframe
-                            src={`https://www.youtube.com/embed/${m.videoId}?autoplay=1&rel=0&modestbranding=1`}
-                            title="The Hard House Experience"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            style={{
-                              position: "absolute",
-                              top: 0,
-                              left: 0,
-                              width: "100%",
-                              height: "100%",
-                              border: "none",
-                            }}
-                          />
+                          {m.videoSrc ? (
+                            <video
+                              src={m.videoSrc}
+                              autoPlay
+                              controls
+                              playsInline
+                              style={{
+                                width: "100%",
+                                display: "block",
+                                borderRadius: "10px",
+                              }}
+                            />
+                          ) : (
+                            <div style={{ position: "relative", paddingBottom: "56.25%" }}>
+                              <iframe
+                                src={`https://www.youtube.com/embed/${m.videoId}?autoplay=1&rel=0&modestbranding=1`}
+                                title="The Hard House Experience"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                style={{
+                                  position: "absolute",
+                                  top: 0,
+                                  left: 0,
+                                  width: "100%",
+                                  height: "100%",
+                                  border: "none",
+                                }}
+                              />
+                            </div>
+                          )}
                         </div>
                         <button
                           onClick={() => setShowAtmosphereVideo(false)}
