@@ -64,7 +64,7 @@ const experienceTiles = [
       buttonLabel: "Watch the Experience",
       buttonHref: null,
       steps: null as string[] | null,
-      videoId: "Z6Dx-o3vfJY" as string | null,
+      videoId: "Nu8kIIL-CDA" as string | null,
     },
   },
 ];
@@ -749,9 +749,9 @@ export default function Home() {
                           }}
                         >
                           <iframe
-                            src={`https://www.youtube.com/embed/${m.videoId}?rel=0&modestbranding=1`}
+                            src={`https://www.youtube.com/embed/${m.videoId}?autoplay=1&rel=0&modestbranding=1`}
                             title="The Hard House Experience"
-                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             style={{
                               position: "absolute",
