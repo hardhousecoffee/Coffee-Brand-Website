@@ -863,7 +863,7 @@ export default function Home() {
 
                         {/* CTA button */}
                         <div style={{ marginTop: "auto" }}>
-                          {m.videoId ? (
+                          {(m.videoId || m.videoSrc) ? (
                             <button
                               onClick={() => setShowAtmosphereVideo(true)}
                               className="btn-primary"
