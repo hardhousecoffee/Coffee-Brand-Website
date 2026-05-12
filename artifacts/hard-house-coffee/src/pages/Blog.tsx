@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
@@ -93,6 +93,18 @@ const posts = [
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("All");
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get("cat");
+    if (cat && categories.includes(cat)) {
+      setActiveCategory(cat);
+      setTimeout(() => {
+        const el = document.getElementById("blog-filter");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  }, []);
+
   const filtered = activeCategory === "All"
     ? posts
     : posts.filter((p) => p.category === activeCategory);
@@ -130,7 +142,7 @@ export default function Blog() {
 
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Category filter */}
-        <div className="flex flex-wrap gap-3 mb-12">
+        <div id="blog-filter" className="flex flex-wrap gap-3 mb-12">
           {categories.map((cat) => (
             <button
               key={cat}

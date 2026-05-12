@@ -23,8 +23,9 @@ const experienceTiles = [
       text: "Coffee isn't just a drink — it's a ritual. It's early mornings, conversations, ideas, and moments that stick. This is where coffee becomes more than caffeine. It becomes connection.",
       image: "/images/exp-community.jpg",
       buttonLabel: "Explore Coffee Culture",
-      buttonHref: "/blog",
+      buttonHref: "/blog?cat=Coffee+Culture",
       steps: null as string[] | null,
+      videoId: null as string | null,
     },
   },
   {
@@ -37,6 +38,7 @@ const experienceTiles = [
       buttonLabel: "See Recommended Gear",
       buttonHref: "/products",
       steps: ["Beans", "Roast", "Grind", "Brew"] as string[] | null,
+      videoId: null as string | null,
     },
   },
   {
@@ -47,8 +49,9 @@ const experienceTiles = [
       text: "Small changes make a big difference. Grind size, water temperature, brew time, and coffee ratio all shape the final cup. Once you understand those details, your coffee becomes more consistent and more enjoyable.",
       image: "/images/exp-precision.jpg",
       buttonLabel: "View Brewing Guides",
-      buttonHref: "/blog",
+      buttonHref: "/blog?cat=Brewing+Guides",
       steps: ["Grind Size", "Water Temp", "Brew Time", "Ratio"] as string[] | null,
+      videoId: null as string | null,
     },
   },
   {
@@ -58,9 +61,10 @@ const experienceTiles = [
       title: "The Hard House Feel",
       text: "It's not just about coffee. It's about how it feels. The glow of the room, the smell of fresh grounds, the first sip, and the quiet moment before the day starts.",
       image: "/images/exp-atmosphere.jpg",
-      buttonLabel: "Discover the Experience",
+      buttonLabel: "Watch the Experience",
       buttonHref: null,
       steps: null as string[] | null,
+      videoId: "c0_ejQQcrwI" as string | null,
     },
   },
 ];
@@ -279,6 +283,7 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [activeExperience, setActiveExperience] = useState<number | null>(null);
+  const [showAtmosphereVideo, setShowAtmosphereVideo] = useState(false);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -287,7 +292,10 @@ export default function Home() {
     setActiveExperience(idx);
   };
   const closeTile = () => {
-    closeTimerRef.current = setTimeout(() => setActiveExperience(null), 200);
+    closeTimerRef.current = setTimeout(() => {
+      setActiveExperience(null);
+      setShowAtmosphereVideo(false);
+    }, 200);
   };
   const keepOpen = () => {
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
@@ -295,7 +303,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActiveExperience(null);
+      if (e.key === "Escape") { setActiveExperience(null); setShowAtmosphereVideo(false); }
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
@@ -682,7 +690,7 @@ export default function Home() {
                   >
                     {/* Close */}
                     <button
-                      onClick={() => setActiveExperience(null)}
+                      onClick={() => { setActiveExperience(null); setShowAtmosphereVideo(false); }}
                       style={{
                         alignSelf: "flex-end",
                         background: "rgba(161,79,31,0.12)",
@@ -714,88 +722,158 @@ export default function Home() {
                       ✕
                     </button>
 
-                    {/* Title */}
-                    <h3
-                      style={{
-                        fontFamily: "'Cinzel Decorative', serif",
-                        fontSize: "1.1rem",
-                        color: "#f2f2f2",
-                        lineHeight: 1.4,
-                        marginTop: "-0.4rem",
-                      }}
-                    >
-                      {m.title}
-                    </h3>
-
-                    {/* Body text */}
-                    <p style={{ color: "#a89880", fontSize: "0.88rem", lineHeight: 1.75 }}>
-                      {m.text}
-                    </p>
-
-                    {/* Step pills */}
-                    {m.steps && (
-                      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-                        {m.steps.map((step, i) => (
-                          <span
-                            key={i}
-                            style={{
-                              background: "rgba(161,79,31,0.13)",
-                              border: "1px solid rgba(161,79,31,0.3)",
-                              borderRadius: "20px",
-                              padding: "0.28rem 0.75rem",
-                              fontSize: "0.72rem",
-                              color: "#d4b896",
-                              letterSpacing: "0.06em",
-                              fontWeight: 500,
-                              display: "flex",
-                              alignItems: "center",
-                              gap: "0.4rem",
-                            }}
-                          >
-                            <span
-                              style={{
-                                width: "16px",
-                                height: "16px",
-                                borderRadius: "50%",
-                                background: "rgba(161,79,31,0.3)",
-                                fontSize: "0.55rem",
-                                display: "inline-flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                color: "#a14f1f",
-                                fontWeight: 700,
-                              }}
-                            >
-                              {i + 1}
-                            </span>
-                            {step}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* CTA button */}
-                    <div style={{ marginTop: "auto" }}>
-                      {m.buttonHref ? (
-                        <Link href={m.buttonHref}>
-                          <button
-                            onClick={() => setActiveExperience(null)}
-                            className="btn-primary"
-                            style={{ width: "100%", fontSize: "0.74rem", letterSpacing: "0.1em" }}
-                          >
-                            {m.buttonLabel}
-                          </button>
-                        </Link>
-                      ) : (
-                        <button
-                          onClick={() => setActiveExperience(null)}
-                          className="btn-primary"
-                          style={{ width: "100%", fontSize: "0.74rem", letterSpacing: "0.1em" }}
+                    {/* Video player — shown only for Atmosphere after clicking the button */}
+                    {showAtmosphereVideo && m.videoId ? (
+                      <>
+                        <h3
+                          style={{
+                            fontFamily: "'Cinzel Decorative', serif",
+                            fontSize: "0.95rem",
+                            color: "#f2f2f2",
+                            lineHeight: 1.4,
+                            marginTop: "-0.4rem",
+                          }}
                         >
-                          {m.buttonLabel}
+                          {m.title}
+                        </h3>
+                        <div
+                          style={{
+                            position: "relative",
+                            width: "100%",
+                            paddingBottom: "56.25%",
+                            borderRadius: "10px",
+                            overflow: "hidden",
+                            border: "1px solid rgba(161,79,31,0.35)",
+                            background: "#0b0b0b",
+                            flexShrink: 0,
+                          }}
+                        >
+                          <iframe
+                            src={`https://www.youtube.com/embed/${m.videoId}?rel=0&modestbranding=1`}
+                            title="The Hard House Experience"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            style={{
+                              position: "absolute",
+                              top: 0,
+                              left: 0,
+                              width: "100%",
+                              height: "100%",
+                              border: "none",
+                            }}
+                          />
+                        </div>
+                        <button
+                          onClick={() => setShowAtmosphereVideo(false)}
+                          style={{
+                            background: "transparent",
+                            border: "none",
+                            color: "#a89880",
+                            fontSize: "0.75rem",
+                            cursor: "pointer",
+                            letterSpacing: "0.06em",
+                            padding: 0,
+                            marginTop: "auto",
+                            textAlign: "left",
+                          }}
+                        >
+                          ← Back
                         </button>
-                      )}
-                    </div>
+                      </>
+                    ) : (
+                      <>
+                        {/* Title */}
+                        <h3
+                          style={{
+                            fontFamily: "'Cinzel Decorative', serif",
+                            fontSize: "1.1rem",
+                            color: "#f2f2f2",
+                            lineHeight: 1.4,
+                            marginTop: "-0.4rem",
+                          }}
+                        >
+                          {m.title}
+                        </h3>
+
+                        {/* Body text */}
+                        <p style={{ color: "#a89880", fontSize: "0.88rem", lineHeight: 1.75 }}>
+                          {m.text}
+                        </p>
+
+                        {/* Step pills */}
+                        {m.steps && (
+                          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                            {m.steps.map((step, i) => (
+                              <span
+                                key={i}
+                                style={{
+                                  background: "rgba(161,79,31,0.13)",
+                                  border: "1px solid rgba(161,79,31,0.3)",
+                                  borderRadius: "20px",
+                                  padding: "0.28rem 0.75rem",
+                                  fontSize: "0.72rem",
+                                  color: "#d4b896",
+                                  letterSpacing: "0.06em",
+                                  fontWeight: 500,
+                                  display: "flex",
+                                  alignItems: "center",
+                                  gap: "0.4rem",
+                                }}
+                              >
+                                <span
+                                  style={{
+                                    width: "16px",
+                                    height: "16px",
+                                    borderRadius: "50%",
+                                    background: "rgba(161,79,31,0.3)",
+                                    fontSize: "0.55rem",
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    color: "#a14f1f",
+                                    fontWeight: 700,
+                                  }}
+                                >
+                                  {i + 1}
+                                </span>
+                                {step}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* CTA button */}
+                        <div style={{ marginTop: "auto" }}>
+                          {m.videoId ? (
+                            <button
+                              onClick={() => setShowAtmosphereVideo(true)}
+                              className="btn-primary"
+                              style={{ width: "100%", fontSize: "0.74rem", letterSpacing: "0.1em" }}
+                            >
+                              {m.buttonLabel}
+                            </button>
+                          ) : m.buttonHref ? (
+                            <Link href={m.buttonHref}>
+                              <button
+                                onClick={() => setActiveExperience(null)}
+                                className="btn-primary"
+                                style={{ width: "100%", fontSize: "0.74rem", letterSpacing: "0.1em" }}
+                              >
+                                {m.buttonLabel}
+                              </button>
+                            </Link>
+                          ) : (
+                            <button
+                              onClick={() => { setActiveExperience(null); setShowAtmosphereVideo(false); }}
+                              className="btn-primary"
+                              style={{ width: "100%", fontSize: "0.74rem", letterSpacing: "0.1em" }}
+                            >
+                              {m.buttonLabel}
+                            </button>
+                          )}
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
 
