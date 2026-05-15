@@ -167,8 +167,9 @@ const products = [
     reviews: 5621,
     badge: "Most Popular",
     badgeColor: "#8b2f2f",
-    image: "/images/product-fellow.png",
-    hoverImage: "/images/products/fellow-stagg-hover.webp",
+    image: "/images/products/stagg-ekg-main.png",
+    hoverImage: "/images/products/stagg-ekg-wood.png",
+    hoverImage2: "/images/products/fellow-stagg-hover.webp",
     pros: ["±0.5° temperature accuracy", "Hold mode up to 60 min", "Precision pour spout"],
   },
   {
