@@ -562,10 +562,7 @@ export default function Home() {
                   className="absolute inset-0 flex flex-col items-start justify-end p-4"
                   style={{
                     background: "linear-gradient(to top, rgba(11,11,11,0.92) 0%, transparent 60%)",
-                    cursor: "pointer",
                   }}
-                  onMouseEnter={() => openTile(idx)}
-                  onTouchStart={(e) => { e.preventDefault(); openTile(idx); }}
                 >
                   <p
                     style={{
@@ -583,6 +580,18 @@ export default function Home() {
                     {item.label}
                   </p>
                   <p
+                    onClick={() => openTile(idx)}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "#f2f2f2";
+                      openTile(idx);
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "#d4b896";
+                    }}
+                    onTouchStart={(e) => {
+                      e.preventDefault();
+                      openTile(idx);
+                    }}
                     style={{
                       fontSize: "0.68rem",
                       color: "#d4b896",
@@ -592,7 +601,9 @@ export default function Home() {
                       transition: "opacity 0.3s ease, transform 0.3s ease",
                       fontWeight: 500,
                       userSelect: "none",
-                      pointerEvents: "none",
+                      cursor: "pointer",
+                      position: "relative",
+                      zIndex: 10,
                     }}
                     className="read-more-hint"
                   >
