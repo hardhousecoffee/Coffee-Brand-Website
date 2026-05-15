@@ -592,6 +592,17 @@ export default function Home() {
                     {item.label}
                   </p>
                   <p
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "#f2f2f2";
+                      openTile(idx);
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "#d4b896";
+                    }}
+                    onTouchStart={(e) => {
+                      e.preventDefault();
+                      openTile(idx);
+                    }}
                     style={{
                       fontSize: "0.68rem",
                       color: "#d4b896",
@@ -600,6 +611,8 @@ export default function Home() {
                       transform: "translateY(6px)",
                       transition: "opacity 0.3s ease, transform 0.3s ease",
                       fontWeight: 500,
+                      cursor: "pointer",
+                      userSelect: "none",
                     }}
                     className="read-more-hint"
                   >
