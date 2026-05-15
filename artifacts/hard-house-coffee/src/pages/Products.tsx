@@ -766,7 +766,7 @@ export default function Products() {
         <p className="section-subtitle" style={{ color: "#a14f1f" }}>Recommended Gear</p>
         <div className="divider-orange mx-auto" />
         <h1 className="section-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
-          Coffee Equipment
+          Coffee Essentials
         </h1>
         <p style={{ color: "#b0a090", maxWidth: "480px", margin: "1rem auto 0", lineHeight: 1.7 }}>
           Expert-tested espresso machines, coffee makers and brewing gear — curated for serious coffee lovers.
