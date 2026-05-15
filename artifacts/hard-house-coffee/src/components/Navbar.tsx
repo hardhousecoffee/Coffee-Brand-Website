@@ -20,6 +20,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isHome = location === "/";
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
@@ -33,8 +35,41 @@ export default function Navbar() {
     >
       <div
         className="max-w-7xl mx-auto px-10 flex items-center justify-center"
-        style={{ height: "68px" }}
+        style={{ height: "68px", position: "relative" }}
       >
+        {/* Back button — desktop, all pages except home */}
+        {!isHome && (
+          <button
+            onClick={() => window.history.back()}
+            style={{
+              position: "absolute",
+              left: "2.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.4rem",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              color: "#b0a090",
+              fontSize: "0.72rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              fontFamily: "'Cinzel Decorative', serif",
+              transition: "color 0.2s ease",
+              padding: 0,
+            }}
+            onMouseEnter={e => (e.currentTarget.style.color = "#f2f2f2")}
+            onMouseLeave={e => (e.currentTarget.style.color = "#b0a090")}
+            className="hidden md:flex"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+            Back
+          </button>
+        )}
+
         {/* Desktop nav links — centered */}
         <div className="hidden md:flex items-center gap-6">
           {/* Left group: Home, Blog */}
@@ -86,22 +121,49 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile: just hamburger */}
+        {/* Mobile: logo + back + hamburger */}
         <div className="md:hidden flex items-center justify-between w-full">
-          <Link href="/">
-            <span
-              onClick={scrollTop}
-              style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                fontSize: "0.75rem",
-                color: "#f2f2f2",
-                letterSpacing: "0.1em",
-                cursor: "pointer",
-              }}
-            >
-              HHC
-            </span>
-          </Link>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <Link href="/">
+              <span
+                onClick={scrollTop}
+                style={{
+                  fontFamily: "'Cinzel Decorative', serif",
+                  fontSize: "0.75rem",
+                  color: "#f2f2f2",
+                  letterSpacing: "0.1em",
+                  cursor: "pointer",
+                }}
+              >
+                HHC
+              </span>
+            </Link>
+            {!isHome && (
+              <button
+                onClick={() => window.history.back()}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.3rem",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  color: "#b0a090",
+                  fontSize: "0.65rem",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  fontFamily: "'Cinzel Decorative', serif",
+                  padding: 0,
+                }}
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12" />
+                  <polyline points="12 19 5 12 12 5" />
+                </svg>
+                Back
+              </button>
+            )}
+          </div>
           <button
             className="flex flex-col gap-1.5 p-2"
             onClick={() => setMenuOpen(!menuOpen)}
