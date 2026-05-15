@@ -1043,16 +1043,6 @@ export default function Products() {
                     </span>
                   </div>
 
-                  {/* Price */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <span style={{ fontSize: "1.4rem", fontWeight: 700, color: "#f2f2f2" }}>
-                      {product.price}
-                    </span>
-                    <span style={{ fontSize: "0.9rem", color: "#6b5a4e", textDecoration: "line-through" }}>
-                      {product.originalPrice}
-                    </span>
-                  </div>
-
                   <div className="flex flex-col gap-2 mt-auto">
                     <a
                       href={(product as any).affiliateUrl || "#"}
@@ -1064,6 +1054,9 @@ export default function Products() {
                         Buy Now on Amazon
                       </button>
                     </a>
+                    <p style={{ fontSize: "0.68rem", color: "#7a6a5a", textAlign: "center", letterSpacing: "0.01em", lineHeight: 1.4, marginTop: "4px" }}>
+                      For the latest pricing and availability, view this product directly on Amazon.
+                    </p>
                   </div>
                 </div>
               </div>
