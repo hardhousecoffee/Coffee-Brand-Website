@@ -562,21 +562,12 @@ export default function Home() {
                   className="absolute inset-0 flex flex-col items-start justify-end p-4"
                   style={{
                     background: "linear-gradient(to top, rgba(11,11,11,0.92) 0%, transparent 60%)",
+                    cursor: "pointer",
                   }}
+                  onMouseEnter={() => openTile(idx)}
+                  onTouchStart={(e) => { e.preventDefault(); openTile(idx); }}
                 >
-                  {/* Label — ONLY this triggers the popup */}
                   <p
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "#d4b896";
-                      openTile(idx);
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "#a14f1f";
-                    }}
-                    onTouchStart={(e) => {
-                      e.preventDefault();
-                      openTile(idx);
-                    }}
                     style={{
                       fontFamily: "'Cinzel Decorative', serif",
                       fontSize: "0.7rem",
@@ -584,25 +575,14 @@ export default function Home() {
                       color: "#a14f1f",
                       textTransform: "uppercase",
                       marginBottom: "0.35rem",
-                      cursor: "pointer",
                       transition: "color 0.2s ease",
                       userSelect: "none",
+                      pointerEvents: "none",
                     }}
                   >
                     {item.label}
                   </p>
                   <p
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "#f2f2f2";
-                      openTile(idx);
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "#d4b896";
-                    }}
-                    onTouchStart={(e) => {
-                      e.preventDefault();
-                      openTile(idx);
-                    }}
                     style={{
                       fontSize: "0.68rem",
                       color: "#d4b896",
@@ -611,8 +591,8 @@ export default function Home() {
                       transform: "translateY(6px)",
                       transition: "opacity 0.3s ease, transform 0.3s ease",
                       fontWeight: 500,
-                      cursor: "pointer",
                       userSelect: "none",
+                      pointerEvents: "none",
                     }}
                     className="read-more-hint"
                   >
