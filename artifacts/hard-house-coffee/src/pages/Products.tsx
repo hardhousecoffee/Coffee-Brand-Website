@@ -1054,7 +1054,7 @@ export default function Products() {
                         Buy Now on Amazon
                       </button>
                     </a>
-                    <p style={{ fontSize: "0.68rem", color: "#7a6a5a", textAlign: "center", letterSpacing: "0.01em", lineHeight: 1.4, marginTop: "4px" }}>
+                    <p style={{ fontSize: "0.68rem", color: "#c4b09a", textAlign: "center", letterSpacing: "0.01em", lineHeight: 1.4, marginTop: "4px" }}>
                       For the latest pricing and availability, view this product directly on Amazon.
                     </p>
                   </div>
