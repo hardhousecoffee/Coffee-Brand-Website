@@ -737,6 +737,7 @@ export default function Products() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [cycleIndex, setCycleIndex] = useState(0);
   const cycleTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [selectedVariants, setSelectedVariants] = useState<Record<number, number>>({});
 
   const handleMouseEnter = (product: any) => {
     setHoveredId(product.id);
@@ -902,6 +903,10 @@ export default function Products() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((product) => {
             const isHovered = hoveredId === product.id;
+            const variants = (product as any).variants as Array<{ color: string; label: string; affiliateUrl: string; image?: string }> | undefined;
+            const activeVariantIdx = selectedVariants[product.id] ?? -1;
+            const activeAffiliateUrl = variants && activeVariantIdx >= 0 ? variants[activeVariantIdx].affiliateUrl : (product as any).affiliateUrl;
+            const activeMainImage = variants && activeVariantIdx >= 0 && variants[activeVariantIdx].image ? variants[activeVariantIdx].image : product.image;
             return (
               <div
                 key={product.id}
@@ -929,7 +934,7 @@ export default function Products() {
                       <>
                         {/* Main image */}
                         <img
-                          src={product.image}
+                          src={activeMainImage}
                           alt={product.name}
                           className="w-full h-full absolute inset-0"
                           style={{
@@ -1015,7 +1020,7 @@ export default function Products() {
                     }}
                   >
                     <a
-                      href={(product as any).affiliateUrl || "#"}
+                      href={activeAffiliateUrl || "#"}
                       target="_blank"
                       rel="nofollow sponsored noopener noreferrer"
                       style={{ color: "#f2f2f2", textDecoration: "none", transition: "color 0.2s" }}
@@ -1062,9 +1067,57 @@ export default function Products() {
                     </span>
                   </div>
 
+                  {/* Color variant swatches */}
+                  {variants && variants.length > 0 && (
+                    <div className="flex items-center gap-2 mb-4" style={{ flexWrap: "wrap" }}>
+                      <span style={{ fontSize: "0.7rem", color: "#7a6a5a", letterSpacing: "0.06em", textTransform: "uppercase" }}>Color:</span>
+                      {/* "Default" swatch — deselects variant */}
+                      <button
+                        onClick={(e) => { e.stopPropagation(); setSelectedVariants((prev) => { const next = { ...prev }; delete next[product.id]; return next; }); }}
+                        title="Default"
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          borderRadius: "50%",
+                          border: activeVariantIdx === -1 ? "2px solid #a14f1f" : "2px solid rgba(161,79,31,0.3)",
+                          boxShadow: activeVariantIdx === -1 ? "0 0 0 2px rgba(161,79,31,0.4)" : "none",
+                          background: (product as any).defaultSwatchColor || "#555",
+                          cursor: "pointer",
+                          padding: 0,
+                          transition: "border 0.2s, box-shadow 0.2s",
+                          flexShrink: 0,
+                        }}
+                      />
+                      {variants.map((v, vIdx) => (
+                        <button
+                          key={vIdx}
+                          onClick={(e) => { e.stopPropagation(); setSelectedVariants((prev) => ({ ...prev, [product.id]: vIdx })); }}
+                          title={v.label}
+                          style={{
+                            width: "20px",
+                            height: "20px",
+                            borderRadius: "50%",
+                            border: activeVariantIdx === vIdx ? "2px solid #a14f1f" : "2px solid rgba(161,79,31,0.3)",
+                            boxShadow: activeVariantIdx === vIdx ? "0 0 0 2px rgba(161,79,31,0.4)" : "none",
+                            background: v.color,
+                            cursor: "pointer",
+                            padding: 0,
+                            transition: "border 0.2s, box-shadow 0.2s",
+                            flexShrink: 0,
+                          }}
+                        />
+                      ))}
+                      {activeVariantIdx >= 0 && (
+                        <span style={{ fontSize: "0.7rem", color: "#c4b09a", marginLeft: "2px" }}>
+                          {variants[activeVariantIdx].label}
+                        </span>
+                      )}
+                    </div>
+                  )}
+
                   <div className="flex flex-col gap-2 mt-auto">
                     <a
-                      href={(product as any).affiliateUrl || "#"}
+                      href={activeAffiliateUrl || "#"}
                       target="_blank"
                       rel="nofollow sponsored noopener noreferrer"
                       style={{ textDecoration: "none" }}
