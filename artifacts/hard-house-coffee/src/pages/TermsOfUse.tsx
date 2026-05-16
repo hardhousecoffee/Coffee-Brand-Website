@@ -152,7 +152,7 @@ export default function TermsOfUse() {
         <Section title="Contact">
           <p>
             For any questions about these Terms of Use, please contact us at{" "}
-            <span style={{ color: "#f2f2f2" }}>hello@hardhousecoffee.com</span>.
+            <span style={{ color: "#f2f2f2" }}>hardhousecoffee@gmail.com</span>.
           </p>
         </Section>
       </div>

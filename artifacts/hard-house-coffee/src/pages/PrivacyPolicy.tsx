@@ -160,7 +160,7 @@ export default function PrivacyPolicy() {
             the right to access, correct, or delete information we hold about you. To exercise any
             of these rights, contact us at:
           </p>
-          <p style={{ color: "#f2f2f2" }}>hello@hardhousecoffee.com</p>
+          <p style={{ color: "#f2f2f2" }}>hardhousecoffee@gmail.com</p>
         </Section>
 
         <Section title="Changes to This Policy">
@@ -174,7 +174,7 @@ export default function PrivacyPolicy() {
         <Section title="Contact">
           <p>
             If you have any questions about this Privacy Policy, please reach out to us at{" "}
-            <span style={{ color: "#f2f2f2" }}>hello@hardhousecoffee.com</span>.
+            <span style={{ color: "#f2f2f2" }}>hardhousecoffee@gmail.com</span>.
           </p>
         </Section>
       </div>

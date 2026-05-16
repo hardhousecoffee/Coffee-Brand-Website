@@ -135,7 +135,7 @@ export default function Disclaimer() {
         <Section title="Contact">
           <p>
             If you have any questions regarding this Disclaimer, please contact us at{" "}
-            <span style={{ color: "#f2f2f2" }}>hello@hardhousecoffee.com</span>.
+            <span style={{ color: "#f2f2f2" }}>hardhousecoffee@gmail.com</span>.
           </p>
         </Section>
       </div>

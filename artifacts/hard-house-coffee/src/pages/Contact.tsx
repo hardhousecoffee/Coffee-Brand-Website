@@ -92,7 +92,7 @@ export default function Contact() {
               Email
             </h3>
             <p style={{ color: "#f2f2f2", fontSize: "0.95rem", marginBottom: "0.4rem" }}>
-              hello@hardhousecoffee.com
+              hardhousecoffee@gmail.com
             </p>
             <p style={{ color: "#6b5a4e", fontSize: "0.78rem", lineHeight: 1.6 }}>
               We typically respond within 1–2 business days.
@@ -141,7 +141,7 @@ export default function Contact() {
               Partnerships & Press
             </h3>
             <p style={{ color: "#f2f2f2", fontSize: "0.95rem", marginBottom: "0.4rem" }}>
-              partnerships@hardhousecoffee.com
+              hardhousecoffee@gmail.com
             </p>
             <p style={{ color: "#6b5a4e", fontSize: "0.78rem", lineHeight: 1.6 }}>
               For brand collaborations, press inquiries, and affiliate proposals.
@@ -179,7 +179,7 @@ export default function Contact() {
               const name = (form.elements.namedItem("name") as HTMLInputElement).value;
               const email = (form.elements.namedItem("email") as HTMLInputElement).value;
               const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
-              window.location.href = `mailto:hello@hardhousecoffee.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(email)}`;
+              window.location.href = `mailto:hardhousecoffee@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(email)}`;
             }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
