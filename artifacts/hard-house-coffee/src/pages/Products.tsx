@@ -459,7 +459,7 @@ const products = [
     hoverImage3: "/images/products/normcore-portafilter-hover3.png",
     mainFit: "cover",
     mainPosition: "center",
-    mainScale: 0.82,
+    mainScale: 1.0,
     mainBrightness: 0.88,
     mainVignette: true,
     hoverVignetteIndices: [2],
