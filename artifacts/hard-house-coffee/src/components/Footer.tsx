@@ -5,7 +5,7 @@ const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 const SOCIAL_LINKS = [
   { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/hardhousecoffee.official" },
-  { icon: FaTiktok,    label: "TikTok", href: "https://www.tiktok.com/@hardhousecoffee.official" },
+  { icon: FaTiktok,    label: "TikTok", href: "https://www.tiktok.com/@hardhousecoffee" },
   { icon: FaYoutube,   label: "YouTube", href: "#" },
 ];
 
