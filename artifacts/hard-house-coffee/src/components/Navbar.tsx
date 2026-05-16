@@ -112,7 +112,7 @@ export default function Navbar() {
           ))}
           <Link href="/products">
             <button
-              className="btn-primary"
+              className="btn-secondary"
               onClick={scrollTop}
               style={{ padding: "0.45rem 1.2rem", fontSize: "0.75rem" }}
             >
