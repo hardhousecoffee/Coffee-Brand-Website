@@ -433,7 +433,7 @@ export default function Home() {
               style={{
                 fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "clamp(1.3rem, 3.5vw, 3.2rem)",
-                fontWeight: 700,
+                fontWeight: 400,
                 color: "#f2f2f2",
                 textShadow: [
                   "0 2px 16px rgba(0,0,0,0.8)",
