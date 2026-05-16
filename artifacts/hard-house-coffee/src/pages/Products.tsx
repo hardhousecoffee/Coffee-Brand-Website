@@ -601,6 +601,7 @@ const products = [
     hoverImage2: "/images/products/nespresso-aeroccino4-hover3.jpg",
     mainFit: "cover",
     mainPosition: "center",
+    hoverScales: [1.03, 1.18],
     pros: ["4 illuminated touch-button modes", "Cold foam, hot milk & two hot foam settings", "Cordless mirror-polished ribbed jug", "Auto shut-off with keep-warm base"],
   },
   {
@@ -952,8 +953,8 @@ export default function Products() {
                               objectPosition: "center",
                               opacity: isHovered && activeCycleIdx === idx ? 1 : 0,
                               transform: isHovered && activeCycleIdx === idx
-                                ? `scale(${(product as any).hoverScale ?? 1.03})`
-                                : `scale(${(product as any).hoverScale ?? 1.01})`,
+                                ? `scale(${(product as any).hoverScales?.[idx] ?? (product as any).hoverScale ?? 1.03})`
+                                : `scale(${((product as any).hoverScales?.[idx] ?? (product as any).hoverScale ?? 1.03) - 0.02})`,
                               transition: "opacity 0.55s ease, transform 0.55s ease",
                               filter: "brightness(0.85)",
                             }}
