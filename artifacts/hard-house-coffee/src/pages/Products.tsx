@@ -472,7 +472,7 @@ const products = [
     name: "Breville Barista Express Accessories Kit - Walnut Espresso Station with Tamper, Portafilter & Knock Box",
     tagline: "Solid walnut workstation. Every tool in its place.",
     desc: "A complete walnut espresso prep station built for serious home baristas. This kit brings together a precision-machined stainless tamper with walnut handle, a bottomless portafilter, and an integrated knock box — all organized in a handsome solid walnut block. Designed to work seamlessly with the Breville Barista Express, it turns your counter into a tidy, professional extraction setup.",
-    affiliateLink: "https://amzn.to/4tXDby9",
+    affiliateUrl: "https://amzn.to/4tXDby9",
     rating: 4.7,
     reviews: 863,
     badge: "Best Value Kit",
