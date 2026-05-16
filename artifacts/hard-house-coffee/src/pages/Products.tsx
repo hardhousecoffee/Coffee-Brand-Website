@@ -419,21 +419,25 @@ const products = [
     id: 54,
     category: "Accessories",
     subcategory: "Barista Sets",
-    name: "Normcore Barista Essential Tool Kit",
-    tagline: "Everything you need. Nothing you don't.",
-    desc: "Normcore's Barista Essential Tool Kit is the definitive home espresso setup — a complete collection featuring the V4 tamper, leveler/distributor, WDT needle stirrer, dosing ring, puck screen, and an organizational mat to keep it all in place. Precision-machined from stainless steel and available in matte black or white, this kit transforms your counter into a proper espresso station.",
-    price: "$199.99",
+    name: "Normcore 53.3mm 7-in-1 Compact Barista Kit",
+    tagline: "Seven tools. One station. Zero clutter.",
+    desc: "The Normcore 53.3mm 7-in-1 Compact Barista Kit bundles everything you need for a precision espresso workflow into a single sleek organizer. Includes a spring-loaded tamper, leveler/distributor, WDT needle stirrer, dosing funnel, puck screen, dosing ring, and a portafilter holder — all neatly housed in a compact tray built for serious home baristas.",
+    price: "$89.95",
     rating: 4.9,
-    reviews: 2341,
-    badge: "Full Kit",
+    reviews: 3182,
+    badge: "Staff Pick",
     badgeColor: "#8b2f2f",
-    image: "/images/products/normcore-kit-main.jpeg",
-    hoverImage: "/images/products/normcore-kit-hover1.jpeg",
-    hoverImage2: "/images/products/normcore-kit-hover2.jpeg",
-    hoverImage3: "/images/products/normcore-kit-hover3.jpeg",
-    mainFit: "cover",
+    affiliateUrl: "https://amzn.to/3RelDzZ",
+    image: "/images/products/normcore-7in1-main.jpg",
+    hoverImage: "/images/products/normcore-7in1-hover1.png",
+    hoverImage2: "/images/products/normcore-7in1-hover2.jpg",
+    hoverImage3: "/images/products/normcore-7in1-hover3.png",
+    hoverImage4: "/images/products/normcore-7in1-hover4.png",
+    mainFit: "contain",
     mainPosition: "center",
-    pros: ["V4 tamper + leveler/distributor combo", "WDT needle stirrer & dosing ring", "Puck screen included", "Org mat keeps tools station-ready"],
+    mainVignette: true,
+    hoverVignetteIndices: [1],
+    pros: ["53.3mm spring-loaded tamper & leveler/distributor", "WDT needle stirrer for even extraction", "Dosing funnel, puck screen & dosing ring", "Compact all-in-one station organizer"],
   },
   {
     id: 55,
@@ -940,7 +944,7 @@ export default function Products() {
                             alt={`${product.name} view ${idx + 1}`}
                             className="w-full h-full absolute inset-0"
                             style={{
-                              objectFit: "cover",
+                              objectFit: (product as any).hoverVignetteIndices?.includes(idx) ? "contain" : "cover",
                               objectPosition: "center",
                               opacity: isHovered && activeCycleIdx === idx ? 1 : 0,
                               transform: isHovered && activeCycleIdx === idx
@@ -951,6 +955,16 @@ export default function Products() {
                             }}
                           />
                         ))}
+                        {/* Vignette overlay for white-background images */}
+                        {(product as any).mainVignette && (
+                          <div
+                            className="absolute inset-0 pointer-events-none"
+                            style={{
+                              background: "radial-gradient(ellipse at center, transparent 30%, rgba(11,9,7,0.82) 100%)",
+                              zIndex: 1,
+                            }}
+                          />
+                        )}
                       </>
                     );
                   })()}
