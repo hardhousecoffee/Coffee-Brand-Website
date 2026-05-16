@@ -1036,46 +1036,10 @@ export default function Products() {
                       {product.name}
                     </a>
                   </h3>
-                  <p style={{ fontSize: "0.78rem", color: "#a14f1f", marginBottom: "0.8rem", fontStyle: "italic" }}>
-                    {product.tagline}
-                  </p>
-                  <p style={{ fontSize: "0.8rem", color: "#b0a090", lineHeight: 1.6, marginBottom: "1rem" }}>
-                    {product.desc}
-                  </p>
 
-                  {/* Pros */}
-                  <ul className="mb-4">
-                    {product.pros.map((pro) => (
-                      <li
-                        key={pro}
-                        style={{
-                          fontSize: "0.78rem",
-                          color: "#c0a880",
-                          marginBottom: "0.3rem",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.5rem",
-                        }}
-                      >
-                        <span style={{ color: "#a14f1f", fontSize: "0.9rem" }}>✓</span>
-                        {pro}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Stars */}
-                  <div className="flex items-center gap-2 mb-3">
-                    <div style={{ color: "#a14f1f", fontSize: "0.9rem" }}>
-                      {"★".repeat(Math.floor(product.rating))}
-                    </div>
-                    <span style={{ fontSize: "0.75rem", color: "#b0a090" }}>
-                      {product.rating} ({product.reviews.toLocaleString()} reviews)
-                    </span>
-                  </div>
-
-                  {/* Color variant swatches */}
+                  {/* Color variant swatches — shown directly below product name */}
                   {variants && variants.length > 0 && (
-                    <div className="flex items-center gap-2 mb-4" style={{ flexWrap: "wrap" }}>
+                    <div className="flex items-center gap-2 mb-3" style={{ flexWrap: "wrap" }}>
                       <span style={{ fontSize: "0.7rem", color: "#7a6a5a", letterSpacing: "0.06em", textTransform: "uppercase" }}>Color:</span>
                       {/* "Default" swatch — deselects variant */}
                       <button
@@ -1120,6 +1084,43 @@ export default function Products() {
                       )}
                     </div>
                   )}
+
+                  <p style={{ fontSize: "0.78rem", color: "#a14f1f", marginBottom: "0.8rem", fontStyle: "italic" }}>
+                    {product.tagline}
+                  </p>
+                  <p style={{ fontSize: "0.8rem", color: "#b0a090", lineHeight: 1.6, marginBottom: "1rem" }}>
+                    {product.desc}
+                  </p>
+
+                  {/* Pros */}
+                  <ul className="mb-4">
+                    {product.pros.map((pro) => (
+                      <li
+                        key={pro}
+                        style={{
+                          fontSize: "0.78rem",
+                          color: "#c0a880",
+                          marginBottom: "0.3rem",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "0.5rem",
+                        }}
+                      >
+                        <span style={{ color: "#a14f1f", fontSize: "0.9rem" }}>✓</span>
+                        {pro}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Stars */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <div style={{ color: "#a14f1f", fontSize: "0.9rem" }}>
+                      {"★".repeat(Math.floor(product.rating))}
+                    </div>
+                    <span style={{ fontSize: "0.75rem", color: "#b0a090" }}>
+                      {product.rating} ({product.reviews.toLocaleString()} reviews)
+                    </span>
+                  </div>
 
                   <div className="flex flex-col gap-2 mt-auto">
                     <a
