@@ -433,10 +433,10 @@ const products = [
     hoverImage2: "/images/products/normcore-7in1-hover2.jpg",
     hoverImage3: "/images/products/normcore-7in1-hover3.png",
     hoverImage4: "/images/products/normcore-7in1-hover4.png",
-    mainFit: "contain",
+    mainFit: "cover",
     mainPosition: "center",
     mainVignette: true,
-    hoverVignetteIndices: [1],
+    hoverVignetteIndices: [],
     pros: ["53.3mm spring-loaded tamper & leveler/distributor", "WDT needle stirrer for even extraction", "Dosing funnel, puck screen & dosing ring", "Compact all-in-one station organizer"],
   },
   {
