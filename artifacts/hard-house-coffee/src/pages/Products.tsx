@@ -660,6 +660,8 @@ const products = [
     image: "/images/products/ember-travel-mug2-main.jpeg",
     hoverImage: "/images/products/ember-travel-mug2-new-hover1.jpg",
     hoverImage2: "/images/products/ember-travel-mug2-new-hover2.jpg",
+    hoverImage3: "/images/products/ember-travel-mug2-hover3.jpeg",
+    hoverImage4: "/images/products/ember-travel-mug2-hover4.jpeg",
     mainFit: "cover",
     mainPosition: "center",
     pros: ["On-mug LED temperature display", "Tapered design fits car cup holders", "Leak-proof lid for on-the-go sipping", "3-hour battery + charging coaster included"],
