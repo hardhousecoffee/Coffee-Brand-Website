@@ -435,6 +435,7 @@ const products = [
     hoverImage4: "/images/products/normcore-7in1-hover4.png",
     mainFit: "cover",
     mainPosition: "center",
+    mainBrightness: 0.88,
     mainVignette: true,
     hoverVignetteIndices: [],
     pros: ["53.3mm spring-loaded tamper & leveler/distributor", "WDT needle stirrer for even extraction", "Dosing funnel, puck screen & dosing ring", "Compact all-in-one station organizer"],
@@ -933,7 +934,7 @@ export default function Products() {
                             opacity: isHovered && hoverImages.length > 0 ? 0 : 1,
                             transform: isHovered ? `scale(${((product as any).mainScale ?? 1) * 1.06})` : `scale(${(product as any).mainScale ?? 1})`,
                             transition: "opacity 0.55s ease, transform 0.55s ease",
-                            filter: "brightness(0.65)",
+                            filter: `brightness(${(product as any).mainBrightness ?? 0.65})`,
                           }}
                         />
                         {/* Hover images — cycle through on timer */}
@@ -960,7 +961,7 @@ export default function Products() {
                           <div
                             className="absolute inset-0 pointer-events-none"
                             style={{
-                              background: "radial-gradient(ellipse at center, transparent 30%, rgba(11,9,7,0.82) 100%)",
+                              background: "radial-gradient(ellipse at center, transparent 35%, rgba(11,9,7,0.52) 100%)",
                               zIndex: 1,
                             }}
                           />
