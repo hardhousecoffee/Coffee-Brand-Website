@@ -726,9 +726,14 @@ const products = [
     reviews: 5872,
     badge: "Always Warm",
     badgeColor: "#8b2f2f",
-    image: "/images/products/ohom-ui-ceramic-main.jpg",
-    hoverImage: "/images/products/ohom-ui-ceramic-hover1.jpg",
-    hoverImage2: "/images/products/ohom-ui-ceramic-hover2.jpg",
+    image: "/images/products/ohom-ui-ceramic-main.jpeg",
+    hoverImage: "/images/products/ohom-ui-ceramic-hover1.jpeg",
+    hoverImage2: "/images/products/ohom-ui-ceramic-hover2.jpeg",
+    hoverImage3: "/images/products/ohom-ui-ceramic-hover3.jpeg",
+    hoverImage4: "/images/products/ohom-ui-ceramic-hover4.jpeg",
+    hoverImage5: "/images/products/ohom-ui-ceramic-main.jpg",
+    hoverImage6: "/images/products/ohom-ui-ceramic-hover1.jpg",
+    hoverImage7: "/images/products/ohom-ui-ceramic-hover2.jpg",
     mainFit: "cover",
     mainPosition: "center",
     pros: ["Continuous warmth — no timer, no shutoff", "Brushed aluminium Qi charging coaster", "Charges phone, AirPods & Qi devices", "Matte ceramic with ceramic lid included"],
@@ -932,7 +937,7 @@ export default function Products() {
                 {/* Image with hover swap */}
                 <div className="relative overflow-hidden" style={{ height: "220px" }}>
                   {(() => {
-                    const hoverImages = [product.hoverImage, (product as any).hoverImage2, (product as any).hoverImage3, (product as any).hoverImage4].filter(Boolean) as string[];
+                    const hoverImages = [product.hoverImage, (product as any).hoverImage2, (product as any).hoverImage3, (product as any).hoverImage4, (product as any).hoverImage5, (product as any).hoverImage6, (product as any).hoverImage7].filter(Boolean) as string[];
                     const activeCycleIdx = hoverImages.length > 0 ? cycleIndex % hoverImages.length : 0;
                     const variantImageActive = variants && activeVariantIdx >= 0 && variants[activeVariantIdx].image;
                     return (
