@@ -1,15 +1,12 @@
 import { Link } from "wouter";
-import { FaXTwitter, FaInstagram, FaFacebook, FaPinterest, FaTiktok, FaYoutube } from "react-icons/fa6";
+import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 
 const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 const SOCIAL_LINKS = [
-  { icon: FaInstagram,  label: "Instagram", href: "#" },
-  { icon: FaXTwitter,   label: "X (Twitter)", href: "#" },
-  { icon: FaTiktok,     label: "TikTok", href: "#" },
-  { icon: FaFacebook,   label: "Facebook", href: "#" },
-  { icon: FaPinterest,  label: "Pinterest", href: "#" },
-  { icon: FaYoutube,    label: "YouTube", href: "#" },
+  { icon: FaInstagram, label: "Instagram", href: "#" },
+  { icon: FaTiktok,    label: "TikTok", href: "#" },
+  { icon: FaYoutube,   label: "YouTube", href: "#" },
 ];
 
 export default function Footer() {
