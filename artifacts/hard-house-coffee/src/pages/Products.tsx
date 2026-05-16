@@ -611,7 +611,7 @@ const products = [
     name: "Ember Smart Mug 2 Temperature Control",
     tagline: "Your perfect temperature. Always.",
     desc: "The Ember Smart Mug 2 keeps your coffee or tea at the exact temperature you set — from 120°F to 145°F — for up to 80 minutes on a single charge or all day on the included charging coaster. Control it from the Ember app or right on the mug itself. Minimal, matte-finished, and built for the serious coffee drinker who refuses to drink it cold.",
-    price: "$149.95",
+    affiliateUrl: "https://amzn.to/4nyeNkY",
     rating: 4.7,
     reviews: 28341,
     badge: "App-Controlled",
