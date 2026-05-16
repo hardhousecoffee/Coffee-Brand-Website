@@ -652,7 +652,7 @@ const products = [
     name: "Ember Travel Mug 2",
     tagline: "Precision temperature. Built for the commute.",
     desc: "The Ember Travel Mug 2 is the smart mug engineered for life on the move. The built-in LED temperature display lets you read the exact heat of your drink at a glance — no phone needed. The tapered grip fits most car cup holders, and the leak-proof lid keeps every sip contained. With up to 3 hours of battery and all-day warmth on the included charging coaster, your coffee never gets cold again.",
-    price: "$199.95",
+    affiliateUrl: "https://amzn.to/42DFxXG",
     rating: 4.6,
     reviews: 11284,
     badge: "LED Display",
