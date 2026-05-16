@@ -936,9 +936,10 @@ export default function Products() {
                   {(() => {
                     const hoverImages = [product.hoverImage, (product as any).hoverImage2, (product as any).hoverImage3, (product as any).hoverImage4].filter(Boolean) as string[];
                     const activeCycleIdx = hoverImages.length > 0 ? cycleIndex % hoverImages.length : 0;
+                    const variantImageActive = variants && activeVariantIdx >= 0 && variants[activeVariantIdx].image;
                     return (
                       <>
-                        {/* Main image */}
+                        {/* Main image — always shown when a variant swatch is selected */}
                         <img
                           src={activeMainImage}
                           alt={product.name}
@@ -946,13 +947,13 @@ export default function Products() {
                           style={{
                             objectFit: (product as any).mainFit || "cover",
                             objectPosition: (product as any).mainPosition || "center",
-                            opacity: isHovered && hoverImages.length > 0 ? 0 : 1,
+                            opacity: isHovered && hoverImages.length > 0 && !variantImageActive ? 0 : 1,
                             transform: isHovered ? `scale(${((product as any).mainScale ?? 1) * 1.06})` : `scale(${(product as any).mainScale ?? 1})`,
                             transition: "opacity 0.55s ease, transform 0.55s ease",
                             filter: `brightness(${(product as any).mainBrightness ?? 0.65})`,
                           }}
                         />
-                        {/* Hover images — cycle through on timer */}
+                        {/* Hover images — cycle through on timer, suppressed when variant selected */}
                         {hoverImages.map((src, idx) => (
                           <img
                             key={idx}
@@ -962,8 +963,8 @@ export default function Products() {
                             style={{
                               objectFit: (product as any).hoverVignetteIndices?.includes(idx) ? "contain" : "cover",
                               objectPosition: "center",
-                              opacity: isHovered && activeCycleIdx === idx ? 1 : 0,
-                              transform: isHovered && activeCycleIdx === idx
+                              opacity: isHovered && activeCycleIdx === idx && !variantImageActive ? 1 : 0,
+                              transform: isHovered && activeCycleIdx === idx && !variantImageActive
                                 ? `scale(${(product as any).hoverScales?.[idx] ?? (product as any).hoverScale ?? 1.03})`
                                 : `scale(${((product as any).hoverScales?.[idx] ?? (product as any).hoverScale ?? 1.03) - 0.02})`,
                               transition: "opacity 0.55s ease, transform 0.55s ease",
