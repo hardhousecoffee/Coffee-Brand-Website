@@ -694,7 +694,7 @@ const products = [
     name: "OHOM Ui Artist Collection Self-Heating Mug Set",
     tagline: "Art-glazed ceramic. Precision heat. Dual purpose.",
     desc: "The OHOM Ui Artist Mug Set is where craft pottery meets smart technology. Each mug is finished in a hand-glazed artist-series ceramic exterior — speckled stone, ocean blue, blush gradient — and pairs with a wireless charging coaster that doubles as a Qi phone charger. Temperature is maintained continuously while the mug sits on its coaster, no buttons, no apps, no compromise.",
-    price: "$128.00",
+    affiliateUrl: "https://amzn.to/4eRpg8L",
     rating: 4.5,
     reviews: 4391,
     badge: "Artist Series",
@@ -706,6 +706,12 @@ const products = [
     hoverImage4: "/images/products/ohom-ui-artist-hover4.jpeg",
     mainFit: "cover",
     mainPosition: "center",
+    defaultSwatchColor: "#2c2a28",
+    variants: [
+      { color: "#d4899a", label: "Blush Cloud", affiliateUrl: "https://amzn.to/4tA5uT3", image: "/images/products/ohom-artist-blush-cloud-main.jpg" },
+      { color: "#6b8fa3", label: "Arctic Radiance", affiliateUrl: "https://amzn.to/4dsavXM", image: "/images/products/ohom-artist-arctic-radiance-main.jpg" },
+      { color: "#1e4d6b", label: "Midnight Abyss", affiliateUrl: "https://amzn.to/4fkzVsM", image: "/images/products/ohom-artist-midnight-abyss-main.jpg" },
+    ],
     pros: ["Hand-glazed artist-series ceramic exterior", "Wireless coaster doubles as Qi phone charger", "Continuous heat — no buttons or app needed", "Multiple colorway glazes available"],
   },
   {
