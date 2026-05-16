@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "IBMqFi3pRM8pwFhrKRsj-"
@@ -54,3 +53,9 @@ id = "dqFYyLkI0wbhqmG_ieK1U"
 uri = "file://artifacts/hard-house-coffee/public/images/breville-vs-delonghi.png"
 type = "image"
 title = "breville-vs-delonghi-espresso-machines"
+
+[[outputs]]
+id = "tEdxxz1v18JkuFIWilY_z"
+uri = "file://hard-house-coffee-hostinger.zip"
+type = "unspecified"
+title = "Hard House Coffee — Hostinger Upload Package"
