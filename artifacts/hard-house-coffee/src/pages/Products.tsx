@@ -599,9 +599,9 @@ const products = [
     image: "/images/products/nespresso-aeroccino4-main.jpeg",
     hoverImage: "/images/products/nespresso-aeroccino4-hover1.jpeg",
     hoverImage2: "/images/products/nespresso-aeroccino4-hover2.jpeg",
-    hoverImage3: "/images/products/nespresso-aeroccino4-hover3.jpg",
     mainFit: "cover",
     mainPosition: "center",
+    mainScale: 0.85,
     pros: ["4 illuminated touch-button modes", "Cold foam, hot milk & two hot foam settings", "Cordless mirror-polished ribbed jug", "Auto shut-off with keep-warm base"],
   },
   {
