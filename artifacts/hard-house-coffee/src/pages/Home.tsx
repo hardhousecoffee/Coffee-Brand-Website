@@ -193,7 +193,14 @@ function VideoSection() {
     );
 
     observer.observe(container);
-    return () => observer.disconnect();
+
+    const handleEnded = () => setPlaying(false);
+    video.addEventListener("ended", handleEnded);
+
+    return () => {
+      observer.disconnect();
+      video.removeEventListener("ended", handleEnded);
+    };
   }, []);
 
   function togglePlay() {
