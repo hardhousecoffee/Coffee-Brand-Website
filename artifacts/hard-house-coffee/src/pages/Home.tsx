@@ -169,7 +169,7 @@ function VideoSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [loaded, setLoaded] = useState(false);
-  const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -182,7 +182,6 @@ function VideoSection() {
           if (entry.isIntersecting) {
             video.src = "/videos/homepage.mp4";
             video.load();
-            video.play().catch(() => {});
             setLoaded(true);
             observer.disconnect();
           }
@@ -195,11 +194,16 @@ function VideoSection() {
     return () => observer.disconnect();
   }, []);
 
-  function toggleMute() {
+  function togglePlay() {
     const video = videoRef.current;
     if (!video) return;
-    video.muted = !video.muted;
-    setMuted(video.muted);
+    if (video.paused) {
+      video.play().catch(() => {});
+      setPlaying(true);
+    } else {
+      video.pause();
+      setPlaying(false);
+    }
   }
 
   return (
@@ -218,8 +222,6 @@ function VideoSection() {
       >
         <video
           ref={videoRef}
-          loop
-          muted
           playsInline
           preload="none"
           style={{
@@ -243,11 +245,11 @@ function VideoSection() {
           }}
         />
 
-        {/* Mute toggle */}
+        {/* Play / Pause toggle */}
         {loaded && (
           <button
-            onClick={toggleMute}
-            title={muted ? "Unmute" : "Mute"}
+            onClick={togglePlay}
+            title={playing ? "Pause" : "Play"}
             style={{
               position: "absolute",
               bottom: "20px",
@@ -268,14 +270,14 @@ function VideoSection() {
               fontSize: "16px",
             }}
           >
-            {muted ? (
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                <polygon points="3,1 15,8 3,15" />
-              </svg>
-            ) : (
+            {playing ? (
               <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                 <rect x="2" y="1" width="4" height="14" rx="1" />
                 <rect x="10" y="1" width="4" height="14" rx="1" />
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <polygon points="3,1 15,8 3,15" />
               </svg>
             )}
           </button>
