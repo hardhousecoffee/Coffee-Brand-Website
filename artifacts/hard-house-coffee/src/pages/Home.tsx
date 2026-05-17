@@ -170,6 +170,7 @@ function VideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [loaded, setLoaded] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -245,39 +246,54 @@ function VideoSection() {
           }}
         />
 
-        {/* Play / Pause toggle */}
+        {/* Center Play / Pause button */}
         {loaded && (
           <button
             onClick={togglePlay}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
             title={playing ? "Pause" : "Play"}
             style={{
               position: "absolute",
-              bottom: "20px",
-              right: "20px",
-              background: "rgba(11,11,11,0.65)",
-              border: "1px solid rgba(242,242,242,0.2)",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "72px",
+              height: "72px",
               borderRadius: "50%",
-              width: "40px",
-              height: "40px",
+              background: hovered
+                ? "rgba(11,11,11,0.75)"
+                : "rgba(11,11,11,0.55)",
+              border: `2px solid ${hovered ? "rgba(212,184,150,0.9)" : "rgba(212,184,150,0.55)"}`,
+              boxShadow: hovered
+                ? "0 0 0 4px rgba(161,79,31,0.25), 0 0 28px rgba(161,79,31,0.35), 0 4px 24px rgba(0,0,0,0.5)"
+                : "0 0 0 3px rgba(161,79,31,0.12), 0 4px 20px rgba(0,0,0,0.4)",
+              backdropFilter: "blur(10px)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               cursor: "pointer",
-              backdropFilter: "blur(8px)",
-              transition: "background 0.2s ease",
               zIndex: 3,
               color: "#f2f2f2",
-              fontSize: "16px",
+              opacity: playing && !hovered ? 0.6 : 1,
+              transition: "all 0.25s ease",
+              outline: "none",
             }}
           >
             {playing ? (
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                <rect x="2" y="1" width="4" height="14" rx="1" />
-                <rect x="10" y="1" width="4" height="14" rx="1" />
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                <rect x="5" y="3" width="4" height="18" rx="1.5" />
+                <rect x="15" y="3" width="4" height="18" rx="1.5" />
               </svg>
             ) : (
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                <polygon points="3,1 15,8 3,15" />
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="white"
+                style={{ marginLeft: "3px" }}
+              >
+                <polygon points="5,3 22,12 5,21" />
               </svg>
             )}
           </button>
