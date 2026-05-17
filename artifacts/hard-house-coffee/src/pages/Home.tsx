@@ -246,57 +246,66 @@ function VideoSection() {
           }}
         />
 
-        {/* Center Play / Pause button */}
+        {/* Cinematic centered Play / Pause button */}
         {loaded && (
-          <button
-            onClick={togglePlay}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            title={playing ? "Pause" : "Play"}
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              width: "72px",
-              height: "72px",
-              borderRadius: "50%",
-              background: hovered
-                ? "rgba(11,11,11,0.75)"
-                : "rgba(11,11,11,0.55)",
-              border: `2px solid ${hovered ? "rgba(212,184,150,0.9)" : "rgba(212,184,150,0.55)"}`,
-              boxShadow: hovered
-                ? "0 0 0 4px rgba(161,79,31,0.25), 0 0 28px rgba(161,79,31,0.35), 0 4px 24px rgba(0,0,0,0.5)"
-                : "0 0 0 3px rgba(161,79,31,0.12), 0 4px 20px rgba(0,0,0,0.4)",
-              backdropFilter: "blur(10px)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              zIndex: 3,
-              color: "#f2f2f2",
-              opacity: playing && !hovered ? 0.6 : 1,
-              transition: "all 0.25s ease",
-              outline: "none",
-            }}
-          >
-            {playing ? (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-                <rect x="5" y="3" width="4" height="18" rx="1.5" />
-                <rect x="15" y="3" width="4" height="18" rx="1.5" />
-              </svg>
-            ) : (
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="white"
-                style={{ marginLeft: "3px" }}
-              >
-                <polygon points="5,3 22,12 5,21" />
-              </svg>
-            )}
-          </button>
+          <>
+            <style>{`
+              @keyframes hhc-ring-pulse {
+                0%   { box-shadow: 0 0 0 0 rgba(161,79,31,0.45), 0 0 32px rgba(161,79,31,0.25); }
+                70%  { box-shadow: 0 0 0 12px rgba(161,79,31,0), 0 0 32px rgba(161,79,31,0.15); }
+                100% { box-shadow: 0 0 0 0 rgba(161,79,31,0), 0 0 32px rgba(161,79,31,0.25); }
+              }
+            `}</style>
+            <button
+              onClick={togglePlay}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+              title={playing ? "Pause" : "Play"}
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: `translate(-50%, -50%) scale(${hovered ? 1.07 : 1})`,
+                width: "112px",
+                height: "112px",
+                borderRadius: "50%",
+                background: hovered
+                  ? "rgba(11,11,11,0.82)"
+                  : "rgba(11,11,11,0.62)",
+                border: `2px solid ${hovered ? "rgba(212,184,150,1)" : "rgba(212,184,150,0.65)"}`,
+                boxShadow: hovered
+                  ? "0 0 0 6px rgba(161,79,31,0.2), 0 0 48px rgba(161,79,31,0.45), 0 8px 40px rgba(0,0,0,0.6)"
+                  : "0 0 0 3px rgba(161,79,31,0.15), 0 6px 30px rgba(0,0,0,0.5)",
+                animation: !playing ? "hhc-ring-pulse 2.4s ease-out infinite" : "none",
+                backdropFilter: "blur(12px)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                zIndex: 3,
+                opacity: playing && !hovered ? 0.55 : 1,
+                transition: "transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease",
+                outline: "none",
+              }}
+            >
+              {playing ? (
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="white">
+                  <rect x="5" y="3" width="4" height="18" rx="1.5" />
+                  <rect x="15" y="3" width="4" height="18" rx="1.5" />
+                </svg>
+              ) : (
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  style={{ marginLeft: "4px" }}
+                >
+                  <polygon points="5,3 22,12 5,21" />
+                </svg>
+              )}
+            </button>
+          </>
         )}
       </div>
     </section>
