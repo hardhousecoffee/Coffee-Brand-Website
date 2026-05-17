@@ -170,7 +170,8 @@ function VideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [loaded, setLoaded] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [hovered, setHovered] = useState(false);
+  const [containerHovered, setContainerHovered] = useState(false);
+  const [btnHovered, setBtnHovered] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -207,10 +208,15 @@ function VideoSection() {
     }
   }
 
+  // Button is visible when: paused (always), OR playing + container hovered
+  const buttonVisible = !playing || containerHovered;
+
   return (
     <section style={{ backgroundColor: "#0b0b0b" }}>
       <div
         ref={containerRef}
+        onMouseEnter={() => setContainerHovered(true)}
+        onMouseLeave={() => { setContainerHovered(false); setBtnHovered(false); }}
         style={{
           position: "relative",
           width: "100%",
@@ -219,6 +225,7 @@ function VideoSection() {
           aspectRatio: "16/9",
           overflow: "hidden",
           backgroundColor: "#0b0b0b",
+          cursor: playing ? "default" : "default",
         }}
       >
         <video
@@ -256,7 +263,7 @@ function VideoSection() {
               }
             `}</style>
 
-            {/* Dark vignette overlay — only visible when paused */}
+            {/* Dark vignette — shows when paused, fades when playing */}
             <div
               style={{
                 position: "absolute",
@@ -271,22 +278,22 @@ function VideoSection() {
 
             <button
               onClick={togglePlay}
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
+              onMouseEnter={() => setBtnHovered(true)}
+              onMouseLeave={() => setBtnHovered(false)}
               title={playing ? "Pause" : "Play"}
               style={{
                 position: "absolute",
                 top: "50%",
                 left: "50%",
-                transform: `translate(-50%, -50%) scale(${hovered ? 1.06 : 1})`,
+                transform: `translate(-50%, -50%) scale(${btnHovered ? 1.06 : 1})`,
                 width: "168px",
                 height: "72px",
                 borderRadius: "16px",
-                background: hovered
+                background: btnHovered
                   ? "rgba(8,8,8,0.88)"
                   : "rgba(8,8,8,0.72)",
-                border: `1.5px solid ${hovered ? "rgba(212,184,150,0.85)" : "rgba(212,184,150,0.4)"}`,
-                boxShadow: hovered
+                border: `1.5px solid ${btnHovered ? "rgba(212,184,150,0.85)" : "rgba(212,184,150,0.4)"}`,
+                boxShadow: btnHovered
                   ? "0 0 40px rgba(161,79,31,0.5), 0 0 80px rgba(161,79,31,0.18), 0 8px 32px rgba(0,0,0,0.7)"
                   : "0 0 20px rgba(161,79,31,0.18), 0 6px 24px rgba(0,0,0,0.55)",
                 backdropFilter: "blur(16px)",
@@ -297,9 +304,9 @@ function VideoSection() {
                 gap: "14px",
                 cursor: "pointer",
                 zIndex: 3,
-                opacity: playing && !hovered ? 0 : 1,
-                pointerEvents: playing && !hovered ? "none" : "auto",
-                transition: "transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.45s ease",
+                opacity: buttonVisible ? 1 : 0,
+                pointerEvents: buttonVisible ? "auto" : "none",
+                transition: "transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease",
                 outline: "none",
                 animation: !playing ? "hhc-fade-in 0.6s ease forwards" : "none",
               }}
