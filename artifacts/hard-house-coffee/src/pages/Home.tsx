@@ -246,16 +246,29 @@ function VideoSection() {
           }}
         />
 
-        {/* Cinematic centered Play / Pause button */}
+        {/* Cinematic YouTube-style play overlay */}
         {loaded && (
           <>
             <style>{`
-              @keyframes hhc-ring-pulse {
-                0%   { box-shadow: 0 0 0 0 rgba(161,79,31,0.45), 0 0 32px rgba(161,79,31,0.25); }
-                70%  { box-shadow: 0 0 0 12px rgba(161,79,31,0), 0 0 32px rgba(161,79,31,0.15); }
-                100% { box-shadow: 0 0 0 0 rgba(161,79,31,0), 0 0 32px rgba(161,79,31,0.25); }
+              @keyframes hhc-fade-in {
+                from { opacity: 0; transform: translate(-50%, -50%) scale(0.92); }
+                to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
               }
             `}</style>
+
+            {/* Dark vignette overlay — only visible when paused */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "rgba(0,0,0,0.28)",
+                opacity: playing ? 0 : 1,
+                transition: "opacity 0.5s ease",
+                pointerEvents: "none",
+                zIndex: 2,
+              }}
+            />
+
             <button
               onClick={togglePlay}
               onMouseEnter={() => setHovered(true)}
@@ -265,45 +278,67 @@ function VideoSection() {
                 position: "absolute",
                 top: "50%",
                 left: "50%",
-                transform: `translate(-50%, -50%) scale(${hovered ? 1.07 : 1})`,
-                width: "112px",
-                height: "112px",
-                borderRadius: "50%",
+                transform: `translate(-50%, -50%) scale(${hovered ? 1.06 : 1})`,
+                width: "168px",
+                height: "72px",
+                borderRadius: "16px",
                 background: hovered
-                  ? "rgba(11,11,11,0.82)"
-                  : "rgba(11,11,11,0.62)",
-                border: `2px solid ${hovered ? "rgba(212,184,150,1)" : "rgba(212,184,150,0.65)"}`,
+                  ? "rgba(8,8,8,0.88)"
+                  : "rgba(8,8,8,0.72)",
+                border: `1.5px solid ${hovered ? "rgba(212,184,150,0.85)" : "rgba(212,184,150,0.4)"}`,
                 boxShadow: hovered
-                  ? "0 0 0 6px rgba(161,79,31,0.2), 0 0 48px rgba(161,79,31,0.45), 0 8px 40px rgba(0,0,0,0.6)"
-                  : "0 0 0 3px rgba(161,79,31,0.15), 0 6px 30px rgba(0,0,0,0.5)",
-                animation: !playing ? "hhc-ring-pulse 2.4s ease-out infinite" : "none",
-                backdropFilter: "blur(12px)",
+                  ? "0 0 40px rgba(161,79,31,0.5), 0 0 80px rgba(161,79,31,0.18), 0 8px 32px rgba(0,0,0,0.7)"
+                  : "0 0 20px rgba(161,79,31,0.18), 0 6px 24px rgba(0,0,0,0.55)",
+                backdropFilter: "blur(16px)",
+                WebkitBackdropFilter: "blur(16px)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                gap: "14px",
                 cursor: "pointer",
                 zIndex: 3,
-                opacity: playing && !hovered ? 0.55 : 1,
-                transition: "transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease",
+                opacity: playing && !hovered ? 0 : 1,
+                pointerEvents: playing && !hovered ? "none" : "auto",
+                transition: "transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.45s ease",
                 outline: "none",
+                animation: !playing ? "hhc-fade-in 0.6s ease forwards" : "none",
               }}
             >
-              {playing ? (
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="white">
+              {/* Play triangle */}
+              {!playing && (
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  style={{ flexShrink: 0, marginLeft: "2px" }}
+                >
+                  <polygon points="5,2 22,12 5,22" />
+                </svg>
+              )}
+
+              {/* Pause bars */}
+              {playing && (
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="white" style={{ flexShrink: 0 }}>
                   <rect x="5" y="3" width="4" height="18" rx="1.5" />
                   <rect x="15" y="3" width="4" height="18" rx="1.5" />
                 </svg>
-              ) : (
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 24 24"
-                  fill="white"
-                  style={{ marginLeft: "4px" }}
-                >
-                  <polygon points="5,3 22,12 5,21" />
-                </svg>
               )}
+
+              {/* Label */}
+              <span
+                style={{
+                  color: "rgba(255,255,255,0.92)",
+                  fontSize: "0.78rem",
+                  fontFamily: "'Cinzel Decorative', serif",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  whiteSpace: "nowrap",
+                  userSelect: "none",
+                }}
+              >
+                {playing ? "Pause" : "Play"}
+              </span>
             </button>
           </>
         )}
