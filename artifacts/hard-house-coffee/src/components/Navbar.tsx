@@ -116,7 +116,7 @@ export default function Navbar() {
               onClick={scrollTop}
               style={{ padding: "0.45rem 1.2rem", fontSize: "0.75rem" }}
             >
-              Shop Gear
+              Shop
             </button>
           </Link>
         </div>
@@ -226,7 +226,7 @@ export default function Navbar() {
               className="btn-primary w-full mt-4"
               onClick={() => { setMenuOpen(false); scrollTop(); }}
             >
-              Shop Gear
+              Shop
             </button>
           </Link>
         </div>

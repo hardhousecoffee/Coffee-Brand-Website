@@ -176,7 +176,7 @@ export default function BlogPostSpecialtyCoffeeBars() {
             Explore gear and beans that bring the specialty experience home.
           </p>
           <Link href="/products">
-            <button className="btn-primary">Shop Gear</button>
+            <button className="btn-primary">Shop</button>
           </Link>
         </div>
 

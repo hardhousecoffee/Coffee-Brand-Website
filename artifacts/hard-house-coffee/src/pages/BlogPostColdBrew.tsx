@@ -179,7 +179,7 @@ export default function BlogPostColdBrew() {
             Browse our recommended gear and beans to get started.
           </p>
           <Link href="/products">
-            <button className="btn-primary">Shop Gear</button>
+            <button className="btn-primary">Shop</button>
           </Link>
         </div>
 

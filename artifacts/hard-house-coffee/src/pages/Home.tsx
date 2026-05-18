@@ -36,7 +36,7 @@ const experienceTiles = [
       title: "How Great Coffee Is Made",
       text: "Great coffee does not happen by accident. It starts with quality beans, continues through the roast, comes alive in the grind, and finishes in the brew. Every step matters.",
       image: "/images/exp-craftsmanship.jpg",
-      buttonLabel: "See Recommended Gear",
+      buttonLabel: "See Recommended",
       buttonHref: "/products",
       steps: ["Beans", "Roast", "Grind", "Brew"] as string[] | null,
       videoId: null as string | null,
@@ -553,7 +553,7 @@ export default function Home() {
                 <button className="btn-primary">Explore the Blog</button>
               </Link>
               <Link href="/products">
-                <button className="btn-secondary">Shop Gear</button>
+                <button className="btn-secondary">Shop</button>
               </Link>
             </div>
           </div>

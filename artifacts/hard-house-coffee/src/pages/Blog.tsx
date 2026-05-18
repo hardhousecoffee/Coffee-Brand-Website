@@ -307,7 +307,7 @@ export default function Blog() {
         </div>
       </div>
 
-      <PageNav nextPath="/products" nextLabel="Shop Gear" />
+      <PageNav nextPath="/products" nextLabel="Shop" />
       <Footer />
     </div>
   );

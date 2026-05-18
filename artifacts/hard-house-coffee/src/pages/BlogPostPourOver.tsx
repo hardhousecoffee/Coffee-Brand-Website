@@ -295,7 +295,7 @@ export default function BlogPostPourOver() {
             Explore recommended gear and accessories on the site.
           </p>
           <Link href="/products">
-            <button className="btn-primary">Shop Brewing Gear</button>
+            <button className="btn-primary">Shop</button>
           </Link>
         </div>
 
