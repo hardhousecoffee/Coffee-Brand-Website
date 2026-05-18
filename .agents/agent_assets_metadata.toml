@@ -59,3 +59,9 @@ id = "tEdxxz1v18JkuFIWilY_z"
 uri = "file://hard-house-coffee-hostinger.zip"
 type = "unspecified"
 title = "Hard House Coffee — Hostinger Upload Package"
+
+[[outputs]]
+id = "WDPGcZfQk5vbhTKj8y0gs"
+uri = "file://artifacts/hard-house-coffee/public/images/logo-simplified.png"
+type = "image"
+title = "Hard House Coffee — Simplified Logo"
