@@ -204,7 +204,7 @@ export default function BlogPostCoffeeOrigins() {
             Browse our curated bean selection and discover what suits your taste.
           </p>
           <Link href="/products">
-            <button className="btn-primary">Shop Beans</button>
+            <button className="btn-primary">Shop Products</button>
           </Link>
         </div>
 

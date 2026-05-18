@@ -412,10 +412,29 @@ export default function Home() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2" }}>
       <Helmet>
-        <title>Hard House Coffee | Premium Espresso Gear, Reviews & Brewing Guides</title>
-        <meta name="description" content="Hard House Coffee — gear reviews, brewing guides, and bean picks for serious espresso lovers. Find your perfect coffee setup and elevate every cup." />
-        <meta property="og:title" content="Hard House Coffee | Premium Espresso Gear, Reviews & Brewing Guides" />
-        <meta property="og:description" content="Gear reviews, brewing guides, and bean picks for serious espresso lovers." />
+        <title>Hard House Coffee | Coffee Culture, Barista Lifestyle & Brewing Inspiration</title>
+        <meta name="description" content="Hard House Coffee — your home for coffee culture, barista lifestyle, espresso gear reviews, brewing guides, and bean recommendations. Elevate every cup with expert insight and bold inspiration." />
+        <meta name="keywords" content="coffee culture, barista lifestyle, espresso gear, brewing guides, coffee blog, specialty coffee, coffee reviews, bean picks, pour over, hard house coffee" />
+        <meta property="og:title" content="Hard House Coffee | Coffee Culture, Barista Lifestyle & Brewing Inspiration" />
+        <meta property="og:description" content="Coffee culture, barista lifestyle, espresso gear reviews, brewing inspiration, and bean picks for serious coffee lovers." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hardhousecoffee.com/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hard House Coffee | Coffee Culture & Brewing Inspiration" />
+        <meta name="twitter:description" content="Gear reviews, brewing guides, barista lifestyle content, and bean picks for serious espresso lovers." />
+        <link rel="canonical" href="https://hardhousecoffee.com/" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Hard House Coffee",
+          "url": "https://hardhousecoffee.com",
+          "description": "Coffee culture, barista lifestyle, espresso gear reviews, brewing guides, and bean recommendations for serious coffee lovers.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Hard House Coffee",
+            "url": "https://hardhousecoffee.com"
+          }
+        })}</script>
       </Helmet>
       <Navbar />
 
@@ -1183,7 +1202,7 @@ export default function Home() {
       <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <p className="section-subtitle">Recommended Gear</p>
+            <p className="section-subtitle">Recommended Products</p>
             <div className="divider-orange mx-auto" />
             <h2 className="section-title mt-4">Top Espresso Machines</h2>
             <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>

@@ -217,7 +217,7 @@ export default function BlogPostDarkRoast() {
             Browse our curated bean picks and gear on the site.
           </p>
           <Link href="/products">
-            <button className="btn-primary">Shop Beans</button>
+            <button className="btn-primary">Shop Products</button>
           </Link>
         </div>
 

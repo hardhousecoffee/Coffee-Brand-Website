@@ -823,7 +823,7 @@ export default function Products() {
           borderBottom: "1px solid rgba(161,79,31,0.2)",
         }}
       >
-        <p className="section-subtitle" style={{ color: "#a14f1f" }}>Recommended Gear</p>
+        <p className="section-subtitle" style={{ color: "#a14f1f" }}>Recommended Products</p>
         <div className="divider-orange mx-auto" />
         <h1 className="section-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
           Coffee Essentials
