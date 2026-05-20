@@ -4,8 +4,8 @@ import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 const SOCIAL_LINKS = [
-  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/hardhousecoffee.official" },
-  { icon: FaTiktok,    label: "TikTok", href: "https://www.tiktok.com/@hardhousecoffee" },
+  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/hardhousecoffee.official?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" },
+  { icon: FaTiktok,    label: "TikTok", href: "https://www.tiktok.com/@hardhousecoffee?_r=1&_t=ZP-96W4w42enMc" },
   { icon: FaYoutube,   label: "YouTube", href: "#" },
 ];
 
