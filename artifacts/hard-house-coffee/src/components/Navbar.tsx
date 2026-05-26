@@ -31,6 +31,9 @@ export default function Navbar() {
           : "transparent",
         borderBottom: scrolled ? "1px solid rgba(161,79,31,0.25)" : "none",
         backdropFilter: scrolled ? "blur(14px)" : "none",
+        transform: "translateZ(0)",
+        WebkitTransform: "translateZ(0)",
+        outline: "1px solid transparent",
       }}
     >
       <div
