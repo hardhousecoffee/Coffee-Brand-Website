@@ -532,7 +532,7 @@ const products = [
     subcategory: "Espresso Tools",
     name: "MUVNA Espresso Knock Box Large Capacity",
     tagline: "Precision design. 1.82L capacity. Zero mess.",
-    desc: "The MUVNA Knock Box is built for the serious home barista who demands both form and function. Its oversized 1.82L cylindrical chamber handles up to 20 spent pucks before emptying — ideal for back-to-back brewing sessions. The silicone-padded stainless shock bar absorbs each knock cleanly, protecting your portafilter finish. The inner container lifts out in seconds for a full rinse, and the ventilated top prevents moisture buildup that causes mould. Available in matte black and matte white.",
+    desc: "The MUVNA Knock Box is built for the serious home barista who demands both form and function. Its oversized 1.82L cylindrical chamber handles up to 20 spent pucks before emptying — ideal for back-to-back brewing sessions. The silicone-padded stainless shock bar absorbs each knock cleanly, protecting your portafilter finish. The inner container lifts out in seconds for a full rinse, and the ventilated top prevents moisture buildup that causes mold. Available in matte black and matte white.",
     affiliateUrl: "https://amzn.to/3RIdJyS",
     rating: 4.8,
     reviews: 2314,
@@ -545,7 +545,7 @@ const products = [
     mainFit: "cover",
     mainPosition: "center",
     mainBrightness: 0.75,
-    pros: ["1.82L capacity — holds ~20 espresso pucks", "Silicone shock bar protects portafilter finish", "Removable inner container for easy rinsing", "Ventilated top prevents mould and odour", "Non-slip base keeps it planted on any surface"],
+    pros: ["1.82L capacity — holds ~20 espresso pucks", "Silicone shock bar protects portafilter finish", "Removable inner container for easy rinsing", "Ventilated top prevents mold and odor", "Non-slip base keeps it planted on any surface"],
   },
   {
     id: 59,
