@@ -19,6 +19,19 @@
     <meta name="description" content="Hard House Coffee — Premium coffee brand. Gear reviews, brewing guides, bean recommendations and affiliate product picks for serious coffee lovers." />
     <meta property="og:title" content="Hard House Coffee" />
     <meta property="og:description" content="Aroma From the Ground Up. Bold, cinematic, premium coffee content." />
+    <!-- SPA routing restore for GitHub Pages -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(null, null,
+            decoded.shift() + (decoded.length ? '?' + decoded.join('&') : '') + l.hash
+          );
+        }
+      }(window.location));
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBYNJ95LD"></script>
     <script>

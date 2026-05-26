@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hard House Coffee</title>
+    <script>
+      // Single-page app routing fix for GitHub Pages.
+      // When GitHub Pages can't find a page (e.g. /blog/my-post),
+      // it serves this 404.html instead. We encode the path into
+      // a query string and redirect to the root, where index.html
+      // picks it up and restores the real URL.
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        '/?/' +
+        l.pathname.slice(1).replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
