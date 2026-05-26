@@ -29,7 +29,7 @@ export default function Navbar() {
         background: scrolled
           ? "rgba(11,11,11,0.97)"
           : "transparent",
-        borderBottom: scrolled ? "1px solid rgba(161,79,31,0.25)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(161,79,31,0.25)" : "1px solid transparent",
         backdropFilter: scrolled ? "blur(14px)" : "none",
         transform: "translateZ(0)",
         WebkitTransform: "translateZ(0)",
