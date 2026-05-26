@@ -567,7 +567,7 @@ export default function Home() {
             >
               Aroma From the Ground Up!
             </p>
-            <div className="flex gap-3 justify-center flex-nowrap hero-buttons-row">
+            <div className="flex gap-3 justify-center flex-nowrap hero-buttons-row" style={{ marginBottom: "2.5rem" }}>
               <Link href="/blog">
                 <button className="btn-primary">Explore the Blog</button>
               </Link>
