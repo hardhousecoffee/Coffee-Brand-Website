@@ -4,7 +4,7 @@ export default function SteamEffect() {
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setGone(true), 9000);
+    const t = setTimeout(() => setGone(true), 6000);
     return () => clearTimeout(t);
   }, []);
 
@@ -14,19 +14,18 @@ export default function SteamEffect() {
     <div
       style={{
         position: "fixed",
-        bottom: 0,
+        bottom: "-5vh",
         left: "50%",
-        width: "100vw",
-        height: "100vh",
+        width: "130vw",
+        height: "115vh",
         pointerEvents: "none",
         zIndex: 9999,
         mixBlendMode: "screen",
-        animation: "steamRise 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards",
-        // Soft elliptical mask — fades all hard edges to transparent
+        animation: "steamRise 6s ease-in-out forwards",
         maskImage:
-          "radial-gradient(ellipse 70% 88% at 50% 72%, black 15%, rgba(0,0,0,0.6) 45%, transparent 78%)",
+          "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
         WebkitMaskImage:
-          "radial-gradient(ellipse 70% 88% at 50% 72%, black 15%, rgba(0,0,0,0.6) 45%, transparent 78%)",
+          "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
       }}
     >
       <img
@@ -38,8 +37,7 @@ export default function SteamEffect() {
           objectFit: "cover",
           objectPosition: "center center",
           display: "block",
-          // Reduce harsh whites + warm brown-amber tint to match homepage palette
-          filter: "brightness(0.68) sepia(0.30) saturate(1.15)",
+          filter: "sepia(0.4) brightness(0.8) contrast(0.9) blur(4px)",
         }}
       />
     </div>
