@@ -37,7 +37,7 @@ export default function SteamEffect() {
           objectFit: "cover",
           objectPosition: "center center",
           display: "block",
-          filter: "sepia(0.4) brightness(0.8) contrast(0.9) blur(4px)",
+          filter: "sepia(0.35) brightness(1.05) contrast(0.9) blur(3px)",
         }}
       />
     </div>
