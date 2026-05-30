@@ -545,9 +545,9 @@ a, button {
 
 /* Steam effect rise animation */
 @keyframes steamRise {
-  0%   { opacity: 0;    transform: translateX(-50%) translateY(40px);  }
-  10%  { opacity: 0.85;                                                 }
-  40%  { opacity: 0.75; transform: translateX(-50%) translateY(-30px); }
-  75%  { opacity: 0.35; transform: translateX(-50%) translateY(-100px);}
-  100% { opacity: 0;    transform: translateX(-50%) translateY(-200px);}
+  0%   { opacity: 0;    transform: translateX(-50%) translateY(60px);  }
+  12%  { opacity: 0.80;                                                 }
+  45%  { opacity: 0.72; transform: translateX(-50%) translateY(0px);   }
+  78%  { opacity: 0.30; transform: translateX(-50%) translateY(-80px); }
+  100% { opacity: 0;    transform: translateX(-50%) translateY(-160px);}
 }
