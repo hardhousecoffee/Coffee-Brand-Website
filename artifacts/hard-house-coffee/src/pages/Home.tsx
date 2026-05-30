@@ -5,6 +5,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
 
+const marqueeImages = [
+  { src: "/images/products/coffee-beans/death-wish-coffee.png", name: "Death Wish Coffee" },
+  { src: "/images/products/coffee-beans/intelligentsia-analog.png", name: "Intelligentsia Black Cat Analog" },
+  { src: "/images/products/coffee-beans/kicking-horse-three-sisters.png", name: "Kicking Horse Three Sisters" },
+  { src: "/images/products/coffee-beans/onyx-tropical-weather.png", name: "Onyx Tropical Weather" },
+  { src: "/images/products/coffee-beans/peets-major-dickason.png", name: "Peet's Major Dickason's Blend" },
+  { src: "/images/products/coffee-beans/stumptown-holler-mountain.png", name: "Stumptown Holler Mountain" },
+  { src: "/images/products/coffee-beans/intelligentsia-sublunar.png", name: "Intelligentsia Sublunar" },
+  { src: "/images/products/coffee-beans/lavazza-gran-crema.png", name: "Lavazza Gran Crema" },
+  { src: "/images/products/coffee-beans/lavazza-super-crema.png", name: "Lavazza Super Crema" },
+];
+
 const heroSlides = [
   { src: "/images/cafe-alley.jpg", alt: "Hero Cafe Alley" },
   { src: "/images/aroma-beans.jpg", alt: "Aroma Coffee Beans" },
@@ -1009,6 +1021,95 @@ export default function Home() {
               </div>
             );
           })()}
+        </div>
+      </section>
+
+      {/* COFFEE SHOWCASE MARQUEE */}
+      <section style={{ backgroundColor: "#0b0b0b", padding: "64px 0", overflow: "hidden", borderTop: "1px solid rgba(161,79,31,0.12)", borderBottom: "1px solid rgba(161,79,31,0.12)" }}>
+        <style>{`
+          @keyframes hh-marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .hh-marquee-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            animation: hh-marquee 48s linear infinite;
+            will-change: transform;
+          }
+          .hh-marquee-track:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
+
+        <div style={{ textAlign: "center", marginBottom: "2.75rem" }}>
+          <p
+            style={{
+              fontFamily: "'Cinzel Decorative', serif",
+              fontSize: "0.6rem",
+              letterSpacing: "0.32em",
+              color: "#a14f1f",
+              textTransform: "uppercase",
+            }}
+          >
+            Now Brewing at Hard House
+          </p>
+          <div style={{ width: "36px", height: "1px", background: "rgba(161,79,31,0.5)", margin: "0.9rem auto 0" }} />
+        </div>
+
+        <div style={{ position: "relative", overflow: "hidden" }}>
+          <div
+            style={{
+              position: "absolute", left: 0, top: 0, bottom: 0, width: "140px", zIndex: 2, pointerEvents: "none",
+              background: "linear-gradient(to right, #0b0b0b 0%, transparent 100%)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute", right: 0, top: 0, bottom: 0, width: "140px", zIndex: 2, pointerEvents: "none",
+              background: "linear-gradient(to left, #0b0b0b 0%, transparent 100%)",
+            }}
+          />
+
+          <div className="hh-marquee-track">
+            {[...marqueeImages, ...marqueeImages].map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  flexShrink: 0,
+                  width: "190px",
+                  height: "230px",
+                  margin: "0 2rem",
+                  display: "flex",
+                  alignItems: "flex-end",
+                  justifyContent: "center",
+                }}
+              >
+                <img
+                  src={item.src}
+                  alt={item.name}
+                  loading="lazy"
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    objectFit: "contain",
+                    objectPosition: "center bottom",
+                    filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.55))",
+                    transition: "filter 0.4s ease, transform 0.4s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.filter = "drop-shadow(0 12px 32px rgba(161,79,31,0.35))";
+                    e.currentTarget.style.transform = "scale(1.06)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.filter = "drop-shadow(0 8px 24px rgba(0,0,0,0.55))";
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
