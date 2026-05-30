@@ -21,6 +21,32 @@ export default function SteamEffect() {
     const HOLD = 5500;
     const FADE = 2500;
 
+    // Build a smooth path from array of points using quadratic bezier
+    function strokePath(
+      points: { x: number; y: number }[],
+      strokeStyle: CanvasGradient | string,
+      lineWidth: number,
+      blur: number
+    ) {
+      if (points.length < 2) return;
+      ctx.save();
+      if (blur > 0) ctx.filter = `blur(${blur}px)`;
+      ctx.beginPath();
+      ctx.moveTo(points[0].x, points[0].y);
+      for (let i = 1; i < points.length - 1; i++) {
+        const mx = (points[i].x + points[i + 1].x) / 2;
+        const my = (points[i].y + points[i + 1].y) / 2;
+        ctx.quadraticCurveTo(points[i].x, points[i].y, mx, my);
+      }
+      ctx.lineTo(points[points.length - 1].x, points[points.length - 1].y);
+      ctx.strokeStyle = strokeStyle;
+      ctx.lineWidth = lineWidth;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.stroke();
+      ctx.restore();
+    }
+
     const draw = (now: number) => {
       const elapsed = now - startTime;
       const cw = canvas.width;
@@ -37,75 +63,63 @@ export default function SteamEffect() {
       }
 
       ctx.clearRect(0, 0, cw, ch);
+      ctx.save();
+      ctx.globalAlpha = globalAlpha;
 
       const t = elapsed / 1000;
       const cx = cw / 2;
 
-      // Steam column: rises from bottom to ~25% from top
-      const steamBottom = ch + 20;
-      const steamTop = ch * 0.12;
+      // Steam rises from bottom edge to ~10% from top
+      const steamBottom = ch + 10;
+      const steamTop = ch * 0.10;
       const steamHeight = steamBottom - steamTop;
-      const NUM_POINTS = 120;
+      const N = 100;
 
-      // Build the spine of the ribbon
-      const pts: { x: number; y: number }[] = [];
-      for (let i = 0; i <= NUM_POINTS; i++) {
-        const prog = i / NUM_POINTS; // 0 = bottom, 1 = top
-        const y = steamBottom - prog * steamHeight;
+      // Vertical gradient shared across both strands
+      const makeGrad = (alpha: number) => {
+        const g = ctx.createLinearGradient(0, steamBottom, 0, steamTop);
+        g.addColorStop(0,    `rgba(255, 254, 250, 0)`);
+        g.addColorStop(0.04, `rgba(255, 254, 250, ${alpha})`);
+        g.addColorStop(0.55, `rgba(255, 254, 250, ${alpha})`);
+        g.addColorStop(0.82, `rgba(255, 254, 250, ${alpha * 0.5})`);
+        g.addColorStop(1,    `rgba(255, 254, 250, 0)`);
+        return g;
+      };
 
-        // Sinuous S-curve: amplitude grows as it rises
-        const amp1 = 22 * Math.pow(prog, 0.6);
-        const amp2 = 12 * Math.pow(prog, 0.8);
-        const amp3 = 6 * prog;
+      // Build two strands — they share a spine but diverge with a phase offset
+      // giving the double-ribbon twist seen in the reference image
+      const buildStrand = (phaseShift: number) => {
+        const pts: { x: number; y: number }[] = [];
+        for (let i = 0; i <= N; i++) {
+          const prog = i / N; // 0 = bottom, 1 = top
+          const y = steamBottom - prog * steamHeight;
 
-        const x =
-          cx +
-          amp1 * Math.sin(prog * Math.PI * 3.2 + t * 0.9) +
-          amp2 * Math.sin(prog * Math.PI * 5.5 - t * 0.65) +
-          amp3 * Math.sin(prog * Math.PI * 1.4 + t * 0.35);
+          // Amplitude grows from 0 at base then settles — keeping it narrow at origin
+          const amp = Math.pow(prog, 0.45);
 
-        pts.push({ x, y });
-      }
+          // Primary S-curve: slow, big, elegant sweep
+          const x =
+            cx +
+            48 * amp * Math.sin(prog * Math.PI * 2.8 + t * 0.55 + phaseShift) +
+            22 * amp * Math.sin(prog * Math.PI * 5.2 - t * 0.38 + phaseShift * 0.6) +
+            10 * amp * Math.sin(prog * Math.PI * 1.1 + t * 0.2);
 
-      // Draw multiple passes: outer glow → soft halo → sharp core
-      const passes = [
-        { blur: 18, width: 28, alpha: 0.06 },
-        { blur: 10, width: 16, alpha: 0.10 },
-        { blur: 5,  width: 9,  alpha: 0.18 },
-        { blur: 2,  width: 5,  alpha: 0.30 },
-        { blur: 0,  width: 2,  alpha: 0.55 },
-      ];
-
-      ctx.save();
-      ctx.globalAlpha = globalAlpha;
-
-      for (const pass of passes) {
-        ctx.save();
-        if (pass.blur > 0) ctx.filter = `blur(${pass.blur}px)`;
-
-        // Vertical gradient: transparent at very bottom (origin), opaque mid, transparent at top
-        const grad = ctx.createLinearGradient(0, steamBottom, 0, steamTop);
-        grad.addColorStop(0,    `rgba(255, 253, 248, 0)`);
-        grad.addColorStop(0.06, `rgba(255, 253, 248, ${pass.alpha})`);
-        grad.addColorStop(0.55, `rgba(255, 253, 248, ${pass.alpha})`);
-        grad.addColorStop(0.80, `rgba(255, 253, 248, ${pass.alpha * 0.6})`);
-        grad.addColorStop(1,    `rgba(255, 253, 248, 0)`);
-
-        ctx.beginPath();
-        ctx.moveTo(pts[0].x, pts[0].y);
-        for (let i = 1; i < pts.length - 1; i++) {
-          const midX = (pts[i].x + pts[i + 1].x) / 2;
-          const midY = (pts[i].y + pts[i + 1].y) / 2;
-          ctx.quadraticCurveTo(pts[i].x, pts[i].y, midX, midY);
+          pts.push({ x, y });
         }
-        ctx.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y);
+        return pts;
+      };
 
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = pass.width;
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
-        ctx.stroke();
-        ctx.restore();
+      // Two strands offset in phase — they twist around each other
+      const strandA = buildStrand(0);
+      const strandB = buildStrand(Math.PI * 0.45);
+
+      // Draw each strand: outer glow → mid halo → bright core
+      for (const pts of [strandA, strandB]) {
+        strokePath(pts, makeGrad(0.07), 32, 16);
+        strokePath(pts, makeGrad(0.12), 18, 8);
+        strokePath(pts, makeGrad(0.22), 9,  3);
+        strokePath(pts, makeGrad(0.55), 3,  1);
+        strokePath(pts, makeGrad(0.80), 1.2, 0);
       }
 
       ctx.restore();
