@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
+import SteamBanner from "@/components/SteamBanner";
 
 const heroSlides = [
   { src: "/images/cafe-alley.jpg", alt: "Hero Cafe Alley" },
@@ -1013,132 +1014,7 @@ export default function Home() {
       </section>
 
       {/* BRANDING MOMENT — STEAM REVEAL */}
-      <section
-        style={{
-          backgroundColor: "#0b0b0b",
-          padding: "100px 24px",
-          overflow: "hidden",
-          position: "relative",
-          borderTop: "1px solid rgba(161,79,31,0.1)",
-          borderBottom: "1px solid rgba(161,79,31,0.1)",
-        }}
-      >
-        <style>{`
-          @keyframes hh-steam {
-            0%   { opacity: 0; transform: translateY(0) scaleX(1); }
-            18%  { opacity: 1; }
-            80%  { opacity: 0.4; }
-            100% { opacity: 0; transform: translateY(-110px) scaleX(1.35); }
-          }
-          @keyframes hh-brew-reveal {
-            0%   { opacity: 0; filter: blur(16px); transform: translateY(10px); }
-            100% { opacity: 1; filter: blur(0px);  transform: translateY(0); }
-          }
-          @keyframes hh-line-in {
-            from { opacity: 0; transform: scaleX(0); }
-            to   { opacity: 1; transform: scaleX(1); }
-          }
-          @keyframes hh-drift-r {
-            0%, 100% { transform: scaleX(1) translateX(0); }
-            50%      { transform: scaleX(1) translateX(5px); }
-          }
-          @keyframes hh-drift-l {
-            0%, 100% { transform: scaleX(1) translateX(0); }
-            50%      { transform: scaleX(1) translateX(-5px); }
-          }
-        `}</style>
-
-        {/* Warm ambient glow */}
-        <div
-          style={{
-            position: "absolute",
-            top: "50%", left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "min(700px, 100%)",
-            height: "320px",
-            background: "radial-gradient(ellipse at center, rgba(161,79,31,0.07) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-
-        {/* Steam wisps */}
-        {[
-          { left: "18%", delay: "0s",    dur: "5.8s", w: 80,  h: 120, blur: 28 },
-          { left: "33%", delay: "1.5s",  dur: "7.2s", w: 55,  h: 85,  blur: 20 },
-          { left: "50%", delay: "0.7s",  dur: "6.4s", w: 105, h: 150, blur: 35 },
-          { left: "67%", delay: "2.1s",  dur: "6.8s", w: 60,  h: 95,  blur: 22 },
-          { left: "82%", delay: "0.3s",  dur: "5.4s", w: 78,  h: 115, blur: 26 },
-        ].map((w, i) => (
-          <div
-            key={i}
-            style={{
-              position: "absolute",
-              left: w.left,
-              top: "58%",
-              width: `${w.w}px`,
-              height: `${w.h}px`,
-              borderRadius: "50%",
-              background: "radial-gradient(ellipse at center, rgba(222,198,162,0.26) 0%, rgba(180,138,72,0.1) 55%, transparent 80%)",
-              filter: `blur(${w.blur}px)`,
-              animation: `hh-steam ${w.dur} ease-in-out ${w.delay} infinite`,
-              pointerEvents: "none",
-            }}
-          />
-        ))}
-
-        {/* Content */}
-        <div
-          style={{
-            maxWidth: "660px",
-            margin: "0 auto",
-            position: "relative",
-            zIndex: 2,
-            textAlign: "center",
-          }}
-        >
-          {/* Top copper line */}
-          <div
-            style={{
-              height: "1px",
-              background: "linear-gradient(to right, transparent 0%, rgba(161,79,31,0.55) 20%, rgba(210,148,55,0.9) 50%, rgba(161,79,31,0.55) 80%, transparent 100%)",
-              transformOrigin: "center",
-              marginBottom: "2.4rem",
-              opacity: 0,
-              animation: "hh-line-in 2.2s cubic-bezier(0.4,0,0.2,1) 1.4s forwards, hh-drift-r 10s ease-in-out 4s infinite",
-            }}
-          />
-
-          {/* Main text */}
-          <p
-            style={{
-              fontFamily: "'Dancing Script', cursive",
-              fontWeight: 600,
-              fontSize: "clamp(1.85rem, 5.5vw, 3.1rem)",
-              color: "#d4b896",
-              lineHeight: 1.3,
-              letterSpacing: "0.015em",
-              margin: 0,
-              textShadow: "0 2px 32px rgba(161,79,31,0.28), 0 0 80px rgba(212,184,150,0.07)",
-              opacity: 0,
-              animation: "hh-brew-reveal 3.4s cubic-bezier(0.4,0,0.2,1) 0.6s forwards",
-            }}
-          >
-            Now Brewing at Hard House Coffee
-          </p>
-
-          {/* Bottom copper line */}
-          <div
-            style={{
-              height: "1px",
-              background: "linear-gradient(to right, transparent 0%, rgba(161,79,31,0.55) 20%, rgba(210,148,55,0.9) 50%, rgba(161,79,31,0.55) 80%, transparent 100%)",
-              transformOrigin: "center",
-              marginTop: "2.4rem",
-              opacity: 0,
-              animation: "hh-line-in 2.2s cubic-bezier(0.4,0,0.2,1) 1.7s forwards, hh-drift-l 10s ease-in-out 4.3s infinite",
-            }}
-          />
-        </div>
-      </section>
+      <SteamBanner />
 
       {/* CULTURE SECTION */}
       <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>
