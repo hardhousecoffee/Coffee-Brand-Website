@@ -393,11 +393,13 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    setIsVisible(true);
+    // Delay hero content until smoke intro clears (~6s)
+    const visTimer = setTimeout(() => setIsVisible(true), 6200);
     intervalRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
     return () => {
+      clearTimeout(visTimer);
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, []);

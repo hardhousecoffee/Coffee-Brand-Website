@@ -16,6 +16,7 @@ export default function SteamEffect() {
         position: "fixed",
         bottom: "-5vh",
         left: "50%",
+        transform: "translateX(-50%)",
         width: "130vw",
         height: "115vh",
         pointerEvents: "none",
