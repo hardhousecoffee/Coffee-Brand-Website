@@ -393,8 +393,8 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Delay hero content until smoke intro clears (~6s)
-    const visTimer = setTimeout(() => setIsVisible(true), 6200);
+    // Smoke appears first, then logo/text fade in through it at 0.5s
+    const visTimer = setTimeout(() => setIsVisible(true), 500);
     intervalRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
