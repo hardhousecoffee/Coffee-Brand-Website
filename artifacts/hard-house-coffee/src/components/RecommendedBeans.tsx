@@ -18,7 +18,7 @@ const BEANS: Record<
       desc: "Not just the world's strongest coffee — it's surprisingly smooth too. Medium-dark roast with cherry and chocolate notes for those who want serious caffeine and serious flavor.",
       roast: "Medium",
       origin: "Multi-Origin",
-      image: "/images/products/coffee-beans/death-wish-coffee.jpg",
+      image: "/images/products/coffee-beans/death-wish-coffee.png",
       url: "https://amzn.to/4a315Rr",
     },
     {
@@ -62,7 +62,7 @@ const BEANS: Record<
       desc: "A vibrant espresso blend with tropical fruit and floral notes. Onyx sources directly from farms — this is one of the finest examples of what specialty coffee can taste like.",
       roast: "Medium Espresso",
       origin: "Direct Trade, Multi-Origin",
-      image: "/images/products/coffee-beans/onyx-tropical-weather.webp",
+      image: "/images/products/coffee-beans/onyx-tropical-weather.png",
       url: "https://amzn.to/4o5N5MM",
     },
     {
@@ -130,7 +130,7 @@ const BEANS: Record<
       desc: "For cold brew that hits hard. Death Wish produces a concentrate with intense caffeine and surprisingly smooth cherry-chocolate notes — great for iced drinks that need to stand up to milk and ice.",
       roast: "Medium",
       origin: "Multi-Origin",
-      image: "/images/products/coffee-beans/death-wish-coffee.jpg",
+      image: "/images/products/coffee-beans/death-wish-coffee.png",
       url: "https://amzn.to/4a315Rr",
     },
   ],
@@ -140,7 +140,7 @@ const BEANS: Record<
       desc: "Onyx works directly with farmers to craft this vibrant espresso blend. A masterclass in how origin, processing, and roasting come together into something genuinely special.",
       roast: "Medium Espresso",
       origin: "Direct Trade, Multi-Origin",
-      image: "/images/products/coffee-beans/onyx-tropical-weather.webp",
+      image: "/images/products/coffee-beans/onyx-tropical-weather.png",
       url: "https://amzn.to/4o5N5MM",
     },
     {
@@ -166,7 +166,7 @@ const BEANS: Record<
       desc: "Roasted to highlight vibrant fruit and florals that only a precise light-to-medium profile can unlock. A perfect example of modern specialty roasting philosophy.",
       roast: "Medium Espresso",
       origin: "Direct Trade, Multi-Origin",
-      image: "/images/products/coffee-beans/onyx-tropical-weather.webp",
+      image: "/images/products/coffee-beans/onyx-tropical-weather.png",
       url: "https://amzn.to/4o5N5MM",
     },
     {
@@ -200,7 +200,7 @@ const BEANS: Record<
       desc: "Onyx roasts and ships in small, frequent batches — designed to arrive at peak flavor. Best consumed within a few weeks of the roast date for full vibrancy.",
       roast: "Medium Espresso",
       origin: "Direct Trade",
-      image: "/images/products/coffee-beans/onyx-tropical-weather.webp",
+      image: "/images/products/coffee-beans/onyx-tropical-weather.png",
       url: "https://amzn.to/4o5N5MM",
     },
     {

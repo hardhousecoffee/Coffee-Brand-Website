@@ -798,7 +798,7 @@ const coffeeBeans = [
     roast: "Medium",
     origin: "Multi-Origin",
     desc: "Not just the world's strongest coffee — it's surprisingly smooth. Bold cherry and chocolate notes with serious caffeine. Perfect for cold brew and French press.",
-    image: "/images/products/coffee-beans/death-wish-coffee.jpg",
+    image: "/images/products/coffee-beans/death-wish-coffee.png",
     url: "https://amzn.to/4a315Rr",
     badge: "High Caffeine",
   },
@@ -808,7 +808,7 @@ const coffeeBeans = [
     roast: "Medium Espresso",
     origin: "Direct Trade, Multi-Origin",
     desc: "A vibrant specialty espresso blend with tropical fruit and floral notes. Onyx sources directly from farms — this is what specialty coffee is supposed to taste like.",
-    image: "/images/products/coffee-beans/onyx-tropical-weather.webp",
+    image: "/images/products/coffee-beans/onyx-tropical-weather.png",
     url: "https://amzn.to/4o5N5MM",
     badge: "Editor's Pick",
   },
@@ -855,7 +855,7 @@ const coffeeBeans = [
 ];
 
 export default function Products() {
-  const [activeCategory, setActiveCategory] = useState("Coffee Beans");
+  const [activeCategory, setActiveCategory] = useState("All");
   const [activeSubcategory, setActiveSubcategory] = useState("All Accessories");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [cycleIndex, setCycleIndex] = useState(0);
