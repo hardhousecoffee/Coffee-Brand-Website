@@ -997,20 +997,6 @@ export default function Products() {
         )}
 
 
-        {/* Affiliate disclosure */}
-        <div
-          className="mb-8 p-4"
-          style={{
-            background: "#131313",
-            borderRadius: "6px",
-            border: "1px solid rgba(161,79,31,0.15)",
-            fontSize: "0.78rem",
-            color: "#b0a090",
-          }}
-        >
-          <strong style={{ color: "#a14f1f" }}>Affiliate Disclosure:</strong> Hard House Coffee may earn a commission when you purchase through our links — at no extra cost to you. We only recommend gear we've personally tested and trust.
-        </div>
-
         {/* Empty state for categories with no products */}
         {filtered.length === 0 && activeCategory !== "Coffee Beans" && (
           <div
