@@ -646,6 +646,7 @@ export default function Home() {
                   padding: 0,
                   width: "100%",
                 }}
+                onClick={() => openTile(idx)}
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.5)")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)")}
               >
@@ -734,22 +735,30 @@ export default function Home() {
                     from { opacity: 0; transform: translate(-50%, -46%) scale(0.94); }
                     to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
                   }
+                  @keyframes popInMobile {
+                    from { opacity: 0; transform: translateY(20px) scale(0.96); }
+                    to   { opacity: 1; transform: translateY(0) scale(1); }
+                  }
+                  .hhc-modal-inner { display: flex; flex-direction: row; min-height: 360px; }
+                  .hhc-modal-img-panel { flex: 0 0 38%; position: relative; overflow: hidden; }
+                  @media (max-width: 600px) {
+                    .hhc-modal-inner { flex-direction: column; min-height: unset; }
+                    .hhc-modal-img-panel { flex: 0 0 160px; width: 100%; }
+                  }
                 `}</style>
 
                 <div
+                  className="hhc-modal-inner"
                   style={{
                     background: "linear-gradient(145deg, #1a110a, #0f0a07)",
                     border: "1px solid rgba(161,79,31,0.45)",
                     borderRadius: "14px",
                     boxShadow: "0 24px 70px rgba(0,0,0,0.85), 0 0 0 1px rgba(161,79,31,0.1)",
-                    display: "flex",
-                    flexDirection: "row",
                     overflow: "hidden",
-                    minHeight: "360px",
                   }}
                 >
                   {/* Left image panel */}
-                  <div style={{ flex: "0 0 38%", position: "relative", overflow: "hidden" }}>
+                  <div className="hhc-modal-img-panel" style={{ position: "relative", overflow: "hidden" }}>
                     <img
                       src={m.image}
                       alt={m.title}

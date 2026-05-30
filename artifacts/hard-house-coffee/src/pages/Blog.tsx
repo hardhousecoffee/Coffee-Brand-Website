@@ -342,28 +342,41 @@ export default function Blog() {
 
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Category filter */}
-        <div id="blog-filter" className="flex flex-wrap gap-3 mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              style={{
-                padding: "0.45rem 1.2rem",
-                borderRadius: "6px",
-                fontSize: "0.75rem",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                fontWeight: 600,
-                cursor: "pointer",
-                transition: "all 0.25s ease",
-                background: activeCategory === cat ? "#8b2f2f" : "transparent",
-                color: activeCategory === cat ? "#f2f2f2" : "#b0a090",
-                border: activeCategory === cat ? "1px solid #a14f1f" : "1px solid rgba(161,79,31,0.25)",
-              }}
-            >
-              {cat}
-            </button>
-          ))}
+        <div
+          id="blog-filter"
+          style={{
+            overflowX: "auto",
+            WebkitOverflowScrolling: "touch",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            marginBottom: "3rem",
+          }}
+        >
+          <div style={{ display: "flex", gap: "0.75rem", minWidth: "max-content", paddingBottom: "2px" }}>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                style={{
+                  padding: "0.45rem 1.2rem",
+                  borderRadius: "6px",
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  transition: "all 0.25s ease",
+                  background: activeCategory === cat ? "#8b2f2f" : "transparent",
+                  color: activeCategory === cat ? "#f2f2f2" : "#b0a090",
+                  border: activeCategory === cat ? "1px solid #a14f1f" : "1px solid rgba(161,79,31,0.25)",
+                  whiteSpace: "nowrap",
+                  flexShrink: 0,
+                }}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Featured post */}

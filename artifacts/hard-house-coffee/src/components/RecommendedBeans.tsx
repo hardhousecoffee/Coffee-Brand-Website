@@ -325,7 +325,8 @@ export default function RecommendedBeans({ variant }: { variant: Variant }) {
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "contain",
+                  objectFit: "cover",
+                  objectPosition: "center",
                 }}
               />
             </div>
