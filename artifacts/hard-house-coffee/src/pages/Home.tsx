@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
+import SteamEffect from "@/components/SteamEffect";
 
 const heroSlides = [
   { src: "/images/cafe-alley.jpg", alt: "Hero Cafe Alley" },
@@ -411,6 +412,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2" }}>
+      <SteamEffect />
       <Helmet>
         <title>Hard House Coffee | Coffee Culture, Barista Lifestyle & Brewing Inspiration</title>
         <meta name="description" content="Hard House Coffee — your home for coffee culture, barista lifestyle, espresso gear reviews, brewing guides, and bean recommendations. Elevate every cup with expert insight and bold inspiration." />
