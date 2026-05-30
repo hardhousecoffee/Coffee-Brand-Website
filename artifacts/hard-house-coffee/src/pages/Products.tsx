@@ -821,7 +821,8 @@ const coffeeBeans = [
     image: "/images/products/coffee-beans/kicking-horse-three-sisters.png",
     url: "https://amzn.to/4ede5GB",
     badge: "Crowd Pleaser",
-    mainPosition: "bottom",
+    mainFit: "contain",
+    mainPosition: "center",
   },
   {
     id: "cb7",
@@ -852,7 +853,8 @@ const coffeeBeans = [
     image: "/images/products/coffee-beans/intelligentsia-analog.png",
     url: "https://amzn.to/4u2OapW",
     badge: "Specialty Pick",
-    mainPosition: "bottom",
+    mainFit: "contain",
+    mainPosition: "center",
   },
 ];
 
@@ -1066,7 +1068,7 @@ export default function Products() {
                             objectFit: (product as any).mainFit || "cover",
                             objectPosition: (product as any).mainPosition || "center",
                             opacity: isHovered && hoverImages.length > 0 && !variantImageActive ? 0 : 1,
-                            transform: isHovered ? `scale(${((product as any).mainScale ?? 1) * 1.06})` : `scale(${(product as any).mainScale ?? 1})`,
+                            transform: isHovered ? `scale(${((product as any).mainScale ?? 1) * 1.06}) translateY(${(product as any).mainTranslateY ?? "0%"})` : `scale(${(product as any).mainScale ?? 1}) translateY(${(product as any).mainTranslateY ?? "0%"})`,
                             transition: "opacity 0.55s ease, transform 0.55s ease",
                             filter: `brightness(${(product as any).mainBrightness ?? 0.65})`,
                           }}
