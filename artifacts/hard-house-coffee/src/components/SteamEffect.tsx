@@ -1,38 +1,5 @@
 import { useEffect, useRef } from "react";
 
-interface Particle {
-  x: number;
-  y: number;
-  r: number;
-  opacity: number;
-  maxOpacity: number;
-  vy: number;
-  phase: number;
-  phaseSpeed: number;
-  drift: number;
-  isCore: boolean;
-}
-
-function spawn(W: number, H: number, scatter = false): Particle {
-  const isCore = Math.random() < 0.38;
-  const spread = isCore ? W * 0.06 : W * 0.14;
-  const cx = W * 0.5;
-  return {
-    x: cx + (Math.random() - 0.5) * spread,
-    y: scatter ? H * (0.1 + Math.random() * 0.95) : H + 20 + Math.random() * 40,
-    r: isCore ? 12 + Math.random() * 28 : 24 + Math.random() * 52,
-    opacity: 0,
-    maxOpacity: isCore
-      ? 0.28 + Math.random() * 0.38
-      : 0.10 + Math.random() * 0.20,
-    vy: isCore ? 0.55 + Math.random() * 0.85 : 0.38 + Math.random() * 0.65,
-    phase: Math.random() * Math.PI * 2,
-    phaseSpeed: 0.007 + Math.random() * 0.016,
-    drift: (Math.random() - 0.5) * 0.4,
-    isCore,
-  };
-}
-
 export default function SteamEffect() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);
@@ -50,78 +17,98 @@ export default function SteamEffect() {
     setSize();
     window.addEventListener("resize", setSize);
 
-    const W = () => canvas.width;
-    const H = () => canvas.height;
-
-    const particles: Particle[] = Array.from({ length: 80 }, (_, i) => {
-      const p = spawn(W(), H(), i < 60);
-      if (i < 60) {
-        // Pre-warm opacity so steam is visible immediately on load
-        const progress = 1 - p.y / (H() || 1);
-        if (progress < 0.55) {
-          p.opacity = p.maxOpacity * (0.3 + Math.random() * 0.7);
-        }
-      }
-      return p;
-    });
-
     const startTime = performance.now();
-    const HOLD = 5800;
-    const FADE = 2600;
+    const HOLD = 5500;
+    const FADE = 2500;
 
     const draw = (now: number) => {
       const elapsed = now - startTime;
-      const cw = W();
-      const ch = H();
+      const cw = canvas.width;
+      const ch = canvas.height;
 
+      if (elapsed > HOLD + FADE) {
+        canvas.style.display = "none";
+        return;
+      }
+
+      let globalAlpha = 1;
       if (elapsed > HOLD) {
-        const t = Math.min(1, (elapsed - HOLD) / FADE);
-        canvas.style.opacity = String(1 - t);
-        if (t >= 1) {
-          canvas.style.display = "none";
-          return;
-        }
+        globalAlpha = 1 - (elapsed - HOLD) / FADE;
       }
 
       ctx.clearRect(0, 0, cw, ch);
 
-      for (const p of particles) {
-        const progress = 1 - p.y / ch; // 0 at bottom, 1 at top
+      const t = elapsed / 1000;
+      const cx = cw / 2;
 
-        // Warm cream/tan matching the reference images
-        const r = 228, g = 202, b = 168;
-        const g2 = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
-        g2.addColorStop(0,    `rgba(${r},${g},${b},${p.opacity})`);
-        g2.addColorStop(0.45, `rgba(${r},${g},${b},${p.opacity * 0.38})`);
-        g2.addColorStop(1,    `rgba(${r},${g},${b},0)`);
-        ctx.fillStyle = g2;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
+      // Steam column: rises from bottom to ~25% from top
+      const steamBottom = ch + 20;
+      const steamTop = ch * 0.12;
+      const steamHeight = steamBottom - steamTop;
+      const NUM_POINTS = 120;
 
-        // Physics
-        p.y -= p.vy;
-        // Spread widens naturally as steam rises
-        const spreadAmp = p.isCore
-          ? 0.35 + progress * 1.1
-          : 0.55 + progress * 1.8;
-        p.x += Math.sin(p.phase) * spreadAmp + p.drift;
-        p.phase += p.phaseSpeed;
-        p.r += p.isCore ? 0.16 : 0.24;
+      // Build the spine of the ribbon
+      const pts: { x: number; y: number }[] = [];
+      for (let i = 0; i <= NUM_POINTS; i++) {
+        const prog = i / NUM_POINTS; // 0 = bottom, 1 = top
+        const y = steamBottom - prog * steamHeight;
 
-        // Opacity envelope: fade in fast near bottom, hold mid, fade out near top
-        if (progress < 0.12) {
-          p.opacity = Math.min(p.maxOpacity, p.opacity + 0.02);
-        } else if (progress > 0.55) {
-          p.opacity = Math.max(0, p.opacity - 0.006);
-        }
+        // Sinuous S-curve: amplitude grows as it rises
+        const amp1 = 22 * Math.pow(prog, 0.6);
+        const amp2 = 12 * Math.pow(prog, 0.8);
+        const amp3 = 6 * prog;
 
-        // Respawn
-        if (p.y + p.r < 0 || p.opacity <= 0) {
-          Object.assign(p, spawn(cw, ch));
-        }
+        const x =
+          cx +
+          amp1 * Math.sin(prog * Math.PI * 3.2 + t * 0.9) +
+          amp2 * Math.sin(prog * Math.PI * 5.5 - t * 0.65) +
+          amp3 * Math.sin(prog * Math.PI * 1.4 + t * 0.35);
+
+        pts.push({ x, y });
       }
 
+      // Draw multiple passes: outer glow → soft halo → sharp core
+      const passes = [
+        { blur: 18, width: 28, alpha: 0.06 },
+        { blur: 10, width: 16, alpha: 0.10 },
+        { blur: 5,  width: 9,  alpha: 0.18 },
+        { blur: 2,  width: 5,  alpha: 0.30 },
+        { blur: 0,  width: 2,  alpha: 0.55 },
+      ];
+
+      ctx.save();
+      ctx.globalAlpha = globalAlpha;
+
+      for (const pass of passes) {
+        ctx.save();
+        if (pass.blur > 0) ctx.filter = `blur(${pass.blur}px)`;
+
+        // Vertical gradient: transparent at very bottom (origin), opaque mid, transparent at top
+        const grad = ctx.createLinearGradient(0, steamBottom, 0, steamTop);
+        grad.addColorStop(0,    `rgba(255, 253, 248, 0)`);
+        grad.addColorStop(0.06, `rgba(255, 253, 248, ${pass.alpha})`);
+        grad.addColorStop(0.55, `rgba(255, 253, 248, ${pass.alpha})`);
+        grad.addColorStop(0.80, `rgba(255, 253, 248, ${pass.alpha * 0.6})`);
+        grad.addColorStop(1,    `rgba(255, 253, 248, 0)`);
+
+        ctx.beginPath();
+        ctx.moveTo(pts[0].x, pts[0].y);
+        for (let i = 1; i < pts.length - 1; i++) {
+          const midX = (pts[i].x + pts[i + 1].x) / 2;
+          const midY = (pts[i].y + pts[i + 1].y) / 2;
+          ctx.quadraticCurveTo(pts[i].x, pts[i].y, midX, midY);
+        }
+        ctx.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y);
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = pass.width;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      ctx.restore();
       animRef.current = requestAnimationFrame(draw);
     };
 
