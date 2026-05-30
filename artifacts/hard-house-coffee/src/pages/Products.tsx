@@ -821,6 +821,7 @@ const coffeeBeans = [
     image: "/images/products/coffee-beans/kicking-horse-three-sisters.png",
     url: "https://amzn.to/4ede5GB",
     badge: "Crowd Pleaser",
+    mainPosition: "bottom",
   },
   {
     id: "cb7",
@@ -851,6 +852,7 @@ const coffeeBeans = [
     image: "/images/products/coffee-beans/intelligentsia-analog.png",
     url: "https://amzn.to/4u2OapW",
     badge: "Specialty Pick",
+    mainPosition: "bottom",
   },
 ];
 
