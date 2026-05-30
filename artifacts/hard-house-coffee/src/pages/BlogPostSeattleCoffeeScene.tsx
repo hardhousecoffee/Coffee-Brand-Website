@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostSeattleCoffeeScene() {
   return (
@@ -64,6 +65,7 @@ export default function BlogPostSeattleCoffeeScene() {
           </p>
         </Section>
 
+<RecommendedBeans variant="espresso" />
         <RelatedPosts posts={[
           { title: "San Francisco – Birthplace of the Specialty Revolution", slug: "san-francisco-birthplace-of-specialty-revolution", image: "/images/san-francisco-specialty-coffee.jpg", category: "Coffee Culture" },
           { title: "The Rise of Specialty Coffee Bars", slug: "the-rise-of-specialty-coffee-bars", image: "/images/black-cafe.jpg", category: "Coffee Culture" },

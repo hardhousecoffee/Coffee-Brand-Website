@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostDarkRoast() {
   return (
@@ -189,6 +190,7 @@ export default function BlogPostDarkRoast() {
           </p>
         </Section>
 
+<RecommendedBeans variant="dark-roast" />
         <RelatedPosts posts={[
           { title: "Ethiopia vs. Colombia: A Complete Coffee Origin Guide", slug: "ethiopia-vs-colombia-a-complete-coffee-origin-guide", image: "/images/outdoor-coffee.jpg", category: "Bean Picks" },
           { title: "The Art of the Perfect Pour-Over", slug: "the-art-of-the-perfect-pour-over", image: "/images/pour-over-kettle.jpg", category: "Brewing Guides" },

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostPourOver() {
   return (
@@ -267,6 +268,7 @@ export default function BlogPostPourOver() {
           <p>And honestly, that's what makes it enjoyable.</p>
         </Section>
 
+<RecommendedBeans variant="brewing" />
         <RelatedPosts posts={[
           { title: "Cold Brew Mastery: A Complete Home Guide", slug: "cold-brew-mastery-a-complete-home-guide", image: "/images/milk-pour.png", category: "Brewing Guides" },
           { title: "Ethiopia vs. Colombia: A Complete Coffee Origin Guide", slug: "ethiopia-vs-colombia-a-complete-coffee-origin-guide", image: "/images/outdoor-coffee.jpg", category: "Bean Picks" },

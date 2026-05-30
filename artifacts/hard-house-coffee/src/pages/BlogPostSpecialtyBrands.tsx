@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostSpecialtyBrands() {
   return (
@@ -65,6 +66,7 @@ export default function BlogPostSpecialtyBrands() {
           </p>
         </Section>
 
+<RecommendedBeans variant="specialty" />
         <RelatedPosts posts={[
           { title: "Global Excellence – Onyx Coffee Lab (Bentonville, Arkansas)", slug: "global-excellence-onyx-coffee-lab-bentonville-arkansas", image: "/images/onyx-coffee-lab.jpg", category: "Coffee Culture" },
           { title: "Logistics and Freshness – The Journey to Your Local Shelf", slug: "logistics-and-freshness-journey-to-your-local-shelf", image: "/images/coffee-bag-freshness.jpg", category: "Bean Picks" },

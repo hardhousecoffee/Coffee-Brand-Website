@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostOnyxCoffeeLab() {
   return (
@@ -64,6 +65,7 @@ export default function BlogPostOnyxCoffeeLab() {
           </p>
         </Section>
 
+<RecommendedBeans variant="specialty" />
         <RelatedPosts posts={[
           { title: "Beyond the Supermarket – Notable Specialty Coffee Brands", slug: "beyond-the-supermarket-navigating-notable-specialty-coffee-brands", image: "/images/specialty-coffee-brands.jpg", category: "Bean Picks" },
           { title: "Inside the World Barista Championship", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship.jpg", category: "Coffee Culture" },

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostWorldBaristaChamp() {
   return (
@@ -65,6 +66,7 @@ export default function BlogPostWorldBaristaChamp() {
           </p>
         </Section>
 
+<RecommendedBeans variant="espresso" />
         <RelatedPosts posts={[
           { title: "Meet the Masters – What Makes a Top-Tier Barista Truly Elite", slug: "meet-the-masters-what-makes-top-tier-barista-truly-elite", image: "/images/barista-latte-art.jpg", category: "Coffee Culture" },
           { title: "Global Excellence – Onyx Coffee Lab (Bentonville, Arkansas)", slug: "global-excellence-onyx-coffee-lab-bentonville-arkansas", image: "/images/onyx-coffee-lab.jpg", category: "Coffee Culture" },

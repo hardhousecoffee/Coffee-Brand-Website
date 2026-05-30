@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostArtOfRoast() {
   return (
@@ -64,6 +65,7 @@ export default function BlogPostArtOfRoast() {
           </p>
         </Section>
 
+<RecommendedBeans variant="roasting" />
         <RelatedPosts posts={[
           { title: "The Magic of Processing – How Washing and Drying Shapes Flavor", slug: "the-magic-of-processing-washing-and-drying-shapes-flavor", image: "/images/coffee-natural-processing.jpg", category: "Bean Picks" },
           { title: "Top 5 Dark Roast Beans for Espresso in 2026", slug: "top-5-dark-roast-beans-for-espresso-in-2026", image: "/images/coffee-cheers.jpg", category: "Bean Picks" },

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostFreshnessBag() {
   return (
@@ -64,6 +65,7 @@ export default function BlogPostFreshnessBag() {
           </p>
         </Section>
 
+<RecommendedBeans variant="freshness" />
         <RelatedPosts posts={[
           { title: "The Art of the Roast – Finding the Perfect Profile", slug: "the-art-of-the-roast-finding-perfect-profile-in-the-drum", image: "/images/coffee-drum-roaster.jpg", category: "Bean Picks" },
           { title: "Beyond the Supermarket – Notable Specialty Coffee Brands", slug: "beyond-the-supermarket-navigating-notable-specialty-coffee-brands", image: "/images/specialty-coffee-brands.jpg", category: "Bean Picks" },

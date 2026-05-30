@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostCoffeeProcessing() {
   return (
@@ -64,6 +65,7 @@ export default function BlogPostCoffeeProcessing() {
           </p>
         </Section>
 
+<RecommendedBeans variant="origins" />
         <RelatedPosts posts={[
           { title: "Seed to Sprout – The Secret Lives of Coffee Farmers", slug: "seed-to-sprout-secret-lives-of-coffee-farmers", image: "/images/coffee-farmer-cherries.jpg", category: "Bean Picks" },
           { title: "The Art of the Roast – Finding the Perfect Profile", slug: "the-art-of-the-roast-finding-perfect-profile-in-the-drum", image: "/images/coffee-drum-roaster.jpg", category: "Bean Picks" },

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostCafeLomiParis() {
   return (
@@ -64,6 +65,7 @@ export default function BlogPostCafeLomiParis() {
           </p>
         </Section>
 
+<RecommendedBeans variant="specialty" />
         <RelatedPosts posts={[
           { title: "Old World Perfection – Ditta Artigianale (Florence, Italy)", slug: "old-world-perfection-ditta-artigianale-florence-italy", image: "/images/ditta-artigianale-florence.jpg", category: "Coffee Culture" },
           { title: "The Master of Precision – Glitch Coffee (Tokyo)", slug: "master-of-precision-glitch-coffee-roasters-tokyo-japan", image: "/images/glitch-coffee-tokyo.jpg", category: "Coffee Culture" },

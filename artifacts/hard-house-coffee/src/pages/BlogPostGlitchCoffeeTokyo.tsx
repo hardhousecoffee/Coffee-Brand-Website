@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostGlitchCoffeeTokyo() {
   return (
@@ -64,6 +65,7 @@ export default function BlogPostGlitchCoffeeTokyo() {
           </p>
         </Section>
 
+<RecommendedBeans variant="specialty" />
         <RelatedPosts posts={[
           { title: "Old World Perfection – Ditta Artigianale (Florence, Italy)", slug: "old-world-perfection-ditta-artigianale-florence-italy", image: "/images/ditta-artigianale-florence.jpg", category: "Coffee Culture" },
           { title: "Why Every Coffee Lover Needs a Grinder First", slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide", image: "/images/coffee-grinder-beans.png", category: "Coffee Culture" },

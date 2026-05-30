@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
 
-const categories = ["All", "Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories"];
+const categories = ["All", "Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories", "Coffee Beans"];
 const accessorySubcategories = ["All Accessories", "Kettles", "Milk Frothers", "Barista Sets", "Coffee Mugs"];
 
 const products = [
@@ -761,6 +761,99 @@ const products = [
   },
 ];
 
+const coffeeBeans = [
+  {
+    id: "cb1",
+    name: "Lavazza Super Crema",
+    roast: "Medium Espresso",
+    origin: "Italian Blend",
+    desc: "One of the most popular espresso beans in the world. Creamy body with hazelnut and brown sugar notes — works beautifully in super-automatics and traditional machines alike.",
+    image: "/images/products/coffee-beans/lavazza-super-crema.jpg",
+    url: "https://amzn.to/4xe0JSa",
+    badge: "Best Seller",
+  },
+  {
+    id: "cb2",
+    name: "Lavazza Espresso Barista Gran Crema",
+    roast: "Medium",
+    origin: "Italian Blend",
+    desc: "A velvety espresso with rich chocolate and spice notes. Lavazza's barista-grade blend is engineered for dense crema and consistent extraction — shot after shot.",
+    image: "/images/products/coffee-beans/lavazza-gran-crema.jpg",
+    url: "https://amzn.to/4dJkwQc",
+    badge: "Top Rated",
+  },
+  {
+    id: "cb3",
+    name: "Peet's Major Dickason's Blend",
+    roast: "Dark",
+    origin: "Multi-Origin Blend",
+    desc: "Bold, rich, and complex. Peet's signature dark roast is full-bodied with serious depth — a coffee lover's benchmark since 1966.",
+    image: "/images/products/coffee-beans/peets-major-dickason.png",
+    url: "https://amzn.to/43Cd3xI",
+    badge: "Dark Roast Pick",
+  },
+  {
+    id: "cb4",
+    name: "Death Wish Coffee",
+    roast: "Medium",
+    origin: "Multi-Origin",
+    desc: "Not just the world's strongest coffee — it's surprisingly smooth. Bold cherry and chocolate notes with serious caffeine. Perfect for cold brew and French press.",
+    image: "/images/products/coffee-beans/death-wish-coffee.jpg",
+    url: "https://amzn.to/4a315Rr",
+    badge: "High Caffeine",
+  },
+  {
+    id: "cb5",
+    name: "Onyx Coffee Lab Tropical Weather",
+    roast: "Medium Espresso",
+    origin: "Direct Trade, Multi-Origin",
+    desc: "A vibrant specialty espresso blend with tropical fruit and floral notes. Onyx sources directly from farms — this is what specialty coffee is supposed to taste like.",
+    image: "/images/products/coffee-beans/onyx-tropical-weather.webp",
+    url: "https://amzn.to/4o5N5MM",
+    badge: "Editor's Pick",
+  },
+  {
+    id: "cb6",
+    name: "Kicking Horse Three Sisters",
+    roast: "Medium",
+    origin: "Multi-Origin",
+    desc: "Sweet, nutty, and medium-bodied. Naturally low-acid with a clean, forgiving profile — equally great for pour-over, cold brew, or French press.",
+    image: "/images/products/coffee-beans/kicking-horse-three-sisters.jpg",
+    url: "https://amzn.to/4ede5GB",
+    badge: "Crowd Pleaser",
+  },
+  {
+    id: "cb7",
+    name: "Stumptown Holler Mountain",
+    roast: "Medium Organic",
+    origin: "Organic Blend",
+    desc: "Stumptown's flagship organic whole bean. Caramel, dark chocolate, and hazelnut in a balanced roast. Roasted-on date on every bag. One of the easiest picks we make.",
+    image: "/images/products/coffee-beans/stumptown-holler-mountain.png",
+    url: "https://amzn.to/3PUowpb",
+    badge: "Staff Favourite",
+  },
+  {
+    id: "cb8",
+    name: "Intelligentsia Black Cat Sublunar",
+    roast: "Dark Espresso",
+    origin: "Multi-Origin",
+    desc: "A dark espresso roast built for precision extraction. Chocolate and caramel notes with a clean, persistent finish — intense without being harsh.",
+    image: "/images/products/coffee-beans/intelligentsia-sublunar.png",
+    url: "https://amzn.to/4ecY6s7",
+    badge: "Dark Espresso",
+  },
+  {
+    id: "cb9",
+    name: "Intelligentsia Black Cat Analog",
+    roast: "Medium Espresso",
+    origin: "Multi-Origin",
+    desc: "Wild berry and chocolate in a medium espresso roast. Intelligentsia's most approachable Black Cat — versatile enough for espresso, pour-over, or filter brewing.",
+    image: "/images/products/coffee-beans/intelligentsia-analog.png",
+    url: "https://amzn.to/4u2OapW",
+    badge: "Specialty Pick",
+  },
+];
+
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [activeSubcategory, setActiveSubcategory] = useState("All Accessories");
@@ -797,6 +890,7 @@ export default function Products() {
 
   const filtered = (() => {
     if (activeCategory === "All") return products;
+    if (activeCategory === "Coffee Beans") return [];
     if (activeCategory === "Accessories") {
       const acc = products.filter((p) => p.category === "Accessories");
       if (activeSubcategory === "All Accessories") return acc;
@@ -906,7 +1000,7 @@ export default function Products() {
         </div>
 
         {/* Empty state for categories with no products */}
-        {filtered.length === 0 && (
+        {filtered.length === 0 && activeCategory !== "Coffee Beans" && (
           <div
             className="flex flex-col items-center justify-center py-24 text-center"
             style={{ borderRadius: "10px", border: "1px dashed rgba(161,79,31,0.25)", background: "#0f0f0f" }}
@@ -1167,6 +1261,192 @@ export default function Products() {
             );
           })}
         </div>
+
+        {/* ── Coffee Beans Section ── */}
+        {(activeCategory === "All" || activeCategory === "Coffee Beans") && (
+          <div id="coffee-beans" style={{ marginTop: "4rem" }}>
+            {/* Section header */}
+            <div
+              style={{
+                borderTop: "1px solid rgba(161,79,31,0.2)",
+                paddingTop: "3rem",
+                marginBottom: "2rem",
+                textAlign: "center",
+              }}
+            >
+              <p className="section-subtitle" style={{ color: "#a14f1f" }}>
+                Hard House Coffee Picks
+              </p>
+              <div className="divider-orange mx-auto" />
+              <h2
+                className="section-title mt-4"
+                style={{ fontSize: "clamp(1.6rem,4vw,2.6rem)" }}
+              >
+                Recommended Coffee Beans
+              </h2>
+              <p
+                style={{
+                  color: "#b0a090",
+                  maxWidth: "520px",
+                  margin: "1rem auto 0",
+                  lineHeight: 1.7,
+                  fontSize: "0.9rem",
+                }}
+              >
+                The best whole-bean coffees we're brewing with right now — sourced from the world's top roasters and tested in our own machines.
+              </p>
+            </div>
+
+            {/* Beans grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {coffeeBeans.map((bean) => (
+                <div
+                  key={bean.id}
+                  style={{
+                    background: "#111",
+                    borderRadius: "10px",
+                    border: "1px solid rgba(161,79,31,0.18)",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    transition: "border-color 0.25s, box-shadow 0.25s",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.5)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 6px 28px rgba(0,0,0,0.45)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.18)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                  }}
+                >
+                  {/* Image */}
+                  <div
+                    style={{
+                      height: "200px",
+                      background: "#0d0d0d",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      position: "relative",
+                      padding: "1rem",
+                    }}
+                  >
+                    <img
+                      src={bean.image}
+                      alt={bean.name}
+                      style={{
+                        maxHeight: "170px",
+                        maxWidth: "100%",
+                        objectFit: "contain",
+                      }}
+                    />
+                    {/* Badge */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "10px",
+                        left: "10px",
+                        background: "#8b2f2f",
+                        borderRadius: "4px",
+                        fontSize: "0.58rem",
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: "#f2f2f2",
+                        fontWeight: 700,
+                        padding: "2px 7px",
+                      }}
+                    >
+                      {bean.badge}
+                    </div>
+                    {/* Roast label */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "10px",
+                        right: "10px",
+                        background: "rgba(11,11,11,0.85)",
+                        borderRadius: "4px",
+                        fontSize: "0.6rem",
+                        color: "#a14f1f",
+                        fontWeight: 600,
+                        padding: "2px 7px",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      {bean.roast}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div
+                    style={{
+                      padding: "1.25rem",
+                      display: "flex",
+                      flexDirection: "column",
+                      flex: 1,
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "0.65rem",
+                        color: "#5a4e42",
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        marginBottom: "0.35rem",
+                      }}
+                    >
+                      {bean.origin}
+                    </p>
+                    <h3
+                      style={{
+                        fontSize: "0.95rem",
+                        fontWeight: 700,
+                        color: "#f2f2f2",
+                        marginBottom: "0.75rem",
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {bean.name}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: "0.78rem",
+                        color: "#a09080",
+                        lineHeight: 1.6,
+                        marginBottom: "1.25rem",
+                        flex: 1,
+                      }}
+                    >
+                      {bean.desc}
+                    </p>
+                    <a
+                      href={bean.url}
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <button className="btn-primary w-full" style={{ fontSize: "0.76rem" }}>
+                        Buy on Amazon
+                      </button>
+                    </a>
+                    <p
+                      style={{
+                        fontSize: "0.65rem",
+                        color: "#5a4e42",
+                        textAlign: "center",
+                        marginTop: "6px",
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      Affiliate link — we may earn a commission at no extra cost to you.
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       <PageNav nextPath="/about" nextLabel="Our Story" />
