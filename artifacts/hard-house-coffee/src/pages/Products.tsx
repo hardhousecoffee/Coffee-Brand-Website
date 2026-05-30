@@ -822,7 +822,7 @@ const coffeeBeans = [
     url: "https://amzn.to/4ede5GB",
     badge: "Crowd Pleaser",
     mainFit: "cover",
-    mainPosition: "left bottom",
+    mainPosition: "center 30%",
   },
   {
     id: "cb7",
@@ -854,7 +854,7 @@ const coffeeBeans = [
     url: "https://amzn.to/4u2OapW",
     badge: "Specialty Pick",
     mainFit: "cover",
-    mainPosition: "center bottom",
+    mainPosition: "center 40%",
   },
 ];
 
