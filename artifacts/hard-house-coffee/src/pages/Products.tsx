@@ -1066,7 +1066,7 @@ export default function Products() {
                           className="w-full h-full absolute inset-0"
                           style={{
                             objectFit: (product as any).mainFit || "cover",
-                            objectPosition: (product as any).mainPosition || "center",
+                            objectPosition: product.id === "cb6" ? "center bottom" : product.id === "cb9" ? "center bottom" : (product as any).mainPosition || "center",
                             opacity: isHovered && hoverImages.length > 0 && !variantImageActive ? 0 : 1,
                             transform: isHovered ? `scale(${((product as any).mainScale ?? 1) * 1.06}) translateY(${(product as any).mainTranslateY ?? "0%"})` : `scale(${(product as any).mainScale ?? 1}) translateY(${(product as any).mainTranslateY ?? "0%"})`,
                             transition: "opacity 0.55s ease, transform 0.55s ease",
