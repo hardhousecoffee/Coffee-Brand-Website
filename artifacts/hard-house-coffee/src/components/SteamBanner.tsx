@@ -204,7 +204,7 @@ export default function SteamBanner() {
               "0 4px 60px rgba(161,79,31,.5), 0 0 120px rgba(212,184,150,.14)",
           }}
         >
-          Hard House Coffee
+          Now Brewing at Hard House Coffee
         </h2>
 
         <div
