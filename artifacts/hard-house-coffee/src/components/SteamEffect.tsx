@@ -15,7 +15,7 @@ export default function SteamEffect() {
       style={{
         position: "fixed",
         bottom: "-5vh",
-        left: "50%",
+        left: "calc(50% + 45px)",
         transform: "translateX(-50%)",
         width: "130vw",
         height: "115vh",
