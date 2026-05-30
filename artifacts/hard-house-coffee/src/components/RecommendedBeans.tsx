@@ -321,7 +321,7 @@ export default function RecommendedBeans({ variant }: { variant: Variant }) {
             >
               <img
                 src={bean.image}
-                alt={bean.name}
+                alt={`${bean.name} ${bean.roast} whole bean coffee — ${bean.origin}`}
                 style={{
                   width: "100%",
                   height: "100%",

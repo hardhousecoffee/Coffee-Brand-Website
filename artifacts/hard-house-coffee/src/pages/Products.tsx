@@ -1072,7 +1072,7 @@ export default function Products() {
                         {/* Main image — always shown when a variant swatch is selected */}
                         <img
                           src={activeMainImage}
-                          alt={product.name}
+                          alt={`${product.name} — ${product.category} recommended by Hard House Coffee`}
                           className="w-full h-full absolute inset-0"
                           style={{
                             objectFit: (product as any).mainFit || "cover",
@@ -1088,7 +1088,7 @@ export default function Products() {
                           <img
                             key={idx}
                             src={src}
-                            alt={`${product.name} view ${idx + 1}`}
+                            alt={`${product.name} ${product.category} alternate view ${idx + 1}`}
                             className="w-full h-full absolute inset-0"
                             style={{
                               objectFit: (product as any).hoverVignetteIndices?.includes(idx) ? "contain" : "cover",
@@ -1343,7 +1343,7 @@ export default function Products() {
                   >
                     <img
                       src={bean.image}
-                      alt={bean.name}
+                      alt={`${bean.name} ${bean.roast} whole bean coffee — ${bean.origin}`}
                       style={{
                         width: "100%",
                         height: "100%",

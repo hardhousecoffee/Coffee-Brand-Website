@@ -1263,12 +1263,12 @@ export default function Home() {
                 >
                   <img
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} — ${product.category} recommended by Hard House Coffee`}
                     style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transition: "opacity 0.4s ease" }}
                   />
                   <img
                     src={product.hoverImage}
-                    alt={product.name}
+                    alt={`${product.name} ${product.category} alternate view`}
                     style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0, transition: "opacity 0.4s ease" }}
                   />
                   <div
