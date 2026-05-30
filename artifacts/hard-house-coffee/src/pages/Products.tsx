@@ -1323,22 +1323,21 @@ export default function Products() {
                   {/* Image */}
                   <div
                     style={{
-                      height: "200px",
+                      height: "220px",
                       background: "#0d0d0d",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
                       position: "relative",
-                      padding: "1rem",
+                      overflow: "hidden",
                     }}
                   >
                     <img
                       src={bean.image}
                       alt={bean.name}
                       style={{
-                        maxHeight: "170px",
-                        maxWidth: "100%",
+                        width: "100%",
+                        height: "100%",
                         objectFit: "contain",
+                        objectPosition: "center",
+                        display: "block",
                       }}
                     />
                     {/* Badge */}
