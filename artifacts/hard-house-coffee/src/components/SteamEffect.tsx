@@ -1,5 +1,34 @@
 import { useEffect, useRef } from "react";
 
+interface Particle {
+  prog: number;          // position along column: 0 = bottom, 1 = top
+  lateralOffset: number; // horizontal scatter from spine (px)
+  radius: number;
+  opacity: number;
+  speed: number;
+}
+
+function makeParticle(scattered = false): Particle {
+  return {
+    prog: scattered ? Math.random() : -Math.random() * 0.18,
+    lateralOffset: (Math.random() - 0.5) * 30,
+    radius: 20 + Math.random() * 30,
+    opacity: 0,
+    speed: 0.0009 + Math.random() * 0.0011,
+  };
+}
+
+// S-curve spine — safe for all prog >= 0 (uses sqrt, not fractional pow)
+function spineX(prog: number, t: number, cx: number): number {
+  const amp = Math.sqrt(Math.max(0, prog));
+  return (
+    cx +
+    40 * amp * Math.sin(prog * Math.PI * 2.3 + t * 0.38) +
+    20 * amp * Math.sin(prog * Math.PI * 4.8 - t * 0.28) +
+    8  * amp * Math.sin(prog * Math.PI * 1.1 + t * 0.15)
+  );
+}
+
 export default function SteamEffect() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);
@@ -17,35 +46,15 @@ export default function SteamEffect() {
     setSize();
     window.addEventListener("resize", setSize);
 
+    // 170 pre-scattered so steam is visible immediately on load
+    const COUNT = 220;
+    const particles: Particle[] = Array.from({ length: COUNT }, (_, i) =>
+      makeParticle(i < 170)
+    );
+
     const startTime = performance.now();
     const HOLD = 5500;
     const FADE = 2500;
-
-    // Build a smooth path from array of points using quadratic bezier
-    function strokePath(
-      points: { x: number; y: number }[],
-      strokeStyle: CanvasGradient | string,
-      lineWidth: number,
-      blur: number
-    ) {
-      if (points.length < 2) return;
-      ctx.save();
-      if (blur > 0) ctx.filter = `blur(${blur}px)`;
-      ctx.beginPath();
-      ctx.moveTo(points[0].x, points[0].y);
-      for (let i = 1; i < points.length - 1; i++) {
-        const mx = (points[i].x + points[i + 1].x) / 2;
-        const my = (points[i].y + points[i + 1].y) / 2;
-        ctx.quadraticCurveTo(points[i].x, points[i].y, mx, my);
-      }
-      ctx.lineTo(points[points.length - 1].x, points[points.length - 1].y);
-      ctx.strokeStyle = strokeStyle;
-      ctx.lineWidth = lineWidth;
-      ctx.lineCap = "round";
-      ctx.lineJoin = "round";
-      ctx.stroke();
-      ctx.restore();
-    }
 
     const draw = (now: number) => {
       const elapsed = now - startTime;
@@ -68,58 +77,50 @@ export default function SteamEffect() {
 
       const t = elapsed / 1000;
       const cx = cw / 2;
+      const steamBottom = ch;
+      const steamHeight = ch * 0.92; // rises to ~8% from top
 
-      // Steam rises from bottom edge to ~10% from top
-      const steamBottom = ch + 10;
-      const steamTop = ch * 0.10;
-      const steamHeight = steamBottom - steamTop;
-      const N = 100;
+      for (const p of particles) {
+        p.prog += p.speed;
 
-      // Vertical gradient shared across both strands
-      const makeGrad = (alpha: number) => {
-        const g = ctx.createLinearGradient(0, steamBottom, 0, steamTop);
-        g.addColorStop(0,    `rgba(255, 254, 250, 0)`);
-        g.addColorStop(0.04, `rgba(255, 254, 250, ${alpha})`);
-        g.addColorStop(0.55, `rgba(255, 254, 250, ${alpha})`);
-        g.addColorStop(0.82, `rgba(255, 254, 250, ${alpha * 0.5})`);
-        g.addColorStop(1,    `rgba(255, 254, 250, 0)`);
-        return g;
-      };
+        // Skip until particle enters the column from below
+        if (p.prog < 0) continue;
 
-      // Build two strands — they share a spine but diverge with a phase offset
-      // giving the double-ribbon twist seen in the reference image
-      const buildStrand = (phaseShift: number) => {
-        const pts: { x: number; y: number }[] = [];
-        for (let i = 0; i <= N; i++) {
-          const prog = i / N; // 0 = bottom, 1 = top
-          const y = steamBottom - prog * steamHeight;
-
-          // Amplitude grows from 0 at base then settles — keeping it narrow at origin
-          const amp = Math.pow(prog, 0.45);
-
-          // Primary S-curve: slow, big, elegant sweep
-          const x =
-            cx +
-            48 * amp * Math.sin(prog * Math.PI * 2.8 + t * 0.55 + phaseShift) +
-            22 * amp * Math.sin(prog * Math.PI * 5.2 - t * 0.38 + phaseShift * 0.6) +
-            10 * amp * Math.sin(prog * Math.PI * 1.1 + t * 0.2);
-
-          pts.push({ x, y });
+        // Respawn at bottom when particle exits top
+        if (p.prog > 1.05) {
+          Object.assign(p, makeParticle(false));
+          continue;
         }
-        return pts;
-      };
 
-      // Two strands offset in phase — they twist around each other
-      const strandA = buildStrand(0);
-      const strandB = buildStrand(Math.PI * 0.45);
+        const y = steamBottom - p.prog * steamHeight;
+        const sx = spineX(p.prog, t, cx) + p.lateralOffset;
 
-      // Draw each strand: outer glow → mid halo → bright core
-      for (const pts of [strandA, strandB]) {
-        strokePath(pts, makeGrad(0.07), 32, 16);
-        strokePath(pts, makeGrad(0.12), 18, 8);
-        strokePath(pts, makeGrad(0.22), 9,  3);
-        strokePath(pts, makeGrad(0.55), 3,  1);
-        strokePath(pts, makeGrad(0.80), 1.2, 0);
+        // Guard against any floating-point edge case
+        if (!isFinite(sx) || !isFinite(y)) continue;
+
+        // Opacity envelope: fade in near base, hold, fade near top
+        let targetOpacity: number;
+        if (p.prog < 0.07) {
+          targetOpacity = (p.prog / 0.07) * 0.20;
+        } else if (p.prog > 0.72) {
+          targetOpacity = Math.max(0, (1 - p.prog) / 0.28) * 0.20;
+        } else {
+          targetOpacity = 0.20;
+        }
+
+        p.opacity += (targetOpacity - p.opacity) * 0.06;
+        if (p.opacity <= 0.001) continue;
+
+        const r = p.radius;
+        const grad = ctx.createRadialGradient(sx, y, 0, sx, y, r);
+        grad.addColorStop(0,   `rgba(232, 224, 212, ${p.opacity})`);
+        grad.addColorStop(0.5, `rgba(232, 224, 212, ${p.opacity * 0.35})`);
+        grad.addColorStop(1,   `rgba(232, 224, 212, 0)`);
+
+        ctx.beginPath();
+        ctx.arc(sx, y, r, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
       }
 
       ctx.restore();
