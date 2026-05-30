@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
-import SteamBanner from "@/components/SteamBanner";
 
 const heroSlides = [
   { src: "/images/cafe-alley.jpg", alt: "Hero Cafe Alley" },
@@ -1012,9 +1011,6 @@ export default function Home() {
           })()}
         </div>
       </section>
-
-      {/* BRANDING MOMENT — STEAM REVEAL */}
-      <SteamBanner />
 
       {/* CULTURE SECTION */}
       <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>
