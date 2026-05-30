@@ -768,7 +768,7 @@ const coffeeBeans = [
     roast: "Medium Espresso",
     origin: "Italian Blend",
     desc: "One of the most popular espresso beans in the world. Creamy body with hazelnut and brown sugar notes — works beautifully in super-automatics and traditional machines alike.",
-    image: "/images/products/coffee-beans/lavazza-super-crema.jpg",
+    image: "/images/products/coffee-beans/lavazza-super-crema.png",
     url: "https://amzn.to/4xe0JSa",
     badge: "Best Seller",
   },
@@ -778,7 +778,7 @@ const coffeeBeans = [
     roast: "Medium",
     origin: "Italian Blend",
     desc: "A velvety espresso with rich chocolate and spice notes. Lavazza's barista-grade blend is engineered for dense crema and consistent extraction — shot after shot.",
-    image: "/images/products/coffee-beans/lavazza-gran-crema.jpg",
+    image: "/images/products/coffee-beans/lavazza-gran-crema.png",
     url: "https://amzn.to/4dJkwQc",
     badge: "Top Rated",
   },
@@ -818,7 +818,7 @@ const coffeeBeans = [
     roast: "Medium",
     origin: "Multi-Origin",
     desc: "Sweet, nutty, and medium-bodied. Naturally low-acid with a clean, forgiving profile — equally great for pour-over, cold brew, or French press.",
-    image: "/images/products/coffee-beans/kicking-horse-three-sisters.jpg",
+    image: "/images/products/coffee-beans/kicking-horse-three-sisters.png",
     url: "https://amzn.to/4ede5GB",
     badge: "Crowd Pleaser",
   },
@@ -1335,8 +1335,8 @@ export default function Products() {
                       style={{
                         width: "100%",
                         height: "100%",
-                        objectFit: "contain",
-                        objectPosition: "center",
+                        objectFit: "cover",
+                        objectPosition: "center top",
                         display: "block",
                       }}
                     />
