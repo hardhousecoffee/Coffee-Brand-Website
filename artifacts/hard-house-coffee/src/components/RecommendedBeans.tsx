@@ -6,7 +6,7 @@ const BEANS: Record<
 > = {
   "dark-roast": [
     {
-      name: "Peet's Major Dickason's Blend",
+      name: "Peet's Coffee, Dark Roast Whole Bean Coffee - Major Dickason's Blend",
       desc: "Bold, rich, and complex with serious depth. Peet's signature dark roast has been a coffee lover's benchmark for decades — full-bodied and consistently excellent.",
       roast: "Dark",
       origin: "Multi-Origin Blend",
@@ -14,7 +14,7 @@ const BEANS: Record<
       url: "https://amzn.to/43Cd3xI",
     },
     {
-      name: "Death Wish Coffee",
+      name: "Death Wish Coffee Medium Roast, Whole Bean Coffee",
       desc: "Not just the world's strongest coffee — it's surprisingly smooth too. Medium-dark roast with cherry and chocolate notes for those who want serious caffeine and serious flavor.",
       roast: "Medium",
       origin: "Multi-Origin",
@@ -22,7 +22,7 @@ const BEANS: Record<
       url: "https://amzn.to/4a315Rr",
     },
     {
-      name: "Intelligentsia Black Cat Sublunar",
+      name: "Intelligentsia Coffee, Black Cat Sublunar Espresso Dark Roast Whole Bean Coffee",
       desc: "Intelligentsia's precision dark espresso roast. Chocolate and caramel notes with a clean, persistent finish — built for those who want intensity without bitterness.",
       roast: "Dark Espresso",
       origin: "Multi-Origin",
@@ -40,7 +40,7 @@ const BEANS: Record<
       url: "https://amzn.to/4xe0JSa",
     },
     {
-      name: "Lavazza Gran Crema",
+      name: "Lavazza Espresso Barista Gran Crema Whole Bean Coffee Blend",
       desc: "A velvety espresso with chocolate and spice notes. Lavazza's barista-grade blend is engineered for dense crema and consistent extraction — shot after shot.",
       roast: "Medium",
       origin: "Italian Blend",
@@ -48,7 +48,7 @@ const BEANS: Record<
       url: "https://amzn.to/4dJkwQc",
     },
     {
-      name: "Intelligentsia Black Cat Analog",
+      name: "Intelligentsia Coffee, Black Cat Analog Espresso Medium Roast Whole Bean Coffee",
       desc: "A medium espresso roast with wild berry and chocolate notes. Intelligentsia's most approachable Black Cat expression — versatile for espresso or pour-over.",
       roast: "Medium Espresso",
       origin: "Multi-Origin",
@@ -58,7 +58,7 @@ const BEANS: Record<
   ],
   "specialty": [
     {
-      name: "Onyx Coffee Lab Tropical Weather",
+      name: "Onyx Coffee Lab Tropical Weather Whole Bean Espresso Coffee Blend – Medium",
       desc: "A vibrant espresso blend with tropical fruit and floral notes. Onyx sources directly from farms — this is one of the finest examples of what specialty coffee can taste like.",
       roast: "Medium Espresso",
       origin: "Direct Trade, Multi-Origin",
@@ -66,7 +66,7 @@ const BEANS: Record<
       url: "https://amzn.to/4o5N5MM",
     },
     {
-      name: "Intelligentsia Black Cat Analog",
+      name: "Intelligentsia Coffee, Black Cat Analog Espresso Medium Roast Whole Bean Coffee",
       desc: "Berry, chocolate, and a silky finish. A medium roast that works for espresso or filter brewing — dialed in for precision baristas who want both complexity and balance.",
       roast: "Medium Espresso",
       origin: "Multi-Origin",
@@ -74,7 +74,7 @@ const BEANS: Record<
       url: "https://amzn.to/4u2OapW",
     },
     {
-      name: "Stumptown Holler Mountain",
+      name: "Stumptown Coffee Roasters, Medium Roast Organic Whole Bean Coffee",
       desc: "Stumptown's flagship organic blend — caramel, dark chocolate, and hazelnut in a balanced roast. Consistently ranked among the best whole-bean coffees available online.",
       roast: "Medium Organic",
       origin: "Organic Blend",
@@ -84,7 +84,7 @@ const BEANS: Record<
   ],
   "brewing": [
     {
-      name: "Stumptown Holler Mountain",
+      name: "Stumptown Coffee Roasters, Medium Roast Organic Whole Bean Coffee",
       desc: "Excellent for pour-over and drip. The organic blend's caramel and chocolate notes open up beautifully when brewed slowly through a Chemex or V60.",
       roast: "Medium Organic",
       origin: "Organic Blend",
@@ -92,7 +92,7 @@ const BEANS: Record<
       url: "https://amzn.to/3PUowpb",
     },
     {
-      name: "Kicking Horse Three Sisters",
+      name: "Kicking Horse Coffee, Three Sisters, Medium Roast, Whole Bean",
       desc: "Sweet, nutty, and medium-bodied — Three Sisters is a reliable go-to for slow-brew methods. Clean and forgiving, it's consistently enjoyable across brew styles.",
       roast: "Medium",
       origin: "Multi-Origin",
@@ -110,7 +110,7 @@ const BEANS: Record<
   ],
   "cold-brew": [
     {
-      name: "Stumptown Holler Mountain",
+      name: "Stumptown Coffee Roasters, Medium Roast Organic Whole Bean Coffee",
       desc: "The organic blend's chocolate and caramel notes become even richer in cold brew. A go-to choice for smooth, low-acid cold concentrate that doesn't need any sweetener.",
       roast: "Medium Organic",
       origin: "Organic Blend",
@@ -118,7 +118,7 @@ const BEANS: Record<
       url: "https://amzn.to/3PUowpb",
     },
     {
-      name: "Kicking Horse Three Sisters",
+      name: "Kicking Horse Coffee, Three Sisters, Medium Roast, Whole Bean",
       desc: "Sweet, nutty, and naturally low-acid — ideal for cold brew. Grinds beautifully coarse and extracts into a rich, clean concentrate with no harsh edges.",
       roast: "Medium",
       origin: "Multi-Origin",
@@ -126,7 +126,7 @@ const BEANS: Record<
       url: "https://amzn.to/4ede5GB",
     },
     {
-      name: "Death Wish Coffee",
+      name: "Death Wish Coffee Medium Roast, Whole Bean Coffee",
       desc: "For cold brew that hits hard. Death Wish produces a concentrate with intense caffeine and surprisingly smooth cherry-chocolate notes — great for iced drinks that need to stand up to milk and ice.",
       roast: "Medium",
       origin: "Multi-Origin",
@@ -136,7 +136,7 @@ const BEANS: Record<
   ],
   "origins": [
     {
-      name: "Onyx Coffee Lab Tropical Weather",
+      name: "Onyx Coffee Lab Tropical Weather Whole Bean Espresso Coffee Blend – Medium",
       desc: "Onyx works directly with farmers to craft this vibrant espresso blend. A masterclass in how origin, processing, and roasting come together into something genuinely special.",
       roast: "Medium Espresso",
       origin: "Direct Trade, Multi-Origin",
@@ -144,7 +144,7 @@ const BEANS: Record<
       url: "https://amzn.to/4o5N5MM",
     },
     {
-      name: "Stumptown Holler Mountain",
+      name: "Stumptown Coffee Roasters, Medium Roast Organic Whole Bean Coffee",
       desc: "Stumptown's direct-trade relationships across Latin America come through in every bag — balanced, sweet, and traceable to the farms it came from.",
       roast: "Medium Organic",
       origin: "Latin America Blend",
@@ -152,7 +152,7 @@ const BEANS: Record<
       url: "https://amzn.to/3PUowpb",
     },
     {
-      name: "Kicking Horse Three Sisters",
+      name: "Kicking Horse Coffee, Three Sisters, Medium Roast, Whole Bean",
       desc: "A Canadian-roasted blend drawing from high-altitude origins for a clean, sweet cup. Great for exploring how geography and altitude shape coffee flavor.",
       roast: "Medium",
       origin: "Multi-Origin",
@@ -162,7 +162,7 @@ const BEANS: Record<
   ],
   "roasting": [
     {
-      name: "Onyx Coffee Lab Tropical Weather",
+      name: "Onyx Coffee Lab Tropical Weather Whole Bean Espresso Coffee Blend – Medium",
       desc: "Roasted to highlight vibrant fruit and florals that only a precise light-to-medium profile can unlock. A perfect example of modern specialty roasting philosophy.",
       roast: "Medium Espresso",
       origin: "Direct Trade, Multi-Origin",
@@ -170,7 +170,7 @@ const BEANS: Record<
       url: "https://amzn.to/4o5N5MM",
     },
     {
-      name: "Intelligentsia Black Cat Analog",
+      name: "Intelligentsia Coffee, Black Cat Analog Espresso Medium Roast Whole Bean Coffee",
       desc: "Intelligentsia's roasting precision at its finest. A medium roast that preserves berry and chocolate terroir notes while maintaining sweetness and balance throughout.",
       roast: "Medium Espresso",
       origin: "Multi-Origin",
@@ -178,7 +178,7 @@ const BEANS: Record<
       url: "https://amzn.to/4u2OapW",
     },
     {
-      name: "Kicking Horse Three Sisters",
+      name: "Kicking Horse Coffee, Three Sisters, Medium Roast, Whole Bean",
       desc: "A well-developed medium that shows how a skilled roaster builds sweetness and nuance without going dark. A great introduction to roast-level flavor differences.",
       roast: "Medium",
       origin: "Multi-Origin",
@@ -188,7 +188,7 @@ const BEANS: Record<
   ],
   "freshness": [
     {
-      name: "Stumptown Holler Mountain",
+      name: "Stumptown Coffee Roasters, Medium Roast Organic Whole Bean Coffee",
       desc: "Stumptown bags their beans with a roasted-on date on every bag. If you take freshness seriously, this is your benchmark — peak flavor and traceable sourcing in every order.",
       roast: "Medium Organic",
       origin: "Organic Blend",
@@ -196,7 +196,7 @@ const BEANS: Record<
       url: "https://amzn.to/3PUowpb",
     },
     {
-      name: "Onyx Coffee Lab Tropical Weather",
+      name: "Onyx Coffee Lab Tropical Weather Whole Bean Espresso Coffee Blend – Medium",
       desc: "Onyx roasts and ships in small, frequent batches — designed to arrive at peak flavor. Best consumed within a few weeks of the roast date for full vibrancy.",
       roast: "Medium Espresso",
       origin: "Direct Trade",
@@ -204,7 +204,7 @@ const BEANS: Record<
       url: "https://amzn.to/4o5N5MM",
     },
     {
-      name: "Peet's Major Dickason's Blend",
+      name: "Peet's Coffee, Dark Roast Whole Bean Coffee - Major Dickason's Blend",
       desc: "One of the most trusted names in fresh-roasted coffee. Peet's has been meticulous about freshness since 1966 — still one of the most reliable dark roasts you can order online.",
       roast: "Dark",
       origin: "Multi-Origin Blend",
@@ -222,7 +222,7 @@ const BEANS: Record<
       url: "https://amzn.to/4xe0JSa",
     },
     {
-      name: "Peet's Major Dickason's Blend",
+      name: "Peet's Coffee, Dark Roast Whole Bean Coffee - Major Dickason's Blend",
       desc: "Rich, bold, and reliably excellent. A dark roast that's been a coffee lover's standard for decades — widely available and always consistent.",
       roast: "Dark",
       origin: "Multi-Origin Blend",
@@ -230,7 +230,7 @@ const BEANS: Record<
       url: "https://amzn.to/43Cd3xI",
     },
     {
-      name: "Stumptown Holler Mountain",
+      name: "Stumptown Coffee Roasters, Medium Roast Organic Whole Bean Coffee",
       desc: "Stumptown's flagship organic whole bean. Balanced caramel and chocolate that works equally well as espresso or drip — one of the easiest recommendations we make.",
       roast: "Medium Organic",
       origin: "Organic Blend",

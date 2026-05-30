@@ -774,7 +774,7 @@ const coffeeBeans = [
   },
   {
     id: "cb2",
-    name: "Lavazza Espresso Barista Gran Crema",
+    name: "Lavazza Espresso Barista Gran Crema Whole Bean Coffee Blend",
     roast: "Medium",
     origin: "Italian Blend",
     desc: "A velvety espresso with rich chocolate and spice notes. Lavazza's barista-grade blend is engineered for dense crema and consistent extraction — shot after shot.",
@@ -784,7 +784,7 @@ const coffeeBeans = [
   },
   {
     id: "cb3",
-    name: "Peet's Major Dickason's Blend",
+    name: "Peet's Coffee, Dark Roast Whole Bean Coffee - Major Dickason's Blend",
     roast: "Dark",
     origin: "Multi-Origin Blend",
     desc: "Bold, rich, and complex. Peet's signature dark roast is full-bodied with serious depth — a coffee lover's benchmark since 1966.",
@@ -794,7 +794,7 @@ const coffeeBeans = [
   },
   {
     id: "cb4",
-    name: "Death Wish Coffee",
+    name: "Death Wish Coffee Medium Roast, Whole Bean Coffee",
     roast: "Medium",
     origin: "Multi-Origin",
     desc: "Not just the world's strongest coffee — it's surprisingly smooth. Bold cherry and chocolate notes with serious caffeine. Perfect for cold brew and French press.",
@@ -804,7 +804,7 @@ const coffeeBeans = [
   },
   {
     id: "cb5",
-    name: "Onyx Coffee Lab Tropical Weather",
+    name: "Onyx Coffee Lab Tropical Weather Whole Bean Espresso Coffee Blend – Medium",
     roast: "Medium Espresso",
     origin: "Direct Trade, Multi-Origin",
     desc: "A vibrant specialty espresso blend with tropical fruit and floral notes. Onyx sources directly from farms — this is what specialty coffee is supposed to taste like.",
@@ -814,7 +814,7 @@ const coffeeBeans = [
   },
   {
     id: "cb6",
-    name: "Kicking Horse Three Sisters",
+    name: "Kicking Horse Coffee, Three Sisters, Medium Roast, Whole Bean",
     roast: "Medium",
     origin: "Multi-Origin",
     desc: "Sweet, nutty, and medium-bodied. Naturally low-acid with a clean, forgiving profile — equally great for pour-over, cold brew, or French press.",
@@ -824,7 +824,7 @@ const coffeeBeans = [
   },
   {
     id: "cb7",
-    name: "Stumptown Holler Mountain",
+    name: "Stumptown Coffee Roasters, Medium Roast Organic Whole Bean Coffee",
     roast: "Medium Organic",
     origin: "Organic Blend",
     desc: "Stumptown's flagship organic whole bean. Caramel, dark chocolate, and hazelnut in a balanced roast. Roasted-on date on every bag. One of the easiest picks we make.",
@@ -834,7 +834,7 @@ const coffeeBeans = [
   },
   {
     id: "cb8",
-    name: "Intelligentsia Black Cat Sublunar",
+    name: "Intelligentsia Coffee, Black Cat Sublunar Espresso Dark Roast Whole Bean Coffee",
     roast: "Dark Espresso",
     origin: "Multi-Origin",
     desc: "A dark espresso roast built for precision extraction. Chocolate and caramel notes with a clean, persistent finish — intense without being harsh.",
@@ -844,7 +844,7 @@ const coffeeBeans = [
   },
   {
     id: "cb9",
-    name: "Intelligentsia Black Cat Analog",
+    name: "Intelligentsia Coffee, Black Cat Analog Espresso Medium Roast Whole Bean Coffee",
     roast: "Medium Espresso",
     origin: "Multi-Origin",
     desc: "Wild berry and chocolate in a medium espresso roast. Intelligentsia's most approachable Black Cat — versatile enough for espresso, pour-over, or filter brewing.",
