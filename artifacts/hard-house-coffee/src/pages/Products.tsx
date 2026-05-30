@@ -853,8 +853,8 @@ const coffeeBeans = [
     image: "/images/products/coffee-beans/intelligentsia-analog.png",
     url: "https://amzn.to/4u2OapW",
     badge: "Specialty Pick",
-    mainFit: "contain",
-    mainPosition: "center",
+    mainFit: "cover",
+    mainPosition: "center bottom",
   },
 ];
 
