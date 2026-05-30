@@ -821,8 +821,8 @@ const coffeeBeans = [
     image: "/images/products/coffee-beans/kicking-horse-three-sisters.png",
     url: "https://amzn.to/4ede5GB",
     badge: "Crowd Pleaser",
-    mainFit: "contain",
-    mainPosition: "center",
+    mainFit: "cover",
+    mainPosition: "left bottom",
   },
   {
     id: "cb7",
