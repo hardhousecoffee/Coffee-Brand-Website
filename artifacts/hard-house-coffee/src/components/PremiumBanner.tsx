@@ -2,9 +2,10 @@ const DEFAULT_PHRASE = "NOW BREWING AT HARD HOUSE COFFEE \u00A0\u00A0\u2736\u00A
 
 interface Props {
   phrase?: string;
+  reverse?: boolean;
 }
 
-export default function PremiumBanner({ phrase = DEFAULT_PHRASE }: Props) {
+export default function PremiumBanner({ phrase = DEFAULT_PHRASE, reverse = false }: Props) {
   return (
     <div
       style={{
@@ -15,12 +16,10 @@ export default function PremiumBanner({ phrase = DEFAULT_PHRASE }: Props) {
         overflow: "hidden",
       }}
     >
-      {/* Top orange line — shimmer glides left */}
       <div className="premium-line premium-line-top" />
 
-      {/* Seamless continuous marquee */}
       <div style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
-        <div className="premium-marquee">
+        <div className={reverse ? "premium-marquee premium-marquee-reverse" : "premium-marquee"}>
           <span className="premium-text">{phrase}</span>
           <span className="premium-text">{phrase}</span>
           <span className="premium-text">{phrase}</span>
@@ -28,7 +27,6 @@ export default function PremiumBanner({ phrase = DEFAULT_PHRASE }: Props) {
         </div>
       </div>
 
-      {/* Bottom orange line — shimmer glides right */}
       <div className="premium-line premium-line-bottom" />
     </div>
   );

@@ -1019,10 +1019,10 @@ export default function Home() {
             );
           })()}
         </div>
+        <div style={{ marginTop: "2.5rem" }}>
+          <PremiumBanner reverse phrase={"AROMA FROM THE GROUND UP \u00A0\u00A0\u2736\u00A0\u00A0 "} />
+        </div>
       </section>
-
-      {/* AROMA BANNER */}
-      <PremiumBanner phrase={"AROMA FROM THE GROUND UP \u00A0\u00A0\u2736\u00A0\u00A0 "} />
 
       {/* CULTURE SECTION */}
       <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>

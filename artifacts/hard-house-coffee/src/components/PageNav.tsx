@@ -1,13 +1,12 @@
-import { useLocation } from "wouter";
+import { Link } from "wouter";
 
 interface PageNavProps {
   nextPath: string;
   nextLabel: string;
+  showArrow?: boolean;
 }
 
-export default function PageNav({ nextPath, nextLabel }: PageNavProps) {
-  const [, setLocation] = useLocation();
-
+export default function PageNav({ nextPath, nextLabel, showArrow = true }: PageNavProps) {
   return (
     <div
       style={{
@@ -18,57 +17,60 @@ export default function PageNav({ nextPath, nextLabel }: PageNavProps) {
         borderTop: "1px solid rgba(139,47,47,0.15)",
       }}
     >
-      <button
-        onClick={() => setLocation(nextPath)}
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          gap: "0.75rem",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          color: "#b0a090",
-          padding: 0,
-        }}
-        onMouseEnter={e => {
-          (e.currentTarget as HTMLButtonElement).style.color = "#f2f2f2";
-          const arrow = (e.currentTarget as HTMLButtonElement).querySelector(".page-nav-arrow") as HTMLElement;
-          if (arrow) arrow.style.transform = "translateX(6px)";
-        }}
-        onMouseLeave={e => {
-          (e.currentTarget as HTMLButtonElement).style.color = "#b0a090";
-          const arrow = (e.currentTarget as HTMLButtonElement).querySelector(".page-nav-arrow") as HTMLElement;
-          if (arrow) arrow.style.transform = "translateX(0)";
-        }}
-      >
-        <span
+      <Link href={nextPath}>
+        <button
+          onClick={() => window.scrollTo(0, 0)}
+          className="back-to-top-btn"
           style={{
-            fontFamily: "'Cinzel Decorative', serif",
-            fontSize: "0.65rem",
-            letterSpacing: "0.2em",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+            background: "transparent",
+            border: "1px solid rgba(161,79,31,0.35)",
+            borderRadius: "6px",
+            padding: "0.55rem 1.6rem",
+            color: "#b0a090",
+            fontSize: "0.82rem",
+            letterSpacing: "0.12em",
             textTransform: "uppercase",
+            cursor: "pointer",
+            transition: "all 0.25s ease",
+            fontWeight: 600,
+            fontFamily: "'Cinzel Decorative', serif",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLElement).style.borderColor = "#a14f1f";
+            (e.currentTarget as HTMLElement).style.color = "#d4b896";
+            (e.currentTarget as HTMLElement).style.background = "rgba(161,79,31,0.1)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.35)";
+            (e.currentTarget as HTMLElement).style.color = "#b0a090";
+            (e.currentTarget as HTMLElement).style.background = "transparent";
           }}
         >
+          {showArrow && (
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="arrow-pulse"
+              style={{ flexShrink: 0 }}
+            >
+              <path
+                d="M6 9.5V2.5M6 2.5L2.5 6M6 2.5L9.5 6"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          )}
           {nextLabel}
-        </span>
-        <svg
-          className="page-nav-arrow"
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          style={{ transition: "transform 0.3s ease" }}
-        >
-          <line x1="5" y1="12" x2="19" y2="12" />
-          <polyline points="12 5 19 12 12 19" />
-        </svg>
-      </button>
+        </button>
+      </Link>
     </div>
   );
 }

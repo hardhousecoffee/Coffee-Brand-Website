@@ -82,10 +82,14 @@ export default function Navbar() {
                 className="nav-link"
                 onClick={scrollTop}
                 style={{
-                  color: location === link.href ? "#a14f1f" : "#f2f2f2",
-                  borderBottom: location === link.href ? "1px solid #a14f1f" : "none",
-                  paddingBottom: "2px",
+                  color: location === link.href ? "#d4b896" : "#f2f2f2",
+                  border: location === link.href ? "1px solid rgba(161,79,31,0.55)" : "1px solid transparent",
+                  padding: "0.28rem 0.65rem",
+                  borderRadius: "5px",
+                  background: location === link.href ? "rgba(161,79,31,0.08)" : "transparent",
                   cursor: "pointer",
+                  transition: "color 0.2s ease, border-color 0.2s ease, background 0.2s ease",
+                  display: "inline-block",
                 }}
               >
                 {link.label}
@@ -96,17 +100,21 @@ export default function Navbar() {
           {/* Spacer between groups */}
           <div style={{ width: "6rem" }} />
 
-          {/* Right group: About, Shop Gear */}
+          {/* Right group: About + Shop */}
           {navLinks.slice(2).map((link) => (
             <Link key={link.href} href={link.href}>
               <span
                 className="nav-link"
                 onClick={scrollTop}
                 style={{
-                  color: location === link.href ? "#a14f1f" : "#f2f2f2",
-                  borderBottom: location === link.href ? "1px solid #a14f1f" : "none",
-                  paddingBottom: "2px",
+                  color: location === link.href ? "#d4b896" : "#f2f2f2",
+                  border: location === link.href ? "1px solid rgba(161,79,31,0.55)" : "1px solid transparent",
+                  padding: "0.28rem 0.65rem",
+                  borderRadius: "5px",
+                  background: location === link.href ? "rgba(161,79,31,0.08)" : "transparent",
                   cursor: "pointer",
+                  transition: "color 0.2s ease, border-color 0.2s ease, background 0.2s ease",
+                  display: "inline-block",
                 }}
               >
                 {link.label}
@@ -114,13 +122,22 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/products">
-            <button
-              className="btn-secondary"
+            <span
+              className="nav-link"
               onClick={scrollTop}
-              style={{ padding: "0.45rem 1.2rem", fontSize: "0.75rem" }}
+              style={{
+                color: location === "/products" ? "#d4b896" : "#f2f2f2",
+                border: location === "/products" ? "1px solid rgba(161,79,31,0.55)" : "1px solid transparent",
+                padding: "0.28rem 0.65rem",
+                borderRadius: "5px",
+                background: location === "/products" ? "rgba(161,79,31,0.08)" : "transparent",
+                cursor: "pointer",
+                transition: "color 0.2s ease, border-color 0.2s ease, background 0.2s ease",
+                display: "inline-block",
+              }}
             >
               Shop
-            </button>
+            </span>
           </Link>
         </div>
 
@@ -225,12 +242,20 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/products">
-            <button
-              className="btn-primary w-full mt-4"
+            <div
               onClick={() => { setMenuOpen(false); scrollTop(); }}
+              style={{
+                padding: "0.8rem 0",
+                borderBottom: "1px solid rgba(161,79,31,0.1)",
+                color: location === "/products" ? "#a14f1f" : "#f2f2f2",
+                fontSize: "0.9rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                cursor: "pointer",
+              }}
             >
               Shop
-            </button>
+            </div>
           </Link>
         </div>
       )}

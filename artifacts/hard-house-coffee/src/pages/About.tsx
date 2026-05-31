@@ -197,7 +197,7 @@ export default function About() {
         </div>
       </div>
 
-      <PageNav nextPath="/" nextLabel="Back to Home" />
+      <PageNav nextPath="/" nextLabel="Return to Home" showArrow={false} />
       <Footer />
     </div>
   );

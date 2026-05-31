@@ -206,17 +206,12 @@ export default function Footer() {
             borderTop: "1px solid rgba(161,79,31,0.15)",
             paddingTop: "1.5rem",
             display: "flex",
-            justifyContent: "space-between",
+            flexDirection: "column",
             alignItems: "center",
-            flexWrap: "wrap",
-            gap: "0.75rem",
+            gap: "1rem",
           }}
         >
-          <p style={{ color: "#6b5a4e", fontSize: "0.78rem" }}>
-            © 2026 Hard House Coffee. All rights reserved.
-          </p>
-
-          {/* Back to Top button */}
+          {/* Back to Top button — centered */}
           <button
             onClick={scrollTop}
             aria-label="Back to top"
@@ -228,9 +223,9 @@ export default function Footer() {
               background: "transparent",
               border: "1px solid rgba(161,79,31,0.35)",
               borderRadius: "6px",
-              padding: "0.4rem 0.9rem",
+              padding: "0.45rem 1.1rem",
               color: "#b0a090",
-              fontSize: "0.72rem",
+              fontSize: "0.74rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               cursor: "pointer",
@@ -268,9 +263,14 @@ export default function Footer() {
             Back to Top
           </button>
 
-          <p style={{ color: "#6b5a4e", fontSize: "0.78rem" }}>
-            This site may contain affiliate links.
-          </p>
+          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "1.25rem", alignItems: "center" }}>
+            <p style={{ color: "#6b5a4e", fontSize: "0.78rem" }}>
+              © 2026 Hard House Coffee. All rights reserved.
+            </p>
+            <p style={{ color: "#6b5a4e", fontSize: "0.78rem" }}>
+              This site may contain affiliate links.
+            </p>
+          </div>
         </div>
 
         {/* Legal nav */}
