@@ -76,26 +76,28 @@ export default function Navbar() {
         {/* Desktop nav links — centered */}
         <div className="hidden md:flex items-center gap-6">
           {/* Left group: Home, Blog */}
-          {navLinks.slice(0, 2).map((link) => (
-            <Link key={link.href} href={link.href}>
-              <span
-                className="nav-link"
-                onClick={scrollTop}
-                style={{
-                  color: location === link.href ? "#d4b896" : "#f2f2f2",
-                  border: location === link.href ? "1px solid rgba(161,79,31,0.55)" : "1px solid transparent",
-                  padding: "0.28rem 0.65rem",
-                  borderRadius: "5px",
-                  background: location === link.href ? "rgba(161,79,31,0.08)" : "transparent",
-                  cursor: "pointer",
-                  transition: "color 0.2s ease, border-color 0.2s ease, background 0.2s ease",
-                  display: "inline-block",
-                }}
-              >
-                {link.label}
-              </span>
-            </Link>
-          ))}
+          {navLinks.slice(0, 2).map((link) => {
+            const isActive = location === link.href && link.href !== "/";
+            return (
+              <Link key={link.href} href={link.href}>
+                <span
+                  className="nav-link nav-item-glow"
+                  onClick={scrollTop}
+                  style={{
+                    color: isActive ? "#d4b896" : "#f2f2f2",
+                    border: isActive ? "1px solid rgba(161,79,31,0.55)" : "1px solid transparent",
+                    padding: "0.28rem 0.65rem",
+                    borderRadius: "5px",
+                    background: isActive ? "rgba(161,79,31,0.08)" : "transparent",
+                    cursor: "pointer",
+                    display: "inline-block",
+                  }}
+                >
+                  {link.label}
+                </span>
+              </Link>
+            );
+          })}
 
           {/* Spacer between groups */}
           <div style={{ width: "6rem" }} />
@@ -104,7 +106,7 @@ export default function Navbar() {
           {navLinks.slice(2).map((link) => (
             <Link key={link.href} href={link.href}>
               <span
-                className="nav-link"
+                className="nav-link nav-item-glow"
                 onClick={scrollTop}
                 style={{
                   color: location === link.href ? "#d4b896" : "#f2f2f2",
@@ -113,7 +115,6 @@ export default function Navbar() {
                   borderRadius: "5px",
                   background: location === link.href ? "rgba(161,79,31,0.08)" : "transparent",
                   cursor: "pointer",
-                  transition: "color 0.2s ease, border-color 0.2s ease, background 0.2s ease",
                   display: "inline-block",
                 }}
               >
@@ -123,7 +124,7 @@ export default function Navbar() {
           ))}
           <Link href="/products">
             <span
-              className="nav-link"
+              className="nav-link nav-item-glow"
               onClick={scrollTop}
               style={{
                 color: location === "/products" ? "#d4b896" : "#f2f2f2",
@@ -132,7 +133,6 @@ export default function Navbar() {
                 borderRadius: "5px",
                 background: location === "/products" ? "rgba(161,79,31,0.08)" : "transparent",
                 cursor: "pointer",
-                transition: "color 0.2s ease, border-color 0.2s ease, background 0.2s ease",
                 display: "inline-block",
               }}
             >

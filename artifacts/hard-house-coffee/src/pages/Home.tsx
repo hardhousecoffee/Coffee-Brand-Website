@@ -1129,8 +1129,11 @@ export default function Home() {
             Whether it's 5am or midnight, Hard House Coffee is your anchor. Bold, consistent, and always worth savoring.
           </p>
           <Link href="/blog">
-            <button className="btn-primary" style={{ fontSize: "0.85rem", padding: "0.8rem 2.2rem" }}>
+            <button className="btn-primary" style={{ fontSize: "0.85rem", padding: "0.8rem 2.2rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
               Read Our Blog
+              <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </button>
           </Link>
         </div>

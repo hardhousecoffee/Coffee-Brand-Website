@@ -1450,7 +1450,7 @@ export default function Products() {
         )}
       </div>
 
-      <PageNav nextPath="/about" nextLabel="Our Story" />
+      <PageNav nextPath="/" nextLabel="Return to Home" />
       <Footer />
     </div>
   );

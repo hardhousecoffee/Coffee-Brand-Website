@@ -24,6 +24,10 @@ export default function PremiumBanner({ phrase = DEFAULT_PHRASE, reverse = false
           <span className="premium-text">{phrase}</span>
           <span className="premium-text">{phrase}</span>
           <span className="premium-text">{phrase}</span>
+          <span className="premium-text">{phrase}</span>
+          <span className="premium-text">{phrase}</span>
+          <span className="premium-text">{phrase}</span>
+          <span className="premium-text">{phrase}</span>
         </div>
       </div>
 

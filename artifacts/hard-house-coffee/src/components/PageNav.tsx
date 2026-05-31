@@ -49,10 +49,11 @@ export default function PageNav({ nextPath, nextLabel, showArrow = true }: PageN
             (e.currentTarget as HTMLElement).style.background = "transparent";
           }}
         >
+          {nextLabel}
           {showArrow && (
             <svg
-              width="12"
-              height="12"
+              width="13"
+              height="13"
               viewBox="0 0 12 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +61,7 @@ export default function PageNav({ nextPath, nextLabel, showArrow = true }: PageN
               style={{ flexShrink: 0 }}
             >
               <path
-                d="M6 9.5V2.5M6 2.5L2.5 6M6 2.5L9.5 6"
+                d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5"
                 stroke="currentColor"
                 strokeWidth="1.5"
                 strokeLinecap="round"
@@ -68,7 +69,6 @@ export default function PageNav({ nextPath, nextLabel, showArrow = true }: PageN
               />
             </svg>
           )}
-          {nextLabel}
         </button>
       </Link>
     </div>

@@ -261,6 +261,23 @@ export default function Footer() {
               />
             </svg>
             Back to Top
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="arrow-pulse"
+              style={{ flexShrink: 0 }}
+            >
+              <path
+                d="M6 9.5V2.5M6 2.5L2.5 6M6 2.5L9.5 6"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
 
           <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "1.25rem", alignItems: "center" }}>

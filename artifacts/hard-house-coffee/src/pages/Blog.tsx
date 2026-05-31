@@ -520,7 +520,7 @@ export default function Blog() {
         </div>
       </div>
 
-      <PageNav nextPath="/products" nextLabel="Shop" />
+      <PageNav nextPath="/about" nextLabel="Our Story" />
       <Footer />
     </div>
   );
