@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
 import SteamEffect from "@/components/SteamEffect";
+import PremiumBanner from "@/components/PremiumBanner";
 
 const heroSlides = [
   { src: "/images/cafe-alley.jpg", alt: "Hero Cafe Alley" },
@@ -1015,6 +1016,9 @@ export default function Home() {
           })()}
         </div>
       </section>
+
+      {/* PREMIUM BANNER */}
+      <PremiumBanner />
 
       {/* CULTURE SECTION */}
       <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>
