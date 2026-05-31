@@ -1,3 +1,5 @@
+const PHRASE = "NOW BREWING AT HARD HOUSE COFFEE \u00A0\u00A0\u2736\u00A0\u00A0 ";
+
 export default function PremiumBanner() {
   return (
     <div
@@ -5,21 +7,24 @@ export default function PremiumBanner() {
         position: "relative",
         width: "100%",
         backgroundColor: "#121212",
-        padding: "22px 0",
+        padding: "20px 0",
         overflow: "hidden",
       }}
     >
-      {/* Top amber line — glides left */}
+      {/* Top orange line — shimmer glides left */}
       <div className="premium-line premium-line-top" />
 
-      {/* Drifting text */}
+      {/* Seamless continuous marquee */}
       <div style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
-        <span className="premium-text">
-          NOW BREWING AT HARD HOUSE COFFEE &nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp; NOW BREWING AT HARD HOUSE COFFEE &nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp; NOW BREWING AT HARD HOUSE COFFEE
-        </span>
+        <div className="premium-marquee">
+          <span className="premium-text">{PHRASE}</span>
+          <span className="premium-text">{PHRASE}</span>
+          <span className="premium-text">{PHRASE}</span>
+          <span className="premium-text">{PHRASE}</span>
+        </div>
       </div>
 
-      {/* Bottom amber line — glides right */}
+      {/* Bottom orange line — shimmer glides right */}
       <div className="premium-line premium-line-bottom" />
     </div>
   );

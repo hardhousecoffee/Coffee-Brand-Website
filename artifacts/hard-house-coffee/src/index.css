@@ -549,7 +549,7 @@ a, button {
   left: 0;
   width: 100%;
   height: 1px;
-  background: rgba(212, 175, 55, 0.25);
+  background: rgba(255, 100, 35, 0.2);
 }
 .premium-line::after {
   content: '';
@@ -557,8 +557,8 @@ a, button {
   top: -2px;
   width: 35%;
   height: 5px;
-  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.7) 40%, #D4AF37 50%, rgba(212,175,55,0.7) 60%, transparent);
-  box-shadow: 0 0 10px 2px rgba(212,175,55,0.35);
+  background: linear-gradient(90deg, transparent, rgba(255,112,42,0.6) 40%, rgba(255,125,55,0.88) 50%, rgba(255,112,42,0.6) 60%, transparent);
+  box-shadow: 0 0 10px 2px rgba(255, 105, 35, 0.28);
 }
 .premium-line-top {
   top: 0;
@@ -580,19 +580,22 @@ a, button {
   0%   { left: -40%; }
   100% { left: 110%; }
 }
-.premium-text {
+.premium-marquee {
   display: inline-block;
+  animation: marqueeScroll 30s linear infinite;
+}
+.premium-text {
+  display: inline;
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  font-size: clamp(0.6rem, 1.4vw, 0.82rem);
-  font-weight: 300;
-  letter-spacing: 0.42em;
+  font-size: clamp(0.62rem, 1.4vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
   color: #d8cdb8;
   text-transform: uppercase;
-  animation: premiumDrift 38s linear infinite;
 }
-@keyframes premiumDrift {
-  0%   { transform: translateX(40vw); }
-  100% { transform: translateX(-100%); }
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Steam effect rise animation */
