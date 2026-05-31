@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
 import SteamEffect from "@/components/SteamEffect";
 import PremiumBanner from "@/components/PremiumBanner";
+import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
 const heroSlides = [
   { src: "/images/cafe-alley.jpg", alt: "Hero Cafe Alley" },
@@ -901,22 +902,129 @@ export default function Home() {
                             </div>
                           )}
                         </div>
-                        <button
-                          onClick={() => setShowAtmosphereVideo(false)}
-                          style={{
-                            background: "transparent",
-                            border: "none",
-                            color: "#a89880",
-                            fontSize: "0.85rem",
-                            cursor: "pointer",
-                            letterSpacing: "0.06em",
-                            padding: 0,
-                            marginTop: "auto",
-                            textAlign: "left",
-                          }}
-                        >
-                          <span className="arrow-pulse">←</span> Back
-                        </button>
+                        {/* Back + nav buttons + social icons */}
+                        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "0.6rem", marginTop: "auto" }}>
+                          {/* Back */}
+                          <button
+                            onClick={() => setShowAtmosphereVideo(false)}
+                            style={{
+                              background: "transparent",
+                              border: "1px solid rgba(161,79,31,0.3)",
+                              borderRadius: "5px",
+                              color: "#a89880",
+                              fontSize: "0.72rem",
+                              cursor: "pointer",
+                              letterSpacing: "0.08em",
+                              padding: "0.3rem 0.7rem",
+                              textTransform: "uppercase",
+                              fontWeight: 600,
+                              transition: "all 0.2s",
+                            }}
+                            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#a14f1f"; el.style.color = "#d4b896"; }}
+                            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(161,79,31,0.3)"; el.style.color = "#a89880"; }}
+                          >
+                            <span style={{ marginRight: "0.3rem" }}>←</span>Back
+                          </button>
+
+                          {/* Blog */}
+                          <Link href="/blog">
+                            <button
+                              onClick={() => { setActiveExperience(null); setShowAtmosphereVideo(false); window.scrollTo(0,0); }}
+                              style={{
+                                background: "transparent",
+                                border: "1px solid rgba(161,79,31,0.3)",
+                                borderRadius: "5px",
+                                color: "#a89880",
+                                fontSize: "0.72rem",
+                                cursor: "pointer",
+                                letterSpacing: "0.08em",
+                                padding: "0.3rem 0.7rem",
+                                textTransform: "uppercase",
+                                fontWeight: 600,
+                                transition: "all 0.2s",
+                              }}
+                              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = "#a14f1f"; el.style.borderColor = "#c06020"; el.style.color = "#fff"; }}
+                              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = "transparent"; el.style.borderColor = "rgba(161,79,31,0.3)"; el.style.color = "#a89880"; }}
+                            >
+                              Blog
+                            </button>
+                          </Link>
+
+                          {/* Shop */}
+                          <Link href="/products">
+                            <button
+                              onClick={() => { setActiveExperience(null); setShowAtmosphereVideo(false); window.scrollTo(0,0); }}
+                              style={{
+                                background: "transparent",
+                                border: "1px solid rgba(161,79,31,0.3)",
+                                borderRadius: "5px",
+                                color: "#a89880",
+                                fontSize: "0.72rem",
+                                cursor: "pointer",
+                                letterSpacing: "0.08em",
+                                padding: "0.3rem 0.7rem",
+                                textTransform: "uppercase",
+                                fontWeight: 600,
+                                transition: "all 0.2s",
+                              }}
+                              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = "#a14f1f"; el.style.borderColor = "#c06020"; el.style.color = "#fff"; }}
+                              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = "transparent"; el.style.borderColor = "rgba(161,79,31,0.3)"; el.style.color = "#a89880"; }}
+                            >
+                              Shop
+                            </button>
+                          </Link>
+
+                          {/* Divider */}
+                          <div style={{ width: "1px", height: "20px", background: "rgba(161,79,31,0.2)", margin: "0 0.1rem" }} />
+
+                          {/* Instagram */}
+                          <a
+                            href="https://www.instagram.com/hardhousecoffee.official?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              width: "30px",
+                              height: "30px",
+                              borderRadius: "50%",
+                              border: "1px solid rgba(161,79,31,0.3)",
+                              color: "#a89880",
+                              transition: "all 0.2s",
+                              flexShrink: 0,
+                            }}
+                            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#a14f1f"; el.style.color = "#d4b896"; el.style.background = "rgba(161,79,31,0.12)"; }}
+                            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(161,79,31,0.3)"; el.style.color = "#a89880"; el.style.background = "transparent"; }}
+                            aria-label="Instagram"
+                          >
+                            <FaInstagram size={14} />
+                          </a>
+
+                          {/* TikTok */}
+                          <a
+                            href="https://www.tiktok.com/@hardhousecoffee?_r=1&_t=ZP-96W4w42enMc"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              width: "30px",
+                              height: "30px",
+                              borderRadius: "50%",
+                              border: "1px solid rgba(161,79,31,0.3)",
+                              color: "#a89880",
+                              transition: "all 0.2s",
+                              flexShrink: 0,
+                            }}
+                            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#a14f1f"; el.style.color = "#d4b896"; el.style.background = "rgba(161,79,31,0.12)"; }}
+                            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(161,79,31,0.3)"; el.style.color = "#a89880"; el.style.background = "transparent"; }}
+                            aria-label="TikTok"
+                          >
+                            <FaTiktok size={13} />
+                          </a>
+                        </div>
                       </>
                     ) : (
                       <>
