@@ -78,10 +78,11 @@ export default function Navbar() {
           {/* Left group: Home, Blog */}
           {navLinks.slice(0, 2).map((link) => {
             const isActive = location === link.href && link.href !== "/";
+            const allowHover = !(link.href === "/" && location === "/");
             return (
               <Link key={link.href} href={link.href}>
                 <span
-                  className="nav-link nav-item-glow"
+                  className={`nav-link${allowHover ? " nav-item-glow" : ""}`}
                   onClick={scrollTop}
                   style={{
                     color: isActive ? "#d4b896" : "#f2f2f2",

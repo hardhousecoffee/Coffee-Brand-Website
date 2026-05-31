@@ -1450,7 +1450,7 @@ export default function Products() {
         )}
       </div>
 
-      <PageNav nextPath="/" nextLabel="Return to Home" />
+      <PageNav nextPath="/" nextLabel="Return to Home" showArrow={false} />
       <Footer />
     </div>
   );
