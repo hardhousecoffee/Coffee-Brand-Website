@@ -1,6 +1,10 @@
-const PHRASE = "NOW BREWING AT HARD HOUSE COFFEE \u00A0\u00A0\u2736\u00A0\u00A0 ";
+const DEFAULT_PHRASE = "NOW BREWING AT HARD HOUSE COFFEE \u00A0\u00A0\u2736\u00A0\u00A0 ";
 
-export default function PremiumBanner() {
+interface Props {
+  phrase?: string;
+}
+
+export default function PremiumBanner({ phrase = DEFAULT_PHRASE }: Props) {
   return (
     <div
       style={{
@@ -17,10 +21,10 @@ export default function PremiumBanner() {
       {/* Seamless continuous marquee */}
       <div style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
         <div className="premium-marquee">
-          <span className="premium-text">{PHRASE}</span>
-          <span className="premium-text">{PHRASE}</span>
-          <span className="premium-text">{PHRASE}</span>
-          <span className="premium-text">{PHRASE}</span>
+          <span className="premium-text">{phrase}</span>
+          <span className="premium-text">{phrase}</span>
+          <span className="premium-text">{phrase}</span>
+          <span className="premium-text">{phrase}</span>
         </div>
       </div>
 

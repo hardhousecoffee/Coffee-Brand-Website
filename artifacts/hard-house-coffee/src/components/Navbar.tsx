@@ -54,7 +54,7 @@ export default function Navbar() {
               border: "none",
               cursor: "pointer",
               color: "#b0a090",
-              fontSize: "0.72rem",
+              fontSize: "0.85rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               fontFamily: "'Cinzel Decorative', serif",
@@ -65,7 +65,7 @@ export default function Navbar() {
             onMouseLeave={e => (e.currentTarget.style.color = "#b0a090")}
             className="hidden md:flex"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="arrow-pulse">
               <line x1="19" y1="12" x2="5" y2="12" />
               <polyline points="12 19 5 12 12 5" />
             </svg>
@@ -152,14 +152,14 @@ export default function Navbar() {
                   border: "none",
                   cursor: "pointer",
                   color: "#b0a090",
-                  fontSize: "0.65rem",
+                  fontSize: "0.77rem",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   fontFamily: "'Cinzel Decorative', serif",
                   padding: 0,
                 }}
               >
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="arrow-pulse">
                   <line x1="19" y1="12" x2="5" y2="12" />
                   <polyline points="12 19 5 12 12 5" />
                 </svg>

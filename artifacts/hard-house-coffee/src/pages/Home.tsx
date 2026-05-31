@@ -614,22 +614,20 @@ export default function Home() {
         className="py-20 px-6"
         style={{ backgroundColor: "#0b0b0b", position: "relative" }}
       >
-        <div
-          className="max-w-6xl mx-auto"
-          style={{ position: "relative" }}
-          onMouseLeave={closeTile}
-          onMouseEnter={keepOpen}
-        >
-          <div className="text-center mb-14">
-            <p className="section-subtitle">Our World</p>
-            <div className="divider-orange mx-auto" />
-            <h2 className="section-title inter-title mt-4">The Hard House Experience</h2>
-            <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
-              Every cup we pour is a statement. Bold, deliberate, and unapologetically premium.
-            </p>
-          </div>
+        <div className="max-w-6xl mx-auto text-center mb-8">
+          <p className="section-subtitle">Our World</p>
+          <div className="divider-orange mx-auto" />
+          <h2 className="section-title inter-title mt-4">The Hard House Experience</h2>
+          <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
+            Every cup we pour is a statement. Bold, deliberate, and unapologetically premium.
+          </p>
+        </div>
 
-          {/* Tile grid */}
+        {/* Banner: Now Brewing */}
+        <PremiumBanner />
+
+        {/* Tile grid */}
+        <div className="max-w-6xl mx-auto mt-10" style={{ position: "relative" }}>
           <div
             className="grid grid-cols-2 md:grid-cols-4 gap-4"
             style={{
@@ -651,9 +649,16 @@ export default function Home() {
                   padding: 0,
                   width: "100%",
                 }}
-                onClick={() => openTile(idx)}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.5)")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)")}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.65)";
+                  const img = (e.currentTarget as HTMLElement).querySelector("img") as HTMLElement;
+                  if (img) img.style.transform = "scale(1.05)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)";
+                  const img = (e.currentTarget as HTMLElement).querySelector("img") as HTMLElement;
+                  if (img) img.style.transform = "scale(1)";
+                }}
               >
                 <img
                   src={item.src}
@@ -683,10 +688,9 @@ export default function Home() {
                     {item.label}
                   </p>
                   <p
-                    onClick={() => openTile(idx)}
+                    onClick={(e) => { e.stopPropagation(); openTile(idx); }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLElement).style.color = "#f2f2f2";
-                      openTile(idx);
                     }}
                     onMouseLeave={(e) => {
                       (e.currentTarget as HTMLElement).style.color = "#d4b896";
@@ -903,7 +907,7 @@ export default function Home() {
                             background: "transparent",
                             border: "none",
                             color: "#a89880",
-                            fontSize: "0.75rem",
+                            fontSize: "0.85rem",
                             cursor: "pointer",
                             letterSpacing: "0.06em",
                             padding: 0,
@@ -911,7 +915,7 @@ export default function Home() {
                             textAlign: "left",
                           }}
                         >
-                          ← Back
+                          <span className="arrow-pulse">←</span> Back
                         </button>
                       </>
                     ) : (
@@ -1017,8 +1021,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PREMIUM BANNER */}
-      <PremiumBanner />
+      {/* AROMA BANNER */}
+      <PremiumBanner phrase={"AROMA FROM THE GROUND UP \u00A0\u00A0\u2736\u00A0\u00A0 "} />
 
       {/* CULTURE SECTION */}
       <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>

@@ -226,7 +226,7 @@ export default function BlogPostDarkRoast() {
         {/* Back link */}
         <div className="mt-10 text-center">
           <Link href="/blog">
-            <button className="btn-secondary" style={{ fontSize: "0.75rem" }}>
+            <button className="btn-secondary" style={{ fontSize: "0.82rem" }}>
               Back to Blog
             </button>
           </Link>

@@ -77,7 +77,7 @@ export default function BlogPostLaMarzoccoLinea() {
         </div>
 
         <div className="mt-10 text-center">
-          <Link href="/blog"><button className="btn-secondary" style={{ fontSize: "0.75rem" }}>Back to Blog</button></Link>
+          <Link href="/blog"><button className="btn-secondary" style={{ fontSize: "0.82rem" }}><span className="arrow-pulse">←</span> Back to Blog</button></Link>
         </div>
       </div>
 

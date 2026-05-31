@@ -220,6 +220,7 @@ export default function Footer() {
           <button
             onClick={scrollTop}
             aria-label="Back to top"
+            className="back-to-top-btn"
             style={{
               display: "flex",
               alignItems: "center",
@@ -253,6 +254,7 @@ export default function Footer() {
               viewBox="0 0 12 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="arrow-pulse"
               style={{ flexShrink: 0 }}
             >
               <path
