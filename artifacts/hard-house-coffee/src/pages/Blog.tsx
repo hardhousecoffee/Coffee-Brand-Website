@@ -332,7 +332,7 @@ export default function Blog() {
       >
         <p className="section-subtitle" style={{ color: "#a14f1f" }}>Hard House</p>
         <div className="divider-orange mx-auto" />
-        <h1 className="section-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
+        <h1 className="section-title inter-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
           Blog & Reviews
         </h1>
         <p style={{ color: "#b0a090", maxWidth: "480px", margin: "1rem auto 0", lineHeight: 1.7 }}>

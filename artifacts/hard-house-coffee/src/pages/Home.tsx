@@ -623,7 +623,7 @@ export default function Home() {
           <div className="text-center mb-14">
             <p className="section-subtitle">Our World</p>
             <div className="divider-orange mx-auto" />
-            <h2 className="section-title mt-4">The Hard House Experience</h2>
+            <h2 className="section-title inter-title mt-4">The Hard House Experience</h2>
             <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
               Every cup we pour is a statement. Bold, deliberate, and unapologetically premium.
             </p>
@@ -1026,7 +1026,7 @@ export default function Home() {
           <div className="text-center mb-14">
             <p className="section-subtitle">The Culture</p>
             <div className="divider-orange mx-auto" />
-            <h2 className="section-title mt-4">Coffee Is a Way of Life</h2>
+            <h2 className="section-title inter-title mt-4">Coffee Is a Way of Life</h2>
             <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
               More than a beverage — it's a ritual, a community, and a constant pursuit of the perfect cup.
             </p>
@@ -1138,7 +1138,7 @@ export default function Home() {
           <div className="text-center mb-14">
             <p className="section-subtitle">Coffee Knowledge</p>
             <div className="divider-orange mx-auto" />
-            <h2 className="section-title mt-4">From the Blog</h2>
+            <h2 className="section-title inter-title mt-4">From the Blog</h2>
             <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
               Gear reviews, brewing guides, bean recommendations, and the culture behind every cup.
             </p>
@@ -1221,7 +1221,7 @@ export default function Home() {
           <div className="text-center mb-14">
             <p className="section-subtitle">Recommended Products</p>
             <div className="divider-orange mx-auto" />
-            <h2 className="section-title mt-4">Top Espresso Machines</h2>
+            <h2 className="section-title inter-title mt-4">Top Espresso Machines</h2>
             <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
               We've tested the best machines so you don't have to. These are our top picks for every budget.
             </p>
@@ -1372,10 +1372,11 @@ export default function Home() {
             <h2
               className="mt-4 mb-6"
               style={{
-                fontFamily: "'Cinzel Decorative', serif",
+                fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
                 fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
                 color: "#f2f2f2",
                 lineHeight: 1.3,
+                textTransform: "uppercase",
               }}
             >
               Join the Hard House Coffee Movement

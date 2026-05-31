@@ -35,10 +35,11 @@ export default function About() {
           <h1
             className="mt-4"
             style={{
-              fontFamily: "'Cinzel Decorative', serif",
+              fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
               fontSize: "clamp(2rem,5vw,4rem)",
               color: "#f2f2f2",
               lineHeight: 1.2,
+              textTransform: "uppercase",
             }}
           >
             Built on Bold Coffee
@@ -97,7 +98,7 @@ export default function About() {
         <div className="text-center mb-14">
           <p className="section-subtitle" style={{ color: "#a14f1f" }}>What We Stand For</p>
           <div className="divider-orange mx-auto" />
-          <h2 className="section-title mt-4">Our Values</h2>
+          <h2 className="section-title inter-title mt-4">Our Values</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
@@ -173,10 +174,11 @@ export default function About() {
         >
           <h2
             style={{
-              fontFamily: "'Cinzel Decorative', serif",
+              fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
               fontSize: "clamp(1.4rem, 3vw, 2.2rem)",
               color: "#f2f2f2",
               marginBottom: "1rem",
+              textTransform: "uppercase",
             }}
           >
             Ready to Elevate Your Coffee?

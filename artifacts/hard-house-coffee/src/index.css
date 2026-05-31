@@ -290,6 +290,11 @@ a, button {
   letter-spacing: 0.04em;
 }
 
+.inter-title {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif !important;
+  text-transform: uppercase !important;
+}
+
 .section-subtitle {
   color: #a14f1f;
   font-size: 0.8rem;
