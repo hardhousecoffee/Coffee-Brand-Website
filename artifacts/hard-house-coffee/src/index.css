@@ -646,9 +646,14 @@ a, button {
 }
 .nav-item-glow:hover {
   color: #ffffff !important;
-  border-color: #c06020 !important;
-  background: #a14f1f !important;
-  box-shadow: 0 0 12px rgba(192,96,32,0.45) !important;
+  border-color: rgba(220, 130, 45, 0.95) !important;
+  background: rgba(161, 79, 31, 0.1) !important;
+  box-shadow:
+    0 0 4px rgba(220, 130, 45, 0.7),
+    0 0 10px rgba(210, 115, 35, 0.45),
+    0 0 22px rgba(200, 100, 25, 0.2),
+    inset 0 0 6px rgba(220, 130, 45, 0.08) !important;
+  text-shadow: 0 0 8px rgba(230, 145, 55, 0.75) !important;
 }
 
 /* Steam effect rise animation */
