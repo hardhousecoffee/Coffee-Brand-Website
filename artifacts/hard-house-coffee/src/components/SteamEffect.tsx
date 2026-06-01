@@ -17,7 +17,9 @@ export default function SteamEffect() {
 
   return (
     <>
-      {/* Smoke — anchored at rim level, rises upward, 0.3s delay after mug appears */}
+      {/* Smoke — outer div: mask only. Inner div: blur only, oversized so its
+          hard edge stays outside the masked zone. overflow:hidden clips the
+          inner div at the outer boundary, hiding any blur artefacts. */}
       {!smokeGone && (
         <div
           style={{
@@ -31,25 +33,35 @@ export default function SteamEffect() {
             zIndex: 9999,
             mixBlendMode: "screen",
             animation: "steamRise 6.5s ease-in-out 0.3s both",
-            filter: "blur(4px)",
+            overflow: "hidden",
             maskImage:
-              "radial-gradient(ellipse 74% 86% at 50% 64%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 28%, rgba(0,0,0,0.4) 52%, rgba(0,0,0,0.1) 72%, transparent 86%)",
+              "radial-gradient(ellipse 80% 90% at 50% 60%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0.65) 30%, rgba(0,0,0,0.45) 48%, rgba(0,0,0,0.22) 63%, rgba(0,0,0,0.07) 77%, rgba(0,0,0,0.02) 87%, transparent 95%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse 74% 86% at 50% 64%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 28%, rgba(0,0,0,0.4) 52%, rgba(0,0,0,0.1) 72%, transparent 86%)",
+              "radial-gradient(ellipse 80% 90% at 50% 60%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0.65) 30%, rgba(0,0,0,0.45) 48%, rgba(0,0,0,0.22) 63%, rgba(0,0,0,0.07) 77%, rgba(0,0,0,0.02) 87%, transparent 95%)",
           }}
         >
-          <img
-            src="/images/steam2.png"
-            alt=""
+          {/* Inner wrapper: extends 16px in every direction so the blur's hard
+              edge is always outside the masked container and never visible */}
+          <div
             style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center center",
-              display: "block",
-              filter: "sepia(0.35) brightness(1.05) contrast(0.9)",
+              position: "absolute",
+              inset: "-16px",
+              filter: "blur(6px)",
             }}
-          />
+          >
+            <img
+              src="/images/steam2.png"
+              alt=""
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center center",
+                display: "block",
+                filter: "sepia(0.35) brightness(1.05) contrast(0.9)",
+              }}
+            />
+          </div>
         </div>
       )}
 
