@@ -655,12 +655,12 @@ a, button {
   text-shadow: 0 0 8px rgba(230, 145, 55, 0.75) !important;
 }
 
-/* Cup fade — synced to steamRise 6s timing */
-@keyframes mugFade {
-  0%   { opacity: 0; }
-  14%  { opacity: 0.92; }
-  62%  { opacity: 0.92; }
-  100% { opacity: 0; }
+/* Mug rises from logo level upward, cup rim last visible before fade */
+@keyframes mugRise {
+  0%   { opacity: 0;    transform: translateX(-50%) translateY(0px); }
+  18%  { opacity: 0.72; transform: translateX(-50%) translateY(0px); }
+  80%  { opacity: 0.60; transform: translateX(-50%) translateY(-320px); }
+  100% { opacity: 0;    transform: translateX(-50%) translateY(-340px); }
 }
 
 /* Steam effect rise animation */
