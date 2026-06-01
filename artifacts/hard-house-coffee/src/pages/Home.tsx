@@ -63,7 +63,7 @@ const experienceTiles = [
     },
   },
   {
-    src: "/images/dark-latte.jpg",
+    src: "/images/atmosphere-cafe.png",
     label: "Atmosphere",
     modal: {
       title: "The Hard House Feel",
