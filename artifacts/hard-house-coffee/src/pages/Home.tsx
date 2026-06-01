@@ -79,7 +79,7 @@ const experienceTiles = [
 ];
 
 const cultureImages = [
-  { src: "/images/man-drinking.jpg", caption: "Every sip tells a story." },
+  { src: "/images/outdoor-coffee.jpg", caption: "Every sip tells a story." },
   { src: "/images/couple-coffee.jpg", caption: "Shared moments, bold flavors." },
   { src: "/images/man-laptop-coffee.png", caption: "Grounded wherever you are." },
   { src: "/images/woman-coffee.jpg", caption: "Eyes open, world alive." },
