@@ -397,8 +397,8 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Video steam fades out by ~3.8s; logo/text appear after
-    const visTimer = setTimeout(() => setIsVisible(true), 3500);
+    // Logo/text fade in at 1.2s while steam is still visible
+    const visTimer = setTimeout(() => setIsVisible(true), 1200);
     intervalRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
