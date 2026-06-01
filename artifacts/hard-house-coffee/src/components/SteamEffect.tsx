@@ -31,10 +31,11 @@ export default function SteamEffect() {
             zIndex: 9999,
             mixBlendMode: "screen",
             animation: "steamRise 6.5s ease-in-out 0.3s both",
+            filter: "blur(4px)",
             maskImage:
-              "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
+              "radial-gradient(ellipse 74% 86% at 50% 64%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 28%, rgba(0,0,0,0.4) 52%, rgba(0,0,0,0.1) 72%, transparent 86%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
+              "radial-gradient(ellipse 74% 86% at 50% 64%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 28%, rgba(0,0,0,0.4) 52%, rgba(0,0,0,0.1) 72%, transparent 86%)",
           }}
         >
           <img
@@ -46,7 +47,7 @@ export default function SteamEffect() {
               objectFit: "cover",
               objectPosition: "center center",
               display: "block",
-              filter: "sepia(0.35) brightness(1.05) contrast(0.9) blur(3px)",
+              filter: "sepia(0.35) brightness(1.05) contrast(0.9)",
             }}
           />
         </div>
