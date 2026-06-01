@@ -1,3 +1,4 @@
+// Checkpoint: Steaming Hot Coffee Cup with Swirling Aroma steam — June 1, 2026
 import { useEffect, useRef, useState } from "react";
 
 export default function SteamVideoEffect() {
