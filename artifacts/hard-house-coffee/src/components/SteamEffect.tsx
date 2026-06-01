@@ -5,10 +5,10 @@ export default function SteamEffect() {
   const [mugGone, setMugGone] = useState(false);
 
   useEffect(() => {
-    // Mug fades out faster — gone at 4.5s
+    // Mug fades out first — gone at 4.5s
     const mugTimer = setTimeout(() => setMugGone(true), 4500);
-    // Smoke lasts half a second longer — gone at 6.5s
-    const smokeTimer = setTimeout(() => setSmokeGone(true), 6500);
+    // Smoke starts 0.3s after mug and runs for 6.5s → gone at 6.8s
+    const smokeTimer = setTimeout(() => setSmokeGone(true), 6800);
     return () => {
       clearTimeout(mugTimer);
       clearTimeout(smokeTimer);
@@ -30,7 +30,7 @@ export default function SteamEffect() {
             pointerEvents: "none",
             zIndex: 9999,
             mixBlendMode: "screen",
-            animation: "steamRise 6.5s ease-in-out forwards",
+            animation: "steamRise 6.5s ease-in-out 0.3s forwards",
             maskImage:
               "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
             WebkitMaskImage:
