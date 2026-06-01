@@ -24,7 +24,7 @@ export default function SteamEffect() {
         <div
           style={{
             position: "fixed",
-            bottom: 0,
+            bottom: "-110px",
             left: "calc(50% + 45px)",
             transform: "translateX(-50%)",
             width: "130vw",
@@ -33,6 +33,7 @@ export default function SteamEffect() {
             zIndex: 9999,
             mixBlendMode: "screen",
             animation: "steamRise 6.5s ease-in-out 0.3s both",
+            overflow: "hidden",
             maskImage:
               "radial-gradient(ellipse 80% 90% at 50% 58%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0.65) 30%, rgba(0,0,0,0.45) 48%, rgba(0,0,0,0.22) 63%, rgba(0,0,0,0.07) 77%, rgba(0,0,0,0.02) 87%, transparent 95%)",
             WebkitMaskImage:
