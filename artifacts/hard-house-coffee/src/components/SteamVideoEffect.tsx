@@ -2,15 +2,19 @@ import { useEffect, useRef, useState } from "react";
 
 export default function SteamVideoEffect() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [phase, setPhase] = useState<"in" | "hold" | "out" | "gone">("in");
+  const [opacity, setOpacity] = useState(0);
+  const [gone, setGone]       = useState(false);
 
   useEffect(() => {
-    const holdTimer = setTimeout(() => setPhase("hold"),  80);
-    const fadeTimer = setTimeout(() => setPhase("out"),  5500);
-    const goneTimer = setTimeout(() => setPhase("gone"), 7600);
+    // Small delay so the browser paints opacity:0 first, then transitions up
+    const fadeInTimer  = setTimeout(() => setOpacity(1),    80);
+    // Start fading out after branding has been visible a while
+    const fadeOutTimer = setTimeout(() => setOpacity(0),  5800);
+    // Remove from DOM after fade-out completes
+    const goneTimer    = setTimeout(() => setGone(true),  8500);
     return () => {
-      clearTimeout(holdTimer);
-      clearTimeout(fadeTimer);
+      clearTimeout(fadeInTimer);
+      clearTimeout(fadeOutTimer);
       clearTimeout(goneTimer);
     };
   }, []);
@@ -19,17 +23,7 @@ export default function SteamVideoEffect() {
     videoRef.current?.play().catch(() => {});
   }, []);
 
-  if (phase === "gone") return null;
-
-  const opacity =
-    phase === "in"   ? 0 :
-    phase === "hold" ? 1 :
-    0;
-
-  const transition =
-    phase === "in"  ? "opacity 2.0s ease" :
-    phase === "out" ? "opacity 2.0s ease" :
-    "none";
+  if (gone) return null;
 
   return (
     <div
@@ -43,20 +37,12 @@ export default function SteamVideoEffect() {
         pointerEvents: "none",
         zIndex: 9999,
         opacity,
-        transition,
+        transition: "opacity 2.5s ease",
         mixBlendMode: "screen",
-        maskImage: [
-          "radial-gradient(ellipse 78% 88% at 50% 62%,",
-          "  black 18%,",
-          "  rgba(0,0,0,0.55) 48%,",
-          "  transparent 75%)",
-        ].join(" "),
-        WebkitMaskImage: [
-          "radial-gradient(ellipse 78% 88% at 50% 62%,",
-          "  black 18%,",
-          "  rgba(0,0,0,0.55) 48%,",
-          "  transparent 75%)",
-        ].join(" "),
+        maskImage:
+          "radial-gradient(ellipse 78% 88% at 50% 62%, black 18%, rgba(0,0,0,0.55) 48%, transparent 75%)",
+        WebkitMaskImage:
+          "radial-gradient(ellipse 78% 88% at 50% 62%, black 18%, rgba(0,0,0,0.55) 48%, transparent 75%)",
       }}
     >
       <video
