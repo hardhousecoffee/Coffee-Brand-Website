@@ -16,15 +16,15 @@ export default function SteamEffect() {
       alt=""
       style={{
         position: "fixed",
-        bottom: 0,
+        bottom: "6vh",
         left: "50%",
         transform: "translateX(-50%)",
-        width: "clamp(320px, 55vw, 700px)",
+        width: "clamp(420px, 74vw, 1050px)",
         height: "auto",
         pointerEvents: "none",
         zIndex: 9999,
         mixBlendMode: "screen",
-        filter: "brightness(0.52) contrast(0.85) blur(2.5px)",
+        filter: "brightness(0.68) contrast(0.88) blur(2px)",
         animation: "steamRise 6s ease-in-out forwards",
       }}
     />
