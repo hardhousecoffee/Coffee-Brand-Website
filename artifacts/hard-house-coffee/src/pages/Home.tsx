@@ -81,7 +81,7 @@ const experienceTiles = [
 const cultureImages = [
   { src: "/images/man-drinking.jpg", caption: "Every sip tells a story." },
   { src: "/images/couple-coffee.jpg", caption: "Shared moments, bold flavors." },
-  { src: "/images/outdoor-coffee.jpg", caption: "Grounded wherever you are." },
+  { src: "/images/man-laptop-coffee.png", caption: "Grounded wherever you are." },
   { src: "/images/woman-coffee.jpg", caption: "Eyes open, world alive." },
 ];
 
@@ -1157,68 +1157,6 @@ export default function Home() {
           >
             Whether it's 5am or midnight, Hard House Coffee is your anchor. Bold, consistent, and always worth savoring.
           </p>
-          <Link href="/blog">
-            <button className="btn-primary" style={{ fontSize: "0.85rem", padding: "0.8rem 2.2rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", margin: "0 auto" }}>
-              Read Our Blog
-              <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </Link>
-        </div>
-      </section>
-
-      {/* BLOG PHOTO CTA */}
-      <section
-        className="relative py-24 px-6 overflow-hidden"
-        style={{ backgroundColor: "#0b0b0b" }}
-      >
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="section-subtitle" style={{ color: "#a14f1f" }}>
-              Coffee & Community
-            </p>
-            <div className="divider-orange" />
-            <h2
-              className="mt-4 mb-6"
-              style={{
-                fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
-                fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
-                color: "#f2f2f2",
-                lineHeight: 1.3,
-                textTransform: "uppercase",
-              }}
-            >
-              Join the Hard House Coffee Movement
-            </h2>
-            <p style={{ color: "#b0a090", lineHeight: 1.7, marginBottom: "2rem" }}>
-              Follow along for weekly brewing guides, gear breakdowns, and stories from the coffee world. 
-              Hard House is more than a brand — it's a mindset for people who take their coffee seriously.
-            </p>
-            <div className="flex gap-4 flex-wrap">
-              <Link href="/blog">
-                <button className="btn-primary">Start Reading</button>
-              </Link>
-              <Link href="/about">
-                <button className="btn-secondary">Our Story</button>
-              </Link>
-            </div>
-          </div>
-          <div
-            className="relative overflow-hidden"
-            style={{
-              borderRadius: "8px",
-              border: "1px solid rgba(161,79,31,0.3)",
-              aspectRatio: "4/3",
-            }}
-          >
-            <img
-              src="/images/blog-laptop.png"
-              alt="Coffee Blogging"
-              className="w-full h-full object-cover"
-              style={{ filter: "brightness(0.85)" }}
-            />
-          </div>
         </div>
       </section>
 
