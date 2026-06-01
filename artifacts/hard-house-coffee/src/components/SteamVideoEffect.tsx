@@ -2,6 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function SteamVideoEffect() {
+  // Synchronous check — runs before any render or hook, cannot be cached
+  if (typeof window !== "undefined" && window.innerWidth <= 768) return null;
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const [opacity, setOpacity] = useState(0);
   const [gone, setGone]       = useState(false);
