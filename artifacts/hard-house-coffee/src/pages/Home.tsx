@@ -418,7 +418,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2" }}>
-      <SteamVideoEffect />
       <Helmet>
         <title>Hard House Coffee | Coffee Culture, Barista Lifestyle & Brewing Inspiration</title>
         <meta name="description" content="Hard House Coffee — your home for coffee culture, barista lifestyle, espresso gear reviews, brewing guides, and bean recommendations. Elevate every cup with expert insight and bold inspiration." />
@@ -484,6 +483,9 @@ export default function Home() {
 
         {/* Dark gradient overlay */}
         <div className="hero-overlay absolute inset-0" style={{ zIndex: 2 }} />
+
+        {/* Steam video overlay — contained inside hero */}
+        <SteamVideoEffect />
 
         {/* Hero content */}
         <div

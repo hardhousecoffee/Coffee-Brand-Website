@@ -7,11 +7,8 @@ export default function SteamVideoEffect() {
   const [gone, setGone]       = useState(false);
 
   useEffect(() => {
-    // Small delay so the browser paints opacity:0 first, then transitions up
     const fadeInTimer  = setTimeout(() => setOpacity(1),    80);
-    // Start fading while video is still playing (video is 5s, fade starts at 3.5s)
     const fadeOutTimer = setTimeout(() => setOpacity(0),  3500);
-    // Remove from DOM after 2.5s fade-out completes
     const goneTimer    = setTimeout(() => setGone(true),  6100);
     return () => {
       clearTimeout(fadeInTimer);
@@ -28,15 +25,8 @@ export default function SteamVideoEffect() {
 
   return (
     <div
+      className="steam-video-overlay"
       style={{
-        position: "fixed",
-        bottom: "-10px",
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: "clamp(360px, 62vw, 820px)",
-        height: "78vh",
-        pointerEvents: "none",
-        zIndex: 9999,
         opacity,
         transition: "opacity 2.5s ease",
         mixBlendMode: "screen",
