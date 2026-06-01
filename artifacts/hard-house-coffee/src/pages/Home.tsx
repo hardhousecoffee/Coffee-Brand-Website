@@ -497,7 +497,7 @@ export default function Home() {
               left: "50%",
               transform: "translate(-50%, -52%)",
               opacity: isVisible ? 1 : 0,
-              transition: "opacity 1.2s ease",
+              transition: "opacity 1.2s ease 0.4s",
             }}
           >
             <img
@@ -525,7 +525,7 @@ export default function Home() {
               alignItems: "center",
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 1.2s ease 0.3s, transform 1.2s ease 0.3s",
+              transition: "opacity 1.2s ease 0.7s, transform 1.2s ease 0.7s",
             }}
           >
             {/* Single-line brand title */}
