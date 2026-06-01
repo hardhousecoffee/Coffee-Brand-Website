@@ -56,7 +56,7 @@ export default function SteamEffect() {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                objectPosition: "center center",
+                objectPosition: "center 35%",
                 display: "block",
                 filter: "sepia(0.35) brightness(1.05) contrast(0.9)",
               }}
