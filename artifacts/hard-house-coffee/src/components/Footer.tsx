@@ -1,12 +1,11 @@
 import { Link } from "wouter";
-import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
+import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
 const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 const SOCIAL_LINKS = [
   { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/hardhousecoffee.official?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" },
   { icon: FaTiktok,    label: "TikTok", href: "https://www.tiktok.com/@hardhousecoffee?_r=1&_t=ZP-96W4w42enMc" },
-  { icon: FaYoutube,   label: "YouTube", href: "#" },
 ];
 
 export default function Footer() {
@@ -178,24 +177,26 @@ export default function Footer() {
               "Espresso Machines",
               "Coffee Culture",
             ].map((cat) => (
-              <div
-                key={cat}
-                style={{
-                  color: "#b0a090",
-                  fontSize: "0.85rem",
-                  marginBottom: "0.6rem",
-                  cursor: "pointer",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLElement).style.color = "#a14f1f")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLElement).style.color = "#b0a090")
-                }
-              >
-                {cat}
-              </div>
+              <Link key={cat} href="/blog">
+                <div
+                  onClick={scrollTop}
+                  style={{
+                    color: "#b0a090",
+                    fontSize: "0.85rem",
+                    marginBottom: "0.6rem",
+                    cursor: "pointer",
+                    transition: "color 0.2s",
+                  }}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLElement).style.color = "#a14f1f")
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLElement).style.color = "#b0a090")
+                  }
+                >
+                  {cat}
+                </div>
+              </Link>
             ))}
           </div>
         </div>

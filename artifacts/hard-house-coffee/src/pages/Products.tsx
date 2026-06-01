@@ -48,7 +48,7 @@ const products = [
     category: "Espresso Machines",
     name: "De'Longhi Dinamica Plus",
     tagline: "Smart brewing. Endless possibilities.",
-    desc: "The Dinamica Plus features an intuitive 8.9\" touchscreen and the My LatteCrema system for perfectly textured hot and cold milk. Create and save your custom drink recipes with ease.",
+    desc: "The Dinamica Plus features an intuitive 8.9 cm touchscreen and the My LatteCrema system for perfectly textured hot and cold milk. Create and save your custom drink recipes with ease.",
     price: "$1,450",
     originalPrice: "$1,599",
     rating: 4.6,
@@ -58,7 +58,7 @@ const products = [
     affiliateUrl: "https://amzn.to/4eJlVbR",
     image: "/images/products/dinamica-plus-main.jpg",
     hoverImage: "/images/products/p6.jpg",
-    pros: ["8.9\" TFT color touchscreen", "My LatteCrema milk system", "Customizable saved recipes", "Integrated bean-to-cup grinder"],
+    pros: ["8.9 cm TFT color touchscreen", "My LatteCrema milk system", "Customizable saved recipes", "Integrated bean-to-cup grinder"],
   },
   {
     id: 4,
