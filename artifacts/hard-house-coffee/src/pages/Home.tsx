@@ -483,10 +483,72 @@ export default function Home() {
         {/* Dark gradient overlay */}
         <div className="hero-overlay absolute inset-0" style={{ zIndex: 2 }} />
 
+        {/* ── Mug + looping smoke centrepiece ── */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 3,
+            pointerEvents: "none",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: "clamp(160px, 18vw, 220px)",
+          }}
+        >
+          {/* Smoke layer 1 */}
+          <div
+            style={{
+              position: "relative",
+              width: "clamp(100px, 11vw, 140px)",
+              height: "clamp(150px, 20vw, 220px)",
+              marginBottom: "-28px",
+              mixBlendMode: "screen",
+              animation: "mugSmokeRise 3.8s ease-in-out infinite",
+              backgroundImage: "url('/images/steam-transparent.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "sepia(0.3) brightness(1.15) blur(5px)",
+            }}
+          />
+          {/* Smoke layer 2 — staggered for depth */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "clamp(80px, 9vw, 115px)",
+              height: "clamp(150px, 20vw, 220px)",
+              mixBlendMode: "screen",
+              animation: "mugSmokeRise 3.8s ease-in-out 1.9s infinite",
+              backgroundImage: "url('/images/steam-transparent.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "sepia(0.2) brightness(1.0) blur(7px)",
+            }}
+          />
+          {/* Coffee mug image */}
+          <img
+            src="/images/steamy-mug.jpg"
+            alt=""
+            style={{
+              width: "100%",
+              display: "block",
+              mixBlendMode: "screen",
+              filter: "brightness(0.72) contrast(1.08) saturate(0.75)",
+              maskImage: "linear-gradient(to top, black 35%, rgba(0,0,0,0.6) 62%, transparent 88%)",
+              WebkitMaskImage: "linear-gradient(to top, black 35%, rgba(0,0,0,0.6) 62%, transparent 88%)",
+            }}
+          />
+        </div>
+
         {/* Hero content */}
         <div
           className="hero-content-root absolute inset-0 text-center px-6"
-          style={{ zIndex: 3 }}
+          style={{ zIndex: 4 }}
         >
           {/* Logo — centered horizontally, sits in upper portion */}
           <div
@@ -587,7 +649,7 @@ export default function Home() {
         {/* Slide indicators */}
         <div
           className="absolute bottom-8 left-1/2 flex gap-2"
-          style={{ transform: "translateX(-50%)", zIndex: 4 }}
+          style={{ transform: "translateX(-50%)", zIndex: 5 }}
         >
           {heroSlides.map((_, idx) => (
             <button
