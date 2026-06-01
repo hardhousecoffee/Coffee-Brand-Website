@@ -11,22 +11,36 @@ export default function SteamEffect() {
   if (gone) return null;
 
   return (
-    <img
-      src="/images/hero-cup.png"
-      alt=""
+    <div
       style={{
         position: "fixed",
-        bottom: "6vh",
-        left: "50%",
+        bottom: "-5vh",
+        left: "calc(50% + 45px)",
         transform: "translateX(-50%)",
-        width: "clamp(420px, 74vw, 1050px)",
-        height: "auto",
+        width: "130vw",
+        height: "115vh",
         pointerEvents: "none",
         zIndex: 9999,
         mixBlendMode: "screen",
-        filter: "brightness(0.68) contrast(0.88) blur(2px)",
         animation: "steamRise 6s ease-in-out forwards",
+        maskImage:
+          "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
+        WebkitMaskImage:
+          "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
       }}
-    />
+    >
+      <img
+        src="/images/steam2.png"
+        alt=""
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center center",
+          display: "block",
+          filter: "sepia(0.35) brightness(1.05) contrast(0.9) blur(3px)",
+        }}
+      />
+    </div>
   );
 }
