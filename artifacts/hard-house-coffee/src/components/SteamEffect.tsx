@@ -5,9 +5,7 @@ export default function SteamEffect() {
   const [mugGone, setMugGone] = useState(false);
 
   useEffect(() => {
-    // Mug fades out first — gone at 4.5s
     const mugTimer = setTimeout(() => setMugGone(true), 4500);
-    // Smoke starts 0.3s after mug and runs for 6.5s → gone at 6.8s
     const smokeTimer = setTimeout(() => setSmokeGone(true), 6800);
     return () => {
       clearTimeout(mugTimer);
@@ -17,14 +15,11 @@ export default function SteamEffect() {
 
   return (
     <>
-      {/* Smoke — outer div: mask only. Inner div: blur only, oversized so its
-          hard edge stays outside the masked zone. overflow:hidden clips the
-          inner div at the outer boundary, hiding any blur artefacts. */}
       {!smokeGone && (
         <div
           style={{
             position: "fixed",
-            bottom: "-110px",
+            bottom: "clamp(12px, 2.5vh, 32px)",
             left: "calc(50% + 45px)",
             transform: "translateX(-50%)",
             width: "130vw",
@@ -33,39 +28,27 @@ export default function SteamEffect() {
             zIndex: 9999,
             mixBlendMode: "screen",
             animation: "steamRise 6.5s ease-in-out 0.3s both",
-            overflow: "hidden",
             maskImage:
-              "radial-gradient(ellipse 80% 90% at 50% 58%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0.65) 30%, rgba(0,0,0,0.45) 48%, rgba(0,0,0,0.22) 63%, rgba(0,0,0,0.07) 77%, rgba(0,0,0,0.02) 87%, transparent 95%)",
+              "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse 80% 90% at 50% 58%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0.65) 30%, rgba(0,0,0,0.45) 48%, rgba(0,0,0,0.22) 63%, rgba(0,0,0,0.07) 77%, rgba(0,0,0,0.02) 87%, transparent 95%)",
+              "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
           }}
         >
-          {/* Inner wrapper: extends 16px in every direction so the blur's hard
-              edge is always outside the masked container and never visible */}
-          <div
+          <img
+            src="/images/steam2.png"
+            alt=""
             style={{
-              position: "absolute",
-              inset: "-16px",
-              filter: "blur(6px)",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center center",
+              display: "block",
+              filter: "sepia(0.35) brightness(1.05) contrast(0.9) blur(3px)",
             }}
-          >
-            <img
-              src="/images/steam2.png"
-              alt=""
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center 35%",
-                display: "block",
-                filter: "sepia(0.35) brightness(1.05) contrast(0.9)",
-              }}
-            />
-          </div>
+          />
         </div>
       )}
 
-      {/* Mug rim — transparent PNG, anchored at bottom center, fades out quicker (4.5s) */}
       {!mugGone && (
         <img
           src="/images/mug-rim.png"
