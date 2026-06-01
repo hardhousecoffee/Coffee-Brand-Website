@@ -18,13 +18,14 @@ export default function SteamEffect() {
         position: "fixed",
         bottom: "-5vh",
         left: "calc(50% + 45px)",
-        width: "130vw",
-        height: "115vh",
+        width: "145vw",
+        height: "128vh",
         objectFit: "contain",
         objectPosition: "center bottom",
         pointerEvents: "none",
         zIndex: 9999,
         mixBlendMode: "screen",
+        filter: "brightness(0.62) contrast(0.88) blur(1.5px)",
         animation: "steamRise 6s ease-in-out forwards",
       }}
     />
