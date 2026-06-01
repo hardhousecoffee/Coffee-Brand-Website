@@ -148,7 +148,7 @@ export default function About() {
 
         {/* Culture collage */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-20">
-          {["/images/man-drinking.jpg", "/images/couple-coffee.jpg", "/images/outdoor-coffee.jpg"].map((img, i) => (
+          {["/images/about-coffee-dog.png", "/images/about-coffee-cheers.jpg", "/images/about-coffee-heart.png"].map((img, i) => (
             <div
               key={i}
               style={{
