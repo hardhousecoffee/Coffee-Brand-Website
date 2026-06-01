@@ -11,36 +11,58 @@ export default function SteamEffect() {
   if (gone) return null;
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        bottom: "-5vh",
-        left: "calc(50% + 45px)",
-        transform: "translateX(-50%)",
-        width: "130vw",
-        height: "115vh",
-        pointerEvents: "none",
-        zIndex: 9999,
-        mixBlendMode: "screen",
-        animation: "steamRise 6s ease-in-out forwards",
-        maskImage:
-          "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
-        WebkitMaskImage:
-          "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
-      }}
-    >
+    <>
+      {/* Original smoke / human figures */}
+      <div
+        style={{
+          position: "fixed",
+          bottom: "-5vh",
+          left: "calc(50% + 45px)",
+          transform: "translateX(-50%)",
+          width: "130vw",
+          height: "115vh",
+          pointerEvents: "none",
+          zIndex: 9999,
+          mixBlendMode: "screen",
+          animation: "steamRise 6s ease-in-out forwards",
+          maskImage:
+            "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
+        }}
+      >
+        <img
+          src="/images/steam2.png"
+          alt=""
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center center",
+            display: "block",
+            filter: "sepia(0.35) brightness(1.05) contrast(0.9) blur(3px)",
+          }}
+        />
+      </div>
+
+      {/* Mug rim — same 6s fade, sits just below the hero buttons */}
       <img
-        src="/images/steam2.png"
+        src="/images/mug-rim.png"
         alt=""
         style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center center",
-          display: "block",
-          filter: "sepia(0.35) brightness(1.05) contrast(0.9) blur(3px)",
+          position: "fixed",
+          bottom: "clamp(90px, 12vh, 130px)",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "clamp(280px, 72vw, 540px)",
+          height: "auto",
+          pointerEvents: "none",
+          zIndex: 9998,
+          mixBlendMode: "screen",
+          filter: "brightness(0.9) contrast(1.0)",
+          animation: "steamRise 6s ease-in-out forwards",
         }}
       />
-    </div>
+    </>
   );
 }
