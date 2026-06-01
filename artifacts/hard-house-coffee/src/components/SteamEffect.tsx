@@ -11,58 +11,22 @@ export default function SteamEffect() {
   if (gone) return null;
 
   return (
-    <>
-      {/* Coffee cup + steam figures — perfectly synced with smoke, same 6s fade */}
-      <img
-        src="/images/hero-cup.png"
-        alt=""
-        style={{
-          position: "fixed",
-          bottom: 0,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 9998,
-          pointerEvents: "none",
-          height: "clamp(65vh, 78vh, 88vh)",
-          width: "auto",
-          animation: "mugFade 6s ease-in-out forwards",
-          mixBlendMode: "screen",
-          filter: "brightness(0.92) contrast(1.05)",
-        }}
-      />
-
-      {/* Smoke overlay */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: "-5vh",
-          left: "calc(50% + 45px)",
-          transform: "translateX(-50%)",
-          width: "130vw",
-          height: "115vh",
-          pointerEvents: "none",
-          zIndex: 9999,
-          mixBlendMode: "screen",
-          animation: "steamRise 6s ease-in-out forwards",
-          maskImage:
-            "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 72% 85% at 50% 68%, black 10%, rgba(0,0,0,0.55) 42%, transparent 75%)",
-        }}
-      >
-        <img
-          src="/images/steam2.png"
-          alt=""
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center center",
-            display: "block",
-            filter: "sepia(0.35) brightness(1.05) contrast(0.9) blur(3px)",
-          }}
-        />
-      </div>
-    </>
+    <img
+      src="/images/hero-cup.png"
+      alt=""
+      style={{
+        position: "fixed",
+        bottom: "-5vh",
+        left: "calc(50% + 45px)",
+        width: "130vw",
+        height: "115vh",
+        objectFit: "contain",
+        objectPosition: "center bottom",
+        pointerEvents: "none",
+        zIndex: 9999,
+        mixBlendMode: "screen",
+        animation: "steamRise 6s ease-in-out forwards",
+      }}
+    />
   );
 }
