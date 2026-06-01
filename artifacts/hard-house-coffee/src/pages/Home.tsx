@@ -8,6 +8,7 @@ import SteamEffect from "@/components/SteamEffect";
 import SteamEffectSVG from "@/components/SteamEffectSVG";
 import SteamVideoEffect from "@/components/SteamVideoEffect";
 import PremiumBanner from "@/components/PremiumBanner";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
 const heroSlides = [
@@ -284,6 +285,7 @@ function VideoSection() {
 }
 
 export default function Home() {
+  const isMobile = useIsMobile();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [activeExperience, setActiveExperience] = useState<number | null>(null);
@@ -401,8 +403,8 @@ export default function Home() {
         {/* Dark gradient overlay */}
         <div className="hero-overlay absolute inset-0" style={{ zIndex: 2 }} />
 
-        {/* Steam video overlay — contained inside hero */}
-        <SteamVideoEffect />
+        {/* Steam video overlay — desktop/tablet only (hidden on phones) */}
+        {!isMobile && <SteamVideoEffect />}
 
         {/* Hero content */}
         <div
