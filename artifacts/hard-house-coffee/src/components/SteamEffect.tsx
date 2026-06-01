@@ -45,21 +45,20 @@ export default function SteamEffect() {
         />
       </div>
 
-      {/* Mug rim — same 6s fade, sits just below the hero buttons */}
+      {/* Mug rim — transparent PNG, width matches "Aroma From the Ground Up!" text,
+          sits at bottom center below all hero text, same fade as smoke */}
       <img
         src="/images/mug-rim.png"
         alt=""
         style={{
           position: "fixed",
-          bottom: "clamp(90px, 12vh, 130px)",
+          bottom: "clamp(12px, 2.5vh, 32px)",
           left: "50%",
           transform: "translateX(-50%)",
-          width: "clamp(280px, 72vw, 540px)",
+          width: "clamp(260px, 58vw, 620px)",
           height: "auto",
           pointerEvents: "none",
           zIndex: 9998,
-          mixBlendMode: "screen",
-          filter: "brightness(0.9) contrast(1.0)",
           animation: "steamRise 6s ease-in-out forwards",
         }}
       />
