@@ -49,7 +49,7 @@ const experienceTiles = [
     },
   },
   {
-    src: "/images/milk-pour.png",
+    src: "/images/precision-espresso-pull.png",
     label: "Precision",
     modal: {
       title: "Dialing In the Perfect Cup",
