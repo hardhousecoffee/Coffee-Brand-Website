@@ -12,8 +12,10 @@ export default function SteamEffect() {
 
   return (
     <>
-      {/* Coffee cup — perfectly synced with smoke, same 6s fade */}
-      <div
+      {/* Coffee cup + steam figures — perfectly synced with smoke, same 6s fade */}
+      <img
+        src="/images/hero-cup.png"
+        alt=""
         style={{
           position: "fixed",
           bottom: 0,
@@ -21,20 +23,13 @@ export default function SteamEffect() {
           transform: "translateX(-50%)",
           zIndex: 9998,
           pointerEvents: "none",
-          width: "clamp(240px, 30vw, 400px)",
+          height: "clamp(65vh, 78vh, 88vh)",
+          width: "auto",
           animation: "mugFade 6s ease-in-out forwards",
           mixBlendMode: "screen",
-          filter: "brightness(0.88) contrast(1.1) saturate(0.85)",
-          maskImage: "linear-gradient(to top, black 38%, rgba(0,0,0,0.65) 62%, transparent 88%)",
-          WebkitMaskImage: "linear-gradient(to top, black 38%, rgba(0,0,0,0.65) 62%, transparent 88%)",
+          filter: "brightness(0.92) contrast(1.05)",
         }}
-      >
-        <img
-          src="/images/hero-cup.png"
-          alt=""
-          style={{ width: "100%", display: "block" }}
-        />
-      </div>
+      />
 
       {/* Smoke overlay */}
       <div
