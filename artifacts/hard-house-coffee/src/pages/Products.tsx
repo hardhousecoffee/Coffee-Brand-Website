@@ -1282,7 +1282,7 @@ export default function Products() {
               <div className="divider-orange mx-auto" />
               <h2
                 className="section-title mt-4"
-                style={{ fontSize: "clamp(1.6rem,4vw,2.6rem)" }}
+                style={{ fontSize: "clamp(1.6rem,4vw,2.6rem)", fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
               >
                 Recommended Coffee Beans
               </h2>

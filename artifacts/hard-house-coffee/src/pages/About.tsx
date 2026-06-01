@@ -190,9 +190,6 @@ export default function About() {
             <Link href="/blog">
               <button className="btn-primary">Read the Blog</button>
             </Link>
-            <Link href="/products">
-              <button className="btn-secondary">Shop</button>
-            </Link>
           </div>
         </div>
       </div>
