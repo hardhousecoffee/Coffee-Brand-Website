@@ -8,10 +8,10 @@ export default function SteamVideoEffect() {
   useEffect(() => {
     // Small delay so the browser paints opacity:0 first, then transitions up
     const fadeInTimer  = setTimeout(() => setOpacity(1),    80);
-    // Start fading out after branding has been visible a while
-    const fadeOutTimer = setTimeout(() => setOpacity(0),  5800);
-    // Remove from DOM after fade-out completes
-    const goneTimer    = setTimeout(() => setGone(true),  8500);
+    // Start fading while video is still playing (video is 5s, fade starts at 3.5s)
+    const fadeOutTimer = setTimeout(() => setOpacity(0),  3500);
+    // Remove from DOM after 2.5s fade-out completes
+    const goneTimer    = setTimeout(() => setGone(true),  6100);
     return () => {
       clearTimeout(fadeInTimer);
       clearTimeout(fadeOutTimer);
