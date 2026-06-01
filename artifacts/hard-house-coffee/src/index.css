@@ -655,14 +655,6 @@ a, button {
   text-shadow: 0 0 8px rgba(230, 145, 55, 0.75) !important;
 }
 
-/* Mug hero smoke — looping rise */
-@keyframes mugSmokeRise {
-  0%   { opacity: 0;    transform: translateY(12px)  scaleX(0.92); }
-  22%  { opacity: 0.52; }
-  60%  { opacity: 0.28; transform: translateY(-38px) scaleX(1.08); }
-  100% { opacity: 0;    transform: translateY(-80px) scaleX(1.14); }
-}
-
 /* Steam effect rise animation */
 @keyframes steamRise {
   0%   { opacity: 0;    transform: translateX(-50%) translateY(20px) scale(1);    }
