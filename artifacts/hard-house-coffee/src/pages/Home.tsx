@@ -396,8 +396,8 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // SVG steam fades at ~2700ms; logo/text fade in after
-    const visTimer = setTimeout(() => setIsVisible(true), 2800);
+    // Smoke appears first, then logo/text fade in through it at 0.5s
+    const visTimer = setTimeout(() => setIsVisible(true), 1000);
     intervalRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
@@ -417,7 +417,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2" }}>
-      <SteamEffectSVG />
+      <SteamEffect />
       <Helmet>
         <title>Hard House Coffee | Coffee Culture, Barista Lifestyle & Brewing Inspiration</title>
         <meta name="description" content="Hard House Coffee — your home for coffee culture, barista lifestyle, espresso gear reviews, brewing guides, and bean recommendations. Elevate every cup with expert insight and bold inspiration." />
