@@ -342,16 +342,16 @@ export default function Blog() {
 
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Category filter */}
-        <div
-          id="blog-filter"
-          style={{
-            overflowX: "auto",
-            WebkitOverflowScrolling: "touch",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            marginBottom: "3rem",
-          }}
-        >
+        <div style={{ position: "relative", marginBottom: "3rem" }}>
+          <div
+            id="blog-filter"
+            style={{
+              overflowX: "auto",
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
           <div style={{ display: "flex", gap: "0.75rem", minWidth: "max-content", paddingBottom: "2px" }}>
             {categories.map((cat) => (
               <button
@@ -377,6 +377,17 @@ export default function Blog() {
               </button>
             ))}
           </div>
+          </div>
+          {/* Right fade — hints at scrollable tabs on mobile */}
+          <div style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            width: "3rem",
+            height: "100%",
+            background: "linear-gradient(to right, transparent, #0b0b0b)",
+            pointerEvents: "none",
+          }} />
         </div>
 
         {/* Featured post */}

@@ -142,30 +142,31 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile: logo + back + hamburger */}
+        {/* Mobile: logo or back + hamburger */}
         <div className="md:hidden flex items-center justify-between w-full">
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <Link href="/">
-              <span
-                onClick={scrollTop}
-                style={{
-                  fontFamily: "'Cinzel Decorative', serif",
-                  fontSize: "0.75rem",
-                  color: "#f2f2f2",
-                  letterSpacing: "0.1em",
-                  cursor: "pointer",
-                }}
-              >
-                HHC
-              </span>
-            </Link>
-            {!isHome && (
+          <div style={{ display: "flex", alignItems: "center" }}>
+            {isHome ? (
+              <Link href="/">
+                <span
+                  onClick={scrollTop}
+                  style={{
+                    fontFamily: "'Cinzel Decorative', serif",
+                    fontSize: "0.75rem",
+                    color: "#f2f2f2",
+                    letterSpacing: "0.1em",
+                    cursor: "pointer",
+                  }}
+                >
+                  HHC
+                </span>
+              </Link>
+            ) : (
               <button
                 onClick={() => window.history.back()}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "0.3rem",
+                  gap: "0.35rem",
                   background: "none",
                   border: "none",
                   cursor: "pointer",
