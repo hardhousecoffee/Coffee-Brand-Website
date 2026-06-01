@@ -655,6 +655,14 @@ a, button {
   text-shadow: 0 0 8px rgba(230, 145, 55, 0.75) !important;
 }
 
+/* Cup fade — synced to steamRise 6s timing */
+@keyframes mugFade {
+  0%   { opacity: 0; }
+  14%  { opacity: 0.92; }
+  62%  { opacity: 0.92; }
+  100% { opacity: 0; }
+}
+
 /* Steam effect rise animation */
 @keyframes steamRise {
   0%   { opacity: 0;    transform: translateX(-50%) translateY(20px) scale(1);    }
