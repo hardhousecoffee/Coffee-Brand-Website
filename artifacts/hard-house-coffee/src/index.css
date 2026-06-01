@@ -677,19 +677,10 @@ a, button {
   }
 }
 
-/* Mobile portrait */
-@media (max-width: 768px) and (orientation: portrait) {
+/* Mobile — hide steam overlay entirely */
+@media (max-width: 768px) {
   .steam-video-overlay {
-    width: clamp(160px, 68vw, 320px);
-    height: 48%;
-  }
-}
-
-/* Mobile landscape */
-@media (max-width: 768px) and (orientation: landscape) {
-  .steam-video-overlay {
-    width: clamp(200px, 46vw, 460px);
-    height: 72%;
+    display: none !important;
   }
 }
 
