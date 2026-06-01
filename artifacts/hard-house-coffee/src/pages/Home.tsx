@@ -21,7 +21,7 @@ const heroSlides = [
 
 const experienceTiles = [
   {
-    src: "/images/man-drinking.jpg",
+    src: "/images/community-coffee-table.jpg",
     label: "Community",
     modal: {
       title: "The Culture Behind Coffee",
