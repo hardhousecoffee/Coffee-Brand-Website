@@ -667,8 +667,8 @@ a, button {
 
 @keyframes mugFade {
   0%   { opacity: 0;    }
-  18%  { opacity: 0.18; }
-  45%  { opacity: 0.15; }
-  78%  { opacity: 0.06; }
+  18%  { opacity: 0.10; }
+  45%  { opacity: 0.08; }
+  78%  { opacity: 0.03; }
   100% { opacity: 0;    }
 }

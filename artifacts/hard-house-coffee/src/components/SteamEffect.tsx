@@ -59,10 +59,10 @@ export default function SteamEffect() {
           alt=""
           style={{
             position: "fixed",
-            bottom: "clamp(12px, 2.5vh, 32px)",
+            bottom: "clamp(4px, 0.8vh, 12px)",
             left: "50%",
             transform: "translateX(-50%)",
-            width: "clamp(260px, 58vw, 620px)",
+            width: "clamp(300px, 70vw, 740px)",
             height: "auto",
             pointerEvents: "none",
             zIndex: 9998,
