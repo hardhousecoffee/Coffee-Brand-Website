@@ -1,9 +1,48 @@
 import { useState, useEffect, useRef } from "react";
-
+import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
+
+const topPicksProducts = [
+  {
+    id: 1,
+    name: "De'Longhi La Specialista Touch",
+    tagline: "Cold brew to espresso. One machine, limitless craft.",
+    rating: 4.8,
+    reviews: 2134,
+    badge: "Editor's Choice",
+    badgeColor: "#8b2f2f",
+    affiliateUrl: "https://amzn.to/4dfl8y3",
+    image: "/images/products/la-specialista-main.jpg",
+    hoverImage: "/images/products/la-specialista-hover.jpg",
+  },
+  {
+    id: 2,
+    name: "Ninja Luxe Café Pro",
+    tagline: "Premium café drinks. Ninja-engineered precision.",
+    rating: 4.5,
+    reviews: 6823,
+    badge: "Best Value",
+    badgeColor: "#a14f1f",
+    affiliateUrl: "https://amzn.to/4uU8Hho",
+    image: "/images/products/ninja-luxe-main.jpg",
+    hoverImage: "/images/products/ninja-luxe-hover.jpg",
+  },
+  {
+    id: 3,
+    name: "Breville Oracle Jet",
+    tagline: "Hands-free barista. Zero compromise.",
+    rating: 4.9,
+    reviews: 987,
+    badge: "Top Rated",
+    badgeColor: "#5a3a1a",
+    affiliateUrl: "https://amzn.to/4nvZfxV",
+    image: "/images/products/oracle-jet-main.jpg",
+    hoverImage: "/images/products/oracle-jet-hover.jpg",
+  },
+];
 
 const categories = ["All", "Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories", "Coffee Beans"];
 const accessorySubcategories = ["All Accessories", "Kettles", "Milk Frothers", "Barista Sets", "Coffee Mugs"];
@@ -1460,6 +1499,129 @@ export default function Products() {
           </div>
         )}
       </div>
+
+      {/* TOP PICKS — RECOMMENDED PRODUCTS */}
+      <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="section-subtitle">Recommended Products</p>
+            <div className="divider-orange mx-auto" />
+            <h2 className="section-title inter-title mt-4">Top Espresso Machines</h2>
+            <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
+              We've tested the best machines so you don't have to. These are our top picks for every budget.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {topPicksProducts.map((product) => (
+              <div
+                key={product.id}
+                className="flex flex-col"
+                style={{
+                  background: "#131313",
+                  borderRadius: "8px",
+                  border: "1px solid rgba(161,79,31,0.25)",
+                  overflow: "hidden",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.transform = "translateY(-4px)";
+                  el.style.boxShadow = "0 8px 32px rgba(161,79,31,0.25)";
+                  el.style.borderColor = "rgba(161,79,31,0.5)";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.transform = "translateY(0)";
+                  el.style.boxShadow = "none";
+                  el.style.borderColor = "rgba(161,79,31,0.25)";
+                }}
+              >
+                <div
+                  className="relative"
+                  style={{ height: "220px", overflow: "hidden", borderBottom: "1px solid rgba(161,79,31,0.2)" }}
+                  onMouseEnter={(e) => {
+                    const imgs = e.currentTarget.querySelectorAll("img");
+                    if (imgs[1]) { (imgs[0] as HTMLElement).style.opacity = "0"; (imgs[1] as HTMLElement).style.opacity = "1"; }
+                  }}
+                  onMouseLeave={(e) => {
+                    const imgs = e.currentTarget.querySelectorAll("img");
+                    if (imgs[1]) { (imgs[0] as HTMLElement).style.opacity = "1"; (imgs[1] as HTMLElement).style.opacity = "0"; }
+                  }}
+                >
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transition: "opacity 0.4s ease" }}
+                  />
+                  <img
+                    src={product.hoverImage}
+                    alt={`${product.name} alternate view`}
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0, transition: "opacity 0.4s ease" }}
+                  />
+                  <div
+                    className="absolute top-3 left-3 px-2 py-1"
+                    style={{
+                      background: product.badgeColor,
+                      borderRadius: "4px",
+                      fontSize: "0.65rem",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "#f2f2f2",
+                      fontWeight: 700,
+                      zIndex: 2,
+                    }}
+                  >
+                    {product.badge}
+                  </div>
+                </div>
+
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.4rem" }}>
+                    <a
+                      href={product.affiliateUrl}
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      style={{ color: "#f2f2f2", textDecoration: "none", transition: "color 0.2s" }}
+                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#d4b896")}
+                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#f2f2f2")}
+                    >
+                      {product.name}
+                    </a>
+                  </h3>
+                  <p style={{ fontSize: "0.8rem", color: "#b0a090", marginBottom: "0.8rem" }}>{product.tagline}</p>
+
+                  <div className="flex items-center gap-2 mb-3">
+                    <div style={{ color: "#a14f1f" }}>
+                      {"★".repeat(Math.floor(product.rating))}
+                      {product.rating % 1 >= 0.5 ? "½" : ""}
+                    </div>
+                    <span style={{ fontSize: "0.75rem", color: "#b0a090" }}>
+                      {product.rating} ({product.reviews.toLocaleString()} reviews)
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col gap-2 mt-auto">
+                    <a
+                      href={product.affiliateUrl}
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <button className="btn-primary w-full" style={{ fontSize: "0.75rem" }}>
+                        Buy Now on Amazon
+                      </button>
+                    </a>
+                    <p style={{ fontSize: "0.68rem", color: "#c4b09a", textAlign: "center", letterSpacing: "0.01em", lineHeight: 1.4, marginTop: "4px" }}>
+                      For the latest pricing and availability, view this product directly on Amazon.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <PageNav nextPath="/" nextLabel="Return to Home" showArrow={false} />
       <Footer />
