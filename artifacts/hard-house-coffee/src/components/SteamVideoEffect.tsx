@@ -6,8 +6,8 @@ export default function SteamVideoEffect() {
 
   useEffect(() => {
     const holdTimer = setTimeout(() => setPhase("hold"),  80);
-    const fadeTimer = setTimeout(() => setPhase("out"),  2800);
-    const goneTimer = setTimeout(() => setPhase("gone"), 3600);
+    const fadeTimer = setTimeout(() => setPhase("out"),  5500);
+    const goneTimer = setTimeout(() => setPhase("gone"), 7600);
     return () => {
       clearTimeout(holdTimer);
       clearTimeout(fadeTimer);
@@ -27,8 +27,8 @@ export default function SteamVideoEffect() {
     0;
 
   const transition =
-    phase === "in"  ? "opacity 0.8s ease" :
-    phase === "out" ? "opacity 0.7s ease" :
+    phase === "in"  ? "opacity 2.0s ease" :
+    phase === "out" ? "opacity 2.0s ease" :
     "none";
 
   return (
