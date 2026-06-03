@@ -524,14 +524,24 @@ export default function Home() {
 
       {/* FEATURED GRID */}
       <section
-        className="py-20 px-6"
-        style={{ backgroundColor: "#0b0b0b", position: "relative" }}
+        className="px-6"
+        style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "3rem", paddingBottom: "2rem" }}
       >
-        <div className="max-w-6xl mx-auto text-center mb-8">
-          <p className="section-subtitle">Our World</p>
-          <h2 className="section-title inter-title mt-4">The Hard House Experience</h2>
-          <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
-            Every cup we pour is a statement. Bold, deliberate, and unapologetically premium.
+        <div className="max-w-4xl mx-auto text-center" style={{ marginBottom: "2rem" }}>
+          <p
+            style={{
+              fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
+              fontSize: "clamp(1.25rem, 2.4vw, 1.85rem)",
+              color: "#f0ebe4",
+              fontWeight: 300,
+              lineHeight: 1.55,
+              letterSpacing: "0.01em",
+              margin: 0,
+            }}
+          >
+            Every cup we pour is a statement.{" "}
+            <span style={{ color: "#d4af37", fontWeight: 500 }}>Bold, deliberate,</span>{" "}
+            and unapologetically premium.
           </p>
         </div>
 
