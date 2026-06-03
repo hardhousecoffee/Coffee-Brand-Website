@@ -1058,8 +1058,13 @@ export default function Home() {
       <VideoSection />
 
       {/* CULTURE SECTION */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16", position: "relative", overflow: "hidden" }}>
+        <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0 }}>
+          <div style={{ position: "absolute", top: "30%", left: "-10%", right: "-10%", height: "90px", background: "linear-gradient(to right, transparent 0%, rgba(180,100,30,0.18) 20%, rgba(210,140,50,0.26) 50%, rgba(180,100,30,0.18) 80%, transparent 100%)", filter: "blur(26px)", transform: "rotate(-1.5deg)" }} />
+          <div style={{ position: "absolute", top: "55%", left: "-10%", right: "-10%", height: "48px", background: "linear-gradient(to right, transparent 0%, rgba(160,80,20,0.10) 25%, rgba(195,125,40,0.15) 50%, rgba(160,80,20,0.10) 75%, transparent 100%)", filter: "blur(18px)", transform: "rotate(-1deg)" }} />
+          <div style={{ position: "absolute", inset: 0, left: 0, width: "28%", background: "linear-gradient(to right, rgba(90,40,10,0.14) 0%, transparent 100%)" }} />
+        </div>
+        <div className="max-w-6xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
           <div className="text-center mb-14">
             <p className="section-subtitle">The Culture</p>
             <h2 className="section-title inter-title mt-4">Coffee Is a Way of Life</h2>

@@ -1154,9 +1154,16 @@ export default function Products() {
         style={{
           background: "linear-gradient(to bottom, #2b1e16 0%, #0b0b0b 100%)",
           borderBottom: "1px solid rgba(161,79,31,0.2)",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <p className="section-subtitle" style={{ color: "#a14f1f" }}>Recommended Products</p>
+        <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0 }}>
+          <div style={{ position: "absolute", top: "38%", left: "-10%", right: "-10%", height: "80px", background: "linear-gradient(to right, transparent 0%, rgba(180,100,30,0.18) 20%, rgba(210,140,50,0.26) 50%, rgba(180,100,30,0.18) 80%, transparent 100%)", filter: "blur(26px)", transform: "rotate(-1.5deg)" }} />
+          <div style={{ position: "absolute", top: "65%", left: "-10%", right: "-10%", height: "44px", background: "linear-gradient(to right, transparent 0%, rgba(160,80,20,0.10) 25%, rgba(195,125,40,0.14) 50%, rgba(160,80,20,0.10) 75%, transparent 100%)", filter: "blur(18px)", transform: "rotate(-1deg)" }} />
+          <div style={{ position: "absolute", inset: 0, width: "28%", background: "linear-gradient(to right, rgba(90,40,10,0.14) 0%, transparent 100%)" }} />
+        </div>
+        <p className="section-subtitle" style={{ color: "#a14f1f", position: "relative", zIndex: 1 }}>Recommended Products</p>
         <h1 className="section-title inter-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
           Coffee Essentials
         </h1>
@@ -1517,8 +1524,13 @@ export default function Products() {
       </div>
 
       {/* TOP PICKS — RECOMMENDED PRODUCTS */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16", position: "relative", overflow: "hidden" }}>
+        <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0 }}>
+          <div style={{ position: "absolute", top: "25%", left: "-10%", right: "-10%", height: "90px", background: "linear-gradient(to right, transparent 0%, rgba(180,100,30,0.18) 20%, rgba(210,140,50,0.26) 50%, rgba(180,100,30,0.18) 80%, transparent 100%)", filter: "blur(26px)", transform: "rotate(-1.5deg)" }} />
+          <div style={{ position: "absolute", top: "50%", left: "-10%", right: "-10%", height: "48px", background: "linear-gradient(to right, transparent 0%, rgba(160,80,20,0.10) 25%, rgba(195,125,40,0.15) 50%, rgba(160,80,20,0.10) 75%, transparent 100%)", filter: "blur(18px)", transform: "rotate(-1deg)" }} />
+          <div style={{ position: "absolute", inset: 0, width: "28%", background: "linear-gradient(to right, rgba(90,40,10,0.14) 0%, transparent 100%)" }} />
+        </div>
+        <div className="max-w-6xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
           <div className="text-center mb-14">
             <p className="section-subtitle">Recommended Products</p>
             <h2 className="section-title inter-title mt-4">Top Espresso Machines</h2>
