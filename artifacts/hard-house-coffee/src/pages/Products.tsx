@@ -1176,7 +1176,7 @@ export default function Products() {
               msOverflowStyle: "none",
             }}
           >
-            <div style={{ display: "flex", gap: "0.75rem", minWidth: "max-content", paddingBottom: "2px" }}>
+            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center", paddingBottom: "2px" }}>
               {categories.map((cat) => (
                 <button
                   key={cat}

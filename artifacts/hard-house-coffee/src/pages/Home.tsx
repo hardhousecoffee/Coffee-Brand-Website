@@ -499,52 +499,74 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Slide indicators */}
+        {/* Slide indicators + closing brand statement */}
         <div
-          className="absolute bottom-8 left-1/2 flex gap-2"
-          style={{ transform: "translateX(-50%)", zIndex: 4 }}
+          className="absolute left-1/2"
+          style={{ bottom: "1.5rem", transform: "translateX(-50%)", zIndex: 4, textAlign: "center" }}
         >
-          {heroSlides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => goToSlide(idx)}
+          {/* Dots */}
+          <div className="flex gap-2 justify-center" style={{ marginBottom: "0.9rem" }}>
+            {heroSlides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => goToSlide(idx)}
+                style={{
+                  width: currentSlide === idx ? "32px" : "8px",
+                  height: "8px",
+                  borderRadius: "4px",
+                  background: currentSlide === idx ? "#a14f1f" : "rgba(242,242,242,0.4)",
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "all 0.4s ease",
+                }}
+              />
+            ))}
+          </div>
+          {/* Brand closing statement */}
+          <div
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? "translateY(0)" : "translateY(10px)",
+              transition: "opacity 1.2s ease 1.5s, transform 1.2s ease 1.5s",
+            }}
+          >
+            <p
               style={{
-                width: currentSlide === idx ? "32px" : "8px",
-                height: "8px",
-                borderRadius: "4px",
-                background: currentSlide === idx ? "#a14f1f" : "rgba(242,242,242,0.4)",
-                border: "none",
-                cursor: "pointer",
-                transition: "all 0.4s ease",
+                fontFamily: "'Dancing Script', cursive",
+                fontSize: "clamp(0.9rem, 1.4vw, 1.1rem)",
+                color: "#d4b896",
+                fontWeight: 400,
+                lineHeight: 1.35,
+                margin: 0,
+                textShadow: "0 1px 8px rgba(0,0,0,0.7)",
+                whiteSpace: "nowrap",
               }}
-            />
-          ))}
+            >
+              Every cup we pour is a statement:
+            </p>
+            <p
+              style={{
+                fontFamily: "'Dancing Script', cursive",
+                fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
+                color: "#d4b896",
+                fontWeight: 600,
+                lineHeight: 1.35,
+                margin: 0,
+                textShadow: "0 1px 8px rgba(0,0,0,0.7)",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Bold, deliberate, and unapologetically premium.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* FEATURED GRID */}
       <section
         className="px-6"
-        style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "3rem", paddingBottom: "2rem" }}
+        style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "1rem", paddingBottom: "2rem" }}
       >
-        <div className="max-w-4xl mx-auto text-center" style={{ marginBottom: "2rem" }}>
-          <p
-            style={{
-              fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
-              fontSize: "clamp(1.25rem, 2.4vw, 1.85rem)",
-              color: "#f0ebe4",
-              fontWeight: 300,
-              lineHeight: 1.55,
-              letterSpacing: "0.01em",
-              margin: 0,
-            }}
-          >
-            Every cup we pour is a statement.{" "}
-            <span style={{ color: "#d4af37", fontWeight: 500 }}>Bold, deliberate,</span>{" "}
-            and unapologetically premium.
-          </p>
-        </div>
-
         {/* Banner: Now Brewing */}
         <PremiumBanner />
 
@@ -589,54 +611,53 @@ export default function Home() {
                   style={{ transition: "transform 0.6s ease", display: "block" }}
                 />
                 <div
-                  className="absolute inset-0 flex flex-col items-start justify-end p-4"
+                  className="absolute inset-0"
                   style={{
                     background: "linear-gradient(to top, rgba(11,11,11,0.92) 0%, transparent 60%)",
                   }}
                 >
+                  {/* Explore — centered, appears on hover */}
+                  <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", zIndex: 10 }}>
+                    <p
+                      onClick={(e) => { e.stopPropagation(); openTile(idx); }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#f2f2f2"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#d4b896"; }}
+                      onTouchStart={(e) => { e.preventDefault(); openTile(idx); }}
+                      className="read-more-hint"
+                      style={{
+                        fontSize: "0.8rem",
+                        color: "#d4b896",
+                        letterSpacing: "0.1em",
+                        opacity: 0,
+                        transform: "translateY(6px)",
+                        transition: "opacity 0.3s ease, transform 0.3s ease",
+                        fontWeight: 600,
+                        userSelect: "none",
+                        cursor: "pointer",
+                        whiteSpace: "nowrap",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Explore →
+                    </p>
+                  </div>
+                  {/* Label — bottom left */}
                   <p
                     style={{
+                      position: "absolute",
+                      bottom: "1rem",
+                      left: "1rem",
                       fontFamily: "'Cinzel Decorative', serif",
                       fontSize: "0.7rem",
                       letterSpacing: "0.15em",
                       color: "#a14f1f",
                       textTransform: "uppercase",
-                      marginBottom: "0.35rem",
-                      transition: "color 0.2s ease",
                       userSelect: "none",
                       pointerEvents: "none",
+                      margin: 0,
                     }}
                   >
                     {item.label}
-                  </p>
-                  <p
-                    onClick={(e) => { e.stopPropagation(); openTile(idx); }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "#f2f2f2";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "#d4b896";
-                    }}
-                    onTouchStart={(e) => {
-                      e.preventDefault();
-                      openTile(idx);
-                    }}
-                    style={{
-                      fontSize: "0.68rem",
-                      color: "#d4b896",
-                      letterSpacing: "0.06em",
-                      opacity: 0,
-                      transform: "translateY(6px)",
-                      transition: "opacity 0.3s ease, transform 0.3s ease",
-                      fontWeight: 500,
-                      userSelect: "none",
-                      cursor: "pointer",
-                      position: "relative",
-                      zIndex: 10,
-                    }}
-                    className="read-more-hint"
-                  >
-                    Explore →
                   </p>
                 </div>
               </button>
