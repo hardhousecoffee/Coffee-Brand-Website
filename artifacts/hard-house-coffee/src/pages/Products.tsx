@@ -970,7 +970,7 @@ export default function Products() {
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-screen-2xl mx-auto px-6 py-12">
         {/* Category filter */}
         <div style={{ position: "relative", marginBottom: "1rem" }}>
           <div
@@ -1076,7 +1076,7 @@ export default function Products() {
         )}
 
         {/* Product grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filtered.map((product) => {
             const isHovered = hoveredId === product.id;
             const variants = (product as any).variants as Array<{ color: string; label: string; affiliateUrl: string; image?: string }> | undefined;
@@ -1350,7 +1350,7 @@ export default function Products() {
             </div>
 
             {/* Beans grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {coffeeBeans.map((bean) => (
                 <div
                   key={bean.id}
