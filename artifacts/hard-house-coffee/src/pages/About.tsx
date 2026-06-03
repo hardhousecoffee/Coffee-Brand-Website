@@ -87,8 +87,8 @@ export default function About() {
             }}
           >
             <img
-              src="/images/coffee-grinder-beans.jpg"
-              alt="Coffee and Grinder"
+              src="/images/about-aroma-desk.png"
+              alt="Hard House Coffee desk scene"
               className="w-full h-full object-cover"
               style={{ filter: "brightness(0.88)" }}
             />
