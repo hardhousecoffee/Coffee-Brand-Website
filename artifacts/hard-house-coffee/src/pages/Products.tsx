@@ -1266,7 +1266,28 @@ export default function Products() {
         {/* Product grid — sectioned in All view, flat in category view */}
         {activeCategory === "All" ? (
           <div>
-            {(["Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories"] as const).map((cat) => {
+            {([
+                {
+                  cat: "Espresso Machines" as const,
+                  subtitle: "Hard House Coffee Picks",
+                  desc: "Expert-tested machines that pull exceptional shots — from entry-level to full barista setups.",
+                },
+                {
+                  cat: "Coffee Machines" as const,
+                  subtitle: "Hard House Coffee Picks",
+                  desc: "Bean-to-cup and drip brewers for every ritual — tested for consistency, flavour, and ease.",
+                },
+                {
+                  cat: "Coffee Grinders" as const,
+                  subtitle: "Hard House Coffee Picks",
+                  desc: "Precision grinders for espresso, filter, and everything in between — the foundation of great coffee.",
+                },
+                {
+                  cat: "Accessories" as const,
+                  subtitle: "Hard House Coffee Picks",
+                  desc: "The tools that elevate your brew — from kettles and tampers to barista kits we use every day.",
+                },
+              ]).map(({ cat, subtitle, desc }) => {
               const catProducts = products.filter((p) => p.category === cat);
               if (!catProducts.length) return null;
               return (
@@ -1274,19 +1295,22 @@ export default function Products() {
                   <div
                     style={{
                       borderTop: "1px solid rgba(161,79,31,0.2)",
-                      paddingTop: "1.5rem",
-                      marginBottom: "1rem",
+                      paddingTop: "2rem",
+                      marginBottom: "1.5rem",
                       textAlign: "center",
                     }}
                   >
-                    <p className="section-subtitle" style={{ color: "#a14f1f" }}>Hard House Coffee</p>
+                    <p className="section-subtitle" style={{ color: "#a14f1f" }}>{subtitle}</p>
                     <div className="divider-orange mx-auto" />
                     <h2
                       className="section-title mt-4"
-                      style={{ fontSize: "clamp(1.2rem,3vw,1.8rem)", fontFamily: "'Inter','Helvetica Neue',sans-serif", textTransform: "uppercase" }}
+                      style={{ fontSize: "clamp(1.6rem,4vw,2.6rem)", fontFamily: "'Inter','Helvetica Neue',sans-serif", textTransform: "uppercase" }}
                     >
                       {cat}
                     </h2>
+                    <p style={{ color: "#b0a090", maxWidth: "520px", margin: "0.75rem auto 0", lineHeight: 1.7, fontSize: "0.9rem" }}>
+                      {desc}
+                    </p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {catProducts.map(renderCard)}
