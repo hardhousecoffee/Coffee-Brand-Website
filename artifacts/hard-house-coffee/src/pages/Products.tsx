@@ -1142,7 +1142,7 @@ export default function Products() {
 
       {/* Page header */}
       <div
-        className="pt-28 pb-6 px-6 text-center"
+        className="pt-24 pb-4 px-6 text-center"
         style={{
           background: "linear-gradient(to bottom, #2b1e16 0%, #0b0b0b 100%)",
           borderBottom: "1px solid rgba(161,79,31,0.2)",
@@ -1158,7 +1158,7 @@ export default function Products() {
         </p>
       </div>
 
-      <div className="max-w-screen-2xl mx-auto px-6 py-6">
+      <div className="max-w-screen-2xl mx-auto px-6 py-4">
         {/* Category filter */}
         <div style={{ position: "relative", marginBottom: "1rem" }}>
           <div
@@ -1295,8 +1295,8 @@ export default function Products() {
                   <div
                     style={{
                       borderTop: "1px solid rgba(161,79,31,0.2)",
-                      paddingTop: "1.25rem",
-                      marginBottom: "0.75rem",
+                      paddingTop: "0.75rem",
+                      marginBottom: "0.5rem",
                       textAlign: "center",
                     }}
                   >
