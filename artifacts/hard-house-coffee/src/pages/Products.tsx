@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
-import { CoffeeDecor } from "@/components/CoffeeDecor";
 const topPicksProducts = [
   {
     id: 1,
@@ -1517,9 +1516,8 @@ export default function Products() {
       </div>
 
       {/* TOP PICKS — RECOMMENDED PRODUCTS */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#1c1008", position: "relative", overflow: "hidden" }}>
-        <CoffeeDecor />
-        <div className="max-w-6xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
+      <section className="py-20 px-6" style={{ backgroundColor: "#1c1008" }}>
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-subtitle">Recommended Products</p>
             <h2 className="section-title inter-title mt-4">Top Espresso Machines</h2>
