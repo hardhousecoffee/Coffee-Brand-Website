@@ -530,9 +530,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VIDEO SECTION */}
-      <VideoSection />
-
       {/* FEATURED GRID */}
       <section
         className="py-20 px-6"
@@ -1058,6 +1055,9 @@ export default function Home() {
           <PremiumBanner reverse phrase={"AROMA FROM THE GROUND UP \u00A0\u00A0\u2736\u00A0\u00A0 "} />
         </div>
       </section>
+
+      {/* VIDEO SECTION */}
+      <VideoSection />
 
       {/* CULTURE SECTION */}
       <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>
