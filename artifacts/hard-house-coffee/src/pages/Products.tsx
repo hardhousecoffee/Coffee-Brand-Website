@@ -4,8 +4,6 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
-import { CoffeeDecor } from "@/components/CoffeeDecor";
-
 const topPicksProducts = [
   {
     id: 1,
@@ -1153,18 +1151,15 @@ export default function Products() {
       <div
         className="pt-24 pb-4 px-6 text-center"
         style={{
-          background: "linear-gradient(to bottom, #1c1008 0%, #0b0b0b 100%)",
+          background: "linear-gradient(to bottom, #2b1e16 0%, #0b0b0b 100%)",
           borderBottom: "1px solid rgba(161,79,31,0.2)",
-          position: "relative",
-          overflow: "hidden",
         }}
       >
-        <CoffeeDecor />
-        <p className="section-subtitle" style={{ color: "#a14f1f", position: "relative", zIndex: 1 }}>Recommended Products</p>
-        <h1 className="section-title inter-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)", position: "relative", zIndex: 1 }}>
+        <p className="section-subtitle" style={{ color: "#a14f1f" }}>Recommended Products</p>
+        <h1 className="section-title inter-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
           Coffee Essentials
         </h1>
-        <p style={{ color: "#b0a090", maxWidth: "480px", margin: "1rem auto 0", lineHeight: 1.7, position: "relative", zIndex: 1 }}>
+        <p style={{ color: "#b0a090", maxWidth: "480px", margin: "1rem auto 0", lineHeight: 1.7 }}>
           Expert-tested espresso machines, coffee makers and brewing gear — curated for serious coffee lovers.
         </p>
       </div>
@@ -1521,9 +1516,8 @@ export default function Products() {
       </div>
 
       {/* TOP PICKS — RECOMMENDED PRODUCTS */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#1c1008", position: "relative", overflow: "hidden" }}>
-        <CoffeeDecor />
-        <div className="max-w-6xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
+      <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-subtitle">Recommended Products</p>
             <h2 className="section-title inter-title mt-4">Top Espresso Machines</h2>

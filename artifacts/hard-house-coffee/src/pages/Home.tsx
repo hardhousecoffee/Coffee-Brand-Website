@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
-import { CoffeeDecor } from "@/components/CoffeeDecor";
 import SteamEffect from "@/components/SteamEffect";
 import SteamEffectSVG from "@/components/SteamEffectSVG";
 import SteamVideoEffect from "@/components/SteamVideoEffect";
@@ -1059,9 +1058,8 @@ export default function Home() {
       <VideoSection />
 
       {/* CULTURE SECTION */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#1c1008", position: "relative", overflow: "hidden" }}>
-        <CoffeeDecor />
-        <div className="max-w-6xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
+      <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16" }}>
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-subtitle">The Culture</p>
             <h2 className="section-title inter-title mt-4">Coffee Is a Way of Life</h2>
