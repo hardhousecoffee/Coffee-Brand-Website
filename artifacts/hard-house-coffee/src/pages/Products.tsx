@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
+import { CoffeeDecor } from "@/components/CoffeeDecor";
 
 const topPicksProducts = [
   {
@@ -1158,16 +1159,12 @@ export default function Products() {
           overflow: "hidden",
         }}
       >
-        <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0 }}>
-          <div style={{ position: "absolute", top: "38%", left: "-10%", right: "-10%", height: "80px", background: "linear-gradient(to right, transparent 0%, rgba(180,100,30,0.18) 20%, rgba(210,140,50,0.26) 50%, rgba(180,100,30,0.18) 80%, transparent 100%)", filter: "blur(26px)", transform: "rotate(-1.5deg)" }} />
-          <div style={{ position: "absolute", top: "65%", left: "-10%", right: "-10%", height: "44px", background: "linear-gradient(to right, transparent 0%, rgba(160,80,20,0.10) 25%, rgba(195,125,40,0.14) 50%, rgba(160,80,20,0.10) 75%, transparent 100%)", filter: "blur(18px)", transform: "rotate(-1deg)" }} />
-          <div style={{ position: "absolute", inset: 0, width: "28%", background: "linear-gradient(to right, rgba(90,40,10,0.14) 0%, transparent 100%)" }} />
-        </div>
+        <CoffeeDecor />
         <p className="section-subtitle" style={{ color: "#a14f1f", position: "relative", zIndex: 1 }}>Recommended Products</p>
-        <h1 className="section-title inter-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
+        <h1 className="section-title inter-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)", position: "relative", zIndex: 1 }}>
           Coffee Essentials
         </h1>
-        <p style={{ color: "#b0a090", maxWidth: "480px", margin: "1rem auto 0", lineHeight: 1.7 }}>
+        <p style={{ color: "#b0a090", maxWidth: "480px", margin: "1rem auto 0", lineHeight: 1.7, position: "relative", zIndex: 1 }}>
           Expert-tested espresso machines, coffee makers and brewing gear — curated for serious coffee lovers.
         </p>
       </div>
@@ -1525,11 +1522,7 @@ export default function Products() {
 
       {/* TOP PICKS — RECOMMENDED PRODUCTS */}
       <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16", position: "relative", overflow: "hidden" }}>
-        <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0 }}>
-          <div style={{ position: "absolute", top: "25%", left: "-10%", right: "-10%", height: "90px", background: "linear-gradient(to right, transparent 0%, rgba(180,100,30,0.18) 20%, rgba(210,140,50,0.26) 50%, rgba(180,100,30,0.18) 80%, transparent 100%)", filter: "blur(26px)", transform: "rotate(-1.5deg)" }} />
-          <div style={{ position: "absolute", top: "50%", left: "-10%", right: "-10%", height: "48px", background: "linear-gradient(to right, transparent 0%, rgba(160,80,20,0.10) 25%, rgba(195,125,40,0.15) 50%, rgba(160,80,20,0.10) 75%, transparent 100%)", filter: "blur(18px)", transform: "rotate(-1deg)" }} />
-          <div style={{ position: "absolute", inset: 0, width: "28%", background: "linear-gradient(to right, rgba(90,40,10,0.14) 0%, transparent 100%)" }} />
-        </div>
+        <CoffeeDecor />
         <div className="max-w-6xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
           <div className="text-center mb-14">
             <p className="section-subtitle">Recommended Products</p>
