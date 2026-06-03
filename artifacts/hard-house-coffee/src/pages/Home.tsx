@@ -969,7 +969,7 @@ export default function Home() {
                         </h3>
 
                         {/* Body text */}
-                        <p style={{ color: "#a89880", fontSize: "0.88rem", lineHeight: 1.75 }}>
+                        <p style={{ color: "#a89880", fontSize: "0.88rem", lineHeight: 1.75, textAlign: "justify", hyphens: "auto" }}>
                           {m.text}
                         </p>
 
