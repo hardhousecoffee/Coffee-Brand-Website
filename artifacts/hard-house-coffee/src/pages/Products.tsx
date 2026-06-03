@@ -1030,6 +1030,10 @@ export default function Products() {
               color: "#f2f2f2",
               fontWeight: 700,
               zIndex: 2,
+              maxWidth: "52%",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
             }}
           >
             {product.badge}
@@ -1044,6 +1048,10 @@ export default function Products() {
               fontWeight: 600,
               zIndex: 2,
               letterSpacing: "0.05em",
+              maxWidth: "52%",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
             }}
           >
             {product.category}
