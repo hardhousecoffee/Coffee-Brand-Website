@@ -18,6 +18,12 @@ const heroSlides = [
   { src: "/images/bar-mug.jpg", alt: "Coffee at Bar" },
   { src: "/images/steamy-mug.jpg", alt: "Steamy Mug" },
   { src: "/images/espresso-machine.jpg", alt: "Espresso Machine" },
+  { src: "/images/carousel-neon-coffee.jpg", alt: "Neon Coffee Sign" },
+  { src: "/images/carousel-man-drinking.jpg", alt: "Man Drinking Coffee" },
+  { src: "/images/carousel-woman-teapot.jpg", alt: "Woman with Teapot" },
+  { src: "/images/carousel-black-cafe.jpg", alt: "Black Cafe Exterior" },
+  { src: "/images/carousel-we-have-coffee.jpg", alt: "We Have Coffee Neon" },
+  { src: "/images/carousel-espresso-splash.jpg", alt: "Espresso Splash" },
 ];
 
 const experienceTiles = [
@@ -1129,7 +1135,7 @@ export default function Home() {
           style={{
             backgroundImage: "url('/images/coffee-oclock.png')",
             backgroundSize: "cover",
-            backgroundPosition: "center center",
+            backgroundPosition: "center 25%",
             filter: "brightness(0.25)",
           }}
         />
