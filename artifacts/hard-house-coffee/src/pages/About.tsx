@@ -188,29 +188,46 @@ export default function About() {
         <div
           className="text-center py-16 px-8"
           style={{
-            background: "#2b1e16",
-            borderRadius: "10px",
-            border: "1px solid rgba(161,79,31,0.25)",
+            position: "relative",
+            borderRadius: "12px",
+            border: "1px solid rgba(161,79,31,0.3)",
+            overflow: "hidden",
+            backgroundImage: "url('/images/cta-espresso-splash.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center 40%",
           }}
         >
-          <h2
+          {/* Dark overlay for text legibility */}
+          <div
+            aria-hidden="true"
             style={{
-              fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
-              fontSize: "clamp(1.4rem, 3vw, 2.2rem)",
-              color: "#f2f2f2",
-              marginBottom: "1rem",
-              textTransform: "uppercase",
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to bottom, rgba(11,11,11,0.72) 0%, rgba(11,11,11,0.60) 50%, rgba(11,11,11,0.82) 100%)",
+              pointerEvents: "none",
             }}
-          >
-            Ready to Elevate Your Coffee?
-          </h2>
-          <p style={{ color: "#b0a090", maxWidth: "440px", margin: "0 auto 2rem", lineHeight: 1.7 }}>
-            Explore our guides and gear recommendations to find your perfect setup.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/blog">
-              <button className="btn-primary">Read the Blog</button>
-            </Link>
+          />
+          {/* Content sits above the overlay */}
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <h2
+              style={{
+                fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
+                fontSize: "clamp(1.4rem, 3vw, 2.2rem)",
+                color: "#f2f2f2",
+                marginBottom: "1rem",
+                textTransform: "uppercase",
+              }}
+            >
+              Ready to Elevate Your Coffee?
+            </h2>
+            <p style={{ color: "#d4c8bb", maxWidth: "440px", margin: "0 auto 2rem", lineHeight: 1.7 }}>
+              Explore our guides and gear recommendations to find your perfect setup.
+            </p>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Link href="/blog">
+                <button className="btn-primary">Read the Blog</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
