@@ -1142,7 +1142,7 @@ export default function Products() {
 
       {/* Page header */}
       <div
-        className="pt-32 pb-16 px-6 text-center"
+        className="pt-28 pb-6 px-6 text-center"
         style={{
           background: "linear-gradient(to bottom, #2b1e16 0%, #0b0b0b 100%)",
           borderBottom: "1px solid rgba(161,79,31,0.2)",
@@ -1158,7 +1158,7 @@ export default function Products() {
         </p>
       </div>
 
-      <div className="max-w-screen-2xl mx-auto px-6 py-12">
+      <div className="max-w-screen-2xl mx-auto px-6 py-6">
         {/* Category filter */}
         <div style={{ position: "relative", marginBottom: "1rem" }}>
           <div
@@ -1295,20 +1295,20 @@ export default function Products() {
                   <div
                     style={{
                       borderTop: "1px solid rgba(161,79,31,0.2)",
-                      paddingTop: "2rem",
-                      marginBottom: "1.5rem",
+                      paddingTop: "1.25rem",
+                      marginBottom: "0.75rem",
                       textAlign: "center",
                     }}
                   >
                     <p className="section-subtitle" style={{ color: "#a14f1f" }}>{subtitle}</p>
                     <div className="divider-orange mx-auto" />
                     <h2
-                      className="section-title mt-4"
-                      style={{ fontSize: "clamp(1.6rem,4vw,2.6rem)", fontFamily: "'Inter','Helvetica Neue',sans-serif", textTransform: "uppercase" }}
+                      className="section-title mt-2"
+                      style={{ fontSize: "clamp(1.4rem,3.5vw,2rem)", fontFamily: "'Inter','Helvetica Neue',sans-serif", textTransform: "uppercase" }}
                     >
                       {cat}
                     </h2>
-                    <p style={{ color: "#b0a090", maxWidth: "520px", margin: "0.75rem auto 0", lineHeight: 1.7, fontSize: "0.9rem" }}>
+                    <p style={{ color: "#b0a090", maxWidth: "520px", margin: "0.4rem auto 0", lineHeight: 1.6, fontSize: "0.85rem" }}>
                       {desc}
                     </p>
                   </div>
