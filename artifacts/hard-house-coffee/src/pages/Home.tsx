@@ -602,18 +602,18 @@ export default function Home() {
                   <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", zIndex: 10 }}>
                     <p
                       onClick={(e) => { e.stopPropagation(); openTile(idx); }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#f2f2f2"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#d4b896"; }}
+                      onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = "#f2f2f2"; el.style.textShadow = "0 0 10px rgba(242,242,242,0.7), 0 0 20px rgba(212,184,150,0.45)"; }}
+                      onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = "#d4b896"; el.style.textShadow = "none"; }}
                       onTouchStart={(e) => { e.preventDefault(); openTile(idx); }}
                       className="read-more-hint"
                       style={{
-                        fontSize: "0.8rem",
+                        fontSize: "0.92rem",
                         color: "#d4b896",
                         letterSpacing: "0.1em",
                         opacity: 0,
                         transform: "translateY(6px)",
                         transition: "opacity 0.3s ease, transform 0.3s ease",
-                        fontWeight: 600,
+                        fontWeight: 700,
                         userSelect: "none",
                         cursor: "pointer",
                         whiteSpace: "nowrap",
