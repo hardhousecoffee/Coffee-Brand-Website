@@ -79,18 +79,31 @@ export default function About() {
           </div>
           <div
             style={{
-              borderRadius: "8px",
-              border: "1px solid rgba(161,79,31,0.3)",
+              borderRadius: "12px",
               overflow: "hidden",
               aspectRatio: "4/3",
               position: "relative",
+              maskImage: "radial-gradient(ellipse 92% 88% at 50% 50%, black 48%, transparent 100%)",
+              WebkitMaskImage: "radial-gradient(ellipse 92% 88% at 50% 50%, black 48%, transparent 100%)",
             }}
           >
             <img
               src="/images/about-aroma-desk.png"
               alt="Hard House Coffee desk scene"
               className="w-full h-full object-cover"
-              style={{ filter: "brightness(0.88)" }}
+              style={{ filter: "brightness(0.82) saturate(1.05)" }}
+            />
+            {/* Edge vignette — darkens all four sides */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: [
+                  "radial-gradient(ellipse 110% 110% at 50% 50%, transparent 38%, rgba(11,11,11,0.55) 72%, rgba(11,11,11,0.92) 100%)",
+                ].join(","),
+                pointerEvents: "none",
+              }}
             />
             {/* Steam wisps overlay */}
             <div className="about-steam-overlay" aria-hidden="true">
