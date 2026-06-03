@@ -1135,7 +1135,7 @@ export default function Home() {
           style={{
             backgroundImage: "url('/images/coffee-oclock.jpg')",
             backgroundSize: "cover",
-            backgroundPosition: "center 5%",
+            backgroundPosition: "center 45%",
             filter: "brightness(0.25)",
           }}
         />
