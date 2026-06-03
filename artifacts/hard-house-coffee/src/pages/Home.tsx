@@ -67,7 +67,7 @@ const experienceTiles = [
     src: "/images/atmosphere-cafe.png",
     label: "Atmosphere",
     modal: {
-      title: "The Hard House Feel",
+      title: "The Hard House Jazz Feel",
       text: "It's not just about coffee. It's about how it feels. The glow of the room, the smell of fresh grounds, the first sip, and the quiet moment before the day starts.",
       image: "/images/exp-atmosphere.jpg",
       buttonLabel: "Watch the Experience",
@@ -673,7 +673,7 @@ export default function Home() {
                     to   { opacity: 1; transform: translateY(0) scale(1); }
                   }
                   .hhc-modal-inner { display: flex; flex-direction: row; min-height: 360px; }
-                  .hhc-modal-img-panel { flex: 0 0 38%; position: relative; overflow: hidden; }
+                  .hhc-modal-img-panel { flex: 0 0 46%; position: relative; overflow: hidden; }
                   @media (max-width: 600px) {
                     .hhc-modal-inner { flex-direction: column; min-height: unset; }
                     .hhc-modal-img-panel { flex: 0 0 160px; width: 100%; }
@@ -962,13 +962,14 @@ export default function Home() {
                             color: "#f2f2f2",
                             lineHeight: 1.4,
                             marginTop: "-0.4rem",
+                            marginLeft: "0.25rem",
                           }}
                         >
                           {m.title}
                         </h3>
 
                         {/* Body text */}
-                        <p style={{ color: "#a89880", fontSize: "0.88rem", lineHeight: 1.75 }}>
+                        <p style={{ color: "#a89880", fontSize: "0.88rem", lineHeight: 1.75, maxWidth: "22ch" }}>
                           {m.text}
                         </p>
 
@@ -1020,7 +1021,7 @@ export default function Home() {
                             <button
                               onClick={() => setShowAtmosphereVideo(true)}
                               className="btn-primary"
-                              style={{ width: "100%", fontSize: "0.74rem", letterSpacing: "0.1em" }}
+                              style={{ fontSize: "0.74rem", letterSpacing: "0.1em", padding: "0.6rem 1.1rem", alignSelf: "flex-start" }}
                             >
                               {m.buttonLabel}
                             </button>
@@ -1029,7 +1030,7 @@ export default function Home() {
                               <button
                                 onClick={() => setActiveExperience(null)}
                                 className="btn-primary"
-                                style={{ width: "100%", fontSize: "0.74rem", letterSpacing: "0.1em" }}
+                                style={{ fontSize: "0.74rem", letterSpacing: "0.1em", padding: "0.6rem 1.1rem" }}
                               >
                                 {m.buttonLabel}
                               </button>
