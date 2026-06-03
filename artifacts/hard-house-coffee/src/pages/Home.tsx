@@ -673,7 +673,7 @@ export default function Home() {
                     to   { opacity: 1; transform: translateY(0) scale(1); }
                   }
                   .hhc-modal-inner { display: flex; flex-direction: row; min-height: 360px; }
-                  .hhc-modal-img-panel { flex: 0 0 46%; position: relative; overflow: hidden; }
+                  .hhc-modal-img-panel { flex: 0 0 54%; position: relative; overflow: hidden; }
                   @media (max-width: 600px) {
                     .hhc-modal-inner { flex-direction: column; min-height: unset; }
                     .hhc-modal-img-panel { flex: 0 0 160px; width: 100%; }
