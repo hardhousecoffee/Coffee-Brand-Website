@@ -488,7 +488,7 @@ export default function Home() {
             >
               Aroma From the Ground Up!
             </p>
-            <div className="flex gap-3 justify-center flex-nowrap hero-buttons-row" style={{ marginBottom: "2.5rem" }}>
+            <div className="flex gap-3 justify-center flex-nowrap hero-buttons-row" style={{ marginBottom: "1.4rem" }}>
               <Link href="/blog">
                 <button className="btn-primary">Explore the Blog</button>
               </Link>
@@ -496,69 +496,68 @@ export default function Home() {
                 <button className="btn-secondary">Shop</button>
               </Link>
             </div>
+
+            {/* Brand closing statement — final word of the hero */}
+            <div
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(10px)",
+                transition: "opacity 1.2s ease 1.5s, transform 1.2s ease 1.5s",
+                textAlign: "center",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "'Dancing Script', cursive",
+                  fontSize: "clamp(1.15rem, 1.8vw, 1.45rem)",
+                  color: "#f2f2f2",
+                  fontWeight: 400,
+                  lineHeight: 1.35,
+                  margin: 0,
+                  textShadow: "0 1px 10px rgba(0,0,0,0.85)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Every cup we pour is a statement:
+              </p>
+              <p
+                style={{
+                  fontFamily: "'Dancing Script', cursive",
+                  fontSize: "clamp(1.45rem, 2.3vw, 1.85rem)",
+                  color: "#f2f2f2",
+                  fontWeight: 600,
+                  lineHeight: 1.35,
+                  margin: 0,
+                  textShadow: "0 1px 10px rgba(0,0,0,0.85)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Bold, deliberate, and unapologetically premium.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Slide indicators + closing brand statement */}
+        {/* Slide indicators */}
         <div
-          className="absolute left-1/2"
-          style={{ bottom: "1.5rem", transform: "translateX(-50%)", zIndex: 4, textAlign: "center" }}
+          className="absolute bottom-8 left-1/2 flex gap-2"
+          style={{ transform: "translateX(-50%)", zIndex: 4 }}
         >
-          {/* Dots */}
-          <div className="flex gap-2 justify-center" style={{ marginBottom: "0.9rem" }}>
-            {heroSlides.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => goToSlide(idx)}
-                style={{
-                  width: currentSlide === idx ? "32px" : "8px",
-                  height: "8px",
-                  borderRadius: "4px",
-                  background: currentSlide === idx ? "#a14f1f" : "rgba(242,242,242,0.4)",
-                  border: "none",
-                  cursor: "pointer",
-                  transition: "all 0.4s ease",
-                }}
-              />
-            ))}
-          </div>
-          {/* Brand closing statement */}
-          <div
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? "translateY(0)" : "translateY(10px)",
-              transition: "opacity 1.2s ease 1.5s, transform 1.2s ease 1.5s",
-            }}
-          >
-            <p
+          {heroSlides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => goToSlide(idx)}
               style={{
-                fontFamily: "'Dancing Script', cursive",
-                fontSize: "clamp(0.9rem, 1.4vw, 1.1rem)",
-                color: "#d4b896",
-                fontWeight: 400,
-                lineHeight: 1.35,
-                margin: 0,
-                textShadow: "0 1px 8px rgba(0,0,0,0.7)",
-                whiteSpace: "nowrap",
+                width: currentSlide === idx ? "32px" : "8px",
+                height: "8px",
+                borderRadius: "4px",
+                background: currentSlide === idx ? "#a14f1f" : "rgba(242,242,242,0.4)",
+                border: "none",
+                cursor: "pointer",
+                transition: "all 0.4s ease",
               }}
-            >
-              Every cup we pour is a statement:
-            </p>
-            <p
-              style={{
-                fontFamily: "'Dancing Script', cursive",
-                fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
-                color: "#d4b896",
-                fontWeight: 600,
-                lineHeight: 1.35,
-                margin: 0,
-                textShadow: "0 1px 8px rgba(0,0,0,0.7)",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Bold, deliberate, and unapologetically premium.
-            </p>
-          </div>
+            />
+          ))}
         </div>
       </section>
 
