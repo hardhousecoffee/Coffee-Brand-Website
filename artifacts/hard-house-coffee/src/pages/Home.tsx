@@ -603,12 +603,13 @@ export default function Home() {
                     <p
                       onClick={(e) => { e.stopPropagation(); openTile(idx); }}
                       onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = "#f2f2f2"; el.style.textShadow = "0 0 10px rgba(242,242,242,0.7), 0 0 20px rgba(212,184,150,0.45)"; }}
-                      onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = "#a14f1f"; el.style.textShadow = "none"; }}
+                      onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = "#ff6a00"; el.style.textShadow = "0 0 8px rgba(255,106,0,0.6)"; }}
                       onTouchStart={(e) => { e.preventDefault(); openTile(idx); }}
                       className="read-more-hint"
                       style={{
                         fontSize: "0.92rem",
-                        color: "#a14f1f",
+                        color: "#ff6a00",
+                        textShadow: "0 0 8px rgba(255,106,0,0.6)",
                         letterSpacing: "0.1em",
                         opacity: 0,
                         transform: "translateY(6px)",
