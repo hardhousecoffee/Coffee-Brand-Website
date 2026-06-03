@@ -539,7 +539,7 @@ export default function Home() {
               textShadow: "0 1px 8px rgba(0,0,0,0.5)",
             }}
           >
-            Every cup we pour is a statement: Bold, deliberate, and unapologetically premium.
+            Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
           </p>
         </div>
 
