@@ -1165,10 +1165,11 @@ export default function Home() {
           >
             Whether it's 5am or midnight, Hard House Coffee is your anchor. Bold, consistent, and always worth savoring.
           </p>
+          <Link href="/blog">
+            <button className="btn-primary">Explore the Blog</button>
+          </Link>
         </div>
       </section>
-
-      <PageNav nextPath="/blog" nextLabel="Read the Blog" />
       <Footer />
     </div>
   );
