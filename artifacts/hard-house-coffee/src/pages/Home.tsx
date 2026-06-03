@@ -1136,10 +1136,10 @@ export default function Home() {
             backgroundImage: "url('/images/coffee-oclock.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center 45%",
-            filter: "brightness(0.25)",
+            filter: "brightness(0.45)",
           }}
         />
-        <div className="absolute inset-0" style={{ background: "rgba(11,11,11,0.6)" }} />
+        <div className="absolute inset-0" style={{ background: "rgba(11,11,11,0.35)" }} />
         <div className="relative" style={{ zIndex: 2 }}>
           <p className="section-subtitle" style={{ color: "#a14f1f" }}>
             Stay Grounded
