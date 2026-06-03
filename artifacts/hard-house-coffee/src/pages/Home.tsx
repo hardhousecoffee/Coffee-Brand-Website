@@ -525,7 +525,7 @@ export default function Home() {
       {/* FEATURED GRID */}
       <section
         className="px-6"
-        style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "3rem", paddingBottom: "2rem" }}
+        style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "1.5rem", paddingBottom: "2rem" }}
       >
         <div className="max-w-4xl mx-auto text-center" style={{ marginBottom: "2rem" }}>
           <p
