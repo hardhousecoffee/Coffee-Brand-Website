@@ -115,6 +115,58 @@ export default function About() {
           </div>
         </div>
 
+        {/* Values */}
+        <div className="text-center mb-14">
+          <p className="section-subtitle" style={{ color: "#a14f1f" }}>What We Stand For</p>
+          <div className="divider-orange mx-auto" />
+          <h2 className="section-title inter-title mt-4">Our Values</h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+          {[
+            {
+              icon: "☕",
+              title: "Uncompromising Quality",
+              desc: "We test every product and try every technique before we recommend it. If we wouldn't use it ourselves, it doesn't make the cut.",
+            },
+            {
+              icon: "🔍",
+              title: "Radical Honesty",
+              desc: "No fluff, no paid placements masquerading as reviews. Our opinions are our own, and we'll tell you exactly what we think.",
+            },
+            {
+              icon: "🌱",
+              title: "Deep Knowledge",
+              desc: "We go beyond surface-level reviews. Our guides are built on real experience, hours of research, and a genuine love of coffee.",
+            },
+          ].map((val) => (
+            <div
+              key={val.title}
+              className="p-8 text-center"
+              style={{
+                background: "#131313",
+                borderRadius: "8px",
+                border: "1px solid rgba(161,79,31,0.2)",
+              }}
+            >
+              <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>{val.icon}</div>
+              <h3
+                style={{
+                  fontSize: "0.95rem",
+                  fontWeight: 700,
+                  color: "#f2f2f2",
+                  letterSpacing: "0.05em",
+                  marginBottom: "0.8rem",
+                  textTransform: "uppercase",
+                }}
+              >
+                {val.title}
+              </h3>
+              <p style={{ color: "#b0a090", fontSize: "0.85rem", lineHeight: 1.7 }}>{val.desc}</p>
+            </div>
+          ))}
+        </div>
+
         {/* CTA */}
         <div
           className="text-center py-20 px-8"
