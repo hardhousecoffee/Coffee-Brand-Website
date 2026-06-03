@@ -166,7 +166,7 @@ export default function Navbar() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "0.35rem",
+                  gap: "0.55rem",
                   background: "none",
                   border: "none",
                   cursor: "pointer",
@@ -175,10 +175,10 @@ export default function Navbar() {
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   fontFamily: "'Cinzel Decorative', serif",
-                  padding: 0,
+                  padding: "0.25rem 0",
                 }}
               >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="arrow-pulse">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="arrow-pulse" style={{ flexShrink: 0 }}>
                   <line x1="19" y1="12" x2="5" y2="12" />
                   <polyline points="12 19 5 12 12 5" />
                 </svg>

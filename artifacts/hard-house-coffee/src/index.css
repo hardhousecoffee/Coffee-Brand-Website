@@ -409,12 +409,13 @@ a, button {
     margin-top: max(calc(-29.7vw + 36px), -112px) !important;
   }
 
-  /* Tighten title */
+  /* Tighten title — cap font at the size it renders on iPhone SE (375px)
+     so wider phones get more breathing room rather than a bigger title */
   .hero-text-block h1 {
-    font-size: clamp(1.4rem, 7vw, 2.2rem) !important;
+    font-size: clamp(1.4rem, 7vw, 1.65rem) !important;
     letter-spacing: 0.07em !important;
     margin-bottom: 0.5rem !important;
-    padding: 0 0.5rem !important;
+    padding: 0 1.25rem !important;
   }
 
   /* Tighten slogan */
