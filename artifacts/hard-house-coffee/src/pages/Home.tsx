@@ -70,8 +70,6 @@ const experienceTiles = [
       title: "The Hard House Feel",
       text: "It's not just about coffee. It's about how it feels. The glow of the room, the smell of fresh grounds, the first sip, and the quiet moment before the day starts.",
       image: "/images/exp-atmosphere.jpg",
-      imagePosition: "62% center",
-      imageScale: 1.15,
       buttonLabel: "Watch the Experience",
       buttonHref: null,
       steps: null as string[] | null,
