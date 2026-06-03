@@ -1133,7 +1133,7 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/images/coffee-oclock.png')",
+            backgroundImage: "url('/images/coffee-oclock.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center 25%",
             filter: "brightness(0.25)",
