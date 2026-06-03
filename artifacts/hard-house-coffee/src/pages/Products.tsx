@@ -1271,9 +1271,22 @@ export default function Products() {
               if (!catProducts.length) return null;
               return (
                 <div key={cat} style={{ marginBottom: "2rem" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "1rem", paddingTop: "1.25rem", paddingBottom: "0.75rem" }}>
-                    <h2 style={{ fontFamily: "'Inter','Helvetica Neue',sans-serif", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#d4b896", whiteSpace: "nowrap", margin: 0 }}>{cat}</h2>
-                    <div style={{ flex: 1, height: "1px", background: "rgba(161,79,31,0.2)" }} />
+                  <div
+                    style={{
+                      borderTop: "1px solid rgba(161,79,31,0.2)",
+                      paddingTop: "1.5rem",
+                      marginBottom: "1rem",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p className="section-subtitle" style={{ color: "#a14f1f" }}>Hard House Coffee</p>
+                    <div className="divider-orange mx-auto" />
+                    <h2
+                      className="section-title mt-4"
+                      style={{ fontSize: "clamp(1.2rem,3vw,1.8rem)", fontFamily: "'Inter','Helvetica Neue',sans-serif", textTransform: "uppercase" }}
+                    >
+                      {cat}
+                    </h2>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {catProducts.map(renderCard)}
