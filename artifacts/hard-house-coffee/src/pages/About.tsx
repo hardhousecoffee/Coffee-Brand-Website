@@ -186,29 +186,56 @@ export default function About() {
 
         {/* CTA */}
         <div
-          className="text-center py-16 px-8"
+          className="text-center py-20 px-8"
           style={{
             position: "relative",
             borderRadius: "12px",
             border: "1px solid rgba(161,79,31,0.3)",
             overflow: "hidden",
-            backgroundImage: "url('/images/cta-espresso-splash.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center 40%",
+            minHeight: "340px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          {/* Dark overlay for text legibility */}
+          {/* YouTube video background — muted, autoplay, looped, no controls */}
           <div
             aria-hidden="true"
             style={{
               position: "absolute",
               inset: 0,
-              background: "linear-gradient(to bottom, rgba(11,11,11,0.72) 0%, rgba(11,11,11,0.60) 50%, rgba(11,11,11,0.82) 100%)",
+              pointerEvents: "none",
+              overflow: "hidden",
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/wzEiZdcss88?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0&showinfo=0&playlist=wzEiZdcss88"
+              title="Espresso cinematic background"
+              allow="autoplay; encrypted-media"
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                width: "200%",
+                height: "200%",
+                transform: "translate(-50%, -50%)",
+                border: "none",
+                pointerEvents: "none",
+              }}
+            />
+          </div>
+          {/* Dark gradient overlay for text legibility */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to bottom, rgba(11,11,11,0.78) 0%, rgba(11,11,11,0.58) 50%, rgba(11,11,11,0.88) 100%)",
               pointerEvents: "none",
             }}
           />
           {/* Content sits above the overlay */}
-          <div style={{ position: "relative", zIndex: 1 }}>
+          <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
             <h2
               style={{
                 fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
