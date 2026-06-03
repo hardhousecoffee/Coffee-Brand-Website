@@ -1,100 +1,148 @@
+import { useEffect, useRef } from "react";
+
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  life: number;
+  maxLife: number;
+  size: number;
+  opacity: number;
+}
+
 export function CoffeeDecor() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    };
+    resize();
+
+    // Smoke source positions across the bottom (as fraction of width)
+    const sources = [0.08, 0.22, 0.38, 0.54, 0.68, 0.82];
+    const particles: Particle[] = [];
+
+    const spawn = () => {
+      const srcX = sources[Math.floor(Math.random() * sources.length)];
+      particles.push({
+        x: srcX * canvas.width + (Math.random() - 0.5) * 24,
+        y: canvas.height + 10,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: -(0.7 + Math.random() * 0.9),
+        life: 0,
+        maxLife: 200 + Math.random() * 140,
+        size: 6 + Math.random() * 10,
+        opacity: 0,
+      });
+    };
+
+    // Pre-seed some particles so there's something visible immediately
+    for (let i = 0; i < 12; i++) {
+      const srcX = sources[i % sources.length];
+      const progress = Math.random();
+      const maxLife = 200 + Math.random() * 140;
+      const life = progress * maxLife;
+      const travelY = (life * (0.7 + Math.random() * 0.9));
+      particles.push({
+        x: srcX * (canvas.offsetWidth || 800) + (Math.random() - 0.5) * 24,
+        y: (canvas.offsetHeight || 400) + 10 - travelY,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: -(0.7 + Math.random() * 0.9),
+        life,
+        maxLife,
+        size: 6 + Math.random() * 10 + progress * 18,
+        opacity: 0,
+      });
+    }
+
+    let frame = 0;
+    let animId: number;
+
+    const tick = () => {
+      if (!canvas.isConnected) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Spawn a new particle every 6 frames
+      if (frame % 6 === 0) spawn();
+      frame++;
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+
+        // Move
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life++;
+
+        // Organic sway
+        p.vx += (Math.random() - 0.5) * 0.07;
+        p.vx *= 0.96;
+
+        // Grow as it rises (dissipation)
+        p.size += 0.15;
+
+        // Opacity curve: fade in → hold → fade out
+        const t = p.life / p.maxLife;
+        if (t < 0.15) {
+          p.opacity = (t / 0.15) * 0.5;
+        } else if (t < 0.65) {
+          p.opacity = 0.5;
+        } else {
+          p.opacity = ((1 - t) / 0.35) * 0.5;
+        }
+
+        // Remove when done or off-screen
+        if (p.life >= p.maxLife || p.y < -p.size * 2) {
+          particles.splice(i, 1);
+          continue;
+        }
+
+        // Draw soft radial smoke puff
+        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size);
+        grad.addColorStop(0, `rgba(215, 195, 170, ${p.opacity})`);
+        grad.addColorStop(0.5, `rgba(215, 195, 170, ${p.opacity * 0.5})`);
+        grad.addColorStop(1, `rgba(215, 195, 170, 0)`);
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+      }
+
+      animId = requestAnimationFrame(tick);
+    };
+
+    tick();
+
+    const ro = new ResizeObserver(resize);
+    ro.observe(canvas);
+
+    return () => {
+      cancelAnimationFrame(animId);
+      ro.disconnect();
+    };
+  }, []);
+
   return (
-    <div
+    <canvas
+      ref={canvasRef}
       aria-hidden="true"
-      style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }}
-    >
-      <style>{`
-        /* Rising motion — narrows at bottom, spreads as it climbs */
-        @keyframes steam-rise {
-          0%   { transform: translateY(0)    scaleX(1);   opacity: 0; }
-          8%   { opacity: 0.55; }
-          60%  { opacity: 0.32; }
-          100% { transform: translateY(-115%) scaleX(3.2); opacity: 0; }
-        }
-        /* Gentle organic sway variants */
-        @keyframes sway-a {
-          0%, 100% { transform: translateX(0px); }
-          28%      { transform: translateX(13px); }
-          65%      { transform: translateX(-9px); }
-        }
-        @keyframes sway-b {
-          0%, 100% { transform: translateX(0px); }
-          35%      { transform: translateX(-15px); }
-          72%      { transform: translateX(10px); }
-        }
-        @keyframes sway-c {
-          0%, 100% { transform: translateX(0px); }
-          42%      { transform: translateX(11px); }
-          78%      { transform: translateX(-13px); }
-        }
-      `}</style>
-
-      {/* Wisp 1 */}
-      <div style={{ position: "absolute", bottom: 0, left: "12%", animation: "sway-a 4.1s ease-in-out infinite" }}>
-        <div style={{
-          width: "28px", height: "60%",
-          background: "linear-gradient(to top, rgba(230,210,185,0.75) 0%, rgba(230,210,185,0) 100%)",
-          filter: "blur(10px)",
-          transformOrigin: "bottom center",
-          animation: "steam-rise 7.5s ease-in-out infinite",
-        }} />
-      </div>
-
-      {/* Wisp 2 */}
-      <div style={{ position: "absolute", bottom: 0, left: "26%", animation: "sway-b 5.2s ease-in-out infinite 1.4s" }}>
-        <div style={{
-          width: "22px", height: "52%",
-          background: "linear-gradient(to top, rgba(225,205,180,0.65) 0%, rgba(225,205,180,0) 100%)",
-          filter: "blur(8px)",
-          transformOrigin: "bottom center",
-          animation: "steam-rise 9.2s ease-in-out infinite 2.1s",
-        }} />
-      </div>
-
-      {/* Wisp 3 — tallest, centre-left */}
-      <div style={{ position: "absolute", bottom: 0, left: "40%", animation: "sway-a 3.8s ease-in-out infinite 0.6s" }}>
-        <div style={{
-          width: "32px", height: "72%",
-          background: "linear-gradient(to top, rgba(235,215,190,0.70) 0%, rgba(235,215,190,0) 100%)",
-          filter: "blur(12px)",
-          transformOrigin: "bottom center",
-          animation: "steam-rise 8.0s ease-in-out infinite 0.5s",
-        }} />
-      </div>
-
-      {/* Wisp 4 — centre-right */}
-      <div style={{ position: "absolute", bottom: 0, left: "55%", animation: "sway-c 4.6s ease-in-out infinite 2.8s" }}>
-        <div style={{
-          width: "24px", height: "58%",
-          background: "linear-gradient(to top, rgba(228,208,183,0.60) 0%, rgba(228,208,183,0) 100%)",
-          filter: "blur(9px)",
-          transformOrigin: "bottom center",
-          animation: "steam-rise 10.5s ease-in-out infinite 3.5s",
-        }} />
-      </div>
-
-      {/* Wisp 5 */}
-      <div style={{ position: "absolute", bottom: 0, left: "69%", animation: "sway-b 4.9s ease-in-out infinite 1.0s" }}>
-        <div style={{
-          width: "26px", height: "64%",
-          background: "linear-gradient(to top, rgba(232,212,187,0.68) 0%, rgba(232,212,187,0) 100%)",
-          filter: "blur(11px)",
-          transformOrigin: "bottom center",
-          animation: "steam-rise 8.8s ease-in-out infinite 1.2s",
-        }} />
-      </div>
-
-      {/* Wisp 6 */}
-      <div style={{ position: "absolute", bottom: 0, left: "82%", animation: "sway-a 5.5s ease-in-out infinite 3.3s" }}>
-        <div style={{
-          width: "20px", height: "50%",
-          background: "linear-gradient(to top, rgba(222,202,177,0.62) 0%, rgba(222,202,177,0) 100%)",
-          filter: "blur(8px)",
-          transformOrigin: "bottom center",
-          animation: "steam-rise 7.2s ease-in-out infinite 4.0s",
-        }} />
-      </div>
-    </div>
+      style={{
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+        pointerEvents: "none",
+        zIndex: 0,
+      }}
+    />
   );
 }
