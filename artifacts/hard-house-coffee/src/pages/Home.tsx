@@ -488,7 +488,7 @@ export default function Home() {
             >
               Aroma From the Ground Up!
             </p>
-            <div className="flex gap-3 justify-center flex-nowrap hero-buttons-row" style={{ marginBottom: "1.4rem" }}>
+            <div className="flex gap-3 justify-center flex-nowrap hero-buttons-row" style={{ marginBottom: "2.5rem" }}>
               <Link href="/blog">
                 <button className="btn-primary">Explore the Blog</button>
               </Link>
@@ -496,49 +496,53 @@ export default function Home() {
                 <button className="btn-secondary">Shop</button>
               </Link>
             </div>
-
-            {/* Brand closing statement — final word of the hero */}
-            <div
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? "translateY(0)" : "translateY(10px)",
-                transition: "opacity 1.2s ease 1.5s, transform 1.2s ease 1.5s",
-                textAlign: "center",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "'Dancing Script', cursive",
-                  fontSize: "clamp(1.5rem, 2.3vw, 1.9rem)",
-                  color: "#f2f2f2",
-                  fontWeight: 400,
-                  lineHeight: 1.35,
-                  margin: 0,
-                  textShadow: "0 1px 10px rgba(0,0,0,0.85)",
-                }}
-              >
-                Every cup we pour is a statement:
-              </p>
-              <p
-                style={{
-                  fontFamily: "'Dancing Script', cursive",
-                  fontSize: "clamp(1.9rem, 3vw, 2.4rem)",
-                  color: "#f2f2f2",
-                  fontWeight: 600,
-                  lineHeight: 1.35,
-                  margin: 0,
-                  textShadow: "0 1px 10px rgba(0,0,0,0.85)",
-                }}
-              >
-                Bold, deliberate, and unapologetically premium.
-              </p>
-            </div>
           </div>
+        </div>
+
+        {/* Brand closing statement — sits between hero content and carousel dots */}
+        <div
+          className="absolute left-1/2"
+          style={{
+            bottom: "3.5rem",
+            transform: "translateX(-50%)",
+            zIndex: 4,
+            textAlign: "center",
+            opacity: isVisible ? 1 : 0,
+            transition: "opacity 1.2s ease 1.5s",
+            whiteSpace: "nowrap",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "'Dancing Script', cursive",
+              fontSize: "clamp(1.5rem, 2.3vw, 1.9rem)",
+              color: "#d4b896",
+              fontWeight: 400,
+              lineHeight: 1.35,
+              margin: 0,
+              textShadow: "0 1px 10px rgba(0,0,0,0.85)",
+            }}
+          >
+            Every cup we pour is a statement:
+          </p>
+          <p
+            style={{
+              fontFamily: "'Dancing Script', cursive",
+              fontSize: "clamp(1.9rem, 3vw, 2.4rem)",
+              color: "#d4b896",
+              fontWeight: 600,
+              lineHeight: 1.35,
+              margin: 0,
+              textShadow: "0 1px 10px rgba(0,0,0,0.85)",
+            }}
+          >
+            Bold, deliberate, and unapologetically premium
+          </p>
         </div>
 
         {/* Slide indicators */}
         <div
-          className="absolute bottom-8 left-1/2 flex gap-2"
+          className="absolute bottom-4 left-1/2 flex gap-2"
           style={{ transform: "translateX(-50%)", zIndex: 4 }}
         >
           {heroSlides.map((_, idx) => (
