@@ -475,14 +475,6 @@ export default function Home() {
               HARD HOUSE COFFEE
             </h1>
 
-            <div
-              style={{
-                width: "70px",
-                height: "2px",
-                background: "linear-gradient(to right, #8b2f2f, #a14f1f)",
-                marginBottom: "1rem",
-              }}
-            />
             <p
               style={{
                 fontFamily: "'Dancing Script', cursive",
@@ -537,7 +529,6 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto text-center mb-8">
           <p className="section-subtitle">Our World</p>
-          <div className="divider-orange mx-auto" />
           <h2 className="section-title inter-title mt-4">The Hard House Experience</h2>
           <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
             Every cup we pour is a statement. Bold, deliberate, and unapologetically premium.
@@ -1064,7 +1055,6 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-subtitle">The Culture</p>
-            <div className="divider-orange mx-auto" />
             <h2 className="section-title inter-title mt-4">Coffee Is a Way of Life</h2>
             <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
               More than a beverage — it's a ritual, a community, and a constant pursuit of the perfect cup.
@@ -1141,7 +1131,6 @@ export default function Home() {
           <p className="section-subtitle" style={{ color: "#a14f1f" }}>
             Stay Grounded
           </p>
-          <div className="divider-orange mx-auto" />
           <h2
             className="mt-4 mb-6"
             style={{

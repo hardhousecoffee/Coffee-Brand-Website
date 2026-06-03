@@ -41,7 +41,6 @@ export default function BlogPostOnyxCoffeeLab() {
           Walking into one of their cafes feels like stepping into a beautifully designed, high-tech coffee laboratory where every single pour-over is crafted with absolute, flawless mathematical precision. They are completely redefining what a modern coffee brand can be.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="What Makes Onyx Different">
           {[

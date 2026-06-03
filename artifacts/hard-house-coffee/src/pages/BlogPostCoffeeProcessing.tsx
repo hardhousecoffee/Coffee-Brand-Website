@@ -41,7 +41,6 @@ export default function BlogPostCoffeeProcessing() {
           It's amazing how a simple processing choice creates two completely different drinking experiences from the exact same origin.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="The Three Main Processing Methods">
           {[

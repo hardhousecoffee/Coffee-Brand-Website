@@ -30,7 +30,6 @@ export default function Contact() {
         />
         <div className="relative" style={{ zIndex: 2 }}>
           <p className="section-subtitle" style={{ color: "#a14f1f" }}>Get in Touch</p>
-          <div className="divider-orange mx-auto" />
           <h1
             className="mt-4"
             style={{

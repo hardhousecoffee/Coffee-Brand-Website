@@ -41,7 +41,6 @@ export default function BlogPostSeattleCoffeeScene() {
           The city that launched a global coffee empire still has some of the most technically focused, seriously passionate coffee people anywhere on the planet — and you can feel that energy the moment you walk into one of these storied shops.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="Essential Seattle Coffee Stops">
           {[

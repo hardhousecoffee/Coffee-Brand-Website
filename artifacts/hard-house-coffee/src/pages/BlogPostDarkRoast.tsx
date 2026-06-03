@@ -67,7 +67,6 @@ export default function BlogPostDarkRoast() {
           Here is what actually matters.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         {/* What Makes a Good Dark Roast */}
         <Section title="What Makes a Good Dark Roast">

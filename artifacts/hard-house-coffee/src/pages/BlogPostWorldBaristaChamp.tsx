@@ -41,7 +41,6 @@ export default function BlogPostWorldBaristaChamp() {
           They talk through a synchronized routine, explaining the exact chemistry of their milk, the origin of their beans, and the tasting notes the judges should look for. The level of precision, focus, and creativity on display is totally mesmerizing.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="What the Competition Looks Like">
           {[

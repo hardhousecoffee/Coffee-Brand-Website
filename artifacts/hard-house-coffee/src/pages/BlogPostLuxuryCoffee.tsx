@@ -41,7 +41,6 @@ export default function BlogPostLuxuryCoffee() {
           Finally, you have ultra-rare lots of Panama Geisha, especially from farms like Hacienda La Esmeralda, which regularly break records at global auctions for its mind-blowing floral and jasmine aroma. It's definitely a splurge, but for true connoisseurs, it's the ultimate bucket-list experience.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="The Three Most Expensive Coffees in the World">
           {[

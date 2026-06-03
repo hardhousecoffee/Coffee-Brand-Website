@@ -41,7 +41,6 @@ export default function BlogPostSpecialtyBrands() {
           When you buy a bag from them, you're getting incredible transparency — you'll know the exact washing station, the elevation it was grown at, and the name of the estate. It's an easy way to support sustainable farming while treating your tastebuds to something exceptional.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="Brands Worth Exploring">
           {[

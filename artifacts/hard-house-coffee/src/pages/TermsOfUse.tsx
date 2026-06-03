@@ -50,7 +50,6 @@ export default function TermsOfUse() {
         />
         <div className="relative" style={{ zIndex: 2 }}>
           <p className="section-subtitle" style={{ color: "#a14f1f" }}>Legal</p>
-          <div className="divider-orange mx-auto" />
           <h1
             className="mt-4"
             style={{

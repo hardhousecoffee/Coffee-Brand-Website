@@ -63,7 +63,6 @@ export default function BlogPostColdBrew() {
           It is smoother, less acidic, and easier to make than most people think.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         {/* Why Cold Brew Is Different */}
         <Section title="Why Cold Brew Is Different">

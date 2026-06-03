@@ -67,7 +67,6 @@ export default function BlogPostSpecialtyCoffeeBars() {
           This shift is what people call specialty coffee.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         {/* What Specialty Coffee Means */}
         <Section title="What Specialty Coffee Means">

@@ -41,7 +41,6 @@ export default function BlogPostCafeLomiParis() {
           It's warm, incredibly welcoming, and effortlessly stylish — the exact kind of place where you want to spend a rainy afternoon splitting an expertly poured flat white and a fresh, flaky croissant with your favorite group of friends.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="What Makes Café Lomi a Must-Visit">
           {[

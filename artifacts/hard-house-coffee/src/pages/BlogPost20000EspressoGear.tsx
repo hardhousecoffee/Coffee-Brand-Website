@@ -40,7 +40,6 @@ export default function BlogPost20000EspressoGear() {
           These machines represent the absolute ceiling of what espresso technology can do today. They aren't about convenience — they are about complete and total mastery over every variable in the extraction.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="Machines in This League">
           {[

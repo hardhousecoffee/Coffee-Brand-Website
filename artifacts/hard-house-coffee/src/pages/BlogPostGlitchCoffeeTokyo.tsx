@@ -41,7 +41,6 @@ export default function BlogPostGlitchCoffeeTokyo() {
           The café design is incredibly sleek and stripped down, forcing you to focus entirely on the aromas and flavors in your cup. It's a masterclass in Japanese craftsmanship and dedication to the craft.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="The Glitch Philosophy">
           {[

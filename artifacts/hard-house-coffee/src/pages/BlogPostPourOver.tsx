@@ -101,7 +101,6 @@ export default function BlogPostPourOver() {
           Now that you've seen it, let's break it down in a way that actually makes sense.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         {/* What You Need */}
         <Section title="What You Need to Get Started">

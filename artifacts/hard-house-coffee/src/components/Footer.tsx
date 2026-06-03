@@ -63,14 +63,6 @@ export default function Footer() {
             >
               A premium coffee brand built for people who refuse to settle. Bold, dark, and always deliberate.
             </p>
-            <div
-              style={{
-                width: "50px",
-                height: "2px",
-                background: "linear-gradient(to right, #8b2f2f, #a14f1f)",
-                marginTop: "1.2rem",
-              }}
-            />
 
             {/* Social Icons */}
             <div style={{ display: "flex", gap: "0.85rem", marginTop: "1.4rem", flexWrap: "wrap" }}>

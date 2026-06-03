@@ -41,7 +41,6 @@ export default function BlogPostSFSpecialtyRevolution() {
           SF pushed the entire industry away from dark, oily, mysterious commercial blends and introduced coffee lovers to crisp, light-roast single-origin profiles that tell a story — about the farm, the farmer, the altitude, and the processing method.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="SF's Contribution to Coffee History">
           {[

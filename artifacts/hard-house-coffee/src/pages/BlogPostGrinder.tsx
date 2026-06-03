@@ -98,7 +98,6 @@ export default function BlogPostGrinder() {
           always come first.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         {/* What Actually Matters */}
         <Section title="What Actually Matters in an Espresso Grinder">

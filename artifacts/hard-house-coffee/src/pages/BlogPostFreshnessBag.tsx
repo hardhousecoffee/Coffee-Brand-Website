@@ -41,7 +41,6 @@ export default function BlogPostFreshnessBag() {
           When you're picking out a bag at the store, skip the commercial stuff with an expiration date a year from now. Look for a "Roasted On" date within the last two to three weeks. That's the secret to unlocking the absolute best flavor possible.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="What to Look for on the Bag">
           {[

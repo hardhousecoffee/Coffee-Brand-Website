@@ -40,7 +40,6 @@ export default function BlogPostSteppingUp1000() {
           At this tier, the machine is no longer the limiting factor in your espresso. Your skill, your beans, and your grinder take center stage — which is exactly where they should be.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="What Dual Boilers Actually Change">
           {[

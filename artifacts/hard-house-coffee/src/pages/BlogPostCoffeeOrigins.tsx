@@ -64,7 +64,6 @@ export default function BlogPostCoffeeOrigins() {
           different flavor experiences.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         {/* Ethiopian Coffee */}
         <Section title="Ethiopian Coffee">

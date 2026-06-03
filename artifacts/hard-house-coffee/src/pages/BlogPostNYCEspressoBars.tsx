@@ -41,7 +41,6 @@ export default function BlogPostNYCEspressoBars() {
           Compare that old-world charm to the hyper-fast, sleek specialty shops in Williamsburg and Brooklyn and you get the full scope of what NYC coffee culture represents: a city that holds onto its history while racing toward what's next.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="Historic and Essential NYC Coffee Spots">
           {[

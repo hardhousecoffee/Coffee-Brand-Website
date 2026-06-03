@@ -303,12 +303,6 @@ a, button {
   font-weight: 600;
 }
 
-.divider-orange {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(to right, #8b2f2f, #a14f1f);
-  margin: 1rem 0;
-}
 
 @keyframes fadeSlide {
   0% { opacity: 0; transform: scale(1.03); }

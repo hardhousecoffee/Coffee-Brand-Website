@@ -41,7 +41,6 @@ export default function BlogPostEliteBarista() {
           On top of that, they are incredible hosts — they can break down complex flavor profiles and farming logistics into simple terms without ever sounding snobbish. They are equal parts mad scientist and ultimate hospitality expert.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="What Separates Good from Elite">
           {[

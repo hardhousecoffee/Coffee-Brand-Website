@@ -31,7 +31,6 @@ export default function About() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(11,11,11,0.4), rgba(11,11,11,0.95))" }} />
         <div className="relative" style={{ zIndex: 2 }}>
           <p className="section-subtitle" style={{ color: "#a14f1f" }}>Our Story</p>
-          <div className="divider-orange mx-auto" />
           <h1
             className="mt-4"
             style={{
@@ -55,7 +54,6 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
           <div>
             <p className="section-subtitle" style={{ color: "#a14f1f" }}>The Beginning</p>
-            <div className="divider-orange" />
             <h2
               className="mt-4 mb-6"
               style={{
@@ -118,7 +116,6 @@ export default function About() {
         {/* Values */}
         <div className="text-center mb-14">
           <p className="section-subtitle" style={{ color: "#a14f1f" }}>What We Stand For</p>
-          <div className="divider-orange mx-auto" />
           <h2 className="section-title inter-title mt-4">Our Values</h2>
         </div>
 

@@ -40,7 +40,6 @@ export default function BlogPost300DollarEspresso() {
           The key insight most beginners miss is that the machine isn't the whole story. At this price point, your grind quality and tamping technique carry most of the weight. Get those two things right and you will be genuinely shocked at what a $300 machine can produce.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="Why the Breville Bambino Works">
           {[

@@ -1157,7 +1157,6 @@ export default function Products() {
         }}
       >
         <p className="section-subtitle" style={{ color: "#a14f1f" }}>Recommended Products</p>
-        <div className="divider-orange mx-auto" />
         <h1 className="section-title inter-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
           Coffee Essentials
         </h1>
@@ -1309,7 +1308,6 @@ export default function Products() {
                     }}
                   >
                     <p className="section-subtitle" style={{ color: "#a14f1f" }}>{subtitle}</p>
-                    <div className="divider-orange mx-auto" />
                     <h2
                       className="section-title mt-2"
                       style={{ fontSize: "clamp(1.4rem,3.5vw,2rem)", fontFamily: "'Inter','Helvetica Neue',sans-serif", textTransform: "uppercase" }}
@@ -1348,7 +1346,6 @@ export default function Products() {
               <p className="section-subtitle" style={{ color: "#a14f1f" }}>
                 Hard House Coffee Picks
               </p>
-              <div className="divider-orange mx-auto" />
               <h2
                 className="section-title mt-4"
                 style={{ fontSize: "clamp(1.6rem,4vw,2.6rem)", fontFamily: "'Inter', 'Helvetica Neue', sans-serif", textTransform: "uppercase" }}
@@ -1524,7 +1521,6 @@ export default function Products() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-subtitle">Recommended Products</p>
-            <div className="divider-orange mx-auto" />
             <h2 className="section-title inter-title mt-4">Top Espresso Machines</h2>
             <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
               We've tested the best machines so you don't have to. These are our top picks for every budget.

@@ -68,7 +68,6 @@ export default function BlogPostEspressoRanked() {
           actually helps you make a smart decision.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         {/* What Makes a Good Espresso Machine */}
         <Section title="What Makes a Good Espresso Machine">

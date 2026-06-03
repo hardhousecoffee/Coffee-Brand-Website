@@ -41,7 +41,6 @@ export default function BlogPostLACoffeeScene() {
           The city caters to both the fast-paced commuter grabbing a cold brew and the coffee purist who wants to spend an hour over a single meticulously crafted pour-over. That range is exactly what makes the LA coffee scene one of the most dynamic in the country.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="LA Cafés Worth Visiting">
           {[

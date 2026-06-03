@@ -40,7 +40,6 @@ export default function BlogPostLaMarzoccoLinea() {
           The Linea Micra isn't just an espresso machine. It's a statement that you take coffee seriously — and it delivers on that promise every single morning.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="What Sets the Linea Micra Apart">
           {[

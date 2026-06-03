@@ -71,7 +71,6 @@ export default function BlogPost2026EspressoGuide() {
           making it frustrating.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         {/* What actually matters */}
         <Section title="What Actually Matters in a Beginner Espresso Machine">

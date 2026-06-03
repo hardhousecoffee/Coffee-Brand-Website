@@ -36,7 +36,6 @@ export default function NotFound() {
             404
           </p>
           <p className="section-subtitle" style={{ color: "#a14f1f", marginTop: "0.5rem" }}>Page Not Found</p>
-          <div className="divider-orange mx-auto" />
           <h1
             className="mt-4"
             style={{

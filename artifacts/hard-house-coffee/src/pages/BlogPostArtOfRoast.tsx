@@ -41,7 +41,6 @@ export default function BlogPostArtOfRoast() {
           A few seconds too long can completely ruin an entire batch. It's a total tightrope walk — and that's exactly what makes exceptional roasters so rare.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="The Roast Spectrum">
           {[

@@ -41,7 +41,6 @@ export default function BlogPostCoffeeFarmers() {
           Every single cup of specialty coffee you drink represents years of patient cultivation, careful harvesting, and an intimate knowledge of the land that most of us will never fully appreciate. Understanding where coffee comes from changes how you experience it.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="The Coffee Cherry Journey">
           {[

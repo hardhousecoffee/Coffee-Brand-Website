@@ -41,7 +41,6 @@ export default function BlogPostDittaArtigianale() {
           It's the perfect place to sit back, soak in the stunning Tuscan atmosphere, and see how the old school beautifully embraces the new wave.
         </p>
 
-        <div className="divider-orange" style={{ marginBottom: "2.5rem" }} />
 
         <Section title="What Makes Ditta Artigianale Special">
           {[
