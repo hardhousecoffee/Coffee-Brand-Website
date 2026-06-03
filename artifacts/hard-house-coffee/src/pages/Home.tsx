@@ -440,7 +440,7 @@ export default function Home() {
             className="hero-text-block"
             style={{
               position: "absolute",
-              bottom: "10%",
+              bottom: "22%",
               left: 0,
               right: 0,
               display: "flex",
@@ -509,13 +509,12 @@ export default function Home() {
               <p
                 style={{
                   fontFamily: "'Dancing Script', cursive",
-                  fontSize: "clamp(1.15rem, 1.8vw, 1.45rem)",
+                  fontSize: "clamp(1.5rem, 2.3vw, 1.9rem)",
                   color: "#f2f2f2",
                   fontWeight: 400,
                   lineHeight: 1.35,
                   margin: 0,
                   textShadow: "0 1px 10px rgba(0,0,0,0.85)",
-                  whiteSpace: "nowrap",
                 }}
               >
                 Every cup we pour is a statement:
@@ -523,13 +522,12 @@ export default function Home() {
               <p
                 style={{
                   fontFamily: "'Dancing Script', cursive",
-                  fontSize: "clamp(1.45rem, 2.3vw, 1.85rem)",
+                  fontSize: "clamp(1.9rem, 3vw, 2.4rem)",
                   color: "#f2f2f2",
                   fontWeight: 600,
                   lineHeight: 1.35,
                   margin: 0,
                   textShadow: "0 1px 10px rgba(0,0,0,0.85)",
-                  whiteSpace: "nowrap",
                 }}
               >
                 Bold, deliberate, and unapologetically premium.
