@@ -549,6 +549,62 @@ a, button {
   transform: translateY(0) !important;
 }
 
+/* ── About page steam wisps ── */
+@keyframes steamRise {
+  0%   { transform: translateX(0)    translateY(0)    scaleX(1);   opacity: 0; }
+  15%  { opacity: 0.55; }
+  80%  { opacity: 0.2; }
+  100% { transform: translateX(8px)  translateY(-80px) scaleX(1.6); opacity: 0; }
+}
+@keyframes steamRise2 {
+  0%   { transform: translateX(0)    translateY(0)    scaleX(1);   opacity: 0; }
+  15%  { opacity: 0.5; }
+  80%  { opacity: 0.18; }
+  100% { transform: translateX(-10px) translateY(-90px) scaleX(1.8); opacity: 0; }
+}
+@keyframes steamRise3 {
+  0%   { transform: translateX(0)    translateY(0)    scaleX(1);   opacity: 0; }
+  20%  { opacity: 0.45; }
+  80%  { opacity: 0.15; }
+  100% { transform: translateX(5px)  translateY(-70px) scaleX(2);   opacity: 0; }
+}
+.about-steam-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.steam-wisp {
+  position: absolute;
+  bottom: 52%;
+  width: 18px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.55) 0%, transparent 70%);
+  filter: blur(5px);
+}
+.steam-wisp-1 {
+  left: 26%;
+  height: 40px;
+  animation: steamRise  3.2s ease-out 0s    infinite;
+}
+.steam-wisp-2 {
+  left: 29%;
+  height: 52px;
+  width: 14px;
+  animation: steamRise2 3.8s ease-out 0.9s  infinite;
+}
+.steam-wisp-3 {
+  left: 22%;
+  height: 44px;
+  animation: steamRise3 4.1s ease-out 1.7s  infinite;
+}
+.steam-wisp-4 {
+  left: 31%;
+  height: 36px;
+  width: 12px;
+  animation: steamRise  3.5s ease-out 2.4s  infinite;
+}
+
 /* ── Arrow pulse (Back buttons, Back to Top) ── */
 @keyframes arrowPulse {
   0%, 100% { opacity: 1; }

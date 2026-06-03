@@ -83,14 +83,22 @@ export default function About() {
               border: "1px solid rgba(161,79,31,0.3)",
               overflow: "hidden",
               aspectRatio: "4/3",
+              position: "relative",
             }}
           >
             <img
-              src="/images/aroma-beans.jpg"
-              alt="Coffee Beans"
+              src="/images/coffee-grinder-beans.jpg"
+              alt="Coffee and Grinder"
               className="w-full h-full object-cover"
-              style={{ filter: "brightness(0.8)" }}
+              style={{ filter: "brightness(0.88)" }}
             />
+            {/* Steam wisps overlay */}
+            <div className="about-steam-overlay" aria-hidden="true">
+              <span className="steam-wisp steam-wisp-1" />
+              <span className="steam-wisp steam-wisp-2" />
+              <span className="steam-wisp steam-wisp-3" />
+              <span className="steam-wisp steam-wisp-4" />
+            </div>
           </div>
         </div>
 
