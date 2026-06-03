@@ -440,7 +440,7 @@ export default function Home() {
             className="hero-text-block"
             style={{
               position: "absolute",
-              bottom: "22%",
+              bottom: "10%",
               left: 0,
               right: 0,
               display: "flex",
@@ -499,50 +499,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Brand closing statement — sits between hero content and carousel dots */}
-        <div
-          className="absolute left-1/2"
-          style={{
-            bottom: "3.5rem",
-            transform: "translateX(-50%)",
-            zIndex: 4,
-            textAlign: "center",
-            opacity: isVisible ? 1 : 0,
-            transition: "opacity 1.2s ease 1.5s",
-            whiteSpace: "nowrap",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "'Dancing Script', cursive",
-              fontSize: "clamp(1.5rem, 2.3vw, 1.9rem)",
-              color: "#d4b896",
-              fontWeight: 400,
-              lineHeight: 1.35,
-              margin: 0,
-              textShadow: "0 1px 10px rgba(0,0,0,0.85)",
-            }}
-          >
-            Every cup we pour is a statement:
-          </p>
-          <p
-            style={{
-              fontFamily: "'Dancing Script', cursive",
-              fontSize: "clamp(1.9rem, 3vw, 2.4rem)",
-              color: "#d4b896",
-              fontWeight: 600,
-              lineHeight: 1.35,
-              margin: 0,
-              textShadow: "0 1px 10px rgba(0,0,0,0.85)",
-            }}
-          >
-            Bold, deliberate, and unapologetically premium
-          </p>
-        </div>
-
         {/* Slide indicators */}
         <div
-          className="absolute bottom-4 left-1/2 flex gap-2"
+          className="absolute bottom-8 left-1/2 flex gap-2"
           style={{ transform: "translateX(-50%)", zIndex: 4 }}
         >
           {heroSlides.map((_, idx) => (
@@ -566,8 +525,26 @@ export default function Home() {
       {/* FEATURED GRID */}
       <section
         className="px-6"
-        style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "1rem", paddingBottom: "2rem" }}
+        style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "3rem", paddingBottom: "2rem" }}
       >
+        <div className="max-w-4xl mx-auto text-center" style={{ marginBottom: "2rem" }}>
+          <p
+            style={{
+              fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
+              fontSize: "clamp(1.25rem, 2.4vw, 1.85rem)",
+              color: "#f0ebe4",
+              fontWeight: 300,
+              lineHeight: 1.55,
+              letterSpacing: "0.01em",
+              margin: 0,
+            }}
+          >
+            Every cup we pour is a statement.{" "}
+            <span style={{ color: "#d4af37", fontWeight: 500 }}>Bold, deliberate,</span>{" "}
+            and unapologetically premium.
+          </p>
+        </div>
+
         {/* Banner: Now Brewing */}
         <PremiumBanner />
 
