@@ -5,87 +5,96 @@ export function CoffeeDecor() {
       style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }}
     >
       <style>{`
-        @keyframes smoke-a {
-          0%   { transform: translateY(0) scaleX(1);    opacity: 0; }
-          10%  { opacity: 0.28; }
-          55%  { opacity: 0.18; }
-          100% { transform: translateY(-110%) scaleX(2.4); opacity: 0; }
+        /* Rising motion — narrows at bottom, spreads as it climbs */
+        @keyframes steam-rise {
+          0%   { transform: translateY(0)    scaleX(1);   opacity: 0; }
+          8%   { opacity: 0.55; }
+          60%  { opacity: 0.32; }
+          100% { transform: translateY(-115%) scaleX(3.2); opacity: 0; }
         }
-        @keyframes smoke-b {
-          0%   { transform: translateY(0) scaleX(1);    opacity: 0; }
-          12%  { opacity: 0.22; }
-          60%  { opacity: 0.14; }
-          100% { transform: translateY(-95%) scaleX(2.0);  opacity: 0; }
+        /* Gentle organic sway variants */
+        @keyframes sway-a {
+          0%, 100% { transform: translateX(0px); }
+          28%      { transform: translateX(13px); }
+          65%      { transform: translateX(-9px); }
         }
-        @keyframes smoke-c {
-          0%   { transform: translateY(0) scaleX(1);    opacity: 0; }
-          14%  { opacity: 0.30; }
-          50%  { opacity: 0.20; }
-          100% { transform: translateY(-105%) scaleX(2.6); opacity: 0; }
+        @keyframes sway-b {
+          0%, 100% { transform: translateX(0px); }
+          35%      { transform: translateX(-15px); }
+          72%      { transform: translateX(10px); }
         }
-        @keyframes smoke-d {
-          0%   { transform: translateY(0) scaleX(1);    opacity: 0; }
-          16%  { opacity: 0.20; }
-          65%  { opacity: 0.12; }
-          100% { transform: translateY(-90%) scaleX(1.8);  opacity: 0; }
-        }
-        @keyframes smoke-e {
-          0%   { transform: translateY(0) scaleX(1);    opacity: 0; }
-          11%  { opacity: 0.25; }
-          58%  { opacity: 0.16; }
-          100% { transform: translateY(-100%) scaleX(2.2); opacity: 0; }
+        @keyframes sway-c {
+          0%, 100% { transform: translateX(0px); }
+          42%      { transform: translateX(11px); }
+          78%      { transform: translateX(-13px); }
         }
       `}</style>
 
-      {/* Smoke column 1 */}
-      <div style={{
-        position: "absolute", bottom: "-5%", left: "6%",
-        width: "340px", height: "80%",
-        background: "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(230,210,185,1) 0%, transparent 100%)",
-        filter: "blur(44px)",
-        transformOrigin: "bottom center",
-        animation: "smoke-a 13s ease-in-out infinite",
-      }} />
+      {/* Wisp 1 */}
+      <div style={{ position: "absolute", bottom: 0, left: "12%", animation: "sway-a 4.1s ease-in-out infinite" }}>
+        <div style={{
+          width: "28px", height: "60%",
+          background: "linear-gradient(to top, rgba(230,210,185,0.75) 0%, rgba(230,210,185,0) 100%)",
+          filter: "blur(10px)",
+          transformOrigin: "bottom center",
+          animation: "steam-rise 7.5s ease-in-out infinite",
+        }} />
+      </div>
 
-      {/* Smoke column 2 */}
-      <div style={{
-        position: "absolute", bottom: "-5%", left: "26%",
-        width: "280px", height: "72%",
-        background: "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(220,200,175,1) 0%, transparent 100%)",
-        filter: "blur(38px)",
-        transformOrigin: "bottom center",
-        animation: "smoke-b 17s ease-in-out infinite 3s",
-      }} />
+      {/* Wisp 2 */}
+      <div style={{ position: "absolute", bottom: 0, left: "26%", animation: "sway-b 5.2s ease-in-out infinite 1.4s" }}>
+        <div style={{
+          width: "22px", height: "52%",
+          background: "linear-gradient(to top, rgba(225,205,180,0.65) 0%, rgba(225,205,180,0) 100%)",
+          filter: "blur(8px)",
+          transformOrigin: "bottom center",
+          animation: "steam-rise 9.2s ease-in-out infinite 2.1s",
+        }} />
+      </div>
 
-      {/* Smoke column 3 — centre */}
-      <div style={{
-        position: "absolute", bottom: "-5%", left: "44%",
-        width: "400px", height: "85%",
-        background: "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(235,215,190,1) 0%, transparent 100%)",
-        filter: "blur(52px)",
-        transformOrigin: "bottom center",
-        animation: "smoke-c 15s ease-in-out infinite 1s",
-      }} />
+      {/* Wisp 3 — tallest, centre-left */}
+      <div style={{ position: "absolute", bottom: 0, left: "40%", animation: "sway-a 3.8s ease-in-out infinite 0.6s" }}>
+        <div style={{
+          width: "32px", height: "72%",
+          background: "linear-gradient(to top, rgba(235,215,190,0.70) 0%, rgba(235,215,190,0) 100%)",
+          filter: "blur(12px)",
+          transformOrigin: "bottom center",
+          animation: "steam-rise 8.0s ease-in-out infinite 0.5s",
+        }} />
+      </div>
 
-      {/* Smoke column 4 */}
-      <div style={{
-        position: "absolute", bottom: "-5%", left: "64%",
-        width: "260px", height: "68%",
-        background: "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(218,198,172,1) 0%, transparent 100%)",
-        filter: "blur(36px)",
-        transformOrigin: "bottom center",
-        animation: "smoke-d 19s ease-in-out infinite 5s",
-      }} />
+      {/* Wisp 4 — centre-right */}
+      <div style={{ position: "absolute", bottom: 0, left: "55%", animation: "sway-c 4.6s ease-in-out infinite 2.8s" }}>
+        <div style={{
+          width: "24px", height: "58%",
+          background: "linear-gradient(to top, rgba(228,208,183,0.60) 0%, rgba(228,208,183,0) 100%)",
+          filter: "blur(9px)",
+          transformOrigin: "bottom center",
+          animation: "steam-rise 10.5s ease-in-out infinite 3.5s",
+        }} />
+      </div>
 
-      {/* Smoke column 5 */}
-      <div style={{
-        position: "absolute", bottom: "-5%", left: "80%",
-        width: "320px", height: "76%",
-        background: "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(225,205,180,1) 0%, transparent 100%)",
-        filter: "blur(46px)",
-        transformOrigin: "bottom center",
-        animation: "smoke-e 14s ease-in-out infinite 2s",
-      }} />
+      {/* Wisp 5 */}
+      <div style={{ position: "absolute", bottom: 0, left: "69%", animation: "sway-b 4.9s ease-in-out infinite 1.0s" }}>
+        <div style={{
+          width: "26px", height: "64%",
+          background: "linear-gradient(to top, rgba(232,212,187,0.68) 0%, rgba(232,212,187,0) 100%)",
+          filter: "blur(11px)",
+          transformOrigin: "bottom center",
+          animation: "steam-rise 8.8s ease-in-out infinite 1.2s",
+        }} />
+      </div>
+
+      {/* Wisp 6 */}
+      <div style={{ position: "absolute", bottom: 0, left: "82%", animation: "sway-a 5.5s ease-in-out infinite 3.3s" }}>
+        <div style={{
+          width: "20px", height: "50%",
+          background: "linear-gradient(to top, rgba(222,202,177,0.62) 0%, rgba(222,202,177,0) 100%)",
+          filter: "blur(8px)",
+          transformOrigin: "bottom center",
+          animation: "steam-rise 7.2s ease-in-out infinite 4.0s",
+        }} />
+      </div>
     </div>
   );
 }
