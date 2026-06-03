@@ -1153,7 +1153,7 @@ export default function Products() {
       <div
         className="pt-24 pb-4 px-6 text-center"
         style={{
-          background: "linear-gradient(to bottom, #2b1e16 0%, #0b0b0b 100%)",
+          background: "linear-gradient(to bottom, #1c1008 0%, #0b0b0b 100%)",
           borderBottom: "1px solid rgba(161,79,31,0.2)",
           position: "relative",
           overflow: "hidden",
@@ -1521,7 +1521,7 @@ export default function Products() {
       </div>
 
       {/* TOP PICKS — RECOMMENDED PRODUCTS */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#2b1e16", position: "relative", overflow: "hidden" }}>
+      <section className="py-20 px-6" style={{ backgroundColor: "#1c1008", position: "relative", overflow: "hidden" }}>
         <CoffeeDecor />
         <div className="max-w-6xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
           <div className="text-center mb-14">

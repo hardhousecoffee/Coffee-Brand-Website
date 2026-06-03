@@ -5,95 +5,87 @@ export function CoffeeDecor() {
       style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }}
     >
       <style>{`
-        @keyframes cf-bob-1 { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-14px); } }
-        @keyframes cf-bob-2 { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-9px); } }
-        @keyframes cf-bob-3 { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-18px); } }
-        @keyframes cf-bob-4 { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-11px); } }
+        @keyframes smoke-a {
+          0%   { transform: translateY(0) scaleX(1);   opacity: 0; }
+          12%  { opacity: 0.07; }
+          60%  { opacity: 0.045; }
+          100% { transform: translateY(-110%) scaleX(2.2); opacity: 0; }
+        }
+        @keyframes smoke-b {
+          0%   { transform: translateY(0) scaleX(1);   opacity: 0; }
+          15%  { opacity: 0.055; }
+          65%  { opacity: 0.03; }
+          100% { transform: translateY(-95%) scaleX(1.9); opacity: 0; }
+        }
+        @keyframes smoke-c {
+          0%   { transform: translateY(0) scaleX(1);   opacity: 0; }
+          18%  { opacity: 0.06; }
+          55%  { opacity: 0.035; }
+          100% { transform: translateY(-105%) scaleX(2.4); opacity: 0; }
+        }
+        @keyframes smoke-d {
+          0%   { transform: translateY(0) scaleX(1);   opacity: 0; }
+          20%  { opacity: 0.05; }
+          70%  { opacity: 0.025; }
+          100% { transform: translateY(-90%) scaleX(2.0); opacity: 0; }
+        }
+        @keyframes smoke-e {
+          0%   { transform: translateY(0) scaleX(1);   opacity: 0; }
+          14%  { opacity: 0.065; }
+          60%  { opacity: 0.04; }
+          100% { transform: translateY(-100%) scaleX(1.7); opacity: 0; }
+        }
       `}</style>
 
-      {/* Top-left — big bean cluster */}
-      <div style={{ position: "absolute", top: "-50px", left: "-60px", animation: "cf-bob-1 7s ease-in-out infinite" }}>
-        <img
-          src="/images/aroma-beans.jpg"
-          alt=""
-          style={{
-            width: "260px", borderRadius: "50%",
-            transform: "rotate(28deg)",
-            opacity: 0.14,
-            filter: "sepia(0.5) brightness(0.75)",
-          }}
-        />
-      </div>
+      {/* Smoke column 1 */}
+      <div style={{
+        position: "absolute", bottom: "-10%", left: "8%",
+        width: "320px", height: "70%",
+        background: "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(220,200,180,0.9) 0%, transparent 100%)",
+        filter: "blur(42px)",
+        transformOrigin: "bottom center",
+        animation: "smoke-a 14s ease-in-out infinite",
+      }} />
 
-      {/* Top-right — steamy mug */}
-      <div style={{ position: "absolute", top: "-30px", right: "4%", animation: "cf-bob-2 9s ease-in-out infinite 1.2s" }}>
-        <img
-          src="/images/steamy-mug.jpg"
-          alt=""
-          style={{
-            width: "190px", borderRadius: "12px",
-            transform: "rotate(-18deg)",
-            opacity: 0.11,
-            filter: "sepia(0.4) brightness(0.7)",
-          }}
-        />
-      </div>
+      {/* Smoke column 2 */}
+      <div style={{
+        position: "absolute", bottom: "-10%", left: "28%",
+        width: "260px", height: "65%",
+        background: "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(210,195,175,0.9) 0%, transparent 100%)",
+        filter: "blur(36px)",
+        transformOrigin: "bottom center",
+        animation: "smoke-b 18s ease-in-out infinite 3.5s",
+      }} />
 
-      {/* Bottom-right — grinder beans (PNG) */}
-      <div style={{ position: "absolute", bottom: "-30px", right: "-30px", animation: "cf-bob-3 8s ease-in-out infinite 2s" }}>
-        <img
-          src="/images/coffee-grinder-beans.png"
-          alt=""
-          style={{
-            width: "230px",
-            transform: "rotate(-22deg)",
-            opacity: 0.13,
-            filter: "sepia(0.3) brightness(0.8)",
-          }}
-        />
-      </div>
+      {/* Smoke column 3 — centre */}
+      <div style={{
+        position: "absolute", bottom: "-10%", left: "46%",
+        width: "380px", height: "75%",
+        background: "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(225,205,185,0.9) 0%, transparent 100%)",
+        filter: "blur(50px)",
+        transformOrigin: "bottom center",
+        animation: "smoke-c 16s ease-in-out infinite 1.2s",
+      }} />
 
-      {/* Bottom-left — hero cup (PNG) */}
-      <div style={{ position: "absolute", bottom: "5%", left: "2%", animation: "cf-bob-4 10s ease-in-out infinite 0.5s" }}>
-        <img
-          src="/images/hero-cup.png"
-          alt=""
-          style={{
-            width: "150px",
-            transform: "rotate(14deg)",
-            opacity: 0.12,
-            filter: "sepia(0.4) brightness(0.8)",
-          }}
-        />
-      </div>
+      {/* Smoke column 4 */}
+      <div style={{
+        position: "absolute", bottom: "-10%", left: "65%",
+        width: "240px", height: "60%",
+        background: "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(210,190,170,0.9) 0%, transparent 100%)",
+        filter: "blur(34px)",
+        transformOrigin: "bottom center",
+        animation: "smoke-d 20s ease-in-out infinite 5s",
+      }} />
 
-      {/* Mid-right — mug rim (PNG) */}
-      <div style={{ position: "absolute", top: "35%", right: "-20px", animation: "cf-bob-1 11s ease-in-out infinite 3s" }}>
-        <img
-          src="/images/mug-rim.png"
-          alt=""
-          style={{
-            width: "130px",
-            transform: "rotate(-8deg)",
-            opacity: 0.09,
-            filter: "sepia(0.3) brightness(0.8)",
-          }}
-        />
-      </div>
-
-      {/* Mid-left — small bean cluster */}
-      <div style={{ position: "absolute", top: "40%", left: "-20px", animation: "cf-bob-2 8.5s ease-in-out infinite 1.8s" }}>
-        <img
-          src="/images/aroma-beans.jpg"
-          alt=""
-          style={{
-            width: "120px", borderRadius: "50%",
-            transform: "rotate(-35deg)",
-            opacity: 0.09,
-            filter: "sepia(0.5) brightness(0.7)",
-          }}
-        />
-      </div>
+      {/* Smoke column 5 */}
+      <div style={{
+        position: "absolute", bottom: "-10%", left: "82%",
+        width: "300px", height: "68%",
+        background: "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(215,198,178,0.9) 0%, transparent 100%)",
+        filter: "blur(44px)",
+        transformOrigin: "bottom center",
+        animation: "smoke-e 15s ease-in-out infinite 2.3s",
+      }} />
     </div>
   );
 }
