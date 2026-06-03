@@ -942,6 +942,194 @@ export default function Products() {
     return products.filter((p) => p.category === activeCategory);
   })();
 
+  const renderCard = (product: typeof products[0]) => {
+    const isHovered = hoveredId === product.id;
+    const variants = (product as any).variants as Array<{ color: string; label: string; affiliateUrl: string; image?: string }> | undefined;
+    const activeVariantIdx = selectedVariants[product.id] ?? -1;
+    const activeAffiliateUrl = variants && activeVariantIdx >= 0 ? variants[activeVariantIdx].affiliateUrl : (product as any).affiliateUrl;
+    const activeMainImage = variants && activeVariantIdx >= 0 && variants[activeVariantIdx].image ? variants[activeVariantIdx].image : product.image;
+    return (
+      <div
+        key={product.id}
+        style={{
+          background: "#131313",
+          borderRadius: "10px",
+          border: "1px solid rgba(161,79,31,0.25)",
+          overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+          transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+          transform: isHovered ? "translateY(-4px)" : "translateY(0)",
+          boxShadow: isHovered ? "0 8px 32px rgba(161,79,31,0.25)" : "none",
+          borderColor: isHovered ? "rgba(161,79,31,0.5)" : "rgba(161,79,31,0.25)",
+        }}
+        onMouseEnter={() => handleMouseEnter(product)}
+        onMouseLeave={handleMouseLeave}
+      >
+        {/* Image with hover swap */}
+        <div className="relative overflow-hidden" style={{ height: "220px" }}>
+          {(() => {
+            const hoverImages = [product.hoverImage, (product as any).hoverImage2, (product as any).hoverImage3, (product as any).hoverImage4, (product as any).hoverImage5, (product as any).hoverImage6, (product as any).hoverImage7].filter(Boolean) as string[];
+            const activeCycleIdx = hoverImages.length > 0 ? cycleIndex % hoverImages.length : 0;
+            const variantImageActive = variants && activeVariantIdx >= 0 && variants[activeVariantIdx].image;
+            return (
+              <>
+                <img
+                  src={activeMainImage}
+                  alt={`${product.name} — ${product.category} recommended by Hard House Coffee`}
+                  className="w-full h-full absolute inset-0"
+                  style={{
+                    objectFit: (product as any).mainFit || "cover",
+                    objectPosition: product.id === "cb6" ? "center bottom" : product.id === "cb9" ? "center bottom" : (product as any).mainPosition || "center",
+                    opacity: isHovered && hoverImages.length > 0 && !variantImageActive ? 0 : 1,
+                    transform: isHovered ? `scale(${((product as any).mainScale ?? 1) * 1.06}) translateY(${(product as any).mainTranslateY ?? "0%"})` : `scale(${(product as any).mainScale ?? 1}) translateY(${(product as any).mainTranslateY ?? "0%"})`,
+                    transition: "opacity 0.55s ease, transform 0.55s ease",
+                    filter: `brightness(${(product as any).mainBrightness ?? 0.65})`,
+                  }}
+                />
+                {hoverImages.map((src, idx) => (
+                  <img
+                    key={idx}
+                    src={src}
+                    alt={`${product.name} ${product.category} alternate view ${idx + 1}`}
+                    className="w-full h-full absolute inset-0"
+                    style={{
+                      objectFit: (product as any).hoverVignetteIndices?.includes(idx) ? "contain" : "cover",
+                      objectPosition: "center",
+                      opacity: isHovered && activeCycleIdx === idx && !variantImageActive ? 1 : 0,
+                      transform: isHovered && activeCycleIdx === idx && !variantImageActive
+                        ? `scale(${(product as any).hoverScales?.[idx] ?? (product as any).hoverScale ?? 1.03})`
+                        : `scale(${((product as any).hoverScales?.[idx] ?? (product as any).hoverScale ?? 1.03) - 0.02})`,
+                      transition: "opacity 0.55s ease, transform 0.55s ease",
+                      filter: "brightness(0.85)",
+                    }}
+                  />
+                ))}
+                {(product as any).mainVignette && (
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: "radial-gradient(ellipse at center, transparent 35%, rgba(11,9,7,0.52) 100%)",
+                      zIndex: 1,
+                    }}
+                  />
+                )}
+              </>
+            );
+          })()}
+
+          {/* Badges */}
+          <div
+            className="absolute top-3 left-3 px-2 py-1"
+            style={{
+              background: product.badgeColor,
+              borderRadius: "4px",
+              fontSize: "0.6rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: "#f2f2f2",
+              fontWeight: 700,
+              zIndex: 2,
+            }}
+          >
+            {product.badge}
+          </div>
+          <div
+            className="absolute top-3 right-3 px-2 py-1"
+            style={{
+              background: "rgba(11,11,11,0.8)",
+              borderRadius: "4px",
+              fontSize: "0.65rem",
+              color: "#a14f1f",
+              fontWeight: 600,
+              zIndex: 2,
+              letterSpacing: "0.05em",
+            }}
+          >
+            {product.category}
+          </div>
+        </div>
+
+        <div className="p-6 flex flex-col flex-1">
+          <h3 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.3rem" }}>
+            <a
+              href={activeAffiliateUrl || "#"}
+              target="_blank"
+              rel="nofollow sponsored noopener noreferrer"
+              style={{ color: "#f2f2f2", textDecoration: "none", transition: "color 0.2s" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#d4b896")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#f2f2f2")}
+            >
+              {product.name}
+            </a>
+          </h3>
+
+          {variants && variants.length > 0 && (
+            <div className="flex items-center gap-2 mb-3" style={{ flexWrap: "wrap" }}>
+              <span style={{ fontSize: "0.7rem", color: "#7a6a5a", letterSpacing: "0.06em", textTransform: "uppercase" }}>Color:</span>
+              <button
+                onClick={(e) => { e.stopPropagation(); setSelectedVariants((prev) => { const next = { ...prev }; delete next[product.id]; return next; }); }}
+                title="Default"
+                style={{
+                  width: "20px", height: "20px", borderRadius: "50%",
+                  border: activeVariantIdx === -1 ? "2px solid #a14f1f" : "2px solid rgba(161,79,31,0.3)",
+                  boxShadow: activeVariantIdx === -1 ? "0 0 0 2px rgba(161,79,31,0.4)" : "none",
+                  background: (product as any).defaultSwatchColor || "#555",
+                  cursor: "pointer", padding: 0, transition: "border 0.2s, box-shadow 0.2s", flexShrink: 0,
+                }}
+              />
+              {variants.map((v, vIdx) => (
+                <button
+                  key={vIdx}
+                  onClick={(e) => { e.stopPropagation(); setSelectedVariants((prev) => ({ ...prev, [product.id]: vIdx })); }}
+                  title={v.label}
+                  style={{
+                    width: "20px", height: "20px", borderRadius: "50%",
+                    border: activeVariantIdx === vIdx ? "2px solid #a14f1f" : "2px solid rgba(161,79,31,0.3)",
+                    boxShadow: activeVariantIdx === vIdx ? "0 0 0 2px rgba(161,79,31,0.4)" : "none",
+                    background: v.color, cursor: "pointer", padding: 0,
+                    transition: "border 0.2s, box-shadow 0.2s", flexShrink: 0,
+                  }}
+                />
+              ))}
+              {activeVariantIdx >= 0 && (
+                <span style={{ fontSize: "0.7rem", color: "#c4b09a", marginLeft: "2px" }}>
+                  {variants[activeVariantIdx].label}
+                </span>
+              )}
+            </div>
+          )}
+
+          <p style={{ fontSize: "0.78rem", color: "#a14f1f", marginBottom: "0.8rem", fontStyle: "italic" }}>{product.tagline}</p>
+          <p style={{ fontSize: "0.8rem", color: "#b0a090", lineHeight: 1.6, marginBottom: "1rem" }}>{product.desc}</p>
+
+          <ul className="mb-4">
+            {product.pros.map((pro) => (
+              <li key={pro} style={{ fontSize: "0.78rem", color: "#c0a880", marginBottom: "0.3rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <span style={{ color: "#a14f1f", fontSize: "0.9rem" }}>✓</span>
+                {pro}
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-2 mb-3">
+            <div style={{ color: "#a14f1f", fontSize: "0.9rem" }}>{"★".repeat(Math.floor(product.rating))}</div>
+            <span style={{ fontSize: "0.75rem", color: "#b0a090" }}>{product.rating} ({product.reviews.toLocaleString()} reviews)</span>
+          </div>
+
+          <div className="flex flex-col gap-2 mt-auto">
+            <a href={activeAffiliateUrl || "#"} target="_blank" rel="nofollow sponsored noopener noreferrer" style={{ textDecoration: "none" }}>
+              <button className="btn-primary w-full" style={{ fontSize: "0.78rem" }}>Buy Now on Amazon</button>
+            </a>
+            <p style={{ fontSize: "0.68rem", color: "#c4b09a", textAlign: "center", letterSpacing: "0.01em", lineHeight: 1.4, marginTop: "4px" }}>
+              For the latest pricing and availability, view this product directly on Amazon.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
@@ -1075,244 +1263,30 @@ export default function Products() {
           </div>
         )}
 
-        {/* Product grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filtered.map((product) => {
-            const isHovered = hoveredId === product.id;
-            const variants = (product as any).variants as Array<{ color: string; label: string; affiliateUrl: string; image?: string }> | undefined;
-            const activeVariantIdx = selectedVariants[product.id] ?? -1;
-            const activeAffiliateUrl = variants && activeVariantIdx >= 0 ? variants[activeVariantIdx].affiliateUrl : (product as any).affiliateUrl;
-            const activeMainImage = variants && activeVariantIdx >= 0 && variants[activeVariantIdx].image ? variants[activeVariantIdx].image : product.image;
-            return (
-              <div
-                key={product.id}
-                style={{
-                  background: "#131313",
-                  borderRadius: "10px",
-                  border: "1px solid rgba(161,79,31,0.25)",
-                  overflow: "hidden",
-                  display: "flex",
-                  flexDirection: "column",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
-                  transform: isHovered ? "translateY(-4px)" : "translateY(0)",
-                  boxShadow: isHovered ? "0 8px 32px rgba(161,79,31,0.25)" : "none",
-                  borderColor: isHovered ? "rgba(161,79,31,0.5)" : "rgba(161,79,31,0.25)",
-                }}
-                onMouseEnter={() => handleMouseEnter(product)}
-                onMouseLeave={handleMouseLeave}
-              >
-                {/* Image with hover swap */}
-                <div className="relative overflow-hidden" style={{ height: "220px" }}>
-                  {(() => {
-                    const hoverImages = [product.hoverImage, (product as any).hoverImage2, (product as any).hoverImage3, (product as any).hoverImage4, (product as any).hoverImage5, (product as any).hoverImage6, (product as any).hoverImage7].filter(Boolean) as string[];
-                    const activeCycleIdx = hoverImages.length > 0 ? cycleIndex % hoverImages.length : 0;
-                    const variantImageActive = variants && activeVariantIdx >= 0 && variants[activeVariantIdx].image;
-                    return (
-                      <>
-                        {/* Main image — always shown when a variant swatch is selected */}
-                        <img
-                          src={activeMainImage}
-                          alt={`${product.name} — ${product.category} recommended by Hard House Coffee`}
-                          className="w-full h-full absolute inset-0"
-                          style={{
-                            objectFit: (product as any).mainFit || "cover",
-                            objectPosition: product.id === "cb6" ? "center bottom" : product.id === "cb9" ? "center bottom" : (product as any).mainPosition || "center",
-                            opacity: isHovered && hoverImages.length > 0 && !variantImageActive ? 0 : 1,
-                            transform: isHovered ? `scale(${((product as any).mainScale ?? 1) * 1.06}) translateY(${(product as any).mainTranslateY ?? "0%"})` : `scale(${(product as any).mainScale ?? 1}) translateY(${(product as any).mainTranslateY ?? "0%"})`,
-                            transition: "opacity 0.55s ease, transform 0.55s ease",
-                            filter: `brightness(${(product as any).mainBrightness ?? 0.65})`,
-                          }}
-                        />
-                        {/* Hover images — cycle through on timer, suppressed when variant selected */}
-                        {hoverImages.map((src, idx) => (
-                          <img
-                            key={idx}
-                            src={src}
-                            alt={`${product.name} ${product.category} alternate view ${idx + 1}`}
-                            className="w-full h-full absolute inset-0"
-                            style={{
-                              objectFit: (product as any).hoverVignetteIndices?.includes(idx) ? "contain" : "cover",
-                              objectPosition: "center",
-                              opacity: isHovered && activeCycleIdx === idx && !variantImageActive ? 1 : 0,
-                              transform: isHovered && activeCycleIdx === idx && !variantImageActive
-                                ? `scale(${(product as any).hoverScales?.[idx] ?? (product as any).hoverScale ?? 1.03})`
-                                : `scale(${((product as any).hoverScales?.[idx] ?? (product as any).hoverScale ?? 1.03) - 0.02})`,
-                              transition: "opacity 0.55s ease, transform 0.55s ease",
-                              filter: "brightness(0.85)",
-                            }}
-                          />
-                        ))}
-                        {/* Vignette overlay for white-background images */}
-                        {(product as any).mainVignette && (
-                          <div
-                            className="absolute inset-0 pointer-events-none"
-                            style={{
-                              background: "radial-gradient(ellipse at center, transparent 35%, rgba(11,9,7,0.52) 100%)",
-                              zIndex: 1,
-                            }}
-                          />
-                        )}
-                      </>
-                    );
-                  })()}
-
-                  {/* Badges */}
-                  <div
-                    className="absolute top-3 left-3 px-2 py-1"
-                    style={{
-                      background: product.badgeColor,
-                      borderRadius: "4px",
-                      fontSize: "0.6rem",
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      color: "#f2f2f2",
-                      fontWeight: 700,
-                      zIndex: 2,
-                    }}
-                  >
-                    {product.badge}
+        {/* Product grid — sectioned in All view, flat in category view */}
+        {activeCategory === "All" ? (
+          <div>
+            {(["Espresso Machines", "Coffee Machines", "Coffee Grinders", "Accessories"] as const).map((cat) => {
+              const catProducts = products.filter((p) => p.category === cat);
+              if (!catProducts.length) return null;
+              return (
+                <div key={cat} style={{ marginBottom: "2rem" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "1rem", paddingTop: "1.25rem", paddingBottom: "0.75rem" }}>
+                    <h2 style={{ fontFamily: "'Inter','Helvetica Neue',sans-serif", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#d4b896", whiteSpace: "nowrap", margin: 0 }}>{cat}</h2>
+                    <div style={{ flex: 1, height: "1px", background: "rgba(161,79,31,0.2)" }} />
                   </div>
-                  <div
-                    className="absolute top-3 right-3 px-2 py-1"
-                    style={{
-                      background: "rgba(11,11,11,0.8)",
-                      borderRadius: "4px",
-                      fontSize: "0.65rem",
-                      color: "#a14f1f",
-                      fontWeight: 600,
-                      zIndex: 2,
-                      letterSpacing: "0.05em",
-                    }}
-                  >
-                    {product.category}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {catProducts.map(renderCard)}
                   </div>
                 </div>
-
-                <div className="p-6 flex flex-col flex-1">
-                  <h3
-                    style={{
-                      fontSize: "1rem",
-                      fontWeight: 700,
-                      marginBottom: "0.3rem",
-                    }}
-                  >
-                    <a
-                      href={activeAffiliateUrl || "#"}
-                      target="_blank"
-                      rel="nofollow sponsored noopener noreferrer"
-                      style={{ color: "#f2f2f2", textDecoration: "none", transition: "color 0.2s" }}
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#d4b896")}
-                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#f2f2f2")}
-                    >
-                      {product.name}
-                    </a>
-                  </h3>
-
-                  {/* Color variant swatches — shown directly below product name */}
-                  {variants && variants.length > 0 && (
-                    <div className="flex items-center gap-2 mb-3" style={{ flexWrap: "wrap" }}>
-                      <span style={{ fontSize: "0.7rem", color: "#7a6a5a", letterSpacing: "0.06em", textTransform: "uppercase" }}>Color:</span>
-                      {/* "Default" swatch — deselects variant */}
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setSelectedVariants((prev) => { const next = { ...prev }; delete next[product.id]; return next; }); }}
-                        title="Default"
-                        style={{
-                          width: "20px",
-                          height: "20px",
-                          borderRadius: "50%",
-                          border: activeVariantIdx === -1 ? "2px solid #a14f1f" : "2px solid rgba(161,79,31,0.3)",
-                          boxShadow: activeVariantIdx === -1 ? "0 0 0 2px rgba(161,79,31,0.4)" : "none",
-                          background: (product as any).defaultSwatchColor || "#555",
-                          cursor: "pointer",
-                          padding: 0,
-                          transition: "border 0.2s, box-shadow 0.2s",
-                          flexShrink: 0,
-                        }}
-                      />
-                      {variants.map((v, vIdx) => (
-                        <button
-                          key={vIdx}
-                          onClick={(e) => { e.stopPropagation(); setSelectedVariants((prev) => ({ ...prev, [product.id]: vIdx })); }}
-                          title={v.label}
-                          style={{
-                            width: "20px",
-                            height: "20px",
-                            borderRadius: "50%",
-                            border: activeVariantIdx === vIdx ? "2px solid #a14f1f" : "2px solid rgba(161,79,31,0.3)",
-                            boxShadow: activeVariantIdx === vIdx ? "0 0 0 2px rgba(161,79,31,0.4)" : "none",
-                            background: v.color,
-                            cursor: "pointer",
-                            padding: 0,
-                            transition: "border 0.2s, box-shadow 0.2s",
-                            flexShrink: 0,
-                          }}
-                        />
-                      ))}
-                      {activeVariantIdx >= 0 && (
-                        <span style={{ fontSize: "0.7rem", color: "#c4b09a", marginLeft: "2px" }}>
-                          {variants[activeVariantIdx].label}
-                        </span>
-                      )}
-                    </div>
-                  )}
-
-                  <p style={{ fontSize: "0.78rem", color: "#a14f1f", marginBottom: "0.8rem", fontStyle: "italic" }}>
-                    {product.tagline}
-                  </p>
-                  <p style={{ fontSize: "0.8rem", color: "#b0a090", lineHeight: 1.6, marginBottom: "1rem" }}>
-                    {product.desc}
-                  </p>
-
-                  {/* Pros */}
-                  <ul className="mb-4">
-                    {product.pros.map((pro) => (
-                      <li
-                        key={pro}
-                        style={{
-                          fontSize: "0.78rem",
-                          color: "#c0a880",
-                          marginBottom: "0.3rem",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.5rem",
-                        }}
-                      >
-                        <span style={{ color: "#a14f1f", fontSize: "0.9rem" }}>✓</span>
-                        {pro}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Stars */}
-                  <div className="flex items-center gap-2 mb-3">
-                    <div style={{ color: "#a14f1f", fontSize: "0.9rem" }}>
-                      {"★".repeat(Math.floor(product.rating))}
-                    </div>
-                    <span style={{ fontSize: "0.75rem", color: "#b0a090" }}>
-                      {product.rating} ({product.reviews.toLocaleString()} reviews)
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col gap-2 mt-auto">
-                    <a
-                      href={activeAffiliateUrl || "#"}
-                      target="_blank"
-                      rel="nofollow sponsored noopener noreferrer"
-                      style={{ textDecoration: "none" }}
-                    >
-                      <button className="btn-primary w-full" style={{ fontSize: "0.78rem" }}>
-                        Buy Now on Amazon
-                      </button>
-                    </a>
-                    <p style={{ fontSize: "0.68rem", color: "#c4b09a", textAlign: "center", letterSpacing: "0.01em", lineHeight: 1.4, marginTop: "4px" }}>
-                      For the latest pricing and availability, view this product directly on Amazon.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filtered.map(renderCard)}
+          </div>
+        )}
 
         {/* ── Coffee Beans Section ── */}
         {(activeCategory === "All" || activeCategory === "Coffee Beans") && (
