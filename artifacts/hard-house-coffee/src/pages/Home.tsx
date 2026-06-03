@@ -530,18 +530,16 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center" style={{ marginBottom: "2rem" }}>
           <p
             style={{
-              fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
-              fontSize: "clamp(1.25rem, 2.4vw, 1.85rem)",
-              color: "#f0ebe4",
-              fontWeight: 300,
-              lineHeight: 1.55,
-              letterSpacing: "0.01em",
+              fontFamily: "'Dancing Script', cursive",
+              fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
+              color: "#f2f2f2",
+              fontWeight: 600,
+              lineHeight: 1.45,
               margin: 0,
+              textShadow: "0 1px 8px rgba(0,0,0,0.5)",
             }}
           >
-            Every cup we pour is a statement.{" "}
-            <span style={{ color: "#d4af37", fontWeight: 500 }}>Bold, deliberate,</span>{" "}
-            and unapologetically premium.
+            Every cup we pour is a statement: Bold, deliberate, and unapologetically premium.
           </p>
         </div>
 
