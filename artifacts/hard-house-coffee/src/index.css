@@ -433,6 +433,13 @@ a, button {
 
 /* Landscape (short viewport, height ≤ 500 px — e.g. iPhone rotated sideways) */
 @media (max-height: 500px) {
+  /* Extend hero section to cover safe-area insets on the sides (notch/home-bar) */
+  section.relative.w-full.h-screen.overflow-hidden:first-of-type {
+    margin-left: calc(-1 * env(safe-area-inset-left, 0px)) !important;
+    margin-right: calc(-1 * env(safe-area-inset-right, 0px)) !important;
+    width: calc(100% + env(safe-area-inset-left, 0px) + env(safe-area-inset-right, 0px)) !important;
+  }
+
   /* Same flex-column approach as mobile portrait */
   .hero-content-root {
     display: flex !important;
