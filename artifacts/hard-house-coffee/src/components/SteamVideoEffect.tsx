@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from "react";
 
 export default function SteamVideoEffect() {
   // Synchronous check — runs before any render or hook, cannot be cached
-  if (typeof window !== "undefined" && window.innerWidth <= 768) return null;
+  // Hide on all mobile: portrait (width ≤ 768) AND landscape (height ≤ 500)
+  if (typeof window !== "undefined" && (window.innerWidth <= 768 || window.innerHeight <= 500)) return null;
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const [opacity, setOpacity] = useState(0);
