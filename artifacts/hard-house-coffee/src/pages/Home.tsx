@@ -371,7 +371,7 @@ export default function Home() {
       <Navbar />
 
       {/* HERO SLIDESHOW */}
-      <section className="relative w-full h-screen overflow-hidden">
+      <section className="hero-section relative w-full h-screen overflow-hidden">
         {heroSlides.map((slide, idx) => (
           <div
             key={idx}
