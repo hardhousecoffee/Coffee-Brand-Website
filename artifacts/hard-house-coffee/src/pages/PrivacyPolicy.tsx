@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -159,7 +160,7 @@ export default function PrivacyPolicy() {
             the right to access, correct, or delete information we hold about you. To exercise any
             of these rights, contact us at:
           </p>
-          <p style={{ color: "#f2f2f2" }}>hardhousecoffee@gmail.com</p>
+          <p><Link href="/contact" style={{ color: "#D4AF37", textDecoration: "underline" }}>Contact us here</Link></p>
         </Section>
 
         <Section title="Changes to This Policy">
@@ -172,8 +173,8 @@ export default function PrivacyPolicy() {
 
         <Section title="Contact">
           <p>
-            If you have any questions about this Privacy Policy, please reach out to us at{" "}
-            <span style={{ color: "#f2f2f2" }}>hardhousecoffee@gmail.com</span>.
+            If you have any questions about this Privacy Policy, please{" "}
+            <Link href="/contact" style={{ color: "#D4AF37", textDecoration: "underline" }}>reach out to us here</Link>.
           </p>
         </Section>
       </div>

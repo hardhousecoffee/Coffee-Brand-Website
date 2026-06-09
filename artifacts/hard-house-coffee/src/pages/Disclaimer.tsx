@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -133,8 +134,8 @@ export default function Disclaimer() {
 
         <Section title="Contact">
           <p>
-            If you have any questions regarding this Disclaimer, please contact us at{" "}
-            <span style={{ color: "#f2f2f2" }}>hardhousecoffee@gmail.com</span>.
+            If you have any questions regarding this Disclaimer, please{" "}
+            <Link href="/contact" style={{ color: "#D4AF37", textDecoration: "underline" }}>contact us</Link>.
           </p>
         </Section>
       </div>

@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -150,8 +151,8 @@ export default function TermsOfUse() {
 
         <Section title="Contact">
           <p>
-            For any questions about these Terms of Use, please contact us at{" "}
-            <span style={{ color: "#f2f2f2" }}>hardhousecoffee@gmail.com</span>.
+            For any questions about these Terms of Use, please{" "}
+            <Link href="/contact" style={{ color: "#D4AF37", textDecoration: "underline" }}>contact us</Link>.
           </p>
         </Section>
       </div>
