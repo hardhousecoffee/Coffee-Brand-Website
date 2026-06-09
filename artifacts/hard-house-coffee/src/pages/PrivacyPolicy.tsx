@@ -160,7 +160,7 @@ export default function PrivacyPolicy() {
             the right to access, correct, or delete information we hold about you. To exercise any
             of these rights, contact us at:
           </p>
-          <p><Link href="/contact" style={{ color: "#f2f2f2", textDecoration: "underline" }}>Contact us here</Link></p>
+          <p><Link href="/contact" style={{ color: "#a14f1f", textDecoration: "none" }}>Contact us here</Link></p>
         </Section>
 
         <Section title="Changes to This Policy">
@@ -174,7 +174,7 @@ export default function PrivacyPolicy() {
         <Section title="Contact">
           <p>
             If you have any questions about this Privacy Policy, please{" "}
-            <Link href="/contact" style={{ color: "#f2f2f2", textDecoration: "underline" }}>reach out to us here</Link>.
+            <Link href="/contact" style={{ color: "#a14f1f", textDecoration: "none" }}>reach out to us here</Link>.
           </p>
         </Section>
       </div>

@@ -135,7 +135,7 @@ export default function Disclaimer() {
         <Section title="Contact">
           <p>
             If you have any questions regarding this Disclaimer, please{" "}
-            <Link href="/contact" style={{ color: "#f2f2f2", textDecoration: "underline" }}>contact us</Link>.
+            <Link href="/contact" style={{ color: "#a14f1f", textDecoration: "none" }}>contact us</Link>.
           </p>
         </Section>
       </div>

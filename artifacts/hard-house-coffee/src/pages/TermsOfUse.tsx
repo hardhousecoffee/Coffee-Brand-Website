@@ -152,7 +152,7 @@ export default function TermsOfUse() {
         <Section title="Contact">
           <p>
             For any questions about these Terms of Use, please{" "}
-            <Link href="/contact" style={{ color: "#f2f2f2", textDecoration: "underline" }}>contact us</Link>.
+            <Link href="/contact" style={{ color: "#a14f1f", textDecoration: "none" }}>contact us</Link>.
           </p>
         </Section>
       </div>
