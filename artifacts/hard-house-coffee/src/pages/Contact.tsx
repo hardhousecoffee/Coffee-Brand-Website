@@ -122,11 +122,8 @@ export default function Contact() {
             >
               Email
             </h3>
-            <p style={{ color: "#f2f2f2", fontSize: "0.95rem", marginBottom: "0.4rem" }}>
-              hardhousecoffee@gmail.com
-            </p>
             <p style={{ color: "#6b5a4e", fontSize: "0.78rem", lineHeight: 1.6 }}>
-              We typically respond within 1–2 business days.
+              Use the form below and we'll get back to you within 1–2 business days.
             </p>
           </div>
 
@@ -171,11 +168,8 @@ export default function Contact() {
             >
               Partnerships & Press
             </h3>
-            <p style={{ color: "#f2f2f2", fontSize: "0.95rem", marginBottom: "0.4rem" }}>
-              hardhousecoffee@gmail.com
-            </p>
             <p style={{ color: "#6b5a4e", fontSize: "0.78rem", lineHeight: 1.6 }}>
-              For brand collaborations, press inquiries, and affiliate proposals.
+              For brand collaborations, press inquiries, and affiliate proposals — use the form below.
             </p>
           </div>
         </div>
