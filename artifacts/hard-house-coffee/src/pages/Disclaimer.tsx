@@ -8,8 +8,9 @@ function Section({ title, children }: { title: string; children: React.ReactNode
     <div style={{ marginBottom: "2.75rem" }}>
       <h2
         style={{
-          fontFamily: "'Cinzel Decorative', serif",
+          fontFamily: "Inter, sans-serif",
           fontSize: "clamp(0.95rem, 2vw, 1.2rem)",
+          fontWeight: 700,
           color: "#f2f2f2",
           marginBottom: "1rem",
           paddingBottom: "0.5rem",
@@ -54,8 +55,9 @@ export default function Disclaimer() {
           <h1
             className="mt-4"
             style={{
-              fontFamily: "'Cinzel Decorative', serif",
+              fontFamily: "Inter, sans-serif",
               fontSize: "clamp(1.8rem, 4.5vw, 3.2rem)",
+              fontWeight: 700,
               color: "#f2f2f2",
               lineHeight: 1.2,
             }}
@@ -135,7 +137,7 @@ export default function Disclaimer() {
         <Section title="Contact">
           <p>
             If you have any questions regarding this Disclaimer, please{" "}
-            <Link href="/contact" style={{ color: "#D4AF37", textDecoration: "underline" }}>contact us</Link>.
+            <Link href="/contact" style={{ color: "#D4AF37", textDecoration: "none", fontWeight: 600 }}>contact us</Link>.
           </p>
         </Section>
       </div>
