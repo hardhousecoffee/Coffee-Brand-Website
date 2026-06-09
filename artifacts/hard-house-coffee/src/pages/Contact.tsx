@@ -1,8 +1,40 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function Contact() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("sending");
+    const form = e.currentTarget;
+    const data = {
+      access_key: "8d9775c6-202f-4d73-97a1-acbe802a5b5d",
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      subject: "New message from Hard House Coffee contact form",
+    };
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
@@ -171,16 +203,34 @@ export default function Contact() {
             Fill out the form below and we'll get back to you.
           </p>
 
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const form = e.currentTarget;
-              const name = (form.elements.namedItem("name") as HTMLInputElement).value;
-              const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-              const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
-              window.location.href = `mailto:hardhousecoffee@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(email)}`;
-            }}
-          >
+          {status === "success" && (
+            <div style={{
+              background: "rgba(161,79,31,0.12)",
+              border: "1px solid rgba(161,79,31,0.4)",
+              borderRadius: "8px",
+              padding: "1.5rem",
+              textAlign: "center",
+              marginBottom: "1.5rem",
+            }}>
+              <p style={{ fontFamily: "'Cinzel Decorative', serif", color: "#D4AF37", fontSize: "1rem", marginBottom: "0.5rem" }}>Message Sent!</p>
+              <p style={{ color: "#b0a090", fontSize: "0.9rem" }}>Thank you for reaching out. We'll get back to you soon.</p>
+            </div>
+          )}
+
+          {status === "error" && (
+            <div style={{
+              background: "rgba(180,30,30,0.1)",
+              border: "1px solid rgba(180,30,30,0.35)",
+              borderRadius: "8px",
+              padding: "1rem",
+              textAlign: "center",
+              marginBottom: "1.5rem",
+            }}>
+              <p style={{ color: "#e07070", fontSize: "0.9rem" }}>Something went wrong. Please try again or email us directly.</p>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
               {[
                 { id: "name", label: "Name", type: "text", placeholder: "Your name" },
@@ -262,7 +312,9 @@ export default function Contact() {
               />
             </div>
 
-            <button type="submit" className="btn-primary">Send Message</button>
+            <button type="submit" className="btn-primary" disabled={status === "sending"}>
+              {status === "sending" ? "Sending..." : "Send Message"}
+            </button>
           </form>
         </div>
       </div>
