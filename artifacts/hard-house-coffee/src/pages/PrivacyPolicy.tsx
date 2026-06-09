@@ -10,7 +10,6 @@ function Section({ title, children }: { title: string; children: React.ReactNode
         style={{
           fontFamily: "Inter, sans-serif",
           fontSize: "clamp(0.95rem, 2vw, 1.2rem)",
-          fontWeight: 700,
           color: "#f2f2f2",
           marginBottom: "1rem",
           paddingBottom: "0.5rem",
@@ -57,7 +56,6 @@ export default function PrivacyPolicy() {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "clamp(1.8rem, 4.5vw, 3.2rem)",
-              fontWeight: 700,
               color: "#f2f2f2",
               lineHeight: 1.2,
             }}
@@ -162,7 +160,7 @@ export default function PrivacyPolicy() {
             the right to access, correct, or delete information we hold about you. To exercise any
             of these rights, contact us at:
           </p>
-          <p><Link href="/contact" style={{ color: "#D4AF37", textDecoration: "none", fontWeight: 600 }}>Contact us here</Link></p>
+          <p><Link href="/contact" style={{ color: "#f2f2f2", textDecoration: "underline" }}>Contact us here</Link></p>
         </Section>
 
         <Section title="Changes to This Policy">
@@ -176,7 +174,7 @@ export default function PrivacyPolicy() {
         <Section title="Contact">
           <p>
             If you have any questions about this Privacy Policy, please{" "}
-            <Link href="/contact" style={{ color: "#D4AF37", textDecoration: "none", fontWeight: 600 }}>reach out to us here</Link>.
+            <Link href="/contact" style={{ color: "#f2f2f2", textDecoration: "underline" }}>reach out to us here</Link>.
           </p>
         </Section>
       </div>

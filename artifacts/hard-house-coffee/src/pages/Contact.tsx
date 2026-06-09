@@ -67,7 +67,6 @@ export default function Contact() {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "clamp(2rem, 5vw, 3.6rem)",
-              fontWeight: 700,
               color: "#f2f2f2",
               lineHeight: 1.2,
             }}
@@ -188,7 +187,6 @@ export default function Contact() {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "clamp(1rem, 2.5vw, 1.4rem)",
-              fontWeight: 700,
               color: "#f2f2f2",
               marginBottom: "0.4rem",
             }}
@@ -208,7 +206,7 @@ export default function Contact() {
               textAlign: "center",
               marginBottom: "1.5rem",
             }}>
-              <p style={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#D4AF37", fontSize: "1rem", marginBottom: "0.5rem" }}>Message Sent!</p>
+              <p style={{ fontFamily: "Inter, sans-serif", color: "#f2f2f2", fontSize: "1rem", marginBottom: "0.5rem" }}>Message Sent!</p>
               <p style={{ color: "#b0a090", fontSize: "0.9rem" }}>Thank you for reaching out. We'll get back to you soon.</p>
             </div>
           )}
