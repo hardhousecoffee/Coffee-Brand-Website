@@ -675,10 +675,10 @@ export default function Home() {
                     from { opacity: 0; transform: translateY(20px) scale(0.96); }
                     to   { opacity: 1; transform: translateY(0) scale(1); }
                   }
-                  .hhc-modal-inner { display: flex; flex-direction: row; min-height: 360px; }
-                  .hhc-modal-img-panel { flex: 0 0 58%; position: relative; overflow: hidden; }
+                  .hhc-modal-inner { display: flex; flex-direction: row; height: 340px; }
+                  .hhc-modal-img-panel { flex: 0 0 52%; position: relative; overflow: hidden; }
                   @media (max-width: 600px) {
-                    .hhc-modal-inner { flex-direction: column; min-height: unset; }
+                    .hhc-modal-inner { flex-direction: column; height: auto; }
                     .hhc-modal-img-panel { flex: 0 0 160px; width: 100%; }
                   }
                 `}</style>
@@ -735,10 +735,11 @@ export default function Home() {
                   <div
                     style={{
                       flex: 1,
-                      padding: "2rem 1.75rem 1.75rem",
+                      padding: "1.25rem 1.5rem 1.5rem",
                       display: "flex",
                       flexDirection: "column",
-                      gap: "1.1rem",
+                      gap: "0.75rem",
+                      overflow: "hidden",
                     }}
                   >
                     {/* Close */}
