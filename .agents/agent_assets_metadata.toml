@@ -71,3 +71,9 @@ id = "z6ueA5bePpZZVSAe0TSCw"
 uri = "file://attached_assets/MR_ROAST_DEFTONE_STYLUS_FONT.png"
 type = "image"
 title = "Mr. Roast — PNG"
+
+[[outputs]]
+id = "TihVJATLCadbiCBvj7ij0"
+uri = "file://attached_assets/MR_ROAST_DEFTONE_STYLUS_FONT_transparent.png"
+type = "image"
+title = "Mr. Roast — Transparent PNG"
