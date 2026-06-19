@@ -77,3 +77,9 @@ id = "TihVJATLCadbiCBvj7ij0"
 uri = "file://attached_assets/MR_ROAST_DEFTONE_STYLUS_FONT_transparent.png"
 type = "image"
 title = "Mr. Roast — Transparent PNG (crisp)"
+
+[[outputs]]
+id = "r_Zd4GLkTLIp53HgM3tZs"
+uri = "file://attached_assets/mr_roast_deftone.png"
+type = "image"
+title = "Mr. Roast — Deftone Stylus, Transparent PNG"
