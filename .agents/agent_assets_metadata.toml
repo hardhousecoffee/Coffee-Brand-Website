@@ -65,3 +65,9 @@ id = "WDPGcZfQk5vbhTKj8y0gs"
 uri = "file://artifacts/hard-house-coffee/public/images/logo-simplified.png"
 type = "image"
 title = "Hard House Coffee — Simplified Logo"
+
+[[outputs]]
+id = "z6ueA5bePpZZVSAe0TSCw"
+uri = "file://attached_assets/MR_ROAST_DEFTONE_STYLUS_FONT.png"
+type = "image"
+title = "Mr. Roast — PNG"
