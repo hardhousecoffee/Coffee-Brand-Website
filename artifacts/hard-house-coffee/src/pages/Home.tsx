@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
 import SteamEffect from "@/components/SteamEffect";
 import SteamEffectSVG from "@/components/SteamEffectSVG";
-import SteamVideoEffect from "@/components/SteamVideoEffect";
 import PremiumBanner from "@/components/PremiumBanner";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
@@ -408,9 +407,6 @@ export default function Home() {
 
         {/* Dark gradient overlay */}
         <div className="hero-overlay absolute inset-0" style={{ zIndex: 2 }} />
-
-        {/* Steam video overlay — desktop/tablet only (hidden on phones) */}
-        {!isMobile && <SteamVideoEffect />}
 
         {/* Hero content */}
         <div
