@@ -7,80 +7,138 @@ const root = join(__dirname, "..");
 const distPublic = join(root, "dist/public");
 const distServer = join(root, "dist/server");
 
-// Single master list — add one entry here when you write a new blog post.
-// Everything else (static HTML file, sitemap entry) is automatic.
-export const ROUTES = [
-  { path: "/", changefreq: "weekly", priority: "1.0" },
-  { path: "/about", changefreq: "monthly", priority: "0.6" },
-  { path: "/blog", changefreq: "weekly", priority: "0.9" },
-  { path: "/blog/best-espresso-machines-for-beginners-2026-guide", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/the-art-of-the-perfect-pour-over", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/why-every-coffee-lover-needs-a-grinder-first-2026-guide", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/best-espresso-machines-2026-guide-tested-and-ranked", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/top-5-dark-roast-beans-for-espresso-in-2026", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/the-rise-of-specialty-coffee-bars", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/cold-brew-mastery-a-complete-home-guide", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/ethiopia-vs-colombia-a-complete-coffee-origin-guide", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/the-300-dollar-sweet-spot-real-espresso-at-home", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/stepping-up-what-crossing-1000-mark-actually-buys-you", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/the-icon-la-marzocco-linea-micra-worth-the-obsession", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/living-the-dream-mind-blowing-world-of-20000-espresso-gear", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/seattle-deep-roots-emerald-city-coffee-scene", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/los-angeles-old-hollywood-glamour-meets-new-wave", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/san-francisco-birthplace-of-specialty-revolution", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/new-york-city-italian-espresso-bars-to-fast-paced-cafes", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/seed-to-sprout-secret-lives-of-coffee-farmers", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/the-magic-of-processing-washing-and-drying-shapes-flavor", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/the-art-of-the-roast-finding-perfect-profile-in-the-drum", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/logistics-and-freshness-journey-to-your-local-shelf", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/inside-world-barista-championship-olympics-of-caffeine", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/meet-the-masters-what-makes-top-tier-barista-truly-elite", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/beyond-the-supermarket-navigating-notable-specialty-coffee-brands", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/three-most-expensive-coffee-brands-on-earth-luxury-in-a-mug", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/global-excellence-onyx-coffee-lab-bentonville-arkansas", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/old-world-perfection-ditta-artigianale-florence-italy", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/master-of-precision-glitch-coffee-roasters-tokyo-japan", changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/parisian-elegance-cafe-lomi-paris-france", changefreq: "monthly", priority: "0.8" },
-  { path: "/products", changefreq: "weekly", priority: "0.7" },
-  { path: "/contact", changefreq: "monthly", priority: "0.5" },
-  { path: "/privacy-policy", changefreq: "yearly", priority: "0.3" },
-  { path: "/disclaimer", changefreq: "yearly", priority: "0.3" },
-  { path: "/terms-of-use", changefreq: "yearly", priority: "0.3" },
-];
-
 console.log("Loading SSR bundle...");
-const { render } = await import(join(distServer, "entry-server.js"));
+
+// ROUTES comes from src/routes.config.ts via the compiled server bundle.
+// This script does NOT maintain its own route list.
+// To add a new blog post, edit only src/routes.config.ts.
+const { render, ROUTES } = await import(join(distServer, "entry-server.js"));
 
 const template = readFileSync(join(distPublic, "index.html"), "utf-8");
-
 let successCount = 0;
 let failCount = 0;
+
+// ─────────────────────────────────────────────────────────────────────────────
+// react-helmet-async with renderToString emits head tags (title, meta, link)
+// into the rendered body HTML rather than filling helmetContext.  We must:
+//   1. Extract those tags from the body string.
+//   2. Remove them from the body so they do not appear in <div id="root">.
+//   3. Replace/inject them in the correct <head> section of the template,
+//      overriding the generic placeholder values.
+// ─────────────────────────────────────────────────────────────────────────────
+function extractAndClean(html) {
+  let cleanHtml = html;
+  const extracted = {};
+
+  const patterns = {
+    title:     /<title>(?!Hard House Coffee<)([^<]*)<\/title>/,
+    titleFull: /<title>[^<]*<\/title>/g,
+    metaDesc:  /<meta\s+(?:name="description"\s+content|content="[^"]*"\s+name="description")[^>]*\/?>/,
+    ogTitle:   /<meta\s+property="og:title"[^>]*\/?>/,
+    ogDesc:    /<meta\s+property="og:description"[^>]*\/?>/,
+    canonical: /<link\s+rel="canonical"[^>]*\/?>/,
+    preloads:  /<link\s+rel="preload"[^>]*\/?>/g,
+  };
+
+  // Extract the page-specific title (not the generic fallback)
+  const titleMatch = html.match(/<title>([^<]+)<\/title>/g);
+  if (titleMatch && titleMatch.length > 0) {
+    // Use the last title tag found (page-specific Helmet title)
+    extracted.title = titleMatch[titleMatch.length - 1];
+    // Remove ALL title tags from body so none appear in <div id="root">
+    cleanHtml = cleanHtml.replace(/<title>[^<]*<\/title>/g, "");
+  }
+
+  const metaDescMatch = html.match(/<meta\s+name="description"[^>]*\/?>/);
+  if (metaDescMatch) {
+    extracted.metaDesc = metaDescMatch[0];
+    cleanHtml = cleanHtml.replace(metaDescMatch[0], "");
+  }
+
+  const ogTitleMatch = html.match(/<meta\s+property="og:title"[^>]*\/?>/);
+  if (ogTitleMatch) {
+    extracted.ogTitle = ogTitleMatch[0];
+    cleanHtml = cleanHtml.replace(ogTitleMatch[0], "");
+  }
+
+  const ogDescMatch = html.match(/<meta\s+property="og:description"[^>]*\/?>/);
+  if (ogDescMatch) {
+    extracted.ogDesc = ogDescMatch[0];
+    cleanHtml = cleanHtml.replace(ogDescMatch[0], "");
+  }
+
+  const canonicalMatch = html.match(/<link\s+rel="canonical"[^>]*\/?>/);
+  if (canonicalMatch) {
+    extracted.canonical = canonicalMatch[0];
+    cleanHtml = cleanHtml.replace(canonicalMatch[0], "");
+  }
+
+  // Move preload links out of body (they are valid in head too)
+  const preloadMatches = [...html.matchAll(/<link\s+rel="preload"[^>]*\/?>/g)];
+  if (preloadMatches.length > 0) {
+    extracted.preloads = preloadMatches.map((m) => m[0]).join("\n    ");
+    for (const m of preloadMatches) {
+      cleanHtml = cleanHtml.replace(m[0], "");
+    }
+  }
+
+  return { cleanHtml, extracted };
+}
+
+function injectIntoTemplate(tmpl, cleanHtml, extracted) {
+  let out = tmpl.replace(/<!--SSR-START-->[\s\S]*?<!--SSR-END-->/, cleanHtml);
+
+  // Replace generic title with page-specific title
+  if (extracted.title) {
+    out = out.replace(/<title>[^<]*<\/title>/, extracted.title);
+  }
+
+  // Replace generic meta description with page-specific one
+  if (extracted.metaDesc) {
+    out = out.replace(/<meta\s+name="description"[^>]*\/?>/, extracted.metaDesc);
+  }
+
+  // Replace or inject og:title
+  if (extracted.ogTitle) {
+    if (out.includes('property="og:title"')) {
+      out = out.replace(/<meta\s+property="og:title"[^>]*\/?>/, extracted.ogTitle);
+    } else {
+      out = out.replace("</head>", `    ${extracted.ogTitle}\n  </head>`);
+    }
+  }
+
+  // Replace or inject og:description
+  if (extracted.ogDesc) {
+    if (out.includes('property="og:description"')) {
+      out = out.replace(/<meta\s+property="og:description"[^>]*\/?>/, extracted.ogDesc);
+    } else {
+      out = out.replace("</head>", `    ${extracted.ogDesc}\n  </head>`);
+    }
+  }
+
+  // Inject canonical before </head>
+  if (extracted.canonical) {
+    out = out.replace("</head>", `    ${extracted.canonical}\n  </head>`);
+  }
+
+  // Inject preload hints before </head>
+  if (extracted.preloads) {
+    out = out.replace("</head>", `    ${extracted.preloads}\n  </head>`);
+  }
+
+  return out;
+}
 
 console.log(`\nPre-rendering ${ROUTES.length} pages...\n`);
 
 for (const route of ROUTES) {
-  const { path: url } = route;
+  const { path: url, changefreq, priority } = route;
   try {
-    const { html, helmetContext } = render(url);
-    const { helmet } = helmetContext;
+    const { html } = render(url);
+    const { cleanHtml, extracted } = extractAndClean(html);
+    const output = injectIntoTemplate(template, cleanHtml, extracted);
 
-    const helmetHead = helmet
-      ? [
-          helmet.title?.toString() || "",
-          helmet.meta?.toString() || "",
-          helmet.link?.toString() || "",
-        ]
-          .filter((s) => s.trim())
-          .join("\n    ")
-      : "";
-
-    let output = template
-      .replace(/<!--SSR-START-->[\s\S]*?<!--SSR-END-->/, html)
-      .replace("</head>", `    ${helmetHead}\n  </head>`);
-
-    const outDir =
-      url === "/" ? distPublic : join(distPublic, url.slice(1));
-
+    const outDir = url === "/" ? distPublic : join(distPublic, url.slice(1));
     mkdirSync(outDir, { recursive: true });
     writeFileSync(join(outDir, "index.html"), output);
 
@@ -92,7 +150,7 @@ for (const route of ROUTES) {
   }
 }
 
-// Auto-generate sitemap.xml from the same ROUTES list
+// Auto-generate sitemap.xml — derived from the same ROUTES list.
 const BASE = "https://hardhousecoffee.com";
 const today = new Date().toISOString().slice(0, 10);
 const sitemapEntries = ROUTES.map(
