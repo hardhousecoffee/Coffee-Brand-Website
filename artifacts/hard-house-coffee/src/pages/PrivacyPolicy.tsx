@@ -31,6 +31,8 @@ export default function PrivacyPolicy() {
       <Helmet>
         <title>Privacy Policy | Hard House Coffee</title>
         <meta name="description" content="Read the Hard House Coffee Privacy Policy — how we collect, use, and protect your information, including our use of cookies and third-party services." />
+        <meta property="og:title" content="Privacy Policy | Hard House Coffee" />
+        <meta property="og:description" content="Read the Hard House Coffee Privacy Policy — how we collect, use, and protect your information, including our use of cookies and third-party services." />
       </Helmet>
       <Navbar />
 

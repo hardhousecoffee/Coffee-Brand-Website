@@ -19,111 +19,55 @@ let successCount = 0;
 let failCount = 0;
 
 // ─────────────────────────────────────────────────────────────────────────────
-// react-helmet-async with renderToString emits head tags (title, meta, link)
-// into the rendered body HTML rather than filling helmetContext.  We must:
-//   1. Extract those tags from the body string.
-//   2. Remove them from the body so they do not appear in <div id="root">.
-//   3. Replace/inject them in the correct <head> section of the template,
-//      overriding the generic placeholder values.
+// react-helmet-async with renderToString emits ALL head-managed tags
+// (title, meta, link, etc.) into the rendered HTML string before the first
+// structural element, rather than populating helmetContext.
+//
+// Strategy:
+//   1. Split rendered HTML at the first structural element.
+//      Everything before it = Helmet head tags.
+//      Everything from it onwards = real page body content.
+//   2. Strip generic placeholder tags (title, description, og) from the
+//      template so nothing generic leaks through.
+//   3. Inject the Helmet head tags + a fallback canonical (when the component
+//      doesn't set one) just before </head>.
+//   4. Inject the body content where the SSR markers were.
 // ─────────────────────────────────────────────────────────────────────────────
-function extractAndClean(html) {
-  let cleanHtml = html;
-  const extracted = {};
+function processPage(tmpl, html, url) {
+  // Split: Helmet head tags appear before the first structural element
+  const firstStructural = html.search(
+    /<(?:div|header|main|nav|section|article|footer|figure|picture|h[1-6]|ul|ol|table|form)[^>a-zA-Z]/
+  );
 
-  const patterns = {
-    title:     /<title>(?!Hard House Coffee<)([^<]*)<\/title>/,
-    titleFull: /<title>[^<]*<\/title>/g,
-    metaDesc:  /<meta\s+(?:name="description"\s+content|content="[^"]*"\s+name="description")[^>]*\/?>/,
-    ogTitle:   /<meta\s+property="og:title"[^>]*\/?>/,
-    ogDesc:    /<meta\s+property="og:description"[^>]*\/?>/,
-    canonical: /<link\s+rel="canonical"[^>]*\/?>/,
-    preloads:  /<link\s+rel="preload"[^>]*\/?>/g,
-  };
-
-  // Extract the page-specific title (not the generic fallback)
-  const titleMatch = html.match(/<title>([^<]+)<\/title>/g);
-  if (titleMatch && titleMatch.length > 0) {
-    // Use the last title tag found (page-specific Helmet title)
-    extracted.title = titleMatch[titleMatch.length - 1];
-    // Remove ALL title tags from body so none appear in <div id="root">
-    cleanHtml = cleanHtml.replace(/<title>[^<]*<\/title>/g, "");
+  let helmetHead = "";
+  let bodyContent = html;
+  if (firstStructural > 0) {
+    helmetHead = html.slice(0, firstStructural).trim();
+    bodyContent = html.slice(firstStructural);
   }
 
-  const metaDescMatch = html.match(/<meta\s+name="description"[^>]*\/?>/);
-  if (metaDescMatch) {
-    extracted.metaDesc = metaDescMatch[0];
-    cleanHtml = cleanHtml.replace(metaDescMatch[0], "");
+  // Remove generic placeholder tags from template — the page-specific ones
+  // from Helmet will replace them during injection below.
+  let out = tmpl
+    .replace(/<title>[^<]*<\/title>/, "")
+    .replace(/<meta\s+name="description"[^>]*\/?>/, "")
+    .replace(/<meta\s+property="og:title"[^>]*\/?>/, "")
+    .replace(/<meta\s+property="og:description"[^>]*\/?>/, "");
+
+  // Inject body content (replaces static fallback between SSR markers)
+  out = out.replace(/<!--SSR-START-->[\s\S]*?<!--SSR-END-->/, bodyContent);
+
+  // Add a fallback canonical when the component's Helmet doesn't provide one.
+  // The canonical URL matches the route exactly as defined in routes.config.ts.
+  const hasCanonical = helmetHead.includes('rel="canonical"');
+  if (!hasCanonical) {
+    const href = url === "/" ? "https://hardhousecoffee.com/" : `https://hardhousecoffee.com${url}`;
+    helmetHead += `\n    <link rel="canonical" href="${href}"/>`;
   }
 
-  const ogTitleMatch = html.match(/<meta\s+property="og:title"[^>]*\/?>/);
-  if (ogTitleMatch) {
-    extracted.ogTitle = ogTitleMatch[0];
-    cleanHtml = cleanHtml.replace(ogTitleMatch[0], "");
-  }
-
-  const ogDescMatch = html.match(/<meta\s+property="og:description"[^>]*\/?>/);
-  if (ogDescMatch) {
-    extracted.ogDesc = ogDescMatch[0];
-    cleanHtml = cleanHtml.replace(ogDescMatch[0], "");
-  }
-
-  const canonicalMatch = html.match(/<link\s+rel="canonical"[^>]*\/?>/);
-  if (canonicalMatch) {
-    extracted.canonical = canonicalMatch[0];
-    cleanHtml = cleanHtml.replace(canonicalMatch[0], "");
-  }
-
-  // Move preload links out of body (they are valid in head too)
-  const preloadMatches = [...html.matchAll(/<link\s+rel="preload"[^>]*\/?>/g)];
-  if (preloadMatches.length > 0) {
-    extracted.preloads = preloadMatches.map((m) => m[0]).join("\n    ");
-    for (const m of preloadMatches) {
-      cleanHtml = cleanHtml.replace(m[0], "");
-    }
-  }
-
-  return { cleanHtml, extracted };
-}
-
-function injectIntoTemplate(tmpl, cleanHtml, extracted) {
-  let out = tmpl.replace(/<!--SSR-START-->[\s\S]*?<!--SSR-END-->/, cleanHtml);
-
-  // Replace generic title with page-specific title
-  if (extracted.title) {
-    out = out.replace(/<title>[^<]*<\/title>/, extracted.title);
-  }
-
-  // Replace generic meta description with page-specific one
-  if (extracted.metaDesc) {
-    out = out.replace(/<meta\s+name="description"[^>]*\/?>/, extracted.metaDesc);
-  }
-
-  // Replace or inject og:title
-  if (extracted.ogTitle) {
-    if (out.includes('property="og:title"')) {
-      out = out.replace(/<meta\s+property="og:title"[^>]*\/?>/, extracted.ogTitle);
-    } else {
-      out = out.replace("</head>", `    ${extracted.ogTitle}\n  </head>`);
-    }
-  }
-
-  // Replace or inject og:description
-  if (extracted.ogDesc) {
-    if (out.includes('property="og:description"')) {
-      out = out.replace(/<meta\s+property="og:description"[^>]*\/?>/, extracted.ogDesc);
-    } else {
-      out = out.replace("</head>", `    ${extracted.ogDesc}\n  </head>`);
-    }
-  }
-
-  // Inject canonical before </head>
-  if (extracted.canonical) {
-    out = out.replace("</head>", `    ${extracted.canonical}\n  </head>`);
-  }
-
-  // Inject preload hints before </head>
-  if (extracted.preloads) {
-    out = out.replace("</head>", `    ${extracted.preloads}\n  </head>`);
+  // Inject all Helmet head tags (plus canonical) just before </head>
+  if (helmetHead.trim()) {
+    out = out.replace("</head>", `    ${helmetHead.trim()}\n  </head>`);
   }
 
   return out;
@@ -132,11 +76,10 @@ function injectIntoTemplate(tmpl, cleanHtml, extracted) {
 console.log(`\nPre-rendering ${ROUTES.length} pages...\n`);
 
 for (const route of ROUTES) {
-  const { path: url, changefreq, priority } = route;
+  const { path: url } = route;
   try {
     const { html } = render(url);
-    const { cleanHtml, extracted } = extractAndClean(html);
-    const output = injectIntoTemplate(template, cleanHtml, extracted);
+    const output = processPage(template, html, url);
 
     const outDir = url === "/" ? distPublic : join(distPublic, url.slice(1));
     mkdirSync(outDir, { recursive: true });
@@ -151,13 +94,13 @@ for (const route of ROUTES) {
 }
 
 // Auto-generate sitemap.xml — derived from the same ROUTES list.
+// <lastmod> is intentionally omitted: using the build date for all pages
+// is misleading. Accurate per-page modification dates are not tracked.
 const BASE = "https://hardhousecoffee.com";
-const today = new Date().toISOString().slice(0, 10);
 const sitemapEntries = ROUTES.map(
   ({ path, changefreq, priority }) => `
   <url>
     <loc>${BASE}${path}</loc>
-    <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`
@@ -169,7 +112,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 `;
 
 writeFileSync(join(distPublic, "sitemap.xml"), sitemap);
-console.log("\n  ✓ sitemap.xml generated");
+console.log("\n  ✓ sitemap.xml generated (no lastmod — build date omitted)");
 
 console.log(`\nPre-render complete: ${successCount} succeeded, ${failCount} failed`);
 if (failCount > 0) process.exit(1);

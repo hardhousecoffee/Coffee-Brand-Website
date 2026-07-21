@@ -31,6 +31,8 @@ export default function Disclaimer() {
       <Helmet>
         <title>Disclaimer | Hard House Coffee</title>
         <meta name="description" content="Read the Hard House Coffee Disclaimer — affiliate disclosure, accuracy of information, external links policy, and limitation of liability." />
+        <meta property="og:title" content="Disclaimer | Hard House Coffee" />
+        <meta property="og:description" content="Read the Hard House Coffee Disclaimer — affiliate disclosure, accuracy of information, external links policy, and limitation of liability." />
       </Helmet>
       <Navbar />
 

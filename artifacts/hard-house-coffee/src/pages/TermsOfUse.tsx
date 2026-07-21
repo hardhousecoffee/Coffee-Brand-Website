@@ -31,6 +31,8 @@ export default function TermsOfUse() {
       <Helmet>
         <title>Terms of Use | Hard House Coffee</title>
         <meta name="description" content="Read the Hard House Coffee Terms of Use — the rules and guidelines for using our website, content, and services." />
+        <meta property="og:title" content="Terms of Use | Hard House Coffee" />
+        <meta property="og:description" content="Read the Hard House Coffee Terms of Use — the rules and guidelines for using our website, content, and services." />
       </Helmet>
       <Navbar />
 
