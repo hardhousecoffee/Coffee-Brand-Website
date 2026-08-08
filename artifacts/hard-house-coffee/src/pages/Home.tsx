@@ -396,9 +396,9 @@ export default function Home() {
             <filter id="bloody-orange" colorInterpolationFilters="sRGB">
               <feColorMatrix
                 type="matrix"
-                values="0.277 0.277 0.277 0 0
-                        0.241 0.241 0.241 0 0
-                        0.196 0.196 0.196 0 0
+                values="0.333 0.333 0.333 0 0
+                        0.139 0.139 0.139 0 0
+                        0     0     0     0 0
                         0     0     0     1 0"
               />
             </filter>
@@ -481,9 +481,9 @@ export default function Home() {
               style={{
                 fontFamily: "'Dancing Script', cursive",
                 fontSize: "clamp(1.5rem, 3.2vw, 2.8rem)",
-                color: "#d4b896",
+                color: "#ff6a00",
                 fontWeight: 600,
-                textShadow: "0 2px 12px rgba(0,0,0,0.8)",
+                textShadow: "0 2px 12px rgba(0,0,0,0.8), 0 0 18px rgba(255,106,0,0.45)",
                 marginBottom: "2rem",
                 lineHeight: 1.2,
               }}
@@ -527,34 +527,46 @@ export default function Home() {
       {/* FEATURED GRID */}
       <section
         className="px-6"
-        style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "0.75rem", paddingBottom: "2rem" }}
+        style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "2rem", paddingBottom: "2rem" }}
       >
-        <div className="max-w-4xl mx-auto text-center" style={{ marginBottom: "2rem" }}>
-          <p
+        <div className="max-w-4xl mx-auto" style={{ marginBottom: "2rem" }}>
+          <div
             style={{
-              fontFamily: "'Dancing Script', cursive",
-              fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
-              color: "#f2f2f2",
-              fontWeight: 600,
-              lineHeight: 1.45,
-              margin: 0,
-              textShadow: "0 1px 8px rgba(0,0,0,0.5)",
+              background: "#141210",
+              border: "1px solid rgba(161,79,31,0.4)",
+              borderRadius: "12px",
+              padding: "2.5rem 3rem",
+              boxShadow: "0 4px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(161,79,31,0.07)",
             }}
           >
-            Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
-          </p>
-          {/* Supporting editorial copy — gives Google crawlable text without cluttering the design */}
-          <p
-            style={{
-              color: "#9a8878",
-              fontSize: "clamp(0.88rem, 1.4vw, 1rem)",
-              lineHeight: 1.85,
-              margin: "1.5rem auto 0",
-              maxWidth: "620px",
-            }}
-          >
-            Coffee should be more than something you drink on the way out the door. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
-          </p>
+            <p
+              style={{
+                fontFamily: "'Dancing Script', cursive",
+                fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
+                color: "#f2f2f2",
+                fontWeight: 600,
+                lineHeight: 1.45,
+                margin: 0,
+                textShadow: "0 1px 8px rgba(0,0,0,0.5)",
+                textAlign: "center",
+              }}
+            >
+              Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
+            </p>
+            {/* Supporting editorial copy — gives Google crawlable text without cluttering the design */}
+            <p
+              style={{
+                color: "#9a8878",
+                fontSize: "clamp(0.9rem, 1.4vw, 1.02rem)",
+                lineHeight: 2.05,
+                margin: "1.75rem auto 0",
+                maxWidth: "680px",
+                textAlign: "left",
+              }}
+            >
+              Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
+            </p>
+          </div>
         </div>
 
         {/* Banner: Now Brewing */}
@@ -1075,7 +1087,7 @@ export default function Home() {
       <VideoSection />
 
       {/* COFFEE JOURNAL SECTION */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#0f0a07" }}>
+      <section className="py-14 px-6" style={{ backgroundColor: "#0f0a07" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-subtitle" style={{ color: "#a14f1f" }}>From The Coffee Journal</p>
@@ -1166,69 +1178,70 @@ export default function Home() {
       </section>
 
       {/* CULTURE SECTION */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#1c1008" }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="section-subtitle">The Culture</p>
-            <h2 className="section-title inter-title mt-4">Coffee Is a Way of Life</h2>
-            <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
-              More than a beverage — it's a ritual, a community, and a constant pursuit of the perfect cup.
-            </p>
-          </div>
+      <section className="py-16 px-6" style={{ backgroundColor: "#1c1008" }}>
+        <div className="text-center mb-14" style={{ maxWidth: "72rem", margin: "0 auto 3.5rem" }}>
+          <p className="section-subtitle">The Culture</p>
+          <h2 className="section-title inter-title mt-4">Coffee Is a Way of Life</h2>
+          <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0", fontSize: "1.05rem", lineHeight: 1.75 }}>
+            More than a beverage — it's a ritual, a community, and a constant pursuit of the perfect cup.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {cultureImages.map((item, idx) => (
-              <div
-                key={idx}
-                className="relative overflow-hidden"
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{ gap: "1rem", maxWidth: "1400px", margin: "0 auto" }}
+        >
+          {cultureImages.map((item, idx) => (
+            <div
+              key={idx}
+              className="relative overflow-hidden"
+              style={{
+                borderRadius: "8px",
+                border: "1px solid rgba(161,79,31,0.2)",
+                aspectRatio: "4/3",
+              }}
+            >
+              <img
+                src={item.src}
+                alt={item.caption}
+                className="w-full h-full object-cover"
                 style={{
-                  borderRadius: "8px",
-                  border: "1px solid rgba(161,79,31,0.2)",
-                  aspectRatio: "16/10",
+                  transition: "transform 0.6s ease",
+                  filter: "brightness(0.8)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.04)";
+                  e.currentTarget.style.filter = "brightness(0.9)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.filter = "brightness(0.8)";
+                }}
+              />
+              <div
+                className="absolute bottom-0 left-0 right-0 p-6"
+                style={{
+                  background: "linear-gradient(to top, rgba(11,11,11,0.92) 0%, transparent 100%)",
                 }}
               >
-                <img
-                  src={item.src}
-                  alt={item.caption}
-                  className="w-full h-full object-cover"
+                <p
                   style={{
-                    transition: "transform 0.6s ease",
-                    filter: "brightness(0.8)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "scale(1.04)";
-                    e.currentTarget.style.filter = "brightness(0.9)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "scale(1)";
-                    e.currentTarget.style.filter = "brightness(0.8)";
-                  }}
-                />
-                <div
-                  className="absolute bottom-0 left-0 right-0 p-5"
-                  style={{
-                    background: "linear-gradient(to top, rgba(11,11,11,0.9) 0%, transparent 100%)",
+                    color: "#f2f2f2",
+                    fontStyle: "italic",
+                    fontSize: "1.15rem",
+                    letterSpacing: "0.02em",
                   }}
                 >
-                  <p
-                    style={{
-                      color: "#f2f2f2",
-                      fontStyle: "italic",
-                      fontSize: "1rem",
-                      letterSpacing: "0.02em",
-                    }}
-                  >
-                    "{item.caption}"
-                  </p>
-                </div>
+                  "{item.caption}"
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* EDITORIAL SECTION — Better Coffee Starts With Understanding It */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#0b0b0b" }}>
+      <section className="py-16 px-6" style={{ backgroundColor: "#0b0b0b" }}>
         <div
           className="max-w-6xl mx-auto"
           style={{
@@ -1264,13 +1277,13 @@ export default function Home() {
             >
               Better Coffee Starts With Understanding It
             </h2>
-            <p style={{ color: "#9a8878", fontSize: "clamp(0.9rem, 1.4vw, 1rem)", lineHeight: 1.85, marginBottom: "0.9rem" }}>
+            <p style={{ color: "#9a8878", fontSize: "clamp(0.95rem, 1.4vw, 1.06rem)", lineHeight: 1.9, marginBottom: "1rem" }}>
               Great coffee isn't reserved for professional baristas or expensive cafés. Understanding a few fundamentals can dramatically improve what you make at home.
             </p>
-            <p style={{ color: "#9a8878", fontSize: "clamp(0.9rem, 1.4vw, 1rem)", lineHeight: 1.85, marginBottom: "0.9rem" }}>
+            <p style={{ color: "#9a8878", fontSize: "clamp(0.95rem, 1.4vw, 1.06rem)", lineHeight: 1.9, marginBottom: "1rem" }}>
               The beans matter. So does the grind. Water temperature, brewing time and the equipment you use all influence what eventually reaches your cup.
             </p>
-            <p style={{ color: "#9a8878", fontSize: "clamp(0.9rem, 1.4vw, 1rem)", lineHeight: 1.85, marginBottom: "1.75rem" }}>
+            <p style={{ color: "#9a8878", fontSize: "clamp(0.95rem, 1.4vw, 1.06rem)", lineHeight: 1.9, marginBottom: "1.75rem" }}>
               That's why Hard House Coffee goes beyond beautiful coffee photography. We explore espresso, brewing methods, coffee equipment, beans and coffee culture through practical guides written for people who simply want to enjoy better coffee.
             </p>
             <Link href="/blog">
@@ -1314,8 +1327,8 @@ export default function Home() {
               color: "#b0a090",
               maxWidth: "520px",
               margin: "0 auto 2.5rem",
-              lineHeight: 1.7,
-              fontSize: "1.05rem",
+              lineHeight: 1.8,
+              fontSize: "1.15rem",
             }}
           >
             Whether it's 5am or midnight, Hard House Coffee is your anchor. Bold, consistent, and always worth savoring.

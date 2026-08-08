@@ -330,9 +330,34 @@ export default function Blog() {
           borderBottom: "1px solid rgba(161,79,31,0.2)",
         }}
       >
-        <p className="section-subtitle" style={{ color: "#a14f1f" }}>Hard House</p>
-        <h1 className="section-title inter-title mt-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
-          Blog & Reviews
+        <p className="section-subtitle" style={{ color: "#a14f1f" }}>The Coffee Journal</p>
+        <h1 className="mt-4" style={{ color: "#f2f2f2", lineHeight: 1.2 }}>
+          <span
+            style={{
+              display: "block",
+              fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
+              fontSize: "clamp(2.2rem, 5.5vw, 4rem)",
+              fontWeight: 800,
+              textTransform: "uppercase",
+              letterSpacing: "0.04em",
+            }}
+          >
+            Hard House Coffee
+          </span>
+          <span
+            style={{
+              display: "block",
+              fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
+              fontSize: "clamp(1rem, 2vw, 1.5rem)",
+              fontWeight: 400,
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: "#b0a090",
+              marginTop: "0.5rem",
+            }}
+          >
+            Blog & Reviews
+          </span>
         </h1>
         <p style={{ color: "#b0a090", maxWidth: "480px", margin: "1rem auto 0", lineHeight: 1.7 }}>
           Gear reviews, brewing guides, bean picks, and the culture behind every cup.
