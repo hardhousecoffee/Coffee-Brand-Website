@@ -534,40 +534,50 @@ export default function Home() {
           {/* ── Cinematic statement box CSS animations ── */}
           <style>{`
             @keyframes hhc-drift {
-              0%   { transform: translate(0px,   0px);  }
-              25%  { transform: translate(-6px,  -3px); }
-              50%  { transform: translate(-2px,   3px); }
-              75%  { transform: translate( 5px,  -2px); }
-              100% { transform: translate(0px,   0px);  }
+              0%   { transform: translate(0px,  0px);  }
+              25%  { transform: translate(-6px, -3px); }
+              50%  { transform: translate(-2px,  3px); }
+              75%  { transform: translate( 5px, -2px); }
+              100% { transform: translate(0px,  0px);  }
             }
+            /* Rain streaks slide straight down */
+            @keyframes hhc-drop {
+              0%   { transform: translateY(-100%); opacity: 0;   }
+              8%   { opacity: 1; }
+              90%  { opacity: 0.7; }
+              100% { transform: translateY(800%);  opacity: 0;   }
+            }
+            /* Steam rises, expands, fades */
             @keyframes hhc-steam-a {
-              0%   { opacity: 0;    transform: translateY(0px)   translateX(0px)  scaleX(1);   }
-              15%  { opacity: 0.38; }
-              60%  { opacity: 0.18; transform: translateY(-32px)  translateX(6px)  scaleX(1.5); }
-              100% { opacity: 0;    transform: translateY(-70px)  translateX(-3px) scaleX(2.0); }
+              0%   { opacity: 0;    transform: translateY(0px)  translateX(0px)  scale(1);    }
+              12%  { opacity: 0.65; }
+              55%  { opacity: 0.35; transform: translateY(-45px) translateX(7px)  scale(1.6); }
+              100% { opacity: 0;    transform: translateY(-95px) translateX(-4px) scale(2.2); }
             }
             @keyframes hhc-steam-b {
-              0%   { opacity: 0;    transform: translateY(0px)   translateX(0px)  scaleX(1);   }
-              15%  { opacity: 0.28; }
-              60%  { opacity: 0.14; transform: translateY(-28px)  translateX(-7px) scaleX(1.4); }
-              100% { opacity: 0;    transform: translateY(-62px)  translateX(4px)  scaleX(1.8); }
+              0%   { opacity: 0;    transform: translateY(0px)  translateX(0px)  scale(1);    }
+              12%  { opacity: 0.55; }
+              55%  { opacity: 0.28; transform: translateY(-40px) translateX(-8px) scale(1.5); }
+              100% { opacity: 0;    transform: translateY(-85px) translateX(5px)  scale(2.0); }
             }
             @keyframes hhc-steam-c {
-              0%   { opacity: 0;    transform: translateY(0px)   translateX(0px)  scaleX(1);   }
-              15%  { opacity: 0.22; }
-              60%  { opacity: 0.10; transform: translateY(-25px)  translateX(3px)  scaleX(1.3); }
-              100% { opacity: 0;    transform: translateY(-55px)  translateX(-5px) scaleX(1.6); }
+              0%   { opacity: 0;    transform: translateY(0px)  translateX(0px)  scale(1);    }
+              12%  { opacity: 0.45; }
+              55%  { opacity: 0.22; transform: translateY(-38px) translateX(4px)  scale(1.4); }
+              100% { opacity: 0;    transform: translateY(-78px) translateX(-6px) scale(1.8); }
             }
+            /* Streetlight occasional flicker */
             @keyframes hhc-flicker {
-              0%,  86%, 100% { opacity: 1;    }
-              87%            { opacity: 0.68; }
-              88%            { opacity: 1;    }
-              91%            { opacity: 0.82; }
-              92%            { opacity: 1;    }
+              0%,  84%, 100% { opacity: 1;    }
+              85%            { opacity: 0.45; }
+              86%            { opacity: 1;    }
+              89%            { opacity: 0.70; }
+              90%            { opacity: 1;    }
             }
+            /* Warm café lights pulsing */
             @keyframes hhc-glow-pulse {
-              0%, 100% { opacity: 0.10; }
-              50%      { opacity: 0.18; }
+              0%, 100% { opacity: 0.55; }
+              50%      { opacity: 0.80; }
             }
           `}</style>
 
@@ -582,7 +592,7 @@ export default function Home() {
             }}
           >
 
-            {/* ① Background image — real <img> for crisp GPU-scaled rendering */}
+            {/* ① Background image */}
             <img
               aria-hidden="true"
               src="/images/coffeehouse-rainy-night.png"
@@ -600,83 +610,104 @@ export default function Home() {
               }}
             />
 
-            {/* ③ Warm ambient glow from café lights (right side, mid-height) */}
-            <div
-              aria-hidden="true"
-              style={{
+            {/* ② Dark overlay — sits above image, below all effects */}
+            <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "rgba(8,6,4,0.74)", zIndex: 1, pointerEvents: "none" }} />
+
+            {/* ③ Rain streaks on the window glass — 18 individual drops at varied positions/speeds */}
+            {([
+              { l:"3%",  w:"1px", h:"55px", dur:"1.6s", del:"0.0s",  op:0.55 },
+              { l:"6%",  w:"2px", h:"38px", dur:"2.1s", del:"0.4s",  op:0.40 },
+              { l:"9%",  w:"1px", h:"70px", dur:"1.4s", del:"1.1s",  op:0.60 },
+              { l:"12%", w:"1px", h:"44px", dur:"2.4s", del:"0.7s",  op:0.45 },
+              { l:"15%", w:"2px", h:"62px", dur:"1.8s", del:"0.2s",  op:0.50 },
+              { l:"18%", w:"1px", h:"30px", dur:"2.8s", del:"1.5s",  op:0.35 },
+              { l:"20%", w:"1px", h:"80px", dur:"1.5s", del:"0.9s",  op:0.65 },
+              { l:"23%", w:"2px", h:"48px", dur:"2.0s", del:"0.3s",  op:0.42 },
+              { l:"25%", w:"1px", h:"36px", dur:"2.6s", del:"1.8s",  op:0.38 },
+              { l:"27%", w:"1px", h:"65px", dur:"1.7s", del:"0.6s",  op:0.58 },
+              { l:"29%", w:"2px", h:"42px", dur:"2.2s", del:"1.2s",  op:0.44 },
+              { l:"31%", w:"1px", h:"75px", dur:"1.6s", del:"0.1s",  op:0.62 },
+              { l:"33%", w:"1px", h:"50px", dur:"2.5s", del:"2.0s",  op:0.40 },
+              { l:"5%",  w:"1px", h:"58px", dur:"1.9s", del:"2.3s",  op:0.52 },
+              { l:"11%", w:"2px", h:"33px", dur:"2.7s", del:"0.8s",  op:0.36 },
+              { l:"16%", w:"1px", h:"68px", dur:"1.5s", del:"1.6s",  op:0.60 },
+              { l:"22%", w:"1px", h:"45px", dur:"2.3s", del:"0.5s",  op:0.46 },
+              { l:"28%", w:"2px", h:"52px", dur:"1.8s", del:"1.3s",  op:0.50 },
+            ] as const).map((d, i) => (
+              <div key={i} aria-hidden="true" style={{
                 position: "absolute",
-                inset: 0,
+                top: 0,
+                left: d.l,
+                width: d.w,
+                height: d.h,
+                background: `linear-gradient(to bottom, transparent, rgba(180,210,240,${d.op}), transparent)`,
+                borderRadius: "2px",
                 zIndex: 2,
                 pointerEvents: "none",
-                background: "radial-gradient(ellipse at 70% 35%, rgba(190,110,35,0.22) 0%, transparent 55%)",
-                animation: "hhc-glow-pulse 9s ease-in-out infinite",
-              }}
-            />
+                animation: `hhc-drop ${d.dur} linear infinite ${d.del}`,
+              }} />
+            ))}
 
-            {/* ④ Streetlight flicker — positioned over the lamp post outside the window */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                top: "14%",
-                left: "26%",
-                width: "28px",
-                height: "50px",
-                zIndex: 3,
-                pointerEvents: "none",
-                background: "radial-gradient(ellipse at 50% 30%, rgba(255,200,100,0.4) 0%, transparent 70%)",
-                animation: "hhc-flicker 14s ease-in-out infinite 4s",
-              }}
-            />
+            {/* ④ Warm café light glow — right side where the Edison bulbs hang */}
+            <div aria-hidden="true" style={{
+              position: "absolute",
+              inset: 0,
+              zIndex: 3,
+              pointerEvents: "none",
+              background: "radial-gradient(ellipse at 72% 30%, rgba(210,130,40,0.38) 0%, rgba(190,100,20,0.12) 40%, transparent 65%)",
+              animation: "hhc-glow-pulse 7s ease-in-out infinite",
+            }} />
 
-            {/* ⑤ Steam wisps — rising from the coffee cup (center-foreground of image) */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                bottom: "18%",
-                left: "44%",
-                width: "64px",
-                height: "72px",
-                zIndex: 3,
-                pointerEvents: "none",
-              }}
-            >
+            {/* ⑤ Streetlight flicker outside the window */}
+            <div aria-hidden="true" style={{
+              position: "absolute",
+              top: "8%",
+              left: "24%",
+              width: "50px",
+              height: "80px",
+              zIndex: 3,
+              pointerEvents: "none",
+              background: "radial-gradient(ellipse at 50% 20%, rgba(255,210,110,0.70) 0%, rgba(255,190,60,0.25) 45%, transparent 75%)",
+              animation: "hhc-flicker 11s ease-in-out infinite 3s",
+            }} />
+
+            {/* ⑥ Steam wisps above coffee cup — ABOVE overlay so they're visible */}
+            <div aria-hidden="true" style={{
+              position: "absolute",
+              bottom: "16%",
+              left: "43%",
+              width: "80px",
+              height: "100px",
+              zIndex: 4,
+              pointerEvents: "none",
+            }}>
               <div style={{
-                position: "absolute", left: "4px",  bottom: 0,
-                width: "10px", height: "52px",
-                background: "radial-gradient(ellipse, rgba(255,255,255,0.25) 0%, transparent 65%)",
+                position: "absolute", left: "6px", bottom: 0,
+                width: "14px", height: "70px",
+                background: "radial-gradient(ellipse at 50% 80%, rgba(240,230,220,0.70) 0%, rgba(240,230,220,0.30) 40%, transparent 75%)",
                 borderRadius: "50%",
-                animation: "hhc-steam-a 3.8s ease-out infinite",
+                filter: "blur(3px)",
+                animation: "hhc-steam-a 3.6s ease-out infinite",
               }} />
               <div style={{
-                position: "absolute", left: "24px", bottom: 0,
-                width: "12px", height: "58px",
-                background: "radial-gradient(ellipse, rgba(255,255,255,0.20) 0%, transparent 65%)",
+                position: "absolute", left: "28px", bottom: 0,
+                width: "16px", height: "80px",
+                background: "radial-gradient(ellipse at 50% 80%, rgba(240,230,220,0.60) 0%, rgba(240,230,220,0.25) 40%, transparent 75%)",
                 borderRadius: "50%",
-                animation: "hhc-steam-b 4.4s ease-out infinite 1.1s",
+                filter: "blur(4px)",
+                animation: "hhc-steam-b 4.2s ease-out infinite 1.0s",
               }} />
               <div style={{
-                position: "absolute", left: "44px", bottom: 0,
-                width: "9px",  height: "46px",
-                background: "radial-gradient(ellipse, rgba(255,255,255,0.16) 0%, transparent 65%)",
+                position: "absolute", left: "52px", bottom: 0,
+                width: "12px", height: "65px",
+                background: "radial-gradient(ellipse at 50% 80%, rgba(240,230,220,0.55) 0%, rgba(240,230,220,0.20) 40%, transparent 75%)",
                 borderRadius: "50%",
-                animation: "hhc-steam-c 4.0s ease-out infinite 2.2s",
+                filter: "blur(3px)",
+                animation: "hhc-steam-c 3.9s ease-out infinite 2.1s",
               }} />
             </div>
 
-            {/* ⑥ Dark overlay — lets image breathe while keeping text legible */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "rgba(8,6,4,0.82)",
-                zIndex: 4,
-              }}
-            />
-
-            {/* ⑦ Text content */}
+            {/* ⑦ Text content — topmost layer */}
             <div style={{ position: "relative", zIndex: 5 }}>
               <p
                 style={{
