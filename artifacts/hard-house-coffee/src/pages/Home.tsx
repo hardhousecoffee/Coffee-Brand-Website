@@ -578,10 +578,10 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            {/* ① Photo — crisp <img>, gentle slow drift */}
+            {/* ① AI-generated coffeehouse scene */}
             <img
               aria-hidden="true"
-              src="/images/coffeehouse-rainy-night.png"
+              src="/images/coffeehouse-scene.jpg"
               alt=""
               style={{
                 position: "absolute",
@@ -589,68 +589,88 @@ export default function Home() {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                objectPosition: "center 35%",
+                objectPosition: "center 30%",
                 zIndex: 0,
-                willChange: "transform",
               }}
             />
 
-            {/* ② Overlay — lighter so the scene is clearly visible */}
+            {/* ② Very light overlay — just enough to keep text readable */}
             <div aria-hidden="true" style={{
               position: "absolute", inset: 0,
-              background: "rgba(6,4,2,0.52)",
+              background: "rgba(6,4,2,0.45)",
               zIndex: 1, pointerEvents: "none",
             }} />
 
-            {/* ③ Streetlight halo — subtle warm glow, not overpowering */}
+            {/* ③ Edison pendant bulb glows — three hanging lights visible in image.
+                 Left bulb ~44% from left, 5% from top.
+                 Center-right bulb ~68% from left, 3% from top.
+                 Far-right bulb ~88% from left, 8% from top. */}
+            {([
+              { l: "41%", t: "1%",  w: "48px", h: "60px", del: "0s"   },
+              { l: "65%", t: "0%",  w: "44px", h: "55px", del: "1.3s" },
+              { l: "85%", t: "4%",  w: "36px", h: "46px", del: "2.7s" },
+            ] as const).map((b, i) => (
+              <div key={i} aria-hidden="true" style={{
+                position: "absolute",
+                top: b.t, left: b.l,
+                width: b.w, height: b.h,
+                zIndex: 2, pointerEvents: "none",
+                background: "radial-gradient(ellipse at 50% 40%, rgba(255,210,90,0.55) 0%, rgba(240,160,30,0.22) 40%, transparent 75%)",
+                filter: "blur(8px)",
+                animation: `hhc-street-glow 5s ease-in-out infinite ${b.del}`,
+              }} />
+            ))}
+
+            {/* ④ City streetlight through wet window — upper-left ~18% left, 28% top */}
             <div aria-hidden="true" style={{
               position: "absolute",
-              top: "6%", left: "14%",
-              width: "52px", height: "64px",
+              top: "24%", left: "13%",
+              width: "40px", height: "50px",
               zIndex: 2, pointerEvents: "none",
-              background: "radial-gradient(ellipse at 50% 35%, rgba(255,215,100,0.38) 0%, rgba(240,170,40,0.14) 50%, transparent 80%)",
-              filter: "blur(7px)",
-              animation: "hhc-street-glow 4.5s ease-in-out infinite",
+              background: "radial-gradient(ellipse at 50% 40%, rgba(255,200,80,0.32) 0%, transparent 70%)",
+              filter: "blur(6px)",
+              animation: "hhc-street-glow 6s ease-in-out infinite 1s",
             }} />
             <div aria-hidden="true" style={{
               position: "absolute",
-              top: "6%", left: "14%",
-              width: "52px", height: "64px",
+              top: "24%", left: "13%",
+              width: "40px", height: "50px",
               zIndex: 2, pointerEvents: "none",
-              background: "radial-gradient(ellipse at 50% 35%, rgba(255,235,140,0.22) 0%, transparent 60%)",
-              filter: "blur(5px)",
-              animation: "hhc-street-flicker 13s linear infinite 2s",
+              background: "radial-gradient(ellipse at 50% 40%, rgba(255,220,110,0.18) 0%, transparent 60%)",
+              filter: "blur(4px)",
+              animation: "hhc-street-flicker 15s linear infinite 4s",
             }} />
 
-            {/* ④ Steam wisps — small, above the mug which sits bottom-right (~58% left, 10% from bottom) */}
+            {/* ⑤ Steam wisps — rising from cup top, foreground center-right.
+                 Cup rim is at approximately left:53%, bottom:28% of container. */}
             <div aria-hidden="true" style={{
               position: "absolute",
-              bottom: "10%",
-              left: "54%",
-              width: "44px",
-              height: "55px",
+              bottom: "28%",
+              left: "50%",
+              width: "50px",
+              height: "65px",
               zIndex: 3, pointerEvents: "none",
             }}>
               <div style={{
-                position: "absolute", left: "2px", bottom: 0,
-                width: "7px", height: "38px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(235,225,215,0.55) 0%, transparent 75%)",
+                position: "absolute", left: "3px", bottom: 0,
+                width: "8px", height: "42px",
+                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.58) 0%, transparent 75%)",
                 borderRadius: "50%",
-                filter: "blur(2.5px)",
+                filter: "blur(3px)",
                 animation: "hhc-steam-a 3.4s ease-out infinite",
               }} />
               <div style={{
-                position: "absolute", left: "16px", bottom: 0,
-                width: "9px", height: "46px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(235,225,215,0.48) 0%, transparent 75%)",
+                position: "absolute", left: "18px", bottom: 0,
+                width: "10px", height: "52px",
+                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.50) 0%, transparent 75%)",
                 borderRadius: "50%",
-                filter: "blur(3px)",
+                filter: "blur(3.5px)",
                 animation: "hhc-steam-b 4.0s ease-out infinite 0.9s",
               }} />
               <div style={{
-                position: "absolute", left: "29px", bottom: 0,
-                width: "6px", height: "34px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(235,225,215,0.42) 0%, transparent 75%)",
+                position: "absolute", left: "32px", bottom: 0,
+                width: "7px", height: "38px",
+                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.44) 0%, transparent 75%)",
                 borderRadius: "50%",
                 filter: "blur(2.5px)",
                 animation: "hhc-steam-c 3.7s ease-out infinite 2.0s",
