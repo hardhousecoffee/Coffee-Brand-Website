@@ -529,27 +529,37 @@ export default function Home() {
         className="px-6"
         style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "2rem", paddingBottom: "2rem" }}
       >
-        {/* Statement text — no background image */}
-        <div style={{ maxWidth: "56rem", margin: "0 auto 2.5rem", textAlign: "center", padding: "0 1.5rem" }}>
-          <p style={{
-            fontFamily: "'Dancing Script', cursive",
-            fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
-            color: "#f5f0ea",
-            fontWeight: 600,
-            lineHeight: 1.45,
-            margin: "0 auto",
+        {/* Statement box — rounded container, no background image */}
+        <div style={{ maxWidth: "56rem", margin: "0 auto 2.5rem" }}>
+          <div style={{
+            border: "1px solid rgba(161,79,31,0.4)",
+            borderRadius: "12px",
+            padding: "2.5rem 3rem",
+            boxShadow: "0 4px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(161,79,31,0.07)",
+            textAlign: "center",
           }}>
-            Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
-          </p>
-          <p style={{
-            color: "#c8b9a8",
-            fontSize: "clamp(0.9rem, 1.4vw, 1.02rem)",
-            lineHeight: 2.05,
-            margin: "1.75rem auto 0",
-            maxWidth: "680px",
-          }}>
-            Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
-          </p>
+            <p style={{
+              fontFamily: "'Dancing Script', cursive",
+              fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
+              color: "#f5f0ea",
+              fontWeight: 600,
+              lineHeight: 1.45,
+              margin: "0 auto",
+              textShadow: "0 1px 12px rgba(0,0,0,0.75)",
+            }}>
+              Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
+            </p>
+            <p style={{
+              color: "#c8b9a8",
+              fontSize: "clamp(0.9rem, 1.4vw, 1.02rem)",
+              lineHeight: 2.05,
+              margin: "1.75rem auto 0",
+              maxWidth: "680px",
+              textAlign: "center",
+            }}>
+              Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
+            </p>
+          </div>
         </div>
 
         {/* Banner: Now Brewing */}
