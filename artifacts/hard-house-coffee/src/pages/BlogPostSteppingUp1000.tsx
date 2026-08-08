@@ -27,10 +27,10 @@ export default function BlogPostSteppingUp1000() {
         </div>
       </div>
 
-      <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85 }}>
+      <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85, fontSize: "1.3rem" }}>
         <AuthorByline />
 
-        <p style={{ color: "#d4cfc9", fontSize: "1.05rem", marginBottom: "1.25rem" }}>
+        <p style={{ color: "#d4cfc9", fontSize: "1.37rem", marginBottom: "1.25rem" }}>
           So you've been pulling shots on a budget setup for a year, and you're starting to feel that itch to upgrade. We've all been there.
         </p>
         <p style={{ color: "#b0a090", marginBottom: "1.25rem" }}>
@@ -100,8 +100,8 @@ export default function BlogPostSteppingUp1000() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ marginBottom: "2.5rem" }}>
-      <h2 style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1rem, 2.5vw, 1.3rem)", fontWeight: 700, color: "#f2f2f2", marginBottom: "1rem", paddingBottom: "0.5rem", borderBottom: "1px solid rgba(161,79,31,0.2)" }}>{title}</h2>
-      <div style={{ color: "#b0a090", fontSize: "0.95rem" }}>{children}</div>
+      <h2 style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1.3rem, 3.25vw, 1.7rem)", fontWeight: 700, color: "#f2f2f2", marginBottom: "1rem", paddingBottom: "0.5rem", borderBottom: "1px solid rgba(161,79,31,0.2)" }}>{title}</h2>
+      <div style={{ color: "#b0a090", fontSize: "1.24rem" }}>{children}</div>
     </div>
   );
 }

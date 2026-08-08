@@ -337,7 +337,7 @@ export default function Blog() {
               display: "block",
               fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
               fontSize: "clamp(2.2rem, 5.5vw, 4rem)",
-              fontWeight: 800,
+              fontWeight: 400,
               textTransform: "uppercase",
               letterSpacing: "0.04em",
             }}

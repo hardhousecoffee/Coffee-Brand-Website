@@ -4,7 +4,7 @@ export default function AuthorByline() {
       style={{
         display: "flex",
         alignItems: "center",
-        gap: "0.75rem",
+        gap: "0.85rem",
         paddingBottom: "1.75rem",
         marginBottom: "1.75rem",
         borderBottom: "1px solid rgba(161,79,31,0.15)",
@@ -12,27 +12,30 @@ export default function AuthorByline() {
     >
       <div
         style={{
-          width: "36px",
-          height: "36px",
+          width: "46px",
+          height: "46px",
           borderRadius: "50%",
-          background: "rgba(161,79,31,0.15)",
+          background: "rgba(161,79,31,0.12)",
           border: "1px solid rgba(161,79,31,0.3)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
+          overflow: "hidden",
+          padding: "5px",
         }}
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a14f1f" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-          <circle cx="12" cy="7" r="4" />
-        </svg>
+        <img
+          src="/images/logo-icon.png"
+          alt="Hard House Coffee"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       </div>
       <div>
-        <p style={{ fontSize: "0.8rem", fontWeight: 700, color: "#f2f2f2", marginBottom: "0.1rem" }}>
+        <p style={{ fontSize: "1.04rem", fontWeight: 700, color: "#f2f2f2", marginBottom: "0.15rem" }}>
           Hard House Coffee Team
         </p>
-        <p style={{ fontSize: "0.72rem", color: "#6b5a4e" }}>
+        <p style={{ fontSize: "0.94rem", color: "#6b5a4e" }}>
           Coffee gear experts & brewing enthusiasts
         </p>
       </div>

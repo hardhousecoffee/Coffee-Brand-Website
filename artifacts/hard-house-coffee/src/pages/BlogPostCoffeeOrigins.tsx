@@ -52,11 +52,11 @@ export default function BlogPostCoffeeOrigins() {
       </div>
 
       {/* Article body */}
-      <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85 }}>
+      <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85, fontSize: "1.3rem" }}>
         <AuthorByline />
 
         {/* Intro */}
-        <p style={{ color: "#d4cfc9", fontSize: "1.05rem", marginBottom: "1.25rem" }}>
+        <p style={{ color: "#d4cfc9", fontSize: "1.37rem", marginBottom: "1.25rem" }}>
           The origin of your coffee plays a major role in how it tastes.
         </p>
         <p style={{ color: "#b0a090", marginBottom: "2.5rem" }}>
@@ -230,7 +230,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       <h2
         style={{
           fontFamily: "Inter, sans-serif",
-          fontSize: "clamp(1rem, 2.5vw, 1.3rem)",
+          fontSize: "clamp(1.3rem, 3.25vw, 1.7rem)",
           fontWeight: 700,
           color: "#f2f2f2",
           marginBottom: "1rem",
@@ -240,7 +240,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       >
         {title}
       </h2>
-      <div style={{ color: "#b0a090", fontSize: "0.95rem" }}>
+      <div style={{ color: "#b0a090", fontSize: "1.24rem" }}>
         {children}
       </div>
     </div>
