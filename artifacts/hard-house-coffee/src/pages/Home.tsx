@@ -608,7 +608,7 @@ export default function Home() {
             }}>
               <p style={{
                 color: "#c8b9a8",
-                fontSize: "clamp(0.72rem, 1.0vw, 0.9rem)",
+                fontSize: "clamp(0.92rem, 1.35vw, 1.15rem)",
                 lineHeight: 1.85,
                 margin: 0,
                 textShadow: "0 1px 10px rgba(0,0,0,0.9)",
