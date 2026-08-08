@@ -529,33 +529,36 @@ export default function Home() {
         className="px-6"
         style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "2rem", paddingBottom: "2rem" }}
       >
-        {/* max-w-4xl = 56rem → 20% larger = ~67rem */}
+        {/* Cinematic 16:9 statement panel */}
         <div style={{ maxWidth: "67rem", margin: "0 auto 2rem" }}>
 
-          {/* ── Statement box animations ── */}
           <style>{`
-            /* Streetlight: slow breath with occasional dim */
             @keyframes hhc-street-glow {
-              0%,  100% { opacity: 0.80; transform: scale(1);    }
-              40%        { opacity: 1.00; transform: scale(1.12); }
-              80%        { opacity: 0.72; transform: scale(0.96); }
+              0%,  100% { opacity: 0.75; }
+              40%        { opacity: 1.00; }
+              80%        { opacity: 0.65; }
             }
             @keyframes hhc-street-flicker {
               0%,  88%, 100% { opacity: 1;    }
-              89%             { opacity: 0.38; }
+              89%             { opacity: 0.35; }
               90%             { opacity: 1;    }
-              93%             { opacity: 0.65; }
+              93%             { opacity: 0.60; }
               94%             { opacity: 1;    }
             }
           `}</style>
 
-          {/* 16:9 via padding-bottom — most reliable cross-browser technique */}
-          <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", height: 0,
-            border: "1px solid rgba(161,79,31,0.4)", borderRadius: "12px", overflow: "hidden",
+          {/* Single div — aspect-ratio:16/9 is fully supported in all modern browsers */}
+          <div style={{
+            position: "relative",
+            width: "100%",
+            aspectRatio: "16 / 9",
+            border: "1px solid rgba(161,79,31,0.4)",
+            borderRadius: "12px",
+            overflow: "hidden",
             boxShadow: "0 4px 32px rgba(0,0,0,0.55)",
           }}>
-          <div style={{ position: "absolute", inset: 0 }}>
-            {/* ① AI-generated coffeehouse scene */}
+
+            {/* ① Photo — raised 20% so scene + mug are both visible */}
             <img
               aria-hidden="true"
               src="/images/coffeehouse-scene.jpg"
@@ -566,98 +569,110 @@ export default function Home() {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                objectPosition: "center 60%",
+                objectPosition: "center 42%",
                 zIndex: 0,
               }}
             />
 
-            {/* ② Very light overlay — just enough to keep text readable */}
+            {/* ② Overlay */}
             <div aria-hidden="true" style={{
               position: "absolute", inset: 0,
-              background: "rgba(6,4,2,0.45)",
+              background: "rgba(6,4,2,0.42)",
               zIndex: 1, pointerEvents: "none",
             }} />
 
-            {/* ③ Edison pendant bulb glows — 4 pendants visible across the ceiling right half.
-                 Positions matched to lights in the new image. */}
+            {/* ③ Edison pendant glows */}
             {([
-              { l: "48%", t: "2%",  w: "42px", h: "52px", del: "0s"   },
-              { l: "62%", t: "1%",  w: "38px", h: "48px", del: "1.6s" },
-              { l: "74%", t: "3%",  w: "34px", h: "44px", del: "0.8s" },
-              { l: "84%", t: "2%",  w: "30px", h: "40px", del: "2.4s" },
+              { l: "48%", t: "1%",  w: "40px", h: "50px", del: "0s"   },
+              { l: "62%", t: "0%",  w: "36px", h: "46px", del: "1.6s" },
+              { l: "74%", t: "2%",  w: "32px", h: "42px", del: "0.8s" },
+              { l: "84%", t: "1%",  w: "28px", h: "38px", del: "2.4s" },
             ] as const).map((b, i) => (
               <div key={i} aria-hidden="true" style={{
-                position: "absolute",
-                top: b.t, left: b.l,
+                position: "absolute", top: b.t, left: b.l,
                 width: b.w, height: b.h,
                 zIndex: 2, pointerEvents: "none",
-                background: "radial-gradient(ellipse at 50% 40%, rgba(255,210,90,0.48) 0%, rgba(240,160,30,0.18) 45%, transparent 75%)",
+                background: "radial-gradient(ellipse at 50% 40%, rgba(255,210,90,0.45) 0%, rgba(240,160,30,0.15) 45%, transparent 75%)",
                 filter: "blur(9px)",
                 animation: `hhc-street-glow 5s ease-in-out infinite ${b.del}`,
               }} />
             ))}
 
-            {/* ④ Orange streetlight glow through rain-streaked window — upper-left ~20% left, 30% top */}
+            {/* ④ Streetlight through window */}
             <div aria-hidden="true" style={{
-              position: "absolute",
-              top: "27%", left: "16%",
+              position: "absolute", top: "27%", left: "16%",
               width: "44px", height: "56px",
               zIndex: 2, pointerEvents: "none",
-              background: "radial-gradient(ellipse at 50% 40%, rgba(255,180,60,0.30) 0%, transparent 70%)",
+              background: "radial-gradient(ellipse at 50% 40%, rgba(255,180,60,0.28) 0%, transparent 70%)",
               filter: "blur(8px)",
               animation: "hhc-street-glow 6s ease-in-out infinite 1s",
             }} />
             <div aria-hidden="true" style={{
-              position: "absolute",
-              top: "27%", left: "16%",
+              position: "absolute", top: "27%", left: "16%",
               width: "44px", height: "56px",
               zIndex: 2, pointerEvents: "none",
-              background: "radial-gradient(ellipse at 50% 40%, rgba(255,210,100,0.16) 0%, transparent 60%)",
+              background: "radial-gradient(ellipse at 50% 40%, rgba(255,210,100,0.14) 0%, transparent 60%)",
               filter: "blur(5px)",
               animation: "hhc-street-flicker 15s linear infinite 4s",
             }} />
 
-            {/* ⑤ Text — absolutely centered in the cinematic frame */}
+            {/* ⑤ HHC monogram on the mug — positioned over the mug body (center-bottom of photo).
+                 Slight perspective tilt to follow the mug's curved surface. */}
+            <div aria-hidden="true" style={{
+              position: "absolute",
+              top: "67%",
+              left: "44%",
+              zIndex: 3,
+              pointerEvents: "none",
+              fontFamily: "'Georgia', 'Times New Roman', serif",
+              fontSize: "clamp(0.65rem, 1.3vw, 1.1rem)",
+              fontWeight: 700,
+              letterSpacing: "0.22em",
+              color: "rgba(210,170,80,0.88)",
+              textShadow: "0 1px 4px rgba(0,0,0,0.9), 0 0 12px rgba(180,130,40,0.4)",
+              transform: "perspective(180px) rotateY(-6deg) rotateX(4deg)",
+              userSelect: "none",
+            }}>
+              HHC
+            </div>
+
+            {/* ⑥ Text — centered in the upper 60% so it clears the mug area */}
             <div style={{
               position: "absolute",
-              inset: 0,
+              top: 0, left: 0, right: 0,
+              bottom: "35%",
               zIndex: 5,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              padding: "2rem 3rem",
+              padding: "1.5rem 3rem",
               textAlign: "center",
             }}>
-              <p
-                style={{
-                  fontFamily: "'Dancing Script', cursive",
-                  fontSize: "clamp(1.2rem, 2.4vw, 2.1rem)",
-                  color: "#f5f0ea",
-                  fontWeight: 600,
-                  lineHeight: 1.45,
-                  margin: "0 auto",
-                  textShadow: "0 1px 18px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7)",
-                }}
-              >
+              <p style={{
+                fontFamily: "'Dancing Script', cursive",
+                fontSize: "clamp(1.1rem, 2.2vw, 2.0rem)",
+                color: "#f5f0ea",
+                fontWeight: 600,
+                lineHeight: 1.45,
+                margin: "0 auto",
+                textShadow: "0 1px 18px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7)",
+              }}>
                 Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
               </p>
-              <p
-                style={{
-                  color: "#c8b9a8",
-                  fontSize: "clamp(0.78rem, 1.2vw, 1.0rem)",
-                  lineHeight: 1.9,
-                  margin: "1.25rem auto 0",
-                  maxWidth: "620px",
-                  textAlign: "center",
-                  textShadow: "0 1px 10px rgba(0,0,0,0.9)",
-                }}
-              >
+              <p style={{
+                color: "#c8b9a8",
+                fontSize: "clamp(0.72rem, 1.1vw, 0.96rem)",
+                lineHeight: 1.85,
+                margin: "1rem auto 0",
+                maxWidth: "560px",
+                textAlign: "center",
+                textShadow: "0 1px 10px rgba(0,0,0,0.9)",
+              }}>
                 Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
               </p>
             </div>
 
-          </div>
           </div>
         </div>
 
