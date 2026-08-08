@@ -530,6 +530,51 @@ export default function Home() {
         style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "2rem", paddingBottom: "2rem" }}
       >
         <div className="max-w-4xl mx-auto" style={{ marginBottom: "2rem" }}>
+
+          {/* ── Cinematic statement box CSS animations ── */}
+          <style>{`
+            @keyframes hhc-drift {
+              0%   { transform: scale(1.06) translate(0px,    0px);   }
+              25%  { transform: scale(1.06) translate(-7px,  -3px);   }
+              50%  { transform: scale(1.06) translate(-3px,   3px);   }
+              75%  { transform: scale(1.06) translate( 5px,  -2px);   }
+              100% { transform: scale(1.06) translate(0px,    0px);   }
+            }
+            @keyframes hhc-rain {
+              0%   { background-position: 0px   0px;  }
+              100% { background-position: -28px 140px; }
+            }
+            @keyframes hhc-steam-a {
+              0%   { opacity: 0;    transform: translateY(0px)   translateX(0px)  scaleX(1);   }
+              15%  { opacity: 0.38; }
+              60%  { opacity: 0.18; transform: translateY(-32px)  translateX(6px)  scaleX(1.5); }
+              100% { opacity: 0;    transform: translateY(-70px)  translateX(-3px) scaleX(2.0); }
+            }
+            @keyframes hhc-steam-b {
+              0%   { opacity: 0;    transform: translateY(0px)   translateX(0px)  scaleX(1);   }
+              15%  { opacity: 0.28; }
+              60%  { opacity: 0.14; transform: translateY(-28px)  translateX(-7px) scaleX(1.4); }
+              100% { opacity: 0;    transform: translateY(-62px)  translateX(4px)  scaleX(1.8); }
+            }
+            @keyframes hhc-steam-c {
+              0%   { opacity: 0;    transform: translateY(0px)   translateX(0px)  scaleX(1);   }
+              15%  { opacity: 0.22; }
+              60%  { opacity: 0.10; transform: translateY(-25px)  translateX(3px)  scaleX(1.3); }
+              100% { opacity: 0;    transform: translateY(-55px)  translateX(-5px) scaleX(1.6); }
+            }
+            @keyframes hhc-flicker {
+              0%,  86%, 100% { opacity: 1;    }
+              87%            { opacity: 0.68; }
+              88%            { opacity: 1;    }
+              91%            { opacity: 0.82; }
+              92%            { opacity: 1;    }
+            }
+            @keyframes hhc-glow-pulse {
+              0%, 100% { opacity: 0.10; }
+              50%      { opacity: 0.18; }
+            }
+          `}</style>
+
           <div
             style={{
               position: "relative",
@@ -540,30 +585,125 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            {/* Cinematic coffeehouse background image */}
+
+            {/* ① Background image — slow cinematic drift */}
+            <div aria-hidden="true" style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 0, borderRadius: "12px" }}>
+              <div
+                style={{
+                  position: "absolute",
+                  inset: "-6%",
+                  backgroundImage: "url('/images/coffeehouse-rainy-night.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center 40%",
+                  animation: "hhc-drift 45s ease-in-out infinite",
+                }}
+              />
+            </div>
+
+            {/* ② Rain streaks on window glass (left ~38% of image) */}
             <div
               aria-hidden="true"
               style={{
                 position: "absolute",
-                inset: 0,
-                backgroundImage: "url('/images/coffeehouse-night.jpg')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                zIndex: 0,
-              }}
-            />
-            {/* Dark overlay — ~88% opacity so image reads as mood lighting */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "rgba(10,8,6,0.88)",
+                top: 0, left: 0,
+                width: "38%",
+                height: "100%",
                 zIndex: 1,
+                pointerEvents: "none",
+                background: [
+                  "repeating-linear-gradient(",
+                  "  172deg,",
+                  "  transparent        0px,",
+                  "  transparent        3px,",
+                  "  rgba(160,200,240,0.032) 3px,",
+                  "  rgba(160,200,240,0.032) 4px",
+                  ")",
+                ].join(""),
+                backgroundSize: "100% 36px",
+                animation: "hhc-rain 2.8s linear infinite",
+                maskImage: "linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 70%, transparent 100%)",
+                WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 70%, transparent 100%)",
               }}
             />
-            {/* Content sits above both layers */}
-            <div style={{ position: "relative", zIndex: 2 }}>
+
+            {/* ③ Warm ambient glow from café lights (right side, mid-height) */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                zIndex: 2,
+                pointerEvents: "none",
+                background: "radial-gradient(ellipse at 70% 35%, rgba(190,110,35,0.22) 0%, transparent 55%)",
+                animation: "hhc-glow-pulse 9s ease-in-out infinite",
+              }}
+            />
+
+            {/* ④ Streetlight flicker — positioned over the lamp post outside the window */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                top: "14%",
+                left: "26%",
+                width: "28px",
+                height: "50px",
+                zIndex: 3,
+                pointerEvents: "none",
+                background: "radial-gradient(ellipse at 50% 30%, rgba(255,200,100,0.4) 0%, transparent 70%)",
+                animation: "hhc-flicker 14s ease-in-out infinite 4s",
+              }}
+            />
+
+            {/* ⑤ Steam wisps — rising from the coffee cup (center-foreground of image) */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                bottom: "18%",
+                left: "44%",
+                width: "64px",
+                height: "72px",
+                zIndex: 3,
+                pointerEvents: "none",
+              }}
+            >
+              <div style={{
+                position: "absolute", left: "4px",  bottom: 0,
+                width: "10px", height: "52px",
+                background: "radial-gradient(ellipse, rgba(255,255,255,0.25) 0%, transparent 65%)",
+                borderRadius: "50%",
+                animation: "hhc-steam-a 3.8s ease-out infinite",
+              }} />
+              <div style={{
+                position: "absolute", left: "24px", bottom: 0,
+                width: "12px", height: "58px",
+                background: "radial-gradient(ellipse, rgba(255,255,255,0.20) 0%, transparent 65%)",
+                borderRadius: "50%",
+                animation: "hhc-steam-b 4.4s ease-out infinite 1.1s",
+              }} />
+              <div style={{
+                position: "absolute", left: "44px", bottom: 0,
+                width: "9px",  height: "46px",
+                background: "radial-gradient(ellipse, rgba(255,255,255,0.16) 0%, transparent 65%)",
+                borderRadius: "50%",
+                animation: "hhc-steam-c 4.0s ease-out infinite 2.2s",
+              }} />
+            </div>
+
+            {/* ⑥ Dark overlay — lets image breathe while keeping text legible */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "rgba(8,6,4,0.82)",
+                zIndex: 4,
+              }}
+            />
+
+            {/* ⑦ Text content */}
+            <div style={{ position: "relative", zIndex: 5 }}>
               <p
                 style={{
                   fontFamily: "'Dancing Script', cursive",
@@ -572,7 +712,7 @@ export default function Home() {
                   fontWeight: 600,
                   lineHeight: 1.45,
                   margin: 0,
-                  textShadow: "0 1px 10px rgba(0,0,0,0.7)",
+                  textShadow: "0 1px 12px rgba(0,0,0,0.75)",
                   textAlign: "center",
                 }}
               >
@@ -592,6 +732,7 @@ export default function Home() {
                 Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
               </p>
             </div>
+
           </div>
         </div>
 
