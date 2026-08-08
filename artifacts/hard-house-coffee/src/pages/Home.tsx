@@ -569,7 +569,7 @@ export default function Home() {
               left: "2rem",
               zIndex: 2,
               textAlign: "left",
-              maxWidth: "520px",
+              maxWidth: "660px",
             }}>
               <p style={{
                 fontFamily: "'Bebas Neue', 'Impact', sans-serif",
