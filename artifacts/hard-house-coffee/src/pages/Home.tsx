@@ -531,18 +531,8 @@ export default function Home() {
       >
         {/* Statement box — cinematic image with responsive text layout */}
         <div style={{ maxWidth: "67rem", margin: "0 auto 2.5rem" }}>
-          {/* aspectRatio keeps 16:9 on wide screens; minHeight ensures mobile is never too short */}
-          <div style={{
-            position: "relative",
-            width: "100%",
-            aspectRatio: "16 / 9",
-            minHeight: "400px",
-            border: "1px solid rgba(161,79,31,0.4)",
-            borderRadius: "12px",
-            overflow: "hidden",
-            boxShadow: "0 4px 32px rgba(0,0,0,0.55)",
-          }}>
-            {/* Background image */}
+          {/* Image box — headline only inside, so it can NEVER overlap */}
+          <div className="hhc-stmt-box">
             <img
               aria-hidden="true"
               src="/images/coffeehouse-scene.jpg"
@@ -555,64 +545,28 @@ export default function Home() {
                 zIndex: 0,
               }}
             />
-            {/* Dark overlay */}
             <div aria-hidden="true" style={{
               position: "absolute", inset: 0,
               background: "rgba(6,4,2,0.52)",
               zIndex: 1, pointerEvents: "none",
             }} />
-
-            {/* Single flex column — headline pinned top-left, paragraph pinned bottom-left */}
+            {/* Headline — top-left, only 2 short lines, fits on any screen */}
             <div style={{
               position: "absolute",
-              inset: 0,
+              top: "1.25rem",
+              left: "1.5rem",
               zIndex: 2,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              padding: "clamp(1rem, 2.5vw, 1.75rem) clamp(1rem, 2.5vw, 2rem)",
+              maxWidth: "min(660px, 90%)",
             }}>
-              {/* Headline block */}
-              <div>
-                <p style={{
-                  fontFamily: "'Bebas Neue', Impact, sans-serif",
-                  fontSize: "clamp(0.95rem, 3.2vw, 2.0rem)",
-                  fontWeight: 400,
-                  color: "#f5f0ea",
-                  letterSpacing: "0.08em",
-                  lineHeight: 1.1,
-                  margin: 0,
-                  textShadow: "0 2px 20px rgba(0,0,0,0.95), 0 0 60px rgba(0,0,0,0.8)",
-                }}>
-                  EVERY CUP WE POUR IS A STATEMENT:
-                </p>
-                <p style={{
-                  fontFamily: "'Bebas Neue', Impact, sans-serif",
-                  fontSize: "clamp(1.0rem, 3.4vw, 2.15rem)",
-                  fontWeight: 700,
-                  color: "#f5f0ea",
-                  letterSpacing: "0.06em",
-                  lineHeight: 1.1,
-                  margin: "0.25em 0 0",
-                  textShadow: "0 2px 20px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7)",
-                }}>
-                  Bold. Deliberate. Unapologetically Premium.
-                </p>
-              </div>
-
-              {/* Paragraph — flex pushes this to the bottom */}
-              <p style={{
-                color: "#c8b9a8",
-                fontSize: "clamp(0.72rem, 1.9vw, 1.15rem)",
-                lineHeight: 1.75,
-                margin: 0,
-                maxWidth: "540px",
-                textShadow: "0 1px 10px rgba(0,0,0,0.9)",
-              }}>
-                Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
-              </p>
+              <p className="hhc-stmt-line1">EVERY CUP WE POUR IS A STATEMENT:</p>
+              <p className="hhc-stmt-line2">Bold. Deliberate. Unapologetically Premium.</p>
             </div>
           </div>
+
+          {/* Paragraph — outside the image box, never overlaps, works on all screens */}
+          <p className="hhc-stmt-para" style={{ marginTop: "1.25rem", paddingLeft: "0.25rem" }}>
+            Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
+          </p>
         </div>
 
         {/* Banner: Now Brewing */}
