@@ -543,6 +543,18 @@ export default function Home() {
           >
             Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
           </p>
+          {/* Supporting editorial copy — gives Google crawlable text without cluttering the design */}
+          <p
+            style={{
+              color: "#9a8878",
+              fontSize: "clamp(0.88rem, 1.4vw, 1rem)",
+              lineHeight: 1.85,
+              margin: "1.5rem auto 0",
+              maxWidth: "620px",
+            }}
+          >
+            Coffee should be more than something you drink on the way out the door. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
+          </p>
         </div>
 
         {/* Banner: Now Brewing */}
@@ -1062,6 +1074,89 @@ export default function Home() {
       {/* VIDEO SECTION */}
       <VideoSection />
 
+      {/* COFFEE JOURNAL SECTION */}
+      <section className="py-20 px-6" style={{ backgroundColor: "#0f0a07" }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="section-subtitle" style={{ color: "#a14f1f" }}>From The Coffee Journal</p>
+            <h2 className="section-title inter-title mt-4" style={{ color: "#f2f2f2" }}>
+              Brewing Better Coffee Doesn't Have to Be Complicated
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                href: "/blog/best-espresso-machines-for-beginners-2026-guide",
+                image: "/images/espresso-pour-cup.jpg",
+                title: "Best Espresso Machines for Beginners (2026 Guide)",
+                desc: "Not sure which machine to buy first? Three solid picks that won't overwhelm you, with honest takes on what actually matters before you spend your money.",
+              },
+              {
+                href: "/blog/the-art-of-the-perfect-pour-over",
+                image: "/images/pour-over-kettle.jpg",
+                title: "The Art of the Perfect Pour-Over",
+                desc: "A great pour-over isn't complicated — but it is intentional. Learn the details that separate a flat cup from one that genuinely surprises you.",
+              },
+              {
+                href: "/blog/why-every-coffee-lover-needs-a-grinder-first-2026-guide",
+                image: "/images/coffee-grinder-beans.png",
+                title: "Why Every Coffee Lover Needs a Grinder First",
+                desc: "Before you upgrade your machine, upgrade your grinder. Here's why fresh grinding changes everything — and which grinders are worth the investment.",
+              },
+            ].map((article, idx) => (
+              <Link key={idx} href={article.href}>
+                <div
+                  style={{
+                    background: "linear-gradient(145deg, #1a110a, #110c07)",
+                    border: "1px solid rgba(161,79,31,0.2)",
+                    borderRadius: "10px",
+                    overflow: "hidden",
+                    cursor: "pointer",
+                    transition: "border-color 0.3s ease, transform 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = "rgba(161,79,31,0.55)";
+                    el.style.transform = "translateY(-4px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = "rgba(161,79,31,0.2)";
+                    el.style.transform = "translateY(0)";
+                  }}
+                >
+                  <div style={{ aspectRatio: "16/9", overflow: "hidden" }}>
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", filter: "brightness(0.82)", transition: "transform 0.5s ease" }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "scale(1.05)"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}
+                    />
+                  </div>
+                  <div style={{ padding: "1.5rem" }}>
+                    <h3 style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: "0.78rem", color: "#f2f2f2", lineHeight: 1.5, marginBottom: "0.75rem", letterSpacing: "0.02em" }}>
+                      {article.title}
+                    </h3>
+                    <p style={{ color: "#9a8878", fontSize: "0.88rem", lineHeight: 1.75, marginBottom: "1.1rem" }}>
+                      {article.desc}
+                    </p>
+                    <span style={{ color: "#a14f1f", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>
+                      Read Article →
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: "3rem" }}>
+            <Link href="/blog">
+              <button className="btn-primary">Explore the Journal →</button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CULTURE SECTION */}
       <section className="py-20 px-6" style={{ backgroundColor: "#1c1008" }}>
         <div className="max-w-6xl mx-auto">
@@ -1120,6 +1215,59 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* EDITORIAL SECTION — Better Coffee Starts With Understanding It */}
+      <section className="py-20 px-6" style={{ backgroundColor: "#0b0b0b" }}>
+        <div
+          className="max-w-6xl mx-auto"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "4rem",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          {/* Left — photograph */}
+          <div style={{ flex: "1 1 340px", minWidth: "280px" }}>
+            <div style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid rgba(161,79,31,0.25)" }}>
+              <img
+                src="/images/barista-latte-art.jpg"
+                alt="Barista crafting latte art — Hard House Coffee"
+                style={{ width: "100%", display: "block", objectFit: "cover", filter: "brightness(0.85)" }}
+              />
+            </div>
+          </div>
+          {/* Right — copy */}
+          <div style={{ flex: "1 1 340px", minWidth: "280px" }}>
+            <p className="section-subtitle" style={{ color: "#a14f1f" }}>Better Coffee</p>
+            <h2
+              className="inter-title mt-4"
+              style={{
+                fontFamily: "'Cinzel Decorative', serif",
+                fontSize: "clamp(1.2rem, 2.2vw, 1.75rem)",
+                color: "#f2f2f2",
+                lineHeight: 1.4,
+                marginBottom: "1.25rem",
+              }}
+            >
+              Better Coffee Starts With Understanding It
+            </h2>
+            <p style={{ color: "#9a8878", fontSize: "clamp(0.9rem, 1.4vw, 1rem)", lineHeight: 1.85, marginBottom: "0.9rem" }}>
+              Great coffee isn't reserved for professional baristas or expensive cafés. Understanding a few fundamentals can dramatically improve what you make at home.
+            </p>
+            <p style={{ color: "#9a8878", fontSize: "clamp(0.9rem, 1.4vw, 1rem)", lineHeight: 1.85, marginBottom: "0.9rem" }}>
+              The beans matter. So does the grind. Water temperature, brewing time and the equipment you use all influence what eventually reaches your cup.
+            </p>
+            <p style={{ color: "#9a8878", fontSize: "clamp(0.9rem, 1.4vw, 1rem)", lineHeight: 1.85, marginBottom: "1.75rem" }}>
+              That's why Hard House Coffee goes beyond beautiful coffee photography. We explore espresso, brewing methods, coffee equipment, beans and coffee culture through practical guides written for people who simply want to enjoy better coffee.
+            </p>
+            <Link href="/blog">
+              <button className="btn-primary">Learn About Coffee →</button>
+            </Link>
           </div>
         </div>
       </section>
