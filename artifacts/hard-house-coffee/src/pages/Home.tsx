@@ -534,15 +534,11 @@ export default function Home() {
           {/* ── Cinematic statement box CSS animations ── */}
           <style>{`
             @keyframes hhc-drift {
-              0%   { transform: scale(1.06) translate(0px,    0px);   }
-              25%  { transform: scale(1.06) translate(-7px,  -3px);   }
-              50%  { transform: scale(1.06) translate(-3px,   3px);   }
-              75%  { transform: scale(1.06) translate( 5px,  -2px);   }
-              100% { transform: scale(1.06) translate(0px,    0px);   }
-            }
-            @keyframes hhc-rain {
-              0%   { background-position: 0px   0px;  }
-              100% { background-position: -28px 140px; }
+              0%   { transform: translate(0px,   0px);  }
+              25%  { transform: translate(-6px,  -3px); }
+              50%  { transform: translate(-2px,   3px); }
+              75%  { transform: translate( 5px,  -2px); }
+              100% { transform: translate(0px,   0px);  }
             }
             @keyframes hhc-steam-a {
               0%   { opacity: 0;    transform: translateY(0px)   translateX(0px)  scaleX(1);   }
@@ -586,45 +582,20 @@ export default function Home() {
             }}
           >
 
-            {/* ① Background image — slow cinematic drift */}
+            {/* ① Background image — slow cinematic drift, no scale so image stays sharp */}
             <div aria-hidden="true" style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 0, borderRadius: "12px" }}>
               <div
                 style={{
                   position: "absolute",
-                  inset: "-6%",
+                  inset: 0,
                   backgroundImage: "url('/images/coffeehouse-rainy-night.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center 40%",
+                  imageRendering: "crisp-edges" as React.CSSProperties["imageRendering"],
                   animation: "hhc-drift 45s ease-in-out infinite",
                 }}
               />
             </div>
-
-            {/* ② Rain streaks on window glass (left ~38% of image) */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                top: 0, left: 0,
-                width: "38%",
-                height: "100%",
-                zIndex: 1,
-                pointerEvents: "none",
-                background: [
-                  "repeating-linear-gradient(",
-                  "  172deg,",
-                  "  transparent        0px,",
-                  "  transparent        3px,",
-                  "  rgba(160,200,240,0.032) 3px,",
-                  "  rgba(160,200,240,0.032) 4px",
-                  ")",
-                ].join(""),
-                backgroundSize: "100% 36px",
-                animation: "hhc-rain 2.8s linear infinite",
-                maskImage: "linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 70%, transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 70%, transparent 100%)",
-              }}
-            />
 
             {/* ③ Warm ambient glow from café lights (right side, mid-height) */}
             <div
