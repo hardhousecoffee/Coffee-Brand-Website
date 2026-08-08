@@ -807,58 +807,27 @@ a, button {
   text-shadow: 0 1px 10px rgba(0,0,0,0.9);
 }
 
-/* Tablet ≤ 900px */
+/* Tablet ≤ 900px — box stays 16:9 but text scales down */
 @media (max-width: 900px) {
-  .hhc-stmt-box   { aspect-ratio: unset; height: 500px; }
   .hhc-stmt-inner { padding: 1.5rem; }
-  .hhc-stmt-line1 { font-size: 1.4rem; }
-  .hhc-stmt-line2 { font-size: 1.5rem; }
-  .hhc-stmt-para  { font-size: 0.95rem; max-width: 100%; line-height: 1.7; }
+  .hhc-stmt-line1 { font-size: 1.3rem; }
+  .hhc-stmt-line2 { font-size: 1.4rem; }
+  .hhc-stmt-para  { font-size: 0.88rem; max-width: 100%; line-height: 1.7; }
 }
 
-/* Phone ≤ 600px */
-@media (max-width: 600px) {
-  .hhc-stmt-box   { height: 440px; }
+/* Portrait mobile ≤ 600px — taller box so text stays inside, nothing overlaps */
+@media (max-width: 600px) and (orientation: portrait) {
+  .hhc-stmt-box   { aspect-ratio: unset; height: 520px; }
   .hhc-stmt-inner { padding: 1.1rem; }
-  .hhc-stmt-line1 { font-size: 1.1rem; }
-  .hhc-stmt-line2 { font-size: 1.15rem; }
-  .hhc-stmt-para  { font-size: 0.8rem; line-height: 1.6; }
+  .hhc-stmt-line1 { font-size: 1.05rem; letter-spacing: 0.07em; }
+  .hhc-stmt-line2 { font-size: 1.1rem;  letter-spacing: 0.05em; }
+  .hhc-stmt-para  { font-size: 0.8rem; line-height: 1.65; max-width: 100%; }
 }
 
-/* Small phone ≤ 400px */
-@media (max-width: 400px) {
-  .hhc-stmt-box   { height: 400px; }
+/* Small portrait phone ≤ 400px */
+@media (max-width: 400px) and (orientation: portrait) {
+  .hhc-stmt-box   { height: 480px; }
   .hhc-stmt-line1 { font-size: 0.95rem; }
   .hhc-stmt-line2 { font-size: 1.0rem; }
-  .hhc-stmt-para  { font-size: 0.72rem; line-height: 1.55; }
-}
-
-/* ── Portrait mobile: intentional stacked layout ── */
-
-/* Wrapper becomes a flex column so we can reorder children */
-.hhc-stmt-wrapper { display: flex; flex-direction: column; }
-
-/* Default order: image box first, paragraph second */
-.hhc-stmt-box  { order: 1; }
-.hhc-stmt-para { order: 2; }
-
-/* Mobile-only headline — hidden on desktop/landscape */
-.hhc-mob-head  { display: none; order: 0; }
-
-/* Desktop headline inside the image — shown by default */
-.hhc-desk-head { display: block; }
-
-@media (max-width: 600px) and (orientation: portrait) {
-  /* Stacked order: headline → paragraph → image */
-  .hhc-mob-head  { display: block; order: 1; margin-bottom: 0.6rem; }
-  .hhc-stmt-para { order: 2; margin-top: 0 !important; margin-bottom: 0; }
-  .hhc-stmt-box  { order: 3; margin-top: 0.75rem; aspect-ratio: 16/9; height: auto; }
-
-  /* Hide the overlaid desktop headline — image is just image on portrait mobile */
-  .hhc-desk-head { display: none; }
-
-  /* Portrait-mobile font sizes: headline −15%, paragraph −10% */
-  .hhc-mob-head .hhc-stmt-line1 { font-size: 1.1rem;  letter-spacing: 0.07em; }
-  .hhc-mob-head .hhc-stmt-line2 { font-size: 1.15rem; letter-spacing: 0.05em; }
-  .hhc-stmt-para                 { font-size: 0.83rem; line-height: 1.65; max-width: 100%; }
+  .hhc-stmt-para  { font-size: 0.73rem; line-height: 1.55; }
 }

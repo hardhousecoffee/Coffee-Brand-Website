@@ -529,21 +529,8 @@ export default function Home() {
         className="px-6"
         style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "2rem", paddingBottom: "2rem" }}
       >
-        {/* Statement section — cinematic on desktop/landscape, stacked on portrait mobile */}
-        <div className="hhc-stmt-wrapper" style={{ maxWidth: "67rem", margin: "0 auto 2.5rem" }}>
-
-          {/* ── Portrait mobile only: headline sits above image in normal flow ── */}
-          <div className="hhc-mob-head">
-            <p className="hhc-stmt-line1">EVERY CUP WE POUR IS A STATEMENT:</p>
-            <p className="hhc-stmt-line2">Bold. Deliberate. Unapologetically Premium.</p>
-          </div>
-
-          {/* ── Paragraph: between headline+image on portrait mobile; below image on desktop ── */}
-          <p className="hhc-stmt-para" style={{ marginTop: "1.25rem", paddingLeft: "0.25rem" }}>
-            Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
-          </p>
-
-          {/* ── Image box: cinematic with overlaid headline on desktop/landscape ── */}
+        {/* Statement box — text always inside the rounded box, all screen sizes */}
+        <div style={{ maxWidth: "67rem", margin: "0 auto 2.5rem" }}>
           <div className="hhc-stmt-box">
             <img
               aria-hidden="true"
@@ -562,19 +549,17 @@ export default function Home() {
               background: "rgba(6,4,2,0.52)",
               zIndex: 1, pointerEvents: "none",
             }} />
-            {/* Desktop/landscape headline overlaid — hidden on portrait mobile */}
-            <div className="hhc-desk-head" style={{
-              position: "absolute",
-              top: "1.25rem",
-              left: "1.5rem",
-              zIndex: 2,
-              maxWidth: "min(660px, 90%)",
-            }}>
-              <p className="hhc-stmt-line1">EVERY CUP WE POUR IS A STATEMENT:</p>
-              <p className="hhc-stmt-line2">Bold. Deliberate. Unapologetically Premium.</p>
+            {/* Flex column: headline top-left, paragraph bottom-left — all inside the box */}
+            <div className="hhc-stmt-inner">
+              <div>
+                <p className="hhc-stmt-line1">EVERY CUP WE POUR IS A STATEMENT:</p>
+                <p className="hhc-stmt-line2">Bold. Deliberate. Unapologetically Premium.</p>
+              </div>
+              <p className="hhc-stmt-para">
+                Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
+              </p>
             </div>
           </div>
-
         </div>
 
         {/* Banner: Now Brewing */}
