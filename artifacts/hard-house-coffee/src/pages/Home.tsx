@@ -529,36 +529,72 @@ export default function Home() {
         className="px-6"
         style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "2rem", paddingBottom: "2rem" }}
       >
-        {/* Statement box — rounded container, no background image */}
-        <div style={{ maxWidth: "56rem", margin: "0 auto 2.5rem" }}>
+        {/* Statement box — 16:9 cinematic image background with text overlay */}
+        <div style={{ maxWidth: "67rem", margin: "0 auto 2.5rem" }}>
           <div style={{
+            position: "relative",
+            width: "100%",
+            aspectRatio: "16 / 9",
             border: "1px solid rgba(161,79,31,0.4)",
             borderRadius: "12px",
-            padding: "2.5rem 3rem",
-            boxShadow: "0 4px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(161,79,31,0.07)",
-            textAlign: "center",
+            overflow: "hidden",
+            boxShadow: "0 4px 32px rgba(0,0,0,0.55)",
           }}>
-            <p style={{
-              fontFamily: "'Dancing Script', cursive",
-              fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
-              color: "#f5f0ea",
-              fontWeight: 600,
-              lineHeight: 1.45,
-              margin: "0 auto",
-              textShadow: "0 1px 12px rgba(0,0,0,0.75)",
-            }}>
-              Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
-            </p>
-            <p style={{
-              color: "#c8b9a8",
-              fontSize: "clamp(0.9rem, 1.4vw, 1.02rem)",
-              lineHeight: 2.05,
-              margin: "1.75rem auto 0",
-              maxWidth: "680px",
+            {/* Background image */}
+            <img
+              aria-hidden="true"
+              src="/images/coffeehouse-scene.jpg"
+              alt=""
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center 38%",
+                zIndex: 0,
+              }}
+            />
+            {/* Dark overlay for text legibility */}
+            <div aria-hidden="true" style={{
+              position: "absolute", inset: 0,
+              background: "rgba(6,4,2,0.50)",
+              zIndex: 1, pointerEvents: "none",
+            }} />
+            {/* Text — centered in the frame */}
+            <div style={{
+              position: "absolute", inset: 0,
+              zIndex: 2,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "2rem 3rem",
               textAlign: "center",
             }}>
-              Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
-            </p>
+              <p style={{
+                fontFamily: "'Dancing Script', cursive",
+                fontSize: "clamp(1.2rem, 2.4vw, 2.1rem)",
+                color: "#f5f0ea",
+                fontWeight: 600,
+                lineHeight: 1.45,
+                margin: "0 auto",
+                textShadow: "0 1px 18px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7)",
+              }}>
+                Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
+              </p>
+              <p style={{
+                color: "#c8b9a8",
+                fontSize: "clamp(0.78rem, 1.15vw, 1.0rem)",
+                lineHeight: 1.95,
+                margin: "1.25rem auto 0",
+                maxWidth: "600px",
+                textAlign: "center",
+                textShadow: "0 1px 10px rgba(0,0,0,0.9)",
+              }}>
+                Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
+              </p>
+            </div>
           </div>
         </div>
 
