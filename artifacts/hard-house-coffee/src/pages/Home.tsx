@@ -561,35 +561,31 @@ export default function Home() {
               background: "rgba(6,4,2,0.50)",
               zIndex: 1, pointerEvents: "none",
             }} />
-            {/* Text — centered in the frame */}
+            {/* Text — bottom right */}
             <div style={{
-              position: "absolute", inset: 0,
+              position: "absolute",
+              bottom: "2rem",
+              right: "2rem",
               zIndex: 2,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "2rem 3rem",
-              textAlign: "center",
+              maxWidth: "420px",
+              textAlign: "right",
             }}>
               <p style={{
                 fontFamily: "'Dancing Script', cursive",
-                fontSize: "clamp(1.2rem, 2.4vw, 2.1rem)",
+                fontSize: "clamp(1.0rem, 2.0vw, 1.7rem)",
                 color: "#f5f0ea",
                 fontWeight: 600,
                 lineHeight: 1.45,
-                margin: "0 auto",
+                margin: 0,
                 textShadow: "0 1px 18px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7)",
               }}>
                 Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
               </p>
               <p style={{
                 color: "#c8b9a8",
-                fontSize: "clamp(0.78rem, 1.15vw, 1.0rem)",
-                lineHeight: 1.95,
-                margin: "1.25rem auto 0",
-                maxWidth: "600px",
-                textAlign: "center",
+                fontSize: "clamp(0.68rem, 1.0vw, 0.88rem)",
+                lineHeight: 1.85,
+                margin: "0.9rem 0 0",
                 textShadow: "0 1px 10px rgba(0,0,0,0.9)",
               }}>
                 Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
