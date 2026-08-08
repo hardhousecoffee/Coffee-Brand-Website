@@ -534,25 +534,6 @@ export default function Home() {
 
           {/* ── Statement box animations ── */}
           <style>{`
-            /* Steam: rises, drifts sideways, fades out */
-            @keyframes hhc-steam-a {
-              0%   { opacity: 0;    transform: translateY(0px)   translateX(0px)  scale(1);    }
-              10%  { opacity: 0.72; }
-              55%  { opacity: 0.40; transform: translateY(-55px)  translateX(8px)  scale(1.8); }
-              100% { opacity: 0;    transform: translateY(-110px) translateX(-5px) scale(2.6); }
-            }
-            @keyframes hhc-steam-b {
-              0%   { opacity: 0;    transform: translateY(0px)   translateX(0px)  scale(1);    }
-              10%  { opacity: 0.60; }
-              55%  { opacity: 0.32; transform: translateY(-48px)  translateX(-9px) scale(1.7); }
-              100% { opacity: 0;    transform: translateY(-100px) translateX(6px)  scale(2.4); }
-            }
-            @keyframes hhc-steam-c {
-              0%   { opacity: 0;    transform: translateY(0px)   translateX(0px)  scale(1);    }
-              10%  { opacity: 0.50; }
-              55%  { opacity: 0.25; transform: translateY(-44px)  translateX(5px)  scale(1.6); }
-              100% { opacity: 0;    transform: translateY(-90px)  translateX(-7px) scale(2.2); }
-            }
             /* Streetlight: slow breath with occasional dim */
             @keyframes hhc-street-glow {
               0%,  100% { opacity: 0.80; transform: scale(1);    }
@@ -639,42 +620,6 @@ export default function Home() {
               filter: "blur(5px)",
               animation: "hhc-street-flicker 15s linear infinite 4s",
             }} />
-
-            {/* ⑤ Steam wisps — cup is foreground center-bottom, steam already visible in photo.
-                 Adding subtle CSS layer exactly above the cup rim (~left:46%, bottom:32%). */}
-            <div aria-hidden="true" style={{
-              position: "absolute",
-              bottom: "32%",
-              left: "43%",
-              width: "52px",
-              height: "60px",
-              zIndex: 3, pointerEvents: "none",
-            }}>
-              <div style={{
-                position: "absolute", left: "4px", bottom: 0,
-                width: "8px", height: "40px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.52) 0%, transparent 75%)",
-                borderRadius: "50%",
-                filter: "blur(3px)",
-                animation: "hhc-steam-a 3.4s ease-out infinite",
-              }} />
-              <div style={{
-                position: "absolute", left: "18px", bottom: 0,
-                width: "11px", height: "50px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.46) 0%, transparent 75%)",
-                borderRadius: "50%",
-                filter: "blur(3.5px)",
-                animation: "hhc-steam-b 4.0s ease-out infinite 0.9s",
-              }} />
-              <div style={{
-                position: "absolute", left: "33px", bottom: 0,
-                width: "7px", height: "36px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.40) 0%, transparent 75%)",
-                borderRadius: "50%",
-                filter: "blur(2.5px)",
-                animation: "hhc-steam-c 3.7s ease-out infinite 2.0s",
-              }} />
-            </div>
 
             {/* ⑤ Text — absolutely centered in the cinematic frame */}
             <div style={{
