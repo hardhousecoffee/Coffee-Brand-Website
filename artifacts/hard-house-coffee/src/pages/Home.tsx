@@ -549,16 +549,12 @@ export default function Home() {
             }
           `}</style>
 
-          <div
-            style={{
-              position: "relative",
-              aspectRatio: "16/9",
-              border: "1px solid rgba(161,79,31,0.4)",
-              borderRadius: "12px",
-              overflow: "hidden",
-              boxShadow: "0 4px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(161,79,31,0.07)",
-            }}
-          >
+          {/* 16:9 via padding-bottom — most reliable cross-browser technique */}
+          <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%", height: 0,
+            border: "1px solid rgba(161,79,31,0.4)", borderRadius: "12px", overflow: "hidden",
+            boxShadow: "0 4px 32px rgba(0,0,0,0.55)",
+          }}>
+          <div style={{ position: "absolute", inset: 0 }}>
             {/* ① AI-generated coffeehouse scene */}
             <img
               aria-hidden="true"
@@ -570,7 +566,7 @@ export default function Home() {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                objectPosition: "center 30%",
+                objectPosition: "center 60%",
                 zIndex: 0,
               }}
             />
@@ -661,6 +657,7 @@ export default function Home() {
               </p>
             </div>
 
+          </div>
           </div>
         </div>
 
