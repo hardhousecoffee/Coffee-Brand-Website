@@ -1079,7 +1079,15 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-subtitle" style={{ color: "#a14f1f" }}>From The Coffee Journal</p>
-            <h2 className="section-title inter-title mt-4" style={{ color: "#f2f2f2" }}>
+            <h2
+              className="inter-title mt-4"
+              style={{
+                color: "#f2f2f2",
+                fontSize: "clamp(0.9rem, 1.6vw, 1.25rem)",
+                letterSpacing: "0.04em",
+                whiteSpace: "nowrap",
+              }}
+            >
               Brewing Better Coffee Doesn't Have to Be Complicated
             </h2>
           </div>
@@ -1135,7 +1143,7 @@ export default function Home() {
                     />
                   </div>
                   <div style={{ padding: "1.5rem" }}>
-                    <h3 style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: "0.78rem", color: "#f2f2f2", lineHeight: 1.5, marginBottom: "0.75rem", letterSpacing: "0.02em" }}>
+                    <h3 style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif", fontStyle: "italic", fontSize: "1rem", color: "#f2f2f2", lineHeight: 1.5, marginBottom: "0.75rem", letterSpacing: "0.02em" }}>
                       {article.title}
                     </h3>
                     <p style={{ color: "#9a8878", fontSize: "0.88rem", lineHeight: 1.75, marginBottom: "1.1rem" }}>
