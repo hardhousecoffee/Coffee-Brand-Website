@@ -396,9 +396,9 @@ export default function Home() {
             <filter id="bloody-orange" colorInterpolationFilters="sRGB">
               <feColorMatrix
                 type="matrix"
-                values="0.333 0.333 0.333 0 0
+                values="0.241 0.241 0.241 0 0
                         0.139 0.139 0.139 0 0
-                        0     0     0     0 0
+                        0.056 0.056 0.056 0 0
                         0     0     0     1 0"
               />
             </filter>
@@ -481,9 +481,9 @@ export default function Home() {
               style={{
                 fontFamily: "'Dancing Script', cursive",
                 fontSize: "clamp(1.5rem, 3.2vw, 2.8rem)",
-                color: "#ff6a00",
+                color: "#B86A2B",
                 fontWeight: 600,
-                textShadow: "0 2px 12px rgba(0,0,0,0.8), 0 0 18px rgba(255,106,0,0.45)",
+                textShadow: "0 2px 12px rgba(0,0,0,0.85), 0 0 22px rgba(184,106,43,0.5), 0 0 50px rgba(184,106,43,0.18)",
                 marginBottom: "2rem",
                 lineHeight: 1.2,
               }}
@@ -532,40 +532,66 @@ export default function Home() {
         <div className="max-w-4xl mx-auto" style={{ marginBottom: "2rem" }}>
           <div
             style={{
-              background: "#141210",
+              position: "relative",
               border: "1px solid rgba(161,79,31,0.4)",
               borderRadius: "12px",
               padding: "2.5rem 3rem",
               boxShadow: "0 4px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(161,79,31,0.07)",
+              overflow: "hidden",
             }}
           >
-            <p
+            {/* Cinematic coffeehouse background image */}
+            <div
+              aria-hidden="true"
               style={{
-                fontFamily: "'Dancing Script', cursive",
-                fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
-                color: "#f2f2f2",
-                fontWeight: 600,
-                lineHeight: 1.45,
-                margin: 0,
-                textShadow: "0 1px 8px rgba(0,0,0,0.5)",
-                textAlign: "center",
+                position: "absolute",
+                inset: 0,
+                backgroundImage: "url('/images/coffeehouse-night.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                zIndex: 0,
               }}
-            >
-              Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
-            </p>
-            {/* Supporting editorial copy — gives Google crawlable text without cluttering the design */}
-            <p
+            />
+            {/* Dark overlay — ~88% opacity so image reads as mood lighting */}
+            <div
+              aria-hidden="true"
               style={{
-                color: "#9a8878",
-                fontSize: "clamp(0.9rem, 1.4vw, 1.02rem)",
-                lineHeight: 2.05,
-                margin: "1.75rem auto 0",
-                maxWidth: "680px",
-                textAlign: "left",
+                position: "absolute",
+                inset: 0,
+                background: "rgba(10,8,6,0.88)",
+                zIndex: 1,
               }}
-            >
-              Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
-            </p>
+            />
+            {/* Content sits above both layers */}
+            <div style={{ position: "relative", zIndex: 2 }}>
+              <p
+                style={{
+                  fontFamily: "'Dancing Script', cursive",
+                  fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
+                  color: "#f5f0ea",
+                  fontWeight: 600,
+                  lineHeight: 1.45,
+                  margin: 0,
+                  textShadow: "0 1px 10px rgba(0,0,0,0.7)",
+                  textAlign: "center",
+                }}
+              >
+                Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
+              </p>
+              {/* Supporting editorial copy */}
+              <p
+                style={{
+                  color: "#c8b9a8",
+                  fontSize: "clamp(0.9rem, 1.4vw, 1.02rem)",
+                  lineHeight: 2.05,
+                  margin: "1.75rem auto 0",
+                  maxWidth: "680px",
+                  textAlign: "center",
+                }}
+              >
+                Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
+              </p>
+            </div>
           </div>
         </div>
 
