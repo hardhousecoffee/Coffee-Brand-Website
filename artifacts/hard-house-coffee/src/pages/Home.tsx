@@ -603,7 +603,7 @@ export default function Home() {
                       onTouchStart={(e) => { e.preventDefault(); openTile(idx); }}
                       className="read-more-hint"
                       style={{
-                        fontSize: "0.92rem",
+                        fontSize: "1.1rem",
                         color: "#ff6a00",
                         textShadow: "0 0 8px rgba(255,106,0,0.6)",
                         letterSpacing: "0.1em",
