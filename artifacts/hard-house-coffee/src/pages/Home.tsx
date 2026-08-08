@@ -561,31 +561,59 @@ export default function Home() {
               background: "rgba(6,4,2,0.50)",
               zIndex: 1, pointerEvents: "none",
             }} />
-            {/* Text — bottom left */}
+
+            {/* Headline — top center */}
             <div style={{
               position: "absolute",
-              bottom: "2rem",
-              left: "2rem",
+              top: "1.75rem",
+              left: 0,
+              right: 0,
               zIndex: 2,
-              maxWidth: "420px",
-              textAlign: "left",
+              textAlign: "center",
+              padding: "0 2rem",
             }}>
               <p style={{
-                fontFamily: "'Dancing Script', cursive",
-                fontSize: "clamp(1.0rem, 2.0vw, 1.7rem)",
+                fontFamily: "'Bebas Neue', 'Impact', sans-serif",
+                fontSize: "clamp(1.3rem, 3.2vw, 3.0rem)",
+                fontWeight: 400,
                 color: "#f5f0ea",
-                fontWeight: 600,
-                lineHeight: 1.45,
+                letterSpacing: "0.08em",
+                lineHeight: 1.0,
                 margin: 0,
-                textShadow: "0 1px 18px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7)",
+                textShadow: "0 2px 20px rgba(0,0,0,0.95), 0 0 60px rgba(0,0,0,0.8)",
               }}>
-                Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
+                EVERY CUP WE POUR IS A STATEMENT
               </p>
               <p style={{
+                fontFamily: "'Bebas Neue', 'Impact', sans-serif",
+                fontSize: "clamp(1.4rem, 3.45vw, 3.2rem)",
+                fontWeight: 700,
+                color: "#c8960a",
+                letterSpacing: "0.06em",
+                lineHeight: 1.0,
+                margin: "0.3rem 0 0",
+                textShadow: "0 2px 20px rgba(0,0,0,0.95), 0 0 40px rgba(140,80,0,0.5)",
+              }}>
+                Bold. Deliberate. Unapologetically Premium.
+              </p>
+            </div>
+
+            {/* Paragraph — lower center */}
+            <div style={{
+              position: "absolute",
+              bottom: "1.75rem",
+              left: 0,
+              right: 0,
+              zIndex: 2,
+              textAlign: "center",
+              padding: "0 3rem",
+            }}>
+              <p style={{
                 color: "#c8b9a8",
-                fontSize: "clamp(0.68rem, 1.0vw, 0.88rem)",
+                fontSize: "clamp(0.82rem, 1.2vw, 1.06rem)",
                 lineHeight: 1.85,
-                margin: "0.9rem 0 0",
+                margin: "0 auto",
+                maxWidth: "680px",
                 textShadow: "0 1px 10px rgba(0,0,0,0.9)",
               }}>
                 Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
