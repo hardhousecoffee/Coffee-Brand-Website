@@ -561,14 +561,14 @@ export default function Home() {
               background: "rgba(6,4,2,0.50)",
               zIndex: 1, pointerEvents: "none",
             }} />
-            {/* Text — bottom right */}
+            {/* Text — bottom left */}
             <div style={{
               position: "absolute",
               bottom: "2rem",
-              right: "2rem",
+              left: "2rem",
               zIndex: 2,
               maxWidth: "420px",
-              textAlign: "right",
+              textAlign: "left",
             }}>
               <p style={{
                 fontFamily: "'Dancing Script', cursive",
