@@ -396,9 +396,9 @@ export default function Home() {
             <filter id="bloody-orange" colorInterpolationFilters="sRGB">
               <feColorMatrix
                 type="matrix"
-                values="0.241 0.241 0.241 0 0
-                        0.139 0.139 0.139 0 0
-                        0.056 0.056 0.056 0 0
+                values="0.263 0.263 0.263 0 0
+                        0.097 0.097 0.097 0 0
+                        0.031 0.031 0.031 0 0
                         0     0     0     1 0"
               />
             </filter>
@@ -481,9 +481,9 @@ export default function Home() {
               style={{
                 fontFamily: "'Dancing Script', cursive",
                 fontSize: "clamp(1.5rem, 3.2vw, 2.8rem)",
-                color: "#B86A2B",
+                color: "#C94A18",
                 fontWeight: 600,
-                textShadow: "0 2px 12px rgba(0,0,0,0.85), 0 0 22px rgba(184,106,43,0.5), 0 0 50px rgba(184,106,43,0.18)",
+                textShadow: "0 2px 12px rgba(0,0,0,0.85), 0 0 24px rgba(201,74,24,0.55), 0 0 55px rgba(201,74,24,0.2)",
                 marginBottom: "2rem",
                 lineHeight: 1.2,
               }}
