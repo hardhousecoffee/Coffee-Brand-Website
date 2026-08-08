@@ -97,3 +97,10 @@ uri = "file://artifacts/hard-house-coffee/public/images/coffeehouse-scene-16x9.j
 type = "image"
 title = "Hard House Coffee — Coffeehouse Scene (16:9 Cinematic)"
 description = "1024×576 widescreen crop. AI-generated rainy night coffeehouse — two couples, barista, Edison lights, rain-streaked windows, steaming coffee mug."
+
+[[outputs]]
+id = "UCHvBrIuiVchj52REFVLA"
+uri = "file://artifacts/hard-house-coffee/public/images/hhc-mug-c.jpg"
+type = "image"
+title = "Hard House Coffee — HHC Mug Scene (Cinematic)"
+description = "AI-generated: matte black mug with gold HHC, dramatic steam, candle, barista, two couples, rain-streaked windows. Winning variation C."
