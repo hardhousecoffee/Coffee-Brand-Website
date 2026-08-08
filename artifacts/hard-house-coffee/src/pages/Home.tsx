@@ -549,9 +549,9 @@ export default function Home() {
         <PremiumBanner />
 
         {/* Tile grid */}
-        <div className="max-w-6xl mx-auto mt-10" style={{ position: "relative" }}>
+        <div className="w-full mt-10" style={{ position: "relative" }}>
           <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3"
             style={{
               transition: "opacity 0.3s ease",
               opacity: activeExperience !== null ? 0.18 : 1,
@@ -627,7 +627,7 @@ export default function Home() {
                       bottom: "1rem",
                       left: "1rem",
                       fontFamily: "'Cinzel Decorative', serif",
-                      fontSize: "0.7rem",
+                      fontSize: "0.91rem",
                       letterSpacing: "0.15em",
                       color: "#ff6a00",
                       textShadow: "0 0 8px rgba(255,106,0,0.55)",
