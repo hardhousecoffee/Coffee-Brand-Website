@@ -571,11 +571,11 @@ export default function Home() {
           <div
             style={{
               position: "relative",
+              aspectRatio: "16/9",
               border: "1px solid rgba(161,79,31,0.4)",
               borderRadius: "12px",
-              padding: "2.5rem 3rem",
-              boxShadow: "0 4px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(161,79,31,0.07)",
               overflow: "hidden",
+              boxShadow: "0 4px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(161,79,31,0.07)",
             }}
           >
             {/* ① AI-generated coffeehouse scene */}
@@ -676,18 +676,27 @@ export default function Home() {
               }} />
             </div>
 
-            {/* ⑤ Text — centered, above all effects */}
-            <div style={{ position: "relative", zIndex: 5, textAlign: "center" }}>
+            {/* ⑤ Text — absolutely centered in the cinematic frame */}
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              zIndex: 5,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "2rem 3rem",
+              textAlign: "center",
+            }}>
               <p
                 style={{
                   fontFamily: "'Dancing Script', cursive",
-                  fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)",
+                  fontSize: "clamp(1.2rem, 2.4vw, 2.1rem)",
                   color: "#f5f0ea",
                   fontWeight: 600,
                   lineHeight: 1.45,
                   margin: "0 auto",
-                  textShadow: "0 1px 14px rgba(0,0,0,0.85)",
-                  textAlign: "center",
+                  textShadow: "0 1px 18px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7)",
                 }}
               >
                 Every cup we pour is a statement:<br />Bold, deliberate, and unapologetically premium.
@@ -695,11 +704,12 @@ export default function Home() {
               <p
                 style={{
                   color: "#c8b9a8",
-                  fontSize: "clamp(0.9rem, 1.4vw, 1.02rem)",
-                  lineHeight: 2.05,
-                  margin: "1.75rem auto 0",
-                  maxWidth: "680px",
+                  fontSize: "clamp(0.78rem, 1.2vw, 1.0rem)",
+                  lineHeight: 1.9,
+                  margin: "1.25rem auto 0",
+                  maxWidth: "620px",
                   textAlign: "center",
+                  textShadow: "0 1px 10px rgba(0,0,0,0.9)",
                 }}
               >
                 Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
