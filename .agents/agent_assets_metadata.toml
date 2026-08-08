@@ -104,3 +104,10 @@ uri = "file://artifacts/hard-house-coffee/public/images/hhc-mug-c.jpg"
 type = "image"
 title = "Hard House Coffee — HHC Mug Scene (Cinematic)"
 description = "AI-generated: matte black mug with gold HHC, dramatic steam, candle, barista, two couples, rain-streaked windows. Winning variation C."
+
+[[outputs]]
+id = "dwIJm_xJ-jtGnnZwc5MA3"
+uri = "file://artifacts/hard-house-coffee/public/images/scene-v2.jpg"
+type = "image"
+title = "Hard House Coffee — Rainy Night Coffeehouse (V2)"
+description = "AI-generated: dark ceramic mug with candle, elegant steam column, two couples, barista, globe Edison pendants, rain-streaked windows with wet city reflections."
