@@ -569,7 +569,7 @@ export default function Home() {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                objectPosition: "center 42%",
+                objectPosition: "center 54%",
                 zIndex: 0,
               }}
             />
@@ -616,21 +616,20 @@ export default function Home() {
               animation: "hhc-street-flicker 15s linear infinite 4s",
             }} />
 
-            {/* ⑤ HHC monogram on the mug — positioned over the mug body (center-bottom of photo).
-                 Slight perspective tilt to follow the mug's curved surface. */}
+            {/* ⑤ HHC monogram — sits on the mug body which is at ~76% down, 46% left */}
             <div aria-hidden="true" style={{
               position: "absolute",
-              top: "67%",
-              left: "44%",
+              top: "76%",
+              left: "46%",
               zIndex: 3,
               pointerEvents: "none",
               fontFamily: "'Georgia', 'Times New Roman', serif",
-              fontSize: "clamp(0.65rem, 1.3vw, 1.1rem)",
+              fontSize: "clamp(0.6rem, 1.2vw, 1.05rem)",
               fontWeight: 700,
-              letterSpacing: "0.22em",
-              color: "rgba(210,170,80,0.88)",
-              textShadow: "0 1px 4px rgba(0,0,0,0.9), 0 0 12px rgba(180,130,40,0.4)",
-              transform: "perspective(180px) rotateY(-6deg) rotateX(4deg)",
+              letterSpacing: "0.25em",
+              color: "rgba(210,170,80,0.90)",
+              textShadow: "0 1px 4px rgba(0,0,0,0.95), 0 0 10px rgba(180,130,40,0.35)",
+              transform: "perspective(200px) rotateY(-5deg) rotateX(3deg)",
               userSelect: "none",
             }}>
               HHC
