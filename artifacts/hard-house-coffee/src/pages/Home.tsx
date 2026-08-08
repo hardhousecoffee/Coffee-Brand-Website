@@ -601,76 +601,75 @@ export default function Home() {
               zIndex: 1, pointerEvents: "none",
             }} />
 
-            {/* ③ Edison pendant bulb glows — three hanging lights visible in image.
-                 Left bulb ~44% from left, 5% from top.
-                 Center-right bulb ~68% from left, 3% from top.
-                 Far-right bulb ~88% from left, 8% from top. */}
+            {/* ③ Edison pendant bulb glows — 4 pendants visible across the ceiling right half.
+                 Positions matched to lights in the new image. */}
             {([
-              { l: "41%", t: "1%",  w: "48px", h: "60px", del: "0s"   },
-              { l: "65%", t: "0%",  w: "44px", h: "55px", del: "1.3s" },
-              { l: "85%", t: "4%",  w: "36px", h: "46px", del: "2.7s" },
+              { l: "48%", t: "2%",  w: "42px", h: "52px", del: "0s"   },
+              { l: "62%", t: "1%",  w: "38px", h: "48px", del: "1.6s" },
+              { l: "74%", t: "3%",  w: "34px", h: "44px", del: "0.8s" },
+              { l: "84%", t: "2%",  w: "30px", h: "40px", del: "2.4s" },
             ] as const).map((b, i) => (
               <div key={i} aria-hidden="true" style={{
                 position: "absolute",
                 top: b.t, left: b.l,
                 width: b.w, height: b.h,
                 zIndex: 2, pointerEvents: "none",
-                background: "radial-gradient(ellipse at 50% 40%, rgba(255,210,90,0.55) 0%, rgba(240,160,30,0.22) 40%, transparent 75%)",
-                filter: "blur(8px)",
+                background: "radial-gradient(ellipse at 50% 40%, rgba(255,210,90,0.48) 0%, rgba(240,160,30,0.18) 45%, transparent 75%)",
+                filter: "blur(9px)",
                 animation: `hhc-street-glow 5s ease-in-out infinite ${b.del}`,
               }} />
             ))}
 
-            {/* ④ City streetlight through wet window — upper-left ~18% left, 28% top */}
+            {/* ④ Orange streetlight glow through rain-streaked window — upper-left ~20% left, 30% top */}
             <div aria-hidden="true" style={{
               position: "absolute",
-              top: "24%", left: "13%",
-              width: "40px", height: "50px",
+              top: "27%", left: "16%",
+              width: "44px", height: "56px",
               zIndex: 2, pointerEvents: "none",
-              background: "radial-gradient(ellipse at 50% 40%, rgba(255,200,80,0.32) 0%, transparent 70%)",
-              filter: "blur(6px)",
+              background: "radial-gradient(ellipse at 50% 40%, rgba(255,180,60,0.30) 0%, transparent 70%)",
+              filter: "blur(8px)",
               animation: "hhc-street-glow 6s ease-in-out infinite 1s",
             }} />
             <div aria-hidden="true" style={{
               position: "absolute",
-              top: "24%", left: "13%",
-              width: "40px", height: "50px",
+              top: "27%", left: "16%",
+              width: "44px", height: "56px",
               zIndex: 2, pointerEvents: "none",
-              background: "radial-gradient(ellipse at 50% 40%, rgba(255,220,110,0.18) 0%, transparent 60%)",
-              filter: "blur(4px)",
+              background: "radial-gradient(ellipse at 50% 40%, rgba(255,210,100,0.16) 0%, transparent 60%)",
+              filter: "blur(5px)",
               animation: "hhc-street-flicker 15s linear infinite 4s",
             }} />
 
-            {/* ⑤ Steam wisps — rising from cup top, foreground center-right.
-                 Cup rim is at approximately left:53%, bottom:28% of container. */}
+            {/* ⑤ Steam wisps — cup is foreground center-bottom, steam already visible in photo.
+                 Adding subtle CSS layer exactly above the cup rim (~left:46%, bottom:32%). */}
             <div aria-hidden="true" style={{
               position: "absolute",
-              bottom: "28%",
-              left: "50%",
-              width: "50px",
-              height: "65px",
+              bottom: "32%",
+              left: "43%",
+              width: "52px",
+              height: "60px",
               zIndex: 3, pointerEvents: "none",
             }}>
               <div style={{
-                position: "absolute", left: "3px", bottom: 0,
-                width: "8px", height: "42px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.58) 0%, transparent 75%)",
+                position: "absolute", left: "4px", bottom: 0,
+                width: "8px", height: "40px",
+                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.52) 0%, transparent 75%)",
                 borderRadius: "50%",
                 filter: "blur(3px)",
                 animation: "hhc-steam-a 3.4s ease-out infinite",
               }} />
               <div style={{
                 position: "absolute", left: "18px", bottom: 0,
-                width: "10px", height: "52px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.50) 0%, transparent 75%)",
+                width: "11px", height: "50px",
+                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.46) 0%, transparent 75%)",
                 borderRadius: "50%",
                 filter: "blur(3.5px)",
                 animation: "hhc-steam-b 4.0s ease-out infinite 0.9s",
               }} />
               <div style={{
-                position: "absolute", left: "32px", bottom: 0,
-                width: "7px", height: "38px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.44) 0%, transparent 75%)",
+                position: "absolute", left: "33px", bottom: 0,
+                width: "7px", height: "36px",
+                background: "radial-gradient(ellipse at 50% 85%, rgba(230,222,212,0.40) 0%, transparent 75%)",
                 borderRadius: "50%",
                 filter: "blur(2.5px)",
                 animation: "hhc-steam-c 3.7s ease-out infinite 2.0s",

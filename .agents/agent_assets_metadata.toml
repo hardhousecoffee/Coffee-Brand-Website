@@ -83,3 +83,10 @@ id = "r_Zd4GLkTLIp53HgM3tZs"
 uri = "file://attached_assets/mr_roast_deftone.png"
 type = "image"
 title = "Mr. Roast — Deftone Stylus, Transparent PNG"
+
+[[outputs]]
+id = "0l1AYXFmas5wHuWKLuKCO"
+uri = "file://artifacts/hard-house-coffee/public/images/coffeehouse-scene.jpg"
+type = "image"
+title = "Hard House Coffee — Coffeehouse Scene"
+description = "AI-generated rainy night coffeehouse interior. Two couples, barista, Edison pendant lights, rain-streaked windows, steaming coffee mug."
