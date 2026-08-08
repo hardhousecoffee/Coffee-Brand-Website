@@ -529,90 +529,113 @@ export default function Home() {
         className="px-6"
         style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "2rem", paddingBottom: "2rem" }}
       >
-        {/* Statement box — 16:9 cinematic image background with text overlay */}
+        {/* Statement box — cinematic image with responsive text layout */}
         <div style={{ maxWidth: "67rem", margin: "0 auto 2.5rem" }}>
-          <div style={{
-            position: "relative",
-            width: "100%",
-            aspectRatio: "16 / 9",
-            border: "1px solid rgba(161,79,31,0.4)",
-            borderRadius: "12px",
-            overflow: "hidden",
-            boxShadow: "0 4px 32px rgba(0,0,0,0.55)",
-          }}>
+
+          <style>{`
+            /* Box: 16:9 on desktop, fixed tall height on mobile */
+            .hhc-stmt-box {
+              position: relative;
+              width: 100%;
+              aspect-ratio: 16 / 9;
+              border: 1px solid rgba(161,79,31,0.4);
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 4px 32px rgba(0,0,0,0.55);
+            }
+            /* Single flex column — headline top-left, paragraph bottom-left, never overlap */
+            .hhc-stmt-text {
+              position: absolute;
+              inset: 0;
+              z-index: 2;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              padding: 1.75rem 2rem;
+            }
+            .hhc-stmt-line1 {
+              font-family: 'Bebas Neue', Impact, sans-serif;
+              font-size: clamp(1.0rem, 2.2vw, 2.0rem);
+              font-weight: 400;
+              color: #f5f0ea;
+              letter-spacing: 0.08em;
+              line-height: 1.05;
+              margin: 0;
+              text-shadow: 0 2px 20px rgba(0,0,0,0.95), 0 0 60px rgba(0,0,0,0.8);
+            }
+            .hhc-stmt-line2 {
+              font-family: 'Bebas Neue', Impact, sans-serif;
+              font-size: clamp(1.05rem, 2.35vw, 2.15rem);
+              font-weight: 700;
+              color: #f5f0ea;
+              letter-spacing: 0.06em;
+              line-height: 1.05;
+              margin: 0.3rem 0 0;
+              text-shadow: 0 2px 20px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7);
+            }
+            .hhc-stmt-para {
+              color: #c8b9a8;
+              font-size: clamp(0.92rem, 1.35vw, 1.15rem);
+              line-height: 1.85;
+              margin: 0;
+              max-width: 540px;
+              text-shadow: 0 1px 10px rgba(0,0,0,0.9);
+            }
+            /* Tablet */
+            @media (max-width: 900px) {
+              .hhc-stmt-box   { aspect-ratio: unset; height: 460px; }
+              .hhc-stmt-text  { padding: 1.5rem; }
+              .hhc-stmt-line1 { font-size: 1.3rem; }
+              .hhc-stmt-line2 { font-size: 1.4rem; }
+              .hhc-stmt-para  { font-size: 0.88rem; line-height: 1.7; max-width: 100%; }
+            }
+            /* Large phone (≤600px) */
+            @media (max-width: 600px) {
+              .hhc-stmt-box   { height: 420px; }
+              .hhc-stmt-text  { padding: 1.1rem; }
+              .hhc-stmt-line1 { font-size: 1.05rem; }
+              .hhc-stmt-line2 { font-size: 1.1rem; }
+              .hhc-stmt-para  { font-size: 0.78rem; line-height: 1.6; }
+            }
+            /* Small phone (≤400px) */
+            @media (max-width: 400px) {
+              .hhc-stmt-box   { height: 380px; }
+              .hhc-stmt-line1 { font-size: 0.92rem; }
+              .hhc-stmt-line2 { font-size: 0.97rem; }
+              .hhc-stmt-para  { font-size: 0.70rem; line-height: 1.55; }
+            }
+          `}</style>
+
+          <div className="hhc-stmt-box">
             {/* Background image */}
             <img
               aria-hidden="true"
               src="/images/coffeehouse-scene.jpg"
               alt=""
               style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
+                position: "absolute", inset: 0,
+                width: "100%", height: "100%",
                 objectFit: "cover",
                 objectPosition: "center 38%",
                 zIndex: 0,
               }}
             />
-            {/* Dark overlay for text legibility */}
+            {/* Dark overlay */}
             <div aria-hidden="true" style={{
               position: "absolute", inset: 0,
-              background: "rgba(6,4,2,0.50)",
+              background: "rgba(6,4,2,0.52)",
               zIndex: 1, pointerEvents: "none",
             }} />
 
-            {/* Headline — top left */}
-            <div style={{
-              position: "absolute",
-              top: "1.75rem",
-              left: "2rem",
-              zIndex: 2,
-              textAlign: "left",
-              maxWidth: "660px",
-            }}>
-              <p style={{
-                fontFamily: "'Bebas Neue', 'Impact', sans-serif",
-                fontSize: "clamp(1.0rem, 2.2vw, 2.0rem)",
-                fontWeight: 400,
-                color: "#f5f0ea",
-                letterSpacing: "0.08em",
-                lineHeight: 1.0,
-                margin: 0,
-                textShadow: "0 2px 20px rgba(0,0,0,0.95), 0 0 60px rgba(0,0,0,0.8)",
-              }}>
-                EVERY CUP WE POUR IS A STATEMENT:
-              </p>
-              <p style={{
-                fontFamily: "'Bebas Neue', 'Impact', sans-serif",
-                fontSize: "clamp(1.05rem, 2.35vw, 2.15rem)",
-                fontWeight: 700,
-                color: "#f5f0ea",
-                letterSpacing: "0.06em",
-                lineHeight: 1.0,
-                margin: "0.3rem 0 0",
-                textShadow: "0 2px 20px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7)",
-              }}>
-                Bold. Deliberate. Unapologetically Premium.
-              </p>
-            </div>
-
-            {/* Paragraph — bottom left */}
-            <div style={{
-              position: "absolute",
-              bottom: "1.75rem",
-              left: "2rem",
-              zIndex: 2,
-              maxWidth: "480px",
-              textAlign: "left",
-            }}>
-              <p style={{
-                color: "#c8b9a8",
-                fontSize: "clamp(0.92rem, 1.35vw, 1.15rem)",
-                lineHeight: 1.85,
-                margin: 0,
-                textShadow: "0 1px 10px rgba(0,0,0,0.9)",
-              }}>
+            {/* Text — single flex column, headline top, paragraph bottom */}
+            <div className="hhc-stmt-text">
+              {/* Headline block — stays at top */}
+              <div>
+                <p className="hhc-stmt-line1">EVERY CUP WE POUR IS A STATEMENT:</p>
+                <p className="hhc-stmt-line2">Bold. Deliberate. Unapologetically Premium.</p>
+              </div>
+              {/* Paragraph — pushed to bottom by space-between */}
+              <p className="hhc-stmt-para">
                 Great coffee deserves more than being rushed. From the beans we choose to the way they're ground, brewed and served, small details can completely change what's in the cup. Hard House Coffee explores those details without making coffee complicated — whether you're learning espresso, comparing brewing methods, looking for better coffee gear, or simply wondering why one cup tastes better than another.
               </p>
             </div>
