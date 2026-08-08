@@ -602,63 +602,57 @@ export default function Home() {
               zIndex: 1, pointerEvents: "none",
             }} />
 
-            {/* ③ Streetlight halo — warm amber glow over the lamp outside the window.
-                 The streetlight in the photo is ~17% from left, ~18% from top.
-                 Two layers: steady breath + rare flicker on top */}
+            {/* ③ Streetlight halo — subtle warm glow, not overpowering */}
             <div aria-hidden="true" style={{
               position: "absolute",
               top: "6%", left: "14%",
-              width: "90px", height: "110px",
+              width: "52px", height: "64px",
               zIndex: 2, pointerEvents: "none",
-              background: "radial-gradient(ellipse at 50% 35%, rgba(255,215,100,0.90) 0%, rgba(240,170,40,0.50) 30%, rgba(200,120,20,0.15) 60%, transparent 80%)",
-              filter: "blur(6px)",
+              background: "radial-gradient(ellipse at 50% 35%, rgba(255,215,100,0.38) 0%, rgba(240,170,40,0.14) 50%, transparent 80%)",
+              filter: "blur(7px)",
               animation: "hhc-street-glow 4.5s ease-in-out infinite",
             }} />
             <div aria-hidden="true" style={{
               position: "absolute",
               top: "6%", left: "14%",
-              width: "90px", height: "110px",
+              width: "52px", height: "64px",
               zIndex: 2, pointerEvents: "none",
-              background: "radial-gradient(ellipse at 50% 35%, rgba(255,235,140,0.70) 0%, transparent 55%)",
-              filter: "blur(4px)",
+              background: "radial-gradient(ellipse at 50% 35%, rgba(255,235,140,0.22) 0%, transparent 60%)",
+              filter: "blur(5px)",
               animation: "hhc-street-flicker 13s linear infinite 2s",
             }} />
 
-            {/* ④ Steam wisps — positioned over the cup in the foreground (center-bottom of photo).
-                 Cup sits at roughly 48% from left, 28% from bottom of the container. */}
+            {/* ④ Steam wisps — small, above the mug which sits bottom-right (~58% left, 10% from bottom) */}
             <div aria-hidden="true" style={{
               position: "absolute",
-              bottom: "22%",
-              left: "44%",
-              width: "96px",
-              height: "120px",
+              bottom: "10%",
+              left: "54%",
+              width: "44px",
+              height: "55px",
               zIndex: 3, pointerEvents: "none",
             }}>
-              {/* Left wisp */}
               <div style={{
-                position: "absolute", left: "8px", bottom: 0,
-                width: "18px", height: "90px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(235,225,215,0.80) 0%, rgba(235,225,215,0.35) 45%, transparent 80%)",
+                position: "absolute", left: "2px", bottom: 0,
+                width: "7px", height: "38px",
+                background: "radial-gradient(ellipse at 50% 85%, rgba(235,225,215,0.55) 0%, transparent 75%)",
                 borderRadius: "50%",
-                filter: "blur(4px)",
+                filter: "blur(2.5px)",
                 animation: "hhc-steam-a 3.4s ease-out infinite",
               }} />
-              {/* Center wisp — tallest */}
               <div style={{
-                position: "absolute", left: "32px", bottom: 0,
-                width: "22px", height: "110px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(235,225,215,0.72) 0%, rgba(235,225,215,0.30) 45%, transparent 80%)",
+                position: "absolute", left: "16px", bottom: 0,
+                width: "9px", height: "46px",
+                background: "radial-gradient(ellipse at 50% 85%, rgba(235,225,215,0.48) 0%, transparent 75%)",
                 borderRadius: "50%",
-                filter: "blur(5px)",
+                filter: "blur(3px)",
                 animation: "hhc-steam-b 4.0s ease-out infinite 0.9s",
               }} />
-              {/* Right wisp */}
               <div style={{
-                position: "absolute", left: "60px", bottom: 0,
-                width: "16px", height: "80px",
-                background: "radial-gradient(ellipse at 50% 85%, rgba(235,225,215,0.65) 0%, rgba(235,225,215,0.25) 45%, transparent 80%)",
+                position: "absolute", left: "29px", bottom: 0,
+                width: "6px", height: "34px",
+                background: "radial-gradient(ellipse at 50% 85%, rgba(235,225,215,0.42) 0%, transparent 75%)",
                 borderRadius: "50%",
-                filter: "blur(4px)",
+                filter: "blur(2.5px)",
                 animation: "hhc-steam-c 3.7s ease-out infinite 2.0s",
               }} />
             </div>
