@@ -529,7 +529,7 @@ export default function Home() {
         className="px-6"
         style={{ backgroundColor: "#0b0b0b", position: "relative", paddingTop: "2rem", paddingBottom: "2rem" }}
       >
-        <div className="max-w-4xl mx-auto" style={{ marginBottom: "2rem" }}>
+        <div style={{ marginBottom: "2rem" }}>
 
           {/* ── Cinematic statement box CSS animations ── */}
           <style>{`
@@ -582,20 +582,23 @@ export default function Home() {
             }}
           >
 
-            {/* ① Background image — slow cinematic drift, no scale so image stays sharp */}
-            <div aria-hidden="true" style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 0, borderRadius: "12px" }}>
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  backgroundImage: "url('/images/coffeehouse-rainy-night.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center 40%",
-                  imageRendering: "crisp-edges" as React.CSSProperties["imageRendering"],
-                  animation: "hhc-drift 45s ease-in-out infinite",
-                }}
-              />
-            </div>
+            {/* ① Background image — real <img> for crisp GPU-scaled rendering */}
+            <img
+              aria-hidden="true"
+              src="/images/coffeehouse-rainy-night.png"
+              alt=""
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center 40%",
+                zIndex: 0,
+                animation: "hhc-drift 45s ease-in-out infinite",
+                willChange: "transform",
+              }}
+            />
 
             {/* ③ Warm ambient glow from café lights (right side, mid-height) */}
             <div
