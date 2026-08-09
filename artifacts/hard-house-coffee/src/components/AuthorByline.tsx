@@ -27,8 +27,8 @@ export default function AuthorByline() {
 
       <div
         style={{
-          width: "48px",
-          height: "48px",
+          width: "72px",
+          height: "72px",
           borderRadius: "50%",
           background: "#0b0b0b",
           border: "1px solid rgba(161,79,31,0.35)",
