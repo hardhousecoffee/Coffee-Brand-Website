@@ -50,19 +50,28 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               gap: "0.4rem",
-              background: "none",
-              border: "none",
+              background: "transparent",
+              border: "1px solid rgba(161,79,31,0.45)",
+              borderRadius: "6px",
               cursor: "pointer",
               color: "#b0a090",
               fontSize: "0.85rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               fontFamily: "'Cinzel Decorative', serif",
-              transition: "color 0.2s ease",
-              padding: 0,
+              transition: "background 0.22s ease, color 0.22s ease, border-color 0.22s ease",
+              padding: "0.3rem 0.9rem",
             }}
-            onMouseEnter={e => (e.currentTarget.style.color = "#f2f2f2")}
-            onMouseLeave={e => (e.currentTarget.style.color = "#b0a090")}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = "#a14f1f";
+              e.currentTarget.style.color = "#f2f2f2";
+              e.currentTarget.style.borderColor = "#c06020";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = "transparent";
+              e.currentTarget.style.color = "#b0a090";
+              e.currentTarget.style.borderColor = "rgba(161,79,31,0.45)";
+            }}
             className="hidden md:flex"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="arrow-pulse">
@@ -167,15 +176,27 @@ export default function Navbar() {
                   display: "flex",
                   alignItems: "center",
                   gap: "0.55rem",
-                  background: "none",
-                  border: "none",
+                  background: "transparent",
+                  border: "1px solid rgba(161,79,31,0.45)",
+                  borderRadius: "6px",
                   cursor: "pointer",
                   color: "#b0a090",
                   fontSize: "0.77rem",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   fontFamily: "'Cinzel Decorative', serif",
-                  padding: "0.25rem 0",
+                  padding: "0.25rem 0.75rem",
+                  transition: "background 0.22s ease, color 0.22s ease, border-color 0.22s ease",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = "#a14f1f";
+                  e.currentTarget.style.color = "#f2f2f2";
+                  e.currentTarget.style.borderColor = "#c06020";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = "#b0a090";
+                  e.currentTarget.style.borderColor = "rgba(161,79,31,0.45)";
                 }}
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="arrow-pulse" style={{ flexShrink: 0 }}>
