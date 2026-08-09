@@ -50,27 +50,23 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               gap: "0.4rem",
-              background: "transparent",
-              border: "1px solid rgba(161,79,31,0.45)",
-              borderRadius: "6px",
+              background: "none",
+              border: "none",
+              borderRadius: "0",
               cursor: "pointer",
-              color: "#b0a090",
+              color: "#f2f2f2",
               fontSize: "0.85rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               fontFamily: "'Cinzel Decorative', serif",
-              transition: "background 0.22s ease, color 0.22s ease, border-color 0.22s ease",
-              padding: "0.3rem 0.9rem",
+              transition: "color 0.22s ease",
+              padding: "0",
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.background = "#a14f1f";
-              e.currentTarget.style.color = "#f2f2f2";
-              e.currentTarget.style.borderColor = "#c06020";
+              e.currentTarget.style.color = "#d4b896";
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.background = "transparent";
-              e.currentTarget.style.color = "#b0a090";
-              e.currentTarget.style.borderColor = "rgba(161,79,31,0.45)";
+              e.currentTarget.style.color = "#f2f2f2";
             }}
             className="hidden md:flex"
           >
@@ -176,27 +172,23 @@ export default function Navbar() {
                   display: "flex",
                   alignItems: "center",
                   gap: "0.55rem",
-                  background: "transparent",
-                  border: "1px solid rgba(161,79,31,0.45)",
-                  borderRadius: "6px",
+                  background: "none",
+                  border: "none",
+                  borderRadius: "0",
                   cursor: "pointer",
-                  color: "#b0a090",
+                  color: "#f2f2f2",
                   fontSize: "0.77rem",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   fontFamily: "'Cinzel Decorative', serif",
-                  padding: "0.25rem 0.75rem",
-                  transition: "background 0.22s ease, color 0.22s ease, border-color 0.22s ease",
+                  padding: "0",
+                  transition: "color 0.22s ease",
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.background = "#a14f1f";
-                  e.currentTarget.style.color = "#f2f2f2";
-                  e.currentTarget.style.borderColor = "#c06020";
+                  e.currentTarget.style.color = "#d4b896";
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.background = "transparent";
-                  e.currentTarget.style.color = "#b0a090";
-                  e.currentTarget.style.borderColor = "rgba(161,79,31,0.45)";
+                  e.currentTarget.style.color = "#f2f2f2";
                 }}
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="arrow-pulse" style={{ flexShrink: 0 }}>
