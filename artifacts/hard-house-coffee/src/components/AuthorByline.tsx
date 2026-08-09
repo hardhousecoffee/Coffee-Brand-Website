@@ -15,18 +15,18 @@ export default function AuthorByline() {
           width: "46px",
           height: "46px",
           borderRadius: "50%",
-          background: "rgba(161,79,31,0.12)",
-          border: "1px solid rgba(161,79,31,0.3)",
+          background: "rgba(80,30,10,0.55)",
+          border: "1.5px solid rgba(161,79,31,0.5)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
           overflow: "hidden",
-          padding: "5px",
+          padding: "4px",
         }}
       >
         <img
-          src="/images/logo-icon.png"
+          src="/images/logo.svg"
           alt="Hard House Coffee"
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
