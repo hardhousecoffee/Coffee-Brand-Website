@@ -4,35 +4,39 @@ export default function AuthorByline() {
       style={{
         display: "flex",
         alignItems: "center",
-        gap: "1rem",
         paddingBottom: "1.75rem",
         marginBottom: "1.75rem",
         borderBottom: "1px solid rgba(161,79,31,0.15)",
       }}
     >
-      <div
-        style={{
-          width: "72px",
-          height: "72px",
-          borderRadius: "50%",
-          background: "#0f0a07",
-          border: "1.5px solid rgba(161,79,31,0.4)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexShrink: 0,
-          overflow: "hidden",
-          padding: "6px",
-        }}
-      >
-        <img
-          src="/images/logo.svg"
-          alt="Hard House Coffee"
-          style={{ width: "100%", height: "100%", objectFit: "contain" }}
-        />
-      </div>
+      {/* Hero's vivid bloody-orange filter — makes the emblem glow orange like the homepage */}
+      <svg style={{ position: "absolute", width: 0, height: 0 }}>
+        <defs>
+          <filter id="byline-logo-orange" colorInterpolationFilters="sRGB">
+            <feColorMatrix
+              type="matrix"
+              values="0.263 0.263 0.263 0 0
+                      0.097 0.097 0.097 0 0
+                      0.031 0.031 0.031 0 0
+                      0     0     0     1 0"
+            />
+          </filter>
+        </defs>
+      </svg>
 
-      <div>
+      <img
+        src="/images/logo-icon.png"
+        alt="Hard House Coffee"
+        style={{
+          height: "120px",
+          width: "auto",
+          filter: "url(#byline-logo-orange)",
+          mixBlendMode: "screen",
+          flexShrink: 0,
+        }}
+      />
+
+      <div style={{ marginLeft: "-32px" }}>
         <p style={{ fontSize: "1.04rem", fontWeight: 700, color: "#f2f2f2", marginBottom: "0.15rem" }}>
           Hard House Coffee Team
         </p>
