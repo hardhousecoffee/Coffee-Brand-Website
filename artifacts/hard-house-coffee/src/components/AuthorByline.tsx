@@ -4,51 +4,31 @@ export default function AuthorByline() {
       style={{
         display: "flex",
         alignItems: "center",
-        gap: "0.85rem",
+        gap: "1rem",
         paddingBottom: "1.75rem",
         marginBottom: "1.75rem",
         borderBottom: "1px solid rgba(161,79,31,0.15)",
       }}
     >
-      {/* Hidden SVG carrying the same bloody-orange filter used in the hero */}
-      <svg width="0" height="0" style={{ position: "absolute" }}>
-        <defs>
-          <filter id="hhc-author-orange" colorInterpolationFilters="sRGB">
-            <feColorMatrix
-              type="matrix"
-              values="0.263 0.263 0.263 0 0
-                      0.097 0.097 0.097 0 0
-                      0.031 0.031 0.031 0 0
-                      0     0     0     1 0"
-            />
-          </filter>
-        </defs>
-      </svg>
-
       <div
         style={{
           width: "72px",
           height: "72px",
           borderRadius: "50%",
-          background: "#0b0b0b",
-          border: "1px solid rgba(161,79,31,0.35)",
+          background: "#0f0a07",
+          border: "1.5px solid rgba(161,79,31,0.4)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
           overflow: "hidden",
+          padding: "6px",
         }}
       >
         <img
-          src="/images/logo-icon.png"
+          src="/images/logo.svg"
           alt="Hard House Coffee"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "contain",
-            filter: "url(#hhc-author-orange)",
-            mixBlendMode: "screen",
-          }}
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
       </div>
 
