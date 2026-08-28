@@ -64,7 +64,7 @@ export default function BlogPost20000EspressoGear() {
         </Section>
 
         <RelatedPosts posts={[
-          { title: "The Icon – La Marzocco Linea Micra Worth the Obsession", slug: "the-icon-la-marzocco-linea-micra-worth-the-obsession", image: "/images/la-marzocco-linea-micra.jpg", category: "Espresso Machines" },
+          { title: "La Marzocco Linea Micra: What the Premium Buys", slug: "the-icon-la-marzocco-linea-micra-worth-the-obsession", image: "/images/la-marzocco-linea-micra.jpg", category: "Espresso Machines" },
           { title: "Inside the World Barista Championship – The Olympics of Caffeine", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship.jpg", category: "Coffee Culture" },
         ]} />
 

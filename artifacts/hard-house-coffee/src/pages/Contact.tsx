@@ -39,7 +39,7 @@ export default function Contact() {
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Contact Us | Hard House Coffee</title>
-        <meta name="description" content="Get in touch with the Hard House Coffee team. Have a question, product suggestion, or partnership inquiry? We would love to hear from you." />
+        <meta name="description" content="Get in touch with Hard House Coffee. Send a question, product suggestion, correction, or partnership inquiry to the publication." />
         <meta property="og:title" content="Contact Us | Hard House Coffee" />
         <meta property="og:description" content="Reach out to Hard House Coffee for questions, partnerships, and coffee talk." />
       </Helmet>

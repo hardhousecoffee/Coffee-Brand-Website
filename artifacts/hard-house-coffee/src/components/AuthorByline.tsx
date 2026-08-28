@@ -9,7 +9,6 @@ export default function AuthorByline() {
         borderBottom: "1px solid rgba(161,79,31,0.15)",
       }}
     >
-      {/* Hero's vivid bloody-orange filter — makes the emblem glow orange like the homepage */}
       <svg style={{ position: "absolute", width: 0, height: 0 }}>
         <defs>
           <filter id="byline-logo-orange" colorInterpolationFilters="sRGB">
@@ -38,10 +37,10 @@ export default function AuthorByline() {
 
       <div style={{ marginLeft: "-32px" }}>
         <p style={{ fontSize: "1.04rem", fontWeight: 700, color: "#f2f2f2", marginBottom: "0.15rem" }}>
-          Hard House Coffee Team
+          Hard House Coffee
         </p>
         <p style={{ fontSize: "0.94rem", color: "#6b5a4e" }}>
-          Coffee gear experts & brewing enthusiasts
+          Editorial publication · research-based guidance
         </p>
       </div>
     </div>

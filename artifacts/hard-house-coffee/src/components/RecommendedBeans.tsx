@@ -288,7 +288,7 @@ export default function RecommendedBeans({ variant }: { variant: Variant }) {
           marginBottom: "1.25rem",
         }}
       >
-        The best coffee beans we're brewing with right now — tested and recommended by our team.
+        Coffee beans selected by roast profile, origin information, and intended brewing style.
       </p>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>

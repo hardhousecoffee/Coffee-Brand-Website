@@ -669,7 +669,14 @@ a, button {
 }
 .premium-marquee {
   display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
   animation: marqueeScroll 30s linear infinite;
+}
+.premium-mobile-text {
+  display: none;
 }
 .premium-text {
   display: inline;
@@ -690,6 +697,28 @@ a, button {
 @keyframes marqueeScrollReverse {
   0%   { transform: translateX(-25%); }
   100% { transform: translateX(0); }
+}
+@media (max-width: 767px) {
+  .premium-marquee,
+  .premium-marquee-reverse {
+    display: none;
+    animation: none;
+  }
+
+  .premium-mobile-text {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: clip;
+    white-space: nowrap;
+    text-align: center;
+    color: #d4b896;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+  }
 }
 
 .nav-item-glow {

@@ -1,223 +1,125 @@
-import { Link } from "wouter";
-import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AuthorByline from "@/components/AuthorByline";
-import RelatedPosts from "@/components/RelatedPosts";
-import RecommendedBeans from "@/components/RecommendedBeans";
+import EditorialArticle, {
+  ArticleCard,
+  ArticleGrid,
+  ArticleList,
+  ArticleNote,
+  ArticleSection,
+} from "@/components/EditorialArticle";
 
 export default function BlogPostColdBrew() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
-      <Helmet>
-        <title>Cold Brew Mastery: A Complete Home Guide | Hard House Coffee</title>
-        <meta name="description" content="Learn how to make smooth, low-acid cold brew coffee at home with our complete step-by-step guide. Minimal effort, consistent results — especially in warmer weather." />
-        <meta property="og:title" content="Cold Brew Mastery: A Complete Home Guide | Hard House Coffee" />
-        <meta property="og:description" content="Cold brew is easier than you think. Here is the complete home guide." />
-      </Helmet>
-      <Navbar />
+    <EditorialArticle
+      title="Cold Brew Mastery: A Complete Home Guide"
+      description="Learn the difference between cold brew concentrate and ready-to-drink coffee, with ratios, steeping times, filtration, storage, dilution, and troubleshooting."
+      category="Brewing Guides"
+      image="/images/milk-pour.png"
+      imageAlt="Cold coffee being poured into a glass"
+      canonicalPath="/blog/cold-brew-mastery-a-complete-home-guide"
+      readTime="8 min read"
+      related={[
+        { title: "The Art of the Perfect Pour-Over", slug: "the-art-of-the-perfect-pour-over", image: "/images/pour-over-kettle.jpg", category: "Brewing Guides" },
+        { title: "Why Every Coffee Lover Needs a Grinder First", slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide", image: "/images/coffee-grinder-beans.png", category: "Coffee Culture" },
+      ]}
+      ctaTitle="Make a batch that fits your week."
+      ctaText="Cold brew rewards a simple ratio and a little planning more than expensive equipment."
+      ctaLabel="Explore Brewing Guides"
+    >
+      <ArticleSection title="Cold brew and iced coffee are different">
+        <p style={{ marginBottom: "1rem" }}>
+          Iced coffee is hot-brewed coffee cooled over ice. Cold brew is coffee extracted by
+          steeping grounds in cool or room-temperature water for hours. The methods produce
+          different flavors: iced coffee can preserve bright, aromatic notes from hot extraction,
+          while cold brew often tastes rounder and less sharp.
+        </p>
+        <p>
+          “Less acidic” is a common description, but it does not mean cold brew is acid-free or
+          automatically easier on every stomach. The final strength, dilution, roast, water, and
+          serving size still matter.
+        </p>
+      </ArticleSection>
 
-      {/* Hero banner */}
-      <div
-        className="relative overflow-hidden"
-        style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}
-      >
-        <img
-          src="/images/milk-pour.png"
-          alt="Cold Brew Mastery: A Complete Home Guide"
-          className="w-full h-full object-cover"
-          style={{ filter: "brightness(0.35)" }}
+      <ArticleSection title="Choose your batch style">
+        <ArticleGrid>
+          <ArticleCard title="Concentrate">
+            Start with 1 part coffee to 4 parts water by weight, such as 100 grams of coffee and
+            400 grams of water. Dilute the strained concentrate with water or milk when serving.
+          </ArticleCard>
+          <ArticleCard title="Ready to drink">
+            Start with 1 part coffee to 8 parts water, such as 75 grams of coffee and 600 grams
+            of water. It can be served over ice without much adjustment.
+          </ArticleCard>
+          <ArticleCard title="Small trial batch">
+            Use 30 grams of coffee with 240 grams of water for a one- or two-serving test. A
+            smaller batch helps you adjust without committing a full week’s supply.
+          </ArticleCard>
+        </ArticleGrid>
+        <ArticleNote>
+          Ratios are starting points. Weigh both coffee and water, and write down what you used so
+          you can repeat or change the result intentionally.
+        </ArticleNote>
+      </ArticleSection>
+
+      <ArticleSection title="The basic method">
+        <ArticleList
+          ordered
+          items={[
+            "Grind the coffee coarse, roughly like coarse sea salt. Fine grounds make filtration harder and can create a muddy or bitter batch.",
+            "Add the coffee and water to a clean jar, brewer, or covered container. Stir gently until all grounds are saturated.",
+            "Cover and steep for 12 to 18 hours at room temperature or in the refrigerator. Longer is not always stronger in a pleasant way.",
+            "Filter slowly through the brewer’s filter, a paper filter, or a fine strainer followed by paper. Do not squeeze the grounds aggressively.",
+            "Chill the finished coffee, taste a small serving, and dilute gradually. Keep the rest covered in the refrigerator.",
+          ]}
         />
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-          style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(11,11,11,0.6) 100%)" }}
-        >
-          <p className="section-subtitle mb-3">Brewing Guides</p>
-          <h1
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "clamp(1.2rem, 3.5vw, 2.4rem)",
-              fontWeight: 700,
-              color: "#f2f2f2",
-              lineHeight: 1.25,
-              maxWidth: "820px",
-            }}
-          >
-            Cold Brew Mastery: A Complete Home Guide
-          </h1>
-          <p style={{ color: "#b0a090", marginTop: "0.75rem", fontSize: "0.85rem" }}>
-            9 min read
-          </p>
-        </div>
-      </div>
+      </ArticleSection>
 
-      {/* Article body */}
-      <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85, fontSize: "1.3rem" }}>
-        <AuthorByline />
+      <ArticleSection title="Dial in the result">
+        <ArticleGrid>
+          <ArticleCard title="Too bitter or woody">
+            Shorten the steep, use a coarser grind, or reduce agitation. A very dark roast can also
+            bring roast bitterness that no ratio fully removes.
+          </ArticleCard>
+          <ArticleCard title="Too weak">
+            Check whether you made concentrate or ready-to-drink coffee. Increase the coffee
+            ratio, steep a little longer, or dilute less at serving time.
+          </ArticleCard>
+          <ArticleCard title="Muddy or gritty">
+            Use coarser grounds and a second filtration step. Pour slowly; forcing liquid through
+            a filter can carry fine particles into the finished drink.
+          </ArticleCard>
+          <ArticleCard title="Flat or dull">
+            Try fresher beans, cleaner water, or a shorter time at room temperature. Cold storage
+            can slow extraction and may need a longer steep.
+          </ArticleCard>
+        </ArticleGrid>
+      </ArticleSection>
 
-        {/* Intro */}
-        <p style={{ color: "#d4cfc9", fontSize: "1.37rem", marginBottom: "1.25rem" }}>
-          Cold brew is not the same as iced coffee.
+      <ArticleSection title="Water, roast, and equipment">
+        <p style={{ marginBottom: "1rem" }}>
+          Water is the majority of the drink, so heavily chlorinated or very hard water can mask
+          the coffee. Use clean, pleasant-tasting water that is appropriate for your brewing
+          equipment. A basic jar and filter work; dedicated cold-brew brewers mainly improve
+          mess, pouring, and filtration.
         </p>
-        <p style={{ color: "#b0a090", marginBottom: "2.5rem" }}>
-          It is smoother, less acidic, and easier to make than most people think.
+        <p>
+          Medium and dark roasts tend to produce the familiar chocolate and caramel profile many
+          people expect from cold brew. Light roasts can work too, especially with a longer steep
+          or a slightly finer grind, but they may taste brighter and more tea-like.
         </p>
+      </ArticleSection>
 
-
-        {/* Why Cold Brew Is Different */}
-        <Section title="Why Cold Brew Is Different">
-          <p style={{ marginBottom: "1rem" }}>
-            Cold brew is made by steeping coffee grounds in cold water for an extended period of time.
-          </p>
-          <p>
-            Because there is no heat involved, the result is less bitterness and a smoother taste.
-          </p>
-        </Section>
-
-        {/* How to Make Cold Brew */}
-        <Section title="How to Make Cold Brew">
-          {[
-            {
-              step: "Step One: Use Coarse Grounds",
-              detail: "The grind should be similar to sea salt.",
-            },
-            {
-              step: "Step Two: Mix Coffee and Water",
-              detail:
-                "Use a ratio of one part coffee to four parts water for concentrate, or one to eight for ready-to-drink.",
-            },
-            {
-              step: "Step Three: Let It Steep",
-              detail: "Leave it for twelve to twenty-four hours.",
-            },
-            {
-              step: "Step Four: Strain",
-              detail: "Filter out the grounds using a strainer or filter.",
-            },
-          ].map(({ step, detail }) => (
-            <div
-              key={step}
-              style={{
-                marginBottom: "2rem",
-                paddingBottom: "2rem",
-                borderBottom: "1px solid rgba(161,79,31,0.1)",
-              }}
-            >
-              <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.35rem" }}>{step}</p>
-              <p style={{ color: "#b0a090" }}>{detail}</p>
-            </div>
-          ))}
-        </Section>
-
-        {/* Tips */}
-        <Section title="Tips for Better Results">
-          {[
-            "Use fresh beans",
-            "Store it in the refrigerator",
-            "Adjust strength based on your preference",
-          ].map((tip) => (
-            <div
-              key={tip}
-              style={{
-                display: "flex",
-                gap: "0.75rem",
-                alignItems: "flex-start",
-                marginBottom: "0.75rem",
-                color: "#d4cfc9",
-              }}
-            >
-              <span
-                style={{
-                  width: "6px",
-                  height: "6px",
-                  borderRadius: "50%",
-                  background: "#a14f1f",
-                  marginTop: "0.58rem",
-                  flexShrink: 0,
-                }}
-              />
-              {tip}
-            </div>
-          ))}
-        </Section>
-
-        {/* Final Thoughts */}
-        <Section title="Final Thoughts">
-          <p style={{ marginBottom: "1rem" }}>
-            Cold brew is one of the simplest ways to improve your coffee at home.
-          </p>
-          <p>
-            It requires minimal effort and delivers consistent results, especially in warmer weather.
-          </p>
-        </Section>
-
-<RecommendedBeans variant="cold-brew" />
-        <RelatedPosts posts={[
-          { title: "The Art of the Perfect Pour-Over", slug: "the-art-of-the-perfect-pour-over", image: "/images/pour-over-kettle.jpg", category: "Brewing Guides" },
-          { title: "Why Every Coffee Lover Needs a Grinder First", slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide", image: "/images/coffee-grinder-beans.png", category: "Coffee Culture" },
-        ]} />
-
-        {/* CTA */}
-        <div
-          className="mt-12 p-6 text-center"
-          style={{
-            background: "#131313",
-            borderRadius: "8px",
-            border: "1px solid rgba(161,79,31,0.25)",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "'Cinzel Decorative', serif",
-              fontSize: "1rem",
-              color: "#f2f2f2",
-              marginBottom: "0.5rem",
-            }}
-          >
-            Ready to brew at home?
-          </p>
-          <p style={{ color: "#b0a090", fontSize: "0.85rem", marginBottom: "1.25rem" }}>
-            Browse our recommended gear and beans to get started.
-          </p>
-          <Link href="/products">
-            <button className="btn-primary">Shop</button>
-          </Link>
-        </div>
-
-        {/* Back link */}
-        <div className="mt-10 text-center">
-          <Link href="/blog">
-            <button className="btn-secondary" style={{ fontSize: "0.82rem" }}>
-              Back to Blog
-            </button>
-          </Link>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div style={{ marginBottom: "2.5rem" }}>
-      <h2
-        style={{
-          fontFamily: "Inter, sans-serif",
-          fontSize: "clamp(1.3rem, 3.25vw, 1.7rem)",
-          fontWeight: 700,
-          color: "#f2f2f2",
-          marginBottom: "1rem",
-          paddingBottom: "0.5rem",
-          borderBottom: "1px solid rgba(161,79,31,0.2)",
-        }}
-      >
-        {title}
-      </h2>
-      <div style={{ color: "#b0a090", fontSize: "1.24rem" }}>
-        {children}
-      </div>
-    </div>
+      <ArticleSection title="Storage and serving">
+        <p style={{ marginBottom: "1rem" }}>
+          Store strained coffee in a clean, covered container in the refrigerator. Make a batch
+          small enough to finish while it still tastes fresh, and discard it if it develops an
+          unpleasant smell, flavor, or visible spoilage. Add ice, milk, water, or a simple syrup
+          only when serving so the base remains flexible.
+        </p>
+        <p>
+          For a concentrate, try one part concentrate to one part water or milk, then adjust.
+          For a ready-to-drink batch, pour over ice and taste before adding anything else. A
+          stronger batch is easier to dilute than a weak batch is to rescue.
+        </p>
+      </ArticleSection>
+    </EditorialArticle>
   );
 }

@@ -1,2 +1,3 @@
 - [Video intro timing](video-intro-timing.md) — video duration must be checked before setting fade-out timer; fading must start before video ends to avoid freeze-then-snap
 - [CSS transition phase bug](css-transition-phase-bug.md) — multi-phase opacity state where transition evaluates to "none" on the visible phase causes instant snap instead of gradual fade
+- [Preview instrumentation artifacts](preview-instrumentation-artifacts.md) — injected SmoothPointer can cause Trusted Types errors and phantom root width; verify app element bounds before changing CSS

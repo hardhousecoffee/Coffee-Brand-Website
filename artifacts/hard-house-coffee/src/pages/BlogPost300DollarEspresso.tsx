@@ -1,106 +1,134 @@
-import { Link } from "wouter";
-import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AuthorByline from "@/components/AuthorByline";
-import RelatedPosts from "@/components/RelatedPosts";
+import EditorialArticle, {
+  ArticleCard,
+  ArticleGrid,
+  ArticleList,
+  ArticleNote,
+  ArticleSection,
+  ComparisonTable,
+} from "@/components/EditorialArticle";
 
 export default function BlogPost300DollarEspresso() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
-      <Helmet>
-        <title>The $300 Sweet Spot – Yes, You Can Get Real Espresso at Home | Hard House Coffee</title>
-        <meta name="description" content="You don't need to spend thousands to pull a real espresso at home. The Breville Bambino proves that great crema is achievable on a budget." />
-        <meta property="og:title" content="The $300 Sweet Spot – Real Espresso at Home | Hard House Coffee" />
-        <meta property="og:description" content="Entry-level doesn't mean bad. Here's why the Breville Bambino is a genuine game-changer." />
-      </Helmet>
-      <Navbar />
-
-      <div className="relative overflow-hidden" style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}>
-        <img src="/images/espresso-bambino-budget.jpg" alt="Breville Bambino espresso machine" className="w-full h-full object-cover" style={{ filter: "brightness(0.35)" }} />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(11,11,11,0.6) 100%)" }}>
-          <p className="section-subtitle mb-3">Espresso Machines</p>
-          <h1 style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1.2rem, 3.5vw, 2.4rem)", fontWeight: 700, color: "#f2f2f2", lineHeight: 1.25, maxWidth: "820px" }}>
-            The $300 Sweet Spot – Yes, You Can Get Real Espresso at Home
-          </h1>
-          <p style={{ color: "#b0a090", marginTop: "0.75rem", fontSize: "0.85rem" }}>6 min read</p>
-        </div>
-      </div>
-
-      <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85, fontSize: "1.3rem" }}>
-        <AuthorByline />
-
-        <p style={{ color: "#d4cfc9", fontSize: "1.37rem", marginBottom: "1.25rem" }}>
-          Alright, let's be real for a second. You don't need to take out a second mortgage just to stop buying a five-dollar latte every morning.
+    <EditorialArticle
+      title="The $300 Espresso Sweet Spot: What a Budget Setup Can Do"
+      description="A realistic guide to budget home espresso, including grinder cost, accessories, workflow limits, maintenance, alternatives, and upgrade paths."
+      category="Espresso Machines"
+      image="/images/espresso-bambino-budget.jpg"
+      imageAlt="Compact Breville Bambino espresso machine"
+      canonicalPath="/blog/the-300-dollar-sweet-spot-real-espresso-at-home"
+      readTime="8 min read"
+      related={[
+        { title: "Best Espresso Machines for Beginners (2026 Guide)", slug: "best-espresso-machines-for-beginners-2026-guide", image: "/images/espresso-pour-cup.jpg", category: "Espresso Machines" },
+        { title: "Why Every Coffee Lover Needs a Grinder First", slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide", image: "/images/coffee-grinder-beans.png", category: "Coffee Culture" },
+      ]}
+      ctaTitle="Budget for the complete setup."
+      ctaText="A modest machine, suitable grinder, scale, fresh coffee, and repeatable recipe work as one system."
+      ctaLabel="Read Beginner Guides"
+    >
+      <ArticleSection title="The machine price is not the setup price">
+        <p style={{ marginBottom: "1rem" }}>
+          “Around $300” can describe a machine tier, but it rarely describes the complete cost of
+          making controllable espresso. You still need a grinder suited to espresso, a small
+          scale, coffee, water, cleaning supplies, and possibly a better-fitting tamper or basket.
+          Retail prices and bundles change, so treat the number as a shopping category rather than
+          a guaranteed current price.
         </p>
-        <p style={{ color: "#b0a090", marginBottom: "1.25rem" }}>
-          A lot of people think entry-level home machines are just glorified toy pumps, but if you look at something like the Breville Bambino, it's a total game-changer for around three hundred bucks. It uses a 54mm portafilter, heats up in literally three seconds, and actually hits the right pressure to give you that thick, beautiful crema.
+        <p>
+          A compact machine such as the Breville Bambino can make sense in this category because
+          it focuses on a quick thermoblock workflow and a small footprint. The buyer still has to
+          provide the grinder and technique.
         </p>
-        <p style={{ color: "#b0a090", marginBottom: "2.5rem" }}>
-          The key insight most beginners miss is that the machine isn't the whole story. At this price point, your grind quality and tamping technique carry most of the weight. Get those two things right and you will be genuinely shocked at what a $300 machine can produce.
+      </ArticleSection>
+
+      <ArticleSection title="Build the real budget">
+        <ComparisonTable
+          headers={["Part", "Why it matters", "Where to be careful"]}
+          rows={[
+            ["Machine", "Controls water delivery and steam workflow", "Confirm included basket, warranty, and current price"],
+            ["Espresso grinder", "Makes small grind changes possible", "Do not assume every burr grinder can dial in espresso"],
+            ["Scale", "Shows dose and beverage yield", "Choose one that fits the drip tray"],
+            ["Tamper and distribution", "Helps prepare an even puck", "Fit matters more than decorative accessories"],
+            ["Water and cleaning", "Protects flavor and equipment", "Follow manufacturer guidance for hardness and descaling"],
+            ["Coffee", "Freshness and roast change dialing-in", "Buy smaller bags while learning"],
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection title="What a compact budget machine does well">
+        <ArticleGrid>
+          <ArticleCard title="Fast preparation">
+            A thermoblock-style machine can become ready quickly, which is useful when one or two
+            drinks need to fit into a weekday routine.
+          </ArticleCard>
+          <ArticleCard title="Small footprint">
+            Compact dimensions reduce the counter-space cost, though the grinder and knock box
+            still need a home.
+          </ArticleCard>
+          <ArticleCard title="Learning the essentials">
+            The user can practice dose, grind, distribution, yield, and milk texture without
+            beginning with a large prosumer machine.
+          </ArticleCard>
+        </ArticleGrid>
+      </ArticleSection>
+
+      <ArticleSection title="The compromises">
+        <p style={{ marginBottom: "1rem" }}>
+          Budget machines often have lighter construction, smaller water tanks, less room under
+          the group, simpler temperature control, and limited capacity for several drinks in a
+          row. Steam performance may be slower than a larger boiler machine. Those limits may not
+          matter for one morning cappuccino; they matter more for entertaining.
         </p>
+        <ArticleList
+          items={[
+            "Shot consistency still depends heavily on the grinder and puck preparation.",
+            "Back-to-back milk drinks can expose recovery and steam limitations.",
+            "Included pressurized baskets may be forgiving, while unpressurized baskets reveal grinder quality more clearly.",
+            "Repair economics can differ from serviceable prosumer machines; check parts and warranty before buying.",
+          ]}
+        />
+      </ArticleSection>
 
+      <ArticleSection title="A realistic starting recipe">
+        <p style={{ marginBottom: "1rem" }}>
+          Use the basket’s recommended dose range and begin near a 1:2 ratio. Weigh the dry dose
+          and stop the shot when the beverage reaches roughly twice that mass. Taste before
+          changing anything. If the shot is fast and sharp, grind finer. If it is slow and dry,
+          grind coarser. Avoid prescribing a fixed tamp pressure; a level, fully compressed puck
+          is more repeatable than trying to reproduce a bathroom-scale number.
+        </p>
+        <ArticleNote>
+          A 54 mm portafilter or a fast advertised heat-up time does not prove cup quality by
+          itself. Those are workflow specifications. Extraction still depends on the complete
+          setup and recipe.
+        </ArticleNote>
+      </ArticleSection>
 
-        <Section title="Why the Breville Bambino Works">
-          {[
-            { label: "3-Second Heat-Up", detail: "Thermojet heating technology means you are not standing around waiting. From cold to brew-ready in three seconds flat." },
-            { label: "54mm Portafilter", detail: "The same portafilter size used on machines twice the price. More coffee contact means better extraction and a fuller cup." },
-            { label: "Consistent 9-Bar Pressure", detail: "This is the magic number for espresso. The Bambino holds it reliably, which is all you need to pull proper shots." },
-          ].map(({ label, detail }) => (
-            <div key={label} style={{ marginBottom: "1.5rem" }}>
-              <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.35rem" }}>{label}</p>
-              <p style={{ color: "#b0a090" }}>{detail}</p>
-            </div>
-          ))}
-        </Section>
+      <ArticleSection title="Alternatives and upgrade paths">
+        <ArticleGrid>
+          <ArticleCard title="Buy used carefully">
+            A serviceable used machine can stretch a budget, but ask about water, maintenance,
+            leaks, scale, included parts, and whether local repair is available.
+          </ArticleCard>
+          <ArticleCard title="Save for the grinder">
+            If the budget only covers the machine, waiting can produce a better setup. A suitable
+            grinder transfers to the next machine.
+          </ArticleCard>
+          <ArticleCard title="Choose another brew method">
+            An AeroPress, moka pot, or pour-over setup can make excellent concentrated or filter
+            coffee without pretending to be pump-driven espresso.
+          </ArticleCard>
+        </ArticleGrid>
+      </ArticleSection>
 
-        <Section title="What You Still Need to Nail">
-          {["Grind size — go finer than you think", "Tamp firmly and evenly with around 30 pounds of pressure", "Use fresh beans roasted within the last two to three weeks"].map((item) => (
-            <div key={item} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", marginBottom: "0.75rem", color: "#d4cfc9" }}>
-              <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#a14f1f", marginTop: "0.58rem", flexShrink: 0 }} />
-              {item}
-            </div>
-          ))}
-        </Section>
-
-        <Section title="Why is my espresso shot running way too fast?">
-          <p style={{ marginBottom: "1rem" }}>
-            An espresso shot that runs too fast — filling your cup in less than 20 seconds — is usually caused by coffee grounds that are too coarse or not tamped firmly enough.
-          </p>
-          <p style={{ marginBottom: "1rem" }}>
-            To fix this, adjust your grinder to a finer setting so the water meets the proper resistance, or ensure you are applying a flat, even 30 pounds of pressure when tamping.
-          </p>
-          <p>
-            Using an entry-level machine like the Breville Bambino means your grind size has to be completely dialed in to achieve that thick, beautiful crema. If you are struggling with fast, sour shots, pairing your machine with a high-quality espresso tool kit can instantly stabilize your extractions.
-          </p>
-        </Section>
-
-        <RelatedPosts posts={[
-          { title: "Best Espresso Machines for Beginners (2026 Guide)", slug: "best-espresso-machines-for-beginners-2026-guide", image: "/images/espresso-pour-cup.jpg", category: "Espresso Machines" },
-          { title: "Why Every Coffee Lover Needs a Grinder First", slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide", image: "/images/coffee-grinder-beans.png", category: "Coffee Culture" },
-        ]} />
-
-        <div className="mt-12 p-6 text-center" style={{ background: "#131313", borderRadius: "8px", border: "1px solid rgba(161,79,31,0.25)" }}>
-          <p style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: "1rem", color: "#f2f2f2", marginBottom: "0.5rem" }}>Ready to upgrade your setup?</p>
-          <p style={{ color: "#b0a090", fontSize: "0.85rem", marginBottom: "1.25rem" }}>Browse our curated espresso gear and product picks.</p>
-          <Link href="/products"><button className="btn-primary">Shop Products</button></Link>
-        </div>
-
-        <div className="mt-10 text-center">
-          <Link href="/blog"><button className="btn-secondary" style={{ fontSize: "0.82rem" }}><span className="arrow-pulse">←</span> Back to Blog</button></Link>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div style={{ marginBottom: "2.5rem" }}>
-      <h2 style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1.3rem, 3.25vw, 1.7rem)", fontWeight: 700, color: "#f2f2f2", marginBottom: "1rem", paddingBottom: "0.5rem", borderBottom: "1px solid rgba(161,79,31,0.2)" }}>{title}</h2>
-      <div style={{ color: "#b0a090", fontSize: "1.24rem" }}>{children}</div>
-    </div>
+      <ArticleSection title="Who this tier suits">
+        <p>
+          Choose a compact budget machine when you make one or two drinks, accept a hands-on
+          learning period, and can fund the grinder and maintenance. Save for a higher tier when
+          you need several milk drinks in sequence, want more temperature control, or value
+          long-term serviceability. This assessment is research-based and does not claim that
+          Hard House Coffee personally tested or owns the machine.
+        </p>
+      </ArticleSection>
+    </EditorialArticle>
   );
 }

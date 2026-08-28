@@ -1,95 +1,136 @@
-import { Link } from "wouter";
-import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AuthorByline from "@/components/AuthorByline";
-import RelatedPosts from "@/components/RelatedPosts";
+import EditorialArticle, {
+  ArticleCard,
+  ArticleGrid,
+  ArticleList,
+  ArticleNote,
+  ArticleSection,
+  ComparisonTable,
+} from "@/components/EditorialArticle";
 
 export default function BlogPostLaMarzoccoLinea() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
-      <Helmet>
-        <title>The Icon – Why the La Marzocco Linea Micra is Worth the Obsession | Hard House Coffee</title>
-        <meta name="description" content="At $3,900, the La Marzocco Linea Micra is a luxury item. But once you've used one, you understand exactly why it commands that price." />
-        <meta property="og:title" content="Why the La Marzocco Linea Micra is Worth the Obsession | Hard House Coffee" />
-        <meta property="og:description" content="Commercial-grade performance shrunken down for your kitchen counter." />
-      </Helmet>
-      <Navbar />
-
-      <div className="relative overflow-hidden" style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}>
-        <img src="/images/la-marzocco-linea-micra.jpg" alt="La Marzocco Linea Micra espresso machine" className="w-full h-full object-cover" style={{ filter: "brightness(0.35)" }} />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(11,11,11,0.6) 100%)" }}>
-          <p className="section-subtitle mb-3">Espresso Machines</p>
-          <h1 style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1.2rem, 3.5vw, 2.4rem)", fontWeight: 700, color: "#f2f2f2", lineHeight: 1.25, maxWidth: "820px" }}>
-            The Icon – Why the La Marzocco Linea Micra is Worth the Obsession
-          </h1>
-          <p style={{ color: "#b0a090", marginTop: "0.75rem", fontSize: "0.85rem" }}>5 min read</p>
-        </div>
-      </div>
-
-      <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85, fontSize: "1.3rem" }}>
-        <AuthorByline />
-
-        <p style={{ color: "#d4cfc9", fontSize: "1.37rem", marginBottom: "1.25rem" }}>
-          Let's talk about the dream machine sitting on almost everyone's wishlist: the La Marzocco Linea Micra. It's definitely a luxury item, coming in right around $3,900, but if you've ever touched one, you get it.
+    <EditorialArticle
+      title="La Marzocco Linea Micra: What the Premium Buys"
+      description="A balanced, research-based look at the Linea Micra’s workflow, dual boilers, controls, footprint, warm-up, maintenance, service, limitations, and alternatives."
+      category="Espresso Machines"
+      image="/images/la-marzocco-linea-micra.jpg"
+      imageAlt="La Marzocco Linea Micra espresso machine"
+      canonicalPath="/blog/the-icon-la-marzocco-linea-micra-worth-the-obsession"
+      readTime="8 min read"
+      related={[
+        { title: "Stepping Up: What Crossing the $1,000 Mark Can Buy", slug: "stepping-up-what-crossing-1000-mark-actually-buys-you", image: "/images/prosumer-espresso-machine.jpg", category: "Espresso Machines" },
+        { title: "Living the Dream – The World of $20,000 Espresso Gear", slug: "living-the-dream-mind-blowing-world-of-20000-espresso-gear", image: "/images/slayer-luxury-espresso.jpg", category: "Espresso Machines" },
+      ]}
+      ctaTitle="Decide whether premium simplicity fits."
+      ctaText="The Micra’s appeal is a compact, service-backed workflow—not a promise that price replaces technique."
+      ctaLabel="Explore Espresso Guides"
+    >
+      <ArticleSection title="A compact premium machine, not a magic shortcut">
+        <p style={{ marginBottom: "1rem" }}>
+          The Linea Micra adapts La Marzocco’s home-machine approach to a smaller countertop
+          footprint. Its value proposition is a coordinated dual-boiler workflow, strong steam
+          capacity for its size, app-adjustable settings, and access to an established
+          manufacturer and service network in supported markets.
         </p>
-        <p style={{ color: "#b0a090", marginBottom: "1.25rem" }}>
-          They essentially took the legendary industrial-grade performance of the massive machines you see in high-end specialty cafés and shrunken it down to fit right under your standard kitchen cabinets. It's got a dual-boiler system, a professional steam wand that produces the same velvety microfoam you get at world-class coffee bars, and La Marzocco's famous saturated group head for unmatched thermal stability.
+        <p>
+          This is a research-based assessment of documented features and ownership considerations.
+          Hard House Coffee does not claim to own or have personally tested this machine. Check
+          current regional pricing and specifications directly with La Marzocco Home.
         </p>
-        <p style={{ color: "#b0a090", marginBottom: "2.5rem" }}>
-          The Linea Micra isn't just an espresso machine. It's a statement that you take coffee seriously — and it delivers on that promise every single morning.
+      </ArticleSection>
+
+      <ArticleSection title="What the design is intended to deliver">
+        <ArticleGrid>
+          <ArticleCard title="Dual-boiler workflow">
+            Independent brew and steam systems support pulling espresso and steaming milk without
+            the brew-to-steam wait of a single boiler.
+          </ArticleCard>
+          <ArticleCard title="Saturated-group approach">
+            The brew group is integrated with the thermal system to support repeatable
+            temperature behavior in a compact format.
+          </ArticleCard>
+          <ArticleCard title="Compact controls">
+            The physical interface is intentionally restrained. Temperature and scheduling
+            features rely partly on the companion app, which some buyers will value and others
+            will see as a limitation.
+          </ArticleCard>
+          <ArticleCard title="Steam performance">
+            The machine is designed for serious home milk preparation, but the small body still
+            demands attention to pitcher size, wand position, and counter clearance.
+          </ArticleCard>
+        </ArticleGrid>
+      </ArticleSection>
+
+      <ArticleSection title="Daily workflow">
+        <ComparisonTable
+          headers={["Stage", "What to expect", "Buyer implication"]}
+          rows={[
+            ["Warm-up", "Compact thermal system with app scheduling options", "Useful for routines; confirm current manufacturer guidance"],
+            ["Dial-in", "Standard espresso variables still apply", "A capable grinder and scale remain necessary"],
+            ["Milk", "Strong steam in a small package", "Practice and pitcher control still matter"],
+            ["Cleaning", "Backflushing, wand care, tray and water management", "Premium price does not remove maintenance"],
+            ["Service", "Brand service network varies by market", "Confirm local coverage before purchase"],
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection title="The limitations">
+        <ArticleList
+          items={[
+            "The purchase price is high relative to many capable home machines and does not include a grinder.",
+            "App-dependent settings may frustrate buyers who want every control on the front panel.",
+            "The compact frame offers less cup and workspace clearance than larger commercial-style machines.",
+            "It does not provide the manual flow-profiling experience sought by some advanced hobbyists.",
+            "Water quality and routine maintenance remain essential; premium construction is not scale-proof.",
+          ]}
+        />
+        <ArticleNote>
+          Crema is not a standalone quality score. Bean freshness, roast, gas content, grinder,
+          pressure, temperature, and extraction all affect it. A Micra cannot make stale coffee
+          taste fresh or make poor puck preparation effortless.
+        </ArticleNote>
+      </ArticleSection>
+
+      <ArticleSection title="Who may find it worth the premium">
+        <p style={{ marginBottom: "1rem" }}>
+          The Micra is easiest to justify for a buyer who wants a compact dual-boiler machine,
+          regularly makes milk drinks, values restrained industrial design, and has access to
+          manufacturer-backed service. It also suits someone who wants fewer front-panel controls
+          and is comfortable using an app for secondary settings.
         </p>
+        <p>
+          It is harder to justify for a one-drink household satisfied with a fast thermoblock, a
+          hobbyist who prioritizes manual flow control, or a buyer whose grinder and water setup
+          still need investment.
+        </p>
+      </ArticleSection>
 
+      <ArticleSection title="Alternatives to compare">
+        <ArticleGrid>
+          <ArticleCard title="Compact dual boilers">
+            Compare machines that offer front-panel controls, different pump designs, or lower
+            prices. Pay attention to warm-up, steam capacity, dimensions, and support.
+          </ArticleCard>
+          <ArticleCard title="E61-style machines">
+            Larger prosumer machines may offer a tactile group and broad service familiarity, with
+            longer warm-up, more counter space, and a different temperature workflow.
+          </ArticleCard>
+          <ArticleCard title="Fast thermoblocks">
+            A much less expensive compact machine may be enough for one or two daily drinks,
+            especially when paired with a better grinder.
+          </ArticleCard>
+        </ArticleGrid>
+      </ArticleSection>
 
-        <Section title="What Sets the Linea Micra Apart">
-          {[
-            { label: "Saturated Group Head", detail: "La Marzocco's signature thermal mass system keeps the group head at a perfectly stable temperature, shot after shot." },
-            { label: "Dual Boiler", detail: "Independent brew and steam boilers mean zero compromise. Pull espresso and steam milk simultaneously at professional temperatures." },
-            { label: "Commercial Steam Wand", detail: "The same style wand found in top cafés worldwide. Achieving velvet microfoam at home becomes straightforward." },
-            { label: "App Connectivity", detail: "Control brew temperature and pre-infusion via the La Marzocco Home app. Data-driven espresso from your kitchen." },
-          ].map(({ label, detail }) => (
-            <div key={label} style={{ marginBottom: "1.5rem" }}>
-              <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.35rem" }}>{label}</p>
-              <p style={{ color: "#b0a090" }}>{detail}</p>
-            </div>
-          ))}
-        </Section>
-
-        <Section title="How can I get thick crema on my espresso at home?">
-          <p style={{ marginBottom: "1rem" }}>
-            To achieve a rich, thick crema, you must use freshly roasted coffee beans (ideally 7 to 21 days past the roast date) and an espresso machine that maintains a stable 9 bars of pressure. The crema is created when pressurized water emulsifies the natural oils of the fresh coffee beans and releases trapped carbon dioxide gas.
-          </p>
-          <p>
-            While a luxury commercial-grade machine like the La Marzocco Linea Micra makes pulling a perfect velvet crema effortless due to its industrial temperature stability, using high-end accessories makes a massive difference on any setup.
-          </p>
-        </Section>
-
-        <RelatedPosts posts={[
-          { title: "Stepping Up – What Crossing the $1,000 Mark Actually Buys You", slug: "stepping-up-what-crossing-1000-mark-actually-buys-you", image: "/images/prosumer-espresso-machine.jpg", category: "Espresso Machines" },
-          { title: "Living the Dream – The Mind-Blowing World of $20,000 Espresso Gear", slug: "living-the-dream-mind-blowing-world-of-20000-espresso-gear", image: "/images/slayer-luxury-espresso.jpg", category: "Espresso Machines" },
-        ]} />
-
-        <div className="mt-12 p-6 text-center" style={{ background: "#131313", borderRadius: "8px", border: "1px solid rgba(161,79,31,0.25)" }}>
-          <p style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: "1rem", color: "#f2f2f2", marginBottom: "0.5rem" }}>Dream big, brew better.</p>
-          <p style={{ color: "#b0a090", fontSize: "0.85rem", marginBottom: "1.25rem" }}>Browse our full selection of premium espresso gear.</p>
-          <Link href="/products"><button className="btn-primary">Shop Products</button></Link>
-        </div>
-
-        <div className="mt-10 text-center">
-          <Link href="/blog"><button className="btn-secondary" style={{ fontSize: "0.82rem" }}><span className="arrow-pulse">←</span> Back to Blog</button></Link>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div style={{ marginBottom: "2.5rem" }}>
-      <h2 style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1.3rem, 3.25vw, 1.7rem)", fontWeight: 700, color: "#f2f2f2", marginBottom: "1rem", paddingBottom: "0.5rem", borderBottom: "1px solid rgba(161,79,31,0.2)" }}>{title}</h2>
-      <div style={{ color: "#b0a090", fontSize: "1.24rem" }}>{children}</div>
-    </div>
+      <ArticleSection title="The value judgment">
+        <p>
+          The Linea Micra’s strongest case is not that it makes “perfect” espresso automatically.
+          It is that it combines a compact footprint, dual-boiler milk workflow, simplified
+          controls, and a premium service ecosystem. If those are the buyer’s actual priorities,
+          the machine can make sense. If they are not, the same budget may create more value in a
+          grinder, coffee, water, or a less expensive machine with different controls.
+        </p>
+      </ArticleSection>
+    </EditorialArticle>
   );
 }

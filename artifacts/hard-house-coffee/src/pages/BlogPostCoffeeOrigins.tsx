@@ -1,248 +1,115 @@
-import { Link } from "wouter";
-import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AuthorByline from "@/components/AuthorByline";
-import RelatedPosts from "@/components/RelatedPosts";
-import RecommendedBeans from "@/components/RecommendedBeans";
+import EditorialArticle, {
+  ArticleCard,
+  ArticleGrid,
+  ArticleList,
+  ArticleNote,
+  ArticleSection,
+  ComparisonTable,
+} from "@/components/EditorialArticle";
 
 export default function BlogPostCoffeeOrigins() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
-      <Helmet>
-        <title>Ethiopia vs. Colombia: A Complete Coffee Origin Guide | Hard House Coffee</title>
-        <meta name="description" content="Ethiopia or Colombia? Compare two of the world's most popular coffee origins and discover which one matches your taste, brewing style, and flavor preferences." />
-        <meta property="og:title" content="Ethiopia vs. Colombia: A Complete Coffee Origin Guide | Hard House Coffee" />
-        <meta property="og:description" content="Compare Ethiopia and Colombia coffee origins to find your perfect match." />
-      </Helmet>
-      <Navbar />
+    <EditorialArticle
+      title="Ethiopia vs. Colombia: A Complete Coffee Origin Guide"
+      description="Compare representative Ethiopian and Colombian coffees by region, varietal, processing, roast, flavor tendency, freshness, and brewing method."
+      category="Bean Picks"
+      image="/images/outdoor-coffee.jpg"
+      imageAlt="Coffee served outdoors"
+      canonicalPath="/blog/ethiopia-vs-colombia-a-complete-coffee-origin-guide"
+      readTime="8 min read"
+      related={[
+        { title: "Top 5 Dark Roast Beans for Espresso in 2026", slug: "top-5-dark-roast-beans-for-espresso-in-2026", image: "/images/coffee-cheers.jpg", category: "Bean Picks" },
+        { title: "The Art of the Perfect Pour-Over", slug: "the-art-of-the-perfect-pour-over", image: "/images/pour-over-kettle.jpg", category: "Brewing Guides" },
+      ]}
+      ctaTitle="Taste the differences without turning them into stereotypes."
+      ctaText="Origin is a useful clue, but processing, roast, freshness, and recipe finish the picture."
+      ctaLabel="Explore Bean Guides"
+    >
+      <ArticleSection title="Country is the beginning, not the whole profile">
+        <p style={{ marginBottom: "1rem" }}>
+          Ethiopia and Colombia are both major coffee-producing origins, but neither is one flavor.
+          Coffee varies by region, altitude, cultivar, harvest, processing method, roast, and
+          preparation. A washed coffee from one area can taste very different from a natural
+          coffee from another area in the same country.
+        </p>
+        <p>
+          The comparison below uses representative tendencies to help you read a bag and choose a
+          brewing direction. It should not be used to predict every coffee from either country.
+        </p>
+      </ArticleSection>
 
-      {/* Hero banner */}
-      <div
-        className="relative overflow-hidden"
-        style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}
-      >
-        <img
-          src="/images/outdoor-coffee.jpg"
-          alt="Ethiopia vs Colombia: A Complete Coffee Origin Guide"
-          className="w-full h-full object-cover"
-          style={{ filter: "brightness(0.35)" }}
+      <ArticleSection title="Representative differences">
+        <ComparisonTable
+          headers={["Factor", "Ethiopia", "Colombia", "Why it matters"]}
+          rows={[
+            ["Common cup tendency", "Floral, citrus, stone fruit, tea-like or wine-like", "Cocoa, caramel, red fruit, balanced sweetness", "These are tendencies, not guarantees"],
+            ["Regional range", "Yirgacheffe, Sidama, Guji and many other producing areas", "Huila, Nariño, Antioquia and many other producing areas", "Region narrows the story beyond country"],
+            ["Processing examples", "Washed and natural are both common", "Washed, natural and honey-style lots all exist", "Processing can outweigh origin shorthand"],
+            ["Brewing fit", "Often rewarding in pour-over and other clarity-focused methods", "Flexible in filter, espresso, and milk drinks", "Roast and density still determine the recipe"],
+            ["Buying clue", "Look for region, process, and roast date", "Look for region, process, and roast date", "A specific lot is more useful than a flag on a bag"],
+          ]}
         />
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-          style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(11,11,11,0.6) 100%)" }}
-        >
-          <p className="section-subtitle mb-3">Bean Picks</p>
-          <h1
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "clamp(1.2rem, 3.5vw, 2.4rem)",
-              fontWeight: 700,
-              color: "#f2f2f2",
-              lineHeight: 1.25,
-              maxWidth: "820px",
-            }}
-          >
-            Ethiopia vs. Colombia: A Complete Coffee Origin Guide
-          </h1>
-          <p style={{ color: "#b0a090", marginTop: "0.75rem", fontSize: "0.85rem" }}>
-            8 min read
-          </p>
-        </div>
-      </div>
+      </ArticleSection>
 
-      {/* Article body */}
-      <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85, fontSize: "1.3rem" }}>
-        <AuthorByline />
+      <ArticleSection title="Ethiopia: what to look for">
+        <ArticleGrid>
+          <ArticleCard title="Washed lots">
+            Washed Ethiopian coffees are often described with citrus, floral, or tea-like language.
+            A lighter roast and careful pour-over can preserve those high notes, though water and
+            extraction still decide whether they taste lively or sour.
+          </ArticleCard>
+          <ArticleCard title="Natural lots">
+            Drying the coffee fruit with the seed inside can bring more fruit-forward, jammy, or
+            wine-like notes. Fermentation and drying choices vary, so “natural” is not a promise
+            of one exact flavor.
+          </ArticleCard>
+        </ArticleGrid>
+      </ArticleSection>
 
-        {/* Intro */}
-        <p style={{ color: "#d4cfc9", fontSize: "1.37rem", marginBottom: "1.25rem" }}>
-          The origin of your coffee plays a major role in how it tastes.
+      <ArticleSection title="Colombia: what to look for">
+        <ArticleGrid>
+          <ArticleCard title="Regional range">
+            Colombia’s mountainous growing areas create many microclimates. A Huila coffee and a
+            Nariño coffee can share a country label while offering different acidity, body, and
+            fruit character.
+          </ArticleCard>
+          <ArticleCard title="Everyday flexibility">
+            Balanced Colombian coffees often work across pour-over, batch brew, espresso, and
+            milk drinks. A darker roast can emphasize chocolate and body; a lighter roast can
+            reveal more fruit and acidity.
+          </ArticleCard>
+        </ArticleGrid>
+        <ArticleNote>
+          Altitude is informative but not a quality score. Cultivar, harvest conditions, sorting,
+          processing, roasting, storage, and brewing all affect the final cup.
+        </ArticleNote>
+      </ArticleSection>
+
+      <ArticleSection title="A simple tasting framework">
+        <ArticleList
+          ordered
+          items={[
+            "Taste both coffees with the same water, dose, brewer, and ratio so the comparison is fair.",
+            "Notice aroma before cooling. Write down whether it reminds you of citrus, flowers, cocoa, stone fruit, nuts, or something else.",
+            "Compare acidity, sweetness, body, and finish separately. Acidity can be bright and pleasant or sharp and under-extracted.",
+            "Let the cup cool. Some coffees become clearer as they lose heat, while roast bitterness can become more obvious.",
+            "Change the brew only after you have identified the difference. A finer grind can increase extraction; it cannot change the origin.",
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection title="How roast and brewing change the answer">
+        <p style={{ marginBottom: "1rem" }}>
+          A dark roast can make an Ethiopian coffee taste more roast-driven and can make a
+          Colombian coffee taste heavier and more chocolate-forward. A light roast can expose
+          acidity and fruit but may need hotter water, a finer grind, and a longer extraction.
         </p>
-        <p style={{ color: "#b0a090", marginBottom: "2.5rem" }}>
-          Two of the most popular coffee origins are Ethiopia and Colombia, and they offer very
-          different flavor experiences.
+        <p>
+          For a first comparison, choose similarly fresh bags with clearly stated region and
+          process. Brew them with the same recipe, then make small changes. The most useful answer
+          to “Ethiopia or Colombia?” is the one you can describe in your own cup.
         </p>
-
-
-        {/* Ethiopian Coffee */}
-        <Section title="Ethiopian Coffee">
-          {[
-            {
-              label: "Flavor Profile",
-              detail: "Bright, fruity, and sometimes floral.",
-            },
-            {
-              label: "Best For",
-              detail: "Pour-over methods and people who enjoy more complex flavors.",
-            },
-          ].map(({ label, detail }) => (
-            <div key={label} style={{ marginBottom: "1.5rem" }}>
-              <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.35rem" }}>{label}</p>
-              <p style={{ color: "#b0a090" }}>{detail}</p>
-            </div>
-          ))}
-        </Section>
-
-        {/* Colombian Coffee */}
-        <Section title="Colombian Coffee">
-          {[
-            {
-              label: "Flavor Profile",
-              detail: "Smooth, balanced, and slightly sweet with chocolate notes.",
-            },
-            {
-              label: "Best For",
-              detail: "Espresso, drip coffee, and everyday drinking.",
-            },
-          ].map(({ label, detail }) => (
-            <div key={label} style={{ marginBottom: "1.5rem" }}>
-              <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.35rem" }}>{label}</p>
-              <p style={{ color: "#b0a090" }}>{detail}</p>
-            </div>
-          ))}
-        </Section>
-
-        {/* Key Differences */}
-        <Section title="Key Differences">
-          {[
-            "Ethiopia tends to be more acidic and complex.",
-            "Colombia tends to be smoother and more balanced.",
-          ].map((item) => (
-            <div
-              key={item}
-              style={{
-                display: "flex",
-                gap: "0.75rem",
-                alignItems: "flex-start",
-                marginBottom: "0.75rem",
-                color: "#d4cfc9",
-              }}
-            >
-              <span
-                style={{
-                  width: "6px",
-                  height: "6px",
-                  borderRadius: "50%",
-                  background: "#a14f1f",
-                  marginTop: "0.58rem",
-                  flexShrink: 0,
-                }}
-              />
-              {item}
-            </div>
-          ))}
-        </Section>
-
-        {/* Which One Should You Choose */}
-        <Section title="Which One Should You Choose">
-          {[
-            "If you like bold and smooth coffee, go with Colombia.",
-            "If you enjoy lighter, more complex flavors, try Ethiopia.",
-          ].map((item) => (
-            <div
-              key={item}
-              style={{
-                display: "flex",
-                gap: "0.75rem",
-                alignItems: "flex-start",
-                marginBottom: "0.75rem",
-                color: "#d4cfc9",
-              }}
-            >
-              <span
-                style={{
-                  width: "6px",
-                  height: "6px",
-                  borderRadius: "50%",
-                  background: "#a14f1f",
-                  marginTop: "0.58rem",
-                  flexShrink: 0,
-                }}
-              />
-              {item}
-            </div>
-          ))}
-        </Section>
-
-        {/* Final Thoughts */}
-        <Section title="Final Thoughts">
-          <p style={{ marginBottom: "1rem" }}>There is no right or wrong choice.</p>
-          <p style={{ marginBottom: "1rem" }}>
-            The best option is the one that matches your taste.
-          </p>
-          <p>
-            Exploring different origins is one of the easiest ways to better understand coffee.
-          </p>
-        </Section>
-
-<RecommendedBeans variant="origins" />
-        <RelatedPosts posts={[
-          { title: "Top 5 Dark Roast Beans for Espresso in 2026", slug: "top-5-dark-roast-beans-for-espresso-in-2026", image: "/images/coffee-cheers.jpg", category: "Bean Picks" },
-          { title: "The Art of the Perfect Pour-Over", slug: "the-art-of-the-perfect-pour-over", image: "/images/pour-over-kettle.jpg", category: "Brewing Guides" },
-        ]} />
-
-        {/* CTA */}
-        <div
-          className="mt-12 p-6 text-center"
-          style={{
-            background: "#131313",
-            borderRadius: "8px",
-            border: "1px solid rgba(161,79,31,0.25)",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "'Cinzel Decorative', serif",
-              fontSize: "1rem",
-              color: "#f2f2f2",
-              marginBottom: "0.5rem",
-            }}
-          >
-            Find your perfect origin.
-          </p>
-          <p style={{ color: "#b0a090", fontSize: "0.85rem", marginBottom: "1.25rem" }}>
-            Browse our curated bean selection and discover what suits your taste.
-          </p>
-          <Link href="/products">
-            <button className="btn-primary">Shop Products</button>
-          </Link>
-        </div>
-
-        {/* Back link */}
-        <div className="mt-10 text-center">
-          <Link href="/blog">
-            <button className="btn-secondary" style={{ fontSize: "0.82rem" }}>
-              Back to Blog
-            </button>
-          </Link>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div style={{ marginBottom: "2.5rem" }}>
-      <h2
-        style={{
-          fontFamily: "Inter, sans-serif",
-          fontSize: "clamp(1.3rem, 3.25vw, 1.7rem)",
-          fontWeight: 700,
-          color: "#f2f2f2",
-          marginBottom: "1rem",
-          paddingBottom: "0.5rem",
-          borderBottom: "1px solid rgba(161,79,31,0.2)",
-        }}
-      >
-        {title}
-      </h2>
-      <div style={{ color: "#b0a090", fontSize: "1.24rem" }}>
-        {children}
-      </div>
-    </div>
+      </ArticleSection>
+    </EditorialArticle>
   );
 }

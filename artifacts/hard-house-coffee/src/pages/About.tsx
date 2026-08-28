@@ -9,9 +9,9 @@ export default function About() {
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>About Us | Hard House Coffee</title>
-        <meta name="description" content="Learn the story behind Hard House Coffee — built by coffee obsessives for people who refuse to settle for ordinary. Our mission, values, and why we love coffee." />
+        <meta name="description" content="Learn how Hard House Coffee researches brewing guides and product comparisons, handles affiliate relationships, and distinguishes research from hands-on testing." />
         <meta property="og:title" content="About Us | Hard House Coffee" />
-        <meta property="og:description" content="Built by coffee obsessives for people who refuse to settle for ordinary." />
+        <meta property="og:description" content="The publication, values, and research methodology behind Hard House Coffee." />
       </Helmet>
       <Navbar />
 
@@ -66,13 +66,16 @@ export default function About() {
               Aroma From the Ground Up
             </h2>
             <p style={{ color: "#b0a090", lineHeight: 1.8, marginBottom: "1rem" }}>
-              Hard House Coffee started as a simple obsession with the perfect cup. We spent years testing beans, dialing in machines, and learning everything we could about what separates a good cup from an unforgettable one.
+              Hard House Coffee is an independent coffee publication focused on practical brewing
+              guides, equipment comparisons, bean education, and the culture around the cup.
             </p>
             <p style={{ color: "#b0a090", lineHeight: 1.8, marginBottom: "1rem" }}>
-              What began in a small apartment with a second-hand espresso machine evolved into a platform dedicated to helping coffee lovers everywhere find their perfect brew.
+              The goal is to make complicated buying and brewing decisions easier to understand
+              without pretending that one recipe, roast, or machine is right for everyone.
             </p>
             <p style={{ color: "#b0a090", lineHeight: 1.8 }}>
-              Today, Hard House Coffee is your trusted source for honest gear reviews, brewing guides, bean recommendations, and everything in between.
+              Articles are published under the Hard House Coffee name. When guidance is based on
+              research rather than direct product use, the article says so plainly.
             </p>
           </div>
           <div
@@ -123,18 +126,18 @@ export default function About() {
           {[
             {
               icon: "☕",
-              title: "Uncompromising Quality",
-              desc: "We test every product and try every technique before we recommend it. If we wouldn't use it ourselves, it doesn't make the cut.",
+              title: "Useful Detail",
+              desc: "Guides focus on repeatable recipes, meaningful specifications, limitations, and the buyer questions that change a decision.",
             },
             {
               icon: "🔍",
-              title: "Radical Honesty",
-              desc: "No fluff, no paid placements masquerading as reviews. Our opinions are our own, and we'll tell you exactly what we think.",
+              title: "Clear Evidence",
+              desc: "Research-based comparisons are labeled as research. Hands-on testing is claimed only when the publication can substantiate what was tested and how.",
             },
             {
               icon: "🌱",
-              title: "Deep Knowledge",
-              desc: "We go beyond surface-level reviews. Our guides are built on real experience, hours of research, and a genuine love of coffee.",
+              title: "Editorial Independence",
+              desc: "Affiliate relationships are disclosed. A potential commission does not purchase placement or change the comparison criteria used in an article.",
             },
           ].map((val) => (
             <div
@@ -163,6 +166,60 @@ export default function About() {
             </div>
           ))}
         </div>
+
+        <section
+          id="methodology"
+          style={{
+            scrollMarginTop: "110px",
+            marginBottom: "5rem",
+            padding: "2rem",
+            background: "#131313",
+            border: "1px solid rgba(161,79,31,0.25)",
+            borderRadius: "10px",
+          }}
+        >
+          <p className="section-subtitle" style={{ color: "#a14f1f" }}>Editorial Standards</p>
+          <h2
+            className="inter-title mt-4"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "clamp(1.25rem, 2.5vw, 1.8rem)",
+              color: "#f2f2f2",
+              marginBottom: "1.25rem",
+            }}
+          >
+            Research & Recommendation Methodology
+          </h2>
+          <div style={{ color: "#b0a090", lineHeight: 1.85, fontSize: "0.95rem" }}>
+            <p style={{ marginBottom: "1rem" }}>
+              Hard House Coffee starts with the reader’s use case: drink type, experience level,
+              available time, counter space, maintenance tolerance, and total setup budget.
+              Product comparisons then consider documented specifications, manufacturer guidance,
+              warranty and service information, workflow, known design tradeoffs, and whether the
+              product solves the stated problem.
+            </p>
+            <p style={{ marginBottom: "1rem" }}>
+              Research-based analysis is not presented as hands-on testing. When Hard House Coffee
+              has not personally used a product, the article avoids first-person ownership,
+              tasting, durability, and performance claims. Specifications, prices, availability,
+              and model details can change, so time-sensitive information is qualified and readers
+              are directed to confirm current details with the manufacturer or retailer.
+            </p>
+            <p style={{ marginBottom: "1rem" }}>
+              Recommendations explain strengths, limitations, who a product or method suits, and
+              who should skip it. No product can be evaluated independently of the complete setup:
+              grinders, water, coffee freshness, technique, maintenance, and local service often
+              matter as much as the headline feature.
+            </p>
+            <p>
+              Some links may earn Hard House Coffee a commission at no additional cost to the
+              reader. Affiliate relationships do not guarantee inclusion. See the{" "}
+              <Link href="/disclaimer" style={{ color: "#d4b896", textDecoration: "underline" }}>
+                full affiliate disclosure and accuracy notice
+              </Link>.
+            </p>
+          </div>
+        </section>
 
         {/* CTA */}
         <div

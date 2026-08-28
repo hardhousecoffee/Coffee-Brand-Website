@@ -1,397 +1,123 @@
-import { Link } from "wouter";
-import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AuthorByline from "@/components/AuthorByline";
-import RelatedPosts from "@/components/RelatedPosts";
-import RecommendedBeans from "@/components/RecommendedBeans";
+import EditorialArticle, {
+  ArticleCard,
+  ArticleGrid,
+  ArticleList,
+  ArticleNote,
+  ArticleSection,
+  ComparisonTable,
+} from "@/components/EditorialArticle";
 
 export default function BlogPostGrinder() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
-      <Helmet>
-        <title>Why Every Coffee Lover Needs a Grinder First (2026 Guide) | Hard House Coffee</title>
-        <meta name="description" content="Before buying an espresso machine, invest in a quality grinder. Our 2026 guide covers the best espresso grinders and why grind quality changes everything." />
-        <meta property="og:title" content="Why Every Coffee Lover Needs a Grinder First (2026 Guide) | Hard House Coffee" />
-        <meta property="og:description" content="The grinder makes more difference than the machine. Here is why — and which ones to buy." />
-      </Helmet>
-      <Navbar />
+    <EditorialArticle
+      title="Why Every Coffee Lover Needs a Grinder First (2026 Guide)"
+      description="Understand burr types, adjustment range, retention, workflow, cleaning, and espresso versus filter suitability before buying a coffee grinder."
+      category="Coffee Culture"
+      image="/images/coffee-grinder-closeup.jpg"
+      imageAlt="Close-up of a coffee grinder"
+      canonicalPath="/blog/why-every-coffee-lover-needs-a-grinder-first-2026-guide"
+      readTime="9 min read"
+      related={[
+        { title: "Best Espresso Machines (2026 Guide): A Research-Based Comparison", slug: "best-espresso-machines-2026-guide-tested-and-ranked", image: "/images/espresso-tattooed-hands.jpg", category: "Gear Reviews" },
+        { title: "Best Espresso Machines for Beginners (2026 Guide)", slug: "best-espresso-machines-for-beginners-2026-guide", image: "/images/espresso-pour-cup.jpg", category: "Espresso Machines" },
+      ]}
+      ctaTitle="Put precision where it changes the cup."
+      ctaText="The right grinder is the part of the setup that makes recipe changes visible and repeatable."
+      ctaLabel="Compare Espresso Guides"
+    >
+      <ArticleSection title="Why the grinder comes first">
+        <p style={{ marginBottom: "1rem" }}>
+          Espresso is a small drink made under pressure, so small differences in particle size
+          matter. A grinder that produces a broad mix of dust and large fragments can make part of
+          the puck over-extract while another part under-extracts. The result can taste both bitter
+          and sour, even when the machine is capable of stable brewing.
+        </p>
+        <p>
+          A better grinder cannot compensate for stale beans or poor distribution, but it gives
+          you a more controllable variable. That is why a modest machine paired with a suitable
+          grinder can be a more useful learning setup than an expensive machine fed by
+          inconsistent grounds.
+        </p>
+      </ArticleSection>
 
-      {/* Hero banner */}
-      <div
-        className="relative overflow-hidden"
-        style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}
-      >
-        <img
-          src="/images/coffee-grinder-closeup.jpg"
-          alt="Why Every Coffee Lover Needs a Grinder First"
-          className="w-full h-full object-cover"
-          style={{ filter: "brightness(0.35)" }}
+      <ArticleSection title="The specifications that affect daily use">
+        <ArticleGrid>
+          <ArticleCard title="Burrs">
+            Burr grinders crush between shaped surfaces. Conical and flat burrs can both work;
+            burr geometry, alignment, motor, and the rest of the design matter more than a single
+            label.
+          </ArticleCard>
+          <ArticleCard title="Adjustment range">
+            Espresso needs small changes. Stepped settings are easy to understand; stepless
+            adjustment offers more control but can be slower to learn.
+          </ArticleCard>
+          <ArticleCard title="Retention">
+            Grounds left inside the grinder can make the next dose less predictable. Look for an
+            easy-to-clean path and use a consistent purge routine if needed.
+          </ArticleCard>
+          <ArticleCard title="Workflow">
+            Consider noise, speed, single dosing, hopper size, timer behavior, and how often you
+            switch between espresso and filter coffee.
+          </ArticleCard>
+        </ArticleGrid>
+      </ArticleSection>
+
+      <ArticleSection title="Four grinder profiles">
+        <ComparisonTable
+          headers={["Profile", "Strength", "Limitation", "Best fit"]}
+          rows={[
+            ["Entry-level espresso grinder", "Lower cost and simple workflow", "Narrower adjustment or more retention", "First espresso setup with a controlled budget"],
+            ["Timed hopper grinder", "Fast, convenient repeat dosing", "Switching beans or brew methods can be awkward", "One coffee used daily"],
+            ["Single-dose grinder", "Easy to change beans and reduce stale grounds", "More hands-on loading and bellows/purge work", "Curious drinkers who rotate coffees"],
+            ["Premium home grinder", "Quieter workflow and finer control", "Higher cost and diminishing returns", "Frequent espresso with a capable machine"],
+          ]}
         />
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-          style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(11,11,11,0.6) 100%)" }}
-        >
-          <p className="section-subtitle mb-3">Coffee Culture</p>
-          <h1
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "clamp(1.2rem, 3.5vw, 2.4rem)",
-              fontWeight: 700,
-              color: "#f2f2f2",
-              lineHeight: 1.25,
-              maxWidth: "820px",
-            }}
-          >
-            Why Every Coffee Lover Needs a Grinder First (2026 Guide)
-          </h1>
-          <p style={{ color: "#b0a090", marginTop: "0.75rem", fontSize: "0.85rem" }}>
-            4 min read
-          </p>
-        </div>
-      </div>
+      </ArticleSection>
 
-      {/* Article body */}
-      <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85, fontSize: "1.3rem" }}>
-        <AuthorByline />
-
-        {/* Subtitle */}
-        <p
-          style={{
-            fontFamily: "Inter, sans-serif",
-            fontWeight: 700,
-            fontSize: "1.1rem",
-            color: "#f2f2f2",
-            marginBottom: "1.5rem",
-          }}
-        >
-          Best Coffee Grinders for Espresso — What Actually Matters
+      <ArticleSection title="What to look for in a recommendation">
+        <p style={{ marginBottom: "1rem" }}>
+          The Breville Smart Grinder Pro is a reasonable all-in-one starting profile for a buyer
+          who values guided settings and a familiar countertop workflow. The Baratza Sette 270
+          represents a faster, espresso-focused approach with a wide adjustment range, while the
+          Eureka Mignon Specialita represents a quieter premium hopper workflow. The Niche Zero
+          represents single dosing and easier switching between coffees.
         </p>
-
-        {/* Intro */}
-        <p style={{ color: "#d4cfc9", fontSize: "1.37rem", marginBottom: "1.25rem" }}>
-          If you're getting into coffee and thinking about buying an espresso machine, you're
-          probably focusing on the wrong thing.
+        <p>
+          Those descriptions explain who each design may suit; they are not a claim that one model
+          is universally ranked first. Confirm current burr specifications, warranty, noise
+          expectations, accessories, and price in your market.
         </p>
-        <p style={{ color: "#b0a090", marginBottom: "1.25rem" }}>Most people do.</p>
-        <p style={{ color: "#b0a090", marginBottom: "1.25rem" }}>
-          They spend hundreds on a machine… and completely overlook the one piece of gear that
-          actually makes the biggest difference:
+        <ArticleNote>
+          Hard House Coffee’s recommendations on this page are based on documented design,
+          workflow, and use-case comparisons. They do not imply that each grinder was personally
+          tested by the publisher.
+        </ArticleNote>
+      </ArticleSection>
+
+      <ArticleSection title="Espresso versus filter">
+        <ArticleList
+          items={[
+            "Espresso needs fine adjustment and enough consistency to make small changes meaningful.",
+            "Filter coffee tolerates a wider range, but a clean, even grind still helps clarity and repeatability.",
+            "If you switch often, prioritize low retention and an easy way to change settings without losing your reference point.",
+            "A grinder designed for espresso may be slow or inconvenient for large filter batches; a filter grinder may not go fine enough for espresso.",
+          ]}
+        />
+      </ArticleSection>
+
+      <ArticleSection title="When a new grinder will not solve the problem">
+        <p style={{ marginBottom: "1rem" }}>
+          If the coffee is stale, the water is unpleasant, the puck is channeling, or the recipe
+          changes every time, a new grinder may only make the problem more expensive. Keep the
+          dose, yield, and timing visible. Clean the burr chamber and chute, check that the burrs
+          are seated correctly, and make one adjustment at a time.
         </p>
-        <p
-          style={{
-            color: "#f2f2f2",
-            fontWeight: 700,
-            fontSize: "1.37rem",
-            marginBottom: "1.25rem",
-          }}
-        >
-          The grinder.
+        <p>
+          Upgrade when you can name the limitation: not enough fine control, too much retention,
+          an unsuitable workflow, or inconsistent particles. That is a stronger reason than
+          simply wanting a more impressive appliance.
         </p>
-        <p style={{ color: "#b0a090", marginBottom: "0.5rem" }}>Here's the truth:</p>
-        <p style={{ color: "#b0a090", marginBottom: "2.5rem" }}>
-          A good grinder can make an average machine perform better — but a bad grinder will
-          ruin even the best setup.
-        </p>
-        <p style={{ color: "#b0a090", marginBottom: "2.5rem" }}>
-          So before you spend money in the wrong place, let's break down why the grinder should
-          always come first.
-        </p>
-
-
-        {/* What Actually Matters */}
-        <Section title="What Actually Matters in an Espresso Grinder">
-          <p style={{ marginBottom: "1.5rem" }}>
-            Before we get into specific recommendations, you need to understand what separates a
-            decent grinder from one that actually delivers.
-          </p>
-
-          {[
-            {
-              label: "Grind Consistency",
-              detail:
-                "Espresso is sensitive. You're working with pressure and precision, so the grind size has to be uniform. If your grinder produces uneven particles, your shot will extract unevenly — and that's where bitterness and sourness come from.",
-            },
-            {
-              label: "Adjustment Control",
-              detail:
-                "You don't just need 'fine' or 'coarse.' You need micro-adjustments. Small changes in grind size can completely change how your espresso tastes.",
-            },
-            {
-              label: "Burr Type",
-              detail:
-                "You want a burr grinder, not a blade grinder. Burr grinders crush beans evenly, while blade grinders chop them randomly. That difference alone is night and day.",
-            },
-            {
-              label: "Build Quality",
-              detail:
-                "A solid grinder will hold its settings, run consistently, and last longer. Cheap grinders tend to drift, overheat, or break down faster.",
-            },
-          ].map(({ label, detail }) => (
-            <div key={label} style={{ marginBottom: "1.5rem" }}>
-              <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.35rem" }}>{label}</p>
-              <p style={{ color: "#b0a090" }}>{detail}</p>
-            </div>
-          ))}
-        </Section>
-
-        {/* Best Grinders */}
-        <Section title="Best Coffee Grinders for Espresso (2026 Picks)">
-          {[
-            {
-              num: "1",
-              name: "Breville Smart Grinder Pro",
-              intro:
-                "If you're getting serious about espresso without going overboard, this is a strong starting point.",
-              bullets: [
-                "Precise grind control",
-                "Consistent results for home use",
-                "Easy adjustments for dialing in your shot",
-              ],
-              outro: "It's one of those grinders that just works without making things complicated.",
-            },
-            {
-              num: "2",
-              name: "Baratza Sette 270",
-              intro:
-                "This one is for people who want more precision and faster grinding.",
-              bullets: [
-                "Excellent consistency",
-                "Fast grinding speed",
-                "Very fine adjustment range",
-              ],
-              outro: "It's a noticeable step up if you're chasing better espresso quality.",
-            },
-            {
-              num: "3",
-              name: "Eureka Mignon Specialita",
-              intro: "Now you're getting into that premium home setup territory.",
-              bullets: [
-                "Extremely consistent grind",
-                "Quiet operation",
-                "Stepless adjustment (very precise control)",
-              ],
-              outro:
-                "This is the kind of grinder where you start getting café-level results at home.",
-            },
-            {
-              num: "4",
-              name: "Niche Zero",
-              intro: "This one has a bit of a cult following, and for good reason.",
-              bullets: [
-                "Minimal retention (less wasted coffee)",
-                "Smooth, consistent grind",
-                "Great for switching between brew methods",
-              ],
-              outro: "It's clean, simple, and built for people who really care about their coffee.",
-            },
-          ].map(({ num, name, intro, bullets, outro }) => (
-            <div
-              key={num}
-              style={{
-                marginBottom: "2rem",
-                paddingBottom: "2rem",
-                borderBottom: "1px solid rgba(161,79,31,0.1)",
-              }}
-            >
-              <p
-                style={{
-                  color: "#f2f2f2",
-                  fontWeight: 700,
-                  fontSize: "1rem",
-                  marginBottom: "0.5rem",
-                }}
-              >
-                {num}. {name}
-              </p>
-              <p style={{ color: "#b0a090", marginBottom: "0.75rem" }}>{intro}</p>
-              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 0.75rem 0" }}>
-                {bullets.map((b) => (
-                  <li
-                    key={b}
-                    style={{
-                      display: "flex",
-                      gap: "0.75rem",
-                      alignItems: "flex-start",
-                      marginBottom: "0.5rem",
-                      color: "#d4cfc9",
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: "6px",
-                        height: "6px",
-                        borderRadius: "50%",
-                        background: "#a14f1f",
-                        marginTop: "0.58rem",
-                        flexShrink: 0,
-                      }}
-                    />
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              <p style={{ color: "#b0a090" }}>{outro}</p>
-            </div>
-          ))}
-        </Section>
-
-        {/* Why It Matters More Than You Think */}
-        <Section title="Why the Grinder Matters More Than You Think">
-          <p style={{ marginBottom: "1rem" }}>
-            Here's something most beginners don't realize:
-          </p>
-          <p style={{ marginBottom: "1rem" }}>
-            You can have a great espresso machine and still get bad espresso.
-          </p>
-          <p style={{ marginBottom: "1rem" }}>
-            But if you have a great grinder and a decent machine, you can still get a really
-            good shot.
-          </p>
-          <p style={{ marginBottom: "1rem" }}>That's how important grind quality is.</p>
-          <p style={{ color: "#b0a090", marginBottom: "0.5rem" }}>The grinder controls:</p>
-          <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1rem 0" }}>
-            {["Extraction speed", "Flavor balance", "Strength and clarity"].map((item) => (
-              <li
-                key={item}
-                style={{
-                  display: "flex",
-                  gap: "0.75rem",
-                  alignItems: "flex-start",
-                  marginBottom: "0.5rem",
-                  color: "#d4cfc9",
-                }}
-              >
-                <span
-                  style={{
-                    width: "6px",
-                    height: "6px",
-                    borderRadius: "50%",
-                    background: "#a14f1f",
-                    marginTop: "0.58rem",
-                    flexShrink: 0,
-                  }}
-                />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p>It's not just a tool — it's the foundation of everything.</p>
-        </Section>
-
-        {/* Common Mistakes */}
-        <Section title="Common Mistakes to Avoid">
-          {[
-            {
-              mistake: "Using a Blade Grinder",
-              detail:
-                "This is the fastest way to ruin your espresso. It creates uneven grind sizes, which leads to inconsistent extraction.",
-            },
-            {
-              mistake: "Not Adjusting Your Grind",
-              detail:
-                "A lot of people set it once and leave it. But beans change. Freshness changes. Humidity even plays a role. Dialing in your grind is part of the process.",
-            },
-            {
-              mistake: "Buying Based on Price Alone",
-              detail:
-                "Cheap grinders usually mean inconsistent results. You don't need the most expensive option — but going too cheap will hold you back.",
-            },
-          ].map(({ mistake, detail }) => (
-            <div key={mistake} style={{ marginBottom: "1.5rem" }}>
-              <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.35rem" }}>{mistake}</p>
-              <p style={{ color: "#b0a090" }}>{detail}</p>
-            </div>
-          ))}
-        </Section>
-
-        {/* Final Thoughts */}
-        <Section title="Final Thoughts">
-          <p style={{ marginBottom: "1rem" }}>
-            If you're serious about making better coffee at home, the grinder is where you
-            should focus first.
-          </p>
-          <p style={{ marginBottom: "1rem" }}>
-            It's not the most exciting piece of gear, but it's the one that makes the biggest
-            difference.
-          </p>
-          <p style={{ marginBottom: "1rem" }}>
-            Once you dial in your grind, everything else — your machine, your technique, your
-            beans — starts to come together.
-          </p>
-          <p>
-            And that's when coffee stops being just coffee… and starts becoming something you
-            actually look forward to making.
-          </p>
-        </Section>
-
-<RecommendedBeans variant="espresso" />
-        <RelatedPosts posts={[
-          { title: "Best Espresso Machines (2026): Tested & Ranked", slug: "best-espresso-machines-2026-guide-tested-and-ranked", image: "/images/espresso-tattooed-hands.jpg", category: "Gear Reviews" },
-          { title: "Best Espresso Machines for Beginners (2026 Guide)", slug: "best-espresso-machines-for-beginners-2026-guide", image: "/images/espresso-pour-cup.jpg", category: "Espresso Machines" },
-        ]} />
-
-        {/* CTA */}
-        <div
-          className="mt-12 p-6 text-center"
-          style={{
-            background: "#131313",
-            borderRadius: "8px",
-            border: "1px solid rgba(161,79,31,0.25)",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "'Cinzel Decorative', serif",
-              fontSize: "1rem",
-              color: "#f2f2f2",
-              marginBottom: "0.5rem",
-            }}
-          >
-            Ready to upgrade your setup?
-          </p>
-          <p style={{ color: "#b0a090", fontSize: "0.85rem", marginBottom: "1.25rem" }}>
-            Explore recommended grinders and gear on the site.
-          </p>
-          <Link href="/products">
-            <button className="btn-primary">Shop Grinders</button>
-          </Link>
-        </div>
-
-        {/* Back link */}
-        <div className="mt-10 text-center">
-          <Link href="/blog">
-            <button className="btn-secondary" style={{ fontSize: "0.82rem" }}>
-              <span className="arrow-pulse">←</span> Back to Blog
-            </button>
-          </Link>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div style={{ marginBottom: "2.5rem" }}>
-      <h2
-        style={{
-          fontFamily: "Inter, sans-serif",
-          fontSize: "clamp(1.3rem, 3.25vw, 1.7rem)",
-          fontWeight: 700,
-          color: "#f2f2f2",
-          marginBottom: "1rem",
-          paddingBottom: "0.5rem",
-          borderBottom: "1px solid rgba(161,79,31,0.2)",
-        }}
-      >
-        {title}
-      </h2>
-      <div style={{ color: "#b0a090", fontSize: "1.24rem" }}>
-        {children}
-      </div>
-    </div>
+      </ArticleSection>
+    </EditorialArticle>
   );
 }

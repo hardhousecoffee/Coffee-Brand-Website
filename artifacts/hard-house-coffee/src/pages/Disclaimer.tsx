@@ -88,8 +88,9 @@ export default function Disclaimer() {
             advertising and linking to Amazon.com.
           </p>
           <p>
-            Our editorial opinions are never influenced by affiliate relationships. We only recommend
-            products we genuinely believe in.
+            Affiliate relationships do not purchase placement or determine the comparison criteria
+            used in an article. Research-based recommendations are identified as research and do
+            not imply hands-on testing.
           </p>
         </Section>
 

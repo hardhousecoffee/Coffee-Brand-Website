@@ -1141,9 +1141,9 @@ export default function Products() {
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Shop Coffee Gear & Espresso Equipment | Hard House Coffee</title>
-        <meta name="description" content="Shop our curated selection of espresso machines, coffee grinders, and accessories at Hard House Coffee. Gear reviewed and recommended by coffee obsessives." />
+        <meta name="description" content="Browse a research-based selection of espresso machines, coffee grinders, accessories, and beans from Hard House Coffee." />
         <meta property="og:title" content="Shop Coffee Gear & Espresso Equipment | Hard House Coffee" />
-        <meta property="og:description" content="Espresso machines, grinders, and accessories — curated and reviewed by coffee obsessives." />
+        <meta property="og:description" content="Espresso machines, grinders, accessories, and beans selected through documented features and buyer use cases." />
       </Helmet>
       <Navbar />
 
@@ -1160,7 +1160,7 @@ export default function Products() {
           Coffee Essentials
         </h1>
         <p style={{ color: "#b0a090", maxWidth: "480px", margin: "1rem auto 0", lineHeight: 1.7 }}>
-          Expert-tested espresso machines, coffee makers and brewing gear — curated for serious coffee lovers.
+          Research-based espresso machines, coffee makers and brewing gear — organized by features and use case.
         </p>
       </div>
 
@@ -1276,12 +1276,12 @@ export default function Products() {
                 {
                   cat: "Espresso Machines" as const,
                   subtitle: "Hard House Coffee Picks",
-                  desc: "Expert-tested machines that pull exceptional shots — from entry-level to full barista setups.",
+                  desc: "Espresso machines compared by documented features, workflow, maintenance, and buyer fit.",
                 },
                 {
                   cat: "Coffee Machines" as const,
                   subtitle: "Hard House Coffee Picks",
-                  desc: "Bean-to-cup and drip brewers for every ritual — tested for consistency, flavour, and ease.",
+                  desc: "Bean-to-cup and drip brewers organized by brewing style, controls, capacity, and ease of use.",
                 },
                 {
                   cat: "Coffee Grinders" as const,
@@ -1291,7 +1291,7 @@ export default function Products() {
                 {
                   cat: "Accessories" as const,
                   subtitle: "Hard House Coffee Picks",
-                  desc: "The tools that elevate your brew — from kettles and tampers to barista kits we use every day.",
+                  desc: "Tools for a more repeatable brew — from kettles and tampers to scales and barista kits.",
                 },
               ]).map(({ cat, subtitle, desc }) => {
               const catProducts = products.filter((p) => p.category === cat);
@@ -1360,7 +1360,7 @@ export default function Products() {
                   fontSize: "0.9rem",
                 }}
               >
-                The best whole-bean coffees we're brewing with right now — sourced from the world's top roasters and tested in our own machines.
+                Whole-bean coffees selected from established roasters by roast profile, origin information, and intended brew style.
               </p>
             </div>
 
@@ -1522,7 +1522,7 @@ export default function Products() {
             <p className="section-subtitle">Recommended Products</p>
             <h2 className="section-title inter-title mt-4">Top Espresso Machines</h2>
             <p style={{ color: "#b0a090", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
-              We've tested the best machines so you don't have to. These are our top picks for every budget.
+              Research-based machine picks spanning different budgets, workflows, and experience levels.
             </p>
           </div>
 
