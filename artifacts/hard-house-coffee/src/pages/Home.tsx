@@ -385,7 +385,6 @@ export default function Home() {
               src={slide.src}
               alt={slide.alt}
               className="w-full h-full object-cover"
-              style={{ filter: "brightness(0.65)" }}
             />
           </div>
         ))}
@@ -404,9 +403,6 @@ export default function Home() {
             </filter>
           </defs>
         </svg>
-
-        {/* Dark gradient overlay */}
-        <div className="hero-overlay absolute inset-0" style={{ zIndex: 2 }} />
 
         {/* Hero content */}
         <div
