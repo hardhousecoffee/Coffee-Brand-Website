@@ -4,6 +4,11 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
+import {
+  editorialCollections,
+  editorialCollectionLabels,
+  type EditorialCollectionId,
+} from "@/data/editorialCollections";
 
 const categories = ["All", "Gear Reviews", "Brewing Guides", "Bean Picks", "Espresso Machines", "Coffee Culture"];
 
@@ -290,13 +295,25 @@ const posts = [
   },
 ];
 
+function isEditorialCollection(value: string | null): value is EditorialCollectionId {
+  return value !== null && Object.prototype.hasOwnProperty.call(editorialCollections, value);
+}
+
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCollection, setActiveCollection] = useState<EditorialCollectionId | null>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
+    const collection = params.get("collection");
     const cat = params.get("cat");
-    if (cat && categories.includes(cat)) {
+    if (isEditorialCollection(collection)) {
+      setActiveCollection(collection);
+      setTimeout(() => {
+        const el = document.getElementById("blog-filter");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    } else if (cat && categories.includes(cat)) {
       setActiveCategory(cat);
       setTimeout(() => {
         const el = document.getElementById("blog-filter");
@@ -305,12 +322,18 @@ export default function Blog() {
     }
   }, []);
 
-  const filtered = activeCategory === "All"
-    ? posts
-    : posts.filter((p) => p.category === activeCategory);
+  const selectedCollectionSlugs: readonly string[] = activeCollection
+    ? editorialCollections[activeCollection]
+    : [];
+  const filtered = activeCollection
+    ? posts.filter((p) => selectedCollectionSlugs.includes(p.slug))
+    : activeCategory === "All"
+      ? posts
+      : posts.filter((p) => p.category === activeCategory);
 
   const featured = posts.find((p) => p.featured);
-  const rest = filtered.filter((p) => !p.featured || activeCategory !== "All");
+  const showingAllPosts = activeCategory === "All" && !activeCollection;
+  const rest = filtered.filter((p) => !p.featured || !showingAllPosts);
 
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
@@ -380,7 +403,10 @@ export default function Blog() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => {
+                  setActiveCollection(null);
+                  setActiveCategory(cat);
+                }}
                 style={{
                   padding: "0.45rem 1.2rem",
                   borderRadius: "6px",
@@ -390,9 +416,9 @@ export default function Blog() {
                   fontWeight: 600,
                   cursor: "pointer",
                   transition: "all 0.25s ease",
-                  background: activeCategory === cat ? "#8b2f2f" : "transparent",
-                  color: activeCategory === cat ? "#f2f2f2" : "#b0a090",
-                  border: activeCategory === cat ? "1px solid #a14f1f" : "1px solid rgba(161,79,31,0.25)",
+                  background: activeCategory === cat && !activeCollection ? "#8b2f2f" : "transparent",
+                  color: activeCategory === cat && !activeCollection ? "#f2f2f2" : "#b0a090",
+                  border: activeCategory === cat && !activeCollection ? "1px solid #a14f1f" : "1px solid rgba(161,79,31,0.25)",
                   whiteSpace: "nowrap",
                   flexShrink: 0,
                 }}
@@ -414,8 +440,14 @@ export default function Blog() {
           }} />
         </div>
 
+        {activeCollection && (
+          <div className="hhc-collection-context" aria-live="polite">
+            Curated collection · {editorialCollectionLabels[activeCollection]}
+          </div>
+        )}
+
         {/* Featured post */}
-        {activeCategory === "All" && featured && (
+        {showingAllPosts && featured && (
           <div
             className="mb-12 relative overflow-hidden"
             style={{

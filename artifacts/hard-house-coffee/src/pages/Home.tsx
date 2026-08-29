@@ -7,6 +7,7 @@ import PageNav from "@/components/PageNav";
 import SteamEffect from "@/components/SteamEffect";
 import SteamEffectSVG from "@/components/SteamEffectSVG";
 import PremiumBanner from "@/components/PremiumBanner";
+import EditorialCategoryNav from "@/components/EditorialCategoryNav";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
@@ -519,6 +520,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <EditorialCategoryNav />
 
       {/* FEATURED GRID */}
       <section
