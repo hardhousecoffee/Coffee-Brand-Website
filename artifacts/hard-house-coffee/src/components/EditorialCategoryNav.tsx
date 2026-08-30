@@ -42,7 +42,7 @@ const cards: Array<{
   },
 ];
 
-const beanCount = 7;
+const beanCount = 10;
 
 function CoffeeEntertainmentVisual() {
   return (
