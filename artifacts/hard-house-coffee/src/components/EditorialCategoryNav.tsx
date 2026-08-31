@@ -45,8 +45,12 @@ const cards: Array<{
 const beanCount = 10;
 
 function CoffeeEntertainmentVisual() {
+  return <div className="hhc-editorial-entertainment-visual" aria-hidden="true" />;
+}
+
+function CoffeeEntertainmentAnimation() {
   return (
-    <div className="hhc-editorial-entertainment-visual" aria-hidden="true">
+    <div className="hhc-editorial-entertainment-animation" aria-hidden="true">
       <div className="hhc-editorial-beans">
         {Array.from({ length: beanCount }, (_, index) => (
           <span className="hhc-editorial-bean" key={index}>
@@ -106,6 +110,7 @@ export default function EditorialCategoryNav() {
       className={`hhc-editorial-nav${hasEntered ? " is-visible" : ""}`}
       aria-label="Explore Hard House Coffee editorial collections"
     >
+      <CoffeeEntertainmentAnimation />
       <div className="hhc-editorial-nav-inner">
         <div className="hhc-editorial-grid">
           {cards.map((card) => (
