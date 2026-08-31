@@ -42,37 +42,43 @@ const cards: Array<{
   },
 ];
 
-const beanCount = 10;
+const floatingNotes = ["♪", "♫", "♩", "♪"] as const;
 
 function CoffeeEntertainmentVisual() {
-  return <div className="hhc-editorial-entertainment-visual" aria-hidden="true" />;
-}
-
-function CoffeeEntertainmentAnimation() {
   return (
-    <div className="hhc-editorial-entertainment-animation" aria-hidden="true">
-      <div className="hhc-editorial-beans">
-        {Array.from({ length: beanCount }, (_, index) => (
-          <span className="hhc-editorial-bean" key={index}>
-            <span className="hhc-editorial-bean-core" />
-          </span>
-        ))}
-      </div>
-      <div className="hhc-editorial-note-float">
-        <div className="hhc-editorial-note-sway">
-          <svg
-            className="hhc-editorial-note"
-            viewBox="0 0 120 140"
-            role="presentation"
-          >
-            <path
-              d="M78 18v77.5c-5.2-4.2-12.7-6.7-20.5-6.7-14.9 0-26.9 8.1-26.9 18.1s12 18.1 26.9 18.1 26.9-8.1 26.9-18.1V51.6l27.6-8.4V18H78Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="5"
-              strokeLinejoin="round"
-            />
-          </svg>
+    <div className="hhc-editorial-entertainment-visual" aria-hidden="true">
+      <div className="hhc-editorial-entertainment-animation">
+        <svg
+          className="hhc-editorial-treble-clef"
+          viewBox="0 0 100 160"
+          role="presentation"
+        >
+          <path
+            d="M67 8C47 18 39 35 44 50c4 13 17 21 29 15 12-6 14-20 7-29-6-8-17-10-25-5-12 7-15 24-8 38 7 15 26 24 27 45 1 20-12 34-30 34-22 0-37-14-36-31 1-14 10-25 23-25 14 0 24 10 24 23 0 13-8 23-19 28"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="5"
+          />
+          <path
+            d="M67 8c-5 31-4 67 5 102"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeWidth="5"
+          />
+        </svg>
+
+        <div className="hhc-editorial-floating-notes">
+          {floatingNotes.map((note, index) => (
+            <span
+              className={`hhc-editorial-floating-note hhc-editorial-floating-note-${index + 1}`}
+              key={`${note}-${index}`}
+            >
+              {note}
+            </span>
+          ))}
         </div>
       </div>
     </div>
@@ -110,7 +116,6 @@ export default function EditorialCategoryNav() {
       className={`hhc-editorial-nav${hasEntered ? " is-visible" : ""}`}
       aria-label="Explore Hard House Coffee editorial collections"
     >
-      <CoffeeEntertainmentAnimation />
       <div className="hhc-editorial-nav-inner">
         <div className="hhc-editorial-grid">
           {cards.map((card) => (
