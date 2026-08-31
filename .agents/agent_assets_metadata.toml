@@ -116,12 +116,12 @@ description = "AI-generated: dark ceramic mug with candle, elegant steam column,
 id = "Z3u8hNl-Bf6CoCd2oR2Ss"
 uri = "file://screenshots/coffee-entertainment-desktop.jpg"
 type = "image"
-title = "Coffee Entertainment — Desktop Preview"
-description = "Desktop Replit Preview showing the unchanged four-card editorial row and corrected approved Coffee Entertainment artwork."
+title = "Coffee Entertainment — Updated Desktop Preview"
+description = "Desktop Preview of the independent SVG artwork with static mug and treble clef, animated steam paths, and independent notes."
 
 [[outputs]]
 id = "MMbAXzcuAYAyCMoi0KQ2C"
 uri = "file://screenshots/coffee-entertainment-mobile.jpg"
 type = "image"
-title = "Coffee Entertainment — Mobile Preview"
-description = "Mobile Replit Preview showing the unchanged two-by-two editorial grid and corrected approved Coffee Entertainment artwork."
+title = "Coffee Entertainment — Updated Mobile Preview"
+description = "Mobile Preview showing the unchanged two-by-two grid and replacement independent SVG animation."
