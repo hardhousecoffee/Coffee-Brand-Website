@@ -111,3 +111,17 @@ uri = "file://artifacts/hard-house-coffee/public/images/scene-v2.jpg"
 type = "image"
 title = "Hard House Coffee — Rainy Night Coffeehouse (V2)"
 description = "AI-generated: dark ceramic mug with candle, elegant steam column, two couples, barista, globe Edison pendants, rain-streaked windows with wet city reflections."
+
+[[outputs]]
+id = "Z3u8hNl-Bf6CoCd2oR2Ss"
+uri = "file://screenshots/coffee-entertainment-desktop.jpg"
+type = "image"
+title = "Coffee Entertainment — Desktop Preview"
+description = "Desktop Replit Preview showing the unchanged four-card editorial row and corrected approved Coffee Entertainment artwork."
+
+[[outputs]]
+id = "MMbAXzcuAYAyCMoi0KQ2C"
+uri = "file://screenshots/coffee-entertainment-mobile.jpg"
+type = "image"
+title = "Coffee Entertainment — Mobile Preview"
+description = "Mobile Replit Preview showing the unchanged two-by-two editorial grid and corrected approved Coffee Entertainment artwork."
