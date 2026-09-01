@@ -2693,6 +2693,14 @@ a, button {
   border: 0;
 }
 
+.hhc-experience-player-loading {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at center, rgba(145, 103, 184, 0.12), transparent 45%),
+    #0e0a12;
+}
+
 .hhc-experience-music-room,
 .hhc-experience-video-rooms {
   margin-top: 7rem;
@@ -2726,28 +2734,61 @@ a, button {
   border-top: 1px solid rgba(193, 168, 230, 0.18);
 }
 
-.hhc-experience-session-list button {
+.hhc-experience-session-row {
+  position: relative;
   display: grid;
-  grid-template-columns: 2.4rem minmax(0, 1fr) auto;
-  gap: 0.8rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.7rem;
   align-items: center;
   width: 100%;
-  padding: 1rem 0.75rem;
-  border: 0;
   border-bottom: 1px solid rgba(193, 168, 230, 0.14);
   background: transparent;
   color: #9d91a4;
-  text-align: left;
   cursor: pointer;
-  transition: background 180ms ease, color 180ms ease, padding-left 180ms ease;
+  transition: background 220ms ease, color 220ms ease, box-shadow 260ms ease;
 }
 
-.hhc-experience-session-list button:hover,
-.hhc-experience-session-list button:focus-visible,
-.hhc-experience-session-list button.is-active {
-  padding-left: 1rem;
+.hhc-experience-session-row:hover,
+.hhc-experience-session-row:focus-within,
+.hhc-experience-session-row.is-active {
   background: rgba(118, 72, 166, 0.13);
   color: #e7ddf2;
+}
+
+.hhc-experience-session-row.is-playing {
+  background:
+    linear-gradient(90deg, rgba(148, 102, 194, 0.2), rgba(109, 70, 151, 0.08)),
+    rgba(118, 72, 166, 0.11);
+  box-shadow:
+    inset 2px 0 0 rgba(209, 181, 241, 0.7),
+    0 0 28px rgba(137, 87, 180, 0.12);
+}
+
+.hhc-experience-session-select {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: center;
+  min-width: 0;
+  padding: 1rem 0 1rem 0.75rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: padding-left 220ms ease;
+}
+
+.hhc-experience-session-row:hover .hhc-experience-session-select,
+.hhc-experience-session-row:focus-within .hhc-experience-session-select,
+.hhc-experience-session-row.is-active .hhc-experience-session-select {
+  padding-left: 1rem;
+}
+
+.hhc-experience-session-select:focus-visible,
+.hhc-experience-session-play:focus-visible {
+  outline: 2px solid rgba(219, 194, 246, 0.9);
+  outline-offset: -3px;
 }
 
 .hhc-experience-session-number {
@@ -2780,31 +2821,123 @@ a, button {
   font-size: 0.68rem;
 }
 
+.hhc-experience-session-status {
+  position: absolute;
+  right: 3.5rem;
+  bottom: 0.7rem;
+  display: inline-flex;
+  gap: 0.38rem;
+  align-items: end;
+  min-height: 0.75rem;
+  color: #bca3d7;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transition: opacity 220ms ease;
+}
+
+.hhc-experience-session-row.is-playing .hhc-experience-session-status {
+  opacity: 1;
+}
+
+.hhc-experience-equalizer {
+  display: inline-flex;
+  gap: 2px;
+  align-items: end;
+  height: 0.68rem;
+}
+
+.hhc-experience-equalizer i {
+  display: block;
+  width: 2px;
+  height: 100%;
+  border-radius: 999px;
+  background: #d5b8f2;
+  transform-origin: bottom;
+  animation: hhc-equalizer-pulse 720ms ease-in-out infinite alternate;
+}
+
+.hhc-experience-equalizer i:nth-child(2) {
+  animation-delay: -460ms;
+}
+
+.hhc-experience-equalizer i:nth-child(3) {
+  animation-delay: -240ms;
+}
+
+@keyframes hhc-equalizer-pulse {
+  0% {
+    transform: scaleY(0.3);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
 .hhc-experience-session-play {
   display: grid;
   place-items: center;
-  width: 1.85rem;
-  height: 1.85rem;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.8rem;
   border: 1px solid rgba(183, 149, 225, 0.46);
   border-radius: 50%;
+  background: transparent;
   color: #b59bd1;
-  font-size: 0.58rem;
-  line-height: 1;
+  cursor: pointer;
   transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
 }
 
-.hhc-experience-session-list button:hover .hhc-experience-session-play,
-.hhc-experience-session-list button:focus-visible .hhc-experience-session-play,
-.hhc-experience-session-list button.is-active .hhc-experience-session-play {
+.hhc-experience-session-play:hover,
+.hhc-experience-session-play:focus-visible,
+.hhc-experience-session-row.is-active .hhc-experience-session-play {
   border-color: #d0b6f3;
   background: rgba(159, 105, 212, 0.28);
   box-shadow: 0 0 16px rgba(175, 129, 229, 0.38);
   color: #fff;
 }
 
+.hhc-experience-session-row.is-playing .hhc-experience-session-play {
+  border-color: rgba(225, 205, 249, 0.9);
+  background: rgba(179, 129, 225, 0.38);
+  box-shadow: 0 0 20px rgba(175, 129, 229, 0.46);
+}
+
+.hhc-experience-play-icon {
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid currentColor;
+}
+
+.hhc-experience-pause-icon {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.hhc-experience-pause-icon i {
+  display: block;
+  width: 2px;
+  height: 8px;
+  border-radius: 1px;
+  background: currentColor;
+}
+
 .hhc-experience-music-player {
   border: 1px solid rgba(193, 168, 230, 0.16);
   background: rgba(19, 14, 24, 0.78);
+  transition: border-color 260ms ease, box-shadow 260ms ease;
+}
+
+.hhc-experience-music-player:has(.hhc-experience-music-now.is-playing) {
+  border-color: rgba(193, 168, 230, 0.34);
+  box-shadow: 0 18px 48px rgba(75, 42, 104, 0.16);
 }
 
 .hhc-experience-music-now {
@@ -2829,6 +2962,17 @@ a, button {
   font: 400 0.86rem 'Cinzel Decorative', serif;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.hhc-experience-music-now.is-playing span {
+  color: #bca3d7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hhc-experience-equalizer i {
+    animation: none;
+    transform: scaleY(0.7);
+  }
 }
 
 .hhc-experience-video-heading {
@@ -2993,6 +3137,10 @@ a, button {
   .hhc-experience-media-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .hhc-experience-music-layout {
+    grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.2fr);
+  }
 }
 
 @media (max-width: 700px) {
@@ -3011,9 +3159,11 @@ a, button {
   }
 
   .hhc-experience-tile-explore {
-    top: auto !important;
-    right: 0.75rem !important;
-    bottom: 0.7rem !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
 
   .hhc-experience-tile-explore-text {
@@ -3122,6 +3272,22 @@ a, button {
   .hhc-experience-music-now {
     grid-template-columns: 1fr;
     gap: 0.35rem;
+  }
+
+  .hhc-experience-session-select {
+    padding-top: 1.05rem;
+    padding-bottom: 1.05rem;
+  }
+
+  .hhc-experience-session-play {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.65rem;
+  }
+
+  .hhc-experience-session-status {
+    right: 3.65rem;
+    bottom: 0.78rem;
   }
 
   .hhc-experience-media-grid {

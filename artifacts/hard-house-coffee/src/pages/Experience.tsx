@@ -1,4 +1,11 @@
-import { useMemo, useState } from "react";
+import {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
@@ -38,6 +45,128 @@ function YouTubeEmbed({
   );
 }
 
+type YouTubePlayerState = -1 | 0 | 1 | 2 | 3 | 5;
+
+interface MusicPlayerHandle {
+  cue: (videoId: string) => void;
+  play: (videoId: string) => void;
+  pause: () => void;
+}
+
+const MusicYouTubePlayer = forwardRef<
+  MusicPlayerHandle,
+  {
+    media: ExperienceMedia;
+    onStateChange: (state: YouTubePlayerState) => void;
+  }
+>(function MusicYouTubePlayer({ media, onStateChange }, ref) {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const pendingActionRef = useRef<(() => void) | null>(null);
+  const stateHandlerRef = useRef(onStateChange);
+  const initialMediaRef = useRef(media);
+  const isPlayerReadyRef = useRef(false);
+
+  useEffect(() => {
+    stateHandlerRef.current = onStateChange;
+  }, [onStateChange]);
+
+  const sendPlayerMessage = (func: string, args: unknown[] = []) => {
+    iframeRef.current?.contentWindow?.postMessage(
+      JSON.stringify({ event: "command", func, args }),
+      "*",
+    );
+  };
+
+  useImperativeHandle(ref, () => ({
+    cue(videoId) {
+      const action = () => sendPlayerMessage("cueVideoById", [videoId]);
+      if (isPlayerReadyRef.current) action();
+      else pendingActionRef.current = action;
+    },
+    play(videoId) {
+      const action = () => sendPlayerMessage("loadVideoById", [videoId]);
+      if (isPlayerReadyRef.current) action();
+      else pendingActionRef.current = action;
+    },
+    pause() {
+      const action = () => sendPlayerMessage("pauseVideo");
+      if (isPlayerReadyRef.current) action();
+      else pendingActionRef.current = action;
+    },
+  }), []);
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.source !== iframeRef.current?.contentWindow) return;
+
+      let message: {
+        event?: string;
+        info?: YouTubePlayerState | { playerState?: YouTubePlayerState };
+      };
+
+      try {
+        message = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
+      } catch {
+        return;
+      }
+
+      if (message.event === "onReady") {
+        isPlayerReadyRef.current = true;
+        pendingActionRef.current?.();
+        pendingActionRef.current = null;
+      } else if (message.event === "onStateChange" && typeof message.info === "number") {
+        stateHandlerRef.current(message.info);
+      } else if (
+        message.event === "infoDelivery"
+        && typeof message.info === "object"
+        && typeof message.info?.playerState === "number"
+      ) {
+        stateHandlerRef.current(message.info.playerState);
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+
+    return () => {
+      window.removeEventListener("message", handleMessage);
+      isPlayerReadyRef.current = false;
+      pendingActionRef.current = null;
+    };
+  }, []);
+
+  const handlePlayerLoad = () => {
+    const listen = () => {
+      iframeRef.current?.contentWindow?.postMessage(
+        JSON.stringify({ event: "listening", id: "hhc-experience-music-player" }),
+        "*",
+      );
+    };
+
+    listen();
+    window.setTimeout(listen, 250);
+    window.setTimeout(listen, 750);
+  };
+
+  return (
+    <div
+      className="hhc-experience-embed"
+      aria-label={`${media.title} — ${media.creator}`}
+    >
+      <iframe
+        id="hhc-experience-music-player"
+        ref={iframeRef}
+        src={`https://www.youtube.com/embed/${initialMediaRef.current.id}?rel=0&modestbranding=1&playsinline=1&enablejsapi=1`}
+        title={`${media.title} — ${media.creator}`}
+        loading="eager"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        referrerPolicy="strict-origin-when-cross-origin"
+        onLoad={handlePlayerLoad}
+      />
+    </div>
+  );
+});
+
 function MediaCard({ media }: { media: ExperienceMedia }) {
   return (
     <article className="hhc-experience-media-card">
@@ -65,8 +194,8 @@ function MediaCard({ media }: { media: ExperienceMedia }) {
 
 export default function Experience() {
   const [activeMusicId, setActiveMusicId] = useState(experienceMusicSessions[0].id);
-  const [musicAutoplayId, setMusicAutoplayId] = useState<string | null>(null);
-  const [musicPlayRequest, setMusicPlayRequest] = useState(0);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const musicPlayerRef = useRef<MusicPlayerHandle>(null);
   const activeMusic = experienceMusicSessions.find((session) => session.id === activeMusicId) ?? experienceMusicSessions[0];
   const groupedVideos = useMemo(
     () => experienceVideoGroups.map((category) => ({
@@ -86,9 +215,31 @@ export default function Experience() {
   };
 
   const handleMusicSelect = (sessionId: string) => {
+    if (sessionId === activeMusicId) return;
+
     setActiveMusicId(sessionId);
-    setMusicAutoplayId(sessionId);
-    setMusicPlayRequest((request) => request + 1);
+    setIsMusicPlaying(false);
+    musicPlayerRef.current?.cue(sessionId);
+  };
+
+  const handleMusicToggle = (sessionId: string) => {
+    if (sessionId === activeMusicId && isMusicPlaying) {
+      setIsMusicPlaying(false);
+      musicPlayerRef.current?.pause();
+      return;
+    }
+
+    setActiveMusicId(sessionId);
+    setIsMusicPlaying(true);
+    musicPlayerRef.current?.play(sessionId);
+  };
+
+  const handleMusicPlayerState = (state: YouTubePlayerState) => {
+    if (state === 1) {
+      setIsMusicPlaying(true);
+    } else if (state === 0 || state === 2 || state === 5) {
+      setIsMusicPlaying(false);
+    }
   };
 
   return (
@@ -158,36 +309,75 @@ export default function Experience() {
             <div className="hhc-experience-subheading">
               <p className="hhc-experience-eyebrow">02 / Select a session</p>
               <h2 id="music-title">Music for the ritual.</h2>
-              <p>Choose a session below. Playback stays in the official YouTube player from its original publisher.</p>
+              <p>Select a session, then use its circular control to play or pause. Playback stays synchronized with the official YouTube player.</p>
             </div>
             <div className="hhc-experience-music-layout">
               <div className="hhc-experience-session-list" role="list" aria-label="Music sessions">
-                {experienceMusicSessions.map((session, index) => (
-                  <button
+                {experienceMusicSessions.map((session, index) => {
+                  const isSelected = activeMusic.id === session.id;
+                  const isNowPlaying = isSelected && isMusicPlaying;
+
+                  return (
+                  <div
                     key={session.id}
-                    type="button"
                     role="listitem"
-                    aria-pressed={activeMusic.id === session.id}
-                    className={activeMusic.id === session.id ? "is-active" : ""}
+                    className={`hhc-experience-session-row${isSelected ? " is-active" : ""}${isNowPlaying ? " is-playing" : ""}`}
                     onClick={() => handleMusicSelect(session.id)}
                   >
-                    <span className="hhc-experience-session-number">0{index + 1}</span>
-                    <span className="hhc-experience-session-title">
-                      <strong>{session.title}</strong>
-                      <small>{session.creator}</small>
+                    <button
+                      type="button"
+                      className="hhc-experience-session-select"
+                      aria-pressed={isSelected}
+                    >
+                      <span className="hhc-experience-session-number">0{index + 1}</span>
+                      <span className="hhc-experience-session-title">
+                        <strong>{session.title}</strong>
+                        <small>{session.creator}</small>
+                      </span>
+                    </button>
+                    <span className="hhc-experience-session-status" aria-hidden={!isNowPlaying}>
+                      {isNowPlaying && (
+                        <>
+                          <span className="hhc-experience-equalizer" aria-hidden="true">
+                            <i />
+                            <i />
+                            <i />
+                          </span>
+                          <span>Now playing</span>
+                        </>
+                      )}
                     </span>
-                    <span className="hhc-experience-session-play" aria-hidden="true">▶</span>
-                  </button>
-                ))}
+                    <button
+                      type="button"
+                      className="hhc-experience-session-play"
+                      aria-label={`${isNowPlaying ? "Pause" : "Play"} ${session.title}`}
+                      aria-pressed={isNowPlaying}
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        handleMusicToggle(session.id);
+                      }}
+                    >
+                      {isNowPlaying ? (
+                        <span className="hhc-experience-pause-icon" aria-hidden="true">
+                          <i />
+                          <i />
+                        </span>
+                      ) : (
+                        <span className="hhc-experience-play-icon" aria-hidden="true" />
+                      )}
+                    </button>
+                  </div>
+                  );
+                })}
               </div>
               <div className="hhc-experience-music-player">
-                <YouTubeEmbed
+                <MusicYouTubePlayer
+                  ref={musicPlayerRef}
                   media={musicAsMedia}
-                  autoplay={musicAutoplayId === activeMusicId}
-                  playerKey={`${musicAsMedia.id}-${musicPlayRequest}`}
+                  onStateChange={handleMusicPlayerState}
                 />
-                <div className="hhc-experience-music-now">
-                  <span>Now selected</span>
+                <div className={`hhc-experience-music-now${isMusicPlaying ? " is-playing" : ""}`} aria-live="polite">
+                  <span>{isMusicPlaying ? "Now playing" : "Ready to play"}</span>
                   <strong>{activeMusic.title}</strong>
                   <small>{activeMusic.mood}</small>
                 </div>
