@@ -59,30 +59,35 @@ id = "tEdxxz1v18JkuFIWilY_z"
 uri = "file://hard-house-coffee-hostinger.zip"
 type = "unspecified"
 title = "Hard House Coffee — Hostinger Upload Package"
+logical_id = "559edf8c-5ebb-428b-a2a3-01ace72b45f2"
 
 [[outputs]]
 id = "WDPGcZfQk5vbhTKj8y0gs"
 uri = "file://artifacts/hard-house-coffee/public/images/logo-simplified.png"
 type = "image"
 title = "Hard House Coffee — Simplified Logo"
+logical_id = "475cb669-d775-4b94-95cf-3234e1529912"
 
 [[outputs]]
 id = "z6ueA5bePpZZVSAe0TSCw"
 uri = "file://attached_assets/MR_ROAST_DEFTONE_STYLUS_FONT.png"
 type = "image"
 title = "Mr. Roast — PNG"
+logical_id = "f413c9b7-97a2-419e-8809-47226e78921d"
 
 [[outputs]]
 id = "TihVJATLCadbiCBvj7ij0"
 uri = "file://attached_assets/MR_ROAST_DEFTONE_STYLUS_FONT_transparent.png"
 type = "image"
 title = "Mr. Roast — Transparent PNG (crisp)"
+logical_id = "c94e740d-d52e-45aa-89f3-f72b0303f8ba"
 
 [[outputs]]
 id = "r_Zd4GLkTLIp53HgM3tZs"
 uri = "file://attached_assets/mr_roast_deftone.png"
 type = "image"
 title = "Mr. Roast — Deftone Stylus, Transparent PNG"
+logical_id = "9aa64c06-211a-4148-87cc-7ec207bd971f"
 
 [[outputs]]
 id = "0l1AYXFmas5wHuWKLuKCO"
@@ -90,6 +95,7 @@ uri = "file://artifacts/hard-house-coffee/public/images/coffeehouse-scene.jpg"
 type = "image"
 title = "Hard House Coffee — Coffeehouse Scene"
 description = "AI-generated rainy night coffeehouse interior. Two couples, barista, Edison pendant lights, rain-streaked windows, steaming coffee mug."
+logical_id = "cc535c46-c5f8-4096-b192-db2cc9af90fa"
 
 [[outputs]]
 id = "TuLNcVmAnJy05T17V0Yq7"
@@ -97,6 +103,7 @@ uri = "file://artifacts/hard-house-coffee/public/images/coffeehouse-scene-16x9.j
 type = "image"
 title = "Hard House Coffee — Coffeehouse Scene (16:9 Cinematic)"
 description = "1024×576 widescreen crop. AI-generated rainy night coffeehouse — two couples, barista, Edison lights, rain-streaked windows, steaming coffee mug."
+logical_id = "e47cf3a3-c7a6-4af3-99c6-d1e54ce926b1"
 
 [[outputs]]
 id = "UCHvBrIuiVchj52REFVLA"
@@ -104,6 +111,7 @@ uri = "file://artifacts/hard-house-coffee/public/images/hhc-mug-c.jpg"
 type = "image"
 title = "Hard House Coffee — HHC Mug Scene (Cinematic)"
 description = "AI-generated: matte black mug with gold HHC, dramatic steam, candle, barista, two couples, rain-streaked windows. Winning variation C."
+logical_id = "94e24885-b1d1-4b0d-ad58-ffa1d79f25bc"
 
 [[outputs]]
 id = "dwIJm_xJ-jtGnnZwc5MA3"
@@ -111,6 +119,7 @@ uri = "file://artifacts/hard-house-coffee/public/images/scene-v2.jpg"
 type = "image"
 title = "Hard House Coffee — Rainy Night Coffeehouse (V2)"
 description = "AI-generated: dark ceramic mug with candle, elegant steam column, two couples, barista, globe Edison pendants, rain-streaked windows with wet city reflections."
+logical_id = "8341b774-613a-4f1b-917b-03e6710ef24b"
 
 [[outputs]]
 id = "Z3u8hNl-Bf6CoCd2oR2Ss"
@@ -118,6 +127,7 @@ uri = "file://screenshots/coffee-entertainment-desktop.jpg"
 type = "image"
 title = "Original Animated Coffee Entertainment — Desktop"
 description = "Desktop Preview of the from-scratch SVG mug, HHC emblem, treble clef, animated steam, and floating notes."
+logical_id = "0e655f66-4295-4dfd-ab0a-0608e2925e68"
 
 [[outputs]]
 id = "MMbAXzcuAYAyCMoi0KQ2C"
@@ -125,3 +135,32 @@ uri = "file://screenshots/coffee-entertainment-mobile.jpg"
 type = "image"
 title = "Original Animated Coffee Entertainment — Mobile"
 description = "Mobile Preview of the original SVG artwork in the unchanged two-by-two editorial grid."
+logical_id = "05cea674-f1b7-4ec3-8c89-7a10772eb43e"
+
+[[outputs]]
+id = "BW_tczrGrnlUT5EXxE3i_"
+uri = "file://screenshots/coffee-lounge-desktop.jpg"
+type = "image"
+title = "Coffee Lounge — Desktop Preview"
+description = "Desktop capture of the new hidden Lounge experience."
+logical_id = "6f283265-7ac2-4e5b-9f1e-f4f3aed402a4"
+content_hash = "sha256:977c73f39f0ee3eb8d4a095feae4e5e2be7e72c64addb3cfe16f9e7af6169130"
+size = 115858
+mtime_ms = 1788240673827
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/6f283265-7ac2-4e5b-9f1e-f4f3aed402a4/6a30fe6a-a934-4af3-89eb-25cc2779ab8e"
+storage_version_token = "1788240949907632"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "6ej1-BlqViAgf-Yf0NuJq"
+uri = "file://screenshots/coffee-lounge-mobile.jpg"
+type = "image"
+title = "Coffee Lounge — Mobile Preview"
+description = "Mobile capture of the responsive Lounge hero."
+logical_id = "6d865980-97d6-47b5-b7cc-3120af0e4483"
+content_hash = "sha256:d61ff76714fb8906dfcd55f099366c4c5f9dba45454faf384b5385df8cfff01c"
+size = 40781
+mtime_ms = 1788240677439
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/6d865980-97d6-47b5-b7cc-3120af0e4483/e7646be9-472f-4b08-8028-184167d83e57"
+storage_version_token = "1788240950620587"
+content_type = "image/jpeg"

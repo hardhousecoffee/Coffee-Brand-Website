@@ -494,6 +494,11 @@ export default function Home() {
               <Link href="/products">
                 <button className="btn-secondary">Shop</button>
               </Link>
+                <Link href="/lounge">
+                  <button className="lounge-entry-button">
+                    <span aria-hidden="true">▶</span> Enter The Lounge
+                  </button>
+                </Link>
             </div>
           </div>
         </div>

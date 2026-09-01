@@ -38,7 +38,7 @@ const cards: Array<{
     id: "coffee-entertainment",
     title: "Coffee Entertainment",
     description: "Music, culture, and the lifestyle that inspires us.",
-    href: "/blog?collection=coffee-entertainment",
+    href: "/lounge",
   },
 ];
 
@@ -217,7 +217,7 @@ export default function EditorialCategoryNav() {
                 <h2>{card.title}</h2>
                 <p>{card.description}</p>
                 <span className="hhc-editorial-card-cta" aria-hidden="true">
-                  Explore <span>→</span>
+                  {card.id === "coffee-entertainment" ? "Enter The Lounge" : "Explore"} <span>→</span>
                 </span>
               </div>
             </Link>
