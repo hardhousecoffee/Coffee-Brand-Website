@@ -11,18 +11,18 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const heroSlides = [
   { src: "/images/cafe-alley.jpg", alt: "Hero Cafe Alley" },
-  { src: "/images/aroma-beans.jpg", alt: "Aroma Coffee Beans" },
-  { src: "/images/dark-latte.jpg", alt: "Dark Latte" },
-  { src: "/images/bar-mug.jpg", alt: "Coffee at Bar" },
-  { src: "/images/steamy-mug.jpg", alt: "Steamy Mug" },
   { src: "/images/hero-barista-pour.jpg", alt: "Barista Pouring Coffee" },
-  { src: "/images/carousel-neon-coffee.jpg", alt: "Neon Coffee Sign" },
-  { src: "/images/carousel-man-drinking.jpg", alt: "Man Drinking Coffee" },
-  { src: "/images/hero-coffee-portrait.png", alt: "Coffee Portrait" },
-  { src: "/images/carousel-black-cafe.jpg", alt: "Black Cafe Exterior" },
+  { src: "/images/aroma-beans.jpg", alt: "Aroma Coffee Beans" },
   { src: "/images/hero-coffee-community.jpg", alt: "Coffee Community" },
+  { src: "/images/dark-latte.jpg", alt: "Dark Latte" },
+  { src: "/images/carousel-man-drinking.jpg", alt: "Man Drinking Coffee" },
+  { src: "/images/bar-mug.jpg", alt: "Coffee at Bar" },
   { src: "/images/hero-park-coffee.png", alt: "Coffee in the Park" },
+  { src: "/images/steamy-mug.jpg", alt: "Steamy Mug" },
+  { src: "/images/hero-coffee-portrait.png", alt: "Coffee Portrait" },
+  { src: "/images/carousel-neon-coffee.jpg", alt: "Neon Coffee Sign" },
   { src: "/images/carousel-woman-teapot.jpg", alt: "Woman with Teapot" },
+  { src: "/images/carousel-black-cafe.jpg", alt: "Black Cafe Exterior" },
 ];
 
 const experienceTiles = [
