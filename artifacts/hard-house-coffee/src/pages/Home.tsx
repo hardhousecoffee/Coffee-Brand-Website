@@ -69,7 +69,7 @@ const experienceTiles = [
   },
   {
     src: "/images/atmosphere-cafe.png",
-    label: "Jazz & Coffee",
+    label: "Atmosphere",
     modal: {
       title: "THE HARD HOUSE JAZZ FEEL",
       text: "It's not just about coffee. It's about how it feels. The glow of the room, the smell of fresh grounds, the first sip, and the quiet moment before the day starts.",
@@ -574,7 +574,7 @@ export default function Home() {
                 onClick={() => openTile(idx)}
                 style={{
                   borderRadius: "8px",
-                   border: item.label === "Jazz & Coffee"
+                   border: item.src === "/images/atmosphere-cafe.png"
                      ? "1px solid rgba(185,164,255,0.28)"
                      : "1px solid rgba(161,79,31,0.2)",
                   aspectRatio: "3/4",
@@ -585,14 +585,14 @@ export default function Home() {
                   width: "100%",
                 }}
                 onMouseEnter={(e) => {
-                   (e.currentTarget as HTMLElement).style.borderColor = item.label === "Jazz & Coffee"
+                    (e.currentTarget as HTMLElement).style.borderColor = item.src === "/images/atmosphere-cafe.png"
                      ? "rgba(205,188,255,0.82)"
                      : "rgba(161,79,31,0.65)";
                   const img = (e.currentTarget as HTMLElement).querySelector("img") as HTMLElement;
                   if (img) img.style.transform = "scale(1.05)";
                 }}
                 onMouseLeave={(e) => {
-                   (e.currentTarget as HTMLElement).style.borderColor = item.label === "Jazz & Coffee"
+                    (e.currentTarget as HTMLElement).style.borderColor = item.src === "/images/atmosphere-cafe.png"
                      ? "rgba(185,164,255,0.28)"
                      : "rgba(161,79,31,0.2)";
                   const img = (e.currentTarget as HTMLElement).querySelector("img") as HTMLElement;
@@ -608,7 +608,7 @@ export default function Home() {
                   <div
                     className="hhc-experience-tile-overlay absolute inset-0"
                   style={{
-                     background: item.label === "Jazz & Coffee"
+                     background: item.src === "/images/atmosphere-cafe.png"
                        ? "linear-gradient(to bottom, rgba(8,5,18,0.8) 0%, transparent 48%, rgba(8,5,18,0.24) 100%)"
                        : "linear-gradient(to bottom, rgba(11,11,11,0.7) 0%, transparent 48%, rgba(11,11,11,0.92) 100%)",
                   }}
@@ -620,8 +620,8 @@ export default function Home() {
                       onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = "#f2f2f2"; el.style.textShadow = "0 0 10px rgba(242,242,242,0.7), 0 0 20px rgba(212,184,150,0.45)"; }}
                        onMouseLeave={(e) => {
                          const el = e.currentTarget as HTMLElement;
-                         el.style.color = item.label === "Jazz & Coffee" ? "#d1c2ff" : "#ff6a00";
-                         el.style.textShadow = item.label === "Jazz & Coffee"
+                          el.style.color = item.src === "/images/atmosphere-cafe.png" ? "#d1c2ff" : "#ff6a00";
+                          el.style.textShadow = item.src === "/images/atmosphere-cafe.png"
                            ? "0 0 12px rgba(197,171,255,0.72)"
                            : "0 0 8px rgba(255,106,0,0.6)";
                        }}
@@ -629,12 +629,12 @@ export default function Home() {
                        className="read-more-hint hhc-experience-tile-explore-text"
                       style={{
                         fontSize: "1.1rem",
-                         color: item.label === "Jazz & Coffee" ? "#d1c2ff" : "#ff6a00",
-                         textShadow: item.label === "Jazz & Coffee"
+                          color: item.src === "/images/atmosphere-cafe.png" ? "#d1c2ff" : "#ff6a00",
+                          textShadow: item.src === "/images/atmosphere-cafe.png"
                            ? "0 0 12px rgba(197,171,255,0.72)"
                            : "0 0 8px rgba(255,106,0,0.6)",
                         letterSpacing: "0.1em",
-                         opacity: item.label === "Jazz & Coffee" ? 0.88 : 0,
+                         opacity: item.src === "/images/atmosphere-cafe.png" ? 0.88 : 0,
                          transform: "translateX(6px)",
                         transition: "opacity 0.3s ease, transform 0.3s ease",
                         fontWeight: 700,
@@ -657,8 +657,8 @@ export default function Home() {
                       fontFamily: "'Cinzel Decorative', serif",
                       fontSize: "0.91rem",
                       letterSpacing: "0.15em",
-                       color: item.label === "Jazz & Coffee" ? "#d1c2ff" : "#ff6a00",
-                       textShadow: item.label === "Jazz & Coffee"
+                        color: item.src === "/images/atmosphere-cafe.png" ? "#d1c2ff" : "#ff6a00",
+                        textShadow: item.src === "/images/atmosphere-cafe.png"
                          ? "0 0 12px rgba(197,171,255,0.78)"
                          : "0 0 8px rgba(255,106,0,0.55)",
                       textTransform: "uppercase",
@@ -669,11 +669,6 @@ export default function Home() {
                   >
                      {item.label}
                   </p>
-                   {item.label === "Jazz & Coffee" && (
-                     <p className="hhc-jazz-card-description">
-                       Atmosphere
-                     </p>
-                   )}
                 </div>
               </button>
             ))}
