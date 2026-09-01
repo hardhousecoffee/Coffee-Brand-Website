@@ -1147,69 +1147,62 @@ a, button {
   background: #05010b;
 }
 
-.hhc-editorial-entertainment-base {
+.hhc-editorial-entertainment-artwork {
   position: absolute;
-  inset: 0;
-  z-index: 0;
+  inset: -0.7rem 0 0;
+  z-index: 2;
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hhc-editorial-entertainment-animation {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+  height: calc(100% + 0.7rem);
   overflow: visible;
   pointer-events: none;
 }
 
-.hhc-editorial-entertainment-overlay {
-  position: absolute;
-  inset: -0.35rem 0 0;
-  display: block;
-  width: 100%;
-  height: calc(100% + 0.35rem);
-  overflow: visible;
+.hhc-editorial-entertainment-clef,
+.hhc-editorial-entertainment-cup {
+  transform: none;
 }
 
-.hhc-editorial-entertainment-steam-overlay-path {
+.hhc-editorial-entertainment-steam-path {
   transform-box: fill-box;
   transform-origin: center bottom;
-  stroke-dasharray: 48 8 34 7;
-  opacity: 0.2;
+  stroke-dasharray: 72 9 48 8;
+  opacity: 0.68;
   will-change: opacity, transform, stroke-dashoffset;
 }
 
-.hhc-editorial-entertainment-floating-note {
+.hhc-editorial-entertainment-note {
   opacity: 0;
   transform-box: fill-box;
   transform-origin: center;
   will-change: opacity, transform;
 }
 
-.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-steam-overlay-path-one {
+.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-steam-path-one {
   animation: hhc-editorial-entertainment-overlay-steam-left 4.8s ease-in-out infinite;
 }
 
-.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-steam-overlay-path-two {
+.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-steam-path-two {
   animation: hhc-editorial-entertainment-overlay-steam-center 5.2s -1.1s ease-in-out infinite;
 }
 
-.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-steam-overlay-path-three {
+.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-steam-path-three {
   animation: hhc-editorial-entertainment-overlay-steam-right 4.9s -2s ease-in-out infinite;
 }
 
-.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-floating-note-one {
+.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-steam-path-four {
+  animation: hhc-editorial-entertainment-overlay-steam-right 5.4s -0.7s ease-in-out infinite reverse;
+}
+
+.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-note-one {
   animation: hhc-editorial-entertainment-floating-note-left 4.6s 0.4s ease-in-out infinite;
 }
 
-.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-floating-note-two {
+.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-note-two {
   animation: hhc-editorial-entertainment-floating-note-right 5s 2.1s ease-in-out infinite;
 }
 
-.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-floating-note-three {
+.hhc-editorial-nav.is-visible .hhc-editorial-entertainment-note-three {
   animation: hhc-editorial-entertainment-floating-note-soft 4.8s 1.6s ease-in-out infinite;
 }
 
@@ -1355,12 +1348,12 @@ a, button {
 
 @keyframes hhc-editorial-entertainment-overlay-steam-left {
   0%, 100% {
-    opacity: 0.14;
+    opacity: 0.54;
     stroke-dashoffset: 0;
     transform: scaleX(0.99) skewX(-0.4deg);
   }
   50% {
-    opacity: 0.27;
+    opacity: 0.9;
     stroke-dashoffset: -12;
     transform: scaleX(1.015) skewX(0.55deg);
   }
@@ -1368,12 +1361,12 @@ a, button {
 
 @keyframes hhc-editorial-entertainment-overlay-steam-center {
   0%, 100% {
-    opacity: 0.16;
+    opacity: 0.62;
     stroke-dashoffset: -4;
     transform: scaleX(0.99) skewX(0.45deg);
   }
   50% {
-    opacity: 0.3;
+    opacity: 0.96;
     stroke-dashoffset: -15;
     transform: scaleX(1.02) skewX(-0.65deg);
   }
@@ -1381,12 +1374,12 @@ a, button {
 
 @keyframes hhc-editorial-entertainment-overlay-steam-right {
   0%, 100% {
-    opacity: 0.12;
+    opacity: 0.48;
     stroke-dashoffset: -8;
     transform: scaleX(1.015) skewX(0.55deg);
   }
   50% {
-    opacity: 0.24;
+    opacity: 0.84;
     stroke-dashoffset: -18;
     transform: scaleX(0.985) skewX(-0.45deg);
   }
@@ -1571,7 +1564,7 @@ a, button {
   }
 
   .hhc-editorial-entertainment-note {
-    opacity: 0.8;
+    opacity: 0;
     transform: none;
   }
 

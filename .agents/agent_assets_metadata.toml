@@ -116,12 +116,12 @@ description = "AI-generated: dark ceramic mug with candle, elegant steam column,
 id = "Z3u8hNl-Bf6CoCd2oR2Ss"
 uri = "file://screenshots/coffee-entertainment-desktop.jpg"
 type = "image"
-title = "Approved Coffee Entertainment — Desktop Preview"
-description = "Desktop Preview using the exact approved artwork with overlay-only steam and floating-note animation."
+title = "Original Animated Coffee Entertainment — Desktop"
+description = "Desktop Preview of the from-scratch SVG mug, HHC emblem, treble clef, animated steam, and floating notes."
 
 [[outputs]]
 id = "MMbAXzcuAYAyCMoi0KQ2C"
 uri = "file://screenshots/coffee-entertainment-mobile.jpg"
 type = "image"
-title = "Approved Coffee Entertainment — Mobile Preview"
-description = "Mobile 2×2 grid Preview using the exact approved artwork with overlay-only animation."
+title = "Original Animated Coffee Entertainment — Mobile"
+description = "Mobile Preview of the original SVG artwork in the unchanged two-by-two editorial grid."
