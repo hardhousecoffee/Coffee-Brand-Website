@@ -339,7 +339,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2" }}>
+    <div className="hhc-home-page min-h-screen" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2" }}>
       <Helmet>
         <title>Hard House Coffee | Coffee Culture, Barista Lifestyle & Brewing Inspiration</title>
         <meta name="description" content="Hard House Coffee — your home for coffee culture, barista lifestyle, espresso gear reviews, brewing guides, and bean recommendations. Elevate every cup with expert insight and bold inspiration." />
@@ -571,7 +571,8 @@ export default function Home() {
             {experienceTiles.map((item, idx) => (
               <button
                 key={idx}
-                className="group relative overflow-hidden text-left"
+                className="hhc-experience-tile group relative overflow-hidden text-left"
+                onClick={() => openTile(idx)}
                 style={{
                   borderRadius: "8px",
                    border: item.label === "Jazz & Coffee"
@@ -605,8 +606,8 @@ export default function Home() {
                   className="w-full h-full object-cover"
                   style={{ transition: "transform 0.6s ease", display: "block" }}
                 />
-                <div
-                  className="absolute inset-0"
+                  <div
+                    className="hhc-experience-tile-overlay absolute inset-0"
                   style={{
                      background: item.label === "Jazz & Coffee"
                        ? "linear-gradient(to bottom, rgba(8,5,18,0.8) 0%, transparent 48%, rgba(8,5,18,0.24) 100%)"
@@ -614,7 +615,7 @@ export default function Home() {
                   }}
                 >
                   {/* Explore — top right, appears on hover */}
-                  <div style={{ position: "absolute", top: "0.95rem", right: "1rem", zIndex: 10 }}>
+                    <div className="hhc-experience-tile-explore" style={{ position: "absolute", top: "0.95rem", right: "1rem", zIndex: 10 }}>
                     <p
                       onClick={(e) => { e.stopPropagation(); openTile(idx); }}
                       onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = "#f2f2f2"; el.style.textShadow = "0 0 10px rgba(242,242,242,0.7), 0 0 20px rgba(212,184,150,0.45)"; }}
@@ -626,7 +627,7 @@ export default function Home() {
                            : "0 0 8px rgba(255,106,0,0.6)";
                        }}
                       onTouchStart={(e) => { e.preventDefault(); openTile(idx); }}
-                      className="read-more-hint"
+                       className="read-more-hint hhc-experience-tile-explore-text"
                       style={{
                         fontSize: "1.1rem",
                          color: item.label === "Jazz & Coffee" ? "#d1c2ff" : "#ff6a00",
@@ -649,6 +650,7 @@ export default function Home() {
                   </div>
                    {/* Label — top left, kept clear of the photography */}
                   <p
+                     className="hhc-experience-tile-label"
                     style={{
                       position: "absolute",
                        top: "1rem",
