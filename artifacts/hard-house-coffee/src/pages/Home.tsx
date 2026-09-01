@@ -294,7 +294,6 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [activeExperience, setActiveExperience] = useState<number | null>(null);
-  const [showAtmosphereVideo, setShowAtmosphereVideo] = useState(false);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -305,7 +304,6 @@ export default function Home() {
   const closeTile = () => {
     closeTimerRef.current = setTimeout(() => {
       setActiveExperience(null);
-      setShowAtmosphereVideo(false);
     }, 200);
   };
   const keepOpen = () => {
@@ -314,7 +312,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") { setActiveExperience(null); setShowAtmosphereVideo(false); }
+      if (e.key === "Escape") setActiveExperience(null);
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
@@ -615,8 +613,8 @@ export default function Home() {
                        : "linear-gradient(to bottom, rgba(11,11,11,0.7) 0%, transparent 48%, rgba(11,11,11,0.92) 100%)",
                   }}
                 >
-                  {/* Explore — centered, appears on hover */}
-                  <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", zIndex: 10 }}>
+                  {/* Explore — top right, appears on hover */}
+                  <div style={{ position: "absolute", top: "0.95rem", right: "1rem", zIndex: 10 }}>
                     <p
                       onClick={(e) => { e.stopPropagation(); openTile(idx); }}
                       onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = "#f2f2f2"; el.style.textShadow = "0 0 10px rgba(242,242,242,0.7), 0 0 20px rgba(212,184,150,0.45)"; }}
@@ -636,8 +634,8 @@ export default function Home() {
                            ? "0 0 12px rgba(197,171,255,0.72)"
                            : "0 0 8px rgba(255,106,0,0.6)",
                         letterSpacing: "0.1em",
-                        opacity: 0,
-                        transform: "translateY(6px)",
+                         opacity: item.label === "Jazz & Coffee" ? 0.88 : 0,
+                         transform: "translateX(6px)",
                         transition: "opacity 0.3s ease, transform 0.3s ease",
                         fontWeight: 700,
                         userSelect: "none",
@@ -670,6 +668,11 @@ export default function Home() {
                   >
                     {item.label}
                   </p>
+                   {item.label === "Jazz & Coffee" && (
+                     <p className="hhc-jazz-card-description">
+                       Jazz sessions, café culture, and atmosphere.
+                     </p>
+                   )}
                 </div>
               </button>
             ))}
@@ -772,7 +775,7 @@ export default function Home() {
                   >
                     {/* Close */}
                     <button
-                      onClick={() => { setActiveExperience(null); setShowAtmosphereVideo(false); }}
+                      onClick={() => setActiveExperience(null)}
                       style={{
                         alignSelf: "flex-end",
                         background: "rgba(161,79,31,0.12)",
@@ -804,184 +807,40 @@ export default function Home() {
                       ✕
                     </button>
 
-                    {/* Video player — shown only for Atmosphere after clicking the button */}
-                    {showAtmosphereVideo && (m.videoId || m.videoSrc) ? (
+                    {m.videoId ? (
                       <>
-                        <h3
-                          style={{
-                            fontFamily: "'Cinzel Decorative', serif",
-                            fontSize: "0.95rem",
-                            color: "#f2f2f2",
-                            lineHeight: 1.4,
-                            marginTop: "-0.4rem",
-                          }}
-                        >
-                          {m.title}
-                        </h3>
-                        <div
-                          style={{
-                            position: "relative",
-                            width: "100%",
-                            borderRadius: "10px",
-                            overflow: "hidden",
-                            border: "1px solid rgba(161,79,31,0.35)",
-                            background: "#0b0b0b",
-                            flexShrink: 0,
-                          }}
-                        >
-                          {m.videoSrc ? (
-                            <video
-                              src={m.videoSrc}
-                              autoPlay
-                              controls
-                              playsInline
-                              style={{
-                                width: "100%",
-                                display: "block",
-                                borderRadius: "10px",
-                              }}
-                            />
-                          ) : (
-                            <div style={{ position: "relative", paddingBottom: "56.25%" }}>
-                              <iframe
-                                src={`https://www.youtube.com/embed/${m.videoId}?autoplay=1&rel=0&modestbranding=1`}
-                                title="The Hard House Experience"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                style={{
-                                  position: "absolute",
-                                  top: 0,
-                                  left: 0,
-                                  width: "100%",
-                                  height: "100%",
-                                  border: "none",
-                                }}
-                              />
-                            </div>
-                          )}
-                        </div>
-                        {/* Back + nav buttons + social icons */}
-                        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "0.6rem", marginTop: "auto" }}>
-                          {/* Back */}
-                          <button
-                            onClick={() => setShowAtmosphereVideo(false)}
-                            style={{
-                              background: "transparent",
-                              border: "1px solid rgba(161,79,31,0.3)",
-                              borderRadius: "5px",
-                              color: "#a89880",
-                              fontSize: "0.72rem",
-                              cursor: "pointer",
-                              letterSpacing: "0.08em",
-                              padding: "0.3rem 0.7rem",
-                              textTransform: "uppercase",
-                              fontWeight: 600,
-                              transition: "all 0.2s",
-                            }}
-                            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#a14f1f"; el.style.color = "#d4b896"; }}
-                            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(161,79,31,0.3)"; el.style.color = "#a89880"; }}
-                          >
-                            <span style={{ marginRight: "0.3rem" }}>←</span>Back
-                          </button>
-
-                          {/* Blog */}
-                          <Link href="/blog">
+                        <div className="hhc-jazz-invitation" aria-label="Enter The Lounge">
+                          <p className="hhc-jazz-invitation-kicker">A private room for the senses</p>
+                          <h3>ENTER THE LOUNGE</h3>
+                          <Link href="/experience">
                             <button
-                              onClick={() => { setActiveExperience(null); setShowAtmosphereVideo(false); window.scrollTo(0,0); }}
-                              style={{
-                                background: "transparent",
-                                border: "1px solid rgba(161,79,31,0.3)",
-                                borderRadius: "5px",
-                                color: "#a89880",
-                                fontSize: "0.72rem",
-                                cursor: "pointer",
-                                letterSpacing: "0.08em",
-                                padding: "0.3rem 0.7rem",
-                                textTransform: "uppercase",
-                                fontWeight: 600,
-                                transition: "all 0.2s",
-                              }}
-                              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = "#a14f1f"; el.style.borderColor = "#c06020"; el.style.color = "#fff"; }}
-                              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = "transparent"; el.style.borderColor = "rgba(161,79,31,0.3)"; el.style.color = "#a89880"; }}
+                              type="button"
+                              className="hhc-jazz-play-button"
+                              aria-label="Enter The Lounge"
+                              onClick={() => { setActiveExperience(null); window.scrollTo(0, 0); }}
                             >
-                              Blog
+                              <span aria-hidden="true">▶</span>
                             </button>
                           </Link>
-
-                          {/* Shop */}
-                          <Link href="/products">
-                            <button
-                              onClick={() => { setActiveExperience(null); setShowAtmosphereVideo(false); window.scrollTo(0,0); }}
-                              style={{
-                                background: "transparent",
-                                border: "1px solid rgba(161,79,31,0.3)",
-                                borderRadius: "5px",
-                                color: "#a89880",
-                                fontSize: "0.72rem",
-                                cursor: "pointer",
-                                letterSpacing: "0.08em",
-                                padding: "0.3rem 0.7rem",
-                                textTransform: "uppercase",
-                                fontWeight: 600,
-                                transition: "all 0.2s",
-                              }}
-                              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = "#a14f1f"; el.style.borderColor = "#c06020"; el.style.color = "#fff"; }}
-                              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = "transparent"; el.style.borderColor = "rgba(161,79,31,0.3)"; el.style.color = "#a89880"; }}
+                          <p className="hhc-jazz-invitation-hint">Open the full coffee experience</p>
+                          <div className="hhc-jazz-invitation-socials" aria-label="Hard House Coffee social links">
+                            <a
+                              href="https://www.instagram.com/hardhousecoffee.official?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="Instagram"
                             >
-                              Shop
-                            </button>
-                          </Link>
-
-                          {/* Divider */}
-                          <div style={{ width: "1px", height: "20px", background: "rgba(161,79,31,0.2)", margin: "0 0.1rem" }} />
-
-                          {/* Instagram */}
-                          <a
-                            href="https://www.instagram.com/hardhousecoffee.official?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              width: "30px",
-                              height: "30px",
-                              borderRadius: "50%",
-                              border: "1px solid rgba(161,79,31,0.3)",
-                              color: "#a89880",
-                              transition: "all 0.2s",
-                              flexShrink: 0,
-                            }}
-                            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#a14f1f"; el.style.color = "#d4b896"; el.style.background = "rgba(161,79,31,0.12)"; }}
-                            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(161,79,31,0.3)"; el.style.color = "#a89880"; el.style.background = "transparent"; }}
-                            aria-label="Instagram"
-                          >
-                            <FaInstagram size={14} />
-                          </a>
-
-                          {/* TikTok */}
-                          <a
-                            href="https://www.tiktok.com/@hardhousecoffee?_r=1&_t=ZP-96W4w42enMc"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              width: "30px",
-                              height: "30px",
-                              borderRadius: "50%",
-                              border: "1px solid rgba(161,79,31,0.3)",
-                              color: "#a89880",
-                              transition: "all 0.2s",
-                              flexShrink: 0,
-                            }}
-                            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#a14f1f"; el.style.color = "#d4b896"; el.style.background = "rgba(161,79,31,0.12)"; }}
-                            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(161,79,31,0.3)"; el.style.color = "#a89880"; el.style.background = "transparent"; }}
-                            aria-label="TikTok"
-                          >
-                            <FaTiktok size={13} />
-                          </a>
+                              <FaInstagram size={13} />
+                            </a>
+                            <a
+                              href="https://www.tiktok.com/@hardhousecoffee?_r=1&_t=ZP-96W4w42enMc"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="TikTok"
+                            >
+                              <FaTiktok size={12} />
+                            </a>
+                          </div>
                         </div>
                       </>
                     ) : (
@@ -1049,27 +908,7 @@ export default function Home() {
 
                         {/* CTA button */}
                         <div style={{ marginTop: "auto" }}>
-                          {(m.videoId || m.videoSrc) ? (
-                             <div className="hhc-jazz-modal-actions">
-                               {tile.label === "Jazz & Coffee" && (
-                                 <Link href="/experience">
-                                   <button
-                                     onClick={() => { setActiveExperience(null); setShowAtmosphereVideo(false); window.scrollTo(0, 0); }}
-                                     className="hhc-lounge-modal-button"
-                                   >
-                                     <span aria-hidden="true">▶</span> ENTER THE LOUNGE
-                                   </button>
-                                 </Link>
-                               )}
-                               <button
-                                 onClick={() => setShowAtmosphereVideo(true)}
-                                 className="btn-primary"
-                                 style={{ fontSize: "0.74rem", letterSpacing: "0.1em", padding: "0.6rem 1.1rem", alignSelf: "flex-start" }}
-                               >
-                                 {tile.label === "Jazz & Coffee" ? "Watch The Jazz Session" : m.buttonLabel}
-                               </button>
-                             </div>
-                          ) : m.buttonHref ? (
+                          {m.buttonHref ? (
                             <Link href={m.buttonHref}>
                               <button
                                 onClick={() => setActiveExperience(null)}
@@ -1081,7 +920,7 @@ export default function Home() {
                             </Link>
                           ) : (
                             <button
-                              onClick={() => { setActiveExperience(null); setShowAtmosphereVideo(false); }}
+                               onClick={() => setActiveExperience(null)}
                               className="btn-primary"
                               style={{ width: "100%", fontSize: "0.74rem", letterSpacing: "0.1em" }}
                             >

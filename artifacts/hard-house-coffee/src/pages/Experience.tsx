@@ -124,7 +124,7 @@ export default function Experience() {
               <p className="hhc-experience-eyebrow">01 / The opening set</p>
               <h2 id="featured-title">The room is ready.</h2>
             </div>
-            <p className="hhc-experience-section-count">25 selections · carefully collected</p>
+            <p className="hhc-experience-section-count">32 selections · carefully collected</p>
           </div>
 
           <div className="hhc-experience-featured">
@@ -159,7 +159,7 @@ export default function Experience() {
                       <strong>{session.title}</strong>
                       <small>{session.creator}</small>
                     </span>
-                    <span className="hhc-experience-session-arrow" aria-hidden="true">↗</span>
+                    <span className="hhc-experience-session-play" aria-hidden="true">▶</span>
                   </button>
                 ))}
               </div>

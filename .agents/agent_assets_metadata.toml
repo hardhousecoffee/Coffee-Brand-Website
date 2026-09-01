@@ -192,3 +192,31 @@ mtime_ms = 1788245182234
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/2204b3a2-c7e0-41a5-9c33-da72fdf86bdf/bb6bd3f9-70a1-4219-9234-dbd09cf5d1bd"
 storage_version_token = "1788245192471066"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "w36bbKVyrOP3NAQtcTi7u"
+uri = "file://screenshots/hard-house-experience-final-desktop.jpg"
+type = "image"
+title = "Hard House Coffee Experience — Final Desktop Preview"
+description = "Final polished desktop preview with floating artwork, richer lavender atmosphere, and the expanded 32-selection collection."
+logical_id = "f46a59af-1b49-4145-b775-7dcf4d8b4514"
+content_hash = "sha256:4a75b2b072430d001ed1bef3517ad9bf2b2995851a247491817e8c02f4aa0d61"
+size = 120417
+mtime_ms = 1788249156765
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/f46a59af-1b49-4145-b775-7dcf4d8b4514/912a74c9-46f3-4bd1-8fc2-5bf9a141e9ac"
+storage_version_token = "1788249168794478"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "GH-Hl272SWeEfvdx8UQ6I"
+uri = "file://screenshots/hard-house-experience-final-mobile.jpg"
+type = "image"
+title = "Hard House Coffee Experience — Final Mobile Preview"
+description = "Final polished mobile preview confirming the hero artwork integration and responsive presentation."
+logical_id = "45153bbf-7d21-4e90-b59e-79981fd63194"
+content_hash = "sha256:b63b10ee8cab7be0d66c41b57c75dce0f59b36b78b91eb82203d230740278d2b"
+size = 60260
+mtime_ms = 1788249160437
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/45153bbf-7d21-4e90-b59e-79981fd63194/075be0cd-3536-4eb7-9821-af335afb64c6"
+storage_version_token = "1788249169526590"
+content_type = "image/jpeg"

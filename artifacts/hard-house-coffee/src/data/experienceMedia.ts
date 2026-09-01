@@ -1,6 +1,7 @@
 export type ExperienceVideoCategory =
   | "Coffeehouse Jazz"
   | "Piano & Ambience"
+  | "Coffee Festivals & Expos"
   | "Cafés & Culture"
   | "Coffee Craft"
   | "Competition Stage";
@@ -76,6 +77,30 @@ export const experienceMusicSessions: ExperienceMusicSession[] = [
 
 export const experienceVideos: ExperienceMedia[] = [
   {
+    id: "mQerK4DgBuw",
+    title: "Uganda Coffee & Cocoa Expo 2026",
+    creator: "Uganda Media Centre",
+    category: "Coffee Festivals & Expos",
+    description: "A look at producers, exporters, and industry voices shaping East Africa's coffee future.",
+    format: "Expo feature",
+  },
+  {
+    id: "DcC1U7MCWZI",
+    title: "World of Coffee Expo — San Diego 2026",
+    creator: "Coffee industry event coverage",
+    category: "Coffee Festivals & Expos",
+    description: "An on-the-floor view of new ideas, equipment, and people at a global coffee gathering.",
+    format: "Expo tour",
+  },
+  {
+    id: "oLw8M2LWD4g",
+    title: "Africa Coffee & Tea Expo 2026",
+    creator: "Africa Coffee & Tea Expo coverage",
+    category: "Coffee Festivals & Expos",
+    description: "Industry leaders, producers, and coffee communities gather in Kigali for a major regional event.",
+    format: "Expo feature",
+  },
+  {
     id: "HVoHoMhzy2w",
     title: "Jack Simpson, Australia — 2025 Finals",
     creator: "World Coffee Championships",
@@ -114,6 +139,22 @@ export const experienceVideos: ExperienceMedia[] = [
     category: "Competition Stage",
     description: "A polished finals routine from specialty coffee's biggest stage.",
     format: "15 min",
+  },
+  {
+    id: "Ed8w-RKhR5U",
+    title: "Carlos Medina, Chile — 2023 Brewers Cup Finals",
+    creator: "World Coffee Championships",
+    category: "Competition Stage",
+    description: "A measured championship brew where technique, storytelling, and the final cup meet.",
+    format: "Finals performance",
+  },
+  {
+    id: "oZjFsOhn4iM",
+    title: "Edwin Tascon, Colombia — 2023 Barista Championship",
+    creator: "World Coffee Championships",
+    category: "Competition Stage",
+    description: "A Colombian competitor brings origin, precision, and hospitality to the world stage.",
+    format: "Competition performance",
   },
   {
     id: "9KyrhBmsQZU",
@@ -170,6 +211,22 @@ export const experienceVideos: ExperienceMedia[] = [
     category: "Cafés & Culture",
     description: "A city guide through the cafes and people making Barcelona worth the detour.",
     format: "City guide",
+  },
+  {
+    id: "3mxZUa28MQ8",
+    title: "Discovering Copenhagen's Coffee Culture",
+    creator: "European Coffee Trip",
+    category: "Cafés & Culture",
+    description: "A considered tour through April, Coffee Collective, La Cabra, and Copenhagen's modern coffee identity.",
+    format: "City guide",
+  },
+  {
+    id: "XvpkFlzgiL0",
+    title: "Why Vienna's Coffee Culture Is So Special",
+    creator: "Culture feature",
+    category: "Cafés & Culture",
+    description: "Historic coffee houses, rituals, and the enduring atmosphere behind Vienna's café tradition.",
+    format: "Culture feature",
   },
   {
     id: "vWrlXRHtS9s",
@@ -232,6 +289,7 @@ export const experienceVideos: ExperienceMedia[] = [
 export const experienceVideoGroups: ExperienceVideoCategory[] = [
   "Coffeehouse Jazz",
   "Piano & Ambience",
+  "Coffee Festivals & Expos",
   "Cafés & Culture",
   "Coffee Craft",
   "Competition Stage",
