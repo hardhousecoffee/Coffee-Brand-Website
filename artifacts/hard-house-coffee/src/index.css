@@ -2204,7 +2204,7 @@ a, button {
 
 .hhc-atmosphere-card-label {
   top: 1rem !important;
-  left: 50% !important;
+  left: 1rem !important;
   z-index: 3;
   display: inline-flex;
   align-items: center;
@@ -2215,11 +2215,10 @@ a, button {
   font-size: clamp(0.62rem, 1.15vw, 0.91rem) !important;
   letter-spacing: 0.13em !important;
   line-height: 1.2;
-  text-align: center;
+  text-align: left;
   text-shadow:
     0 0 10px rgba(205, 185, 255, 0.9),
     0 0 22px rgba(157, 117, 238, 0.55);
-  transform: translateX(-50%);
 }
 
 .hhc-atmosphere-card-word {
@@ -2263,7 +2262,7 @@ a, button {
   height: 1.55rem;
   color: #d8c5ff;
   font-family: Georgia, serif;
-  font-size: 0.72rem;
+  font-size: 0.83rem;
   font-weight: 400;
   letter-spacing: 0;
   text-shadow:
@@ -2288,14 +2287,14 @@ a, button {
 .hhc-atmosphere-card-notes > span:nth-child(2) {
   top: 0.12rem;
   left: 0.75rem;
-  font-size: 0.62rem;
+  font-size: 0.71rem;
   animation-delay: -1.7s;
 }
 
 .hhc-atmosphere-card-notes > span:nth-child(3) {
   top: -0.18rem;
   left: 1.45rem;
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   animation-delay: -3.1s;
 }
 
@@ -2361,26 +2360,29 @@ a, button {
 .hhc-jazz-invitation h3 span:nth-child(3) { animation-delay: 1.65s; }
 
 .hhc-jazz-play-button {
-  display: grid;
-  place-items: center;
-  width: 4.45rem;
-  height: 4.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7.2rem;
+  height: 2.85rem;
   margin: 1.35rem 0 0.85rem;
-  padding: 0 0 0 0.14rem;
+  padding: 0 1.35rem;
   border: 1px solid rgba(210, 190, 255, 0.86);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(141, 91, 201, 0.5), rgba(46, 27, 73, 0.78));
-  box-shadow: 0 0 0 7px rgba(165, 124, 224, 0.06), 0 0 28px rgba(166, 116, 226, 0.4);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(141, 91, 201, 0.5), rgba(46, 27, 73, 0.78));
+  box-shadow: 0 0 0 5px rgba(165, 124, 224, 0.06), 0 0 24px rgba(166, 116, 226, 0.4);
   color: #f6efff;
-  font-size: 1.1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   cursor: pointer;
   transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease;
 }
 
 .hhc-jazz-play-button:hover,
 .hhc-jazz-play-button:focus-visible {
-  background: radial-gradient(circle, rgba(171, 121, 228, 0.72), rgba(59, 32, 92, 0.92));
-  box-shadow: 0 0 0 10px rgba(165, 124, 224, 0.08), 0 0 38px rgba(190, 150, 250, 0.68);
+  background: linear-gradient(135deg, rgba(171, 121, 228, 0.72), rgba(59, 32, 92, 0.92));
+  box-shadow: 0 0 0 8px rgba(165, 124, 224, 0.08), 0 0 34px rgba(190, 150, 250, 0.68);
   transform: scale(1.06);
 }
 
@@ -3293,11 +3295,11 @@ a, button {
 
   .hhc-atmosphere-card-label {
     top: 0.75rem !important;
-    left: 50% !important;
+    left: 0.75rem !important;
     max-width: calc(100% - 2.6rem);
     font-size: clamp(0.5rem, 2.15vw, 0.72rem) !important;
     letter-spacing: 0.09em !important;
-    transform: translateX(-50%);
+    transform: none;
   }
 
   .hhc-atmosphere-card-underline {
@@ -3308,17 +3310,17 @@ a, button {
     left: calc(100% + 0.28rem);
     width: 1.8rem;
     height: 1.25rem;
-    font-size: 0.58rem;
+    font-size: 0.67rem;
   }
 
   .hhc-atmosphere-card-notes > span:nth-child(2) {
     left: 0.56rem;
-    font-size: 0.5rem;
+    font-size: 0.58rem;
   }
 
   .hhc-atmosphere-card-notes > span:nth-child(3) {
     left: 1.1rem;
-    font-size: 0.46rem;
+    font-size: 0.53rem;
   }
 
   .hhc-experience-tile-explore {

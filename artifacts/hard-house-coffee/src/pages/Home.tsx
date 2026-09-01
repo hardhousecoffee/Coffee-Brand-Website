@@ -836,7 +836,7 @@ export default function Home() {
                               aria-label="Enter The Lounge"
                               onClick={() => { setActiveExperience(null); window.scrollTo(0, 0); }}
                             >
-                              <span aria-hidden="true">▶</span>
+                               ENTER
                             </button>
                           </Link>
                           <p className="hhc-jazz-invitation-hint">Open the full coffee experience</p>
