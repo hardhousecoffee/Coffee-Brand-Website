@@ -318,3 +318,31 @@ mtime_ms = 1788262190660
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/1019bdb4-9f19-4002-a393-a75927dd8b4e/25de7de7-e4ba-4ce5-8d4c-bce41949ace2"
 storage_version_token = "1788262200351821"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "_J3ZqhynRUZcURcuo5nXt"
+uri = "file://screenshots/hard-house-experience-pedestal-desktop.jpg"
+type = "image"
+title = "Experience Lounge Pedestal — Desktop"
+description = "Desktop hero with a diffused lavender light pool, subtle reflection glow, haze, faint music symbols, and a restrained Art Deco arch."
+logical_id = "3fc1a92d-8e5c-4fdc-b9b7-2dfe38b3ff4c"
+content_hash = "sha256:86f5cd57c91e570ef80a16c28c60423986d5c7ff2ecbe6a7f179dd89548e0bf6"
+size = 87594
+mtime_ms = 1788262595217
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/3fc1a92d-8e5c-4fdc-b9b7-2dfe38b3ff4c/8165de80-f717-41ef-bcd2-4f04b2a480b1"
+storage_version_token = "1788262613638535"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "AzTMmzH8jOrOC_LzyETXD"
+uri = "file://screenshots/hard-house-experience-pedestal-mobile.jpg"
+type = "image"
+title = "Experience Lounge Pedestal — Mobile"
+description = "Mobile hero showing the artwork visually anchored by the atmospheric lounge-stage treatment."
+logical_id = "1db8e6a7-1b70-48b2-a04c-ec4510b0fad6"
+content_hash = "sha256:0d5e9be241054ac8e95eb99082149dca5fce9fc0d6529a07f506c1554d5d5911"
+size = 56838
+mtime_ms = 1788262604881
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/1db8e6a7-1b70-48b2-a04c-ec4510b0fad6/c3a28b83-b660-42e7-87b5-be56482c7966"
+storage_version_token = "1788262614471050"
+content_type = "image/jpeg"

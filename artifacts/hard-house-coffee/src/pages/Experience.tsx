@@ -122,6 +122,10 @@ export default function Experience() {
               </p>
             </div>
             <div className="hhc-experience-artwork-frame">
+              <div className="hhc-experience-stage" aria-hidden="true">
+                <span className="hhc-experience-stage-arch" />
+                <span className="hhc-experience-stage-reflection" />
+              </div>
               <div className="hhc-experience-atmosphere-notes" aria-hidden="true">
                 <span className="note-one">♪</span>
                 <span className="note-two">♬</span>
