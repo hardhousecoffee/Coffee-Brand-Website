@@ -12,11 +12,22 @@ import {
   type ExperienceVideoCategory,
 } from "@/data/experienceMedia";
 
-function YouTubeEmbed({ media, featured = false }: { media: ExperienceMedia; featured?: boolean }) {
+function YouTubeEmbed({
+  media,
+  featured = false,
+  autoplay = false,
+  playerKey,
+}: {
+  media: ExperienceMedia;
+  featured?: boolean;
+  autoplay?: boolean;
+  playerKey?: string;
+}) {
   return (
     <div className={`hhc-experience-embed${featured ? " is-featured" : ""}`}>
       <iframe
-        src={`https://www.youtube-nocookie.com/embed/${media.id}?rel=0&modestbranding=1`}
+        key={playerKey}
+        src={`https://www.youtube-nocookie.com/embed/${media.id}?rel=0&modestbranding=1${autoplay ? "&autoplay=1&playsinline=1" : ""}`}
         title={`${media.title} — ${media.creator}`}
         loading={featured ? "eager" : "lazy"}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -54,6 +65,8 @@ function MediaCard({ media }: { media: ExperienceMedia }) {
 
 export default function Experience() {
   const [activeMusicId, setActiveMusicId] = useState(experienceMusicSessions[0].id);
+  const [musicAutoplayId, setMusicAutoplayId] = useState<string | null>(null);
+  const [musicPlayRequest, setMusicPlayRequest] = useState(0);
   const activeMusic = experienceMusicSessions.find((session) => session.id === activeMusicId) ?? experienceMusicSessions[0];
   const groupedVideos = useMemo(
     () => experienceVideoGroups.map((category) => ({
@@ -70,6 +83,12 @@ export default function Experience() {
     category: "Piano & Ambience",
     description: activeMusic.description,
     format: activeMusic.mood,
+  };
+
+  const handleMusicSelect = (sessionId: string) => {
+    setActiveMusicId(sessionId);
+    setMusicAutoplayId(sessionId);
+    setMusicPlayRequest((request) => request + 1);
   };
 
   return (
@@ -103,6 +122,12 @@ export default function Experience() {
               </p>
             </div>
             <div className="hhc-experience-artwork-frame">
+              <div className="hhc-experience-atmosphere-notes" aria-hidden="true">
+                <span className="note-one">♪</span>
+                <span className="note-two">♬</span>
+                <span className="note-three">𝄞</span>
+                <span className="note-four">♫</span>
+              </div>
               <img
                 src="/images/hard-house-experience-transparent.png"
                 alt="Purple HHC coffee mug with glowing purple steam, treble clef, and music notes"
@@ -140,7 +165,7 @@ export default function Experience() {
                     role="listitem"
                     aria-pressed={activeMusic.id === session.id}
                     className={activeMusic.id === session.id ? "is-active" : ""}
-                    onClick={() => setActiveMusicId(session.id)}
+                    onClick={() => handleMusicSelect(session.id)}
                   >
                     <span className="hhc-experience-session-number">0{index + 1}</span>
                     <span className="hhc-experience-session-title">
@@ -152,7 +177,11 @@ export default function Experience() {
                 ))}
               </div>
               <div className="hhc-experience-music-player">
-                <YouTubeEmbed media={musicAsMedia} />
+                <YouTubeEmbed
+                  media={musicAsMedia}
+                  autoplay={musicAutoplayId === activeMusicId}
+                  playerKey={`${musicAsMedia.id}-${musicPlayRequest}`}
+                />
                 <div className="hhc-experience-music-now">
                   <span>Now selected</span>
                   <strong>{activeMusic.title}</strong>

@@ -290,3 +290,31 @@ mtime_ms = 1788261417513
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/6361d3d1-86ce-4c67-a752-d471f4319f86/621bd921-0b2a-4848-a8f3-47446b30bc8c"
 storage_version_token = "1788261429913761"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "HfOMWWkgqXoI5GnbTM_fG"
+uri = "file://screenshots/hard-house-experience-atmosphere-desktop.jpg"
+type = "image"
+title = "Experience Hero Atmosphere — Desktop"
+description = "Updated desktop hero with enlarged EXPERIENCE typography and a diffuse lavender/periwinkle lounge atmosphere around the artwork."
+logical_id = "bf42f720-8660-468d-8cfc-c97076bfbf21"
+content_hash = "sha256:8f3cdcf6d3adbc6e620e5219f7fcdc4001fbd693241d5b9fa6f92f4267744b50"
+size = 86549
+mtime_ms = 1788262179742
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/bf42f720-8660-468d-8cfc-c97076bfbf21/bf7c1e4d-8672-4072-9ff3-7bba0ab1d6ca"
+storage_version_token = "1788262199448892"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "uMGBnHLu6yM1X0fspazbC"
+uri = "file://screenshots/hard-house-experience-atmosphere-mobile.jpg"
+type = "image"
+title = "Experience Hero Atmosphere — Mobile"
+description = "Updated mobile hero with enlarged EXPERIENCE typography, soft haze, and subtle background musical notation."
+logical_id = "1019bdb4-9f19-4002-a393-a75927dd8b4e"
+content_hash = "sha256:2fdd901de78b1ac7462e756f593114851012c15dbaf6a8d5a23e23b658cbe2fa"
+size = 56436
+mtime_ms = 1788262190660
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/1019bdb4-9f19-4002-a393-a75927dd8b4e/25de7de7-e4ba-4ce5-8d4c-bce41949ace2"
+storage_version_token = "1788262200351821"
+content_type = "image/jpeg"

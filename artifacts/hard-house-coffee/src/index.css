@@ -2415,7 +2415,7 @@ a, button {
   margin-top: 0.06em;
   color: #c5b1ee;
   font-family: Georgia, serif;
-  font-size: 0.61em;
+  font-size: 0.79em;
   font-style: italic;
   letter-spacing: -0.04em;
 }
@@ -2471,7 +2471,75 @@ a, button {
 }
 
 .hhc-experience-artwork-frame::before {
-  display: none;
+  content: "";
+  position: absolute;
+  inset: 7% -8% 3%;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 52% 48%, rgba(178, 164, 255, 0.22), transparent 25%),
+    radial-gradient(ellipse at 46% 54%, rgba(106, 83, 212, 0.2), transparent 46%),
+    radial-gradient(ellipse at 64% 45%, rgba(63, 94, 197, 0.14), transparent 67%);
+  filter: blur(42px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.hhc-experience-artwork-frame::after {
+  content: "";
+  position: absolute;
+  inset: 4% 0 8%;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(115, 85, 221, 0.11), transparent 42%),
+    radial-gradient(ellipse at 76% 25%, rgba(153, 174, 255, 0.07), transparent 34%);
+  filter: blur(24px);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.hhc-experience-atmosphere-notes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  color: rgba(181, 175, 255, 0.14);
+  font-family: Georgia, serif;
+  font-size: clamp(1.4rem, 2.5vw, 2.8rem);
+  line-height: 1;
+  pointer-events: none;
+  text-shadow: 0 0 18px rgba(133, 121, 255, 0.24);
+}
+
+.hhc-experience-atmosphere-notes span {
+  position: absolute;
+  display: block;
+  opacity: 0.5;
+}
+
+.hhc-experience-atmosphere-notes .note-one {
+  top: 15%;
+  left: 8%;
+  transform: rotate(-12deg);
+}
+
+.hhc-experience-atmosphere-notes .note-two {
+  top: 28%;
+  right: 8%;
+  opacity: 0.34;
+  transform: rotate(11deg);
+}
+
+.hhc-experience-atmosphere-notes .note-three {
+  bottom: 23%;
+  left: 4%;
+  opacity: 0.27;
+  transform: rotate(7deg);
+}
+
+.hhc-experience-atmosphere-notes .note-four {
+  right: 3%;
+  bottom: 13%;
+  opacity: 0.38;
+  transform: rotate(-8deg);
 }
 
 .hhc-experience-artwork {
