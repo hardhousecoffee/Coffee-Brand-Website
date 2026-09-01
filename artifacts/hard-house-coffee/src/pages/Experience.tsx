@@ -94,15 +94,17 @@ export default function Experience() {
         <section className="hhc-experience-hero" aria-labelledby="experience-title">
           <div className="hhc-experience-hero-inner">
             <div className="hhc-experience-hero-copy">
-              <p className="hhc-experience-eyebrow">A Hard House Coffee presentation</p>
-               <h1 id="experience-title">THE HARD HOUSE COFFEE<br /><em>EXPERIENCE</em></h1>
+              <h1 id="experience-title">
+                <span>THE HARD HOUSE COFFEE</span>
+                <em>EXPERIENCE</em>
+              </h1>
               <p className="hhc-experience-intro">
                 Discover handpicked coffee ambience, jazz sessions, piano collections, festivals, documentaries, cafés, and coffee culture from around the world.
               </p>
             </div>
             <div className="hhc-experience-artwork-frame">
               <img
-                src="/images/hard-house-experience.png"
+                src="/images/hard-house-experience-transparent.png"
                 alt="Purple HHC coffee mug with glowing purple steam, treble clef, and music notes"
                 className="hhc-experience-artwork"
               />

@@ -234,3 +234,31 @@ mtime_ms = 1788257364107
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/22a21035-d501-41b9-ac23-d1330359605f/d645cf5e-0356-4107-9aff-a30478ac4af2"
 storage_version_token = "1788257371056866"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "aYNdBOztZXYEn1Co_1XgM"
+uri = "file://screenshots/hard-house-experience-headline-desktop.jpg"
+type = "image"
+title = "Experience Hero — Desktop"
+description = "Updated desktop hero with reduced headline, tighter title spacing, removed presentation line, and transparent mug artwork."
+logical_id = "8eae50d0-7548-4d77-ab2a-a22d14476c2f"
+content_hash = "sha256:450c5a8ae827bf2fa4694a9103d9855ebb5061face0ffeb295563c7673379eee"
+size = 84231
+mtime_ms = 1788261288079
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/8eae50d0-7548-4d77-ab2a-a22d14476c2f/f8768f7a-b548-4116-924d-0275917344c7"
+storage_version_token = "1788261303785161"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "HjGQhP9CgFhB8BDzuk5wm"
+uri = "file://screenshots/hard-house-experience-headline-mobile.jpg"
+type = "image"
+title = "Experience Hero — Mobile"
+description = "Updated mobile hero with the same typography and clean transparent artwork treatment."
+logical_id = "3f975fec-b701-4248-977d-eff33ee9ee28"
+content_hash = "sha256:ab0a2104408d5b9e621b994ec806eea667904e9f5c5924b863f834c92cc5bcc7"
+size = 55180
+mtime_ms = 1788261294299
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/3f975fec-b701-4248-977d-eff33ee9ee28/b4b6dd6e-3db4-4d5e-b0bb-2b636517d522"
+storage_version_token = "1788261304477989"
+content_type = "image/jpeg"

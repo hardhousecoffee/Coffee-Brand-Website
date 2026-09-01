@@ -2396,15 +2396,23 @@ a, button {
 .hhc-experience-hero h1 {
   margin: 0;
   color: #f7f1fa;
-  font-size: clamp(2.9rem, 6.2vw, 6.8rem);
+  font-size: clamp(2.32rem, 4.96vw, 5.44rem);
   line-height: 1.04;
   letter-spacing: -0.045em;
   text-shadow: 0 0 42px rgba(165, 111, 225, 0.12);
 }
 
+.hhc-experience-hero h1 > span,
 .hhc-experience-hero h1 em {
   display: inline-block;
-  margin-top: 0.2em;
+}
+
+.hhc-experience-hero h1 > span {
+  display: block;
+}
+
+.hhc-experience-hero h1 em {
+  margin-top: 0.06em;
   color: #c5b1ee;
   font-family: Georgia, serif;
   font-size: 0.61em;
@@ -2472,8 +2480,7 @@ a, button {
   display: block;
   width: min(100%, 590px);
   height: auto;
-  filter: drop-shadow(0 26px 40px rgba(77, 19, 124, 0.45));
-  mix-blend-mode: screen;
+  filter: drop-shadow(0 26px 40px rgba(77, 19, 124, 0.34));
 }
 
 .hhc-experience-artwork-label {
@@ -2962,7 +2969,7 @@ a, button {
   }
 
   .hhc-experience-hero h1 {
-    font-size: clamp(2.65rem, 13.5vw, 4.3rem);
+    font-size: clamp(2.12rem, 10.8vw, 3.44rem);
   }
 
   .hhc-experience-intro {
