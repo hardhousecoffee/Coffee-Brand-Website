@@ -10,6 +10,7 @@ import PremiumBanner from "@/components/PremiumBanner";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const heroSlides = [
+  { src: "/images/hero-coffee-tabletop.png", alt: "Coffee cups, beans, and brewing vessels arranged on a dark table" },
   { src: "/images/hero-cafe-reader.png", alt: "Man reading with a cup of coffee in a rainy café" },
   { src: "/images/cafe-alley.jpg", alt: "Hero Cafe Alley" },
   { src: "/images/aroma-beans.jpg", alt: "Aroma Coffee Beans" },
