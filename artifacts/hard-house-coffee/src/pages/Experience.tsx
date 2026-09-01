@@ -19,6 +19,100 @@ import {
   type ExperienceVideoCategory,
 } from "@/data/experienceMedia";
 
+interface ExperiencePhoto {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+const experienceStreetPhotos: ExperiencePhoto[] = [
+  {
+    src: "/images/experience-alley-lights.jpg",
+    alt: "Coffeehouse alley illuminated by string lights at sunset",
+    caption: "The city softens after sunset.",
+  },
+  {
+    src: "/images/experience-teal-coffee-storefront.jpg",
+    alt: "Teal coffee shop storefront with outdoor café tables",
+    caption: "A doorway made for lingering.",
+  },
+  {
+    src: "/images/experience-vintage-coffee-tin.jpg",
+    alt: "Vintage Fairy Dell coffee tin in an antique shop",
+    caption: "Objects carry the ritual forward.",
+  },
+  {
+    src: "/images/experience-cafe-allegro.jpg",
+    alt: "Historic Café Allegro exterior with bicycles and guests",
+    caption: "Every neighborhood has its room.",
+  },
+  {
+    src: "/images/experience-coffee-shop-sign.jpg",
+    alt: "Weathered vintage Coffee Shop sign",
+    caption: "A familiar invitation.",
+  },
+];
+
+const experienceCafePhotos: ExperiencePhoto[] = [
+  {
+    src: "/images/experience-scooter-cafe.jpg",
+    alt: "Rustic café storefront with two vintage scooters",
+    caption: "Street-side character.",
+  },
+  {
+    src: "/images/experience-vintage-coffeehouse.jpg",
+    alt: "Vintage Coffeehouse storefront open to the sidewalk",
+    caption: "Open doors, unhurried hours.",
+  },
+  {
+    src: "/images/experience-leather-lounge.jpg",
+    alt: "Moody coffee bar with brick walls and leather seating",
+    caption: "A room with its own tempo.",
+  },
+];
+
+const experiencePeoplePhotos: ExperiencePhoto[] = [
+  {
+    src: "/images/experience-seated-barista.jpg",
+    alt: "Barista seated beside a contemporary coffee bar",
+    caption: "Presence behind the counter.",
+  },
+  {
+    src: "/images/experience-latte-service.jpg",
+    alt: "Tattooed café guest holding a finished latte",
+    caption: "The handoff.",
+  },
+  {
+    src: "/images/experience-colorful-barista.jpg",
+    alt: "Tattooed barista preparing a drink behind the counter",
+    caption: "Craft in motion.",
+  },
+  {
+    src: "/images/experience-barista-pour.jpg",
+    alt: "Tattooed barista pouring coffee into a glass",
+    caption: "The final pour.",
+  },
+];
+
+function ExperiencePhotoGallery({
+  photos,
+  className,
+}: {
+  photos: ExperiencePhoto[];
+  className: string;
+}) {
+  return (
+    <div className={`hhc-experience-photo-grid ${className}`}>
+      {photos.map((photo) => (
+        <figure className="hhc-experience-photo" key={photo.src}>
+          <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+          <figcaption>{photo.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
 function YouTubeEmbed({
   media,
   featured = false,
@@ -292,22 +386,10 @@ export default function Experience() {
           </div>
         </section>
 
-        <section className="hhc-experience-content" id="featured" aria-labelledby="featured-title">
-          <div className="hhc-experience-section-heading">
-            <div>
-              <p className="hhc-experience-eyebrow">01 / The opening set</p>
-              <h2 id="featured-title">The room is ready.</h2>
-            </div>
-            <p className="hhc-experience-section-count">32 selections · carefully collected</p>
-          </div>
-
-          <div className="hhc-experience-featured">
-            <YouTubeEmbed media={featuredExperienceVideo} featured />
-          </div>
-
-          <section className="hhc-experience-music-room" aria-labelledby="music-title">
+        <section className="hhc-experience-content hhc-experience-music-content" id="music" aria-labelledby="music-title">
+          <section className="hhc-experience-music-room hhc-experience-music-room-primary">
             <div className="hhc-experience-subheading">
-              <p className="hhc-experience-eyebrow">02 / Select a session</p>
+              <p className="hhc-experience-eyebrow">01 / Select a session</p>
               <h2 id="music-title">Music for the ritual.</h2>
               <p>Select a session, then use its circular control to play or pause. Playback stays synchronized with the official YouTube player.</p>
             </div>
@@ -383,6 +465,46 @@ export default function Experience() {
                 </div>
               </div>
             </div>
+          </section>
+        </section>
+
+        <section className="hhc-experience-photo-chapter hhc-experience-photo-chapter-opening" aria-labelledby="experience-places-title">
+          <div className="hhc-experience-photo-heading">
+            <p className="hhc-experience-eyebrow">Atmosphere / Field notes</p>
+            <h2 id="experience-places-title">Where coffee becomes a place.</h2>
+            <p>From lit alleys to neighborhood institutions, every room begins before the first cup reaches the table.</p>
+          </div>
+          <ExperiencePhotoGallery photos={experienceStreetPhotos} className="hhc-experience-photo-grid-streets" />
+        </section>
+
+        <section className="hhc-experience-content" id="featured" aria-labelledby="featured-title">
+          <div className="hhc-experience-section-heading">
+            <div>
+              <p className="hhc-experience-eyebrow">02 / The opening set</p>
+              <h2 id="featured-title">The room is ready.</h2>
+            </div>
+            <p className="hhc-experience-section-count">32 selections · carefully collected</p>
+          </div>
+
+          <div className="hhc-experience-featured">
+            <YouTubeEmbed media={featuredExperienceVideo} featured />
+          </div>
+
+          <section className="hhc-experience-photo-interlude" aria-labelledby="experience-rooms-title">
+            <div className="hhc-experience-photo-heading is-compact">
+              <p className="hhc-experience-eyebrow">Rooms / Objects / Memory</p>
+              <h2 id="experience-rooms-title">Every café keeps a story.</h2>
+            </div>
+            <ExperiencePhotoGallery photos={experienceCafePhotos} className="hhc-experience-photo-grid-cafes" />
+          </section>
+
+          <section className="hhc-experience-photo-interlude hhc-experience-people-chapter" aria-labelledby="experience-people-title">
+            <div className="hhc-experience-photo-heading">
+              <p className="hhc-experience-eyebrow">Hands / Ritual / Character</p>
+              <h2 id="experience-people-title">The people behind the atmosphere.</h2>
+              <p>Technique gives the cup its shape. Personality gives the room its pulse.</p>
+            </div>
+            <ExperiencePhotoGallery photos={experiencePeoplePhotos} className="hhc-experience-photo-grid-people" />
           </section>
 
           <section className="hhc-experience-video-rooms" aria-labelledby="video-rooms-title">

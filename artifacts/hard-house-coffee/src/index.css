@@ -2781,6 +2781,201 @@ a, button {
   scroll-margin-top: 4.5rem;
 }
 
+.hhc-experience-music-content {
+  padding-top: 2.8rem;
+  padding-bottom: 0;
+}
+
+.hhc-experience-music-content .hhc-experience-music-room-primary {
+  margin-top: 0;
+}
+
+.hhc-experience-photo-chapter {
+  width: min(1320px, calc(100% - 12vw));
+  margin: 0 auto;
+  padding: 6.5rem 0 1rem;
+}
+
+.hhc-experience-photo-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.52fr);
+  gap: 2rem 5vw;
+  align-items: end;
+  margin-bottom: 2.4rem;
+}
+
+.hhc-experience-photo-heading .hhc-experience-eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: -1rem;
+}
+
+.hhc-experience-photo-heading h2 {
+  margin: 0;
+  color: #f1eaf5;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  letter-spacing: -0.04em;
+}
+
+.hhc-experience-photo-heading > p:last-child {
+  max-width: 460px;
+  margin: 0 0 0.35rem;
+  color: #93879a;
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.hhc-experience-photo-heading.is-compact {
+  display: block;
+}
+
+.hhc-experience-photo-heading.is-compact .hhc-experience-eyebrow {
+  margin-bottom: 0.65rem;
+}
+
+.hhc-experience-photo-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.hhc-experience-photo {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(203, 176, 236, 0.18);
+  background: #110d15;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+}
+
+.hhc-experience-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(9, 6, 12, 0.86), transparent 42%),
+    linear-gradient(135deg, rgba(102, 63, 139, 0.08), transparent 52%);
+  pointer-events: none;
+}
+
+.hhc-experience-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.82) saturate(0.86) contrast(1.04);
+  transform: scale(1.002);
+  transition: filter 500ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hhc-experience-photo:hover img {
+  filter: brightness(0.96) saturate(1) contrast(1.02);
+  transform: scale(1.035);
+}
+
+.hhc-experience-photo figcaption {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.9rem;
+  left: 1rem;
+  z-index: 1;
+  color: rgba(240, 228, 246, 0.82);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.hhc-experience-photo-grid-streets {
+  grid-template-columns: 1.25fr 0.9fr 0.65fr;
+  grid-template-rows: 250px 350px;
+}
+
+.hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(1) {
+  grid-column: 1 / 3;
+}
+
+.hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(2) {
+  grid-column: 3;
+}
+
+.hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(5) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(3) img,
+.hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(5) img {
+  object-position: center top;
+}
+
+.hhc-experience-photo-interlude {
+  margin-top: 6.5rem;
+  padding: 5rem 0;
+  border-top: 1px solid rgba(193, 168, 230, 0.14);
+  border-bottom: 1px solid rgba(193, 168, 230, 0.14);
+}
+
+.hhc-experience-photo-grid-cafes {
+  grid-template-columns: 1.25fr 0.9fr 1fr 0.7fr;
+  min-height: 340px;
+}
+
+.hhc-experience-photo-grid-cafes .hhc-experience-photo:nth-child(2) img {
+  object-position: center 24%;
+}
+
+.hhc-experience-photo-grid-cafes .hhc-experience-photo:nth-child(4) img {
+  object-position: center 20%;
+}
+
+.hhc-experience-people-chapter {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.hhc-experience-photo-grid-people {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: 150px;
+}
+
+.hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(1),
+.hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(2),
+.hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(3) {
+  grid-column: span 4;
+  grid-row: span 3;
+}
+
+.hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(4) {
+  grid-column: 3 / 11;
+  grid-row: span 3;
+}
+
+.hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(1) img {
+  object-position: center 26%;
+}
+
+.hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(2) img,
+.hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(3) img {
+  object-position: center 32%;
+}
+
+.hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(4) img {
+  object-position: center 42%;
+}
+
 .hhc-experience-section-heading {
   display: flex;
   gap: 2rem;
@@ -3276,6 +3471,70 @@ a, button {
   .hhc-experience-music-layout {
     grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.2fr);
   }
+
+  .hhc-experience-photo-chapter {
+    width: min(1320px, calc(100% - 8vw));
+  }
+
+  .hhc-experience-photo-heading {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+  }
+
+  .hhc-experience-photo-grid-streets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 280px 330px 260px;
+  }
+
+  .hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  .hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(4) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(5) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .hhc-experience-photo-grid-cafes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+  }
+
+  .hhc-experience-photo-grid-cafes .hhc-experience-photo {
+    min-height: 320px;
+  }
+
+  .hhc-experience-photo-grid-people {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 360px;
+  }
+
+  .hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(1),
+  .hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(2),
+  .hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(4) {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 430px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -3411,6 +3670,83 @@ a, button {
   .hhc-experience-content {
     width: calc(100% - 2.5rem);
     padding-top: 4rem;
+  }
+
+  .hhc-experience-music-content {
+    padding-top: 2.8rem;
+    padding-bottom: 0;
+  }
+
+  .hhc-experience-photo-chapter {
+    width: calc(100% - 2.5rem);
+    padding: 4rem 0 0;
+  }
+
+  .hhc-experience-photo-heading {
+    display: block;
+    margin-bottom: 1.6rem;
+  }
+
+  .hhc-experience-photo-heading .hhc-experience-eyebrow {
+    margin-bottom: 0.65rem;
+  }
+
+  .hhc-experience-photo-heading h2 {
+    font-size: clamp(1.8rem, 9vw, 2.65rem);
+  }
+
+  .hhc-experience-photo-heading > p:last-child {
+    margin-top: 1rem;
+    font-size: 0.88rem;
+  }
+
+  .hhc-experience-photo-grid {
+    gap: 0.65rem;
+  }
+
+  .hhc-experience-photo figcaption {
+    right: 0.7rem;
+    bottom: 0.65rem;
+    left: 0.7rem;
+    font-size: 0.53rem;
+  }
+
+  .hhc-experience-photo-grid-streets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .hhc-experience-photo-grid-streets .hhc-experience-photo {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 215px;
+  }
+
+  .hhc-experience-photo-grid-streets .hhc-experience-photo:nth-child(1) {
+    grid-column: 1 / -1;
+    min-height: 230px;
+  }
+
+  .hhc-experience-photo-interlude {
+    margin-top: 4.5rem;
+    padding: 3.6rem 0;
+  }
+
+  .hhc-experience-photo-grid-cafes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hhc-experience-photo-grid-cafes .hhc-experience-photo {
+    min-height: 235px;
+  }
+
+  .hhc-experience-photo-grid-people {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 285px;
+  }
+
+  .hhc-experience-photo-grid-people .hhc-experience-photo:nth-child(4) {
+    min-height: 260px;
   }
 
   .hhc-experience-section-heading {
