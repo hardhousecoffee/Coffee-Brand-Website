@@ -8,7 +8,6 @@ import SteamEffect from "@/components/SteamEffect";
 import SteamEffectSVG from "@/components/SteamEffectSVG";
 import PremiumBanner from "@/components/PremiumBanner";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
 const heroSlides = [
   { src: "/images/cafe-alley.jpg", alt: "Hero Cafe Alley" },
@@ -668,11 +667,11 @@ export default function Home() {
                       margin: 0,
                     }}
                   >
-                    {item.label}
+                     {item.label}
                   </p>
                    {item.label === "Jazz & Coffee" && (
                      <p className="hhc-jazz-card-description">
-                       Jazz sessions, café culture, and atmosphere.
+                       Atmosphere
                      </p>
                    )}
                 </div>
@@ -717,7 +716,7 @@ export default function Home() {
                 `}</style>
 
                 <div
-                  className="hhc-modal-inner"
+                    className={`hhc-modal-inner${m.videoId ? " hhc-jazz-modal-inner" : ""}`}
                   style={{
                     background: "linear-gradient(145deg, #1a110a, #0f0a07)",
                     border: "1px solid rgba(161,79,31,0.45)",
@@ -746,10 +745,12 @@ export default function Home() {
                       style={{
                         position: "absolute",
                         inset: 0,
-                        background: "linear-gradient(to right, transparent 55%, #1a110a)",
+                        background: m.videoId
+                          ? "linear-gradient(to right, transparent 55%, #120c1d)"
+                          : "linear-gradient(to right, transparent 55%, #1a110a)",
                       }}
                     />
-                    <div style={{ position: "absolute", bottom: "1.25rem", left: "1.25rem" }}>
+                    <div className={m.videoId ? "hhc-jazz-modal-label" : ""} style={{ position: "absolute", bottom: "1.25rem", left: "1.25rem" }}>
                       <p
                         style={{
                           fontFamily: "'Cinzel Decorative', serif",
@@ -777,6 +778,7 @@ export default function Home() {
                   >
                     {/* Close */}
                     <button
+                      className={m.videoId ? "hhc-jazz-modal-close" : undefined}
                       onClick={() => setActiveExperience(null)}
                       style={{
                         alignSelf: "flex-end",
@@ -813,7 +815,11 @@ export default function Home() {
                       <>
                         <div className="hhc-jazz-invitation" aria-label="Enter The Lounge">
                           <p className="hhc-jazz-invitation-kicker">A private room for the senses</p>
-                          <h3>ENTER THE LOUNGE</h3>
+                          <h3 aria-label="Enter The Lounge">
+                            <span>ENTER</span>
+                            <span>THE</span>
+                            <span>LOUNGE</span>
+                          </h3>
                           <Link href="/experience">
                             <button
                               type="button"
@@ -825,24 +831,6 @@ export default function Home() {
                             </button>
                           </Link>
                           <p className="hhc-jazz-invitation-hint">Open the full coffee experience</p>
-                          <div className="hhc-jazz-invitation-socials" aria-label="Hard House Coffee social links">
-                            <a
-                              href="https://www.instagram.com/hardhousecoffee.official?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              aria-label="Instagram"
-                            >
-                              <FaInstagram size={13} />
-                            </a>
-                            <a
-                              href="https://www.tiktok.com/@hardhousecoffee?_r=1&_t=ZP-96W4w42enMc"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              aria-label="TikTok"
-                            >
-                              <FaTiktok size={12} />
-                            </a>
-                          </div>
                         </div>
                       </>
                     ) : (

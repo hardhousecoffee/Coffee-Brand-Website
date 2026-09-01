@@ -220,3 +220,17 @@ mtime_ms = 1788249160437
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/45153bbf-7d21-4e90-b59e-79981fd63194/075be0cd-3536-4eb7-9821-af335afb64c6"
 storage_version_token = "1788249169526590"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "6IAl0zfL6PjXyAdeIMU9N"
+uri = "file://screenshots/hard-house-experience-polished-mobile.jpg"
+type = "image"
+title = "Hard House Coffee — Corrected Mobile Experience"
+description = "Fresh screenshot from the current running preview after the visible polish and responsive fixes."
+logical_id = "22a21035-d501-41b9-ac23-d1330359605f"
+content_hash = "sha256:e2cd640d3d215733d5a550a80493f4478735dcaa1d1d4f29c4bc068759bbaf38"
+size = 56553
+mtime_ms = 1788257364107
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/22a21035-d501-41b9-ac23-d1330359605f/d645cf5e-0356-4107-9aff-a30478ac4af2"
+storage_version_token = "1788257371056866"
+content_type = "image/jpeg"

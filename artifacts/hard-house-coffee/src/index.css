@@ -1111,6 +1111,11 @@ a, button {
   transform: translateY(0) !important;
 }
 
+.hhc-experience-tile:hover .hhc-experience-tile-explore-text {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
 /* ── About page steam wisps ── */
 @keyframes steamRise {
   0%   { transform: translateX(0)    translateY(0)    scaleX(1);   opacity: 0; }
@@ -2181,6 +2186,15 @@ a, button {
 
 .hhc-experience-tile-explore {
   pointer-events: auto;
+  top: 50% !important;
+  right: auto !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.hhc-experience-tile-explore-text {
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) !important;
 }
 
 .hhc-jazz-invitation-kicker {
@@ -2192,13 +2206,26 @@ a, button {
 }
 
 .hhc-jazz-invitation h3 {
+  display: flex;
+  gap: 0.35em;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   color: #e8dcff;
   font: 400 clamp(1.25rem, 2vw, 1.7rem)/1.2 'Cinzel Decorative', serif;
   letter-spacing: 0.08em;
-  animation: hhc-jazz-title-arrival 1.35s cubic-bezier(0.22, 1, 0.36, 1) both;
   text-shadow: 0 0 14px rgba(203, 177, 255, 0.32);
 }
+
+.hhc-jazz-invitation h3 span {
+  display: inline-block;
+  opacity: 0;
+  animation: hhc-jazz-word-arrival 1.6s ease-out forwards;
+}
+
+.hhc-jazz-invitation h3 span:nth-child(1) { animation-delay: 0.25s; }
+.hhc-jazz-invitation h3 span:nth-child(2) { animation-delay: 0.95s; }
+.hhc-jazz-invitation h3 span:nth-child(3) { animation-delay: 1.65s; }
 
 .hhc-jazz-play-button {
   display: grid;
@@ -2256,15 +2283,37 @@ a, button {
   color: #f0e7ff;
 }
 
-@keyframes hhc-jazz-title-arrival {
+@keyframes hhc-jazz-word-arrival {
   from {
     opacity: 0;
-    transform: translateX(-2rem);
+    transform: translateY(0.55rem);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
+}
+
+.hhc-jazz-modal-inner {
+  background: linear-gradient(145deg, #171025, #0b0812) !important;
+  border-color: rgba(181, 155, 255, 0.48) !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.85), 0 0 38px rgba(93, 55, 160, 0.2) !important;
+}
+
+.hhc-jazz-modal-label p {
+  color: #bca6e7 !important;
+}
+
+.hhc-jazz-modal-close {
+  background: rgba(105, 75, 160, 0.16) !important;
+  border-color: rgba(184, 157, 255, 0.34) !important;
+  color: #bca6e7 !important;
+}
+
+.hhc-jazz-modal-close:hover,
+.hhc-jazz-modal-close:focus-visible {
+  background: rgba(129, 91, 196, 0.34) !important;
+  color: #f2ebff !important;
 }
 
 .hhc-lounge-modal-button {
@@ -2414,13 +2463,7 @@ a, button {
 }
 
 .hhc-experience-artwork-frame::before {
-  position: absolute;
-  width: 75%;
-  aspect-ratio: 1;
-  border: 1px solid rgba(195, 165, 238, 0.18);
-  border-radius: 50%;
-  box-shadow: 0 0 80px rgba(109, 45, 164, 0.26), inset 0 0 60px rgba(109, 45, 164, 0.09);
-  content: "";
+  display: none;
 }
 
 .hhc-experience-artwork {
@@ -2845,6 +2888,10 @@ a, button {
 }
 
 @media (max-width: 700px) {
+  .hhc-experience-tile-explore-text {
+    opacity: 0 !important;
+  }
+
   .hhc-experience-tile-label {
     top: 0.75rem !important;
     left: 0.75rem !important;

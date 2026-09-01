@@ -95,17 +95,10 @@ export default function Experience() {
           <div className="hhc-experience-hero-inner">
             <div className="hhc-experience-hero-copy">
               <p className="hhc-experience-eyebrow">A Hard House Coffee presentation</p>
-              <h1 id="experience-title">THE HARD HOUSE<br /><em>COFFEE EXPERIENCE</em></h1>
+               <h1 id="experience-title">THE HARD HOUSE COFFEE<br /><em>EXPERIENCE</em></h1>
               <p className="hhc-experience-intro">
                 Discover handpicked coffee ambience, jazz sessions, piano collections, festivals, documentaries, cafés, and coffee culture from around the world.
               </p>
-              <div className="hhc-experience-hero-rule" aria-hidden="true" />
-              <p className="hhc-experience-note">
-                Put the kettle on. Choose a room. Let the day take its time.
-              </p>
-              <a className="hhc-experience-browse" href="#featured">
-                Enter the collection <span aria-hidden="true">↓</span>
-              </a>
             </div>
             <div className="hhc-experience-artwork-frame">
               <img
@@ -113,7 +106,6 @@ export default function Experience() {
                 alt="Purple HHC coffee mug with glowing purple steam, treble clef, and music notes"
                 className="hhc-experience-artwork"
               />
-              <span className="hhc-experience-artwork-label">Jazz &amp; Coffee</span>
             </div>
           </div>
         </section>
@@ -133,7 +125,6 @@ export default function Experience() {
               <p className="hhc-experience-eyebrow">Featured video</p>
               <h2>{featuredExperienceVideo.title}</h2>
               <p>{featuredExperienceVideo.description}</p>
-              <span className="hhc-experience-featured-source">The original Jazz &amp; Coffee popup session</span>
             </div>
           </div>
 
