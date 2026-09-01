@@ -3330,6 +3330,14 @@ a, button {
   font-size: clamp(1.15rem, 2vw, 1.65rem);
 }
 
+.hhc-experience-category-title p {
+  margin: 0.42rem 0 0;
+  color: #93869d;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
 .hhc-experience-category-heading span {
   color: #716779;
   font-size: 0.64rem;
@@ -3788,6 +3796,15 @@ a, button {
 
   .hhc-experience-media-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hhc-experience-category-heading {
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .hhc-experience-category-heading span {
+    flex: 0 0 auto;
   }
 
   .hhc-experience-media-copy p {

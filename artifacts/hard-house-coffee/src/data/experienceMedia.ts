@@ -4,7 +4,8 @@ export type ExperienceVideoCategory =
   | "Coffee Festivals & Expos"
   | "Cafés & Culture"
   | "Coffee Craft"
-  | "Competition Stage";
+  | "Competition Stage"
+  | "COFFEE THROUGH TIME";
 
 export interface ExperienceMedia {
   id: string;
@@ -284,6 +285,46 @@ export const experienceVideos: ExperienceMedia[] = [
     description: "A behind-the-scenes roastery tour from a respected specialty coffee name.",
     format: "Roastery tour",
   },
+  {
+    id: "T0CcrvtQjd4",
+    title: "A Coffee Landmark in Coyoacán",
+    creator: "Connie Chew",
+    category: "COFFEE THROUGH TIME",
+    description: "Visit El Jarocho, the mid-century neighborhood café that made coffee part of daily life in Mexico City.",
+    format: "Mexico City · Café history",
+  },
+  {
+    id: "zOCejq92pdo",
+    title: "The Kissaten Keeper",
+    creator: "Life Where I'm From",
+    category: "COFFEE THROUGH TIME",
+    description: "Spend a day inside an old-school Japanese café where careful service keeps kissaten culture alive.",
+    format: "Japan · Living history",
+  },
+  {
+    id: "loU0K0bEPEQ",
+    title: "From Bean to Cup in Colombia",
+    creator: "happy®",
+    category: "COFFEE THROUGH TIME",
+    description: "Meet the people and growing communities whose work ties coffee to Colombia's landscape and identity.",
+    format: "Colombia · Origin story",
+  },
+  {
+    id: "I8uStVXNf0M",
+    title: "The Birth of Espresso",
+    creator: "James Hoffmann",
+    category: "COFFEE THROUGH TIME",
+    description: "Follow the inventions and café rituals that transformed Italian espresso into a worldwide language.",
+    format: "Italy · Coffee history",
+  },
+  {
+    id: "0mUv5DtGpig",
+    title: "The Machines That Changed Coffee",
+    creator: "Barista Hustle",
+    category: "COFFEE THROUGH TIME",
+    description: "Trace the early patents and engineering milestones that moved espresso from steam to modern pressure.",
+    format: "Espresso machines · Part one",
+  },
 ];
 
 export const experienceVideoGroups: ExperienceVideoCategory[] = [
@@ -293,4 +334,5 @@ export const experienceVideoGroups: ExperienceVideoCategory[] = [
   "Cafés & Culture",
   "Coffee Craft",
   "Competition Stage",
+  "COFFEE THROUGH TIME",
 ];

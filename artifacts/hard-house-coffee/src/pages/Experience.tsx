@@ -483,7 +483,7 @@ export default function Experience() {
               <p className="hhc-experience-eyebrow">02 / The opening set</p>
               <h2 id="featured-title">The room is ready.</h2>
             </div>
-            <p className="hhc-experience-section-count">32 selections · carefully collected</p>
+            <p className="hhc-experience-section-count">37 selections · carefully collected</p>
           </div>
 
           <div className="hhc-experience-featured">
@@ -516,7 +516,10 @@ export default function Experience() {
             {groupedVideos.map((group: { category: ExperienceVideoCategory; videos: ExperienceMedia[] }) => (
               <section key={group.category} className="hhc-experience-category" aria-labelledby={`category-${group.category.replace(/\W+/g, "-").toLowerCase()}`}>
                 <div className="hhc-experience-category-heading">
-                  <h3 id={`category-${group.category.replace(/\W+/g, "-").toLowerCase()}`}>{group.category}</h3>
+                  <div className="hhc-experience-category-title">
+                    <h3 id={`category-${group.category.replace(/\W+/g, "-").toLowerCase()}`}>{group.category}</h3>
+                    {group.category === "COFFEE THROUGH TIME" && <p>Five stories that shaped the cup.</p>}
+                  </div>
                   <span>{String(group.videos.length).padStart(2, "0")} selections</span>
                 </div>
                 <div className="hhc-experience-media-grid">
