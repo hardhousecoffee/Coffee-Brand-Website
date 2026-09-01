@@ -30,10 +30,10 @@ export interface ExperienceMusicSession {
  */
 export const featuredExperienceVideo: ExperienceMedia = {
   id: "Z6Dx-o3vfJY",
-  title: "The Hard House Jazz Feel",
+  title: "Featured coffeehouse session",
   creator: "Hard House Coffee",
   category: "Coffeehouse Jazz",
-  description: "The original Jazz & Coffee session from the Hard House Coffee homepage.",
+  description: "An opening session from the Hard House Coffee homepage.",
   format: "Featured session",
 };
 

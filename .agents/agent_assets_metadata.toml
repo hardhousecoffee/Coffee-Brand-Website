@@ -262,3 +262,31 @@ mtime_ms = 1788261294299
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/3f975fec-b701-4248-977d-eff33ee9ee28/b4b6dd6e-3db4-4d5e-b0bb-2b636517d522"
 storage_version_token = "1788261304477989"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "cwLDtKsGuhklIYUV91gcu"
+uri = "file://screenshots/hard-house-experience-featured-desktop.jpg"
+type = "image"
+title = "Experience Featured Section — Desktop"
+description = "The vertical featured-copy panel and its title are removed; the official player now uses the full available width."
+logical_id = "c0e3e16a-d79e-4157-a82c-020530b38504"
+content_hash = "sha256:39fdff3b4be3b91128c92b11442ee97257445e74e8db9a3328987ff3250a0a34"
+size = 116117
+mtime_ms = 1788261410440
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/c0e3e16a-d79e-4157-a82c-020530b38504/1170d085-fb64-4526-a18a-0543b75227d0"
+storage_version_token = "1788261429012527"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "WJjiW4eTjgYZO7Knm-jEV"
+uri = "file://screenshots/hard-house-experience-featured-mobile.jpg"
+type = "image"
+title = "Experience Featured Section — Mobile"
+description = "Mobile proof showing the removed panel and clean transition from the hero into the featured player."
+logical_id = "6361d3d1-86ce-4c67-a752-d471f4319f86"
+content_hash = "sha256:c5d2ac492085b86cf9e90348505cee29a7dc23ba046bcd4d657d70a5fdea0397"
+size = 79864
+mtime_ms = 1788261417513
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/6361d3d1-86ce-4c67-a752-d471f4319f86/621bd921-0b2a-4848-a8f3-47446b30bc8c"
+storage_version_token = "1788261429913761"
+content_type = "image/jpeg"

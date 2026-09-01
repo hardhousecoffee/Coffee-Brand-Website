@@ -2529,9 +2529,7 @@ a, button {
 }
 
 .hhc-experience-featured {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.4fr);
-  gap: 1.2rem;
+  display: block;
 }
 
 .hhc-experience-embed {
@@ -2547,41 +2545,6 @@ a, button {
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-.hhc-experience-featured-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  padding: 2rem 1.6rem;
-  border: 1px solid rgba(193, 168, 230, 0.16);
-  background: linear-gradient(145deg, rgba(47, 31, 60, 0.62), rgba(17, 13, 21, 0.8));
-}
-
-.hhc-experience-featured-copy .hhc-experience-eyebrow {
-  margin-bottom: auto;
-}
-
-.hhc-experience-featured-copy h2 {
-  margin: 4rem 0 1rem;
-  color: #d8c6ef;
-  font-size: clamp(1.35rem, 2.3vw, 2.35rem);
-  line-height: 1.18;
-}
-
-.hhc-experience-featured-copy > p:not(.hhc-experience-eyebrow) {
-  margin: 0;
-  color: #a79cac;
-  font-size: 0.87rem;
-  line-height: 1.7;
-}
-
-.hhc-experience-featured-source {
-  margin-top: 2rem;
-  color: #725f80;
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .hhc-experience-music-room,
@@ -2879,14 +2842,6 @@ a, button {
 
   .hhc-experience-artwork {
     width: min(100%, 480px);
-  }
-
-  .hhc-experience-featured {
-    grid-template-columns: 1fr;
-  }
-
-  .hhc-experience-featured-copy {
-    min-height: 260px;
   }
 
   .hhc-experience-media-grid {

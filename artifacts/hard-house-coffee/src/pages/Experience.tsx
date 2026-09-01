@@ -123,11 +123,6 @@ export default function Experience() {
 
           <div className="hhc-experience-featured">
             <YouTubeEmbed media={featuredExperienceVideo} featured />
-            <div className="hhc-experience-featured-copy">
-              <p className="hhc-experience-eyebrow">Featured video</p>
-              <h2>{featuredExperienceVideo.title}</h2>
-              <p>{featuredExperienceVideo.description}</p>
-            </div>
           </div>
 
           <section className="hhc-experience-music-room" aria-labelledby="music-title">
