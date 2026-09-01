@@ -19,10 +19,12 @@ const heroSlides = [
   { src: "/images/bar-mug.jpg", alt: "Coffee at Bar" },
   { src: "/images/hero-park-coffee.png", alt: "Coffee in the Park" },
   { src: "/images/steamy-mug.jpg", alt: "Steamy Mug" },
+  { src: "/images/hero-tattooed-woman-cafe.jpg", alt: "Tattooed Woman with Coffee" },
   { src: "/images/hero-coffee-portrait.png", alt: "Coffee Portrait" },
   { src: "/images/carousel-neon-coffee.jpg", alt: "Neon Coffee Sign" },
-  { src: "/images/carousel-woman-teapot.jpg", alt: "Woman with Teapot" },
+  { src: "/images/hero-tattooed-barista.jpg", alt: "Tattooed Barista" },
   { src: "/images/carousel-black-cafe.jpg", alt: "Black Cafe Exterior" },
+  { src: "/images/carousel-woman-teapot.jpg", alt: "Woman with Teapot" },
 ];
 
 const experienceTiles = [
