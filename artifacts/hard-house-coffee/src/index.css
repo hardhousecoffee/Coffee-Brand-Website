@@ -2179,9 +2179,142 @@ a, button {
   isolation: isolate;
 }
 
+.hhc-atmosphere-tile-overlay::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    radial-gradient(circle at 78% 16%, rgba(194, 226, 255, 0.24), transparent 34%),
+    radial-gradient(circle at 64% 62%, rgba(185, 155, 255, 0.2), transparent 42%),
+    linear-gradient(126deg, transparent 28%, rgba(154, 126, 246, 0.1) 72%, rgba(187, 169, 255, 0.14));
+  content: "";
+  mix-blend-mode: screen;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.hhc-atmosphere-tile-image {
+  filter: saturate(1.04) brightness(1.02);
+}
+
 .hhc-experience-tile-label {
   max-width: calc(100% - 2rem);
   line-height: 1.2;
+}
+
+.hhc-atmosphere-card-label {
+  top: 1rem !important;
+  left: 50% !important;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  max-width: calc(100% - 1.5rem);
+  color: #e2d7ff !important;
+  font-size: clamp(0.62rem, 1.15vw, 0.91rem) !important;
+  letter-spacing: 0.13em !important;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow:
+    0 0 10px rgba(205, 185, 255, 0.9),
+    0 0 22px rgba(157, 117, 238, 0.55);
+  transform: translateX(-50%);
+}
+
+.hhc-atmosphere-card-word {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hhc-atmosphere-card-underline {
+  position: absolute;
+  right: 0;
+  bottom: -0.38rem;
+  left: 0;
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(228, 214, 255, 0.92) 15%, rgba(196, 166, 255, 0.95) 50%, rgba(228, 214, 255, 0.92) 85%, transparent);
+  box-shadow:
+    0 0 5px rgba(216, 194, 255, 0.8),
+    0 0 12px rgba(154, 106, 226, 0.46);
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: hhc-atmosphere-underline-in 900ms 180ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes hhc-atmosphere-underline-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 0.86;
+    transform: scaleX(1);
+  }
+}
+
+.hhc-atmosphere-card-notes {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 0.45rem);
+  width: 2.35rem;
+  height: 1.55rem;
+  color: #d8c5ff;
+  font-family: Georgia, serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-shadow:
+    0 0 7px rgba(211, 188, 255, 0.78),
+    0 0 15px rgba(143, 99, 216, 0.4);
+  transform: translateY(-50%);
+}
+
+.hhc-atmosphere-card-notes > span {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  animation: hhc-atmosphere-note-dissolve 4.8s ease-in-out infinite;
+}
+
+.hhc-atmosphere-card-notes > span:nth-child(1) {
+  top: 0.45rem;
+  left: 0;
+  animation-delay: -0.2s;
+}
+
+.hhc-atmosphere-card-notes > span:nth-child(2) {
+  top: 0.12rem;
+  left: 0.75rem;
+  font-size: 0.62rem;
+  animation-delay: -1.7s;
+}
+
+.hhc-atmosphere-card-notes > span:nth-child(3) {
+  top: -0.18rem;
+  left: 1.45rem;
+  font-size: 0.56rem;
+  animation-delay: -3.1s;
+}
+
+@keyframes hhc-atmosphere-note-dissolve {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.84);
+  }
+  24% {
+    opacity: 0.68;
+  }
+  70% {
+    opacity: 0.28;
+  }
+  88% {
+    opacity: 0;
+    transform: translate(0.42rem, -0.62rem) scale(1.08);
+  }
 }
 
 .hhc-experience-tile-explore {
@@ -3156,6 +3289,36 @@ a, button {
     font-size: clamp(0.58rem, 2.8vw, 0.76rem) !important;
     letter-spacing: 0.08em !important;
     line-height: 1.18 !important;
+  }
+
+  .hhc-atmosphere-card-label {
+    top: 0.75rem !important;
+    left: 50% !important;
+    max-width: calc(100% - 2.6rem);
+    font-size: clamp(0.5rem, 2.15vw, 0.72rem) !important;
+    letter-spacing: 0.09em !important;
+    transform: translateX(-50%);
+  }
+
+  .hhc-atmosphere-card-underline {
+    bottom: -0.28rem;
+  }
+
+  .hhc-atmosphere-card-notes {
+    left: calc(100% + 0.28rem);
+    width: 1.8rem;
+    height: 1.25rem;
+    font-size: 0.58rem;
+  }
+
+  .hhc-atmosphere-card-notes > span:nth-child(2) {
+    left: 0.56rem;
+    font-size: 0.5rem;
+  }
+
+  .hhc-atmosphere-card-notes > span:nth-child(3) {
+    left: 1.1rem;
+    font-size: 0.46rem;
   }
 
   .hhc-experience-tile-explore {

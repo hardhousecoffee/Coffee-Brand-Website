@@ -567,10 +567,13 @@ export default function Home() {
               opacity: activeExperience !== null ? 0.18 : 1,
             }}
           >
-            {experienceTiles.map((item, idx) => (
+            {experienceTiles.map((item, idx) => {
+              const isAtmosphere = item.src === "/images/atmosphere-cafe.png";
+
+              return (
               <button
                 key={idx}
-                className="hhc-experience-tile group relative overflow-hidden text-left"
+                className={`hhc-experience-tile group relative overflow-hidden text-left${isAtmosphere ? " hhc-atmosphere-tile" : ""}`}
                 onClick={() => openTile(idx)}
                 style={{
                   borderRadius: "8px",
@@ -602,11 +605,11 @@ export default function Home() {
                 <img
                   src={item.src}
                   alt={item.label}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover${isAtmosphere ? " hhc-atmosphere-tile-image" : ""}`}
                   style={{ transition: "transform 0.6s ease", display: "block" }}
                 />
                   <div
-                    className="hhc-experience-tile-overlay absolute inset-0"
+                    className={`hhc-experience-tile-overlay absolute inset-0${isAtmosphere ? " hhc-atmosphere-tile-overlay" : ""}`}
                   style={{
                      background: item.src === "/images/atmosphere-cafe.png"
                        ? "linear-gradient(to bottom, rgba(8,5,18,0.8) 0%, transparent 48%, rgba(8,5,18,0.24) 100%)"
@@ -648,8 +651,8 @@ export default function Home() {
                     </p>
                   </div>
                    {/* Label — top left, kept clear of the photography */}
-                  <p
-                     className="hhc-experience-tile-label"
+                   <p
+                      className={`hhc-experience-tile-label${isAtmosphere ? " hhc-atmosphere-card-label" : ""}`}
                     style={{
                       position: "absolute",
                        top: "1rem",
@@ -667,11 +670,22 @@ export default function Home() {
                       margin: 0,
                     }}
                   >
-                     {item.label}
+                      {isAtmosphere ? (
+                        <>
+                          <span className="hhc-atmosphere-card-word">{item.label}</span>
+                          <span className="hhc-atmosphere-card-underline" aria-hidden="true" />
+                          <span className="hhc-atmosphere-card-notes" aria-hidden="true">
+                            <span>♪</span>
+                            <span>♫</span>
+                            <span>♬</span>
+                          </span>
+                        </>
+                      ) : item.label}
                   </p>
                 </div>
               </button>
-            ))}
+              );
+            })}
           </div>
 
           {/* Hovering pop-up tile */}
