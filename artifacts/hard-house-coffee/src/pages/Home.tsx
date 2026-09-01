@@ -10,6 +10,7 @@ import PremiumBanner from "@/components/PremiumBanner";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const heroSlides = [
+  { src: "/images/hero-coffee-tabletop.png", alt: "Coffee cups, beans, and brewing vessels arranged on a dark table" },
   { src: "/images/cafe-alley.jpg", alt: "Hero Cafe Alley" },
   { src: "/images/hero-barista-pour.jpg", alt: "Barista Pouring Coffee" },
   { src: "/images/aroma-beans.jpg", alt: "Aroma Coffee Beans" },
@@ -20,8 +21,8 @@ const heroSlides = [
   { src: "/images/hero-park-coffee.png", alt: "Coffee in the Park" },
   { src: "/images/steamy-mug.jpg", alt: "Steamy Mug" },
   { src: "/images/hero-tattooed-woman-cafe.jpg", alt: "Tattooed Woman with Coffee" },
-  { src: "/images/hero-coffee-portrait.png", alt: "Coffee Portrait" },
   { src: "/images/carousel-neon-coffee.jpg", alt: "Neon Coffee Sign" },
+  { src: "/images/hero-coffee-portrait.png", alt: "Coffee Portrait" },
   { src: "/images/hero-tattooed-barista.jpg", alt: "Tattooed Barista" },
   { src: "/images/carousel-black-cafe.jpg", alt: "Black Cafe Exterior" },
   { src: "/images/carousel-woman-teapot.jpg", alt: "Woman with Teapot" },
