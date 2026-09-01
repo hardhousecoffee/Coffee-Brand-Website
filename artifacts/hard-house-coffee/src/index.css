@@ -2135,3 +2135,682 @@ a, button {
     transform: none;
   }
 }
+
+/* ─── Hard House Coffee Experience ───────────────────────────────────────── */
+.hhc-jazz-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.hhc-lounge-modal-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.25rem;
+  padding: 0.62rem 0.9rem;
+  border: 1px solid rgba(198, 179, 255, 0.68);
+  border-radius: 5px;
+  background: linear-gradient(135deg, rgba(75, 42, 121, 0.92), rgba(38, 26, 71, 0.95));
+  box-shadow: 0 0 20px rgba(154, 112, 225, 0.14);
+  color: #e2d8ff;
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.hhc-lounge-modal-button:hover,
+.hhc-lounge-modal-button:focus-visible {
+  border-color: #efe8ff;
+  box-shadow: 0 0 24px rgba(179, 141, 245, 0.32);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.hhc-experience-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 72% 8%, rgba(105, 60, 151, 0.12), transparent 34rem),
+    #08070b;
+  color: #f3eef6;
+}
+
+.hhc-experience-page h1,
+.hhc-experience-page h2,
+.hhc-experience-page h3 {
+  font-family: 'Cinzel Decorative', Georgia, serif;
+  font-weight: 400;
+}
+
+.hhc-experience-hero {
+  position: relative;
+  min-height: min(860px, 100vh);
+  padding: 8.8rem 6vw 5.6rem;
+  border-bottom: 1px solid rgba(191, 166, 229, 0.14);
+  background:
+    linear-gradient(108deg, rgba(8, 7, 11, 0.99) 0%, rgba(12, 9, 17, 0.95) 55%, rgba(19, 10, 28, 0.72) 100%),
+    radial-gradient(ellipse at 75% 50%, rgba(97, 43, 149, 0.24), transparent 34rem);
+}
+
+.hhc-experience-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  gap: 4vw;
+  align-items: center;
+  width: min(1320px, 100%);
+  min-height: 590px;
+  margin: 0 auto;
+}
+
+.hhc-experience-hero-copy {
+  max-width: 640px;
+}
+
+.hhc-experience-eyebrow {
+  margin: 0 0 1.1rem;
+  color: #b8a1d5;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.hhc-experience-hero h1 {
+  margin: 0;
+  color: #f7f1fa;
+  font-size: clamp(2.9rem, 6.2vw, 6.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  text-shadow: 0 0 42px rgba(165, 111, 225, 0.12);
+}
+
+.hhc-experience-hero h1 em {
+  display: inline-block;
+  margin-top: 0.2em;
+  color: #c5b1ee;
+  font-family: Georgia, serif;
+  font-size: 0.61em;
+  font-style: italic;
+  letter-spacing: -0.04em;
+}
+
+.hhc-experience-intro {
+  max-width: 570px;
+  margin: 2rem 0 0;
+  color: #e7dfea;
+  font-family: Georgia, serif;
+  font-size: clamp(1.05rem, 1.75vw, 1.38rem);
+  line-height: 1.6;
+}
+
+.hhc-experience-hero-rule {
+  width: 4.5rem;
+  height: 1px;
+  margin: 1.8rem 0 1.3rem;
+  background: linear-gradient(90deg, #ba96ec, transparent);
+}
+
+.hhc-experience-note {
+  margin: 0;
+  color: #968b9d;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.hhc-experience-browse {
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 2.3rem;
+  color: #ceb8ed;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 180ms ease, gap 180ms ease;
+}
+
+.hhc-experience-browse:hover,
+.hhc-experience-browse:focus-visible {
+  gap: 1rem;
+  color: #fff;
+}
+
+.hhc-experience-artwork-frame {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 570px;
+}
+
+.hhc-experience-artwork-frame::before {
+  position: absolute;
+  width: 75%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(195, 165, 238, 0.18);
+  border-radius: 50%;
+  box-shadow: 0 0 80px rgba(109, 45, 164, 0.26), inset 0 0 60px rgba(109, 45, 164, 0.09);
+  content: "";
+}
+
+.hhc-experience-artwork {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(100%, 590px);
+  height: auto;
+  filter: drop-shadow(0 26px 40px rgba(77, 19, 124, 0.45));
+}
+
+.hhc-experience-artwork-label {
+  position: absolute;
+  right: 5%;
+  bottom: 3%;
+  z-index: 2;
+  color: #9f87b6;
+  font: italic 0.84rem Georgia, serif;
+  letter-spacing: 0.08em;
+}
+
+.hhc-experience-content {
+  width: min(1320px, calc(100% - 12vw));
+  margin: 0 auto;
+  padding: 6.5rem 0 5rem;
+  scroll-margin-top: 4.5rem;
+}
+
+.hhc-experience-section-heading {
+  display: flex;
+  gap: 2rem;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 2.2rem;
+}
+
+.hhc-experience-section-heading .hhc-experience-eyebrow {
+  margin-bottom: 0.6rem;
+}
+
+.hhc-experience-section-heading h2,
+.hhc-experience-subheading h2 {
+  margin: 0;
+  color: #f5eff7;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  letter-spacing: -0.04em;
+}
+
+.hhc-experience-section-count {
+  margin: 0 0 0.45rem;
+  color: #877b90;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hhc-experience-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.4fr);
+  gap: 1.2rem;
+}
+
+.hhc-experience-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(193, 168, 230, 0.16);
+  background: #0e0a12;
+}
+
+.hhc-experience-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.hhc-experience-featured-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 2rem 1.6rem;
+  border: 1px solid rgba(193, 168, 230, 0.16);
+  background: linear-gradient(145deg, rgba(47, 31, 60, 0.62), rgba(17, 13, 21, 0.8));
+}
+
+.hhc-experience-featured-copy .hhc-experience-eyebrow {
+  margin-bottom: auto;
+}
+
+.hhc-experience-featured-copy h2 {
+  margin: 4rem 0 1rem;
+  color: #d8c6ef;
+  font-size: clamp(1.35rem, 2.3vw, 2.35rem);
+  line-height: 1.18;
+}
+
+.hhc-experience-featured-copy > p:not(.hhc-experience-eyebrow) {
+  margin: 0;
+  color: #a79cac;
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.hhc-experience-featured-source {
+  margin-top: 2rem;
+  color: #725f80;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hhc-experience-music-room,
+.hhc-experience-video-rooms {
+  margin-top: 7rem;
+}
+
+.hhc-experience-subheading {
+  max-width: 720px;
+  margin-bottom: 2.4rem;
+}
+
+.hhc-experience-subheading .hhc-experience-eyebrow {
+  margin-bottom: 0.65rem;
+}
+
+.hhc-experience-subheading > p:last-child {
+  max-width: 620px;
+  margin: 1.2rem 0 0;
+  color: #998e9e;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.hhc-experience-music-layout {
+  display: grid;
+  grid-template-columns: minmax(290px, 0.62fr) minmax(0, 1.38fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.hhc-experience-session-list {
+  border-top: 1px solid rgba(193, 168, 230, 0.18);
+}
+
+.hhc-experience-session-list button {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0.75rem;
+  border: 0;
+  border-bottom: 1px solid rgba(193, 168, 230, 0.14);
+  background: transparent;
+  color: #9d91a4;
+  text-align: left;
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease, padding-left 180ms ease;
+}
+
+.hhc-experience-session-list button:hover,
+.hhc-experience-session-list button:focus-visible,
+.hhc-experience-session-list button.is-active {
+  padding-left: 1rem;
+  background: rgba(118, 72, 166, 0.13);
+  color: #e7ddf2;
+}
+
+.hhc-experience-session-number {
+  color: #796588;
+  font: 0.66rem 'Cinzel Decorative', serif;
+  letter-spacing: 0.1em;
+}
+
+.hhc-experience-session-title {
+  min-width: 0;
+}
+
+.hhc-experience-session-title strong,
+.hhc-experience-session-title small {
+  display: block;
+}
+
+.hhc-experience-session-title strong {
+  overflow: hidden;
+  color: inherit;
+  font: 400 0.88rem 'Cinzel Decorative', serif;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hhc-experience-session-title small {
+  margin-top: 0.32rem;
+  color: #736b78;
+  font-size: 0.68rem;
+}
+
+.hhc-experience-session-arrow {
+  color: #9274ae;
+}
+
+.hhc-experience-music-player {
+  border: 1px solid rgba(193, 168, 230, 0.16);
+  background: rgba(19, 14, 24, 0.78);
+}
+
+.hhc-experience-music-now {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.2rem;
+}
+
+.hhc-experience-music-now span,
+.hhc-experience-music-now small {
+  color: #786c80;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hhc-experience-music-now strong {
+  overflow: hidden;
+  color: #d9cbe6;
+  font: 400 0.86rem 'Cinzel Decorative', serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hhc-experience-video-heading {
+  margin-bottom: 4rem;
+}
+
+.hhc-experience-category {
+  margin-top: 4.5rem;
+}
+
+.hhc-experience-category-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(193, 168, 230, 0.16);
+}
+
+.hhc-experience-category-heading h3 {
+  margin: 0;
+  color: #d8c6ed;
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+}
+
+.hhc-experience-category-heading span {
+  color: #716779;
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hhc-experience-media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.hhc-experience-media-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(193, 168, 230, 0.13);
+  background: rgba(20, 15, 25, 0.78);
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+}
+
+.hhc-experience-media-card:hover {
+  border-color: rgba(200, 177, 235, 0.45);
+  background: rgba(29, 21, 36, 0.92);
+  transform: translateY(-3px);
+}
+
+.hhc-experience-media-copy {
+  padding: 1.05rem 1.1rem 1.25rem;
+}
+
+.hhc-experience-media-meta {
+  display: flex;
+  gap: 0.4rem;
+  overflow: hidden;
+  color: #897595;
+  font-size: 0.61rem;
+  letter-spacing: 0.08em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hhc-experience-media-copy h3 {
+  margin: 0.65rem 0 0.55rem;
+  color: #eee7f2;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.hhc-experience-media-copy p {
+  min-height: 3.35em;
+  margin: 0;
+  color: #958b9a;
+  font-size: 0.79rem;
+  line-height: 1.6;
+}
+
+.hhc-experience-watch-link {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  margin-top: 1rem;
+  color: #bda5d8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.hhc-experience-watch-link:hover,
+.hhc-experience-watch-link:focus-visible {
+  color: #fff;
+}
+
+.hhc-experience-attribution {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  max-width: 760px;
+  margin: 5.5rem auto 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(193, 168, 230, 0.14);
+  border-bottom: 1px solid rgba(193, 168, 230, 0.14);
+  color: #756b7b;
+}
+
+.hhc-experience-attribution span {
+  flex: 0 0 auto;
+  color: #9f85b8;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+}
+
+.hhc-experience-attribution p {
+  margin: 0;
+  font-size: 0.73rem;
+  line-height: 1.55;
+}
+
+.hhc-experience-return {
+  padding: 0 6vw 5rem;
+  text-align: center;
+}
+
+.hhc-experience-return a {
+  color: #b69ace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.hhc-experience-return a:hover,
+.hhc-experience-return a:focus-visible {
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .hhc-experience-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hhc-experience-artwork-frame {
+    min-height: 450px;
+  }
+
+  .hhc-experience-artwork {
+    width: min(100%, 480px);
+  }
+
+  .hhc-experience-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .hhc-experience-featured-copy {
+    min-height: 260px;
+  }
+
+  .hhc-experience-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .hhc-experience-popover {
+    width: calc(100vw - 1rem) !important;
+    max-width: calc(100vw - 1rem);
+  }
+
+  .hhc-experience-popover .hhc-modal-inner,
+  .hhc-experience-popover .hhc-modal-inner > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hhc-jazz-modal-actions {
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hhc-jazz-modal-actions > a,
+  .hhc-jazz-modal-actions > button,
+  .hhc-lounge-modal-button {
+    width: 100%;
+    min-width: 0 !important;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .hhc-experience-hero {
+    min-height: 0;
+    padding: 7rem 1.25rem 3.5rem;
+  }
+
+  .hhc-experience-hero-inner {
+    gap: 1rem;
+    min-height: 0;
+  }
+
+  .hhc-experience-hero h1 {
+    font-size: clamp(2.65rem, 13.5vw, 4.3rem);
+  }
+
+  .hhc-experience-intro {
+    margin-top: 1.5rem;
+    font-size: 1.03rem;
+  }
+
+  .hhc-experience-artwork-frame {
+    min-height: 330px;
+    margin: 0 -0.75rem;
+  }
+
+  .hhc-experience-artwork {
+    width: min(100%, 370px);
+  }
+
+  .hhc-experience-artwork-label {
+    right: 7%;
+    bottom: 1%;
+    font-size: 0.7rem;
+  }
+
+  .hhc-experience-content {
+    width: calc(100% - 2.5rem);
+    padding-top: 4rem;
+  }
+
+  .hhc-experience-section-heading {
+    display: block;
+  }
+
+  .hhc-experience-section-count {
+    margin-top: 1rem;
+  }
+
+  .hhc-experience-music-room,
+  .hhc-experience-video-rooms {
+    margin-top: 5rem;
+  }
+
+  .hhc-experience-music-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hhc-experience-music-player {
+    order: -1;
+  }
+
+  .hhc-experience-music-now {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .hhc-experience-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hhc-experience-media-copy p {
+    min-height: 0;
+  }
+
+  .hhc-experience-attribution {
+    display: block;
+    text-align: center;
+  }
+
+  .hhc-experience-attribution span {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .hhc-experience-return {
+    padding: 0 1.25rem 3.5rem;
+  }
+}

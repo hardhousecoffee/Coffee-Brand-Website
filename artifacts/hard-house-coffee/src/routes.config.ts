@@ -35,7 +35,7 @@ import Contact from "@/pages/Contact";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Disclaimer from "@/pages/Disclaimer";
 import TermsOfUse from "@/pages/TermsOfUse";
-import Lounge from "@/pages/Lounge";
+import Experience from "@/pages/Experience";
 
 export interface RouteConfig {
   path: string;
@@ -54,7 +54,7 @@ export interface RouteConfig {
 // ─────────────────────────────────────────────────────────────────────────────
 export const routes: RouteConfig[] = [
   { path: "/",       component: Home,    changefreq: "weekly",  priority: "1.0" },
-  { path: "/lounge",  component: Lounge,  changefreq: "monthly", priority: "0.6" },
+  { path: "/experience", component: Experience, changefreq: "monthly", priority: "0.6" },
   { path: "/about",  component: About,   changefreq: "monthly", priority: "0.6" },
   { path: "/blog",   component: Blog,    changefreq: "weekly",  priority: "0.9" },
 

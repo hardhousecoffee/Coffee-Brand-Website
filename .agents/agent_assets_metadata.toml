@@ -164,3 +164,31 @@ mtime_ms = 1788240677439
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/6d865980-97d6-47b5-b7cc-3120af0e4483/e7646be9-472f-4b08-8028-184167d83e57"
 storage_version_token = "1788240950620587"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "jOa3MqIvwGclvlqmYSrq5"
+uri = "file://screenshots/hard-house-experience-desktop.jpg"
+type = "image"
+title = "Hard House Coffee Experience — Desktop Preview"
+description = "Saved desktop Preview of the new hidden Experience page using the supplied static artwork."
+logical_id = "3da4b557-ca16-4d51-8131-1e8c8a72cb66"
+content_hash = "sha256:00784acff644b90068f0026ec52423d376ab95438174b2a58d6aec82176263b2"
+size = 119330
+mtime_ms = 1788245178431
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/3da4b557-ca16-4d51-8131-1e8c8a72cb66/1fab6e79-0f07-42f5-9248-d2649384e2ae"
+storage_version_token = "1788245191686204"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "XcaCGiB4vAP77UReeo7Ei"
+uri = "file://screenshots/hard-house-experience-mobile.jpg"
+type = "image"
+title = "Hard House Coffee Experience — Mobile Preview"
+description = "Saved mobile Preview confirming the Experience hero and supplied artwork fit the viewport."
+logical_id = "2204b3a2-c7e0-41a5-9c33-da72fdf86bdf"
+content_hash = "sha256:1b795470b379fba5d6317667f8c5f0e4b5fef5b471584894421dd5af5c99a57c"
+size = 60333
+mtime_ms = 1788245182234
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/2204b3a2-c7e0-41a5-9c33-da72fdf86bdf/bb6bd3f9-70a1-4219-9234-dbd09cf5d1bd"
+storage_version_token = "1788245192471066"
+content_type = "image/jpeg"

@@ -7,7 +7,6 @@ import PageNav from "@/components/PageNav";
 import SteamEffect from "@/components/SteamEffect";
 import SteamEffectSVG from "@/components/SteamEffectSVG";
 import PremiumBanner from "@/components/PremiumBanner";
-import EditorialCategoryNav from "@/components/EditorialCategoryNav";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
@@ -71,9 +70,9 @@ const experienceTiles = [
   },
   {
     src: "/images/atmosphere-cafe.png",
-    label: "Atmosphere",
+    label: "Jazz & Coffee",
     modal: {
-      title: "The Hard House Jazz Feel",
+      title: "THE HARD HOUSE JAZZ FEEL",
       text: "It's not just about coffee. It's about how it feels. The glow of the room, the smell of fresh grounds, the first sip, and the quiet moment before the day starts.",
       image: "/images/exp-atmosphere.jpg",
       buttonLabel: "Watch the Experience",
@@ -494,11 +493,6 @@ export default function Home() {
               <Link href="/products">
                 <button className="btn-secondary">Shop</button>
               </Link>
-                <Link href="/lounge">
-                  <button className="lounge-entry-button">
-                    <span aria-hidden="true">▶</span> Enter The Lounge
-                  </button>
-                </Link>
             </div>
           </div>
         </div>
@@ -525,8 +519,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <EditorialCategoryNav />
 
       {/* FEATURED GRID */}
       <section
@@ -584,7 +576,9 @@ export default function Home() {
                 className="group relative overflow-hidden text-left"
                 style={{
                   borderRadius: "8px",
-                  border: "1px solid rgba(161,79,31,0.2)",
+                   border: item.label === "Jazz & Coffee"
+                     ? "1px solid rgba(185,164,255,0.28)"
+                     : "1px solid rgba(161,79,31,0.2)",
                   aspectRatio: "3/4",
                   cursor: "pointer",
                   transition: "border-color 0.3s ease",
@@ -593,12 +587,16 @@ export default function Home() {
                   width: "100%",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.65)";
+                   (e.currentTarget as HTMLElement).style.borderColor = item.label === "Jazz & Coffee"
+                     ? "rgba(205,188,255,0.82)"
+                     : "rgba(161,79,31,0.65)";
                   const img = (e.currentTarget as HTMLElement).querySelector("img") as HTMLElement;
                   if (img) img.style.transform = "scale(1.05)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(161,79,31,0.2)";
+                   (e.currentTarget as HTMLElement).style.borderColor = item.label === "Jazz & Coffee"
+                     ? "rgba(185,164,255,0.28)"
+                     : "rgba(161,79,31,0.2)";
                   const img = (e.currentTarget as HTMLElement).querySelector("img") as HTMLElement;
                   if (img) img.style.transform = "scale(1)";
                 }}
@@ -612,7 +610,9 @@ export default function Home() {
                 <div
                   className="absolute inset-0"
                   style={{
-                    background: "linear-gradient(to top, rgba(11,11,11,0.92) 0%, transparent 60%)",
+                     background: item.label === "Jazz & Coffee"
+                       ? "linear-gradient(to bottom, rgba(8,5,18,0.8) 0%, transparent 48%, rgba(8,5,18,0.24) 100%)"
+                       : "linear-gradient(to bottom, rgba(11,11,11,0.7) 0%, transparent 48%, rgba(11,11,11,0.92) 100%)",
                   }}
                 >
                   {/* Explore — centered, appears on hover */}
@@ -620,13 +620,21 @@ export default function Home() {
                     <p
                       onClick={(e) => { e.stopPropagation(); openTile(idx); }}
                       onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = "#f2f2f2"; el.style.textShadow = "0 0 10px rgba(242,242,242,0.7), 0 0 20px rgba(212,184,150,0.45)"; }}
-                      onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = "#ff6a00"; el.style.textShadow = "0 0 8px rgba(255,106,0,0.6)"; }}
+                       onMouseLeave={(e) => {
+                         const el = e.currentTarget as HTMLElement;
+                         el.style.color = item.label === "Jazz & Coffee" ? "#d1c2ff" : "#ff6a00";
+                         el.style.textShadow = item.label === "Jazz & Coffee"
+                           ? "0 0 12px rgba(197,171,255,0.72)"
+                           : "0 0 8px rgba(255,106,0,0.6)";
+                       }}
                       onTouchStart={(e) => { e.preventDefault(); openTile(idx); }}
                       className="read-more-hint"
                       style={{
                         fontSize: "1.1rem",
-                        color: "#ff6a00",
-                        textShadow: "0 0 8px rgba(255,106,0,0.6)",
+                         color: item.label === "Jazz & Coffee" ? "#d1c2ff" : "#ff6a00",
+                         textShadow: item.label === "Jazz & Coffee"
+                           ? "0 0 12px rgba(197,171,255,0.72)"
+                           : "0 0 8px rgba(255,106,0,0.6)",
                         letterSpacing: "0.1em",
                         opacity: 0,
                         transform: "translateY(6px)",
@@ -641,17 +649,19 @@ export default function Home() {
                       Explore →
                     </p>
                   </div>
-                  {/* Label — bottom left */}
+                   {/* Label — top left, kept clear of the photography */}
                   <p
                     style={{
                       position: "absolute",
-                      bottom: "1rem",
+                       top: "1rem",
                       left: "1rem",
                       fontFamily: "'Cinzel Decorative', serif",
                       fontSize: "0.91rem",
                       letterSpacing: "0.15em",
-                      color: "#ff6a00",
-                      textShadow: "0 0 8px rgba(255,106,0,0.55)",
+                       color: item.label === "Jazz & Coffee" ? "#d1c2ff" : "#ff6a00",
+                       textShadow: item.label === "Jazz & Coffee"
+                         ? "0 0 12px rgba(197,171,255,0.78)"
+                         : "0 0 8px rgba(255,106,0,0.55)",
                       textTransform: "uppercase",
                       userSelect: "none",
                       pointerEvents: "none",
@@ -671,6 +681,7 @@ export default function Home() {
             const m = tile.modal;
             return (
               <div
+                className="hhc-experience-popover"
                 onMouseEnter={keepOpen}
                 onMouseLeave={closeTile}
                 style={{
@@ -1039,13 +1050,25 @@ export default function Home() {
                         {/* CTA button */}
                         <div style={{ marginTop: "auto" }}>
                           {(m.videoId || m.videoSrc) ? (
-                            <button
-                              onClick={() => setShowAtmosphereVideo(true)}
-                              className="btn-primary"
-                              style={{ fontSize: "0.74rem", letterSpacing: "0.1em", padding: "0.6rem 1.1rem", alignSelf: "flex-start" }}
-                            >
-                              {m.buttonLabel}
-                            </button>
+                             <div className="hhc-jazz-modal-actions">
+                               {tile.label === "Jazz & Coffee" && (
+                                 <Link href="/experience">
+                                   <button
+                                     onClick={() => { setActiveExperience(null); setShowAtmosphereVideo(false); window.scrollTo(0, 0); }}
+                                     className="hhc-lounge-modal-button"
+                                   >
+                                     <span aria-hidden="true">▶</span> ENTER THE LOUNGE
+                                   </button>
+                                 </Link>
+                               )}
+                               <button
+                                 onClick={() => setShowAtmosphereVideo(true)}
+                                 className="btn-primary"
+                                 style={{ fontSize: "0.74rem", letterSpacing: "0.1em", padding: "0.6rem 1.1rem", alignSelf: "flex-start" }}
+                               >
+                                 {tile.label === "Jazz & Coffee" ? "Watch The Jazz Session" : m.buttonLabel}
+                               </button>
+                             </div>
                           ) : m.buttonHref ? (
                             <Link href={m.buttonHref}>
                               <button
