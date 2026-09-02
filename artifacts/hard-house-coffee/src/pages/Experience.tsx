@@ -25,6 +25,14 @@ interface ExperiencePhoto {
   caption: string;
 }
 
+interface ExperiencePhotoNote {
+  eyebrow: string;
+  title: string;
+  body: string;
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
 const experienceStreetPhotos: ExperiencePhoto[] = [
   {
     src: "/images/experience-alley-lights.jpg",
@@ -97,9 +105,11 @@ const experiencePeoplePhotos: ExperiencePhoto[] = [
 function ExperiencePhotoGallery({
   photos,
   className,
+  note,
 }: {
   photos: ExperiencePhoto[];
   className: string;
+  note?: ExperiencePhotoNote;
 }) {
   return (
     <div className={`hhc-experience-photo-grid ${className}`}>
@@ -109,6 +119,24 @@ function ExperiencePhotoGallery({
           <figcaption>{photo.caption}</figcaption>
         </figure>
       ))}
+      {note && (
+        <aside className={`hhc-experience-photo-note${note.imageSrc ? " has-image" : ""}`}>
+          {note.imageSrc && (
+            <img
+              className="hhc-experience-photo-note-image"
+              src={note.imageSrc}
+              alt={note.imageAlt ?? ""}
+              loading="lazy"
+              decoding="async"
+            />
+          )}
+          <div className="hhc-experience-photo-note-copy">
+            <p className="hhc-experience-eyebrow">{note.eyebrow}</p>
+            <h3>{note.title}</h3>
+            <p>{note.body}</p>
+          </div>
+        </aside>
+      )}
     </div>
   );
 }
@@ -474,7 +502,15 @@ export default function Experience() {
             <h2 id="experience-places-title">Where coffee becomes a place.</h2>
             <p>From lit alleys to neighborhood institutions, every room begins before the first cup reaches the table.</p>
           </div>
-          <ExperiencePhotoGallery photos={experienceStreetPhotos} className="hhc-experience-photo-grid-streets" />
+          <ExperiencePhotoGallery
+            photos={experienceStreetPhotos}
+            className="hhc-experience-photo-grid-streets"
+            note={{
+              eyebrow: "The approach / Before the first sip",
+              title: "A café begins at the threshold.",
+              body: "A lit alley, an open doorway, a familiar sign — these are the first notes of the ritual. Before coffee becomes conversation, the room invites you to slow down and stay awhile.",
+            }}
+          />
         </section>
 
         <section className="hhc-experience-content" id="featured" aria-labelledby="featured-title">
@@ -495,8 +531,30 @@ export default function Experience() {
               <p className="hhc-experience-eyebrow">Rooms / Objects / Memory</p>
               <h2 id="experience-rooms-title">Every café keeps a story.</h2>
             </div>
-            <ExperiencePhotoGallery photos={experienceCafePhotos} className="hhc-experience-photo-grid-cafes" />
+            <ExperiencePhotoGallery
+              photos={experienceCafePhotos}
+              className="hhc-experience-photo-grid-cafes"
+              note={{
+                eyebrow: "Objects / Rooms / Memory",
+                title: "Some places stay with you.",
+                body: "Wood, porcelain, worn leather, the soft reflection in a window — a café is remembered as much by its details as by its coffee.",
+                imageSrc: "/images/experience-vintage-coffeehouse-unsplash.jpg",
+                imageAlt: "Warm vintage café interior with a brick wall, wooden counter, and coffee cups",
+              }}
+            />
           </section>
+
+          <aside className="hhc-experience-photo-bridge" aria-label="Coffee shops across America">
+            <p className="hhc-experience-eyebrow">Across the counter / Across the country</p>
+            <div className="hhc-experience-photo-bridge-content">
+              <h2>Every city pours its own version of home.</h2>
+              <p>
+                In one neighborhood it is a corner window and a paper cup. In another, a long wooden bar,
+                a familiar roast, and the same seat waiting by the light.
+              </p>
+              <span>Community is the common ingredient.</span>
+            </div>
+          </aside>
 
           <section className="hhc-experience-photo-interlude hhc-experience-people-chapter" aria-labelledby="experience-people-title">
             <div className="hhc-experience-photo-heading">
@@ -504,7 +562,15 @@ export default function Experience() {
               <h2 id="experience-people-title">The people behind the atmosphere.</h2>
               <p>Technique gives the cup its shape. Personality gives the room its pulse.</p>
             </div>
-            <ExperiencePhotoGallery photos={experiencePeoplePhotos} className="hhc-experience-photo-grid-people" />
+            <ExperiencePhotoGallery
+              photos={experiencePeoplePhotos}
+              className="hhc-experience-photo-grid-people"
+              note={{
+                eyebrow: "Hands / Ritual / Character",
+                title: "The cup passes through many hands.",
+                body: "A good café is a choreography of small gestures — the greeting, the grind, the pour, the pause before the first sip.",
+              }}
+            />
           </section>
 
           <section className="hhc-experience-video-rooms" aria-labelledby="video-rooms-title">

@@ -346,3 +346,17 @@ mtime_ms = 1788262604881
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/1db8e6a7-1b70-48b2-a04c-ec4510b0fad6/c3a28b83-b660-42e7-87b5-be56482c7966"
 storage_version_token = "1788262614471050"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "Ixx3RFnLrI0Y22J357PKQ"
+uri = "file://attached_assets/image_search/vintage-coffeehouse-unsplash.jpg"
+type = "image"
+title = "Vintage café interior with tables and chairs"
+description = "Unsplash image candidate selected to complement the vintage café-room gallery."
+logical_id = "01064300-217a-4340-8b87-5e6f6e3e5afb"
+content_hash = "sha256:7361918911354a897d6cc6f03f2449d93e2344e4702ab34c1218c75ff4d3f6a8"
+size = 251871
+mtime_ms = 1788307701182
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/01064300-217a-4340-8b87-5e6f6e3e5afb/057e4100-75d0-40fc-b434-706232b1abb0"
+storage_version_token = "1788307702145475"
+content_type = "image/jpeg"
