@@ -794,7 +794,10 @@ export default function Experience() {
         <section className="hhc-experience-hero" aria-labelledby="experience-title">
           <div className="hhc-experience-hero-inner">
             <div className="hhc-experience-hero-copy">
-              <h1 id="experience-title">Welcome to the Hard House Coffee Experience</h1>
+              <h1 id="experience-title">
+                <span className="hhc-experience-hero-accent">Welcome to</span> the Hard House Coffee{" "}
+                <span className="hhc-experience-hero-accent">Experience</span>
+              </h1>
               <p className="hhc-experience-intro">
                 Not every great coffee experience begins with a cup. Some begin with a melody.
               </p>

@@ -2538,6 +2538,10 @@ a, button {
   text-shadow: 0 0 42px rgba(165, 111, 225, 0.12);
 }
 
+.hhc-experience-hero-accent {
+  color: #c9a9f7;
+}
+
 .hhc-experience-intro {
   max-width: 570px;
   margin: 2rem 0 0;
