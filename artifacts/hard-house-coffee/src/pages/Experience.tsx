@@ -107,6 +107,29 @@ const experiencePeoplePhotos: ExperiencePhoto[] = [
   },
 ];
 
+const experienceHeroSlides = [
+  {
+    src: "/images/experience-hero-jazz-mug.png",
+    alt: "Purple HHC coffee mug glowing on a jazz café counter beside a piano and saxophone",
+  },
+  {
+    src: "/images/experience-hero-jazz-bar.jpeg",
+    alt: "Intimate coffeehouse bar with a live double bass performance",
+  },
+  {
+    src: "/images/experience-hero-saxophone.jpeg",
+    alt: "Saxophone player performing in a lively blue and amber café",
+  },
+  {
+    src: "/images/experience-hero-jazz-room.jpeg",
+    alt: "Crowded jazz room with piano, double bass, and café tables",
+  },
+  {
+    src: "/images/experience-hero-blue-saxophone.jpeg",
+    alt: "Saxophone player performing through blue haze for a coffeehouse crowd",
+  },
+];
+
 function ExperiencePhotoGallery({
   photos,
   className,
@@ -142,6 +165,76 @@ function ExperiencePhotoGallery({
           </div>
         </aside>
       )}
+    </div>
+  );
+}
+
+function ExperienceHeroCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return undefined;
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % experienceHeroSlides.length);
+    }, 5600);
+
+    return () => window.clearInterval(timer);
+  }, [isPaused]);
+
+  const goToSlide = (index: number) => {
+    setActiveIndex((index + experienceHeroSlides.length) % experienceHeroSlides.length);
+  };
+
+  return (
+    <div
+      className="hhc-experience-hero-carousel"
+      role="region"
+      aria-label="Hard House Coffee Experience highlights"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setIsPaused(false);
+        }
+      }}
+    >
+      <div className="hhc-experience-hero-slides">
+        {experienceHeroSlides.map((slide, index) => (
+          <div
+            className={`hhc-experience-hero-slide${index === activeIndex ? " is-active" : ""}`}
+            key={slide.src}
+            aria-hidden={index !== activeIndex}
+          >
+            <img
+              src={slide.src}
+              alt={slide.alt}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
+            />
+          </div>
+        ))}
+      </div>
+      <div className="hhc-experience-hero-carousel-footer">
+        <span className="hhc-experience-hero-carousel-count" aria-live="polite">
+          {String(activeIndex + 1).padStart(2, "0")} / {String(experienceHeroSlides.length).padStart(2, "0")}
+        </span>
+        <div className="hhc-experience-hero-carousel-dots" aria-label="Choose an experience image">
+          {experienceHeroSlides.map((slide, index) => (
+            <button
+              type="button"
+              className={`hhc-experience-hero-carousel-dot${index === activeIndex ? " is-active" : ""}`}
+              key={slide.src}
+              aria-label={`Show experience image ${index + 1}`}
+              aria-pressed={index === activeIndex}
+              onClick={() => goToSlide(index)}
+            />
+          ))}
+        </div>
+        <span className="hhc-experience-hero-carousel-label">Coffee / Sound / Atmosphere</span>
+      </div>
     </div>
   );
 }
@@ -391,30 +484,13 @@ export default function Experience() {
         <section className="hhc-experience-hero" aria-labelledby="experience-title">
           <div className="hhc-experience-hero-inner">
             <div className="hhc-experience-hero-copy">
-              <h1 id="experience-title">
-                <span>THE HARD HOUSE COFFEE</span>
-                <em>EXPERIENCE</em>
-              </h1>
+              <h1 id="experience-title">Welcome to the Hard House Coffee Experience</h1>
               <p className="hhc-experience-intro">
-                Discover handpicked coffee ambience, jazz sessions, piano collections, festivals, documentaries, cafés, and coffee culture from around the world.
+                Not every great coffee experience begins with a cup. Some begin with a melody.
               </p>
             </div>
             <div className="hhc-experience-artwork-frame">
-              <div className="hhc-experience-stage" aria-hidden="true">
-                <span className="hhc-experience-stage-arch" />
-                <span className="hhc-experience-stage-reflection" />
-              </div>
-              <div className="hhc-experience-atmosphere-notes" aria-hidden="true">
-                <span className="note-one">♪</span>
-                <span className="note-two">♬</span>
-                <span className="note-three">𝄞</span>
-                <span className="note-four">♫</span>
-              </div>
-              <img
-                src="/images/hard-house-experience-transparent.png"
-                alt="Purple HHC coffee mug with glowing purple steam, treble clef, and music notes"
-                className="hhc-experience-artwork"
-              />
+              <ExperienceHeroCarousel />
             </div>
           </div>
         </section>
