@@ -2540,6 +2540,10 @@ a, button {
 
 .hhc-experience-hero-accent {
   color: #c9a9f7;
+  font-family: Georgia, serif;
+  font-size: 0.86em;
+  font-style: italic;
+  letter-spacing: -0.075em;
 }
 
 .hhc-experience-intro {
