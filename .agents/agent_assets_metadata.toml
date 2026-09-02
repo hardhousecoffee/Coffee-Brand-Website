@@ -374,3 +374,17 @@ mtime_ms = 1788378821680
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/1360c5ad-9005-4c7b-ba8a-c861c3711914/02453888-add5-4f7f-9b41-46f2714c3d0c"
 storage_version_token = "1788378869474339"
 content_type = "audio/mpeg"
+
+[[outputs]]
+id = "ZmaY8Fb-fl-m3t1GgXlSu"
+uri = "file://artifacts/hard-house-coffee/public/audio/modern-jazz-groove.mp3"
+type = "audio"
+title = "Modern Jazz Groove — Experience Page"
+description = "Original 90-second modern jazz groove with syncopated acoustic drums, warm bass, soulful piano, and no electronic or dance production."
+logical_id = "51b59659-e376-47fc-94a0-69e4344d5eb9"
+content_hash = "sha256:778783988b0075467982a374e48dcdc203a1dfc34e54d010230f76f838ff07fe"
+size = 2161103
+mtime_ms = 1788378967540
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/51b59659-e376-47fc-94a0-69e4344d5eb9/14feb836-c3bf-4f35-b2b2-2587cc7e7512"
+storage_version_token = "1788379008431791"
+content_type = "audio/mpeg"

@@ -478,7 +478,7 @@ function ExperienceHeroCarousel() {
       <div className="hhc-experience-hero-music">
         <audio
           ref={ambientAudioRef}
-          src="/audio/soft-modern-jazz.mp3"
+          src="/audio/modern-jazz-groove.mp3"
           preload="auto"
           loop
           onPlay={() => setIsAmbientPlaying(true)}
