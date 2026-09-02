@@ -130,6 +130,57 @@ const experienceHeroSlides = [
   },
 ];
 
+const liveJazzPerformances: ExperienceMedia[] = [
+  {
+    id: "rRRJpKV8I9o",
+    title: "Jazz St. Louis Big Band — Live",
+    creator: "Jazz St. Louis",
+    category: "Coffeehouse Jazz",
+    description: "Victor Goines leads a full jazz orchestra through a swinging night in an intimate listening room.",
+    format: "Live big-band performance",
+  },
+  {
+    id: "FeLjURQ7Qzw",
+    title: "Shedrick Mitchell — Live at Jazz St. Louis",
+    creator: "Jazz St. Louis",
+    category: "Coffeehouse Jazz",
+    description: "A soulful homecoming performance captured with the musicians and room sharing every turn.",
+    format: "Live club performance",
+  },
+  {
+    id: "6gHF94oUnQY",
+    title: "Joey Alexander Trio — Live from Jazz St. Louis",
+    creator: "Jazz St. Louis",
+    category: "Coffeehouse Jazz",
+    description: "Piano-trio conversation in a close, attentive room where every detail has space to breathe.",
+    format: "Live trio performance",
+  },
+  {
+    id: "c4QpkSzMB_g",
+    title: "Kurt Elling — Gangster of Love",
+    creator: "Ronnie Scott's Jazz Club",
+    category: "Coffeehouse Jazz",
+    description: "The Grammy-winning vocalist brings blues-soaked swing to one of London's storied jazz clubs.",
+    format: "Live at Ronnie Scott's",
+  },
+  {
+    id: "VPKSoHARusk",
+    title: "Marcus Strickland Twi-Life at Blue Note",
+    creator: "Jazz Night in America",
+    category: "Coffeehouse Jazz",
+    description: "A vivid Blue Note performance that keeps the band, tables, and listening crowd in the frame.",
+    format: "Live at Blue Note",
+  },
+  {
+    id: "3JAZkZA1eRg",
+    title: "Roosevelt Collier — Live at Ronnie Scott's",
+    creator: "Ronnie Scott's Jazz Club",
+    category: "Coffeehouse Jazz",
+    description: "Pedal-steel jazz and deep groove meet the warmth and immediacy of a packed London club.",
+    format: "Live club performance",
+  },
+];
+
 function ExperiencePhotoGallery({
   photos,
   className,
@@ -262,6 +313,19 @@ function YouTubeEmbed({
         referrerPolicy="strict-origin-when-cross-origin"
       />
     </div>
+  );
+}
+
+function LiveJazzPerformanceCard({ performance }: { performance: ExperienceMedia }) {
+  return (
+    <article className="hhc-experience-live-jazz-card">
+      <YouTubeEmbed media={performance} />
+      <div className="hhc-experience-live-jazz-copy">
+        <p>{performance.creator}</p>
+        <h3>{performance.title}</h3>
+        <span>{performance.format}</span>
+      </div>
+    </article>
   );
 }
 
@@ -575,6 +639,23 @@ export default function Experience() {
               </div>
             </div>
           </section>
+        </section>
+
+        <section className="hhc-experience-live-jazz" aria-labelledby="live-jazz-title">
+          <div className="hhc-experience-live-jazz-heading">
+            <p className="hhc-experience-eyebrow">Experience the Music</p>
+            <h2 id="live-jazz-title">Live Jazz Performances</h2>
+            <p>
+              Some places serve coffee. Others create an atmosphere. Sit back, press play, and enjoy some of the
+              world’s finest live jazz performances, where great music and great conversations have always
+              belonged together.
+            </p>
+          </div>
+          <div className="hhc-experience-live-jazz-grid">
+            {liveJazzPerformances.map((performance) => (
+              <LiveJazzPerformanceCard key={performance.id} performance={performance} />
+            ))}
+          </div>
         </section>
 
         <section className="hhc-experience-photo-chapter hhc-experience-photo-chapter-opening" aria-labelledby="experience-places-title">

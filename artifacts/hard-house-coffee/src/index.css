@@ -3593,6 +3593,103 @@ a, button {
   transition: border-color 260ms ease, box-shadow 260ms ease;
 }
 
+.hhc-experience-live-jazz {
+  width: min(1320px, calc(100% - 12vw));
+  margin: 6.5rem auto 0;
+  padding: 5.5rem 0 1rem;
+  border-top: 1px solid rgba(193, 168, 230, 0.16);
+}
+
+.hhc-experience-live-jazz-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.7fr);
+  gap: 1.8rem 6vw;
+  align-items: end;
+  margin-bottom: 2.6rem;
+}
+
+.hhc-experience-live-jazz-heading .hhc-experience-eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: -0.7rem;
+}
+
+.hhc-experience-live-jazz-heading h2 {
+  margin: 0;
+  color: #f5eff7;
+  font-size: clamp(2.25rem, 4.6vw, 4.5rem);
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.hhc-experience-live-jazz-heading > p:last-child {
+  max-width: 520px;
+  margin: 0 0 0.35rem;
+  color: #a497aa;
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.hhc-experience-live-jazz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.hhc-experience-live-jazz-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(193, 168, 230, 0.15);
+  background:
+    linear-gradient(145deg, rgba(88, 56, 112, 0.09), transparent 64%),
+    rgba(16, 11, 20, 0.82);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
+  transition: border-color 240ms ease, box-shadow 240ms ease, transform 240ms ease;
+}
+
+.hhc-experience-live-jazz-card:hover {
+  border-color: rgba(210, 185, 239, 0.38);
+  box-shadow: 0 22px 46px rgba(73, 38, 103, 0.24);
+  transform: translateY(-2px);
+}
+
+.hhc-experience-live-jazz-card .hhc-experience-embed {
+  border: 0;
+  border-bottom: 1px solid rgba(193, 168, 230, 0.13);
+}
+
+.hhc-experience-live-jazz-copy {
+  position: relative;
+  min-height: 8.6rem;
+  padding: 1.15rem 1.2rem 1.3rem;
+}
+
+.hhc-experience-live-jazz-copy p,
+.hhc-experience-live-jazz-copy span {
+  margin: 0;
+  color: #9e86b5;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.hhc-experience-live-jazz-copy h3 {
+  margin: 0.65rem 0 1rem;
+  color: #eee5f3;
+  font-size: clamp(0.92rem, 1.25vw, 1.1rem);
+  line-height: 1.38;
+}
+
+.hhc-experience-live-jazz-copy span {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  color: #756b7c;
+}
+
 .hhc-experience-music-player:has(.hhc-experience-music-now.is-playing) {
   border-color: rgba(193, 168, 230, 0.34);
   box-shadow: 0 18px 48px rgba(75, 42, 104, 0.16);
@@ -3802,6 +3899,10 @@ a, button {
   }
 
   .hhc-experience-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hhc-experience-live-jazz-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -4031,6 +4132,39 @@ a, button {
   .hhc-experience-content {
     width: calc(100% - 2.5rem);
     padding-top: 4rem;
+  }
+
+  .hhc-experience-live-jazz {
+    width: calc(100% - 2.5rem);
+    margin-top: 4.5rem;
+    padding-top: 4rem;
+  }
+
+  .hhc-experience-live-jazz-heading {
+    display: block;
+    margin-bottom: 1.8rem;
+  }
+
+  .hhc-experience-live-jazz-heading .hhc-experience-eyebrow {
+    margin-bottom: 0.7rem;
+  }
+
+  .hhc-experience-live-jazz-heading h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hhc-experience-live-jazz-heading > p:last-child {
+    margin-top: 1.3rem;
+    font-size: 0.88rem;
+  }
+
+  .hhc-experience-live-jazz-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .hhc-experience-live-jazz-copy {
+    min-height: 7.9rem;
   }
 
   .hhc-experience-music-content {

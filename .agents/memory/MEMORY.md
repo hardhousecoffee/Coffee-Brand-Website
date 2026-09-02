@@ -2,4 +2,4 @@
 - [CSS transition phase bug](css-transition-phase-bug.md) — multi-phase opacity state where transition evaluates to "none" on the visible phase causes instant snap instead of gradual fade
 - [Preview instrumentation artifacts](preview-instrumentation-artifacts.md) — injected SmoothPointer can cause Trusted Types errors and phantom root width; verify app element bounds before changing CSS
 - [Animated marquee containment](animated-marquee-containment.md) — locally clipped transformed tracks can still inflate mobile document width; contain deliberate overflow at the page boundary
-- [YouTube iframe state sync](youtube-iframe-state-sync.md) — proxied previews may accept player commands while suppressing or misrouting outbound state events; never infer sync from command success
+- [YouTube embed validation](youtube-iframe-state-sync.md) — metadata success does not prove iframe permission; verify rendered embeds and player-state events in the proxied preview
