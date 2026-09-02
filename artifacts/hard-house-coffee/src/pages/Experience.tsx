@@ -45,9 +45,9 @@ const experienceStreetPhotos: ExperiencePhoto[] = [
     caption: "A doorway made for lingering.",
   },
   {
-    src: "/images/experience-vintage-coffee-tin.jpg",
-    alt: "Vintage Fairy Dell coffee tin in an antique shop",
-    caption: "Objects carry the ritual forward.",
+    src: "/images/cafe-alley.jpg",
+    alt: "Coffee roaster entrance tucked into a brick alley under warm string lights",
+    caption: "Follow the light in.",
   },
   {
     src: "/images/experience-cafe-allegro.jpg",
@@ -55,9 +55,14 @@ const experienceStreetPhotos: ExperiencePhoto[] = [
     caption: "Every neighborhood has its room.",
   },
   {
-    src: "/images/experience-coffee-shop-sign.jpg",
-    alt: "Weathered vintage Coffee Shop sign",
-    caption: "A familiar invitation.",
+    src: "/images/coffeehouse-night.jpg",
+    alt: "Warm coffeehouse seating beside rain-covered windows at night",
+    caption: "Rain makes the room feel closer.",
+  },
+  {
+    src: "/images/outdoor-coffee.jpg",
+    alt: "Tattooed café guest enjoying coffee at a neighborhood outdoor table",
+    caption: "The neighborhood takes its seat.",
   },
 ];
 
