@@ -34,13 +34,32 @@ interface ExperiencePhotoNote {
   imageAlt?: string;
 }
 
-const cinematicMotionVariants = [
+interface CinematicMotionVariant {
+  startX: string;
+  startY: string;
+  endX: string;
+  endY: string;
+  duration: string;
+  startScale: string;
+  endScale: string;
+}
+
+const cinematicMotionVariants: readonly CinematicMotionVariant[] = [
   { startX: "-2.2%", startY: "-1.2%", endX: "2.1%", endY: "1.1%", duration: "16s", startScale: "1.05", endScale: "1.14" },
   { startX: "2.1%", startY: "-1.1%", endX: "-2%", endY: "1.2%", duration: "18s", startScale: "1.15", endScale: "1.05" },
   { startX: "-1.5%", startY: "2.2%", endX: "1.8%", endY: "-2%", duration: "14s", startScale: "1.06", endScale: "1.15" },
   { startX: "1.8%", startY: "-2.1%", endX: "-1.6%", endY: "2%", duration: "19s", startScale: "1.14", endScale: "1.05" },
   { startX: "-2%", startY: "0.9%", endX: "2.2%", endY: "-1%", duration: "17s", startScale: "1.05", endScale: "1.145" },
   { startX: "1.3%", startY: "2%", endX: "-1.8%", endY: "-2.2%", duration: "15s", startScale: "1.145", endScale: "1.05" },
+];
+
+const heroCinematicMotionVariants: readonly CinematicMotionVariant[] = [
+  { startX: "2.1%", startY: "-1.1%", endX: "-2.2%", endY: "1.1%", duration: "13s", startScale: "1.05", endScale: "1.16" },
+  { startX: "-2%", startY: "-1.1%", endX: "2.2%", endY: "1.1%", duration: "13s", startScale: "1.16", endScale: "1.05" },
+  { startX: "-1.4%", startY: "2.2%", endX: "1.6%", endY: "-2.2%", duration: "13s", startScale: "1.05", endScale: "1.17" },
+  { startX: "1.5%", startY: "-2.2%", endX: "-1.6%", endY: "2.2%", duration: "13s", startScale: "1.17", endScale: "1.05" },
+  { startX: "-2.1%", startY: "1.9%", endX: "2.2%", endY: "-2%", duration: "13s", startScale: "1.05", endScale: "1.16" },
+  { startX: "1.2%", startY: "2.1%", endX: "-1.9%", endY: "-2.2%", duration: "13s", startScale: "1.16", endScale: "1.05" },
 ] as const;
 
 function CinematicImage({
@@ -51,6 +70,7 @@ function CinematicImage({
   frameClassName,
   loading = "lazy",
   revealImmediately = false,
+  motionVariant,
 }: {
   src: string;
   alt: string;
@@ -59,10 +79,11 @@ function CinematicImage({
   frameClassName?: string;
   loading?: "eager" | "lazy";
   revealImmediately?: boolean;
+  motionVariant?: CinematicMotionVariant;
 }) {
   const frameRef = useRef<HTMLSpanElement>(null);
   const [isVisible, setIsVisible] = useState(revealImmediately);
-  const motion = cinematicMotionVariants[motionIndex % cinematicMotionVariants.length];
+  const motion = motionVariant ?? cinematicMotionVariants[motionIndex % cinematicMotionVariants.length];
   const entranceDuration = 650 + (motionIndex % 4) * 40;
   const entranceOffset = 8 + (motionIndex % 3) * 2;
 
@@ -342,19 +363,83 @@ function ExperiencePhotoGallery({
 function ExperienceHeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isAmbientPlaying, setIsAmbientPlaying] = useState(false);
+  const [isAmbientAutoplayBlocked, setIsAmbientAutoplayBlocked] = useState(false);
+  const ambientAudioRef = useRef<HTMLAudioElement>(null);
+  const ambientMusicPauseKey = "hhc-experience-ambient-jazz-paused";
 
   useEffect(() => {
     if (isPaused) return undefined;
 
     const timer = window.setInterval(() => {
       setActiveIndex((currentIndex) => (currentIndex + 1) % experienceHeroSlides.length);
-    }, 5600);
+    }, 13000);
 
     return () => window.clearInterval(timer);
   }, [isPaused]);
 
+  useEffect(() => {
+    const audio = ambientAudioRef.current;
+    if (!audio) return undefined;
+
+    audio.volume = 0.18;
+    audio.loop = true;
+
+    let wasIntentionallyPaused = false;
+    try {
+      wasIntentionallyPaused = window.sessionStorage.getItem(ambientMusicPauseKey) === "true";
+    } catch {
+      // Session storage can be unavailable in privacy-restricted browsers.
+    }
+
+    if (wasIntentionallyPaused) return undefined;
+
+    void audio.play()
+      .then(() => {
+        setIsAmbientPlaying(true);
+        setIsAmbientAutoplayBlocked(false);
+      })
+      .catch(() => {
+        setIsAmbientPlaying(false);
+        setIsAmbientAutoplayBlocked(true);
+      });
+
+    return () => audio.pause();
+  }, []);
+
   const goToSlide = (index: number) => {
     setActiveIndex((index + experienceHeroSlides.length) % experienceHeroSlides.length);
+  };
+
+  const handleAmbientToggle = () => {
+    const audio = ambientAudioRef.current;
+    if (!audio) return;
+
+    if (!audio.paused) {
+      audio.pause();
+      setIsAmbientPlaying(false);
+      try {
+        window.sessionStorage.setItem(ambientMusicPauseKey, "true");
+      } catch {
+        // Continue normally when session storage is unavailable.
+      }
+      return;
+    }
+
+    void audio.play()
+      .then(() => {
+        setIsAmbientPlaying(true);
+        setIsAmbientAutoplayBlocked(false);
+        try {
+          window.sessionStorage.removeItem(ambientMusicPauseKey);
+        } catch {
+          // Continue normally when session storage is unavailable.
+        }
+      })
+      .catch(() => {
+        setIsAmbientPlaying(false);
+        setIsAmbientAutoplayBlocked(true);
+      });
   };
 
   return (
@@ -381,13 +466,53 @@ function ExperienceHeroCarousel() {
             <CinematicImage
               src={slide.src}
               alt={slide.alt}
-              motionIndex={index + 3}
+              motionIndex={index}
+              motionVariant={heroCinematicMotionVariants[index % heroCinematicMotionVariants.length]}
               frameClassName="hhc-experience-hero-image-frame"
               loading={index === 0 ? "eager" : "lazy"}
               revealImmediately
             />
           </div>
         ))}
+      </div>
+      <div className="hhc-experience-hero-music">
+        <audio
+          ref={ambientAudioRef}
+          src="/audio/jazz.mp3"
+          preload="auto"
+          loop
+          onPlay={() => setIsAmbientPlaying(true)}
+          onPause={() => setIsAmbientPlaying(false)}
+          onError={() => {
+            setIsAmbientPlaying(false);
+            setIsAmbientAutoplayBlocked(true);
+          }}
+        />
+        <button
+          type="button"
+          className={`hhc-experience-hero-music-control${isAmbientPlaying ? " is-playing" : ""}`}
+          onClick={handleAmbientToggle}
+          aria-label={isAmbientPlaying ? "Pause ambient jazz" : "Play ambient jazz"}
+          aria-pressed={isAmbientPlaying}
+        >
+          <span className="hhc-experience-vinyl" aria-hidden="true">
+            <span>♫</span>
+          </span>
+          <span className="hhc-experience-hero-music-copy">
+            <strong>{isAmbientPlaying ? "Ambient jazz playing" : isAmbientAutoplayBlocked ? "Tap to begin the jazz" : "Ambient jazz"}</strong>
+            <small>{isAmbientPlaying ? "Pause the atmosphere" : "Low-volume lounge accompaniment"}</small>
+          </span>
+          <span className={`hhc-experience-hero-music-icon${isAmbientPlaying ? " is-pause" : ""}`} aria-hidden="true">
+            {isAmbientPlaying ? (
+              <>
+                <i />
+                <i />
+              </>
+            ) : (
+              <b />
+            )}
+          </span>
+        </button>
       </div>
       <div className="hhc-experience-hero-carousel-footer">
         <span className="hhc-experience-hero-carousel-count" aria-live="polite">

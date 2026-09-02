@@ -2615,7 +2615,7 @@ a, button {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 900ms ease;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hhc-experience-hero-slide.is-active {
@@ -2779,6 +2779,148 @@ a, button {
 
 .hhc-experience-hero-carousel-dot.is-active {
   transform: scaleY(1.5);
+}
+
+.hhc-experience-hero-music {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.65rem 1rem;
+  border-top: 1px solid rgba(203, 176, 236, 0.16);
+  background:
+    linear-gradient(90deg, rgba(34, 19, 43, 0.96), rgba(15, 10, 20, 0.98)),
+    #100b14;
+}
+
+.hhc-experience-hero-music audio {
+  display: none;
+}
+
+.hhc-experience-hero-music-control {
+  display: grid;
+  grid-template-columns: 2.45rem minmax(0, 1fr) 1.85rem;
+  gap: 0.75rem;
+  align-items: center;
+  width: min(100%, 22rem);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #d9cae8;
+  text-align: left;
+  cursor: pointer;
+}
+
+.hhc-experience-hero-music-control:focus-visible {
+  border-radius: 0.3rem;
+  outline: 2px solid rgba(224, 198, 251, 0.9);
+  outline-offset: 4px;
+}
+
+.hhc-experience-vinyl {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.45rem;
+  height: 2.45rem;
+  border: 1px solid rgba(226, 191, 153, 0.45);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #c9a8e6 0 9%, #7f5d9f 10% 18%, transparent 19%),
+    repeating-radial-gradient(circle, #251b2b 0 2px, #0d0a10 3px 5px);
+  box-shadow:
+    0 0 0 1px rgba(198, 162, 225, 0.12),
+    0 0 20px rgba(174, 116, 214, 0.18);
+  color: #f1ddbd;
+  transform-origin: center;
+}
+
+.hhc-experience-vinyl span {
+  position: relative;
+  z-index: 1;
+  font-family: Georgia, serif;
+  font-size: 0.68rem;
+  line-height: 1;
+}
+
+.hhc-experience-hero-music-control.is-playing .hhc-experience-vinyl {
+  animation: hhc-experience-vinyl-spin 7s linear infinite;
+}
+
+.hhc-experience-hero-music-copy {
+  min-width: 0;
+}
+
+.hhc-experience-hero-music-copy strong,
+.hhc-experience-hero-music-copy small {
+  display: block;
+}
+
+.hhc-experience-hero-music-copy strong {
+  overflow: hidden;
+  color: #eadff3;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hhc-experience-hero-music-copy small {
+  margin-top: 0.18rem;
+  color: #9a879f;
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.hhc-experience-hero-music-icon {
+  display: grid;
+  place-items: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border: 1px solid rgba(202, 164, 226, 0.5);
+  border-radius: 50%;
+  color: #e3caef;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.hhc-experience-hero-music-control:hover .hhc-experience-hero-music-icon,
+.hhc-experience-hero-music-control:focus-visible .hhc-experience-hero-music-icon,
+.hhc-experience-hero-music-control.is-playing .hhc-experience-hero-music-icon {
+  border-color: rgba(237, 205, 251, 0.85);
+  background: rgba(159, 105, 212, 0.2);
+  box-shadow: 0 0 16px rgba(177, 123, 216, 0.25);
+}
+
+.hhc-experience-hero-music-icon b {
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid currentColor;
+}
+
+.hhc-experience-hero-music-icon.is-pause {
+  grid-auto-flow: column;
+  gap: 3px;
+}
+
+.hhc-experience-hero-music-icon.is-pause i {
+  display: block;
+  width: 2px;
+  height: 8px;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+@keyframes hhc-experience-vinyl-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .hhc-experience-artwork-frame::before {
@@ -3869,6 +4011,14 @@ a, button {
     transform: none;
     animation: none;
     will-change: auto;
+  }
+
+  .hhc-experience-hero-slide {
+    transition: none;
+  }
+
+  .hhc-experience-hero-music-control.is-playing .hhc-experience-vinyl {
+    animation: none;
   }
 }
 
