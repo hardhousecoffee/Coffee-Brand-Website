@@ -2654,7 +2654,9 @@ a, button {
 
 .hhc-cinematic-image img {
   backface-visibility: hidden;
-  transform: translate3d(var(--ken-burns-start-x), var(--ken-burns-start-y), 0) scale(1.03);
+  transform:
+    translate3d(var(--ken-burns-start-x), var(--ken-burns-start-y), 0)
+    scale(var(--ken-burns-start-scale, 1.05));
   transform-origin: center;
   will-change: transform;
 }
@@ -2710,7 +2712,9 @@ a, button {
 
 @keyframes hhc-cinematic-ken-burns {
   from {
-    transform: translate3d(var(--ken-burns-start-x), var(--ken-burns-start-y), 0) scale(1.03);
+    transform:
+      translate3d(var(--ken-burns-start-x), var(--ken-burns-start-y), 0)
+      scale(var(--ken-burns-start-scale, 1.05));
   }
 
   to {

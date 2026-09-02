@@ -35,12 +35,12 @@ interface ExperiencePhotoNote {
 }
 
 const cinematicMotionVariants = [
-  { startX: "-0.7%", startY: "-0.35%", endX: "0.65%", endY: "0.4%", duration: "16s", scale: "1.068" },
-  { startX: "0.65%", startY: "-0.3%", endX: "-0.6%", endY: "0.35%", duration: "18s", scale: "1.062" },
-  { startX: "-0.35%", startY: "0.65%", endX: "0.4%", endY: "-0.55%", duration: "14s", scale: "1.072" },
-  { startX: "0.4%", startY: "-0.65%", endX: "-0.35%", endY: "0.55%", duration: "19s", scale: "1.064" },
-  { startX: "-0.6%", startY: "0.2%", endX: "0.7%", endY: "-0.15%", duration: "17s", scale: "1.07" },
-  { startX: "0.25%", startY: "0.6%", endX: "-0.2%", endY: "-0.65%", duration: "15s", scale: "1.066" },
+  { startX: "-2.2%", startY: "-1.2%", endX: "2.1%", endY: "1.1%", duration: "16s", startScale: "1.05", endScale: "1.14" },
+  { startX: "2.1%", startY: "-1.1%", endX: "-2%", endY: "1.2%", duration: "18s", startScale: "1.15", endScale: "1.05" },
+  { startX: "-1.5%", startY: "2.2%", endX: "1.8%", endY: "-2%", duration: "14s", startScale: "1.06", endScale: "1.15" },
+  { startX: "1.8%", startY: "-2.1%", endX: "-1.6%", endY: "2%", duration: "19s", startScale: "1.14", endScale: "1.05" },
+  { startX: "-2%", startY: "0.9%", endX: "2.2%", endY: "-1%", duration: "17s", startScale: "1.05", endScale: "1.145" },
+  { startX: "1.3%", startY: "2%", endX: "-1.8%", endY: "-2.2%", duration: "15s", startScale: "1.145", endScale: "1.05" },
 ] as const;
 
 function CinematicImage({
@@ -97,7 +97,8 @@ function CinematicImage({
     "--ken-burns-end-x": motion.endX,
     "--ken-burns-end-y": motion.endY,
     "--ken-burns-duration": motion.duration,
-    "--ken-burns-end-scale": motion.scale,
+    "--ken-burns-start-scale": motion.startScale,
+    "--ken-burns-end-scale": motion.endScale,
   } as CSSProperties;
 
   return (
