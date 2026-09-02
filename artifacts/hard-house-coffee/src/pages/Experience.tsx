@@ -1,5 +1,6 @@
 import {
   forwardRef,
+  type CSSProperties,
   useEffect,
   useImperativeHandle,
   useMemo,
@@ -31,6 +32,80 @@ interface ExperiencePhotoNote {
   body: string;
   imageSrc?: string;
   imageAlt?: string;
+}
+
+const cinematicMotionVariants = [
+  { startX: "-0.7%", startY: "-0.35%", endX: "0.65%", endY: "0.4%", duration: "16s", scale: "1.068" },
+  { startX: "0.65%", startY: "-0.3%", endX: "-0.6%", endY: "0.35%", duration: "18s", scale: "1.062" },
+  { startX: "-0.35%", startY: "0.65%", endX: "0.4%", endY: "-0.55%", duration: "14s", scale: "1.072" },
+  { startX: "0.4%", startY: "-0.65%", endX: "-0.35%", endY: "0.55%", duration: "19s", scale: "1.064" },
+  { startX: "-0.6%", startY: "0.2%", endX: "0.7%", endY: "-0.15%", duration: "17s", scale: "1.07" },
+  { startX: "0.25%", startY: "0.6%", endX: "-0.2%", endY: "-0.65%", duration: "15s", scale: "1.066" },
+] as const;
+
+function CinematicImage({
+  src,
+  alt,
+  motionIndex,
+  className,
+  frameClassName,
+  loading = "lazy",
+}: {
+  src: string;
+  alt: string;
+  motionIndex: number;
+  className?: string;
+  frameClassName?: string;
+  loading?: "eager" | "lazy";
+}) {
+  const frameRef = useRef<HTMLSpanElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const motion = cinematicMotionVariants[motionIndex % cinematicMotionVariants.length];
+  const entranceDuration = 650 + (motionIndex % 4) * 40;
+  const entranceOffset = 8 + (motionIndex % 3) * 2;
+
+  useEffect(() => {
+    const frame = frameRef.current;
+    if (!frame) return undefined;
+
+    if (!("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setIsVisible(true);
+        observer.unobserve(frame);
+      },
+      { rootMargin: "0px 0px -6% 0px", threshold: 0.12 },
+    );
+
+    observer.observe(frame);
+    return () => observer.disconnect();
+  }, []);
+
+  const motionStyle = {
+    "--cinematic-enter-duration": `${entranceDuration}ms`,
+    "--cinematic-enter-y": `${entranceOffset}px`,
+    "--ken-burns-start-x": motion.startX,
+    "--ken-burns-start-y": motion.startY,
+    "--ken-burns-end-x": motion.endX,
+    "--ken-burns-end-y": motion.endY,
+    "--ken-burns-duration": motion.duration,
+    "--ken-burns-end-scale": motion.scale,
+  } as CSSProperties;
+
+  return (
+    <span
+      ref={frameRef}
+      className={`hhc-cinematic-image${frameClassName ? ` ${frameClassName}` : ""}${isVisible ? " is-visible" : ""}`}
+      style={motionStyle}
+    >
+      <img src={src} alt={alt} className={className} loading={loading} decoding="async" />
+    </span>
+  );
 }
 
 const experienceStreetPhotos: ExperiencePhoto[] = [
@@ -227,21 +302,26 @@ function ExperiencePhotoGallery({
 }) {
   return (
     <div className={`hhc-experience-photo-grid ${className}`}>
-      {photos.map((photo) => (
+      {photos.map((photo, index) => (
         <figure className="hhc-experience-photo" key={photo.src}>
-          <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+          <CinematicImage
+            src={photo.src}
+            alt={photo.alt}
+            motionIndex={index}
+            frameClassName="hhc-experience-photo-image-frame"
+          />
           <figcaption>{photo.caption}</figcaption>
         </figure>
       ))}
       {note && (
         <aside className={`hhc-experience-photo-note${note.imageSrc ? " has-image" : ""}`}>
           {note.imageSrc && (
-            <img
-              className="hhc-experience-photo-note-image"
+            <CinematicImage
               src={note.imageSrc}
               alt={note.imageAlt ?? ""}
-              loading="lazy"
-              decoding="async"
+              motionIndex={photos.length + 2}
+              className="hhc-experience-photo-note-image"
+              frameClassName="hhc-experience-photo-note-image-frame"
             />
           )}
           <div className="hhc-experience-photo-note-copy">
@@ -294,11 +374,12 @@ function ExperienceHeroCarousel() {
             key={slide.src}
             aria-hidden={index !== activeIndex}
           >
-            <img
+            <CinematicImage
               src={slide.src}
               alt={slide.alt}
+              motionIndex={index + 3}
+              frameClassName="hhc-experience-hero-image-frame"
               loading={index === 0 ? "eager" : "lazy"}
-              decoding="async"
             />
           </div>
         ))}

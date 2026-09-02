@@ -2643,6 +2643,67 @@ a, button {
   filter: saturate(0.94) contrast(1.03);
 }
 
+.hhc-cinematic-image {
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate3d(0, var(--cinematic-enter-y, 10px), 0);
+}
+
+.hhc-cinematic-image.is-visible {
+  animation: hhc-cinematic-image-enter var(--cinematic-enter-duration, 720ms) cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hhc-cinematic-image img {
+  backface-visibility: hidden;
+  transform: translate3d(var(--ken-burns-start-x), var(--ken-burns-start-y), 0) scale(1.03);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.hhc-cinematic-image.is-visible img {
+  animation:
+    hhc-cinematic-ken-burns var(--ken-burns-duration, 16s) ease-in-out
+    var(--cinematic-enter-duration, 720ms) infinite alternate both;
+}
+
+.hhc-cinematic-image:hover img {
+  animation-play-state: paused;
+}
+
+.hhc-experience-hero-image-frame,
+.hhc-experience-photo-image-frame {
+  width: 100%;
+  height: 100%;
+}
+
+.hhc-experience-photo-note-image-frame {
+  width: 100%;
+  height: clamp(7rem, 10vw, 9rem);
+}
+
+@keyframes hhc-cinematic-image-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--cinematic-enter-y, 10px), 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hhc-cinematic-ken-burns {
+  from {
+    transform: translate3d(var(--ken-burns-start-x), var(--ken-burns-start-y), 0) scale(1.03);
+  }
+
+  to {
+    transform: translate3d(var(--ken-burns-end-x), var(--ken-burns-end-y), 0) scale(var(--ken-burns-end-scale, 1.068));
+  }
+}
+
 .hhc-experience-hero-carousel-footer {
   position: relative;
   z-index: 3;
@@ -2972,7 +3033,6 @@ a, button {
 
 .hhc-experience-photo:hover img {
   filter: brightness(0.96) saturate(1) contrast(1.02);
-  transform: scale(1.035);
 }
 
 .hhc-experience-photo figcaption {
@@ -3127,6 +3187,10 @@ a, button {
   filter: brightness(0.78) saturate(0.72) sepia(0.12);
 }
 
+.hhc-experience-photo-note-image-frame .hhc-experience-photo-note-image {
+  height: 100%;
+}
+
 .hhc-experience-photo-note.has-image .hhc-experience-photo-note-copy {
   padding: 1.15rem 1rem 0;
 }
@@ -3176,6 +3240,11 @@ a, button {
 }
 
 .hhc-experience-photo-grid-cafes .hhc-experience-photo-note-image {
+  height: 100%;
+  min-height: 13rem;
+}
+
+.hhc-experience-photo-grid-cafes .hhc-experience-photo-note-image-frame {
   height: 100%;
   min-height: 13rem;
 }
@@ -3768,6 +3837,20 @@ a, button {
   .hhc-experience-equalizer i {
     animation: none;
     transform: scaleY(0.7);
+  }
+
+  .hhc-cinematic-image,
+  .hhc-cinematic-image.is-visible {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .hhc-cinematic-image img,
+  .hhc-cinematic-image.is-visible img {
+    transform: none;
+    animation: none;
+    will-change: auto;
   }
 }
 
