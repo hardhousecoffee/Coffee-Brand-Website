@@ -2615,14 +2615,12 @@ a, button {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transform: scale(1.035);
-  transition: opacity 900ms ease, transform 6.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 900ms ease;
 }
 
 .hhc-experience-hero-slide.is-active {
   z-index: 1;
   opacity: 1;
-  transform: scale(1);
 }
 
 .hhc-experience-hero-slide::after {
@@ -2665,9 +2663,25 @@ a, button {
   animation:
     hhc-cinematic-ken-burns var(--ken-burns-duration, 16s) ease-in-out
     var(--cinematic-enter-duration, 720ms) infinite alternate both;
+  animation-play-state: running;
 }
 
-.hhc-cinematic-image:hover img {
+.hhc-experience-hero-slide img {
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hhc-experience-hero-slide .hhc-cinematic-image img {
+  animation: none;
+}
+
+.hhc-experience-hero-slide.is-active .hhc-cinematic-image.is-visible img {
+  animation:
+    hhc-cinematic-ken-burns var(--ken-burns-duration, 16s) ease-in-out
+    0s infinite alternate both;
+  animation-play-state: running;
+}
+
+.hhc-experience-photo-grid .hhc-cinematic-image:hover img {
   animation-play-state: paused;
 }
 

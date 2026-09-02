@@ -50,6 +50,7 @@ function CinematicImage({
   className,
   frameClassName,
   loading = "lazy",
+  revealImmediately = false,
 }: {
   src: string;
   alt: string;
@@ -57,9 +58,10 @@ function CinematicImage({
   className?: string;
   frameClassName?: string;
   loading?: "eager" | "lazy";
+  revealImmediately?: boolean;
 }) {
   const frameRef = useRef<HTMLSpanElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(revealImmediately);
   const motion = cinematicMotionVariants[motionIndex % cinematicMotionVariants.length];
   const entranceDuration = 650 + (motionIndex % 4) * 40;
   const entranceOffset = 8 + (motionIndex % 3) * 2;
@@ -67,6 +69,7 @@ function CinematicImage({
   useEffect(() => {
     const frame = frameRef.current;
     if (!frame) return undefined;
+    if (revealImmediately) return undefined;
 
     if (!("IntersectionObserver" in window)) {
       setIsVisible(true);
@@ -380,6 +383,7 @@ function ExperienceHeroCarousel() {
               motionIndex={index + 3}
               frameClassName="hhc-experience-hero-image-frame"
               loading={index === 0 ? "eager" : "lazy"}
+              revealImmediately
             />
           </div>
         ))}
