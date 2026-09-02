@@ -360,3 +360,17 @@ mtime_ms = 1788307701182
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/01064300-217a-4340-8b87-5e6f6e3e5afb/057e4100-75d0-40fc-b434-706232b1abb0"
 storage_version_token = "1788307702145475"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "S4p1UCTrE_Rg9qW7W1zjJ"
+uri = "file://artifacts/hard-house-coffee/public/audio/soft-modern-jazz.mp3"
+type = "audio"
+title = "Soft Modern Jazz — Experience Page"
+description = "Original 90-second contemporary jazz trio soundtrack with warm piano, upright bass, and brushed drums; no electronic or dance elements."
+logical_id = "1360c5ad-9005-4c7b-ba8a-c861c3711914"
+content_hash = "sha256:ee2995642378c86ffccb09326afcdf586259e3f8cb445423b83272f290387164"
+size = 2161103
+mtime_ms = 1788378821680
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/1360c5ad-9005-4c7b-ba8a-c861c3711914/02453888-add5-4f7f-9b41-46f2714c3d0c"
+storage_version_token = "1788378869474339"
+content_type = "audio/mpeg"
