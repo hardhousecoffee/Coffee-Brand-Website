@@ -3636,6 +3636,47 @@ a, button {
   gap: 1rem;
 }
 
+.hhc-experience-live-jazz-group + .hhc-experience-live-jazz-group {
+  margin-top: 5.5rem;
+}
+
+.hhc-experience-live-jazz-subheading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.52fr);
+  gap: 0.7rem 4vw;
+  align-items: end;
+  margin-bottom: 1.7rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(193, 168, 230, 0.14);
+}
+
+.hhc-experience-live-jazz-subheading p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #9e86b5;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hhc-experience-live-jazz-subheading h3 {
+  margin: 0;
+  color: #eee5f3;
+  font-family: Georgia, serif;
+  font-size: clamp(1.55rem, 2.8vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+.hhc-experience-live-jazz-subheading span {
+  color: #887e8e;
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
 .hhc-experience-live-jazz-card {
   min-width: 0;
   overflow: hidden;
@@ -4161,6 +4202,24 @@ a, button {
   .hhc-experience-live-jazz-grid {
     grid-template-columns: 1fr;
     gap: 1.1rem;
+  }
+
+  .hhc-experience-live-jazz-group + .hhc-experience-live-jazz-group {
+    margin-top: 4.25rem;
+  }
+
+  .hhc-experience-live-jazz-subheading {
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+
+  .hhc-experience-live-jazz-subheading p {
+    margin-bottom: 0.6rem;
+  }
+
+  .hhc-experience-live-jazz-subheading span {
+    display: block;
+    margin-top: 0.75rem;
   }
 
   .hhc-experience-live-jazz-copy {

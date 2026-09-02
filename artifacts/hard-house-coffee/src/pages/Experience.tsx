@@ -130,15 +130,7 @@ const experienceHeroSlides = [
   },
 ];
 
-const liveJazzPerformances: ExperienceMedia[] = [
-  {
-    id: "rRRJpKV8I9o",
-    title: "Jazz St. Louis Big Band — Live",
-    creator: "Jazz St. Louis",
-    category: "Coffeehouse Jazz",
-    description: "Victor Goines leads a full jazz orchestra through a swinging night in an intimate listening room.",
-    format: "Live big-band performance",
-  },
+const liveJazzLoungeSessions: ExperienceMedia[] = [
   {
     id: "FeLjURQ7Qzw",
     title: "Shedrick Mitchell — Live at Jazz St. Louis",
@@ -146,14 +138,6 @@ const liveJazzPerformances: ExperienceMedia[] = [
     category: "Coffeehouse Jazz",
     description: "A soulful homecoming performance captured with the musicians and room sharing every turn.",
     format: "Live club performance",
-  },
-  {
-    id: "6gHF94oUnQY",
-    title: "Joey Alexander Trio — Live from Jazz St. Louis",
-    creator: "Jazz St. Louis",
-    category: "Coffeehouse Jazz",
-    description: "Piano-trio conversation in a close, attentive room where every detail has space to breathe.",
-    format: "Live trio performance",
   },
   {
     id: "c4QpkSzMB_g",
@@ -178,6 +162,57 @@ const liveJazzPerformances: ExperienceMedia[] = [
     category: "Coffeehouse Jazz",
     description: "Pedal-steel jazz and deep groove meet the warmth and immediacy of a packed London club.",
     format: "Live club performance",
+  },
+  {
+    id: "WvsPvLKkKsg",
+    title: "Josh Lawrence — Still We Dream",
+    creator: "SmallsLIVE",
+    category: "Coffeehouse Jazz",
+    description: "A close-room performance from one of New York's essential jazz clubs, with the audience close to the band.",
+    format: "Live at Smalls Jazz Club",
+  },
+];
+
+const liveJazzLegendaryPerformances: ExperienceMedia[] = [
+  {
+    id: "rRRJpKV8I9o",
+    title: "Jazz St. Louis Big Band — Live",
+    creator: "Jazz St. Louis",
+    category: "Coffeehouse Jazz",
+    description: "Victor Goines leads a full jazz orchestra through a swinging night in an intimate listening room.",
+    format: "Live big-band performance",
+  },
+  {
+    id: "6gHF94oUnQY",
+    title: "Joey Alexander Trio — Live from Jazz St. Louis",
+    creator: "Jazz St. Louis",
+    category: "Coffeehouse Jazz",
+    description: "Piano-trio conversation in a close, attentive room where every detail has space to breathe.",
+    format: "Live trio performance",
+  },
+  {
+    id: "56PkbtelBAw",
+    title: "Bria Skonberg — Live from Jazz St. Louis",
+    creator: "Jazz St. Louis",
+    category: "Coffeehouse Jazz",
+    description: "The trumpeter and vocalist leads a modern revival of classic jazz with generous live-room energy.",
+    format: "Live club performance",
+  },
+  {
+    id: "3SCdyCYnXo0",
+    title: "The Otherside — Emmet Cohen & Friends",
+    creator: "Emmet Cohen",
+    category: "Coffeehouse Jazz",
+    description: "Emmet Cohen, Rudresh Mahanthappa, Giveton Gelin, Ben Wolfe, and Bryan Carter trade ideas in real time.",
+    format: "Live ensemble performance",
+  },
+  {
+    id: "3EnVfigN0Ag",
+    title: "Emmet Cohen & Cyrille Aimée — Almost Like Being in Love",
+    creator: "International Jazz Day",
+    category: "Coffeehouse Jazz",
+    description: "A joyful vocal-and-piano performance that captures the spontaneity and warmth of a live jazz room.",
+    format: "Live Jazz Day performance",
   },
 ];
 
@@ -651,11 +686,31 @@ export default function Experience() {
               belonged together.
             </p>
           </div>
-          <div className="hhc-experience-live-jazz-grid">
-            {liveJazzPerformances.map((performance) => (
-              <LiveJazzPerformanceCard key={performance.id} performance={performance} />
-            ))}
-          </div>
+          <section className="hhc-experience-live-jazz-group" aria-labelledby="jazz-lounge-sessions-title">
+            <div className="hhc-experience-live-jazz-subheading">
+              <p>01 / Warm rooms</p>
+              <h3 id="jazz-lounge-sessions-title">Jazz Lounge Sessions</h3>
+              <span>Five intimate sets for settling in and staying awhile.</span>
+            </div>
+            <div className="hhc-experience-live-jazz-grid">
+              {liveJazzLoungeSessions.map((performance) => (
+                <LiveJazzPerformanceCard key={performance.id} performance={performance} />
+              ))}
+            </div>
+          </section>
+
+          <section className="hhc-experience-live-jazz-group" aria-labelledby="legendary-live-performances-title">
+            <div className="hhc-experience-live-jazz-subheading">
+              <p>02 / Essential listening</p>
+              <h3 id="legendary-live-performances-title">Legendary Live Performances</h3>
+              <span>Five memorable performances from artists who keep the language of jazz moving.</span>
+            </div>
+            <div className="hhc-experience-live-jazz-grid">
+              {liveJazzLegendaryPerformances.map((performance) => (
+                <LiveJazzPerformanceCard key={performance.id} performance={performance} />
+              ))}
+            </div>
+          </section>
         </section>
 
         <section className="hhc-experience-photo-chapter hhc-experience-photo-chapter-opening" aria-labelledby="experience-places-title">
