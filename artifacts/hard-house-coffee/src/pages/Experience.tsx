@@ -795,7 +795,7 @@ export default function Experience() {
           <div className="hhc-experience-hero-inner">
             <div className="hhc-experience-hero-copy">
               <h1 id="experience-title">
-                <span className="hhc-experience-hero-accent hhc-experience-hero-line">Welcome to</span>
+                <span className="hhc-experience-hero-accent hhc-experience-hero-line">Welcome to the</span>
                 <span className="hhc-experience-hero-brand">HARD HOUSE COFFEE</span>
                 <span className="hhc-experience-hero-accent hhc-experience-hero-line">Experience</span>
               </h1>
