@@ -2589,7 +2589,15 @@ a, button {
 
 @media (min-width: 701px) and (max-width: 1100px) {
   .hhc-experience-hero-brand {
-    font-size: 0.68em;
+    font-size: clamp(1.55rem, 2.65vw, 2.75rem);
+    letter-spacing: -0.045em;
+  }
+}
+
+@media (min-width: 1101px) {
+  .hhc-experience-hero-brand {
+    font-size: clamp(1.8rem, 2.65vw, 2.75rem);
+    letter-spacing: -0.045em;
   }
 }
 
