@@ -2524,6 +2524,7 @@ a, button {
 }
 
 .hhc-experience-hero-copy {
+  min-width: 0;
   max-width: 640px;
   transform: translateY(-1.5rem);
 }
@@ -2576,6 +2577,12 @@ a, button {
   font-size: clamp(1rem, 1.55vw, 1.22rem);
   line-height: 1.65;
   letter-spacing: 0.01em;
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .hhc-experience-hero-brand {
+    font-size: 0.68em;
+  }
 }
 
 .hhc-experience-hero-rule {
