@@ -2349,6 +2349,14 @@ a, button {
   text-shadow: 0 0 14px rgba(203, 177, 255, 0.32);
 }
 
+@media (min-width: 769px) {
+  .hhc-jazz-invitation h3 {
+    gap: 0.3em;
+    font-size: clamp(1.2rem, 1.55vw, 1.4rem);
+    letter-spacing: 0.07em;
+  }
+}
+
 .hhc-jazz-invitation h3 span {
   display: inline-block;
   opacity: 0;
