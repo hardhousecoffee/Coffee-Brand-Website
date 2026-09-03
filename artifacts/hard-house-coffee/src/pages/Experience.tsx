@@ -960,7 +960,7 @@ export default function Experience() {
           <section className="hhc-experience-photo-interlude" aria-labelledby="experience-rooms-title">
             <div className="hhc-experience-photo-heading is-compact">
               <p className="hhc-experience-eyebrow">Rooms / Objects / Memory</p>
-              <h2 id="experience-rooms-title">Every café keeps a story</h2>
+              <h2 id="experience-rooms-title">Every cafe tells a story.</h2>
             </div>
             <ExperiencePhotoGallery
               photos={experienceCafePhotos}
