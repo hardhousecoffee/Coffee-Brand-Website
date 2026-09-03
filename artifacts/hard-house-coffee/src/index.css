@@ -2555,6 +2555,18 @@ a, button {
   letter-spacing: -0.075em;
 }
 
+.hhc-experience-hero-line,
+.hhc-experience-hero-brand {
+  display: block;
+}
+
+.hhc-experience-hero-brand {
+  font-size: 0.78em;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  white-space: nowrap;
+}
+
 .hhc-experience-intro {
   max-width: 570px;
   margin: 2rem 0 0;

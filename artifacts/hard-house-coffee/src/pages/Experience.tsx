@@ -795,8 +795,9 @@ export default function Experience() {
           <div className="hhc-experience-hero-inner">
             <div className="hhc-experience-hero-copy">
               <h1 id="experience-title">
-                <span className="hhc-experience-hero-accent">Welcome to</span> the Hard House Coffee{" "}
-                <span className="hhc-experience-hero-accent">Experience</span>
+                <span className="hhc-experience-hero-accent hhc-experience-hero-line">Welcome to</span>
+                <span className="hhc-experience-hero-brand">HARD HOUSE COFFEE</span>
+                <span className="hhc-experience-hero-accent hhc-experience-hero-line">Experience</span>
               </h1>
               <p className="hhc-experience-intro">
                 Not every great coffee experience begins with a cup. Some begin with a melody.
