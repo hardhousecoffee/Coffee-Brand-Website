@@ -2496,7 +2496,7 @@ a, button {
 
 .hhc-experience-page h2,
 .hhc-experience-page h3 {
-  font-family: Georgia, serif;
+  font-family: 'Orpheus Pro', Georgia, serif;
 }
 
 .hhc-experience-music-content .hhc-experience-subheading h2 {
@@ -3330,7 +3330,7 @@ a, button {
   max-width: 18rem;
   margin: 0;
   color: #e6d7f0;
-  font-family: Georgia, serif;
+  font-family: 'Orpheus Pro', Georgia, serif;
   font-size: clamp(1.35rem, 2.1vw, 2rem);
   font-weight: 400;
   letter-spacing: -0.035em;
@@ -3455,7 +3455,7 @@ a, button {
   max-width: 45rem;
   margin: 0;
   color: #e6d7f0;
-  font-family: Georgia, serif;
+  font-family: 'Orpheus Pro', Georgia, serif;
   font-size: clamp(2rem, 4.3vw, 4.5rem);
   font-weight: 400;
   letter-spacing: -0.055em;
@@ -3909,7 +3909,7 @@ a, button {
 .hhc-experience-live-jazz-subheading h3 {
   margin: 0;
   color: #eee5f3;
-  font-family: Georgia, serif;
+  font-family: 'Orpheus Pro', Georgia, serif;
   font-size: clamp(1.55rem, 2.8vw, 2.6rem);
   font-weight: 400;
   letter-spacing: -0.025em;
