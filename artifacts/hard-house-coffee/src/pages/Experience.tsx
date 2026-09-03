@@ -812,7 +812,7 @@ export default function Experience() {
           <section className="hhc-experience-music-room hhc-experience-music-room-primary">
             <div className="hhc-experience-subheading">
               <p className="hhc-experience-eyebrow">01 / Select a session</p>
-              <h2 id="music-title">Music for the ritual.</h2>
+              <h2 id="music-title">Music for the ritual</h2>
               <p>Select a session, then use its circular control to play or pause. Playback stays synchronized with the official YouTube player.</p>
             </div>
             <div className="hhc-experience-music-layout">
@@ -930,7 +930,7 @@ export default function Experience() {
         <section className="hhc-experience-photo-chapter hhc-experience-photo-chapter-opening" aria-labelledby="experience-places-title">
           <div className="hhc-experience-photo-heading">
             <p className="hhc-experience-eyebrow">Atmosphere / Field notes</p>
-            <h2 id="experience-places-title">Where coffee becomes a place.</h2>
+            <h2 id="experience-places-title">Where coffee becomes a place</h2>
             <p>From lit alleys to neighborhood institutions, every room begins before the first cup reaches the table.</p>
           </div>
           <ExperiencePhotoGallery
@@ -938,7 +938,7 @@ export default function Experience() {
             className="hhc-experience-photo-grid-streets"
             note={{
               eyebrow: "The approach / Before the first sip",
-              title: "A café begins at the threshold.",
+                title: "A café begins at the threshold",
               body: "A lit alley, an open doorway, a familiar sign — these are the first notes of the ritual. Before coffee becomes conversation, the room invites you to slow down and stay awhile.",
             }}
           />
@@ -948,7 +948,7 @@ export default function Experience() {
           <div className="hhc-experience-section-heading">
             <div>
               <p className="hhc-experience-eyebrow">02 / The opening set</p>
-              <h2 id="featured-title">The room is ready.</h2>
+              <h2 id="featured-title">The room is ready</h2>
             </div>
             <p className="hhc-experience-section-count">37 selections · carefully collected</p>
           </div>
@@ -960,14 +960,14 @@ export default function Experience() {
           <section className="hhc-experience-photo-interlude" aria-labelledby="experience-rooms-title">
             <div className="hhc-experience-photo-heading is-compact">
               <p className="hhc-experience-eyebrow">Rooms / Objects / Memory</p>
-              <h2 id="experience-rooms-title">Every café keeps a story.</h2>
+              <h2 id="experience-rooms-title">Every café keeps a story</h2>
             </div>
             <ExperiencePhotoGallery
               photos={experienceCafePhotos}
               className="hhc-experience-photo-grid-cafes"
               note={{
                 eyebrow: "Objects / Rooms / Memory",
-                title: "Some places stay with you.",
+                title: "Some places stay with you",
                 body: "Wood, porcelain, worn leather, the soft reflection in a window — a café is remembered as much by its details as by its coffee.",
                 imageSrc: "/images/experience-vintage-coffeehouse-unsplash.jpg",
                 imageAlt: "Warm vintage café interior with a brick wall, wooden counter, and coffee cups",
@@ -978,7 +978,7 @@ export default function Experience() {
           <aside className="hhc-experience-photo-bridge" aria-label="Coffee shops across America">
             <p className="hhc-experience-eyebrow">Across the counter / Across the country</p>
             <div className="hhc-experience-photo-bridge-content">
-              <h2>Every city pours its own version of home.</h2>
+              <h2>Every city pours its own version of home</h2>
               <p>
                 In one neighborhood it is a corner window and a paper cup. In another, a long wooden bar,
                 a familiar roast, and the same seat waiting by the light.
@@ -990,7 +990,7 @@ export default function Experience() {
           <section className="hhc-experience-photo-interlude hhc-experience-people-chapter" aria-labelledby="experience-people-title">
             <div className="hhc-experience-photo-heading">
               <p className="hhc-experience-eyebrow">Hands / Ritual / Character</p>
-              <h2 id="experience-people-title">The people behind the atmosphere.</h2>
+              <h2 id="experience-people-title">The people behind the atmosphere</h2>
               <p>Technique gives the cup its shape. Personality gives the room its pulse.</p>
             </div>
             <ExperiencePhotoGallery
@@ -998,7 +998,7 @@ export default function Experience() {
               className="hhc-experience-photo-grid-people"
               note={{
                 eyebrow: "Hands / Ritual / Character",
-                title: "The cup passes through many hands.",
+                title: "The cup passes through many hands",
                 body: "A good café is a choreography of small gestures — the greeting, the grind, the pour, the pause before the first sip.",
               }}
             />
@@ -1007,7 +1007,7 @@ export default function Experience() {
           <section className="hhc-experience-video-rooms" aria-labelledby="video-rooms-title">
             <div className="hhc-experience-subheading hhc-experience-video-heading">
               <p className="hhc-experience-eyebrow">03 / On screen</p>
-              <h2 id="video-rooms-title">A world worth lingering in.</h2>
+              <h2 id="video-rooms-title">A world worth lingering in</h2>
               <p>From roastery floors to championship stages, a small collection of coffee in motion.</p>
             </div>
             {groupedVideos.map((group: { category: ExperienceVideoCategory; videos: ExperienceMedia[] }) => (
