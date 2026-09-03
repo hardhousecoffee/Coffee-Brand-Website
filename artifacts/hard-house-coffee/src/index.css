@@ -2525,6 +2525,7 @@ a, button {
 
 .hhc-experience-hero-copy {
   max-width: 640px;
+  transform: translateY(-1.5rem);
 }
 
 .hhc-experience-eyebrow {
@@ -4440,6 +4441,10 @@ a, button {
     grid-template-columns: 1fr;
     gap: 1rem;
     min-height: 0;
+  }
+
+  .hhc-experience-hero-copy {
+    transform: none;
   }
 
   .hhc-experience-hero h1 {
