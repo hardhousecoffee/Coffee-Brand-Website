@@ -388,3 +388,17 @@ mtime_ms = 1788378967540
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/51b59659-e376-47fc-94a0-69e4344d5eb9/14feb836-c3bf-4f35-b2b2-2587cc7e7512"
 storage_version_token = "1788379008431791"
 content_type = "audio/mpeg"
+
+[[outputs]]
+id = "Q3C3tTj127jQ1H9B5ZClw"
+uri = "file://artifacts/hard-house-coffee/public/images/experience-melody-flourish.svg"
+type = "image"
+title = "Lavender Music Flourish"
+description = "Original transparent SVG music-staff flourish generated for the Hard House Coffee Experience hero."
+logical_id = "ffeb8dd5-7b86-4700-bc52-9a12811b5b8d"
+content_hash = "sha256:0e9b6495b23af0f0843c2256b903d911f6b92a3b0de71a75dd8cf314a63fff4d"
+size = 4271
+mtime_ms = 1790157234167
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/ffeb8dd5-7b86-4700-bc52-9a12811b5b8d/51e9304c-8dbd-4f7f-96b5-150bc118a648"
+storage_version_token = "1790157283690079"
+content_type = "image/svg+xml"
