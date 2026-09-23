@@ -86,7 +86,11 @@ export default function Navbar() {
             const isActive = location === link.href && link.href !== "/";
             const allowHover = !(link.href === "/" && location === "/");
             return (
-              <Link key={link.href} href={link.href}>
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+              >
                 <span
                   className={`nav-link${allowHover ? " nav-item-glow" : ""}`}
                   onClick={scrollTop}
@@ -111,7 +115,11 @@ export default function Navbar() {
 
           {/* Right group: About + Shop */}
           {navLinks.slice(2).map((link) => (
-            <Link key={link.href} href={link.href}>
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={location === link.href ? "page" : undefined}
+            >
               <span
                 className="nav-link nav-item-glow"
                 onClick={scrollTop}
@@ -129,7 +137,10 @@ export default function Navbar() {
               </span>
             </Link>
           ))}
-          <Link href="/products">
+          <Link
+            href="/products"
+            aria-current={location === "/products" ? "page" : undefined}
+          >
             <span
               className="nav-link nav-item-glow"
               onClick={scrollTop}

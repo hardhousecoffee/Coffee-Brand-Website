@@ -865,13 +865,44 @@ a, button {
 }
 
 .hhc-experience-navbar .nav-link:hover,
-.hhc-experience-navbar .nav-link:focus-visible,
 .hhc-experience-navbar .hhc-nav-back:hover,
 .hhc-experience-navbar .hhc-nav-back:focus-visible {
-  border-color: rgba(201, 169, 247, 0.34) !important;
-  background: rgba(151, 99, 205, 0.1) !important;
-  color: #dcc4fa !important;
-  text-shadow: 0 0 16px rgba(192, 148, 241, 0.42);
+  border-color: rgba(201, 169, 247, 0.46) !important;
+  background: rgba(151, 99, 205, 0.12) !important;
+  color: #eadcff !important;
+  box-shadow:
+    0 0 7px rgba(235, 218, 255, 0.28),
+    0 0 18px rgba(201, 169, 247, 0.22),
+    0 0 34px rgba(151, 99, 205, 0.12) !important;
+  text-shadow: 0 0 12px rgba(201, 169, 247, 0.44) !important;
+}
+
+.hhc-experience-navbar .nav-link:active,
+.hhc-experience-navbar a[aria-current="page"] .nav-link {
+  border-color: rgba(201, 169, 247, 0.58) !important;
+  background: rgba(151, 99, 205, 0.16) !important;
+  color: #f0e4ff !important;
+  box-shadow:
+    inset 0 0 10px rgba(201, 169, 247, 0.08),
+    0 0 14px rgba(201, 169, 247, 0.2) !important;
+  text-shadow: 0 0 10px rgba(201, 169, 247, 0.4) !important;
+}
+
+.hhc-experience-navbar a:focus-visible {
+  outline: none;
+}
+
+.hhc-experience-navbar a:focus-visible .nav-link,
+.hhc-experience-navbar .nav-link:focus-visible,
+.hhc-experience-navbar .hhc-nav-back:focus-visible,
+.hhc-experience-navbar .hhc-mobile-nav-toggle:focus-visible,
+.hhc-experience-navbar .hhc-mobile-nav-item:focus-visible {
+  outline: 1px solid rgba(220, 190, 250, 0.82);
+  outline-offset: 4px;
+  border-color: rgba(201, 169, 247, 0.52) !important;
+  box-shadow:
+    0 0 0 3px rgba(201, 169, 247, 0.08),
+    0 0 18px rgba(201, 169, 247, 0.26) !important;
 }
 
 .hhc-experience-navbar .hhc-mobile-nav-toggle span {
@@ -890,7 +921,9 @@ a, button {
 
 .hhc-experience-navbar .hhc-mobile-nav-item:hover,
 .hhc-experience-navbar .hhc-mobile-nav-item:focus-visible {
+  background: rgba(151, 99, 205, 0.08) !important;
   color: #d3b4f5 !important;
+  text-shadow: 0 0 10px rgba(201, 169, 247, 0.3);
 }
 
 .section-title {
