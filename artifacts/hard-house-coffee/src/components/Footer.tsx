@@ -8,9 +8,13 @@ const SOCIAL_LINKS = [
   { icon: FaTiktok,    label: "TikTok", href: "https://www.tiktok.com/@hardhousecoffee?_r=1&_t=ZP-96W4w42enMc" },
 ];
 
-export default function Footer() {
+export default function Footer({ variant = "default" }: { variant?: "default" | "experience" }) {
   return (
-    <footer style={{ backgroundColor: "#0b0b0b", borderTop: "1px solid rgba(161,79,31,0.2)" }}>
+    <footer
+      id={variant === "experience" ? "experience-footer" : undefined}
+      className={variant === "experience" ? "hhc-experience-footer" : undefined}
+      style={{ backgroundColor: "#0b0b0b", borderTop: "1px solid rgba(161,79,31,0.2)" }}
+    >
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
@@ -195,6 +199,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
+          className="hhc-footer-bottom"
           style={{
             borderTop: "1px solid rgba(161,79,31,0.15)",
             paddingTop: "1.5rem",
@@ -285,6 +290,7 @@ export default function Footer() {
 
         {/* Legal nav */}
         <div
+          className="hhc-footer-legal"
           style={{
             marginTop: "1.5rem",
             paddingTop: "1.25rem",
@@ -322,7 +328,10 @@ export default function Footer() {
                 </span>
               </Link>
               {i < arr.length - 1 && (
-                <span style={{ color: "rgba(161,79,31,0.3)", margin: "0 0.6rem", fontSize: "0.65rem" }}>
+                <span
+                  className="hhc-footer-legal-separator"
+                  style={{ color: "rgba(161,79,31,0.3)", margin: "0 0.6rem", fontSize: "0.65rem" }}
+                >
                   |
                 </span>
               )}

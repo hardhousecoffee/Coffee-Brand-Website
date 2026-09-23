@@ -13,6 +13,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [location] = useLocation();
+  const isExperience = location === "/experience";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -24,7 +25,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500${isExperience ? " hhc-experience-navbar" : ""}`}
       style={{
         background: scrolled
           ? "rgba(11,11,11,0.97)"
@@ -68,7 +69,7 @@ export default function Navbar() {
             onMouseLeave={e => {
               e.currentTarget.style.color = "#f2f2f2";
             }}
-            className="hidden md:flex"
+            className="hhc-nav-back hidden md:flex"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="arrow-pulse">
               <line x1="19" y1="12" x2="5" y2="12" />
@@ -167,6 +168,7 @@ export default function Navbar() {
               </Link>
             ) : (
               <button
+                className="hhc-nav-back"
                 onClick={() => window.history.back()}
                 style={{
                   display: "flex",
@@ -200,7 +202,7 @@ export default function Navbar() {
             )}
           </div>
           <button
-            className="flex flex-col gap-1.5 p-2"
+            className="hhc-mobile-nav-toggle flex flex-col gap-1.5 p-2"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -232,6 +234,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div
+          className="hhc-mobile-nav-menu"
           style={{
             background: "rgba(11,11,11,0.98)",
             borderTop: "1px solid rgba(161,79,31,0.2)",
@@ -241,6 +244,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
               <div
+                className="hhc-mobile-nav-item"
                 onClick={() => { setMenuOpen(false); scrollTop(); }}
                 style={{
                   padding: "0.8rem 0",
@@ -258,6 +262,7 @@ export default function Navbar() {
           ))}
           <Link href="/products">
             <div
+              className="hhc-mobile-nav-item"
               onClick={() => { setMenuOpen(false); scrollTop(); }}
               style={{
                 padding: "0.8rem 0",

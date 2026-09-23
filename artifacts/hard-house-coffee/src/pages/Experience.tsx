@@ -800,7 +800,10 @@ export default function Experience() {
                 <span className="hhc-experience-hero-accent hhc-experience-hero-line">Experience</span>
               </h1>
               <p className="hhc-experience-intro">
-                Not every great coffee experience begins with a cup. Some begin with a melody.
+                Not every great coffee experience begins with a cup. Some begin with a{" "}
+                <span className="hhc-experience-melody">
+                  melody.<span className="hhc-experience-melody-note" aria-hidden="true">♪</span>
+                </span>
               </p>
             </div>
             <div className="hhc-experience-artwork-frame">
@@ -1037,9 +1040,12 @@ export default function Experience() {
       </main>
 
       <div className="hhc-experience-return">
-        <Link href="/">Return to Hard House Coffee <span aria-hidden="true">↗</span></Link>
+        <Link href="/">
+          <span className="hhc-experience-return-mark" aria-hidden="true">←</span>
+          <span>Return to Hard House Coffee</span>
+        </Link>
       </div>
-      <Footer />
+      <Footer variant="experience" />
     </div>
   );
 }
