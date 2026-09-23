@@ -4897,3 +4897,205 @@ a, button {
     padding: 0 1.25rem 3.5rem;
   }
 }
+
+/* Experience refinements — desktop and laptop only */
+@media (min-width: 769px) {
+  html:has(.hhc-experience-page) {
+    scrollbar-color: #a77bd4 #0b0910;
+  }
+
+  html:has(.hhc-experience-page)::-webkit-scrollbar-track {
+    background: #0b0910;
+  }
+
+  html:has(.hhc-experience-page)::-webkit-scrollbar-thumb {
+    border: 1px solid rgba(226, 205, 250, 0.22);
+    background: linear-gradient(180deg, #c29bea, #77509f);
+    box-shadow: 0 0 12px rgba(181, 137, 226, 0.34);
+  }
+
+  html:has(.hhc-experience-page)::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #d8b8f7, #9469bd);
+  }
+
+  .hhc-experience-hero-accent {
+    color: #fbf8fc;
+    font-size: 0.72em;
+    text-shadow: 0 0 24px rgba(255, 255, 255, 0.06);
+  }
+
+  .hhc-experience-hero-brand {
+    color: #c9a9f7;
+    font-size: clamp(2.35rem, 3.8vw, 3.45rem);
+    font-weight: 600;
+    letter-spacing: -0.055em;
+    line-height: 1;
+    text-shadow:
+      0 0 16px rgba(201, 169, 247, 0.27),
+      0 0 38px rgba(151, 99, 205, 0.18);
+  }
+
+  .hhc-experience-intro {
+    max-width: 650px;
+    margin-top: 2.2rem;
+    color: #eee4f4;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.75rem, 2.25vw, 2.25rem);
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    line-height: 1.42;
+  }
+
+  .hhc-experience-melody {
+    padding-right: 3.8rem;
+  }
+
+  .hhc-experience-melody-note {
+    top: 50%;
+    right: 0;
+    width: 3.25rem;
+    height: 2.4rem;
+    color: #c9a9f7;
+    font-size: 0;
+    opacity: 0.9;
+    text-shadow: 0 0 16px rgba(192, 148, 241, 0.55);
+    transform: translateY(-49%) rotate(-7deg);
+  }
+
+  .hhc-experience-melody-note::before {
+    content: "♫";
+    position: absolute;
+    right: 0.15rem;
+    bottom: 0.15rem;
+    font-family: Georgia, serif;
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+
+  .hhc-experience-melody-note::after {
+    content: "〜";
+    position: absolute;
+    right: 1.2rem;
+    bottom: -0.35rem;
+    color: rgba(201, 169, 247, 0.72);
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.6rem;
+    line-height: 1;
+    filter: drop-shadow(0 0 5px rgba(192, 148, 241, 0.48));
+    transform: rotate(-5deg) scaleX(1.15);
+  }
+
+  .hhc-experience-subheading > p:last-child,
+  .hhc-experience-live-jazz-heading > p:last-child,
+  .hhc-experience-photo-heading > p:last-child,
+  .hhc-experience-photo-note > p:last-child,
+  .hhc-experience-photo-bridge-content > p,
+  .hhc-experience-live-jazz-subheading span {
+    color: #c7b8cc;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.25rem, 1.55vw, 1.55rem);
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    line-height: 1.5;
+  }
+
+  .hhc-experience-eyebrow,
+  .hhc-experience-live-jazz-subheading p {
+    font-size: clamp(0.79rem, 0.88vw, 0.9rem);
+  }
+
+  .hhc-experience-section-count,
+  .hhc-experience-category-heading span {
+    color: #c2afce;
+    font-size: clamp(0.83rem, 0.9vw, 0.92rem);
+  }
+
+  .hhc-experience-category-title p {
+    color: #bcaec4;
+    font-size: clamp(0.98rem, 1.05vw, 1.08rem);
+  }
+
+  .hhc-experience-photo figcaption {
+    color: rgba(246, 237, 250, 0.9);
+    font-size: clamp(0.69rem, 0.75vw, 0.78rem);
+  }
+
+  .hhc-experience-media-meta {
+    color: #a990b6;
+    font-size: clamp(0.68rem, 0.72vw, 0.75rem);
+  }
+
+  .hhc-experience-attribution span {
+    font-size: 0.7rem;
+  }
+
+  .hhc-experience-attribution p {
+    font-size: 0.82rem;
+  }
+
+  .hhc-experience-photo-note h3 {
+    max-width: 100%;
+    text-wrap: balance;
+  }
+
+  .hhc-experience-return a {
+    min-height: 0;
+    padding: 0.35rem 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #d7c0ec;
+    font-family: 'TBJ Malibu Serif Font', 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: none;
+  }
+
+  .hhc-experience-return a:hover,
+  .hhc-experience-return a:focus-visible {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .hhc-experience-footer .back-to-top-btn::after {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(190, 145, 235, 0.38) 40%,
+      rgba(220, 190, 250, 0.62) 50%,
+      rgba(190, 145, 235, 0.38) 60%,
+      transparent
+    );
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1099px) {
+  .hhc-experience-hero-accent {
+    font-size: 0.64em;
+  }
+
+  .hhc-experience-hero-brand {
+    font-size: clamp(2.05rem, 3.45vw, 2.22rem);
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1279px) {
+  .hhc-experience-hero-accent {
+    font-size: 0.68em;
+  }
+
+  .hhc-experience-hero-brand {
+    font-size: clamp(2.35rem, 3.55vw, 2.7rem);
+  }
+}
+
+@media (min-width: 1100px) {
+  .hhc-experience-photo-note h3 {
+    white-space: nowrap;
+  }
+}
