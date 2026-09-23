@@ -4,3 +4,4 @@
 - [Animated marquee containment](animated-marquee-containment.md) — locally clipped transformed tracks can still inflate mobile document width; contain deliberate overflow at the page boundary
 - [YouTube embed validation](youtube-iframe-state-sync.md) — metadata success does not prove iframe permission; verify rendered embeds and player-state events in the proxied preview
 - [Intermediate-width headline containment](intermediate-width-headline-containment.md) — nowrap hero lines need independent scaling and laptop-width verification
+- [Touch-hover responsive overrides](touch-hover-responsive-overrides.md) — touch Safari can persist hover styles; mobile resets must follow and override generic hover transforms
