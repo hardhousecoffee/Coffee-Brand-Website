@@ -402,3 +402,17 @@ mtime_ms = 1790157234167
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/ffeb8dd5-7b86-4700-bc52-9a12811b5b8d/51e9304c-8dbd-4f7f-96b5-150bc118a648"
 storage_version_token = "1790157283690079"
 content_type = "image/svg+xml"
+
+[[outputs]]
+id = "rodWikjbdHI28BvhaMhnN"
+uri = "file://attached_assets/generated_images/hhc_character_three_shirt_styles.png"
+type = "image"
+title = "Hard House Coffee — Three T-Shirt Styles"
+description = "Character-based concept mockups comparing bold streetwear, vintage café, and a heritage social-club badge. Visual concepts only; lettering, line weight, and production sizing need refinement before printing."
+logical_id = "4bb49074-4e2d-449e-82d8-a288e1dee3b8"
+content_hash = "sha256:0ad02ee3b119dc9a7b1d4914fd6ebb8e10c2031977d44df2e666841d29dba883"
+size = 1346663
+mtime_ms = 1793163139135
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/4bb49074-4e2d-449e-82d8-a288e1dee3b8/e24bce63-1647-448d-b5c6-b8fa84e7a494"
+storage_version_token = "1793163147190191"
+content_type = "image/png"
