@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageNav from "@/components/PageNav";
+import { expandedArticles, articleReadTime } from "@/data/articles";
 import {
   editorialCollections,
   editorialCollectionLabels,
@@ -257,7 +258,7 @@ const posts = [
     id: 27,
     category: "Coffee Culture",
     title: "Global Excellence – Onyx Coffee Lab (Bentonville, Arkansas, USA)",
-    desc: "Ranked #1 coffee shop in the world by the Espresso Academy. Why Onyx Coffee Lab in Arkansas is completely redefining what a modern coffee brand can be.",
+    desc: "Explore Onyx Coffee Lab’s sourcing transparency, published coffee information and design-focused cafés—and what a green-coffee price does and does not establish.",
     image: "/images/onyx-coffee-lab.jpg",
     readTime: "5 min read",
     featured: false,
@@ -293,6 +294,16 @@ const posts = [
     featured: false,
     slug: "parisian-elegance-cafe-lomi-paris-france",
   },
+  ...expandedArticles.map((article, index) => ({
+    id: 100 + index,
+    title: article.title,
+    desc: article.description,
+    category: article.category,
+    image: article.image,
+    readTime: articleReadTime(article),
+    featured: false,
+    slug: article.slug,
+  })),
 ];
 
 function isEditorialCollection(value: string | null): value is EditorialCollectionId {

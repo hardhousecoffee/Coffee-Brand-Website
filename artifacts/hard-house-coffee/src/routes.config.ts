@@ -1,4 +1,6 @@
 import { ComponentType } from "react";
+import { expandedArticles } from "@/data/articles";
+import BlogExpansionArticle from "@/pages/BlogExpansionArticle";
 import { AMAZON_SHOPPING_ENABLED } from "@/config/shopping";
 import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
@@ -87,6 +89,13 @@ const allRoutes: RouteConfig[] = [
   { path: "/blog/old-world-perfection-ditta-artigianale-florence-italy",    component: BlogPostDittaArtigianale,     changefreq: "monthly", priority: "0.8" },
   { path: "/blog/master-of-precision-glitch-coffee-roasters-tokyo-japan",   component: BlogPostGlitchCoffeeTokyo,   changefreq: "monthly", priority: "0.8" },
   { path: "/blog/parisian-elegance-cafe-lomi-paris-france",                 component: BlogPostCafeLomiParis,        changefreq: "monthly", priority: "0.8" },
+
+  ...expandedArticles.map((article) => ({
+    path: `/blog/${article.slug}`,
+    component: BlogExpansionArticle,
+    changefreq: "monthly",
+    priority: "0.8",
+  })),
 
   { path: "/products",       component: Products,      changefreq: "weekly",  priority: "0.7" },
   { path: "/contact",        component: Contact,       changefreq: "monthly", priority: "0.5" },

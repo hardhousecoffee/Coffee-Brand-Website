@@ -1,3 +1,4 @@
+import RecommendedBeans from "@/components/RecommendedBeans";
 import EditorialArticle, {
   ArticleCard,
   ArticleGrid,
@@ -120,6 +121,7 @@ export default function BlogPostColdBrew() {
           stronger batch is easier to dilute than a weak batch is to rescue.
         </p>
       </ArticleSection>
+      <RecommendedBeans variant="cold-brew" />
     </EditorialArticle>
   );
 }

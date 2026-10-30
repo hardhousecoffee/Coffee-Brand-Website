@@ -255,6 +255,10 @@ export default function EditorialArticle({
     url: canonical,
     image: `https://hardhousecoffee.com${image}`,
     articleSection: category,
+    author: {
+      "@type": "Organization",
+      name: "Hard House Coffee",
+    },
     publisher: {
       "@type": "Organization",
       name: "Hard House Coffee",
@@ -271,6 +275,12 @@ export default function EditorialArticle({
         <meta property="og:description" content={description} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={`https://hardhousecoffee.com${image}`} />
+        <meta property="og:image:alt" content={imageAlt} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={`https://hardhousecoffee.com${image}`} />
         <link rel="canonical" href={canonical} />
       </Helmet>
       <script type="application/ld+json">{articleSchema}</script>

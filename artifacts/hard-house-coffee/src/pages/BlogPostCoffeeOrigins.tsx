@@ -1,3 +1,4 @@
+import RecommendedBeans from "@/components/RecommendedBeans";
 import EditorialArticle, {
   ArticleCard,
   ArticleGrid,
@@ -110,6 +111,7 @@ export default function BlogPostCoffeeOrigins() {
           to “Ethiopia or Colombia?” is the one you can describe in your own cup.
         </p>
       </ArticleSection>
+      <RecommendedBeans variant="origins" />
     </EditorialArticle>
   );
 }

@@ -1,3 +1,4 @@
+import RecommendedBeans from "@/components/RecommendedBeans";
 import EditorialArticle, {
   ArticleCard,
   ArticleGrid,
@@ -118,6 +119,7 @@ export default function BlogPostPourOver() {
           cup easier to understand.
         </p>
       </ArticleSection>
+      <RecommendedBeans variant="brewing" />
     </EditorialArticle>
   );
 }

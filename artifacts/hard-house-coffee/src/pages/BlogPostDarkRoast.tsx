@@ -1,3 +1,4 @@
+import RecommendedBeans from "@/components/RecommendedBeans";
 import EditorialArticle, {
   ArticleCard,
   ArticleGrid,
@@ -116,6 +117,7 @@ export default function BlogPostDarkRoast() {
           This page does not claim that Hard House Coffee personally tasted every recommendation.
         </p>
       </ArticleSection>
+      <RecommendedBeans variant="dark-roast" />
     </EditorialArticle>
   );
 }

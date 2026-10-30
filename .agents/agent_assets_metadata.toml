@@ -416,3 +416,17 @@ mtime_ms = 1793163139135
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/4bb49074-4e2d-449e-82d8-a288e1dee3b8/e24bce63-1647-448d-b5c6-b8fa84e7a494"
 storage_version_token = "1793163147190191"
 content_type = "image/png"
+
+[[outputs]]
+id = "u-bA9D1XFaffXlNan3zhn"
+uri = "file://.local/generated-artifacts/blog-expansion/development-review.html"
+type = "html"
+title = "Complete development review"
+description = "Full article and product inventories, 12 new article paths, source notes, modifications, verification and publication restrictions."
+logical_id = "0649d549-db41-4a9a-ae1e-461cf23f49c2"
+content_hash = "sha256:bf1e27ee233fcc6a77e90d839229105be2f17b079748ecb528fc4dc050e80167"
+size = 22455
+mtime_ms = 1793357423608
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/0649d549-db41-4a9a-ae1e-461cf23f49c2/f5fdb0ee-8b52-4baa-807e-88fa3ea260d4"
+storage_version_token = "1793357424418870"
+content_type = "text/html"

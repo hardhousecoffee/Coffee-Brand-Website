@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import EditorialArticle, {
   ArticleCard,
   ArticleGrid,
@@ -144,6 +145,20 @@ export default function BlogPostEspressoRanked() {
           Confirm current specifications and support with the manufacturer. Retailer bundles,
           regional voltage, water hardness, warranty terms, and price can change the value
           calculation.
+        </p>
+      </ArticleSection>
+      <ArticleSection title="Looking for more recent guided machines?">
+        <p style={{ marginBottom: "1rem" }}>
+          The established machine profiles above are not a catalogue of every recent release.
+          For newer assisted workflows, our dedicated guides explain the{" "}
+          <Link href="/blog/breville-oracle-jet-bes985-researched-guide" style={{ color: "#d4b896", textDecoration: "underline" }}>Breville Oracle Jet BES985</Link>{" "}
+          and <Link href="/blog/ninja-luxe-cafe-pro-es701-guide" style={{ color: "#d4b896", textDecoration: "underline" }}>Ninja Luxe Café Pro ES701</Link>.
+          For a different, fully automatic routine, see the{" "}
+          <Link href="/blog/philips-5500-lattego-ownership-guide" style={{ color: "#d4b896", textDecoration: "underline" }}>Philips 5500 LatteGo guide</Link>.
+        </p>
+        <p>
+          These are separate model-specific research guides, not claims that we tested each machine.
+          Compare preparation, milk handling and maintenance rather than treating a current-year title as proof of a recent product launch.
         </p>
       </ArticleSection>
     </EditorialArticle>

@@ -1,3 +1,5 @@
+import RecommendedBeans from "@/components/RecommendedBeans";
+import { Link } from "wouter";
 import EditorialArticle, {
   ArticleCard,
   ArticleGrid,
@@ -118,6 +120,15 @@ export default function BlogPostGrinder() {
           simply wanting a more impressive appliance.
         </p>
       </ArticleSection>
+      <ArticleSection title="Compare two everyday grinder workflows">
+        <p>
+          For a focused example of the choice between stepped adjustment and single dosing, read our{" "}
+          <Link href="/blog/turin-df54-vs-baratza-encore-esp" style={{ color: "#d4b896", textDecoration: "underline" }}>
+            DF54 versus Encore ESP workflow comparison
+          </Link>. It examines two specific setups rather than repeating this general buying guide.
+        </p>
+      </ArticleSection>
+      <RecommendedBeans variant="espresso" />
     </EditorialArticle>
   );
 }

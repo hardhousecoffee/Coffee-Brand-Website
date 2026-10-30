@@ -11,8 +11,8 @@ export default function BlogPostOnyxCoffeeLab() {
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Global Excellence – Onyx Coffee Lab (Bentonville, Arkansas, USA) | Hard House Coffee</title>
-        <meta name="description" content="Ranked the #1 coffee shop in the world by the Espresso Academy. Here's why Onyx Coffee Lab in Bentonville, Arkansas is redefining what a modern coffee brand can be." />
-        <meta property="og:title" content="Onyx Coffee Lab – The #1 Coffee Shop in the World | Hard House Coffee" />
+        <meta name="description" content="Explore Onyx Coffee Lab’s sourcing transparency, published coffee information, café design and the questions readers should ask about green-coffee prices." />
+        <meta property="og:title" content="Onyx Coffee Lab: Sourcing and Transparency | Hard House Coffee" />
         <meta property="og:description" content="You have to head to Arkansas to find the absolute pinnacle of modern American coffee culture." />
       </Helmet>
       <Navbar />
@@ -35,7 +35,9 @@ export default function BlogPostOnyxCoffeeLab() {
           If you want to visit the absolute pinnacle of modern American coffee culture, you actually have to head out to Arkansas.
         </p>
         <p style={{ color: "#b0a090", marginBottom: "1.25rem" }}>
-          Onyx Coffee Lab based out of Bentonville was officially ranked as the number one coffee shop in the world by the Espresso Academy. What makes them so legendary is their absolute obsession with data and transparency. They literally publish the exact pricing, roast profiles, and trade data for every single bean they source.
+          Onyx Coffee Lab, based in Arkansas, publishes sourcing and cost information alongside many of its coffees.
+          That gives readers more to investigate than a tasting-note list alone. The details vary by release,
+          and a published green-coffee price should not be confused with the amount paid directly to a farmer.
         </p>
         <p style={{ color: "#b0a090", marginBottom: "2.5rem" }}>
           Walking into one of their cafes feels like stepping into a beautifully designed, high-tech coffee laboratory where every single pour-over is crafted with absolute, flawless mathematical precision. They are completely redefining what a modern coffee brand can be.
@@ -44,7 +46,7 @@ export default function BlogPostOnyxCoffeeLab() {
 
         <Section title="What Makes Onyx Different">
           {[
-            { label: "Radical Transparency", detail: "Onyx publishes exact purchase prices, farm details, roast curves, and water chemistry for every coffee they sell. You know everything about what's in your cup." },
+            { label: "Sourcing Transparency", detail: "Onyx’s coffee listings can include origin, processing, cost information and brewing guidance. Read the explanation of the transaction terms: a seller’s price does not necessarily identify the farmer’s payment." },
             { label: "Competition Pedigree", detail: "Their baristas have competed and placed at the highest levels of national and international competition, bringing elite technique to every daily service." },
             { label: "Design-Forward Spaces", detail: "Their cafes are intentionally designed — clean, precise, and focused. The environment reinforces that everything here is done with purpose." },
           ].map(({ label, detail }) => (
@@ -57,10 +59,16 @@ export default function BlogPostOnyxCoffeeLab() {
 
         <Section title="How does water quality affect the taste of my coffee?">
           <p style={{ marginBottom: "1rem" }}>
-            Because a cup of coffee is 98% water, tap water high in chlorine or heavy minerals can muddy the bright flavor notes, while completely distilled water lacks the essential minerals (like magnesium and calcium) needed to bind to and extract the coffee's flavorful oils.
+            Water chemistry affects flavour and machine care, but a single mineral number does not explain everything.
+            Hardness and alkalinity measure different properties, and an ordinary drinking-water filter may not reduce hardness.
+            Use the specifications for your brewing equipment rather than assuming distilled water is suitable for every machine.
           </p>
           <p>
-            Onyx Coffee Lab uses strict water-filtration metrics to ensure that the water profile in their cafés highlights the precise chemistry of their light roasts perfectly.
+            Our <Link href="/blog/espresso-water-hardness-alkalinity-guide" style={{ color: "#d4b896", textDecoration: "underline" }}>water hardness and alkalinity guide</Link>{" "}
+            explains what to test. For the sourcing terminology, see{" "}
+            <a href="https://onyxcoffeelab.com/en-int/products/costa-rica-las-lajas-diamond-natural" target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>
+              Onyx’s own explanation of green-coffee costs
+            </a>. Product information and seasonal availability can change.
           </p>
         </Section>
 
