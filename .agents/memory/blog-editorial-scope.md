@@ -20,3 +20,9 @@ Research-based articles must not claim ownership, hands-on testing, unverifiable
 **Why:** The owner wants original useful expansion rather than duplicate reviews or filler, and explicitly prohibits fabricated evidence.
 
 **How to apply:** Inventory existing topics and catalog records before selecting future topics; use primary references with clear commercial-source limits, retain images only with accurate subject/model descriptions, and distinguish observable advertising code from verified monetization.
+
+Espresso-machine photography must show the actual model in professional, uncluttered lifestyle settings. Do not substitute attractive photographs of another model, plain-background cutouts, amateur snapshots, or generated product likenesses.
+
+**Why:** The owner repeatedly rejected unsuitable photography and explicitly requested magazine-quality images with verified free reuse rights.
+
+**How to apply:** Investigate manufacturer press galleries, media kits, affiliate creative libraries, authorized retailer resources, and existing assets—not only stock-photo sites. Check the actual download contents and applicable permissions before calling a source usable or unavailable. Report precise access or licensing obstacles rather than repeating a general copyright warning.
