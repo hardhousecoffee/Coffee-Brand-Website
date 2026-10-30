@@ -444,3 +444,59 @@ mtime_ms = 1793358345371
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/11091537-bacf-4549-9690-2a91d10be9f4/87522081-7bb1-4dae-b1f0-de3cfc4b1a36"
 storage_version_token = "1793358350133428"
 content_type = "text/plain"
+
+[[outputs]]
+id = "Kww656QpI5pr2O4B4CXMl"
+uri = "file://attached_assets/image_search/free-barista-express-diego-castaneda.jpg"
+type = "image"
+title = "Barista Express — coffee-bar setting"
+description = "Photo: Diego Castañeda / Unsplash. Free under the Unsplash License. Best candidate here for the Barista Express profile, not the $300 Bambino setup. Source: https://unsplash.com/photos/uORk5dlDgbU"
+logical_id = "2ef52014-f6ee-4c92-bffa-fc94811652c1"
+content_hash = "sha256:142e8eee24d260eecd81dc805fda87ec4ed3b1f0769f62fcba4290a8dd7b5512"
+size = 377664
+mtime_ms = 1793395041435
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/2ef52014-f6ee-4c92-bffa-fc94811652c1/1387b8ef-0966-406f-8cfd-c8d9c2cf226b"
+storage_version_token = "1793395050256770"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "1ZVJcYzR03jz97jQXJvOo"
+uri = "file://attached_assets/image_search/free-barista-express-abhinav-bhardwaj.jpg"
+type = "image"
+title = "Barista Express — close-up alternative"
+description = "Photo: Abhinav Bhardwaj / Unsplash. Free under the Unsplash License. Detail photograph rather than a wide luxury-interior scene. Source: https://unsplash.com/photos/oxGyrUAGklw"
+logical_id = "bab709eb-d484-41c1-93ad-4f1aaf3c0494"
+content_hash = "sha256:224a5d8adc449297ce074ce65c20b26b66852b51da8402a84bba1b0f63760e67"
+size = 447587
+mtime_ms = 1793395042237
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/bab709eb-d484-41c1-93ad-4f1aaf3c0494/3aeb3fc4-c67a-464d-8284-0c3f705b7d05"
+storage_version_token = "1793395051124652"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "L0w7L7pBOmLjHtNcfSVFI"
+uri = "file://attached_assets/image_search/free-spirit-bex-walton.jpg"
+type = "image"
+title = "Kees van der Westen Spirit — licensed café photo"
+description = "Photo: Bex Walton, CC BY 2.0. Resized, not cropped. Credit and licence link required: https://creativecommons.org/licenses/by/2.0/ . Source: https://www.flickr.com/photos/bexwalton/35966527835/ . Documentary café photograph, not premium catalog photography."
+logical_id = "c908b24f-c622-4c75-8c33-cb4256718f78"
+content_hash = "sha256:fbd7ab43d450298594066439e4e46f9b36d3686baf27c5812dc0d8ed76552a67"
+size = 304831
+mtime_ms = 1793395040675
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/c908b24f-c622-4c75-8c33-cb4256718f78/1d689680-7565-4550-9a65-b91b8de0d14c"
+storage_version_token = "1793395051950725"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "YXI8OkZtO1S2msodLwkQ3"
+uri = "file://attached_assets/image_search/free-slayer-bex-walton.jpg"
+type = "image"
+title = "Slayer — licensed café photo, not recommended as hero"
+description = "Photo: Bex Walton, CC BY 2.0. Resized, not cropped. Credit and licence link required: https://creativecommons.org/licenses/by/2.0/ . Source: https://www.flickr.com/photos/bexwalton/38082708505/ . Rear view; exact variant/group count not established. Not suitable to label as a verified Espresso 2-Group."
+logical_id = "c9bb02f1-d136-4e0d-8262-a171f167bf15"
+content_hash = "sha256:d11c375b8f0b7e695a11cdb0f6af78281e469f94f5c9b2e5525587bb3a131440"
+size = 254195
+mtime_ms = 1793395040943
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/c9bb02f1-d136-4e0d-8262-a171f167bf15/2128b0da-b06f-4d83-bb02-2c01bc58b81f"
+storage_version_token = "1793395052657544"
+content_type = "image/jpeg"
