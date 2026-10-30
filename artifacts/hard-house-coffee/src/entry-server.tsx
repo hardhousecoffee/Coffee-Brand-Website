@@ -11,6 +11,7 @@ import NotFound from "@/pages/not-found";
 // prerender.mjs is the ONLY other file that references route paths — it derives
 // them from here, not from its own list.
 export { routes as ROUTES };
+export { AMAZON_SHOPPING_ENABLED } from "@/config/shopping";
 
 function AppRoutes() {
   return (

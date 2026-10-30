@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
+import { AMAZON_SHOPPING_ENABLED } from "@/config/shopping";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -111,7 +112,7 @@ export default function Navbar() {
           })}
 
           {/* Spacer between groups */}
-          <div style={{ width: "6rem" }} />
+          {AMAZON_SHOPPING_ENABLED && <div style={{ width: "6rem" }} />}
 
           {/* Right group: About + Shop */}
           {navLinks.slice(2).map((link) => (
@@ -137,7 +138,7 @@ export default function Navbar() {
               </span>
             </Link>
           ))}
-          <Link
+          {AMAZON_SHOPPING_ENABLED && <Link
             href="/products"
             aria-current={location === "/products" ? "page" : undefined}
           >
@@ -156,7 +157,7 @@ export default function Navbar() {
             >
               Shop
             </span>
-          </Link>
+          </Link>}
         </div>
 
         {/* Mobile: logo or back + hamburger */}
@@ -271,7 +272,7 @@ export default function Navbar() {
               </div>
             </Link>
           ))}
-          <Link href="/products">
+          {AMAZON_SHOPPING_ENABLED && <Link href="/products">
             <div
               className="hhc-mobile-nav-item"
               onClick={() => { setMenuOpen(false); scrollTop(); }}
@@ -287,7 +288,7 @@ export default function Navbar() {
             >
               Shop
             </div>
-          </Link>
+          </Link>}
         </div>
       )}
     </nav>

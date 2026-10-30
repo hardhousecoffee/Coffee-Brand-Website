@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { isShoppingSuspended } from "@/config/shopping";
 
 interface PageNavProps {
   nextPath: string;
@@ -7,6 +8,7 @@ interface PageNavProps {
 }
 
 export default function PageNav({ nextPath, nextLabel, showArrow = true }: PageNavProps) {
+  if (isShoppingSuspended(nextPath)) return null;
   return (
     <div
       style={{

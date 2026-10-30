@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import Link from "@/components/ShoppingLink";
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
 const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });

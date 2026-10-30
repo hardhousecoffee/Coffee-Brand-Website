@@ -12,7 +12,7 @@ console.log("Loading SSR bundle...");
 // ROUTES comes from src/routes.config.ts via the compiled server bundle.
 // This script does NOT maintain its own route list.
 // To add a new blog post, edit only src/routes.config.ts.
-const { render, ROUTES } = await import(join(distServer, "entry-server.js"));
+const { render, ROUTES, AMAZON_SHOPPING_ENABLED } = await import(join(distServer, "entry-server.js"));
 
 const template = readFileSync(join(distPublic, "index.html"), "utf-8");
 let successCount = 0;
@@ -91,6 +91,19 @@ for (const route of ROUTES) {
     console.error(`  ✗ ${url}: ${err.message}`);
     failCount++;
   }
+}
+
+// GitHub Pages has no configurable HTTP redirects. Preserve the former URL
+// as a minimal browser redirect, never as a prerendered product catalog.
+if (!AMAZON_SHOPPING_ENABLED) {
+  const redirectDir = join(distPublic, "products");
+  mkdirSync(redirectDir, { recursive: true });
+  writeFileSync(join(redirectDir, "index.html"), `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hard House Coffee</title><link rel="canonical" href="https://hardhousecoffee.com/">
+<meta http-equiv="refresh" content="0;url=/">
+<script>window.location.replace("/");</script></head><body></body></html>`);
 }
 
 // Auto-generate sitemap.xml — derived from the same ROUTES list.

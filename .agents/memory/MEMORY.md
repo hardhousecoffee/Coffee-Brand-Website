@@ -5,3 +5,4 @@
 - [YouTube embed validation](youtube-iframe-state-sync.md) — metadata success does not prove iframe permission; verify rendered embeds and player-state events in the proxied preview
 - [Intermediate-width headline containment](intermediate-width-headline-containment.md) — nowrap hero lines need independent scaling and laptop-width verification
 - [Touch-hover responsive overrides](touch-hover-responsive-overrides.md) — touch Safari can persist hover styles; mobile resets must follow and override generic hover transforms
+- [Amazon shop suspension](amazon-shop-suspension.md) — reversible closure redirects old shop URLs home; preserve articles, catalog, and Printify links; publishing needs separate approval.

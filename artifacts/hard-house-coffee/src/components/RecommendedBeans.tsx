@@ -1,4 +1,5 @@
-import { Link } from "wouter";
+import Link from "@/components/ShoppingLink";
+import { isShoppingSuspended } from "@/config/shopping";
 
 const BEANS: Record<
   string,
@@ -387,7 +388,7 @@ export default function RecommendedBeans({ variant }: { variant: Variant }) {
               >
                 {bean.desc}
               </p>
-              <a
+              {!isShoppingSuspended(bean.url) && <a
                 href={bean.url}
                 target="_blank"
                 rel="nofollow sponsored noopener noreferrer"
@@ -412,7 +413,7 @@ export default function RecommendedBeans({ variant }: { variant: Variant }) {
                 }
               >
                 View on Amazon
-              </a>
+              </a>}
             </div>
           </div>
         ))}

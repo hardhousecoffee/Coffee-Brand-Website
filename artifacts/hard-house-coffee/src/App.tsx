@@ -7,6 +7,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import CookieConsent from "@/components/CookieConsent";
 import NotFound from "@/pages/not-found";
 import { routes } from "@/routes.config";
+import ShopRedirect from "@/components/ShopRedirect";
+import { AMAZON_SHOPPING_ENABLED } from "@/config/shopping";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,8 @@ function ScrollToTop() {
 function Router() {
   return (
     <Switch>
+      {!AMAZON_SHOPPING_ENABLED && <Route path="/products" component={ShopRedirect} />}
+      {!AMAZON_SHOPPING_ENABLED && <Route path="/products/:rest*" component={ShopRedirect} />}
       {routes.map(({ path, component: Component }) => (
         <Route key={path} path={path} component={Component} />
       ))}

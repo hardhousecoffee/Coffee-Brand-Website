@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import Link from "@/components/ShoppingLink";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";

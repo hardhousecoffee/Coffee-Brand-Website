@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import { AMAZON_SHOPPING_ENABLED } from "./src/config/shopping";
 
 const rawPort = process.env.PORT;
 const port = rawPort ? Number(rawPort) : 3000;
@@ -13,6 +14,27 @@ const isDev = process.env.NODE_ENV !== "production";
 export default defineConfig({
   base: basePath,
   plugins: [
+    {
+      name: "temporary-shopping-suspension",
+      transformIndexHtml: {
+        order: "pre",
+        handler(html) {
+          if (AMAZON_SHOPPING_ENABLED) return html;
+          return {
+            // The development HTML has a non-React fallback for crawlers.
+            // Suppress its shop link too, before React mounts.
+            html: html.replace(/<a href="\/products">Products<\/a>/g, ""),
+            tags: [{
+              tag: "script",
+              injectTo: "head-prepend",
+              children: `if (/^\\/products(?:\\/|$)/i.test(window.location.pathname)) {
+                window.location.replace(${JSON.stringify(basePath)});
+              }`,
+            }],
+          };
+        },
+      },
+    },
     react(),
     tailwindcss(),
     ...(isDev ? [runtimeErrorOverlay()] : []),

@@ -1,4 +1,5 @@
 import { ComponentType } from "react";
+import { AMAZON_SHOPPING_ENABLED } from "@/config/shopping";
 import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
 import BlogPost2026EspressoGuide from "@/pages/BlogPost2026EspressoGuide";
@@ -52,7 +53,7 @@ export interface RouteConfig {
 //   3. Add one entry below
 // App router, SSR renderer, static pre-render, and sitemap all derive from here.
 // ─────────────────────────────────────────────────────────────────────────────
-export const routes: RouteConfig[] = [
+const allRoutes: RouteConfig[] = [
   { path: "/",       component: Home,    changefreq: "weekly",  priority: "1.0" },
   { path: "/experience", component: Experience, changefreq: "monthly", priority: "0.6" },
   { path: "/about",  component: About,   changefreq: "monthly", priority: "0.6" },
@@ -93,3 +94,7 @@ export const routes: RouteConfig[] = [
   { path: "/disclaimer",     component: Disclaimer,    changefreq: "yearly",  priority: "0.3" },
   { path: "/terms-of-use",   component: TermsOfUse,    changefreq: "yearly",  priority: "0.3" },
 ];
+
+export const routes = allRoutes.filter(
+  (route) => AMAZON_SHOPPING_ENABLED || route.path !== "/products",
+);
