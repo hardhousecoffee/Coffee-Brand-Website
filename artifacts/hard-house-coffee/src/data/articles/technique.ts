@@ -9,13 +9,13 @@ export const techniqueArticles: ResearchedArticle[] = [
     image: "/images/espresso-pour-cup.jpg",
     imageAlt: "Espresso flowing into a cup during extraction",
     purpose: "A repeatable diagnostic process, rather than another beginner-machine recommendation.",
-    intro: "Start with one repeatable recipe and change one variable at a time. Sour espresso may be under-extracted, but it can also reflect the coffee’s natural acidity. Bitter espresso may be over-extracted, heavily roasted or contaminated by old coffee oils. Taste alone is a clue, not a complete diagnosis.",
+    intro: "You pull a sour shot, grind finer, and the next one tastes harsh. Now what? Before making another adjustment, give yourself a recipe you can repeat. Sourness can come from under-extraction or the coffee’s natural acidity; bitterness can come from extraction, roast or old coffee oils. A few notes on dose, yield and flavour will tell you more than changing every setting at once.",
     sections: [
       {
         heading: "Record a baseline you can actually repeat",
         paragraphs: [
           "Use fresh water approved for the machine, the same coffee and the correct basket. Record the dry coffee mass, beverage mass and time. For a conventional double basket, 18 grams in and 36 grams out is an illustrative 1:2 starting ratio—not an instruction to force 18 grams into a basket designed for less.",
-          "Keep the basket dry before dosing, distribute consistently and tamp level. Follow the machine’s warm-up procedure. Decide whether your timing begins at pump activation or first liquid, and keep that definition the same. Two recipes timed differently cannot be compared honestly.",
+          "Keep the basket dry before dosing, distribute consistently and tamp level. Follow the machine’s warm-up procedure. Choose whether to start timing at pump activation or first liquid, then stick with it; otherwise, your notes may show a difference that comes from the stopwatch rather than the coffee.",
         ],
       },
       {
@@ -35,7 +35,7 @@ export const techniqueArticles: ResearchedArticle[] = [
         },
       },
       {
-        heading: "Do not treat time as a universal pass mark",
+        heading: "Use time as a clue, not a pass mark",
         paragraphs: [
           "A familiar time window can help you notice a large change, but it does not certify flavour. Pre-infusion, basket design and roast level affect the relationship between time and taste. A shot outside a popular target is not automatically wrong.",
           "Change the grind a small amount while holding dose and beverage yield steady. If the grinder manufacturer requires adjustments while running, follow that procedure safely. Allow for coffee remaining inside the grinder before deciding what the new setting did.",
@@ -52,14 +52,14 @@ export const techniqueArticles: ResearchedArticle[] = [
         heading: "Channeling can make apparently contradictory flavours",
         paragraphs: [
           "Water can travel through easier paths while leaving other areas less extracted. That can produce a sharp and harsh cup at the same time. Look for inconsistent preparation, obvious cracking, spraying from a bottomless basket or large unexplained changes between shots.",
-          "None of those visual signs is a laboratory measurement. Start with the correct basket fill, even distribution and a level tamp. Do not compensate for a preparation problem by endlessly changing temperature. If flow remains abnormal after approved cleaning, consult the manual or service support rather than dismantling hot equipment.",
+          "Use those signs to check preparation first: the correct basket fill, even distribution and a level tamp. Changing temperature will not fix an uneven puck. If flow remains abnormal after approved cleaning, consult the manual or service support rather than dismantling hot equipment.",
         ],
       },
       {
         heading: "Keep a three-shot notebook instead of wasting a bag",
         paragraphs: [
           "Write the baseline, one adjustment and the tasting result. Repeat the promising change once before deciding it solved the problem. If results swing unpredictably, stop changing the recipe and check preparation, grinder behaviour and machine readiness.",
-          "The process here synthesises manufacturer troubleshooting guidance; it is not a claim that we measured your extraction. Use it to narrow the cause. A pressurised basket, pod machine or fully automatic unit needs its own supported adjustment procedure rather than an imported competition-espresso recipe.",
+          "Keep the method suited to your equipment. A pressurised basket, pod machine or fully automatic unit has different adjustment options from an open-basket setup. Use the controls its manual supports and judge progress by whether the result becomes both better tasting and easier to repeat.",
         ],
       },
     ],
@@ -81,7 +81,7 @@ export const techniqueArticles: ResearchedArticle[] = [
     image: "/images/products/la-specialista-main.jpg",
     imageAlt: "An espresso machine illustrating the equipment that needs model-specific care",
     purpose: "Maintenance safety and task selection; no existing article systematically covers these distinctions.",
-    intro: "Cleaning removes coffee oils, grounds and milk residue. Descaling addresses mineral deposits in the water path. They are different jobs, often using different products and cycles. If a machine asks for one, performing the other is not an equivalent substitute.",
+    intro: "Your machine asks for a cleaning cycle, but the bottle in the cupboard says descaler. Can you use it? Not as a substitute. Cleaning removes coffee oils, grounds and milk residue; descaling tackles mineral deposits in the water path. Knowing which job is due helps you choose the right product and avoid a cycle that leaves the original problem untouched.",
     sections: [
       {
         heading: "Identify the machine before choosing a procedure",
@@ -93,7 +93,7 @@ export const techniqueArticles: ResearchedArticle[] = [
       {
         heading: "Separate food residue from mineral scale",
         paragraphs: [
-          "Coffee oils accumulate on baskets, portafilters and accessible brewing surfaces. Milk creates a separate hygiene problem around wands, jugs and automatic milk systems. Mineral deposits form in water-contact areas according to water chemistry and operating conditions.",
+          "Once you have the right manual, separate the jobs by what you are removing. Coffee oils collect on baskets, portafilters and accessible brewing surfaces. Milk residue needs attention around wands, jugs and automatic milk systems. Scale forms in water-contact areas according to water chemistry and operating conditions.",
           "A descaler is not a general milk-system cleaner. A coffee-cleaning tablet is not a substitute for the correct descaling product. Keep products labelled, follow their intended concentration and rinse instructions, and never mix cleaning chemicals.",
         ],
         table: {
@@ -130,8 +130,8 @@ export const techniqueArticles: ResearchedArticle[] = [
       {
         heading: "How this helps flavour troubleshooting",
         paragraphs: [
-          "If a previously reliable recipe suddenly tastes stale or bitter, inspect cleaning before changing every brewing variable. A clean system is a sensible baseline, not a guarantee that the beans or recipe are correct. Conversely, a cleaning prompt does not explain every flavour defect.",
-          "Our sources include different machine manuals to demonstrate why procedures vary. They are not interchangeable instructions. Keep the manual for your own model as the deciding authority and use the water guide to understand why a filter alone may not solve scaling.",
+          "If a reliable recipe suddenly tastes stale or bitter, check for overdue cleaning before adjusting the grind and dose. Start with a clean system, then return to the beans, water and recipe if the flavour still seems wrong.",
+          "Keep a simple record of the job, date and product used. That makes the next prompt easier to interpret and gives support staff useful information if a problem develops. Use your model’s manual for the procedure and the water guide to understand why a filter alone may not solve scaling.",
         ],
       },
     ],
@@ -154,10 +154,10 @@ export const techniqueArticles: ResearchedArticle[] = [
     image: "/images/espresso-pour-cup.jpg",
     imageAlt: "Espresso in a cup, illustrating why brewing water affects the finished drink",
     purpose: "Water-testing and treatment decisions, distinct from recipes and routine maintenance.",
-    intro: "Water can taste fine at the tap and still be a poor match for an espresso machine. Hardness, alkalinity and total dissolved solids answer different questions. Start with the machine manufacturer’s water requirements, test the supply you actually use, and choose treatment for that result—not for a generic promise of “better water.”",
+    intro: "Your tap water tastes fine, and the pitcher filter makes it taste better. Is it ready for the espresso machine? Not necessarily. A taste filter may leave hardness largely unchanged, while a TDS reading tells you little about which minerals are present. Before choosing a treatment, learn what your machine requires and what is in the water you put into its tank.",
     sections: [
       {
-        heading: "Three measurements that should not be used interchangeably",
+        heading: "Hardness, alkalinity and TDS answer different questions",
         paragraphs: [
           "Hardness mainly reflects calcium and magnesium. Alkalinity describes buffering: how strongly water resists a change in acidity. Total dissolved solids, commonly estimated with a conductivity meter, is a broad measure of dissolved material. A TDS number does not reveal which minerals are present.",
           "Two waters can have similar TDS but behave differently in the cup or inside a boiler. Likewise, a filter that improves chlorine odour may leave hardness largely unchanged. Read what a filter is designed and rated to do before assuming it reduces scale risk.",
@@ -176,7 +176,7 @@ export const techniqueArticles: ResearchedArticle[] = [
         heading: "Use manufacturer ranges as requirements, not a universal recipe",
         paragraphs: [
           "La Marzocco’s published guidance, for example, lists total hardness of 70–100 ppm and alkalinity of 40–80 ppm, along with other limits. Those are manufacturer-specific specifications, not an instruction that every espresso machine must use identical water.",
-          "Check the measurement units. Hardness and alkalinity values may be expressed as calcium-carbonate equivalents; a label reporting calcium itself is not the same quantity. If the units are unclear, ask the manufacturer or water-treatment supplier rather than converting by guesswork.",
+          "Before comparing a water report with those limits, check the units. Hardness and alkalinity can be reported as calcium-carbonate equivalents, often written “as CaCO₃.” A bottle label listing calcium itself is reporting a different quantity. Ask the manufacturer or treatment supplier to clarify an unfamiliar unit rather than comparing the numbers directly.",
         ],
       },
       {
@@ -201,10 +201,10 @@ export const techniqueArticles: ResearchedArticle[] = [
         ],
       },
       {
-        heading: "Connect water decisions to taste without overclaiming",
+        heading: "Compare flavour after the water meets the limits",
         paragraphs: [
           "If a light roast tastes muted or sharply acidic, water may contribute, but grind, ratio and roast also matter. Change the water only within the machine’s approved requirements and hold the brewing recipe steady when comparing.",
-          "This article does not provide a laboratory analysis or certify any brand of bottled water. Its purpose is to help you ask the right questions: which limits apply, what the test shows and which treatment addresses the actual problem. That is more useful than a universal mineral recipe.",
+          "Keep the decision in this order: find the limits, test the source, choose suitable treatment, then compare flavour with a steady recipe. That leaves you with a water routine you can maintain instead of a series of changes whose effects are hard to separate.",
         ],
       },
     ],
@@ -226,13 +226,13 @@ export const techniqueArticles: ResearchedArticle[] = [
     image: "/images/products/nespresso-aeroccino4-main.jpeg",
     imageAlt: "Nespresso Aeroccino 4 electric milk frother",
     purpose: "Milk-texture workflow and troubleshooting; distinct from café-history FAQs defining milk drinks.",
-    intro: "A steam wand gives you direct control over heating and aeration. An electric frother uses a more contained, preset routine. Choose according to the texture and effort you want: a tall layer of foam is not the same as the glossy, flowing milk used for latte art.",
+    intro: "Do you want glossy milk that flows into the espresso, or a generous spoonful of foam on top? Start there, rather than with the appliance. A steam wand gives you direct control over heating and aeration; an electric frother offers a more contained routine. The best fit depends on the texture you enjoy and how much practice you want to put into making it.",
     sections: [
       {
         heading: "What actually changes between the two methods",
         paragraphs: [
           "A wand injects steam while you position the pitcher. You control when to introduce air and when to keep the milk circulating. An electric frother generally heats and agitates a measured amount in a dedicated vessel. Different programs can produce different textures, but do not assume every frother behaves like a café steam wand.",
-          "An automatic wand is a third option: it uses steam but delegates some positioning or temperature decisions. Compare the particular system, not just a manual-versus-automatic label. The right method is the one that consistently makes your preferred drink without an unreasonable cleanup routine.",
+          "Between them is the automatic wand, which uses steam while handling some positioning or temperature decisions for you. Compare what each system asks you to do, from filling the vessel to washing it, rather than deciding from a manual-versus-automatic label.",
         ],
       },
       {
@@ -245,7 +245,7 @@ export const techniqueArticles: ResearchedArticle[] = [
       {
         heading: "Why changing the milk can change everything",
         paragraphs: [
-          "Protein, fat and formulation affect how bubbles form and hold. Two oat drinks can behave very differently. A barista-labelled plant milk can be a sensible starting point, but the label does not guarantee that every product will pour like dairy milk.",
+          "Technique is only part of the result. Protein, fat and formulation affect how bubbles form and hold, so two oat drinks can behave very differently with the same equipment. A barista-labelled plant milk is a useful starting point when you want to compare textures.",
           "If the foam collapses or separates, keep the method constant and try a different formulation before replacing the equipment. If the problem appears only after heating, review temperature and storage. Do not assume a result from one brand proves that an entire category of plant milk cannot work.",
         ],
       },
@@ -275,7 +275,7 @@ export const techniqueArticles: ResearchedArticle[] = [
         heading: "A low-waste way to improve your result",
         paragraphs: [
           "Choose one drink, one milk and a small supported batch. Record the program or wand routine, then change only one factor: aeration, final temperature or milk formulation. Pour promptly; textured milk changes while it stands.",
-          "This guide combines manufacturer technique and care information. It does not report comparative testing of the photographed frother. If your goal is a pleasant milk coffee rather than latte art, a reliable frother may be enough; if you enjoy controlling texture, a wand offers a different kind of involvement.",
+          "If the result suits your coffee, there is no need to chase a different texture for its own sake. A reliable frother may be enough for your daily drink. If you enjoy practising and want more control over the pour, a wand gives you room to develop that skill.",
         ],
       },
     ],

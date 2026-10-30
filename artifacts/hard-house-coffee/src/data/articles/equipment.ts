@@ -9,13 +9,13 @@ export const equipmentArticles: ResearchedArticle[] = [
     image: "/images/products/turin-df54-hover2.webp",
     imageAlt: "Turin DF54 bean inlet and adjustment collar with its anti-popcorn insert removed",
     purpose: "Two specific grinders compared by workflow; complements rather than duplicates the general grinder-first buying guide.",
-    intro: "Choose the DF54 if you want to weigh individual doses and make continuous espresso adjustments. Choose the original Encore ESP if a stepped adjustment system and the option of keeping beans in a hopper better match your routine. Neither burr shape nor the number on a dial can tell you which grinder will taste better with every coffee.",
+    intro: "The difference shows up before you pull a shot: do you want to weigh beans for each drink, or keep a bag in the hopper and return to a familiar setting? The DF54 is built around single dosing and stepless adjustment. The original Encore ESP offers numbered steps and a hopper-based routine. Both deserve a closer look, but your daily habits are a better starting point than a flat-versus-conical argument.",
     sections: [
       {
         heading: "Compare the right versions",
         paragraphs: [
-          "This comparison concerns the DF54 family and the original Encore ESP, not every grinder with an Encore name. Turin’s current listing identifies a DF54 v4.1 with 54 mm flat burrs, stepless adjustment and revised chute and declumper details. The preserved catalog photograph illustrates the DF54 family; it is not evidence that every accessory or revision is identical.",
-          "Baratza’s original Encore ESP manual divides its 40 settings into an espresso range, 1–20, and a filter range, 21–40. That is a different mechanism from an ordinary Encore. Check the exact version and local support arrangements before treating an older review as a description of today’s package.",
+          "Turin’s current listing identifies a DF54 v4.1 with 54 mm flat burrs, stepless adjustment and revised chute and declumper details. The photograph here shows the DF54 family rather than documenting every current revision. Check the version included in the listing you are comparing.",
+          "On the other side is the original Encore ESP, whose manual divides 40 settings into an espresso range, 1–20, and a filter range, 21–40. It is different from an ordinary Encore, so look for the full model name and check local support rather than relying on the Encore name alone.",
         ],
       },
       {
@@ -45,7 +45,7 @@ export const equipmentArticles: ResearchedArticle[] = [
         heading: "Flat versus conical is not a flavour guarantee",
         paragraphs: [
           "The DF54’s flat-burr format and the Encore ESP’s conical design are useful specifications, but they do not establish a simple clarity-versus-body rule. Burr geometry, alignment, coffee, grind setting and brewing method all affect the cup.",
-          "We have not performed a controlled taste, noise or retention comparison. Treat claims such as “zero clumping” or “better espresso every time” cautiously unless the review explains its method. For a buyer, adjustment and repeatability are easier to assess from documentation than a universal taste ranking.",
+          "When reading a taste or retention comparison, look for the coffee, recipe and measurement method behind it. A claim such as “zero clumping” tells you little without that context. Use the documented adjustment system and maintenance procedure to judge fit, then treat taste comparisons as evidence from a particular setup.",
         ],
       },
       {
@@ -56,10 +56,10 @@ export const equipmentArticles: ResearchedArticle[] = [
         ],
       },
       {
-        heading: "A useful decision, without declaring a universal winner",
+        heading: "Which routine would you rather repeat?",
         paragraphs: [
           "For someone learning espresso with one regular bag, clear steps can reduce indecision. For someone already weighing doses and wanting small adjustments, the DF54’s workflow is more aligned with that habit. If most of your coffee is filter coffee, first decide whether you really need an espresso-oriented grinder.",
-          "Our broader grinder-first guide explains what to prioritise before buying. This comparison narrows that question to two specific adjustment systems; it does not repeat a list of every grinder on the market or create separate reviews merely to increase article count.",
+          "If you are undecided, walk through a normal day: your first coffee, a second drink, a possible switch to decaf and cleanup. Would weighing each dose feel satisfying or tiresome? Would numbered steps make returning to yesterday’s recipe easier? The answers help turn two specification lists into a choice you can live with.",
         ],
       },
     ],
@@ -81,10 +81,10 @@ export const equipmentArticles: ResearchedArticle[] = [
     image: "/images/products/moccamaster-main.jpg",
     imageAlt: "Technivorm Moccamaster KB with its glass carafe",
     purpose: "Batch-filter ownership comparison; not covered by the manual pour-over recipe or espresso articles.",
-    intro: "The most useful difference between these brewers is where your coffee goes after brewing. The Moccamaster KB uses a glass carafe and hotplate; the OXO 9-Cup uses an insulated carafe. If everyone pours immediately, that difference matters less. If you drink slowly or carry the pot to another room, it becomes central to the decision.",
+    intro: "The first cup is only half the decision. What happens to the rest of the pot while you make breakfast or head back to your desk? The Moccamaster KB keeps a glass carafe on a hotplate; the OXO 9-Cup holds coffee in an insulated carafe. Start with how your household drinks a batch, then compare the controls and cleanup around it.",
     sections: [
       {
-        heading: "Do not compare family names instead of models",
+        heading: "First, make sure the models match",
         paragraphs: [
           "Moccamaster sells several brewers with different baskets, switches and carafes. This guide is about the KB with a manual drip-stop basket, not the KBGV Select or a KBT thermal model. The manufacturer’s KB listing describes the glass carafe, hotplate controls and basket selector.",
           "Likewise, OXO’s 9-Cup is not its 8-Cup single-serve-capable model. The 9-Cup uses a thermal carafe and an automated batch-brewing routine. Confirm the exact version and included carafe before relying on a review of another OXO brewer.",
@@ -94,7 +94,7 @@ export const equipmentArticles: ResearchedArticle[] = [
         heading: "A coffee-maker cup is not necessarily your mug",
         paragraphs: [
           "Capacity labels are manufacturer-defined. Count how much water your household actually drinks rather than assuming nine coffee-maker cups will fill nine large mugs. Measure a normal serving once and compare the brewer’s marked volume with that amount.",
-          "Match the batch to your routine. A machine can suit a busy breakfast table but be less convenient for one small cup. Brewing a larger batch than you need also creates the holding problem you were trying to avoid. Check supported minimum batches instead of improvising a tiny brew in a full-sized basket.",
+          "That measurement also helps you choose a batch size. A brewer that suits a busy breakfast table may be less convenient for one small cup, and making too much leaves you holding coffee you did not need. Check each machine’s supported minimum batch before planning around a single mug.",
         ],
         image: { src: "/images/products/oxo-brew-main.jpg", alt: "OXO Brew 9-Cup coffee maker with an insulated carafe", caption: "The OXO 9-Cup’s thermal-carafe workflow differs from the KB’s glass carafe and hotplate." },
       },
@@ -116,14 +116,14 @@ export const equipmentArticles: ResearchedArticle[] = [
         heading: "Use a fair comparison recipe",
         paragraphs: [
           "If you can evaluate both brewers, use the same coffee, water and starting brew ratio. Record the actual water volume instead of comparing unmatched “cup” marks. Adjust grind separately for each brewer rather than forcing the same setting to prove a point.",
-          "A practical starting ratio for filter coffee is about 60 grams per litre, adjusted to taste and the brewer’s instructions. A 750 ml batch at that ratio uses 45 grams. That arithmetic is a recipe example, not a manufacturer-certified optimum for every coffee.",
+          "For a starting recipe, about 60 grams per litre gives you a simple reference: a 750 ml batch uses 45 grams. Work within the brewer’s instructions, taste the result and adjust from there. Keeping the water volume and coffee mass written down makes the next batch easier to compare.",
         ],
       },
       {
         heading: "Which household fits each one?",
         paragraphs: [
           "The KB suits someone who likes a straightforward switch-based routine and does not mind managing the basket and glass pot. The OXO suits someone who values an insulated carafe and more automated batch management. Check service, replacement carafes and cleaning access before deciding.",
-          "This is a specification-based comparison, not a timed brewing test or blind tasting. Both model families remain represented by manufacturer information at the research date; we do not claim that these are newly released machines or guarantee local stock.",
+          "Picture where the pot will sit after brewing and how you will wash it when empty. If you finish coffee at the breakfast table, a glass-carafe routine may suit you. If you take the pot to a desk or another room, the insulated-carafe approach is worth considering. Neither makes brewing more coffee than you need a good habit.",
         ],
       },
     ],
@@ -146,7 +146,7 @@ export const equipmentArticles: ResearchedArticle[] = [
     image: "/images/products/normcore-portafilter-main.jpg",
     imageAlt: "A bottomless espresso portafilter from the preserved Normcore accessory catalog",
     purpose: "Accessory compatibility checklist, not a duplicate machine or grinder review.",
-    intro: "A matching diameter is the beginning of an espresso accessory check, not the end. A tamper needs to fit inside the basket; a replacement portafilter also needs the correct ears, handle clearance and locking geometry for your group. Buying a kit before checking those differences is an easy way to collect tools that do not work together.",
+    intro: "The listing says 54 mm, your machine says 54 mm, and the new portafilter still will not lock in. Diameter alone cannot settle accessory fit. A tamper has to move freely inside the basket, while a portafilter needs the right mounting ears, clearance and locking geometry. A few checks before ordering can save you an awkward return—or damage from forcing the wrong part.",
     sections: [
       {
         heading: "Separate the four dimensions people often mix up",
@@ -182,21 +182,21 @@ export const equipmentArticles: ResearchedArticle[] = [
         heading: "A bottomless portafilter is a diagnostic tool",
         paragraphs: [
           "Removing the spouts lets you see where coffee exits the basket. Spraying can reveal uneven extraction, but the absence of spraying does not prove ideal flavour. Taste and repeatability still matter.",
-          "A bottomless holder can also make a mess and expose you to hot liquid. Use it at the intended cup clearance and do not place your face or hands under an extraction. If you are learning, consistent distribution and a level tamp are more useful than buying a bottomless holder merely for photographs.",
+          "Expect a learning curve and some mess. Keep your face and hands clear of hot liquid, and use the intended cup clearance. Concentrate on even distribution and a level tamp; the visible flow is useful feedback, not the final verdict on how the coffee tastes.",
         ],
       },
       {
-        heading: "Buy a kit only if every important part earns its place",
+        heading: "Choose tools for the problem you want to solve",
         paragraphs: [
           "A dosing funnel can reduce spilled grounds; a knock box can simplify cleanup. A tamper with a compatible base may improve comfort. Those are clear purposes. A large kit can include tools you do not need, with a size that fits one part of your setup but not another.",
-          "Start with the original equipment, identify the actual inconvenience and change one item. Keep accessories and chemical cleaning products away from food-preparation mix-ups. A tidy workstation is useful; a matching collection of tools is not evidence of better extraction.",
+          "Start with the original equipment and identify the inconvenience: spilled grounds, an uncomfortable handle or slow cleanup. Change one item that addresses it, then see whether the routine improves. Store chemical cleaning products separately from coffee and food-preparation tools.",
         ],
       },
       {
         heading: "A five-minute fit checklist",
         paragraphs: [
           "Before deciding, confirm the exact machine, basket, proposed accessory dimensions, supplier compatibility statement and return conditions. Save that information. It is much easier to resolve an incorrect part while it is unused than after it has been forced into the group.",
-          "The preserved catalog photograph is an illustration of a bottomless portafilter, not a promise that the pictured model fits your machine. This guide explains the checks; it does not endorse a universal 54-to-58 mm conversion or recommend replacing properly functioning original parts.",
+          "Keep original parts that work well. If a supplier cannot confirm the proposed replacement against your exact machine and basket, wait for a clear answer rather than relying on a photograph or a matching size label.",
         ],
       },
     ],

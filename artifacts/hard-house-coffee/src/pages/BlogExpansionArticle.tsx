@@ -19,7 +19,7 @@ export default function BlogExpansionArticle() {
       readTime={articleReadTime(article)}
     >
       <p style={{ color: "#d4cfc9", marginBottom: "2rem" }}>{article.intro}</p>
-      <ArticleFigure src={article.image} alt={article.imageAlt} caption="Preserved Hard House Coffee image asset. Photograph illustrates the subject; it is not evidence of hands-on testing. Specifications can vary by model revision and region." />
+      <ArticleFigure src={article.image} alt={article.imageAlt} caption={article.imageAlt} />
       {article.sections.map((section) => (
         <ArticleSection key={section.heading} title={section.heading}>
           {section.paragraphs.map((paragraph) => <p key={paragraph} style={{ marginBottom: "1rem" }}>{paragraph}</p>)}
@@ -30,8 +30,8 @@ export default function BlogExpansionArticle() {
       ))}
       <ArticleSection title="Sources and research notes">
         <ArticleNote>
-          Research checked October 30, 2026. This is independently written, research-based guidance, not a hands-on test.
-          Manufacturer claims are identified as such. Sources may change; availability, regional specifications and support terms should be confirmed for the exact model.
+          Research-based guidance; no hands-on testing. Sources checked October 30, 2026.
+          Manufacturer specifications are attributed in the text. For equipment, confirm regional details and follow the instructions for your exact model.
         </ArticleNote>
         <ul style={{ paddingLeft: "1.35rem" }}>
           {article.sources.map((source) => (

@@ -9,20 +9,20 @@ export const machineArticles: ResearchedArticle[] = [
     image: "/images/products/oracle-jet-main.jpg",
     imageAlt: "Breville Oracle Jet with its touchscreen, grinder, portafilter and steam wand",
     purpose: "Dedicated BES985 ownership decision; no existing article provides a dedicated Oracle Jet review.",
-    intro: "The Oracle Jet makes most sense when you want a real portafilter workflow but would rather delegate grinding, dosing and tamping. It is not a bean-to-cup machine, and automation does not eliminate cleaning or the need to choose suitable beans. Its most important limitation for a busy household is the sequence of the drinks: espresso and milk are prepared one after the other, not simultaneously.",
+    intro: "You like the ritual of locking in a portafilter, but weighing grounds and tamping evenly are not your favourite parts of making coffee. That is the space the Oracle Jet occupies: it handles grinding, dosing and tamping while leaving you involved in the drink. Before choosing it, picture your busiest morning. The Jet brews espresso and textures milk one after the other, so that sequence matters more than a long touchscreen menu when several people are waiting.",
     sections: [
       {
         heading: "What you are buying: assisted espresso, not a robotic café",
         paragraphs: [
           "Breville introduced the Oracle Jet in August 2024. The BES985 combines a grinder, automated puck preparation, a touchscreen and ThermoJet heating. The supplied manual identifies a 58 mm portafilter. That separates it from many smaller Breville machines, but a diameter alone never guarantees that another machine’s portafilter will fit.",
-          "You still move the portafilter from the grinder to the group, position the cup, empty the basket and look after the milk jug. That physical involvement may be the attraction. If you want to press one button and walk away until a complete milk drink appears, the Philips-style fully automatic approach is a different category worth considering.",
+          "You still move the portafilter from the grinder to the group, position the cup, empty the basket and look after the milk jug. For some people, that involvement is the attraction. If you would rather press a button and return to a finished milk drink, consider the Philips-style fully automatic approach instead.",
         ],
       },
       {
         heading: "Run through your busiest morning before deciding",
         paragraphs: [
           "Imagine making two flat whites before leaving home. You prepare a puck, brew, texture milk, clean the wand and repeat. WIRED’s independent review specifically notes that the Jet cannot steam and brew together. A fast heating system is not the same thing as a dual-boiler workflow.",
-          "The practical question is not whether a touchscreen has your favourite drink icon. It is whether you are happy with that sequence when the household is waiting. A solo drinker may barely notice; someone making several milk drinks should give workflow more weight than the recipe count.",
+          "For a solo drinker, moving between those steps may feel perfectly natural. Making several milk drinks brings the sequence into sharper focus: consider how often you will repeat it and whether you are happy preparing one drink at a time.",
         ],
         bullets: [
           "Check clearance above the hopper and access to the water tank where the machine will actually sit.",
@@ -33,7 +33,7 @@ export const machineArticles: ResearchedArticle[] = [
       {
         heading: "What the automation can and cannot correct",
         paragraphs: [
-          "Grind guidance can help you move in the right direction, but beans still change with age and roast style. Keep the coffee consistent while learning the machine. If you change beans, grind setting, drink volume and milk simultaneously, it becomes difficult to know which adjustment improved the cup.",
+          "Once the daily routine looks right, turn to the coffee itself. Grind guidance can help, but beans still change with age and roast style. Keep the coffee consistent while learning the machine; changing beans, grind, drink volume and milk together makes it difficult to tell what improved the cup.",
           "Record a repeatable recipe and taste the espresso separately before adding milk. A thick milk drink can hide a sharp or hollow shot. Use our espresso troubleshooting guide for a controlled diagnosis rather than treating each on-screen recommendation as a guarantee of good flavour.",
         ],
       },
@@ -48,14 +48,14 @@ export const machineArticles: ResearchedArticle[] = [
         heading: "Ownership matters after the first week",
         paragraphs: [
           "The manual’s cleaning cycles, grinder care and approved water guidance remain part of ownership. Automated milk preparation does not make milk residue harmless. Wipe and purge as instructed after use, empty the drip tray and use the correct cleaning products for the specified cycle.",
-          "An integrated grinder saves counter space but ties two important components to one appliance. Before spending, check local service arrangements, warranty terms and the price of routine consumables. We have not measured this machine’s reliability, grinder retention or running cost, so we do not assign invented scores to those questions.",
+          "An integrated grinder saves counter space but ties two important components to one appliance. Check local service arrangements, warranty terms and the price of routine consumables alongside the purchase price. Find out where the machine would go for repair and what support is available in your region.",
         ],
       },
       {
         heading: "Who should shortlist it—and who should not?",
         paragraphs: [
           "Shortlist the Jet if you value assisted preparation, make a modest number of drinks at a time and still want the ritual of a portafilter. Look elsewhere if simultaneous steaming and brewing is essential, if you want to choose a separate grinder, or if a fully automatic drink is your actual goal.",
-          "This is a researched guide, not a report of hands-on testing. We checked Breville’s manual and launch announcement against an independent review. Confirm the exact regional BES985 specification and current support terms; a retailer’s promotional recipe count is less useful than understanding the daily routine.",
+          "Before ordering, confirm the regional BES985 specification and support terms, then return to that morning routine. If assisted puck preparation would remove the part you find frustrating—and the milk sequence suits your household—the Jet belongs on your shortlist.",
         ],
       },
     ],
@@ -78,7 +78,7 @@ export const machineArticles: ResearchedArticle[] = [
     image: "/images/products/ninja-luxe-main.jpg",
     imageAlt: "Ninja Luxe Café Pro with an integrated tamping lever and milk jug",
     purpose: "Dedicated ES701 decision guide; distinct from broad beginner and budget-machine articles.",
-    intro: "The Luxe Café Pro ES701 is built around guidance: it weighs the dose, recommends grind adjustments and reduces the number of manual steps. The reason to consider it is not simply that it makes several kinds of coffee. It is the combination of assisted espresso, a built-in tamper and hands-free milk preparation. Those conveniences still come with cleanup, learning and limits on how much of the process you control.",
+    intro: "If you want espresso without learning every preparation step at once, the Luxe Café Pro ES701 has an appealing brief. It weighs the dose, recommends grind adjustments and adds an integrated tamper and hands-free milk preparation. The useful question is how those features fit your habits: will you use its different brewing modes, or mostly make the same morning latte?",
     sections: [
       {
         heading: "Start with the model number, not the Luxe Café name",
@@ -91,7 +91,7 @@ export const machineArticles: ResearchedArticle[] = [
         heading: "Why weighing the dose helps—and where it stops helping",
         paragraphs: [
           "Weight-based dosing reduces the guesswork of grinding for a fixed number of seconds. Coffee density and grinder behaviour can change, so time alone is not a reliable measure of the coffee in a basket. Ninja’s guided system is designed to use the chosen drink and basket information to support preparation.",
-          "However, a weighed dose is not proof of even extraction. Bean condition, grind distribution and the selected recipe still matter. Keep a note of what tastes good with one bag before switching several controls. Guidance is most useful when it helps you repeat a result, not when it encourages constant adjustments without tasting.",
+          "That gives you a more consistent starting point, but bean condition, grind distribution and the selected recipe still affect extraction. Keep a note of what tastes good with one bag before changing several controls. Use the guidance to repeat a result, then let taste tell you whether an adjustment helped.",
         ],
       },
       {
@@ -102,7 +102,7 @@ export const machineArticles: ResearchedArticle[] = [
         ],
       },
       {
-        heading: "A four-in-one machine still needs four sensible expectations",
+        heading: "Which of the four modes will you use?",
         paragraphs: [
           "Espresso, drip-style coffee, rapid cold brew and hot water are separate uses. The machine may replace several countertop appliances, but that does not mean its coffee mode exactly reproduces a dedicated batch brewer, or that a short cold cycle tastes like overnight immersion.",
           "Write down the drinks you make in a normal week. If nearly all are long coffees, compare the preparation and cleaning routine with a good drip brewer. If nearly all are espresso, consider whether you want the integrated guidance or would rather invest in a separate grinder and a simpler machine.",
@@ -119,15 +119,15 @@ export const machineArticles: ResearchedArticle[] = [
       {
         heading: "Check the work hidden behind convenience",
         paragraphs: [
-          "Emptying grounds, rinsing components and following cleaning and descaling prompts are still required. Oils and milk residue do not disappear because dosing is automated. Use the ES700-series instructions for the supplied parts, particularly any distinction between dishwasher-safe components and parts that should only be wiped or rinsed.",
+          "After the drinks come the grounds, jug and drip tray. Follow the cleaning and descaling prompts, using the ES700-series instructions for the supplied parts. In particular, check which components are dishwasher-safe and which should only be wiped or rinsed.",
           "A shared household should also agree on beans and settings. An integrated hopper is convenient when everyone wants the same coffee, less so when one person wants decaf and another wants a different roast. Look at the manufacturer’s supported brewing options rather than assuming that adding preground coffee is acceptable.",
         ],
       },
       {
-        heading: "Our researched recommendation",
+        heading: "Who will appreciate the Pro?",
         paragraphs: [
           "The Pro is worth investigating for someone who wants guidance, multiple drink styles and less manual tamping. It is less compelling if you already enjoy a separate grinder or specifically want a traditional machine with fewer integrated systems.",
-          "We have not tested its cup quality, noise, durability or extraction repeatability. Manufacturer features and independent observations inform this guide; they do not establish a universal winner. Read the support documentation and compare the exact ES701 package before making a decision.",
+          "Make a short list of your regular drinks and compare it with the exact ES701 package. If the tamper, milk presets and brewing modes all solve everyday problems, the Pro makes more sense than it does for someone who only needs a straightforward espresso setup.",
         ],
       },
     ],
@@ -150,7 +150,7 @@ export const machineArticles: ResearchedArticle[] = [
     image: "/images/products/philips-5500-main.jpg",
     imageAlt: "Philips 5500 LatteGo preparing a milk drink using its removable milk container",
     purpose: "Dedicated fully automatic workflow and care guide, not another generic espresso-machine ranking.",
-    intro: "Choose the Philips 5500 LatteGo for repeatable button-operated drinks, not for the hands-on control of a portafilter machine. Its appeal is reducing the morning workload while retaining some control over drink strength and size. The trade-off is that you work within an internal brewing system, and keeping that system clean is part of the deal.",
+    intro: "One person wants a short coffee; another wants a large milk drink, and neither wants to tamp a puck before breakfast. That is a good reason to look at the Philips 5500 LatteGo. It handles brewing internally and lets you save preferences for strength and size. In return, you give up the open-ended control of a portafilter machine and take on the care routine of a fully automatic system.",
     sections: [
       {
         heading: "What the 20-drink specification actually tells you",
@@ -163,20 +163,20 @@ export const machineArticles: ResearchedArticle[] = [
         heading: "A fully automatic routine is different from assisted espresso",
         paragraphs: [
           "The grinder and brewing unit prepare the coffee internally. There is no portafilter to fill, distribute and tamp. That is a meaningful advantage if you want coffee while getting ready for work, or if several people have different comfort levels with espresso equipment.",
-          "The limitation is equally important: you cannot treat the internal chamber like an open commercial basket. Changing the coffee strength or drink volume is not identical to setting an exact dry dose and beverage mass on a traditional machine. If that level of experimentation matters, a semi-automatic setup may be more satisfying.",
+          "The controls work differently, too. Changing coffee strength or drink volume is not the same as setting an exact dry dose and beverage mass in an open basket. If weighing and adjusting those variables is the part you enjoy, a semi-automatic setup may be more satisfying.",
         ],
       },
       {
-        heading: "Use the profiles to solve an actual household problem",
+        heading: "Set up profiles around the drinks you make",
         paragraphs: [
           "Profiles are useful when one person likes a short, strong coffee and another likes a longer milk drink. Save a sensible starting recipe rather than rebuilding it each morning. Taste the coffee before increasing the milk volume; a larger drink can seem weak simply because the same coffee is diluted further.",
           "When a bag changes, make gradual adjustments and allow the results to settle before judging. Avoid chasing a café shot-time target that was written for an entirely different brewing system. The relevant test is whether the chosen settings deliver a drink you enjoy consistently.",
         ],
       },
       {
-        heading: "LatteGo simplifies milk plumbing, not food hygiene",
+        heading: "A simpler milk system still needs daily care",
         paragraphs: [
-          "The removable LatteGo assembly avoids the long milk hose found on some automatic systems. That can make rinsing less awkward. It does not mean milk can sit warm between drinks or that a rinse replaces every cleaning procedure.",
+          "The removable LatteGo assembly avoids the long milk hose found on some automatic systems, making rinsing less awkward. Build that rinse into the drink routine, then follow the full cleaning schedule rather than leaving milk in a warm container between uses.",
           "Follow the cleaning instructions for the exact unit and its components. Refrigerate unused milk promptly in an appropriate container, and do not continually top up old milk. Plant-based products can foam differently; compare formulations before concluding that the machine is defective.",
         ],
       },
@@ -196,7 +196,7 @@ export const machineArticles: ResearchedArticle[] = [
         heading: "Who gets the most value?",
         paragraphs: [
           "The 5500 suits a household that prefers convenient milk drinks, saved preferences and straightforward daily preparation. It is not the obvious choice for someone who wants to change baskets, explore manual pressure control or experiment with a separate grinder.",
-          "This guide uses the manufacturer’s current US listing and the distinction between automatic and portafilter workflows. It does not claim firsthand ownership or laboratory comparisons. Before choosing, check the matching manual, the regional product suffix and the support available where you live.",
+          "Before choosing, check the regional product suffix, matching manual and local support. Think through where you will refill, rinse and empty it each day. Convenient drinks are only part of the appeal; easy access for those small jobs will matter long after the first week.",
         ],
       },
     ],

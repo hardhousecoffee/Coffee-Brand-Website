@@ -9,17 +9,17 @@ export const coffeeArticles: ResearchedArticle[] = [
     image: "/images/coffee-cheers.jpg",
     imageAlt: "Coffee cups illustrating a guide to choosing decaffeinated coffee",
     purpose: "Decaffeination and buying criteria, absent from the existing roast, origin and freshness articles.",
-    intro: "Good decaf shopping starts with three questions: which process was used, when was the coffee roasted, and how much caffeine do you need to avoid? A process label describes how caffeine was removed; it does not guarantee flavour, freshness or zero caffeine. Choose the coffee as carefully as you would a regular bag.",
+    intro: "Choosing decaf should still be about finding coffee you look forward to drinking. Process names can help you understand a bag, but they will not tell you whether it suits your espresso or morning filter brew. Look at the roast date and flavour description alongside the decaffeination method—and remember that decaf retains some caffeine.",
     sections: [
       {
         heading: "Decaffeination usually happens before roasting",
         paragraphs: [
           "Commercial decaffeination generally treats green coffee before it reaches the roaster. Water, temperature and a caffeine-removal mechanism are used to reduce caffeine while trying to preserve desirable coffee material. The coffee is subsequently dried and roasted.",
-          "That means a light or dark roast is not itself a decaffeination method. Nor should a brown-looking bean be identified as a particular roast solely by appearance. Read the bag for process, origin and roast date, then use flavour and brewing behaviour to judge whether it suits you.",
+          "The roast comes later, so a light or dark roast label tells you something different from the decaffeination method. Read the process, origin and roast information together, then judge the coffee by its flavour and brewing behaviour rather than bean colour alone.",
         ],
       },
       {
-        heading: "Understand the process names without ranking them by fear",
+        heading: "What the process names mean",
         paragraphs: [
           "Water processes use water-based extraction and filtration. Swiss Water is a specific branded process, not a generic term for every water-decaffeinated coffee. Its process description explains the use of green coffee extract and carbon filtration.",
           "Other commercial approaches use carbon dioxide or solvents such as ethyl acetate or methylene chloride. The name of a solvent alone does not establish the finished coffee’s taste or its regulatory compliance. Terms such as sugarcane process describe part of a process story, not a promise that the beverage contains sugar or tastes sweet.",
@@ -35,16 +35,16 @@ export const coffeeArticles: ResearchedArticle[] = [
         },
       },
       {
-        heading: "Decaf is not a caffeine-free medical guarantee",
+        heading: "How much caffeine is left?",
         paragraphs: [
           "The FDA explains that decaffeinated coffee still contains caffeine, typically around 2–15 mg in an 8-ounce cup. That is a general range, not a measurement of your bag or of a concentrated double espresso. Serving size, coffee and preparation affect the amount.",
           "If caffeine avoidance is medically important, ask a qualified clinician and seek product-specific information rather than relying on a process logo. Do not interpret a percentage removed from green beans as an exact caffeine dose in your finished drink.",
         ],
       },
       {
-        heading: "Use a buying checklist instead of a universal best-decaf list",
+        heading: "Choose a bag for the way you drink it",
         paragraphs: [
-          "Look for a named roaster, a roast date, a clearly described process and enough origin or blend information to understand the intended flavour. If that information is missing, ask the roaster. A subscription or large discount is not useful if you cannot finish the quantity while you enjoy it.",
+          "With those process terms in mind, look for a named roaster, a roast date and enough origin or blend information to understand the intended flavour. Ask about anything missing. Choose a quantity you can comfortably use rather than letting a large-bag discount make the decision.",
           "Try a manageable bag before committing to a large order. For espresso with milk, a chocolate-forward description may be more relevant than an elaborate list of fruit notes. For black filter coffee, clarity and roast balance may matter more. These are preference questions, not a fixed quality ladder.",
         ],
       },
@@ -52,14 +52,14 @@ export const coffeeArticles: ResearchedArticle[] = [
         heading: "Dial in the decaf as its own coffee",
         paragraphs: [
           "Do not assume your regular beans’ grind and dose will transfer perfectly. Start within the basket’s intended range, weigh the beverage and adjust one variable at a time. If the result flows differently, that is a reason to test the recipe, not automatically evidence of poor coffee.",
-          "For a shared grinder, consider how you will switch bags and deal with coffee left in the grinding path. Follow the equipment instructions; do not claim a decaf dose is free of regular-coffee carryover after an unmeasured purge.",
+          "If the grinder is shared with regular coffee, plan how you will switch bags and clear grounds from the grinding path using the equipment instructions. Some regular coffee may carry over; an unmeasured purge cannot guarantee a caffeine-free dose.",
         ],
       },
       {
         heading: "What to ask the roaster",
         paragraphs: [
           "Ask which process was used, when the current batch was roasted, which brewing methods it was developed for and whether the decaf offering changes seasonally. Those answers are more actionable than a claim that one process always tastes best.",
-          "We have not tasted or measured caffeine in a shortlist of products, so this is a decision guide rather than a fabricated ranking. Use our freshness article for storage and our troubleshooting guide for espresso adjustments; neither replaces product-specific caffeine information.",
+          "Once you find a promising bag, brew it a few times with a consistent recipe before deciding whether to buy more. Our freshness article covers storage, and the troubleshooting guide can help with espresso adjustments. If residual caffeine is the deciding factor, seek product-specific information from the supplier.",
         ],
       },
     ],
@@ -82,12 +82,12 @@ export const coffeeArticles: ResearchedArticle[] = [
     image: "/images/coffee-farmer-cherries.jpg",
     imageAlt: "Coffee-growing context for understanding production and trading labels",
     purpose: "A label-verification framework, distinct from the existing farmer-life and origin-flavour articles.",
-    intro: "Coffee labels answer different questions. Organic concerns a regulated production and handling standard. Fairtrade concerns a certification system with trading requirements. Direct trade can describe a buying relationship without identifying one universal certification. None of those labels, by itself, tells you whether you will enjoy the coffee.",
+    intro: "Two bags can carry impressive labels and tell you very different things. Organic describes a regulated production and handling standard; Fairtrade points to a certification system with trading requirements. Direct trade describes a buying relationship without naming one universal certification. Reading each claim on its own terms makes it easier to choose coffee that matches both your preferences and your priorities.",
     sections: [
       {
         heading: "Start by asking what the claim is actually about",
         paragraphs: [
-          "A bag can describe growing practices, financial arrangements, origin, roast or flavour. Those are not interchangeable. A meaningful assessment separates the claim, the organisation responsible for it and the evidence you can check.",
+          "First, separate the story into its parts: growing practices, trading arrangements, origin, roast and flavour. Then ask who is responsible for each claim and what evidence you can check. A certification may answer one question well while leaving the others open.",
           "Look for a certification name and an identifiable roaster rather than treating a green colour scheme, a farm photograph or the word sustainable as proof. A detailed story can be informative, but a story alone is not an independently verified standard.",
         ],
       },
@@ -95,21 +95,21 @@ export const coffeeArticles: ResearchedArticle[] = [
         heading: "What USDA Organic does—and does not—establish",
         paragraphs: [
           "In the United States, organic labelling is governed by USDA rules and certification requirements, with different categories for different organic claims. Check the certifying information and the exact wording rather than assuming every mention of an organic ingredient permits the same seal.",
-          "Organic is not a flavour score or a guarantee of higher farmer income. It also should not be translated into an absolute claim that a crop has never encountered any pesticide; the rules concern defined production practices and permitted substances. Use the standard’s actual scope, not a simplified marketing version.",
+          "The rules concern defined production practices and permitted substances. They do not mean that a crop has never encountered any pesticide, and they do not establish flavour quality or a particular farmer income. Keep those separate questions in mind when comparing an organic claim with other information on the bag.",
         ],
       },
       {
         heading: "Fairtrade is about a defined trading system",
         paragraphs: [
           "Fairtrade’s coffee framework includes minimum-price and premium provisions, with conditions that depend on the applicable standard and product. Prices and implementation dates can change, so a number quoted in an old article should not be treated as the current universal rate.",
-          "A premium has a defined role within the system; it is not the same as proof that every individual farmer receives a fixed personal bonus. Ask which certification is involved and what the roaster can document. Similar-looking terms such as fair trade and a specific Fairtrade mark should not be assumed to represent identical arrangements.",
+          "The premium has a defined role within that system rather than representing a fixed personal bonus for every farmer. Look for the named certification and supporting information. The broad phrase fair trade and a specific Fairtrade mark can refer to different arrangements.",
         ],
       },
       {
         heading: "Direct trade needs details, not just a confident label",
         paragraphs: [
           "A direct relationship can support traceability and communication, but the phrase does not identify one globally uniform certification. Ask who bought from whom, whether the relationship is ongoing and what information is published about the transaction.",
-          "A disclosed farm name is useful but does not reveal the entire supply chain. Exporters, importers and local processing organisations can still play important roles. Do not assume an intermediary is automatically exploitative or that removing one always improves the producer’s outcome.",
+          "A farm name is a useful beginning, but follow the relationship beyond the name. Exporters, importers and local processing organisations can still play important roles. What matters is how the arrangement works for producers, not simply whether an intermediary appears in the chain.",
         ],
         table: {
           headers: ["Claim", "Ask for", "Do not infer"],
@@ -132,7 +132,7 @@ export const coffeeArticles: ResearchedArticle[] = [
         heading: "A practical way to choose a bag",
         paragraphs: [
           "Decide which question matters most to you—production practices, trading arrangements, traceability or flavour—then check the evidence relevant to that question. Add roast date, bag size and brewing preference so a label does not distract from whether you will actually use and enjoy the coffee.",
-          "This guide does not audit a farm or certify a roaster. It gives you a framework for reading claims and asking useful follow-up questions. For the day-to-day realities of cultivation and processing, continue with our existing farmer and processing articles rather than treating certification as the whole story.",
+          "If a bag tells an appealing story but leaves the central claim unclear, ask the roaster for the relevant certification or buying details. Then explore the farmer and processing articles for the work behind the label. Certification is one part of that picture, not a substitute for understanding the coffee itself.",
         ],
       },
     ],

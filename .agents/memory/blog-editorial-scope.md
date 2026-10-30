@@ -9,6 +9,12 @@ Blog expansion must preserve the homepage, navigation, footer, branding, hosting
 
 **How to apply:** Extend the current article/category system rather than adding top-level content surfaces or redesigning the site. Do not treat development authorization as permission to push or publish.
 
+The owner has reviewed and approved the twelve expansion articles for retention. Refine them in place rather than replacing them or starting over.
+
+**Why:** The owner explicitly approved the articles and requested a final editorial polish, not a new writing project.
+
+**How to apply:** Preserve their subjects, factual references and existing integrations during editorial work; avoid repeating the research/no-hands-on disclosure throughout each article.
+
 Research-based articles must not claim ownership, hands-on testing, unverifiable ratings, current stock, recent advertising approval dates or invented search-demand figures. Distinct articles need distinct reader intent; a product mention is different from a dedicated review.
 
 **Why:** The owner wants original useful expansion rather than duplicate reviews or filler, and explicitly prohibits fabricated evidence.
