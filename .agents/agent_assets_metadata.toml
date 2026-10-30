@@ -430,3 +430,17 @@ mtime_ms = 1793357423608
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/0649d549-db41-4a9a-ae1e-461cf23f49c2/f5fdb0ee-8b52-4baa-807e-88fa3ea260d4"
 storage_version_token = "1793357424418870"
 content_type = "text/html"
+
+[[outputs]]
+id = "A7HKzZFDf52ahZpTN5csf"
+uri = "file://.local/generated-artifacts/blog-expansion/Hard-House-Coffee-Twelve-Complete-Articles.txt"
+type = "text"
+title = "All 12 Articles — Complete Text"
+description = "One downloadable, copyable text file containing all twelve complete articles, tables, captions, source references and related-reading links. No website changes or publication."
+logical_id = "11091537-bacf-4549-9690-2a91d10be9f4"
+content_hash = "sha256:82db129cd8b4df5c2d95905d6552ddb15dc2f1a3cda091d93c4ccce8c18336d0"
+size = 77287
+mtime_ms = 1793358345371
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/11091537-bacf-4549-9690-2a91d10be9f4/87522081-7bb1-4dae-b1f0-de3cfc4b1a36"
+storage_version_token = "1793358350133428"
+content_type = "text/plain"
