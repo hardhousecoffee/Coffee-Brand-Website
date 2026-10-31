@@ -500,3 +500,45 @@ mtime_ms = 1793395040943
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/c9bb02f1-d136-4e0d-8262-a171f167bf15/2128b0da-b06f-4d83-bb02-2c01bc58b81f"
 storage_version_token = "1793395052657544"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "fhlF1zDgV8t8qedRK9wYe"
+uri = "file://attached_assets/hard-house-coffee-luxury-espresso-article-review.txt"
+type = "text"
+title = "Luxury Espresso Article — Complete Review Text"
+description = "The full updated article in one copyable text file. Development only; not published."
+logical_id = "09531f23-f35f-4250-ab53-b6f6b910ec38"
+content_hash = "sha256:47ec46cb5298bd6cd6578cc2a92490b0ced3ff45f080da07cfe49fd8fa2fc908"
+size = 26616
+mtime_ms = 1793445053053
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/09531f23-f35f-4250-ab53-b6f6b910ec38/6133fa89-317f-4c5a-8030-eb6246644176"
+storage_version_token = "1793445085248043"
+content_type = "text/plain"
+
+[[outputs]]
+id = "kHrpq01Kc3ThIODm9UqGK"
+uri = "file://attached_assets/luxury-feature-desktop-review.jpg"
+type = "image"
+title = "Desktop Development Preview"
+description = "Updated title, supplied Slayer hero, opening copy and eight-machine comparison."
+logical_id = "ff43a11a-1285-4e7c-a5ff-e668e914cbd7"
+content_hash = "sha256:c5b2405417fecf15371ea1bba249d3330785d881801c21ba139479baaee1b5ec"
+size = 311221
+mtime_ms = 1793444979882
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/ff43a11a-1285-4e7c-a5ff-e668e914cbd7/0c2e75f4-c48e-4b81-b413-48d5d9fa4411"
+storage_version_token = "1793445086022676"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "1ec_5HLPUefzLIvLFONA9"
+uri = "file://attached_assets/luxury-feature-mobile-review.jpg"
+type = "image"
+title = "Mobile Development Preview"
+description = "390-pixel mobile view of the updated article header and opening layout."
+logical_id = "815eee05-98cf-4e27-bc92-124603635a74"
+content_hash = "sha256:65158f46286df67aadc00dee6b8d5e52341a779942fba631ca8359bc22c28769"
+size = 173102
+mtime_ms = 1793444985170
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/815eee05-98cf-4e27-bc92-124603635a74/010e2481-22b6-41ee-9ca2-58173fd57f9c"
+storage_version_token = "1793445086733577"
+content_type = "image/jpeg"

@@ -1,94 +1,123 @@
-import Link from "@/components/ShoppingLink";
-import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AuthorByline from "@/components/AuthorByline";
-import RelatedPosts from "@/components/RelatedPosts";
+import { Link } from "wouter";
+import EditorialArticle, { ArticleSection, ArticleNote, ComparisonTable } from "@/components/EditorialArticle";
+import { luxuryFeature, luxuryMachines, type LuxuryMachine } from "@/data/luxuryEspressoFeature";
 
-export default function BlogPost20000EspressoGear() {
+const imageRoot = "/images/luxury-espresso/";
+const paragraphs = (items: string[]) => items.map((text) => (
+  <p key={text.slice(0, 60)} style={{ marginBottom: "1.2rem" }}>{text}</p>
+));
+
+function MachineProfile({ machine, index }: { machine: LuxuryMachine; index: number }) {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
-      <Helmet>
-        <title>Living the Dream – The Mind-Blowing World of $20,000 Espresso Gear | Hard House Coffee</title>
-        <meta name="description" content="Slayer Espresso, Kees van der Westen, and other $20,000+ machines. A look at the high-precision engineering marvels at the absolute peak of espresso." />
-        <meta property="og:title" content="The Mind-Blowing World of $20,000 Espresso Gear | Hard House Coffee" />
-        <meta property="og:description" content="These aren't just coffee machines. They're precision engineering marvels." />
-      </Helmet>
-      <Navbar />
-
-      <div className="relative overflow-hidden" style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}>
-        <img src="/images/slayer-luxury-espresso.jpg" alt="Slayer luxury professional espresso machine" className="w-full h-full object-cover" style={{ filter: "brightness(0.35)" }} />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(11,11,11,0.6) 100%)" }}>
-          <p className="section-subtitle mb-3">Espresso Machines</p>
-          <h1 style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1.2rem, 3.5vw, 2.4rem)", fontWeight: 700, color: "#f2f2f2", lineHeight: 1.25, maxWidth: "820px" }}>
-            Living the Dream – The Mind-Blowing World of $20,000 Espresso Gear
-          </h1>
-          <p style={{ color: "#b0a090", marginTop: "0.75rem", fontSize: "0.85rem" }}>5 min read</p>
-        </div>
-      </div>
-
-      <div className="max-w-2xl mx-auto px-6 py-16" style={{ lineHeight: 1.85, fontSize: "1.3rem" }}>
-        <AuthorByline />
-
-        <p style={{ color: "#d4cfc9", fontSize: "1.37rem", marginBottom: "1.25rem" }}>
-          Have you ever seen a piece of equipment and thought, "Is that an espresso machine or a luxury sports car?" Because that's exactly what it feels like when you look at a Slayer Espresso 2-Group or a Kees van der Westen Spirit, which can easily run you north of twenty thousand dollars.
-        </p>
-        <p style={{ color: "#b0a090", marginBottom: "1.25rem" }}>
-          These aren't just for making a quick morning cup. They are high-precision engineering marvels designed for ultra-high-volume specialty shops. We're talking about advanced pre-infusion profiling, pressure curves that can be dialed in shot by shot, and build quality that is meant to last decades of hard commercial use.
-        </p>
-        <p style={{ color: "#b0a090", marginBottom: "2.5rem" }}>
-          These machines represent the absolute ceiling of what espresso technology can do today. They aren't about convenience — they are about complete and total mastery over every variable in the extraction.
-        </p>
-
-
-        <Section title="Machines in This League">
-          {[
-            { name: "Slayer Espresso 2-Group", desc: "Pre-infusion needle valve gives the barista manual control over flow rate during extraction. Built in Seattle, USA. A genuine work of art." },
-            { name: "Kees van der Westen Spirit", desc: "Dutch engineering at its most extreme. Hand-built, pressure profiling, and a design aesthetic that belongs in a museum." },
-            { name: "Victoria Arduino Black Eagle", desc: "The machine of choice for many World Barista Championship competitors. Gravimetric dosing, T3 temperature system, and commercial reliability." },
-          ].map(({ name, desc }) => (
-            <div key={name} style={{ marginBottom: "1.5rem", paddingBottom: "1.5rem", borderBottom: "1px solid rgba(161,79,31,0.1)" }}>
-              <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.35rem" }}>{name}</p>
-              <p style={{ color: "#b0a090" }}>{desc}</p>
-            </div>
-          ))}
-        </Section>
-
-        <Section title="What accessories do I really need to make great espresso at home?">
-          <p style={{ marginBottom: "1rem" }}>
-            The essential accessories for high-quality home espresso are a dedicated burr grinder, a precise digital kitchen scale, a heavy distribution tool, and a high-quality knock box. A scale ensures your input and output ratios are dead accurate, which is the exact secret used by high-end cafés.
-          </p>
-          <p>
-            Even if you aren't ready to drop the price of a luxury car on a Slayer or Kees van der Westen machine, outfitting your coffee bar with elite tools can replicate a significant amount of that multi-thousand-dollar café precision.
-          </p>
-        </Section>
-
-        <RelatedPosts posts={[
-          { title: "La Marzocco Linea Micra: What the Premium Buys", slug: "the-icon-la-marzocco-linea-micra-worth-the-obsession", image: "/images/la-marzocco-linea-micra.jpg", category: "Espresso Machines" },
-          { title: "Inside the World Barista Championship – The Olympics of Caffeine", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship.jpg", category: "Coffee Culture" },
-        ]} />
-
-        <div className="mt-12 p-6 text-center" style={{ background: "#131313", borderRadius: "8px", border: "1px solid rgba(161,79,31,0.25)" }}>
-          <p style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: "1rem", color: "#f2f2f2", marginBottom: "0.5rem" }}>Start building your dream setup.</p>
-          <p style={{ color: "#b0a090", fontSize: "0.85rem", marginBottom: "1.25rem" }}>Browse our curated selection of professional espresso accessories.</p>
-          <Link href="/products"><button className="btn-primary">Shop Products</button></Link>
-        </div>
-
-        <div className="mt-10 text-center">
-          <Link href="/blog"><button className="btn-secondary" style={{ fontSize: "0.82rem" }}><span className="arrow-pulse">←</span> Back to Blog</button></Link>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
+    <section id={machine.id} aria-labelledby={`${machine.id}-title`} style={{ marginBottom: "4rem", scrollMarginTop: "6rem" }}>
+      <p className="section-subtitle" style={{ marginBottom: "0.5rem" }}>{String(index).padStart(2, "0")} / {machine.category === "commercial" ? "Commercial" : "Luxury home"}</p>
+      <h3 id={`${machine.id}-title`} style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1.3rem, 3vw, 1.75rem)", fontWeight: 700, lineHeight: 1.3, color: "#f2f2f2", marginBottom: "0.65rem" }}>{machine.name}</h3>
+      <p style={{ color: "#d4b896", marginBottom: "1.25rem" }}>{machine.character}</p>
+      <figure style={{ margin: "0 0 1.5rem", overflow: "hidden", borderRadius: "8px", background: "#101010", border: "1px solid rgba(161,79,31,0.2)" }}>
+        <img
+          src={`${imageRoot}${machine.file}`}
+          alt={machine.alt}
+          width={machine.width}
+          height={machine.height}
+          loading="lazy"
+          decoding="async"
+          style={{ display: "block", width: "100%", height: "auto" }}
+        />
+        <figcaption style={{ padding: "0.8rem 1rem", fontSize: "0.8rem", lineHeight: 1.6, color: "#b0a090" }}>{machine.name} — photograph supplied by Hard House Coffee.</figcaption>
+      </figure>
+      <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.4rem" }}>Approximate U.S. price: {machine.price}</p>
+      <p style={{ color: "#8f7d6e", fontSize: "0.88rem", lineHeight: 1.7, marginBottom: "1.25rem" }}>{machine.priceDetail}</p>
+      {paragraphs(machine.paragraphs)}
+      <h4 style={{ color: "#f2f2f2", fontWeight: 700, margin: "1.4rem 0 0.6rem" }}>Key specifications</h4>
+      <ul style={{ paddingLeft: "1.25rem", marginBottom: "1.5rem" }}>
+        {machine.specs.map((spec) => <li key={spec} style={{ marginBottom: "0.6rem" }}>{spec}</li>)}
+      </ul>
+      <dl style={{ marginBottom: "1rem" }}>
+        {[
+          ["Strengths", machine.strengths],
+          ["Limitations", machine.limitations],
+          ["Best suited to", machine.buyer],
+          ["What the premium buys", machine.premium],
+        ].map(([label, text]) => (
+          <div key={label} style={{ marginBottom: "1rem" }}>
+            <dt style={{ color: "#f2f2f2", fontWeight: 700 }}>{label}</dt>
+            <dd style={{ margin: 0 }}>{text}</dd>
+          </div>
+        ))}
+      </dl>
+      <p style={{ fontSize: "0.84rem", lineHeight: 1.6 }}>
+        Technical reference: <a href={machine.source} target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>{machine.sourceLabel}</a>.
+      </p>
+    </section>
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+export default function BlogPost20000EspressoGear() {
+  const commercial = luxuryMachines.filter((machine) => machine.category === "commercial");
+  const home = luxuryMachines.filter((machine) => machine.category === "home");
   return (
-    <div style={{ marginBottom: "2.5rem" }}>
-      <h2 style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1.3rem, 3.25vw, 1.7rem)", fontWeight: 700, color: "#f2f2f2", marginBottom: "1rem", paddingBottom: "0.5rem", borderBottom: "1px solid rgba(161,79,31,0.2)" }}>{title}</h2>
-      <div style={{ color: "#b0a090", fontSize: "1.24rem" }}>{children}</div>
-    </div>
+    <EditorialArticle
+      title={luxuryFeature.title}
+      description={luxuryFeature.description}
+      category="Espresso Machines"
+      image="/images/slayer-luxury-espresso.jpg"
+      imageAlt={luxuryMachines[0].alt}
+      canonicalPath={luxuryFeature.path}
+      readTime={luxuryFeature.readTime}
+      related={[
+        { title: "La Marzocco Linea Micra: What the Premium Buys", slug: "the-icon-la-marzocco-linea-micra-worth-the-obsession", image: "/images/la-marzocco-linea-micra.jpg", category: "Espresso Machines" },
+        { title: "Inside the World Barista Championship – The Olympics of Caffeine", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship.jpg", category: "Coffee Culture" },
+      ]}
+    >
+      {paragraphs(luxuryFeature.intro)}
+      <ArticleNote>{luxuryFeature.disclosure}</ArticleNote>
+
+      <ArticleSection title="Eight machines at a glance">
+        <p>{luxuryFeature.comparisonIntro}</p>
+        <div role="region" aria-label="Eight-machine comparison; scroll horizontally on narrow screens" tabIndex={0} style={{ overflowX: "auto" }}>
+          <ComparisonTable
+            headers={["Machine", "Application", "Approx. U.S. price", "Defining feature"]}
+            rows={luxuryMachines.map((machine) => [
+              machine.name,
+              machine.category === "commercial" ? "Commercial · two groups" : "Luxury home · one group",
+              machine.price,
+              machine.character,
+            ])}
+          />
+        </div>
+      </ArticleSection>
+
+      <nav aria-label="Jump to an espresso machine" style={{ padding: "1.25rem", marginBottom: "3rem", background: "#131313", border: "1px solid rgba(161,79,31,0.25)", borderRadius: "8px" }}>
+        <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.6rem" }}>Explore the machines</p>
+        <ul style={{ paddingLeft: "1.2rem" }}>
+          {luxuryMachines.map((machine) => <li key={machine.id} style={{ marginBottom: "0.45rem" }}><a href={`#${machine.id}`} style={{ color: "#d4b896", textDecoration: "underline" }}>{machine.name}</a></li>)}
+        </ul>
+      </nav>
+
+      <ArticleSection title="Four elite commercial espresso machines" eyebrow="Section one">
+        <p style={{ marginBottom: "2.5rem" }}>{luxuryFeature.commercialIntro}</p>
+        {commercial.map((machine, index) => <MachineProfile key={machine.id} machine={machine} index={index + 1} />)}
+      </ArticleSection>
+
+      <ArticleSection title="Four luxury home espresso machines" eyebrow="Section two">
+        <p style={{ marginBottom: "2.5rem" }}>{luxuryFeature.homeIntro}</p>
+        {home.map((machine, index) => <MachineProfile key={machine.id} machine={machine} index={index + 5} />)}
+      </ArticleSection>
+
+      <ArticleSection title="What the price tag does—and does not—buy">
+        {paragraphs(luxuryFeature.ownership)}
+        <p>For the wider buying context, read <Link href="/blog/stepping-up-what-crossing-1000-mark-actually-buys-you" style={{ color: "#d4b896", textDecoration: "underline" }}>what crossing the $1,000 mark actually buys</Link>. For a smaller premium home option, our <Link href="/blog/the-icon-la-marzocco-linea-micra-worth-the-obsession" style={{ color: "#d4b896", textDecoration: "underline" }}>Linea Micra guide</Link> offers a useful counterpoint to these larger machines.</p>
+      </ArticleSection>
+
+      <ArticleSection title="Which kind of buyer should consider these machines?">
+        {paragraphs(luxuryFeature.conclusion)}
+      </ArticleSection>
+
+      <ArticleSection title="Research and price references">
+        <p style={{ marginBottom: "1rem" }}>Checked {luxuryFeature.checked}. Manufacturer references appear beside each profile. U.S. advertised prices were cross-checked against Prima Coffee (Slayer and KB90), Pro Coffee Gear (Spirit Duette, Maverick and YOU), Clive Coffee and Espresso Parts (GS3 MP), Seattle Coffee Gear (Bicocca), and Voltage Coffee Supply (E1 Prima EXP). The GS3 figures are for the Manual Paddle version; the Maverick range separates two-group volumetric and gravimetric configurations.</p>
+        <p style={{ marginBottom: "1rem" }}>Additional technical documentation: <a href="https://www.sanremomachines.com/wp-content/uploads/2026/09/YOU_09_US_2026-07-31_US.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>Sanremo YOU U.S. technical sheet</a>. Where retailer and manufacturer specifications conflict, this feature uses manufacturer figures or identifies the regional/configuration question rather than combining incompatible numbers.</p>
+        <p style={{ fontSize: "0.88rem", color: "#8f7d6e" }}>Published base-machine prices do not establish the cost of the custom finishes shown in a photograph. Confirm configuration, installation requirements and the final quotation with the supplier.</p>
+      </ArticleSection>
+    </EditorialArticle>
   );
 }

@@ -127,10 +127,10 @@ const posts = [
   {
     id: 14,
     category: "Espresso Machines",
-    title: "Living the Dream – The Mind-Blowing World of $20,000 Espresso Gear",
-    desc: "Slayer Espresso, Kees van der Westen — a look at the high-precision engineering marvels at the absolute peak of espresso technology.",
+    title: "Inside the World of Luxury Espresso Machines: $5,000 to $30,000 Home and Commercial Equipment",
+    desc: "Eight exceptional espresso machines: four commercial flagships and four luxury home models, with researched prices, specifications and buyer guidance.",
     image: "/images/slayer-luxury-espresso.jpg",
-    readTime: "5 min read",
+    readTime: "14 min read",
     featured: false,
     slug: "living-the-dream-mind-blowing-world-of-20000-espresso-gear",
   },

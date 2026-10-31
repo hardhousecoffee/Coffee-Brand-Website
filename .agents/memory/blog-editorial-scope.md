@@ -3,7 +3,7 @@ name: Blog expansion editorial boundaries
 description: Owner-approved development-only scope, distinct topic selection and evidence requirements for blog work.
 ---
 
-Blog expansion must preserve the homepage, navigation, footer, branding, hosting setup, existing article URLs and original catalog/assets. Publication requires separate explicit owner approval.
+Blog expansion must preserve the homepage, navigation, footer, branding, hosting setup, existing article URLs and unrelated catalog/assets. Publication requires separate explicit owner approval.
 
 **Why:** The owner explicitly limited this work to the existing blog and associated article SEO, while retaining the reversible Amazon Shop suspension.
 
@@ -26,3 +26,9 @@ Espresso-machine photography must show the actual model in professional, unclutt
 **Why:** The owner repeatedly rejected unsuitable photography and explicitly requested magazine-quality images with verified free reuse rights.
 
 **How to apply:** Investigate manufacturer press galleries, media kits, affiliate creative libraries, authorized retailer resources, and existing assets—not only stock-photo sites. Check the actual download contents and applicable permissions before calling a source usable or unavailable. Report precise access or licensing obstacles rather than repeating a general copyright warning.
+
+The luxury espresso feature intentionally covers both commercial café machines and luxury home machines; keep those applications distinct rather than treating all expensive machines as interchangeable home upgrades.
+
+**Why:** The owner explicitly requested four machines in each application, with configuration-specific specifications, pricing and buyer guidance.
+
+**How to apply:** Distinguish group count, utilities, service requirements and optional dosing/profiling equipment. A GS3 MP price must not be replaced by an AV/base-model price, and custom finishes pictured are not automatically included.
