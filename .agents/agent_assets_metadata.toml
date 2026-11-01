@@ -542,3 +542,45 @@ mtime_ms = 1793444985170
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/815eee05-98cf-4e27-bc92-124603635a74/010e2481-22b6-41ee-9ca2-58173fd57f9c"
 storage_version_token = "1793445086733577"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "5Mb-DeECZonLG6H3MR1oL"
+uri = "file://attached_assets/Hard_House_Coffee_Five_Espresso_Machines_Review.txt"
+type = "text"
+title = "Complete five-machine article — review copy"
+description = "Copyable text of the updated development article, with photo assignments and research links. Not published."
+logical_id = "c2e908f7-e1e0-4336-bfce-b7d63149d0cd"
+content_hash = "sha256:e693b9e2c3af888a1a7da5c8245f6030a678fc799ceae805c8aa080e323a5bc9"
+size = 33696
+mtime_ms = 1793560576847
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/c2e908f7-e1e0-4336-bfce-b7d63149d0cd/7a255cb0-00d4-4f46-89b9-010af9a7a29e"
+storage_version_token = "1793560666888826"
+content_type = "text/plain"
+
+[[outputs]]
+id = "J0qr9RPY5h3Oh-7KLXpha"
+uri = "file://attached_assets/Hard_House_Coffee_Five_Machine_Research_and_Verification.txt"
+type = "text"
+title = "Research sources and verification report"
+description = "Verified prices, exact model/finish decisions, preservation checks, technical changes and limitations."
+logical_id = "6e1a3dee-cd5e-4f0c-a3c7-74925b08bf3d"
+content_hash = "sha256:e229b5af78fcb793d85dad5ff8d751d28354200ac48e0ef3ea55f2097f4e5bec"
+size = 9831
+mtime_ms = 1793560605940
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/6e1a3dee-cd5e-4f0c-a3c7-74925b08bf3d/8a35c535-566a-4366-ad12-446f173616ad"
+storage_version_token = "1793560667588561"
+content_type = "text/plain"
+
+[[outputs]]
+id = "CI8GyF_6q89MIZcNLoIPo"
+uri = "file://attached_assets/five-machine-guide-zulay-mobile.jpg"
+type = "image"
+title = "Mobile photo check — Zulay Clásica"
+description = "Development screenshot showing the complete supplied MULTIFUNCTIONAL artwork, drink labels and manual-milk clarification."
+logical_id = "b693dbd4-5e6e-404c-a557-6de4a549317b"
+content_hash = "sha256:1f0ced73889c9bfbbdd3c61b911bad1441450f75c024aee653e61bca3286d441"
+size = 114982
+mtime_ms = 1793560408742
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/b693dbd4-5e6e-404c-a557-6de4a549317b/264f2c64-80bc-4646-b4ce-9e164d3d9b47"
+storage_version_token = "1793560668264547"
+content_type = "image/jpeg"

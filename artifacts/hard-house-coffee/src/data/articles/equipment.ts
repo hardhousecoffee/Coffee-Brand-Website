@@ -206,7 +206,7 @@ export const equipmentArticles: ResearchedArticle[] = [
     ],
     links: [
       { label: "Diagnose uneven espresso before buying accessories", path: "/blog/espresso-sour-bitter-channeling-troubleshooting" },
-      { label: "Build a budget setup around the essentials", path: "/blog/the-300-dollar-sweet-spot-real-espresso-at-home" },
+      { label: "Compare five budget-to-midrange espresso machines and complete setup costs", path: "/blog/the-300-dollar-sweet-spot-real-espresso-at-home" },
       { label: "Understand machine cleaning procedures", path: "/blog/espresso-machine-cleaning-vs-descaling" },
     ],
   },

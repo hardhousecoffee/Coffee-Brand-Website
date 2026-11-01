@@ -18,7 +18,7 @@ export default function BlogPostSteppingUp1000() {
       canonicalPath="/blog/stepping-up-what-crossing-1000-mark-actually-buys-you"
       readTime="9 min read"
       related={[
-        { title: "The $300 Espresso Sweet Spot: What a Budget Setup Can Do", slug: "the-300-dollar-sweet-spot-real-espresso-at-home", image: "/images/espresso-bambino-budget.jpg", category: "Espresso Machines" },
+        { title: "Five Espresso Machines Worth Buying: From Budget-Friendly to Midrange", slug: "the-300-dollar-sweet-spot-real-espresso-at-home", image: "/images/five-espresso-machines/cafe-bellissimo-espresso-machine.jpeg", category: "Espresso Machines" },
         { title: "Best Espresso Machines (2026 Guide): A Research-Based Comparison", slug: "best-espresso-machines-2026-guide-tested-and-ranked", image: "/images/espresso-tattooed-hands.jpg", category: "Gear Reviews" },
       ]}
       ctaTitle="Upgrade the bottleneck, not the price tag."

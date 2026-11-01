@@ -21,6 +21,12 @@ interface EditorialArticleProps {
   imageAlt: string;
   canonicalPath: string;
   readTime: string;
+  seoTitle?: string;
+  schemaHeadline?: string;
+  dateModified?: string;
+  datePublished?: string;
+  editorialNote?: ReactNode;
+  imageFit?: "cover" | "contain";
   children: ReactNode;
   related?: EditorialRelatedPost[];
   ctaTitle?: string;
@@ -239,6 +245,12 @@ export default function EditorialArticle({
   imageAlt,
   canonicalPath,
   readTime,
+  seoTitle,
+  schemaHeadline,
+  dateModified,
+  datePublished,
+  editorialNote,
+  imageFit,
   children,
   related = [],
   ctaTitle = "Keep exploring the cup.",
@@ -250,11 +262,13 @@ export default function EditorialArticle({
   const articleSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: title,
+    headline: schemaHeadline ?? title,
     description,
     url: canonical,
     image: `https://hardhousecoffee.com${image}`,
     articleSection: category,
+    ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : {}),
     author: {
       "@type": "Organization",
       name: "Hard House Coffee",
@@ -269,7 +283,7 @@ export default function EditorialArticle({
   return (
     <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
-        <title>{`${title} | Hard House Coffee`}</title>
+        <title>{seoTitle ?? `${title} | Hard House Coffee`}</title>
         <meta name="description" content={description} />
         <meta property="og:title" content={`${title} | Hard House Coffee`} />
         <meta property="og:description" content={description} />
@@ -282,6 +296,8 @@ export default function EditorialArticle({
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={`https://hardhousecoffee.com${image}`} />
         <link rel="canonical" href={canonical} />
+        {datePublished && <meta property="article:published_time" content={datePublished} />}
+        {dateModified && <meta property="article:modified_time" content={dateModified} />}
       </Helmet>
       <script type="application/ld+json">{articleSchema}</script>
       <Navbar />
@@ -294,7 +310,7 @@ export default function EditorialArticle({
           src={image}
           alt={imageAlt}
           className="w-full h-full object-cover"
-          style={{ filter: "brightness(0.35)" }}
+          style={{ filter: "brightness(0.35)", ...(imageFit ? { objectFit: imageFit } : {}) }}
         />
         <div
           className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
@@ -332,12 +348,12 @@ export default function EditorialArticle({
             marginBottom: "2.5rem",
           }}
         >
-          Editorial note: Hard House Coffee separates researched guidance from hands-on testing.
+          {editorialNote ?? <>Editorial note: Hard House Coffee separates researched guidance from hands-on testing.
           Product links may be affiliate links at no additional cost to you. See our{" "}
           <Link href="/about#methodology" style={{ color: "#d4b896" }}>
             research and recommendation methodology
           </Link>{" "}
-          and <Link href="/disclaimer" style={{ color: "#d4b896" }}>disclosure</Link>.
+          and <Link href="/disclaimer" style={{ color: "#d4b896" }}>disclosure</Link>.</>}
         </p>
         {children}
 
