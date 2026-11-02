@@ -9,6 +9,7 @@ import NotFound from "@/pages/not-found";
 import { routes } from "@/routes.config";
 import ShopRedirect from "@/components/ShopRedirect";
 import { AMAZON_SHOPPING_ENABLED } from "@/config/shopping";
+import { useBlogLocation } from "@/hooks/useBlogLocation";
 
 const queryClient = new QueryClient();
 
@@ -41,7 +42,7 @@ function App() {
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <WouterRouter hook={useBlogLocation} base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
             <ScrollToTop />
             <Router />
             <CookieConsent />

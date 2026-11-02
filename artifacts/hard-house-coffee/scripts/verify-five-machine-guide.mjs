@@ -26,7 +26,7 @@ assert.ok(html.includes(`href="${canonical}"`), "Canonical changed");
 assert.ok(html.includes("<title>5 Espresso Machines Worth Buying | Hard House Coffee</title>"));
 assert.ok(html.includes("Five Espresso Machines Worth Buying: From Budget-Friendly to Midrange"));
 assert.ok(html.includes('property="og:image"') && html.includes('name="twitter:card"'));
-assert.match(html, /<time datetime="2026-11-01">/i);
+assert.match(html, /<time datetime="2026-11-02">/i);
 
 let previous = -1;
 for (const [id, filename, altName, model] of profiles) {
@@ -58,7 +58,7 @@ for (const [id, filename, altName, model] of profiles) {
 const schemas = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map((m) => JSON.parse(m[1]));
 const article = schemas.find((s) => s["@type"] === "Article" && s.url === canonical);
 assert.ok(article && article.headline.startsWith("5 Espresso Machines"), "Missing accurate Article schema");
-assert.equal(article.dateModified, "2026-11-01");
+assert.equal(article.dateModified, "2026-11-02");
 assert.ok(!article.datePublished, "An unknown original publication date must not be invented");
 assert.ok(!schemas.some((s) => ["FAQPage", "AggregateRating", "Review", "Offer"].includes(s["@type"])), "Unsupported rich-result claims");
 assert.ok(html.includes("min-width:1060px") && html.includes("overflow-x:auto"), "Comparison scroll containment missing");

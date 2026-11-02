@@ -25,6 +25,7 @@ function AppRoutes() {
 }
 
 export function render(url: string): { html: string; helmetContext: Record<string, unknown> } {
+  const { pathname, search } = new URL(url, "http://ssr.local");
   const helmetContext: Record<string, unknown> = {};
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -36,7 +37,7 @@ export function render(url: string): { html: string; helmetContext: Record<strin
     <HelmetProvider context={helmetContext}>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <WouterRouter hook={() => [url, () => {}]}>
+          <WouterRouter hook={() => [pathname, () => {}]} ssrSearch={search}>
             <AppRoutes />
           </WouterRouter>
         </TooltipProvider>

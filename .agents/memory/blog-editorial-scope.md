@@ -21,6 +21,12 @@ Research-based articles must not claim ownership, hands-on testing, unverifiable
 
 **How to apply:** Inventory existing topics and catalog records before selecting future topics; use primary references with clear commercial-source limits, retain images only with accurate subject/model descriptions, and distinguish observable advertising code from verified monetization.
 
+Hard House Coffee is a consumer coffee blog, not a technical training website. Its audience includes everyday readers with different levels of coffee knowledge who may arrive from search or social media.
+
+**Why:** The owner explicitly asked for engaging, approachable magazine-style buying guides rather than instruction manuals or dry product catalogs.
+
+**How to apply:** Use short paragraphs, visible prices, accurate photographs, easy-to-find finishes and practical buying tradeoffs. Keep technical details only when they clarify a decision; condense educational advice and link to existing deeper guides instead of explaining machine operation step by step.
+
 Espresso-machine photography must show the actual model in professional, uncluttered lifestyle settings. Do not substitute attractive photographs of another model, plain-background cutouts, amateur snapshots, or generated product likenesses.
 
 **Why:** The owner repeatedly rejected unsuitable photography and explicitly requested magazine-quality images with verified free reuse rights.

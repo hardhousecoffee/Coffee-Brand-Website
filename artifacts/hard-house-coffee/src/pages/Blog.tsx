@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { useEffect } from "react";
+import { Link, useLocation, useSearch } from "wouter";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,10 +8,9 @@ import { expandedArticles, articleReadTime } from "@/data/articles";
 import {
   editorialCollections,
   editorialCollectionLabels,
-  type EditorialCollectionId,
 } from "@/data/editorialCollections";
+import { blogCategories as categories, blogCategoryUrl, readBlogFilters } from "@/lib/blogNavigation";
 
-const categories = ["All", "Gear Reviews", "Brewing Guides", "Bean Picks", "Espresso Machines", "Coffee Culture"];
 
 const posts = [
   {
@@ -100,7 +99,7 @@ const posts = [
     title: "Five Espresso Machines Worth Buying: From Budget-Friendly to Midrange",
     desc: "Compare five researched machines, current price context, finishes, grinders and milk systems—plus the real cost of a complete espresso setup.",
     image: "/images/five-espresso-machines/cafe-bellissimo-espresso-machine.jpeg",
-    readTime: "18 min read",
+    readTime: "12 min read",
     featured: false,
     slug: "the-300-dollar-sweet-spot-real-espresso-at-home",
   },
@@ -306,32 +305,18 @@ const posts = [
   })),
 ];
 
-function isEditorialCollection(value: string | null): value is EditorialCollectionId {
-  return value !== null && Object.prototype.hasOwnProperty.call(editorialCollections, value);
-}
-
 export default function Blog() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [activeCollection, setActiveCollection] = useState<EditorialCollectionId | null>(null);
+  const search = useSearch();
+  const [, navigate] = useLocation();
+  const { category: activeCategory, collection: activeCollection } = readBlogFilters(search);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const collection = params.get("collection");
-    const cat = params.get("cat");
-    if (isEditorialCollection(collection)) {
-      setActiveCollection(collection);
-      setTimeout(() => {
-        const el = document.getElementById("blog-filter");
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
-    } else if (cat && categories.includes(cat)) {
-      setActiveCategory(cat);
-      setTimeout(() => {
-        const el = document.getElementById("blog-filter");
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
+    if (activeCollection || activeCategory !== "All") {
+      const timer = window.setTimeout(() => document.getElementById("blog-filter")?.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+      return () => window.clearTimeout(timer);
     }
-  }, []);
+    return undefined;
+  }, [activeCategory, activeCollection]);
 
   const selectedCollectionSlugs: readonly string[] = activeCollection
     ? editorialCollections[activeCollection]
@@ -415,9 +400,9 @@ export default function Blog() {
               <button
                 key={cat}
                 onClick={() => {
-                  setActiveCollection(null);
-                  setActiveCategory(cat);
+                  if (activeCategory !== cat || activeCollection) navigate(blogCategoryUrl(cat, search));
                 }}
+                aria-pressed={activeCategory === cat && !activeCollection}
                 style={{
                   padding: "0.45rem 1.2rem",
                   borderRadius: "6px",
