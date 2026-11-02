@@ -1,12 +1,14 @@
 import { ArticleSection, ArticleList, ArticleGrid, ArticleCard } from "@/components/EditorialArticle";
 import type { EverydayMachine } from "@/data/fiveMachineGuide";
+import type { FinalMachineProfile } from "@/data/fiveMachineEditorial";
 
-export default function FiveMachineProfile({ machine, index }: { machine: EverydayMachine; index: number }) {
+export default function FiveMachineProfile({ machine, editorial }: { machine: EverydayMachine; editorial: FinalMachineProfile }) {
   const root = "/images/five-espresso-machines/";
   const stem = machine.image.replace(/\.[^.]+$/, "");
   return (
     <div id={machine.id} style={{ scrollMarginTop: "5rem" }}>
-      <ArticleSection title={`${index}. ${machine.name}`} eyebrow={machine.eyebrow}>
+      <ArticleSection title={editorial.title}>
+        <h3 style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "1rem" }}>{editorial.subtitle}</h3>
         <p style={{ color: "#d4b896", marginBottom: "0.5rem", fontSize: "0.9rem" }}>Model: {machine.model}</p>
         <p style={{ color: "#f2f2f2", fontSize: "1.18rem", fontWeight: 700, marginBottom: "0.4rem" }}>
           Approximate U.S. price: {machine.price}
@@ -16,7 +18,6 @@ export default function FiveMachineProfile({ machine, index }: { machine: Everyd
             Advertised sale: {machine.salePrice} · Displayed regular/reference price: {machine.regularPrice}
           </p>
         )}
-        <p style={{ fontSize: "0.88rem", marginBottom: "1.4rem" }}>{machine.priceNote}</p>
         <figure style={{ margin: "0 0 1.5rem", background: "#131313", border: "1px solid rgba(161,79,31,0.25)", borderRadius: "8px", overflow: "hidden" }}>
           <picture>
             <source
@@ -36,24 +37,17 @@ export default function FiveMachineProfile({ machine, index }: { machine: Everyd
           </picture>
           <figcaption style={{ padding: "0.85rem 1rem", color: "#b0a090", fontSize: "0.8rem", lineHeight: 1.65 }}>{machine.caption}</figcaption>
         </figure>
-        <dl style={{ padding: "1rem 1.15rem", background: "#131313", borderLeft: "3px solid #a14f1f", marginBottom: "1.5rem", fontSize: "0.92rem" }}>
-          {[
-            ["Operation", machine.operation],
-            ["Built-in grinder", machine.grinder],
-            ["Milk preparation", machine.milk],
-          ].map(([label, value]) => <div key={label} style={{ marginBottom: "0.35rem" }}><dt style={{ display: "inline", fontWeight: 700, color: "#f2f2f2" }}>{label}: </dt><dd style={{ display: "inline", margin: 0 }}>{value}</dd></div>)}
-        </dl>
-        {machine.paragraphs.map((text) => <p key={text.slice(0, 55)} style={{ marginBottom: "1.1rem" }}>{text}</p>)}
-        <h3 style={{ color: "#f2f2f2", fontWeight: 700, margin: "1.5rem 0 0.6rem" }}>Useful features</h3>
-        <ArticleList items={machine.features} />
-        <h3 style={{ color: "#f2f2f2", fontWeight: 700, margin: "1.5rem 0 0.6rem" }}>Colors and finishes</h3>
-        <p style={{ marginBottom: "1.5rem" }}>{machine.finishNote}</p>
+        {editorial.paragraphs.map((text) => <p key={text} style={{ marginBottom: "1.1rem" }}>{text}</p>)}
         <ArticleGrid>
-          <ArticleCard title="Practical advantages"><ArticleList items={machine.pros} /></ArticleCard>
-          <ArticleCard title="Tradeoffs to consider"><ArticleList items={machine.cons} /></ArticleCard>
+          <ArticleCard title="What We Like"><ArticleList items={editorial.likes} /></ArticleCard>
+          <ArticleCard title="What Could Be Better"><ArticleList items={editorial.tradeoffs} /></ArticleCard>
         </ArticleGrid>
-        <p style={{ margin: "1.3rem 0 0.8rem" }}><strong style={{ color: "#f2f2f2" }}>Best suited to:</strong> {machine.bestFor}.</p>
-        <p style={{ marginBottom: "1rem" }}><strong style={{ color: "#f2f2f2" }}>Editorial verdict:</strong> {machine.verdict}</p>
+        <h3 style={{ color: "#f2f2f2", fontWeight: 700, margin: "1.5rem 0 0.6rem" }}>Color and Appearance</h3>
+        {editorial.appearance.map((text) => <p key={text} style={{ marginBottom: "1.1rem" }}>{text}</p>)}
+        <h3 style={{ color: "#f2f2f2", fontWeight: 700, margin: "1.5rem 0 0.6rem" }}>Who Is It Best For?</h3>
+        <p style={{ marginBottom: "1.1rem" }}>{editorial.buyer}</p>
+        <h3 style={{ color: "#f2f2f2", fontWeight: 700, margin: "1.5rem 0 0.6rem" }}>Our Verdict</h3>
+        {editorial.verdict.map((text) => <p key={text} style={{ marginBottom: "1.1rem" }}>{text}</p>)}
         <p style={{ fontSize: "0.85rem" }}>Research reference: <a href={machine.source} target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>{machine.sourceName}</a>.</p>
       </ArticleSection>
     </div>

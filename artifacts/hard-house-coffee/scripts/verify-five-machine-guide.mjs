@@ -34,11 +34,11 @@ for (const [id, filename, altName, model] of profiles) {
   assert.ok(start > previous, `Incorrect product order: ${id}`);
   previous = start;
   const next = html.indexOf('<div id="', start + 1);
-  const section = html.slice(start, next < 0 ? html.indexOf("Should you choose semi-automatic", start) : next);
+  const section = html.slice(start, next < 0 ? html.indexOf("Which Espresso Machine Is Right for You?", start) : next);
   assert.ok(section.includes(model), `Missing exact model: ${id}`);
-  assert.ok(section.includes("Colors and finishes"), `Missing finishes: ${id}`);
-  assert.ok(section.includes("Practical advantages") && section.includes("Tradeoffs to consider"), `Missing pros/cons: ${id}`);
-  assert.ok(section.includes("Editorial verdict:") && section.includes("Best suited to:"), `Missing buyer/verdict: ${id}`);
+  assert.ok(section.includes("Color and Appearance"), `Missing finishes: ${id}`);
+  assert.ok(section.includes("What We Like") && section.includes("What Could Be Better"), `Missing pros/cons: ${id}`);
+  assert.ok(section.includes("Our Verdict") && section.includes("Who Is It Best For?"), `Missing buyer/verdict: ${id}`);
   assert.ok(section.includes("Approximate U.S. price:"), `Missing price: ${id}`);
   const image = section.match(new RegExp(`<img[^>]*src="/images/five-espresso-machines/${filename.replaceAll(".", "\\.")}"[^>]*>`))?.[0];
   assert.ok(image, `Missing assigned photograph: ${id}`);
@@ -63,8 +63,11 @@ assert.ok(!article.datePublished, "An unknown original publication date must not
 assert.ok(!schemas.some((s) => ["FAQPage", "AggregateRating", "Review", "Offer"].includes(s["@type"])), "Unsupported rich-result claims");
 assert.ok(html.includes("min-width:1060px") && html.includes("overflow-x:auto"), "Comparison scroll containment missing");
 assert.ok(html.includes('aria-label="Five espresso machines comparison; scroll horizontally to see all columns" tabindex="0"'));
-for (const text of ["MULTIFUNCTIONAL", "pictured grinder", "EP2330/14", "ZIP code", "manual steam", "1:2", "Grinders, fresh beans", "Milk, water and maintenance"]) {
+for (const text of ["MULTIFUNCTIONAL", "pictured grinder", "EP2330/14", "manual steam", "Do You Need a Coffee Grinder?", "What About Coffee Beans?", "How Do You Keep an Espresso Machine Clean?"]) {
   assert.ok(html.toLowerCase().includes(text.toLowerCase()), `Required topic missing: ${text}`);
+}
+for (const oldSection of ["The machine price is not the setup price", "Grinders, fresh beans and a few useful extras", "Milk, water and maintenance: keep it simple", "Research notes and source checks", "1:2"]) {
+  assert.ok(!html.includes(oldSection), `Superseded technical copy remains: ${oldSection}`);
 }
 assert.ok(!/GEVI|CASABREWS|Gaggia|Breville Bambino/.test(html), "Unapproved substitute introduced");
 assert.ok(!/discontinued|no longer manufactured/i.test(html), "Unverified hidden manufacturer availability text must not become a factual claim");

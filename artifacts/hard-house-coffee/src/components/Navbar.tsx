@@ -49,7 +49,6 @@ export default function Navbar() {
             style={{
               position: "absolute",
               left: "2.5rem",
-              display: "flex",
               alignItems: "center",
               gap: "0.4rem",
               background: "none",
