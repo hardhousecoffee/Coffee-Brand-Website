@@ -27,6 +27,12 @@ Hard House Coffee is a consumer coffee blog, not a technical training website. I
 
 **How to apply:** Use short paragraphs, visible prices, accurate photographs, easy-to-find finishes and practical buying tradeoffs. Keep technical details only when they clarify a decision; condense educational advice and link to existing deeper guides instead of explaining machine operation step by step.
 
+When the owner requests a light editorial pass, simplify stiff or technical wording only in the named articles and their listing descriptions. Do not turn that permission into a complete rewrite.
+
+**Why:** The owner repeated that everyday readers should understand the articles without making drastic changes or replacing the existing work.
+
+**How to apply:** Explain necessary terms in ordinary language and connect features to everyday coffee-making. Preserve the article structure, useful details, facts, references, images, links and unrelated articles.
+
 Keep article introductions brief and simple, then show the actual machines or products immediately. Keep spacing compact across article pages, the blog listing and every category tab, on mobile portrait and landscape as well as laptop and desktop.
 
 **Why:** The owner repeated that introductions and empty spacing were too long, specifically identifying the five-machine and eight-machine guides. The owner authorized shortening their previously supplied opening copy.
