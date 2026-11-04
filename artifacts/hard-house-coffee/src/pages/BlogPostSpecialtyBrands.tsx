@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostSpecialtyBrands() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Beyond the Supermarket – Navigating Notable Specialty Coffee Brands | Hard House Coffee</title>
         <meta name="description" content="Onyx Coffee Lab, Intelligentsia, Stumptown — brands building direct-trade relationships and delivering total transparency about where your coffee comes from." />

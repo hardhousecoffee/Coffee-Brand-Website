@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostLuxuryCoffee() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>The Three Most Expensive Coffee Brands on Earth – Luxury in a Mug | Hard House Coffee</title>
         <meta name="description" content="Ospina Dynasty, Black Ivory Coffee, and Panama Geisha. The most expensive coffees on earth and why serious connoisseurs consider them bucket-list experiences." />

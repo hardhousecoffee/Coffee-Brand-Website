@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostLACoffeeScene() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Los Angeles – Where Old Hollywood Glamour Meets the New Wave | Hard House Coffee</title>
         <meta name="description" content="LA's coffee scene is more than trendy minimalism. Discover how the city bridged old-school diner culture with the modern specialty coffee movement." />

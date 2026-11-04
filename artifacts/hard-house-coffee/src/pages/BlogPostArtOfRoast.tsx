@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostArtOfRoast() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>The Art of the Roast – Finding the Perfect Profile in the Drum | Hard House Coffee</title>
         <meta name="description" content="Roasting coffee is part science, part instinct. From first crack to the perfect profile — here's what happens inside the drum that determines how your coffee tastes." />

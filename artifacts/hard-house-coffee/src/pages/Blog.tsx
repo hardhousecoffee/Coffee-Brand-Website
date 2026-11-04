@@ -333,7 +333,7 @@ export default function Blog() {
 
       {/* Page header */}
       <div
-        className="relative pt-32 pb-16 px-6 text-center overflow-hidden"
+        className="relative pt-24 pb-8 px-6 text-center overflow-hidden"
         style={{
           background: "linear-gradient(to bottom, #2b1e16 0%, #0b0b0b 100%)",
           borderBottom: "1px solid rgba(161,79,31,0.2)",
@@ -373,9 +373,9 @@ export default function Blog() {
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-6 py-6">
         {/* Category filter */}
-        <div style={{ position: "relative", marginBottom: "3rem" }}>
+        <div style={{ position: "relative", marginBottom: "1.5rem" }}>
           <div
             id="blog-filter"
             style={{
@@ -385,7 +385,7 @@ export default function Blog() {
               msOverflowStyle: "none",
             }}
           >
-          <div style={{ display: "flex", gap: "0.75rem", minWidth: "max-content", paddingBottom: "2px" }}>
+          <div style={{ display: "flex", gap: "0.5rem", minWidth: "max-content", paddingBottom: "2px" }}>
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -435,7 +435,7 @@ export default function Blog() {
         {/* Featured post */}
         {showingAllPosts && featured && (
           <div
-            className="mb-12 relative overflow-hidden"
+            className="mb-6 relative overflow-hidden"
             style={{
               borderRadius: "10px",
               border: "1px solid rgba(161,79,31,0.25)",
@@ -468,7 +468,7 @@ export default function Blog() {
                   Featured
                 </div>
               </div>
-              <div className="p-8 flex flex-col justify-center">
+              <div className="p-5 flex flex-col justify-center">
                 <p style={{ fontSize: "0.7rem", color: "#a14f1f", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>
                   {featured.category} · {featured.readTime}
                 </p>
@@ -503,7 +503,7 @@ export default function Blog() {
         )}
 
         {/* Post grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {rest.map((post) => (
             <div key={post.id} className="card-dark flex flex-col">
               <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
@@ -530,7 +530,7 @@ export default function Blog() {
                   {post.category}
                 </div>
               </div>
-              <div className="p-5 flex flex-col flex-1">
+              <div className="p-4 flex flex-col flex-1">
                 <p style={{ fontSize: "0.7rem", color: "#a14f1f", marginBottom: "0.5rem" }}>
                   {post.readTime}
                 </p>

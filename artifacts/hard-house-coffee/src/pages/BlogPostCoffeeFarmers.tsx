@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostCoffeeFarmers() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Seed to Sprout – The Secret Lives of Coffee Farmers | Hard House Coffee</title>
         <meta name="description" content="A coffee bean isn't a bean at all — it's a seed inside a fruit. Discover the years of work coffee farmers put in before a single usable crop is harvested." />

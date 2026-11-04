@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostCafeLomiParis() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Parisian Elegance – Café Lomi (Paris, France) | Hard House Coffee</title>
         <meta name="description" content="Café Lomi in Paris roasts their own beans in an industrial-chic space and supplies top bistros across France. A rainy afternoon here is the definition of coffee culture." />

@@ -18,7 +18,7 @@ export default function BlogExpansionArticle() {
       canonicalPath={`/blog/${article.slug}`}
       readTime={articleReadTime(article)}
     >
-      <p style={{ color: "#d4cfc9", marginBottom: "2rem" }}>{article.intro}</p>
+      <p data-article-introduction style={{ color: "#d4cfc9", marginBottom: "0.75rem" }}>{article.description}</p>
       <ArticleFigure src={article.image} alt={article.imageAlt} caption={article.imageAlt} />
       {article.sections.map((section) => (
         <ArticleSection key={section.heading} title={section.heading}>

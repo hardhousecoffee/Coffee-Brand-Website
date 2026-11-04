@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostSFSpecialtyRevolution() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>San Francisco – The Birthplace of the Specialty Revolution | Hard House Coffee</title>
         <meta name="description" content="From Alfred Peet's Berkeley roastery in the '60s to launching the Third Wave movement — San Francisco's role in shaping modern coffee culture worldwide." />

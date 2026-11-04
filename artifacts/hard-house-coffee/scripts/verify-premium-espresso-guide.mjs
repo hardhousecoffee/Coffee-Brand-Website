@@ -37,7 +37,8 @@ for (const [id, image, price] of files) {
 }
 const bodyArticle = html.slice(html.indexOf('<article aria-label="Eight espresso'));
 assert.ok(bodyArticle.indexOf("01_Breville_Oracle_Jet/IMG_2426.jpeg") < bodyArticle.indexOf("Eight machines at a glance"), "Lead photograph must precede comparison and lengthy copy");
-assert.ok(bodyArticle.indexOf("The first decision") < bodyArticle.indexOf("01_Breville_Oracle_Jet/IMG_2426.jpeg"), "Lead photo must follow brief opening");
+assert.ok(bodyArticle.indexOf("Eight espresso machines from $1,000") < bodyArticle.indexOf("01_Breville_Oracle_Jet/IMG_2426.jpeg"), "First product must follow brief opening");
+assert.ok(bodyArticle.indexOf('id="meraki-gen-2"') < bodyArticle.indexOf("Eight machines at a glance"), "Profiles must precede the comparison");
 assert.equal((html.match(/<h1\b/g) || []).length, 1);
 assert.equal((html.match(/rel="canonical"/g) || []).length, 1);
 assert.ok(html.includes(`href="https://hardhousecoffee.com${route}"`));

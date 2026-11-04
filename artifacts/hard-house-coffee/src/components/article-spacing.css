@@ -1,0 +1,50 @@
+/* Shared blog rhythm; keep the 17px text and all non-blog layouts intact.
+   Override older article-local paragraph gaps without rewriting their copy. */
+.hhc-article-content p {
+  margin-bottom: 0.65rem !important;
+}
+
+.hhc-article-content figure {
+  margin: 0 0 1rem !important;
+}
+
+/* Older journal pages keep their original markup and copy. */
+.hhc-legacy-article > .relative.overflow-hidden {
+  height: 280px !important;
+}
+
+.hhc-legacy-article > .relative.overflow-hidden > .absolute.inset-0 {
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+
+.hhc-legacy-article > .max-w-2xl {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  font-size: 1.0625rem !important;
+  line-height: 1.75 !important;
+}
+
+.hhc-legacy-article > .max-w-2xl > p {
+  font-size: 1.0625rem !important;
+}
+
+/* Legacy Section helpers set their own 1.24rem size below the heading.
+   Match the guide body without changing card labels or heading sizes. */
+.hhc-legacy-article > .max-w-2xl h2 + div {
+  font-size: 1.0625rem !important;
+  line-height: 1.75 !important;
+}
+
+.hhc-legacy-article > .max-w-2xl p:not(.hhc-article-byline p) {
+  margin-bottom: 0.65rem !important;
+}
+
+.hhc-legacy-article > .max-w-2xl > div:not(.hhc-article-byline) {
+  margin-bottom: 1.5rem !important;
+}
+
+.hhc-legacy-article > .max-w-2xl h2 {
+  margin-bottom: 0.7rem !important;
+  padding-bottom: 0.4rem !important;
+}

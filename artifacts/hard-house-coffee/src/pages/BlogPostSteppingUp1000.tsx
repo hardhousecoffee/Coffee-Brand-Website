@@ -44,24 +44,14 @@ export default function BlogPostSteppingUp1000() {
       ctaText="Explore practical advice on coffee beans, milk and caring for your next machine."
     >
       <article aria-label="Eight espresso machines over $1,000 and under $3,000">
-        <p style={{ marginBottom: "0.8rem" }}>Spending more on espresso should make your mornings better—not give you a second job. These eight machines offer very different ways to get there, from a hands-on coffee-bar routine to a latte at the touch of a button.</p>
-        <p style={{ marginBottom: "1.1rem" }}>The first decision is not which machine looks most impressive. It is how much of the coffee-making you want to do yourself.</p>
-        <ProductPhoto index={0} priority />
-
-        <ArticleSection title="Eight machines at a glance">
-          <p>All eight include a grinder. The bigger differences are coffee preparation, milk handling and how much you want to be involved. Prices below are the supplied reference prices; tax, bundles and later offers may differ.</p>
-          <div role="region" aria-label="Eight-machine comparison; scroll horizontally on a narrow screen" tabIndex={0} style={{ maxWidth: "100%", overflowX: "auto" }}>
-            <div style={{ minWidth: "940px" }}>
-            <ComparisonTable headers={["Machine", "Reference price", "Daily routine", "Milk preparation", "Best fit"]} rows={machines.map((m) => [m.name, m.price, m.routine, m.milk, m.suited])} />
-            </div>
-          </div>
-        </ArticleSection>
+        <p data-article-introduction>Eight espresso machines from $1,000 to $3,000—here’s what each offers.</p>
+        <p style={{ fontSize: "0.85rem" }}><a href="#machine-comparison" style={{ color: "#d4b896", textDecoration: "underline" }}>Jump to the comparison table</a></p>
 
         {machines.map((machine, index) => (
           <div key={machine.id} id={machine.id} style={{ scrollMarginTop: "5rem" }}>
             <ArticleSection title={`${index + 1}. ${machine.name}`} eyebrow={machine.subtitle}>
               <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "1rem" }}>Reference price: {machine.price}</p>
-              <ProductPhoto index={index} />
+              <ProductPhoto index={index} priority={index === 0} />
               {machine.paragraphs.map((p) => <p key={p} style={{ marginBottom: "0.9rem" }}>{p}</p>)}
               <ArticleGrid>
                 <ArticleCard title="What stands out"><ArticleList items={machine.pros} /></ArticleCard>
@@ -72,6 +62,17 @@ export default function BlogPostSteppingUp1000() {
             </ArticleSection>
           </div>
         ))}
+
+        <div id="machine-comparison" style={{ scrollMarginTop: "5rem" }}>
+        <ArticleSection title="Eight machines at a glance">
+          <p>All eight include a grinder. Prices are supplied reference prices, not live offers; tax, bundles and later offers may differ.</p>
+          <div role="region" aria-label="Eight-machine comparison; scroll horizontally on a narrow screen" tabIndex={0} style={{ maxWidth: "100%", overflowX: "auto" }}>
+            <div style={{ minWidth: "940px" }}>
+              <ComparisonTable headers={["Machine", "Reference price", "Daily routine", "Milk preparation", "Best fit"]} rows={machines.map((m) => [m.name, m.price, m.routine, m.milk, m.suited])} />
+            </div>
+          </div>
+        </ArticleSection>
+        </div>
 
         <ArticleSection title="Hands-on or fully automatic? Start here">
           <p style={{ marginBottom: "0.9rem" }}>The Oracle Jet and Meraki keep you involved. You move the coffee handle, clear the basket and work with a milk pitcher. Breville takes over more of the coffee preparation; Meraki leaves tamping to you. Neither should be mistaken for a closed-front, one-button latte machine.</p>

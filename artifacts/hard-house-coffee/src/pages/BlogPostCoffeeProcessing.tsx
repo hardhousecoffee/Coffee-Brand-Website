@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostCoffeeProcessing() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>The Magic of Processing – How Washing and Drying Shapes Flavor | Hard House Coffee</title>
         <meta name="description" content="Washed vs natural processing — how a simple post-harvest choice completely changes the flavors in your cup." />

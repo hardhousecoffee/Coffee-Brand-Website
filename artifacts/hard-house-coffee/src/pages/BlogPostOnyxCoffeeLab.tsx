@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostOnyxCoffeeLab() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Global Excellence – Onyx Coffee Lab (Bentonville, Arkansas, USA) | Hard House Coffee</title>
         <meta name="description" content="Explore Onyx Coffee Lab’s sourcing transparency, published coffee information, café design and the questions readers should ask about green-coffee prices." />

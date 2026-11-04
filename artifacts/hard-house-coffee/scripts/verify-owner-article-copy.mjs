@@ -7,11 +7,8 @@ const app = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const workspace = resolve(app, "../..");
 const supplied = readFileSync(resolve(workspace, "attached_assets/Pasted-Paco-here-it-is-One-complete-copy-and-paste-prompt-It-i_1793613646375.txt"), "utf8");
 const article = supplied.split("ARTICLE CONTENT BEGINS")[1].split("ARTICLE CONTENT ENDS")[0];
-const introduction = article.slice(0, article.indexOf("Five Espresso Machines at a Glance"));
 const profilesAndAdvice = article.slice(article.indexOf("De’Longhi Classic EM350BK\n\nA Great Place"));
 const expected = [
-  ...introduction.trim().split(/\n\n+/),
-  "Five Espresso Machines at a Glance",
   ...profilesAndAdvice.trim().split(/\n\n+/),
 ].filter((block) => !/^\[|^IMPORTANT:|^Approximate (?:price|listed price|promotional price):|^=+$/.test(block));
 
@@ -25,6 +22,11 @@ const decode = (text) => text
   .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 const normalized = (text) => text.replace(/\s+/g, "");
 const rendered = normalized(decode(html.slice(html.indexOf("<body"))));
+// The owner subsequently authorized a one-sentence opening and products first.
+// Keep the strict verbatim check on all supplied profiles and buying advice.
+assert.ok(html.includes("Five espresso machines for different budgets and coffee routines."));
+assert.ok(html.includes("Five Espresso Machines at a Glance"));
+assert.ok(html.indexOf('id="zulay-magia-clasica"') < html.indexOf("Five Espresso Machines at a Glance"));
 let position = 0;
 for (const block of expected) {
   const text = normalized(block);
@@ -44,5 +46,5 @@ for (const destination of [
   "espresso-machine-cleaning-vs-descaling",
   "steam-wand-vs-electric-milk-frother",
 ]) assert.ok(html.includes(`href="/blog/${destination}"`), `Useful internal link lost: ${destination}`);
-console.log(`PASS: all ${expected.length} supplied headings and copy blocks appear verbatim and in order; reference prices defer to verified data`);
+console.log(`PASS: all ${expected.length} supplied profile/advice blocks remain verbatim and in order; authorized short introduction and products-first layout`);
 console.log("PASS: implementation instructions excluded; useful internal links retained without rewriting supplied text");

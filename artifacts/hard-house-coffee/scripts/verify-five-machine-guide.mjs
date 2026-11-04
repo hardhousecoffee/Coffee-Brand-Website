@@ -26,7 +26,7 @@ assert.ok(html.includes(`href="${canonical}"`), "Canonical changed");
 assert.ok(html.includes("<title>5 Espresso Machines Worth Buying | Hard House Coffee</title>"));
 assert.ok(html.includes("Five Espresso Machines Worth Buying: From Budget-Friendly to Midrange"));
 assert.ok(html.includes('property="og:image"') && html.includes('name="twitter:card"'));
-assert.match(html, /<time datetime="2026-11-02">/i);
+assert.match(html, /<time datetime="2026-11-04">/i);
 
 let previous = -1;
 for (const [id, filename, altName, model] of profiles) {
@@ -42,7 +42,8 @@ for (const [id, filename, altName, model] of profiles) {
   assert.ok(section.includes("Approximate U.S. price:"), `Missing price: ${id}`);
   const image = section.match(new RegExp(`<img[^>]*src="/images/five-espresso-machines/${filename.replaceAll(".", "\\.")}"[^>]*>`))?.[0];
   assert.ok(image, `Missing assigned photograph: ${id}`);
-  assert.ok(image.includes(altName) && image.includes('loading="lazy"'), `Incorrect image alt/loading: ${id}`);
+  const loading = id === "delonghi-em350bk" ? "eager" : "lazy";
+  assert.ok(image.includes(altName) && image.includes(`loading="${loading}"`), `Incorrect image alt/loading: ${id}`);
   assert.match(image, /width="\d+"/);
   assert.match(image, /height="\d+"/);
   assert.ok(image.includes("width:100%") && image.includes("height:auto"), `Image distorted: ${id}`);
@@ -58,7 +59,7 @@ for (const [id, filename, altName, model] of profiles) {
 const schemas = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map((m) => JSON.parse(m[1]));
 const article = schemas.find((s) => s["@type"] === "Article" && s.url === canonical);
 assert.ok(article && article.headline.startsWith("5 Espresso Machines"), "Missing accurate Article schema");
-assert.equal(article.dateModified, "2026-11-02");
+assert.equal(article.dateModified, "2026-11-04");
 assert.ok(!article.datePublished, "An unknown original publication date must not be invented");
 assert.ok(!schemas.some((s) => ["FAQPage", "AggregateRating", "Review", "Offer"].includes(s["@type"])), "Unsupported rich-result claims");
 assert.ok(html.includes("min-width:1060px") && html.includes("overflow-x:auto"), "Comparison scroll containment missing");

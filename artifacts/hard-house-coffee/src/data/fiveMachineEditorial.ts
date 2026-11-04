@@ -3,21 +3,7 @@ export const paragraphs = (text: string) => text.trim().split(/\n\n+/);
 
 export const finalIntroduction = {
   title: "Great Coffee at Home Doesn’t Have to Be Complicated",
-  paragraphs: paragraphs(`Love a good espresso, cappuccino, or latte?
-
-You don’t have to visit a coffee shop every morning to enjoy one.
-
-Making coffee at home can be surprisingly simple, and you don’t need an expensive professional machine to get started.
-
-The trick is finding an espresso machine that fits your budget, your kitchen, and the way you like to make coffee.
-
-Some people enjoy grinding their beans and preparing every shot themselves. Others just want to press a button and get on with their morning.
-
-Both approaches can make a great cup of coffee.
-
-We’ve selected five espresso machines worth considering, from affordable beginner-friendly options to more convenient machines with built-in grinders and automatic features.
-
-Let’s take a look.`),
+  paragraphs: paragraphs(`Five espresso machines for different budgets and coffee routines.`),
 };
 
 export const finalProfiles = [

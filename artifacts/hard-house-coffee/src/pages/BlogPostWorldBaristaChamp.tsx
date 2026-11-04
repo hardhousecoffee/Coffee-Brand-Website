@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostWorldBaristaChamp() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Inside the World Barista Championship – The Olympics of Caffeine | Hard House Coffee</title>
         <meta name="description" content="15 minutes on stage, 4 espressos, 4 milk drinks, 4 signature beverages. An inside look at the World Barista Championship and what it takes to compete at the top." />

@@ -26,59 +26,7 @@ export default function BlogPostEspressoRanked() {
       ctaText="The best machine is the one whose setup and maintenance fit the way you actually drink coffee."
       ctaLabel="Read More Guides"
     >
-      <ArticleSection title="The short answer">
-        <p style={{ marginBottom: "1rem" }}>
-          There is no single “best” espresso machine for every kitchen. A beginner who wants a
-          milk drink before work needs something different from a hobbyist who enjoys weighing
-          every shot. This comparison is based on documented design characteristics, common home
-          workflows, service considerations, and the tradeoffs a buyer can evaluate without
-          pretending that every model was personally tested by Hard House Coffee.
-        </p>
-        <p>
-          Start with the grinder, the number of drinks you make at once, and your tolerance for
-          learning. The machine comes after those decisions.
-        </p>
-      </ArticleSection>
-
-      <ArticleSection title="How to compare an espresso machine">
-        <ArticleGrid>
-          <ArticleCard title="Temperature approach">
-            Single boilers, thermoblock systems, and dual boilers each manage brew water and steam
-            differently. Temperature control matters most when you repeat shots or switch between
-            espresso and milk drinks.
-          </ArticleCard>
-          <ArticleCard title="Workflow">
-            Ask how long warm-up takes, whether steaming interrupts brewing, how much manual
-            dialing-in is expected, and how easy the machine is to clean after each drink.
-          </ArticleCard>
-          <ArticleCard title="Grinder requirement">
-            A machine with a built-in grinder saves counter space, but a separate espresso grinder
-            usually gives you a clearer upgrade path and more control over dose and grind.
-          </ArticleCard>
-          <ArticleCard title="Ownership">
-            Water quality, backflushing, gasket replacement, warranty coverage, and local service
-            can matter more than a decorative finish after the novelty wears off.
-          </ArticleCard>
-        </ArticleGrid>
-        <ArticleNote>
-          Specs and prices change by market and retailer. Treat the categories below as a
-          decision framework, then confirm the current manufacturer specifications, warranty, and
-          delivered price before buying.
-        </ArticleNote>
-      </ArticleSection>
-
-      <ArticleSection title="The main machine types">
-        <ComparisonTable
-          headers={["Type", "Best for", "Tradeoff", "What to check"]}
-          rows={[
-            ["Compact thermoblock", "Fast morning espresso and occasional milk drinks", "Less headroom for back-to-back drinks", "Warm-up, steam recovery, water tank, grinder"],
-            ["Single boiler", "Learners who want hands-on control", "Must switch between brewing and steaming", "Temperature switching, included accessories, repair support"],
-            ["Heat-exchanger", "Households making several milk drinks", "More complex temperature management", "Flush routine, boiler size, service access"],
-            ["Dual boiler", "Frequent milk drinks and repeatable workflow", "Higher cost, size, and energy use", "PID controls, pump, water options, local service"],
-            ["All-in-one", "Small kitchens and fewer separate purchases", "Built-in grinder may limit future upgrades", "Adjustment range, retention, dosing consistency"],
-          ]}
-        />
-      </ArticleSection>
+      <p data-article-introduction>Compare four practical espresso-machine starting points, from compact milk-drink makers to hands-on setups, and find the routine that fits your kitchen.</p>
 
       <ArticleSection title="Four sensible starting points">
         <ArticleGrid>
@@ -108,6 +56,40 @@ export default function BlogPostEspressoRanked() {
       </ArticleSection>
 
       <ArticleSection title="Match the machine to the buyer">
+        <ArticleGrid>
+          <ArticleCard title="Temperature approach">
+            Single boilers, thermoblock systems, and dual boilers each manage brew water and steam
+            differently. Temperature control matters most when you repeat shots or switch between
+            espresso and milk drinks.
+          </ArticleCard>
+          <ArticleCard title="Workflow">
+            Ask how long warm-up takes, whether steaming interrupts brewing, how much manual
+            dialing-in is expected, and how easy the machine is to clean after each drink.
+          </ArticleCard>
+          <ArticleCard title="Grinder requirement">
+            A machine with a built-in grinder saves counter space, but a separate espresso grinder
+            usually gives you a clearer upgrade path and more control over dose and grind.
+          </ArticleCard>
+          <ArticleCard title="Ownership">
+            Water quality, backflushing, gasket replacement, warranty coverage, and local service
+            can matter more than a decorative finish after the novelty wears off.
+          </ArticleCard>
+        </ArticleGrid>
+        <ArticleNote>
+          Specs and prices change by market and retailer. Treat the categories below as a
+          decision framework, then confirm the current manufacturer specifications, warranty, and
+          delivered price before buying.
+        </ArticleNote>
+        <ComparisonTable
+          headers={["Type", "Best for", "Tradeoff", "What to check"]}
+          rows={[
+            ["Compact thermoblock", "Fast morning espresso and occasional milk drinks", "Less headroom for back-to-back drinks", "Warm-up, steam recovery, water tank, grinder"],
+            ["Single boiler", "Learners who want hands-on control", "Must switch between brewing and steaming", "Temperature switching, included accessories, repair support"],
+            ["Heat-exchanger", "Households making several milk drinks", "More complex temperature management", "Flush routine, boiler size, service access"],
+            ["Dual boiler", "Frequent milk drinks and repeatable workflow", "Higher cost, size, and energy use", "PID controls, pump, water options, local service"],
+            ["All-in-one", "Small kitchens and fewer separate purchases", "Built-in grinder may limit future upgrades", "Adjustment range, retention, dosing consistency"],
+          ]}
+        />
         <ArticleList
           items={[
             "For one quick espresso and little cleanup: prioritize fast heat-up, simple controls, and a separate grinder you will actually use.",

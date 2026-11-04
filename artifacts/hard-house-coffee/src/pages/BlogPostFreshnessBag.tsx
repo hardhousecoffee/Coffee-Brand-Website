@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostFreshnessBag() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Logistics and Freshness – The Journey to Your Local Shelf | Hard House Coffee</title>
         <meta name="description" content="Once beans are roasted, the clock is ticking. Learn why the Roasted On date matters more than the expiration date, and how freshness reaches your shelf." />

@@ -6,8 +6,8 @@ export const fiveMachineGuide = {
   path: "/blog/the-300-dollar-sweet-spot-real-espresso-at-home",
   image: "/images/five-espresso-machines/cafe-bellissimo-espresso-machine.jpeg",
   checked: "November 1, 2026",
-  modified: "2026-11-02",
-  updated: "November 2, 2026",
+  modified: "2026-11-04",
+  updated: "November 4, 2026",
 };
 
 export interface EverydayMachine {

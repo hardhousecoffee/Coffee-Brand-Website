@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostSpecialtyCoffeeBars() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>The Rise of Specialty Coffee Bars | Hard House Coffee</title>
         <meta name="description" content="Specialty coffee is reshaping how we experience our daily brew. Explore what makes specialty coffee bars different, why the movement is growing, and what sets them apart." />

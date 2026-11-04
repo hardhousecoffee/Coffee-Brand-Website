@@ -8,8 +8,6 @@ export default function FiveMachineProfile({ machine, editorial }: { machine: Ev
   return (
     <div id={machine.id} style={{ scrollMarginTop: "5rem" }}>
       <ArticleSection title={editorial.title}>
-        <h3 style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "1rem" }}>{editorial.subtitle}</h3>
-        <p style={{ color: "#d4b896", marginBottom: "0.5rem", fontSize: "0.9rem" }}>Model: {machine.model}</p>
         <p style={{ color: "#f2f2f2", fontSize: "1.18rem", fontWeight: 700, marginBottom: "0.4rem" }}>
           Approximate U.S. price: {machine.price}
         </p>
@@ -30,13 +28,15 @@ export default function FiveMachineProfile({ machine, editorial }: { machine: Ev
               alt={machine.alt}
               width={machine.width}
               height={machine.height}
-              loading="lazy"
+              loading={machine.id === "delonghi-em350bk" ? "eager" : "lazy"}
               decoding="async"
               style={{ display: "block", width: "100%", height: "auto" }}
             />
           </picture>
           <figcaption style={{ padding: "0.85rem 1rem", color: "#b0a090", fontSize: "0.8rem", lineHeight: 1.65 }}>{machine.caption}</figcaption>
         </figure>
+        <h3 style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.5rem" }}>{editorial.subtitle}</h3>
+        <p style={{ color: "#d4b896", marginBottom: "0.5rem", fontSize: "0.9rem" }}>Model: {machine.model}</p>
         {editorial.paragraphs.map((text) => <p key={text} style={{ marginBottom: "1.1rem" }}>{text}</p>)}
         <ArticleGrid>
           <ArticleCard title="What We Like"><ArticleList items={editorial.likes} /></ArticleCard>

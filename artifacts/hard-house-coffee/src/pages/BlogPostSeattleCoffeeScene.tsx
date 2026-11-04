@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostSeattleCoffeeScene() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Seattle – Exploring the Deep Roots of the Emerald City's Coffee Scene | Hard House Coffee</title>
         <meta name="description" content="Seattle's coffee history goes far deeper than one green-logo chain. Espresso Vivace, David Schomer, and the roots of modern American espresso technique." />

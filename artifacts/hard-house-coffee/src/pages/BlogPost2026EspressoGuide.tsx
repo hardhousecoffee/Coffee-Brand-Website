@@ -26,29 +26,7 @@ export default function BlogPost2026EspressoGuide() {
       ctaLabel="Read the Full Comparison"
       ctaHref="/blog/best-espresso-machines-2026-guide-tested-and-ranked"
     >
-      <ArticleSection title="What beginner-friendly really means">
-        <p style={{ marginBottom: "1rem" }}>
-          A beginner machine should make the next step clear, not pretend espresso is one-button
-          coffee. Look at total setup cost, how much control the machine exposes, how quickly it
-          becomes ready, and how much cleaning the routine requires. The grinder is part of the
-          setup, not an optional luxury.
-        </p>
-        <p>
-          The right choice depends on whether you want speed, a low entry cost, or room to learn.
-          None of the profiles below is a universal ranking.
-        </p>
-      </ArticleSection>
-
-      <ArticleSection title="Three beginner setups">
-        <ComparisonTable
-          headers={["Setup", "Best fit", "Learning curve", "Main compromise"]}
-          rows={[
-            ["Compact machine + separate grinder", "Small kitchens and quick milk drinks", "Low to moderate", "Requires two purchases and grinder space"],
-            ["Traditional single boiler + grinder", "Learners who want manual control", "Moderate", "Brewing and steaming may require a transition"],
-            ["All-in-one machine", "Simple counter and fewer separate parts", "Low to moderate", "Built-in grinder may limit future upgrades"],
-          ]}
-        />
-      </ArticleSection>
+      <p data-article-introduction>Start with three beginner-friendly options: the Bambino Plus, Stilosa and Barista Express. Compare the routine, grinder needs and compromises of each.</p>
 
       <ArticleSection title="Profile 1: Breville Bambino Plus">
         <p style={{ marginBottom: "1rem" }}>
@@ -90,6 +68,14 @@ export default function BlogPost2026EspressoGuide() {
       </ArticleSection>
 
       <ArticleSection title="What beginners still need">
+        <ComparisonTable
+          headers={["Setup", "Best fit", "Learning curve", "Main compromise"]}
+          rows={[
+            ["Compact machine + separate grinder", "Small kitchens and quick milk drinks", "Low to moderate", "Requires two purchases and grinder space"],
+            ["Traditional single boiler + grinder", "Learners who want manual control", "Moderate", "Brewing and steaming may require a transition"],
+            ["All-in-one machine", "Simple counter and fewer separate parts", "Low to moderate", "Built-in grinder may limit future upgrades"],
+          ]}
+        />
         <ArticleGrid>
           <ArticleCard title="A suitable grinder">Espresso requires fine, repeatable adjustment. A blade grinder is not a reliable shortcut.</ArticleCard>
           <ArticleCard title="A scale">Measure dose and yield so you can tell whether a change helped.</ArticleCard>

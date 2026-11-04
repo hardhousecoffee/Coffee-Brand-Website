@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import RelatedPosts from "@/components/RelatedPosts";
+import "./article-spacing.css";
 
 export interface EditorialRelatedPost {
   title: string;
@@ -45,7 +46,7 @@ export function ArticleSection({
   children: ReactNode;
 }) {
   return (
-    <section style={{ marginBottom: "2.5rem" }}>
+    <section style={{ marginBottom: "1.5rem" }}>
       {eyebrow && (
         <p
           style={{
@@ -67,8 +68,8 @@ export function ArticleSection({
           fontWeight: 700,
           color: "#f2f2f2",
           lineHeight: 1.3,
-          marginBottom: "1.1rem",
-          paddingBottom: "0.65rem",
+          marginBottom: "0.7rem",
+          paddingBottom: "0.4rem",
           borderBottom: "1px solid rgba(161,79,31,0.25)",
         }}
       >
@@ -123,8 +124,8 @@ export function ArticleGrid({ children }: { children: ReactNode }) {
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(205px, 1fr))",
-        gap: "0.9rem",
-        margin: "1.25rem 0",
+        gap: "0.75rem",
+        margin: "1rem 0",
       }}
     >
       {children}
@@ -304,7 +305,7 @@ export default function EditorialArticle({
 
       <header
         className="relative overflow-hidden"
-        style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}
+        style={{ height: "280px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}
       >
         <img
           src={image}
@@ -313,7 +314,7 @@ export default function EditorialArticle({
           style={{ filter: "brightness(0.35)", ...(imageFit ? { objectFit: imageFit } : {}) }}
         />
         <div
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-16 pb-4"
           style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(11,11,11,0.7) 100%)" }}
         >
           <p className="section-subtitle mb-3">{category}</p>
@@ -336,16 +337,18 @@ export default function EditorialArticle({
       </header>
 
       <main
-        className="hhc-editorial-body max-w-3xl mx-auto px-6 py-10"
+        className="hhc-editorial-body max-w-3xl mx-auto px-6 py-4"
         style={{ lineHeight: 1.75, fontSize: "1.0625rem" }}
       >
         <AuthorByline />
+        <div className="hhc-article-content">{children}</div>
+        <aside id="article-research-notes" aria-label="Research and disclosures" style={{ borderTop: "1px solid rgba(161,79,31,0.2)", paddingTop: "0.75rem", marginTop: "1.25rem" }}>
         <p
           style={{
             color: "#8f7d6e",
             fontSize: "0.78rem",
             lineHeight: 1.65,
-            marginBottom: "1.5rem",
+            marginBottom: "0.75rem",
           }}
         >
           {editorialNote ?? <>Editorial note: Hard House Coffee separates researched guidance from hands-on testing.
@@ -355,14 +358,14 @@ export default function EditorialArticle({
           </Link>{" "}
           and <Link href="/disclaimer" style={{ color: "#d4b896" }}>disclosure</Link>.</>}
         </p>
-        {children}
+        </aside>
 
         {related.length > 0 && <RelatedPosts posts={related} />}
 
         <div
           style={{
-            marginTop: "3.5rem",
-            padding: "2rem 1.5rem",
+            marginTop: "2rem",
+            padding: "1.5rem",
             textAlign: "center",
             background: "#131313",
             borderRadius: "8px",
@@ -380,7 +383,7 @@ export default function EditorialArticle({
           </Link>
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-6 text-center">
           <Link href="/blog">
             <button
               className="btn-secondary"

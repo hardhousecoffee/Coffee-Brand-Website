@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostDittaArtigianale() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Old World Perfection – Ditta Artigianale (Florence, Italy) | Hard House Coffee</title>
         <meta name="description" content="Founded by champion barista Francesco Sanapo in the heart of Florence, Ditta Artigianale bridges classic Italian espresso tradition with the modern specialty movement." />

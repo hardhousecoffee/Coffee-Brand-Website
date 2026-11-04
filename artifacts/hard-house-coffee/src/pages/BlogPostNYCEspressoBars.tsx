@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostNYCEspressoBars() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>New York City – From Historic Italian Espresso Bars to Fast-Paced Cafés | Hard House Coffee</title>
         <meta name="description" content="From Caffe Reggio's 1920s cappuccinos to Brooklyn's modern specialty scene — how New York City became one of the world's great coffee capitals." />

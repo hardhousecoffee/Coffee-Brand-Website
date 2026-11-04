@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostGlitchCoffeeTokyo() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>The Master of Precision – Glitch Coffee & Roasters (Tokyo, Japan) | Hard House Coffee</title>
         <meta name="description" content="Tucked away in Jimbocho, Glitch Coffee treats light-roast coffee with the same reverence a master chef treats sushi. A masterclass in Japanese precision." />

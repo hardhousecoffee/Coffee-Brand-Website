@@ -8,7 +8,7 @@ import RecommendedBeans from "@/components/RecommendedBeans";
 
 export default function BlogPostEliteBarista() {
   return (
-    <div style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
+    <div className="hhc-legacy-article" style={{ backgroundColor: "#0b0b0b", color: "#f2f2f2", minHeight: "100vh" }}>
       <Helmet>
         <title>Meet the Masters – What Makes a Top-Tier Barista Truly Elite | Hard House Coffee</title>
         <meta name="description" content="It's more than latte art. Elite baristas are part scientist, part host — with an almost psychic understanding of extraction chemistry." />

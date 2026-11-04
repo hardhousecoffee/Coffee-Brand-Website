@@ -9,7 +9,7 @@ const paragraphs = (items: string[]) => items.map((text) => (
 
 function MachineProfile({ machine, index }: { machine: LuxuryMachine; index: number }) {
   return (
-    <section id={machine.id} aria-labelledby={`${machine.id}-title`} style={{ marginBottom: "4rem", scrollMarginTop: "6rem" }}>
+    <section id={machine.id} aria-labelledby={`${machine.id}-title`} style={{ marginBottom: "1.75rem", scrollMarginTop: "6rem" }}>
       <p className="section-subtitle" style={{ marginBottom: "0.5rem" }}>{String(index).padStart(2, "0")} / {machine.category === "commercial" ? "Commercial" : "Luxury home"}</p>
       <h3 id={`${machine.id}-title`} style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1.3rem, 3vw, 1.75rem)", fontWeight: 700, lineHeight: 1.3, color: "#f2f2f2", marginBottom: "0.65rem" }}>{machine.name}</h3>
       <p style={{ color: "#d4b896", marginBottom: "1.25rem" }}>{machine.character}</p>
@@ -19,7 +19,7 @@ function MachineProfile({ machine, index }: { machine: LuxuryMachine; index: num
           alt={machine.alt}
           width={machine.width}
           height={machine.height}
-          loading="lazy"
+          loading={index === 1 ? "eager" : "lazy"}
           decoding="async"
           style={{ display: "block", width: "100%", height: "auto" }}
         />
@@ -64,14 +64,26 @@ export default function BlogPost20000EspressoGear() {
       imageAlt={luxuryMachines[0].alt}
       canonicalPath={luxuryFeature.path}
       readTime={luxuryFeature.readTime}
+      editorialNote={luxuryFeature.disclosure}
       related={[
         { title: "Best Espresso Machines Over $1,000: 8 Worth Buying Under $3,000", slug: "stepping-up-what-crossing-1000-mark-actually-buys-you", image: "/images/premium-espresso/01_Breville_Oracle_Jet/IMG_2426.jpeg", category: "Espresso Machines" },
         { title: "Inside the World Barista Championship – The Olympics of Caffeine", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship.jpg", category: "Coffee Culture" },
       ]}
     >
-      {paragraphs(luxuryFeature.intro)}
-      <ArticleNote>{luxuryFeature.disclosure}</ArticleNote>
+      <p data-article-introduction>Explore four commercial café machines and four luxury home machines, with photographs, reference prices and the differences that matter before you invest.</p>
+      <p style={{ fontSize: "0.85rem" }}><a href="#luxury-machine-comparison" style={{ color: "#d4b896", textDecoration: "underline" }}>Jump to the comparison table</a></p>
 
+      <ArticleSection title="Four elite commercial espresso machines" eyebrow="Section one">
+        {commercial.map((machine, index) => <MachineProfile key={machine.id} machine={machine} index={index + 1} />)}
+        {paragraphs([luxuryFeature.commercialIntro])}
+      </ArticleSection>
+
+      <ArticleSection title="Four luxury home espresso machines" eyebrow="Section two">
+        {home.map((machine, index) => <MachineProfile key={machine.id} machine={machine} index={index + 5} />)}
+        {paragraphs([luxuryFeature.homeIntro])}
+      </ArticleSection>
+
+      <div id="luxury-machine-comparison" style={{ scrollMarginTop: "5rem" }}>
       <ArticleSection title="Eight machines at a glance">
         <p>{luxuryFeature.comparisonIntro}</p>
         <div role="region" aria-label="Eight-machine comparison; scroll horizontally on narrow screens" tabIndex={0} style={{ overflowX: "auto" }}>
@@ -86,23 +98,14 @@ export default function BlogPost20000EspressoGear() {
           />
         </div>
       </ArticleSection>
+      </div>
 
-      <nav aria-label="Jump to an espresso machine" style={{ padding: "1.25rem", marginBottom: "3rem", background: "#131313", border: "1px solid rgba(161,79,31,0.25)", borderRadius: "8px" }}>
+      <nav aria-label="Jump to an espresso machine" style={{ padding: "0.75rem", marginBottom: "1.5rem", background: "#131313", border: "1px solid rgba(161,79,31,0.25)", borderRadius: "8px" }}>
         <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "0.6rem" }}>Explore the machines</p>
         <ul style={{ paddingLeft: "1.2rem" }}>
           {luxuryMachines.map((machine) => <li key={machine.id} style={{ marginBottom: "0.45rem" }}><a href={`#${machine.id}`} style={{ color: "#d4b896", textDecoration: "underline" }}>{machine.name}</a></li>)}
         </ul>
       </nav>
-
-      <ArticleSection title="Four elite commercial espresso machines" eyebrow="Section one">
-        <p style={{ marginBottom: "2.5rem" }}>{luxuryFeature.commercialIntro}</p>
-        {commercial.map((machine, index) => <MachineProfile key={machine.id} machine={machine} index={index + 1} />)}
-      </ArticleSection>
-
-      <ArticleSection title="Four luxury home espresso machines" eyebrow="Section two">
-        <p style={{ marginBottom: "2.5rem" }}>{luxuryFeature.homeIntro}</p>
-        {home.map((machine, index) => <MachineProfile key={machine.id} machine={machine} index={index + 5} />)}
-      </ArticleSection>
 
       <ArticleSection title="What the price tag does—and does not—buy">
         {paragraphs(luxuryFeature.ownership)}

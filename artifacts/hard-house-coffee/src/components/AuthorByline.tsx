@@ -1,11 +1,12 @@
 export default function AuthorByline() {
   return (
     <div
+      className="hhc-article-byline"
       style={{
         display: "flex",
         alignItems: "center",
-        paddingBottom: "1.75rem",
-        marginBottom: "1.75rem",
+        paddingBottom: "0.5rem",
+        marginBottom: "0.75rem",
         borderBottom: "1px solid rgba(161,79,31,0.15)",
       }}
     >
@@ -27,7 +28,7 @@ export default function AuthorByline() {
         src="/images/logo-icon.png"
         alt="Hard House Coffee"
         style={{
-          height: "120px",
+          height: "56px",
           width: "auto",
           filter: "url(#byline-logo-orange)",
           mixBlendMode: "screen",
@@ -35,12 +36,12 @@ export default function AuthorByline() {
         }}
       />
 
-      <div style={{ marginLeft: "-32px" }}>
-        <p style={{ fontSize: "1.04rem", fontWeight: 700, color: "#f2f2f2", marginBottom: "0.15rem" }}>
+      <div style={{ marginLeft: "0.35rem" }}>
+        <p style={{ fontSize: "0.9rem", fontWeight: 700, color: "#f2f2f2", marginBottom: "0.15rem" }}>
           Hard House Coffee
         </p>
-        <p style={{ fontSize: "0.94rem", color: "#6b5a4e" }}>
-          Editorial publication · research-based guidance
+        <p style={{ fontSize: "0.75rem", color: "#8f7d6e", lineHeight: 1.4 }}>
+          Research-based guidance · no hands-on testing
         </p>
       </div>
     </div>

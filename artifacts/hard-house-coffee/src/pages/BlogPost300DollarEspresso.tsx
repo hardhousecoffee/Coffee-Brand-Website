@@ -64,10 +64,13 @@ export default function BlogPost300DollarEspresso() {
     >
       <article aria-label="Five-machine espresso buying guide">
         <p style={{ color: "#8f7d6e", fontSize: "0.82rem", marginBottom: "1rem" }}>Updated <time dateTime={guide.modified}>{guide.updated}</time></p>
-        <ArticleSection title={finalIntroduction.title}>
+        <div data-article-introduction>
           <CopyParagraphs texts={finalIntroduction.paragraphs} />
-        </ArticleSection>
+        </div>
+        <p style={{ fontSize: "0.85rem" }}><a href="#five-machine-comparison" style={linkStyle}>Jump to the comparison table</a></p>
+        {everydayMachines.map((machine, index) => <FiveMachineProfile key={machine.id} machine={machine} editorial={finalProfiles[index]} />)}
 
+        <div id="five-machine-comparison" style={{ scrollMarginTop: "5rem" }}>
         <ArticleSection title="Five Espresso Machines at a Glance">
           <div role="region" aria-label="Five espresso machines comparison; scroll horizontally to see all columns" tabIndex={0} style={{ overflowX: "auto", maxWidth: "100%", WebkitOverflowScrolling: "touch" }}>
             <div style={{ minWidth: "1060px" }}>
@@ -86,15 +89,14 @@ export default function BlogPost300DollarEspresso() {
             </div>
           </div>
         </ArticleSection>
+        </div>
 
-        <nav aria-label="Jump to a machine profile" style={{ marginBottom: "3rem", padding: "1.25rem", background: "#131313", border: "1px solid rgba(161,79,31,0.25)", borderRadius: "8px" }}>
+        <nav aria-label="Jump to a machine profile" style={{ marginBottom: "1.5rem", padding: "0.75rem", background: "#131313", border: "1px solid rgba(161,79,31,0.25)", borderRadius: "8px" }}>
           <p style={{ fontWeight: 700, color: "#f2f2f2", marginBottom: "0.65rem" }}>Find your starting point</p>
           <ol style={{ paddingLeft: "1.25rem" }}>
             {everydayMachines.map((machine) => <li key={machine.id} style={{ marginBottom: "0.55rem" }}><a href={`#${machine.id}`} style={linkStyle}>{machine.name}</a></li>)}
           </ol>
         </nav>
-
-        {everydayMachines.map((machine, index) => <FiveMachineProfile key={machine.id} machine={machine} editorial={finalProfiles[index]} />)}
 
         {finalBuyingAdvice.map((section) => (
           <ArticleSection key={section.title} title={section.title}>
