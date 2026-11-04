@@ -48,6 +48,11 @@ for (const file of files) {
     checkedLinks++;
     assert.equal(isShoppingSuspended(href.replaceAll("&amp;", "&")), false, `${file}: ${href}`);
   }
+  if (file.endsWith("/blog/the-icon-la-marzocco-linea-micra-worth-the-obsession/index.html")) {
+    assert.ok(html.includes('name="robots" content="noindex,follow"'), "Retired guide must not be indexed");
+    assert.ok(html.includes('http-equiv="refresh" content="0;url=/blog/stepping-up-what-crossing-1000-mark-actually-buys-you"'), "Retired guide redirect missing");
+    continue;
+  }
   if (file.includes(`${resolve(root, "blog")}/`) && file !== join(root, "blog/index.html")) {
     articles++;
     assert.match(html, /<title>[^<]+<\/title>/, `Missing article title: ${file}`);

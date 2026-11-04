@@ -1,128 +1,100 @@
-import EditorialArticle, {
-  ArticleCard,
-  ArticleGrid,
-  ArticleList,
-  ArticleNote,
-  ArticleSection,
-  ComparisonTable,
-} from "@/components/EditorialArticle";
+import { Link } from "wouter";
+import EditorialArticle, { ArticleCard, ArticleGrid, ArticleList, ArticleSection, ComparisonTable } from "@/components/EditorialArticle";
+import { premiumGuide as guide, premiumMachines as machines, premiumImageRoot } from "@/data/premiumEspressoGuide";
+
+function ProductPhoto({ index, priority = false }: { index: number; priority?: boolean }) {
+  const machine = machines[index];
+  return (
+    <figure style={{ margin: "0 0 1.25rem" }}>
+      <img
+        src={`${premiumImageRoot}${machine.image}`}
+        alt={machine.alt}
+        width={machine.width}
+        height={machine.height}
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        style={{ display: "block", width: "100%", height: "auto", borderRadius: "8px" }}
+      />
+      <figcaption style={{ marginTop: "0.5rem", fontSize: "0.82rem", color: "#8f7d6e" }}>
+        {machine.name} · Supplied reference price: {machine.price}
+      </figcaption>
+    </figure>
+  );
+}
 
 export default function BlogPostSteppingUp1000() {
   return (
     <EditorialArticle
-      title="Stepping Up: What Crossing the $1,000 Mark Can Buy"
-      description="A practical explanation of dual boilers, PID control, steam power, pre-infusion, serviceability, workflow, and diminishing returns in prosumer espresso machines."
+      title={guide.title}
+      seoTitle={guide.seoTitle}
+      description={guide.description}
       category="Espresso Machines"
-      image="/images/prosumer-espresso-machine.jpg"
-      imageAlt="Prosumer dual-boiler espresso machine"
-      canonicalPath="/blog/stepping-up-what-crossing-1000-mark-actually-buys-you"
-      readTime="9 min read"
+      image={`${premiumImageRoot}${machines[0].image}`}
+      imageAlt={machines[0].alt}
+      imageFit="contain"
+      canonicalPath={guide.path}
+      dateModified={guide.modified}
+      readTime="10 min read"
+      editorialNote="Research-based comparison, not a hands-on test. Photographs and U.S. dollar reference prices supplied by Hard House Coffee; these are not live offers. Manufacturer descriptions inform the feature comparisons. Check the exact model, generation, included accessories and local warranty before buying."
       related={[
         { title: "Five Espresso Machines Worth Buying: From Budget-Friendly to Midrange", slug: "the-300-dollar-sweet-spot-real-espresso-at-home", image: "/images/five-espresso-machines/cafe-bellissimo-espresso-machine.jpeg", category: "Espresso Machines" },
-        { title: "Best Espresso Machines (2026 Guide): A Research-Based Comparison", slug: "best-espresso-machines-2026-guide-tested-and-ranked", image: "/images/espresso-tattooed-hands.jpg", category: "Gear Reviews" },
+        { title: "Breville Oracle Jet: A Researched Buying Guide", slug: "breville-oracle-jet-bes985-researched-guide", image: `${premiumImageRoot}${machines[0].image}`, category: "Gear Reviews" },
       ]}
-      ctaTitle="Upgrade the bottleneck, not the price tag."
-      ctaText="The meaningful upgrade is the one that improves your actual drink volume, control, or service needs."
-      ctaLabel="Compare Machine Guides"
+      ctaTitle="Choose the routine you want."
+      ctaText="Explore practical advice on coffee beans, milk and caring for your next machine."
     >
-      <ArticleSection title="The price threshold is only shorthand">
-        <p style={{ marginBottom: "1rem" }}>
-          There is no technical border at exactly $1,000. Prices vary by market, tax, bundles, and
-          time. The useful distinction is between compact entry-level machines and larger designs
-          that spend more on temperature control, steam capacity, construction, and serviceable
-          components.
-        </p>
-        <p>
-          A higher price can make the workflow easier to repeat, but it cannot replace a capable
-          grinder, fresh coffee, suitable water, or good puck preparation.
-        </p>
-      </ArticleSection>
+      <article aria-label="Eight espresso machines over $1,000 and under $3,000">
+        <p style={{ marginBottom: "0.8rem" }}>Spending more on espresso should make your mornings better—not give you a second job. These eight machines offer very different ways to get there, from a hands-on coffee-bar routine to a latte at the touch of a button.</p>
+        <p style={{ marginBottom: "1.1rem" }}>The first decision is not which machine looks most impressive. It is how much of the coffee-making you want to do yourself.</p>
+        <ProductPhoto index={0} priority />
 
-      <ArticleSection title="What the major features change">
-        <ArticleGrid>
-          <ArticleCard title="Dual boilers">
-            Separate brew and steam boilers allow simultaneous operation and reduce waiting
-            between extraction and milk preparation. This matters most for several milk drinks.
-          </ArticleCard>
-          <ArticleCard title="PID control">
-            Electronic temperature control can make brew settings easier to repeat. Display
-            precision does not guarantee identical temperature at every point in the system.
-          </ArticleCard>
-          <ArticleCard title="Pre-infusion and flow">
-            Gentle initial wetting or adjustable flow can change how the puck extracts. These
-            controls are useful only when dose, grind, and distribution are already consistent.
-          </ArticleCard>
-          <ArticleCard title="Steam capacity">
-            Larger boilers can provide faster, drier steam and recover more quickly. That is an
-            advantage for milk-drink volume, not necessarily for a single straight espresso.
-          </ArticleCard>
-        </ArticleGrid>
-      </ArticleSection>
+        <ArticleSection title="Eight machines at a glance">
+          <p>All eight include a grinder. The bigger differences are coffee preparation, milk handling and how much you want to be involved. Prices below are the supplied reference prices; tax, bundles and later offers may differ.</p>
+          <div role="region" aria-label="Eight-machine comparison; scroll horizontally on a narrow screen" tabIndex={0} style={{ maxWidth: "100%", overflowX: "auto" }}>
+            <div style={{ minWidth: "940px" }}>
+            <ComparisonTable headers={["Machine", "Reference price", "Daily routine", "Milk preparation", "Best fit"]} rows={machines.map((m) => [m.name, m.price, m.routine, m.milk, m.suited])} />
+            </div>
+          </div>
+        </ArticleSection>
 
-      <ArticleSection title="Buyer profiles">
-        <ComparisonTable
-          headers={["Buyer", "Useful upgrade", "Lower-priority feature", "Question to ask"]}
-          rows={[
-            ["Straight-espresso hobbyist", "Temperature control and repeatable flow", "Maximum steam power", "Is the grinder already good enough?"],
-            ["Milk-drink household", "Dual boilers and steam recovery", "Flow profiling", "How many drinks are made in sequence?"],
-            ["Frequent entertainer", "Water capacity, recovery, durable controls", "Small footprint", "Can the circuit and counter support it?"],
-            ["One quick morning drink", "Fast warm-up and simple cleaning", "Large boiler mass", "Will a compact machine be more practical?"],
-          ]}
-        />
-      </ArticleSection>
+        {machines.map((machine, index) => (
+          <div key={machine.id} id={machine.id} style={{ scrollMarginTop: "5rem" }}>
+            <ArticleSection title={`${index + 1}. ${machine.name}`} eyebrow={machine.subtitle}>
+              <p style={{ color: "#f2f2f2", fontWeight: 700, marginBottom: "1rem" }}>Reference price: {machine.price}</p>
+              <ProductPhoto index={index} />
+              {machine.paragraphs.map((p) => <p key={p} style={{ marginBottom: "0.9rem" }}>{p}</p>)}
+              <ArticleGrid>
+                <ArticleCard title="What stands out"><ArticleList items={machine.pros} /></ArticleCard>
+                <ArticleCard title="What to think about"><ArticleList items={machine.cons} /></ArticleCard>
+              </ArticleGrid>
+              <p style={{ marginBottom: "0.8rem" }}><strong>Who it suits:</strong> {machine.verdict}</p>
+              <p style={{ fontSize: "0.88rem" }}><a href={machine.source} target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>Manufacturer information for {machine.name}</a></p>
+            </ArticleSection>
+          </div>
+        ))}
 
-      <ArticleSection title="Group design and warm-up">
-        <p style={{ marginBottom: "1rem" }}>
-          Larger metal groups can provide thermal mass and stability, but they may need more time
-          and energy to reach an even operating temperature. Compact saturated or actively heated
-          designs can warm differently. Manufacturer “ready” indicators may refer to brew water,
-          not every cup-contact surface.
-        </p>
-        <p>
-          Match the warm-up behavior to your routine. A machine that is technically impressive but
-          rarely fully warmed can be less useful than a simpler machine that fits the morning.
-        </p>
-      </ArticleSection>
+        <ArticleSection title="Hands-on or fully automatic? Start here">
+          <p style={{ marginBottom: "0.9rem" }}>The Oracle Jet and Meraki keep you involved. You move the coffee handle, clear the basket and work with a milk pitcher. Breville takes over more of the coffee preparation; Meraki leaves tamping to you. Neither should be mistaken for a closed-front, one-button latte machine.</p>
+          <p>The other six brew internally. That is convenient, especially in a shared kitchen, but automatic does not mean maintenance-free. Milk equipment still needs cleaning, and every machine needs fresh water, coffee and routine care.</p>
+        </ArticleSection>
 
-      <ArticleSection title="Serviceability and ownership">
-        <ArticleList
-          items={[
-            "Confirm whether parts, diagrams, and authorized service are available in your region.",
-            "Check electrical requirements, dimensions, water-tank access, and whether direct plumbing is optional or required.",
-            "Use water that balances flavor with scale protection; follow the manufacturer rather than a generic descaling schedule.",
-            "Budget for group gaskets, shower screens, filters, cleaning detergent, and eventual pump or valve service.",
-            "A rotary pump can support quieter operation and plumbing on some machines; a vibration pump can be simpler and less expensive.",
-          ]}
-        />
-        <ArticleNote>
-          More boiler, more metal, and more controls also mean more heat, space, maintenance, and
-          replacement cost. Durability depends on design, water, care, and service access—not price
-          alone.
-        </ArticleNote>
-      </ArticleSection>
+        <ArticleSection title="Where would we start the shortlist?">
+          <ArticleList items={[
+            "For a coffee-bar ritual with preparation assistance: Breville Oracle Jet.",
+            "For hands-on espresso with weighing help: Meraki Gen 2.",
+            "For hot and iced milk drinks: compare Eletta Explore with PrimaDonna Aromatic before spending more.",
+            "For an automatic milk carafe plus a manual wand: Gaggia Accademia, after confirming the generation.",
+            "For a shared, screen-led coffee routine: compare TK-02, Bosch 800 VeroCafe and Jura E8 on the exact features you will use.",
+          ]} />
+          <p>There is no universal winner. A machine that makes your favorite drink easily is more useful than one with a longer feature list you rarely touch.</p>
+        </ArticleSection>
 
-      <ArticleSection title="When the upgrade is worth it">
-        <p style={{ marginBottom: "1rem" }}>
-          Upgrade when the current machine prevents you from making drinks in sequence, makes
-          temperature changes too difficult, lacks the steam capacity you need, or cannot be
-          serviced economically. Those are concrete workflow limits.
-        </p>
-        <p>
-          Do not upgrade because expensive equipment is assumed to make every shot better. If the
-          grinder is inconsistent, the water is unsuitable, or the coffee is stale, spending the
-          same money on those fundamentals can produce a larger practical improvement.
-        </p>
-      </ArticleSection>
-
-      <ArticleSection title="Examples, not a universal ranking">
-        <p>
-          Machines such as the Rancilio Silvia Pro X, compact dual-boiler models from Profitec, and
-          larger ECM machines illustrate different combinations of boiler design, size, pumps,
-          controls, and finish. Exact model specifications and prices change. Hard House Coffee
-          compares documented design and buyer scenarios here; it does not claim personal testing
-          or declare one model best for every buyer.
-        </p>
-      </ArticleSection>
+        <ArticleSection title="Leave room for the everyday costs">
+          <p style={{ marginBottom: "0.9rem" }}>Because all eight have integrated grinders, a separate grinder is not an automatic day-one purchase. Spend that money on beans you enjoy, suitable water and the cleaning supplies your machine actually calls for. Check what is included before adding pitchers, filters or coffee tools to the basket.</p>
+          <p style={{ marginBottom: "0.9rem" }}>Measure the space above the machine as well as the counter: you need to refill the beans and water. Look into local service, warranty coverage and return conditions before ordering. Those details matter more than a temporary discount.</p>
+          <p>Our <Link href="/blog/espresso-machine-cleaning-vs-descaling">cleaning and descaling guide</Link> and <Link href="/blog/espresso-water-hardness-alkalinity-guide">espresso-water guide</Link> explain the upkeep. If this price range feels like too much, our <Link href="/blog/the-300-dollar-sweet-spot-real-espresso-at-home">budget-to-midrange comparison</Link> offers a more affordable place to start.</p>
+        </ArticleSection>
+      </article>
     </EditorialArticle>
   );
 }

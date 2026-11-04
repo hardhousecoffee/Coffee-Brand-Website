@@ -27,11 +27,17 @@ Hard House Coffee is a consumer coffee blog, not a technical training website. I
 
 **How to apply:** Use short paragraphs, visible prices, accurate photographs, easy-to-find finishes and practical buying tradeoffs. Keep technical details only when they clarify a decision; condense educational advice and link to existing deeper guides instead of explaining machine operation step by step.
 
-Approximate reference prices in the owner’s supplied five-machine article are not instructions to overwrite more recently verified product prices.
+Owner-supplied article and shopping-screenshot prices are reference prices, not guarantees of current offers or instructions to overwrite more recently verified prices.
 
-**Why:** The owner explicitly distinguished the finished narrative from the existing verified pricing and required that newer verified prices be retained.
+**Why:** The owner explicitly distinguished supplied reference prices from verified current pricing in both the five-machine and eight-machine guides.
 
 **How to apply:** Preserve the finished supplied wording while keeping displayed prices, exact model identifiers and photograph associations tied to the verified product records. Do not treat a copy replacement as fresh pricing research.
+
+The standalone Linea Micra article was intentionally retired in favor of the eight-machine comparison under $3,000. Its archived source is not a request to restore it.
+
+**Why:** The owner explicitly requested removal from blog discovery and the sitemap, with the old address redirecting to the replacement comparison.
+
+**How to apply:** Preserve the redirect and do not reintroduce the standalone listing without approval. This does not prohibit discussing the Linea Micra within other relevant comparisons.
 
 Espresso-machine photography must show the actual model in professional, uncluttered lifestyle settings. Do not substitute attractive photographs of another model, plain-background cutouts, amateur snapshots, or generated product likenesses.
 

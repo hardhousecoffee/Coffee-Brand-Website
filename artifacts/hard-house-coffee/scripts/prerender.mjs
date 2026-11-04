@@ -12,7 +12,7 @@ console.log("Loading SSR bundle...");
 // ROUTES comes from src/routes.config.ts via the compiled server bundle.
 // This script does NOT maintain its own route list.
 // To add a new blog post, edit only src/routes.config.ts.
-const { render, ROUTES, AMAZON_SHOPPING_ENABLED } = await import(join(distServer, "entry-server.js"));
+const { render, ROUTES, AMAZON_SHOPPING_ENABLED, ARTICLE_REDIRECTS } = await import(join(distServer, "entry-server.js"));
 
 const template = readFileSync(join(distPublic, "index.html"), "utf-8");
 let successCount = 0;
@@ -104,6 +104,23 @@ if (!AMAZON_SHOPPING_ENABLED) {
 <title>Hard House Coffee</title><link rel="canonical" href="https://hardhousecoffee.com/">
 <meta http-equiv="refresh" content="0;url=/">
 <script>window.location.replace("/");</script></head><body></body></html>`);
+}
+
+// GitHub Pages-compatible redirects: retired articles are not active routes
+// and must not be added back to blog discovery or the sitemap.
+for (const [from, to] of Object.entries(ARTICLE_REDIRECTS)) {
+  const redirectDir = join(distPublic, from.slice(1));
+  mkdirSync(redirectDir, { recursive: true });
+  writeFileSync(join(redirectDir, "index.html"), `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espresso Machine Comparison | Hard House Coffee</title>
+<meta name="description" content="Continue to our eight-machine espresso comparison.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://hardhousecoffee.com${to}">
+<meta http-equiv="refresh" content="0;url=${to}">
+<script>window.location.replace(${JSON.stringify(to)});</script></head>
+<body><a href="${to}">Continue to the espresso machine comparison</a></body></html>`);
 }
 
 // Auto-generate sitemap.xml — derived from the same ROUTES list.

@@ -215,7 +215,7 @@ export const techniqueArticles: ResearchedArticle[] = [
     links: [
       { label: "Understand cleaning versus descaling", path: "/blog/espresso-machine-cleaning-vs-descaling" },
       { label: "Diagnose extraction before changing every variable", path: "/blog/espresso-sour-bitter-channeling-troubleshooting" },
-      { label: "Read the existing Linea Micra guide", path: "/blog/the-icon-la-marzocco-linea-micra-worth-the-obsession" },
+      { label: "Compare eight espresso machines under $3,000", path: "/blog/stepping-up-what-crossing-1000-mark-actually-buys-you" },
     ],
   },
   {

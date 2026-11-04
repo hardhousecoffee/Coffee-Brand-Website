@@ -6,16 +6,20 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { routes } from "@/routes.config";
 import NotFound from "@/pages/not-found";
+import { ARTICLE_REDIRECTS } from "@/config/articleRedirects";
+import RetiredArticleRedirect from "@/components/RetiredArticleRedirect";
 
 // Re-export ROUTES so scripts/prerender.mjs can import it from the server bundle.
 // prerender.mjs is the ONLY other file that references route paths — it derives
 // them from here, not from its own list.
 export { routes as ROUTES };
 export { AMAZON_SHOPPING_ENABLED } from "@/config/shopping";
+export { ARTICLE_REDIRECTS };
 
 function AppRoutes() {
   return (
     <Switch>
+      {Object.keys(ARTICLE_REDIRECTS).map((path) => <Route key={path} path={path} component={RetiredArticleRedirect} />)}
       {routes.map(({ path, component: Component }) => (
         <Route key={path} path={path} component={Component} />
       ))}

@@ -65,7 +65,7 @@ export default function BlogPost20000EspressoGear() {
       canonicalPath={luxuryFeature.path}
       readTime={luxuryFeature.readTime}
       related={[
-        { title: "La Marzocco Linea Micra: What the Premium Buys", slug: "the-icon-la-marzocco-linea-micra-worth-the-obsession", image: "/images/la-marzocco-linea-micra.jpg", category: "Espresso Machines" },
+        { title: "Best Espresso Machines Over $1,000: 8 Worth Buying Under $3,000", slug: "stepping-up-what-crossing-1000-mark-actually-buys-you", image: "/images/premium-espresso/01_Breville_Oracle_Jet/IMG_2426.jpeg", category: "Espresso Machines" },
         { title: "Inside the World Barista Championship – The Olympics of Caffeine", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship.jpg", category: "Coffee Culture" },
       ]}
     >
@@ -106,7 +106,7 @@ export default function BlogPost20000EspressoGear() {
 
       <ArticleSection title="What the price tag does—and does not—buy">
         {paragraphs(luxuryFeature.ownership)}
-        <p>For the wider buying context, read <Link href="/blog/stepping-up-what-crossing-1000-mark-actually-buys-you" style={{ color: "#d4b896", textDecoration: "underline" }}>what crossing the $1,000 mark actually buys</Link>. For a smaller premium home option, our <Link href="/blog/the-icon-la-marzocco-linea-micra-worth-the-obsession" style={{ color: "#d4b896", textDecoration: "underline" }}>Linea Micra guide</Link> offers a useful counterpoint to these larger machines.</p>
+        <p>For a more accessible home setup, our <Link href="/blog/stepping-up-what-crossing-1000-mark-actually-buys-you" style={{ color: "#d4b896", textDecoration: "underline" }}>eight-machine comparison under $3,000</Link> covers both hands-on and fully automatic options.</p>
       </ArticleSection>
 
       <ArticleSection title="Which kind of buyer should consider these machines?">

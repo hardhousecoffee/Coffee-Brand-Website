@@ -6,7 +6,6 @@ export const editorialCollections = {
     "best-espresso-machines-2026-guide-tested-and-ranked",
     "the-300-dollar-sweet-spot-real-espresso-at-home",
     "stepping-up-what-crossing-1000-mark-actually-buys-you",
-    "the-icon-la-marzocco-linea-micra-worth-the-obsession",
     "why-every-coffee-lover-needs-a-grinder-first-2026-guide",
   ],
   "espresso-gear": [
@@ -15,7 +14,6 @@ export const editorialCollections = {
     "why-every-coffee-lover-needs-a-grinder-first-2026-guide",
     "the-300-dollar-sweet-spot-real-espresso-at-home",
     "stepping-up-what-crossing-1000-mark-actually-buys-you",
-    "the-icon-la-marzocco-linea-micra-worth-the-obsession",
     "living-the-dream-mind-blowing-world-of-20000-espresso-gear",
   ],
   "coffee-knowledge": [

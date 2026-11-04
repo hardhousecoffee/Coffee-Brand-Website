@@ -10,6 +10,8 @@ import { routes } from "@/routes.config";
 import ShopRedirect from "@/components/ShopRedirect";
 import { AMAZON_SHOPPING_ENABLED } from "@/config/shopping";
 import { useBlogLocation } from "@/hooks/useBlogLocation";
+import { ARTICLE_REDIRECTS } from "@/config/articleRedirects";
+import RetiredArticleRedirect from "@/components/RetiredArticleRedirect";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,7 @@ function ScrollToTop() {
 function Router() {
   return (
     <Switch>
+      {Object.keys(ARTICLE_REDIRECTS).map((path) => <Route key={path} path={path} component={RetiredArticleRedirect} />)}
       {!AMAZON_SHOPPING_ENABLED && <Route path="/products" component={ShopRedirect} />}
       {!AMAZON_SHOPPING_ENABLED && <Route path="/products/:rest*" component={ShopRedirect} />}
       {routes.map(({ path, component: Component }) => (

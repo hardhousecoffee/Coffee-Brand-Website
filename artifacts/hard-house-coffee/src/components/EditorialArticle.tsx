@@ -45,7 +45,7 @@ export function ArticleSection({
   children: ReactNode;
 }) {
   return (
-    <section style={{ marginBottom: "3.25rem" }}>
+    <section style={{ marginBottom: "2.5rem" }}>
       {eyebrow && (
         <p
           style={{
@@ -74,7 +74,7 @@ export function ArticleSection({
       >
         {title}
       </h2>
-      <div style={{ color: "#b0a090", fontSize: "1.03rem", lineHeight: 1.85 }}>
+      <div style={{ color: "#b0a090", fontSize: "1.0625rem", lineHeight: 1.75 }}>
         {children}
       </div>
     </section>
@@ -110,7 +110,7 @@ export function ArticleCard({
       >
         {title}
       </h3>
-      <div style={{ color: "#b0a090", fontSize: "0.9rem", lineHeight: 1.7 }}>
+      <div style={{ color: "#b0a090", fontSize: "1rem", lineHeight: 1.7 }}>
         {children}
       </div>
     </div>
@@ -149,7 +149,7 @@ export function ArticleList({
       }}
     >
       {items.map((item) => (
-        <li key={item} style={{ marginBottom: "0.65rem", paddingLeft: "0.25rem" }}>
+        <li key={item} style={{ marginBottom: "0.5rem", paddingLeft: "0.25rem" }}>
           {item}
         </li>
       ))}
@@ -336,8 +336,8 @@ export default function EditorialArticle({
       </header>
 
       <main
-        className="max-w-3xl mx-auto px-6 py-16"
-        style={{ lineHeight: 1.85, fontSize: "1.03rem" }}
+        className="hhc-editorial-body max-w-3xl mx-auto px-6 py-10"
+        style={{ lineHeight: 1.75, fontSize: "1.0625rem" }}
       >
         <AuthorByline />
         <p
@@ -345,7 +345,7 @@ export default function EditorialArticle({
             color: "#8f7d6e",
             fontSize: "0.78rem",
             lineHeight: 1.65,
-            marginBottom: "2.5rem",
+            marginBottom: "1.5rem",
           }}
         >
           {editorialNote ?? <>Editorial note: Hard House Coffee separates researched guidance from hands-on testing.

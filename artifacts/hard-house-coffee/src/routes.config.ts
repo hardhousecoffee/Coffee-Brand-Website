@@ -14,7 +14,6 @@ import BlogPostColdBrew from "@/pages/BlogPostColdBrew";
 import BlogPostCoffeeOrigins from "@/pages/BlogPostCoffeeOrigins";
 import BlogPost300DollarEspresso from "@/pages/BlogPost300DollarEspresso";
 import BlogPostSteppingUp1000 from "@/pages/BlogPostSteppingUp1000";
-import BlogPostLaMarzoccoLinea from "@/pages/BlogPostLaMarzoccoLinea";
 import BlogPost20000EspressoGear from "@/pages/BlogPost20000EspressoGear";
 import BlogPostSeattleCoffeeScene from "@/pages/BlogPostSeattleCoffeeScene";
 import BlogPostLACoffeeScene from "@/pages/BlogPostLACoffeeScene";
@@ -71,7 +70,6 @@ const allRoutes: RouteConfig[] = [
   { path: "/blog/ethiopia-vs-colombia-a-complete-coffee-origin-guide",      component: BlogPostCoffeeOrigins,        changefreq: "monthly", priority: "0.8" },
   { path: "/blog/the-300-dollar-sweet-spot-real-espresso-at-home",          component: BlogPost300DollarEspresso,    changefreq: "monthly", priority: "0.8" },
   { path: "/blog/stepping-up-what-crossing-1000-mark-actually-buys-you",    component: BlogPostSteppingUp1000,       changefreq: "monthly", priority: "0.8" },
-  { path: "/blog/the-icon-la-marzocco-linea-micra-worth-the-obsession",     component: BlogPostLaMarzoccoLinea,      changefreq: "monthly", priority: "0.8" },
   { path: "/blog/living-the-dream-mind-blowing-world-of-20000-espresso-gear", component: BlogPost20000EspressoGear,  changefreq: "monthly", priority: "0.8" },
   { path: "/blog/seattle-deep-roots-emerald-city-coffee-scene",             component: BlogPostSeattleCoffeeScene,  changefreq: "monthly", priority: "0.8" },
   { path: "/blog/los-angeles-old-hollywood-glamour-meets-new-wave",         component: BlogPostLACoffeeScene,        changefreq: "monthly", priority: "0.8" },
