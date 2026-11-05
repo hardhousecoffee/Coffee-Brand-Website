@@ -42,7 +42,7 @@ export default function BlogPost2026EspressoGuide() {
       canonicalPath="/blog/best-espresso-machines-for-beginners-2026-guide"
       readTime="8 min read"
       related={[
-        { title: "Best Espresso Machines (2026 Guide): A Research-Based Comparison", slug: "best-espresso-machines-2026-guide-tested-and-ranked", image: "/images/espresso-tattooed-hands.jpg", category: "Gear Reviews" },
+        { title: "Best Home Espresso Machines: A Practical Comparison", slug: "best-espresso-machines-2026-guide-tested-and-ranked", image: "/images/espresso-tattooed-hands.jpg", category: "Gear Reviews" },
         { title: "Why Every Coffee Lover Needs a Grinder First", slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide", image: "/images/coffee-grinder-beans.png", category: "Coffee Culture" },
       ]}
       ctaTitle="Build a routine you will keep using."

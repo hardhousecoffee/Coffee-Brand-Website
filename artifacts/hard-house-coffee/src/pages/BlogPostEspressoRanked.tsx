@@ -11,7 +11,7 @@ import EditorialArticle, {
 export default function BlogPostEspressoRanked() {
   return (
     <EditorialArticle
-      title="Best Espresso Machines (2026 Guide): A Research-Based Comparison"
+      title="Best Home Espresso Machines: A Practical Comparison"
       description="A practical comparison of home espresso machines by workflow, temperature control, grinder needs, maintenance, and who each type suits."
       category="Gear Reviews"
       image="/images/espresso-tattooed-hands.jpg"

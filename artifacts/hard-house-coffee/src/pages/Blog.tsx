@@ -16,7 +16,7 @@ const posts = [
   {
     id: 1,
     category: "Gear Reviews",
-    title: "Best Espresso Machines (2026 Guide): A Research-Based Comparison",
+    title: "Best Home Espresso Machines: A Practical Comparison",
     desc: "Compare home espresso machines by workflow, temperature approach, grinder needs, maintenance, and the buyer each design suits.",
     image: "/images/espresso-tattooed-hands.jpg",
     readTime: "8 min read",
