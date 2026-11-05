@@ -970,7 +970,7 @@ export default function Home() {
               {
                 href: "/blog/best-espresso-machines-for-beginners-2026-guide",
                 image: "/images/espresso-pour-cup.jpg",
-                title: "Best Espresso Machines for Beginners (2026 Guide)",
+                title: "Best Espresso Machines for Beginners: Your Guide to Choosing the Right One",
                 desc: "Not sure which machine to buy first? Three solid picks that won't overwhelm you, with honest takes on what actually matters before you spend your money.",
               },
               {

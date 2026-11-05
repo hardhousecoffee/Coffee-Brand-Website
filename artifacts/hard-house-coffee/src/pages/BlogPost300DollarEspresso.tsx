@@ -55,7 +55,7 @@ export default function BlogPost300DollarEspresso() {
       readTime="12 min read"
       editorialNote={<>Research-based buying guide, not a hands-on group test. Specifications, prices and availability checked {guide.checked}. See our <Link href="/about#methodology" style={linkStyle}>editorial methodology</Link>. Photographs supplied by Hard House Coffee.</>}
       related={[
-        { title: "Best Espresso Machines for Beginners (2026 Guide)", slug: "best-espresso-machines-for-beginners-2026-guide", image: "/images/espresso-pour-cup.jpg", category: "Espresso Machines" },
+        { title: "Best Espresso Machines for Beginners: Your Guide to Choosing the Right One", slug: "best-espresso-machines-for-beginners-2026-guide", image: "/images/espresso-pour-cup.jpg", category: "Espresso Machines" },
         { title: "Why Every Coffee Lover Needs a Grinder First", slug: "why-every-coffee-lover-needs-a-grinder-first-2026-guide", image: "/images/coffee-grinder-beans.png", category: "Coffee Culture" },
       ]}
       ctaTitle="Build the setup around your routine."

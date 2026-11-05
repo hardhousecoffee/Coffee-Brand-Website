@@ -21,7 +21,7 @@ export default function BlogPostGrinder() {
       readTime="9 min read"
       related={[
         { title: "Best Espresso Machines (2026 Guide): A Research-Based Comparison", slug: "best-espresso-machines-2026-guide-tested-and-ranked", image: "/images/espresso-tattooed-hands.jpg", category: "Gear Reviews" },
-        { title: "Best Espresso Machines for Beginners (2026 Guide)", slug: "best-espresso-machines-for-beginners-2026-guide", image: "/images/espresso-pour-cup.jpg", category: "Espresso Machines" },
+        { title: "Best Espresso Machines for Beginners: Your Guide to Choosing the Right One", slug: "best-espresso-machines-for-beginners-2026-guide", image: "/images/espresso-pour-cup.jpg", category: "Espresso Machines" },
       ]}
       ctaTitle="Put precision where it changes the cup."
       ctaText="The right grinder is the part of the setup that makes recipe changes visible and repeatable."

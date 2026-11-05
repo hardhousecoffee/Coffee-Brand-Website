@@ -86,7 +86,7 @@ const posts = [
   {
     id: 10,
     category: "Espresso Machines",
-    title: "Best Espresso Machines for Beginners (2026 Guide)",
+    title: "Best Espresso Machines for Beginners: Your Guide to Choosing the Right One",
     desc: "Compare beginner setups by total cost, grinder needs, milk workflow, maintenance, learning curve, and support.",
     image: "/images/espresso-pour-cup.jpg",
     readTime: "8 min read",

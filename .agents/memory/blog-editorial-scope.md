@@ -33,6 +33,12 @@ When the owner requests a light editorial pass, simplify stiff or technical word
 
 **How to apply:** Explain necessary terms in ordinary language and connect features to everyday coffee-making. Preserve the article structure, useful details, facts, references, images, links and unrelated articles.
 
+For the beginner espresso guide replacement, the supplied package explicitly preserves the existing SEO title, description, structured data and hero metadata while changing the visible article title and body. Its supplied wording is to remain unchanged.
+
+**Why:** The owner's replacement ZIP requests exact copy and preservation of the existing metadata rather than a broader SEO or editorial rewrite.
+
+**How to apply:** Do not treat the old year-bearing SEO title or schema headline as an accidental omission. Keep the existing URL and do not shorten the supplied introduction without new approval.
+
 Keep article introductions brief and simple, then show the actual machines or products immediately. Keep spacing compact across article pages, the blog listing and every category tab, on mobile portrait and landscape as well as laptop and desktop.
 
 **Why:** The owner repeated that introductions and empty spacing were too long, specifically identifying the five-machine and eight-machine guides. The owner authorized shortening their previously supplied opening copy.
