@@ -39,6 +39,12 @@ For the beginner espresso guide replacement, the supplied package explicitly pre
 
 **How to apply:** Do not treat the old year-bearing SEO title or schema headline as an accidental omission. Keep the existing URL and do not shorten the supplied introduction without new approval.
 
+The owner-approved World Barista Championship replacement must also retain the supplied wording verbatim, including its longer introduction, FAQ and research note.
+
+**Why:** The owner explicitly prohibited shortening, expanding, rewriting or conducting additional research for this replacement.
+
+**How to apply:** Do not apply the general compact-introduction or editorial-polish rules to this supplied copy without new approval. Its authorization does not include the separately proposed dark-roast, grinder or external-link changes.
+
 Keep article introductions brief and simple, then show the actual machines or products immediately. Keep spacing compact across article pages, the blog listing and every category tab, on mobile portrait and landscape as well as laptop and desktop.
 
 **Why:** The owner repeated that introductions and empty spacing were too long, specifically identifying the five-machine and eight-machine guides. The owner authorized shortening their previously supplied opening copy.

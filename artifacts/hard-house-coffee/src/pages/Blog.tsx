@@ -206,10 +206,10 @@ const posts = [
   {
     id: 23,
     category: "Coffee Culture",
-    title: "Inside the World Barista Championship – The Olympics of Caffeine",
-    desc: "15 minutes. 4 espressos. 4 milk drinks. 4 signature beverages. An inside look at what it takes to compete at the very top of the coffee world.",
+    title: "World Barista Championship: History, Rules, and How to Qualify",
+    desc: "Discover the history of the World Barista Championship, how baristas qualify, competition rules, judging criteria, and how coffee fans can watch.",
     image: "/images/world-barista-championship.jpg",
-    readTime: "6 min read",
+    readTime: "15 min read",
     featured: false,
     slug: "inside-world-barista-championship-olympics-of-caffeine",
   },
