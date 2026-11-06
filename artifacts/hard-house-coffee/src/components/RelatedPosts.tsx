@@ -4,6 +4,7 @@ interface RelatedPost {
   title: string;
   slug: string;
   image: string;
+  imageAlt?: string;
   category: string;
 }
 
@@ -45,7 +46,7 @@ export default function RelatedPosts({ posts }: { posts: RelatedPost[] }) {
               <div style={{ aspectRatio: "16/9", overflow: "hidden" }}>
                 <img
                   src={post.image}
-                  alt={post.title}
+                  alt={post.imageAlt ?? post.title}
                   style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.65)" }}
                 />
               </div>

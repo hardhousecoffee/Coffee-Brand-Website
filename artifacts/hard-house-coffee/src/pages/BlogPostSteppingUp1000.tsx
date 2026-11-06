@@ -58,7 +58,7 @@ export default function BlogPostSteppingUp1000() {
                 <ArticleCard title="What to think about"><ArticleList items={machine.cons} /></ArticleCard>
               </ArticleGrid>
               <p style={{ marginBottom: "0.8rem" }}><strong>Who it suits:</strong> {machine.verdict}</p>
-              <p style={{ fontSize: "0.88rem" }}><a href={machine.source} target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>Manufacturer information for {machine.name}</a></p>
+              <p style={{ fontSize: "0.88rem" }}><span data-article-reference={machine.source} style={{ color: "#d4b896", textDecoration: "underline" }}>Manufacturer information for {machine.name}</span></p>
             </ArticleSection>
           </div>
         ))}

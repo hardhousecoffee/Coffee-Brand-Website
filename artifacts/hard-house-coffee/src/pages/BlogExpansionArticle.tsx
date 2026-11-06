@@ -36,7 +36,7 @@ export default function BlogExpansionArticle() {
         <ul style={{ paddingLeft: "1.35rem" }}>
           {article.sources.map((source) => (
             <li key={source.url} style={{ marginBottom: "0.75rem", overflowWrap: "anywhere" }}>
-              <a href={source.url} target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>{source.label}</a>
+              <span data-article-reference={source.url} style={{ color: "#d4b896", textDecoration: "underline" }}>{source.label}</span>
             </li>
           ))}
         </ul>

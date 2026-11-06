@@ -33,17 +33,17 @@ When the owner requests a light editorial pass, simplify stiff or technical word
 
 **How to apply:** Explain necessary terms in ordinary language and connect features to everyday coffee-making. Preserve the article structure, useful details, facts, references, images, links and unrelated articles.
 
-For the beginner espresso guide replacement, the supplied package explicitly preserves the existing SEO title, description, structured data and hero metadata while changing the visible article title and body. Its supplied wording is to remain unchanged.
+The beginner espresso guide's supplied wording must remain unchanged. The owner subsequently authorized aligning its SEO title and structured-data headline with its approved evergreen visible headline.
 
-**Why:** The owner's replacement ZIP requests exact copy and preservation of the existing metadata rather than a broader SEO or editorial rewrite.
+**Why:** The replacement ZIP required exact copy and initially retained old metadata; the owner later explicitly approved correcting only the outdated headline metadata.
 
-**How to apply:** Do not treat the old year-bearing SEO title or schema headline as an accidental omission. Keep the existing URL and do not shorten the supplied introduction without new approval.
+**How to apply:** Do not restore the old year-bearing SEO headline. Preserve years in the existing URL, other metadata, photographs and article wording. Do not shorten the supplied introduction without new approval.
 
 The owner-approved World Barista Championship replacement must also retain the supplied wording verbatim, including its longer introduction, FAQ and research note.
 
 **Why:** The owner explicitly prohibited shortening, expanding, rewriting or conducting additional research for this replacement.
 
-**How to apply:** Do not apply the general compact-introduction or editorial-polish rules to this supplied copy without new approval. Its authorization does not include the separately proposed dark-roast, grinder or external-link changes.
+**How to apply:** Do not apply the general compact-introduction or editorial-polish rules to this supplied copy without new approval. Separately authorized headline and hyperlink work must not modify the completed World Barista copy.
 
 Keep article introductions brief and simple, then show the actual machines or products immediately. Keep spacing compact across article pages, the blog listing and every category tab, on mobile portrait and landscape as well as laptop and desktop.
 

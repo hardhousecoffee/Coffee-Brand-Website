@@ -12,7 +12,7 @@ import EditorialArticle, {
 export default function BlogPostGrinder() {
   return (
     <EditorialArticle
-      title="Why Every Coffee Lover Needs a Grinder First (2026 Guide)"
+      title="Why Every Coffee Lover Needs a Grinder First"
       description="Understand burr types, adjustment range, retention, workflow, cleaning, and espresso versus filter suitability before buying a coffee grinder."
       category="Coffee Culture"
       image="/images/coffee-grinder-closeup.jpg"

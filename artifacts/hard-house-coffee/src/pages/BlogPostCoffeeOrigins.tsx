@@ -19,7 +19,7 @@ export default function BlogPostCoffeeOrigins() {
       canonicalPath="/blog/ethiopia-vs-colombia-a-complete-coffee-origin-guide"
       readTime="8 min read"
       related={[
-        { title: "Top 5 Dark Roast Beans for Espresso in 2026", slug: "top-5-dark-roast-beans-for-espresso-in-2026", image: "/images/coffee-cheers.jpg", category: "Bean Picks" },
+        { title: "Best Dark Roast Coffee Beans for Espresso: What to Look For", slug: "top-5-dark-roast-beans-for-espresso-in-2026", image: "/images/coffee-cheers.jpg", imageAlt: "Top 5 Dark Roast Beans for Espresso in 2026", category: "Bean Picks" },
         { title: "The Art of the Perfect Pour-Over", slug: "the-art-of-the-perfect-pour-over", image: "/images/pour-over-kettle.jpg", category: "Brewing Guides" },
       ]}
       ctaTitle="Taste the differences without turning them into stereotypes."

@@ -46,7 +46,7 @@ function MachineProfile({ machine, index }: { machine: LuxuryMachine; index: num
         ))}
       </dl>
       <p style={{ fontSize: "0.84rem", lineHeight: 1.6 }}>
-        Technical reference: <a href={machine.source} target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>{machine.sourceLabel}</a>.
+        Technical reference: <span data-article-reference={machine.source} style={{ color: "#d4b896", textDecoration: "underline" }}>{machine.sourceLabel}</span>.
       </p>
     </section>
   );
@@ -118,7 +118,7 @@ export default function BlogPost20000EspressoGear() {
 
       <ArticleSection title="Research and price references">
         <p style={{ marginBottom: "1rem" }}>Checked {luxuryFeature.checked}. Manufacturer references appear beside each profile. U.S. advertised prices were cross-checked against Prima Coffee (Slayer and KB90), Pro Coffee Gear (Spirit Duette, Maverick and YOU), Clive Coffee and Espresso Parts (GS3 MP), Seattle Coffee Gear (Bicocca), and Voltage Coffee Supply (E1 Prima EXP). The GS3 figures are for the Manual Paddle version; the Maverick range separates two-group volumetric and gravimetric configurations.</p>
-        <p style={{ marginBottom: "1rem" }}>Additional technical documentation: <a href="https://www.sanremomachines.com/wp-content/uploads/2026/09/YOU_09_US_2026-07-31_US.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>Sanremo YOU U.S. technical sheet</a>. Where retailer and manufacturer specifications conflict, this feature uses manufacturer figures or identifies the regional/configuration question rather than combining incompatible numbers.</p>
+        <p style={{ marginBottom: "1rem" }}>Additional technical documentation: <span data-article-reference="https://www.sanremomachines.com/wp-content/uploads/2026/09/YOU_09_US_2026-07-31_US.pdf" style={{ color: "#d4b896", textDecoration: "underline" }}>Sanremo YOU U.S. technical sheet</span>. Where retailer and manufacturer specifications conflict, this feature uses manufacturer figures or identifies the regional/configuration question rather than combining incompatible numbers.</p>
         <p style={{ fontSize: "0.88rem", color: "#8f7d6e" }}>Published base-machine prices do not establish the cost of the custom finishes shown in a photograph. Confirm configuration, installation requirements and the final quotation with the supplier.</p>
       </ArticleSection>
     </EditorialArticle>

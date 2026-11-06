@@ -67,7 +67,7 @@ export default function BlogPostArtOfRoast() {
 <RecommendedBeans variant="roasting" />
         <RelatedPosts posts={[
           { title: "The Magic of Processing – How Washing and Drying Shapes Flavor", slug: "the-magic-of-processing-washing-and-drying-shapes-flavor", image: "/images/coffee-natural-processing.jpg", category: "Bean Picks" },
-          { title: "Top 5 Dark Roast Beans for Espresso in 2026", slug: "top-5-dark-roast-beans-for-espresso-in-2026", image: "/images/coffee-cheers.jpg", category: "Bean Picks" },
+          { title: "Best Dark Roast Coffee Beans for Espresso: What to Look For", slug: "top-5-dark-roast-beans-for-espresso-in-2026", image: "/images/coffee-cheers.jpg", imageAlt: "Top 5 Dark Roast Beans for Espresso in 2026", category: "Bean Picks" },
         ]} />
 
         <div className="mt-12 p-6 text-center" style={{ background: "#131313", borderRadius: "8px", border: "1px solid rgba(161,79,31,0.25)" }}>

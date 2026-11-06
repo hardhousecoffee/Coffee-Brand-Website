@@ -48,7 +48,7 @@ export default function FiveMachineProfile({ machine, editorial }: { machine: Ev
         <p style={{ marginBottom: "1.1rem" }}>{editorial.buyer}</p>
         <h3 style={{ color: "#f2f2f2", fontWeight: 700, margin: "1.5rem 0 0.6rem" }}>Our Verdict</h3>
         {editorial.verdict.map((text) => <p key={text} style={{ marginBottom: "1.1rem" }}>{text}</p>)}
-        <p style={{ fontSize: "0.85rem" }}>Research reference: <a href={machine.source} target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>{machine.sourceName}</a>.</p>
+        <p style={{ fontSize: "0.85rem" }}>Research reference: <span data-article-reference={machine.source} style={{ color: "#d4b896", textDecoration: "underline" }}>{machine.sourceName}</span>.</p>
       </ArticleSection>
     </div>
   );

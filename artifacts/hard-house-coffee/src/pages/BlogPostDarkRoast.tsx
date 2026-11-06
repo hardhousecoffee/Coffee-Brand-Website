@@ -11,7 +11,7 @@ import EditorialArticle, {
 export default function BlogPostDarkRoast() {
   return (
     <EditorialArticle
-      title="Top 5 Dark Roast Beans for Espresso in 2026"
+      title="Best Dark Roast Coffee Beans for Espresso: What to Look For"
       description="How to choose dark-roast espresso beans by roast character, origin, freshness, flavor, machine, grinder, and use case."
       category="Bean Picks"
       image="/images/coffee-cheers.jpg"

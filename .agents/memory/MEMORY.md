@@ -7,4 +7,5 @@
 - [Touch-hover responsive overrides](touch-hover-responsive-overrides.md) — touch Safari can persist hover styles; mobile resets must follow and override generic hover transforms
 - [Amazon shop suspension](amazon-shop-suspension.md) — reversible closure redirects old shop URLs home; preserve articles, catalog, and Printify links; publishing needs separate approval.
 - [Blog editorial scope](blog-editorial-scope.md) — development-only article work; preserve site shell and catalog, require distinct intent and transparent research evidence.
+- [Outbound link policy](outbound-link-policy.md) — approved non-affiliate references can lose clickability; preserve citations, brand socials, YouTube, business links and services.
 - [Manufacturer availability](manufacturer-availability-verification.md) — extracted pages can expose hidden stock/discontinued states; verify consequential availability claims on the visible page.

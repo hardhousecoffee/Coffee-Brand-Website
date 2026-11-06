@@ -33,8 +33,8 @@ export default function BlogPost2026EspressoGuide() {
   return (
     <EditorialArticle
       title="Best Espresso Machines for Beginners: Your Guide to Choosing the Right One"
-      seoTitle="Best Espresso Machines for Beginners (2026 Guide) | Hard House Coffee"
-      schemaHeadline="Best Espresso Machines for Beginners (2026 Guide)"
+      seoTitle="Best Espresso Machines for Beginners: Your Guide to Choosing the Right One | Hard House Coffee"
+      schemaHeadline="Best Espresso Machines for Beginners: Your Guide to Choosing the Right One"
       description="A beginner-friendly comparison of espresso machine setups by total cost, learning curve, grinder needs, milk workflow, maintenance, and support."
       category="Espresso Machines"
       image="/images/espresso-pour-cup.jpg"

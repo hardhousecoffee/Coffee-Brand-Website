@@ -11,6 +11,7 @@ export interface EditorialRelatedPost {
   title: string;
   slug: string;
   image: string;
+  imageAlt?: string;
   category: string;
 }
 

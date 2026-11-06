@@ -66,9 +66,9 @@ export default function BlogPostOnyxCoffeeLab() {
           <p>
             Our <Link href="/blog/espresso-water-hardness-alkalinity-guide" style={{ color: "#d4b896", textDecoration: "underline" }}>water hardness and alkalinity guide</Link>{" "}
             explains what to test. For the sourcing terminology, see{" "}
-            <a href="https://onyxcoffeelab.com/en-int/products/costa-rica-las-lajas-diamond-natural" target="_blank" rel="noopener noreferrer" style={{ color: "#d4b896", textDecoration: "underline" }}>
+            <span data-article-reference="https://onyxcoffeelab.com/en-int/products/costa-rica-las-lajas-diamond-natural" style={{ color: "#d4b896", textDecoration: "underline" }}>
               Onyx’s own explanation of green-coffee costs
-            </a>. Product information and seasonal availability can change.
+            </span>. Product information and seasonal availability can change.
           </p>
         </Section>
 

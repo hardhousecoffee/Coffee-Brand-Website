@@ -36,7 +36,8 @@ const posts = [
   {
     id: 3,
     category: "Bean Picks",
-    title: "Top 5 Dark Roast Beans for Espresso in 2026",
+    title: "Best Dark Roast Coffee Beans for Espresso: What to Look For",
+    imageAlt: "Top 5 Dark Roast Beans for Espresso in 2026",
     desc: "Choose a dark-roast profile by roast character, freshness, origin transparency, espresso behavior, and the drink you make.",
     image: "/images/coffee-cheers.jpg",
     readTime: "8 min read",
@@ -66,7 +67,8 @@ const posts = [
   {
     id: 7,
     category: "Coffee Culture",
-    title: "Why Every Coffee Lover Needs a Grinder First (2026 Guide)",
+    title: "Why Every Coffee Lover Needs a Grinder First",
+    imageAlt: "Why Every Coffee Lover Needs a Grinder First (2026 Guide)",
     desc: "Compare burrs, adjustment range, retention, noise, cleaning, and espresso-versus-filter workflow before buying a grinder.",
     image: "/images/coffee-grinder-beans.png",
     readTime: "9 min read",
@@ -449,7 +451,7 @@ export default function Blog() {
               >
                 <img
                   src={featured.image}
-                  alt={featured.title}
+                  alt={featured.imageAlt ?? featured.title}
                   className="w-full h-full object-cover"
                   style={{ filter: "brightness(0.75)" }}
                 />
@@ -509,7 +511,7 @@ export default function Blog() {
               <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
                 <img
                   src={post.image}
-                  alt={post.title}
+                  alt={post.imageAlt ?? post.title}
                   className="w-full h-full object-cover"
                   style={{ transition: "transform 0.5s ease" }}
                   onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.07)")}
