@@ -15,7 +15,7 @@ paths = [ "/" ]
 localPort = 18347
 
 [services.development]
-run = "pnpm --filter @workspace/hard-house-coffee run dev"
+run = "pnpm --filter @workspace/hard-house-coffee exec node serve-static.mjs"
 
 [services.production]
 build = [ "pnpm", "--filter", "@workspace/hard-house-coffee", "run", "build" ]

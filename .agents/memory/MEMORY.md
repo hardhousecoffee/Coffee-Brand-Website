@@ -9,3 +9,4 @@
 - [Blog editorial scope](blog-editorial-scope.md) — development-only article work; preserve site shell and catalog, require distinct intent and transparent research evidence.
 - [Outbound link policy](outbound-link-policy.md) — approved non-affiliate references can lose clickability; preserve citations, brand socials, YouTube, business links and services.
 - [Manufacturer availability](manufacturer-availability-verification.md) — extracted pages can expose hidden stock/discontinued states; verify consequential availability claims on the visible page.
+- [Independent preview review](independent-preview-review.md) — external text readers need prerendered pages, not the generic development HTML fallback.
