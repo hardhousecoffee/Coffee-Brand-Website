@@ -584,3 +584,17 @@ mtime_ms = 1793560408742
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/b693dbd4-5e6e-404c-a557-6de4a549317b/264f2c64-80bc-4646-b4ce-9e164d3d9b47"
 storage_version_token = "1793560668264547"
 content_type = "image/jpeg"
+
+[[outputs]]
+id = "k0-Br-BoQE8AZISlEzkHj"
+uri = "file://artifacts/hard-house-coffee/public/images/world-barista-championship-clean.webp"
+type = "image"
+title = "World Barista image — duplicate announcement removed"
+description = "The lower announcement is removed. The original upper trophy logo and World Barista Championship wordmark are preserved."
+logical_id = "c98430bc-914a-43d8-be98-9a2e0a5b4828"
+content_hash = "sha256:78892f30b72caf706ada2bf2b893575c603b6bf1caa46eb2c40a99b2f10907b0"
+size = 1493524
+mtime_ms = 1793939647151
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3813ce74-a858-4e6b-9c05-d6d604a93078/c98430bc-914a-43d8-be98-9a2e0a5b4828/dc672df0-ba32-4670-ac32-1cbdcdbe39f6"
+storage_version_token = "1793939714999586"
+content_type = "image/webp"

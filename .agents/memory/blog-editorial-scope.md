@@ -45,11 +45,11 @@ The owner-approved World Barista Championship replacement must also retain the s
 
 **How to apply:** Do not apply the general compact-introduction or editorial-polish rules to this supplied copy without new approval. Separately authorized headline and hyperlink work must not modify the completed World Barista copy.
 
-For the World Barista artwork, remove only the visible “2026”; preserve the photograph, logo and remaining wording.
+For the World Barista artwork, omit both the year and the lower “World Barista Championship: Rules & Regulations Now Available” announcement. Keep the upper official trophy logo and World Barista Championship wordmark.
 
-**Why:** The owner flagged the year embedded in the image and explicitly approved “Remove the year only.”
+**Why:** After approving removal of the year, the owner separately requested removal of the lower announcement because the championship name appeared twice.
 
-**How to apply:** Keep this limited artwork correction separate from the protected article wording. Do not reintroduce the year when reusing the artwork.
+**How to apply:** Keep this artwork correction separate from the protected article wording. Preserve the photo and upper branding; do not reintroduce the year or duplicate announcement when reusing the artwork.
 
 Keep article introductions brief and simple, then show the actual machines or products immediately. Keep spacing compact across article pages, the blog listing and every category tab, on mobile portrait and landscape as well as laptop and desktop.
 
