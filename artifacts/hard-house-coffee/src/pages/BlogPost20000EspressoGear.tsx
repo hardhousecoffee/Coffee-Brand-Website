@@ -66,7 +66,7 @@ export default function BlogPost20000EspressoGear() {
       readTime={luxuryFeature.readTime}
       editorialNote={luxuryFeature.disclosure}
       related={[
-        { title: "Best Espresso Machines Over $1,000: 8 Worth Buying Under $3,000", slug: "stepping-up-what-crossing-1000-mark-actually-buys-you", image: "/images/premium-espresso/01_Breville_Oracle_Jet/IMG_2426.jpeg", category: "Espresso Machines" },
+        { title: "Best Espresso Machines Over $1,000: 8 Worth Buying Under $3,000", slug: "stepping-up-what-crossing-1000-mark-actually-buys-you", image: "/images/premium-espresso/02_Terra_Kaffe_TK-02/IMG_2427.jpeg", category: "Espresso Machines" },
         { title: "World Barista Championship: History, Rules, and How to Qualify", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship-yearless.webp", category: "Coffee Culture" },
       ]}
     >

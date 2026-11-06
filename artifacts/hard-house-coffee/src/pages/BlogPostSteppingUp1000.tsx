@@ -29,8 +29,8 @@ export default function BlogPostSteppingUp1000() {
       seoTitle={guide.seoTitle}
       description={guide.description}
       category="Espresso Machines"
-      image={`${premiumImageRoot}${machines[0].image}`}
-      imageAlt={machines[0].alt}
+      image={`${premiumImageRoot}${machines[1].image}`}
+      imageAlt={machines[1].alt}
       imageFit="contain"
       canonicalPath={guide.path}
       dateModified={guide.modified}
