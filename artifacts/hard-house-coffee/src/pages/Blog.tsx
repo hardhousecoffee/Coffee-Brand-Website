@@ -210,7 +210,7 @@ const posts = [
     category: "Coffee Culture",
     title: "World Barista Championship: History, Rules, and How to Qualify",
     desc: "Discover the history of the World Barista Championship, how baristas qualify, competition rules, judging criteria, and how coffee fans can watch.",
-    image: "/images/world-barista-championship.jpg",
+    image: "/images/world-barista-championship-yearless.webp",
     readTime: "15 min read",
     featured: false,
     slug: "inside-world-barista-championship-olympics-of-caffeine",

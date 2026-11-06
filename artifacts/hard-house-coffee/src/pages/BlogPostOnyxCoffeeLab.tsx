@@ -75,7 +75,7 @@ export default function BlogPostOnyxCoffeeLab() {
 <RecommendedBeans variant="specialty" />
         <RelatedPosts posts={[
           { title: "Beyond the Supermarket – Notable Specialty Coffee Brands", slug: "beyond-the-supermarket-navigating-notable-specialty-coffee-brands", image: "/images/specialty-coffee-brands.jpg", category: "Bean Picks" },
-          { title: "World Barista Championship: History, Rules, and How to Qualify", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship.jpg", category: "Coffee Culture" },
+          { title: "World Barista Championship: History, Rules, and How to Qualify", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship-yearless.webp", category: "Coffee Culture" },
         ]} />
 
         <div className="mt-12 p-6 text-center" style={{ background: "#131313", borderRadius: "8px", border: "1px solid rgba(161,79,31,0.25)" }}>

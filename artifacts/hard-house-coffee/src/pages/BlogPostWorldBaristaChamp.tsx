@@ -24,7 +24,7 @@ export default function BlogPostWorldBaristaChamp() {
       <Navbar />
 
       <div className="relative overflow-hidden" style={{ height: "340px", borderBottom: "1px solid rgba(161,79,31,0.2)" }}>
-        <img src="/images/world-barista-championship.jpg" alt="World Barista Championship competition stage" className="w-full h-full object-cover" style={{ filter: "brightness(0.35)" }} />
+        <img src="/images/world-barista-championship-yearless.webp" alt="World Barista Championship competition stage" className="w-full h-full object-cover" style={{ filter: "brightness(0.35)" }} />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(11,11,11,0.6) 100%)" }}>
           <p className="section-subtitle mb-3">Coffee Culture</p>
           <h1 style={{ fontFamily: "Inter, sans-serif", fontSize: "clamp(1.2rem, 3.5vw, 2.4rem)", fontWeight: 700, color: "#f2f2f2", lineHeight: 1.25, maxWidth: "820px" }}>

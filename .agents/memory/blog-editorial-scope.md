@@ -45,6 +45,12 @@ The owner-approved World Barista Championship replacement must also retain the s
 
 **How to apply:** Do not apply the general compact-introduction or editorial-polish rules to this supplied copy without new approval. Separately authorized headline and hyperlink work must not modify the completed World Barista copy.
 
+For the World Barista artwork, remove only the visible “2026”; preserve the photograph, logo and remaining wording.
+
+**Why:** The owner flagged the year embedded in the image and explicitly approved “Remove the year only.”
+
+**How to apply:** Keep this limited artwork correction separate from the protected article wording. Do not reintroduce the year when reusing the artwork.
+
 Keep article introductions brief and simple, then show the actual machines or products immediately. Keep spacing compact across article pages, the blog listing and every category tab, on mobile portrait and landscape as well as laptop and desktop.
 
 **Why:** The owner repeated that introductions and empty spacing were too long, specifically identifying the five-machine and eight-machine guides. The owner authorized shortening their previously supplied opening copy.

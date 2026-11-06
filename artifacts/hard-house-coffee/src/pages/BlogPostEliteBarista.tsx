@@ -66,7 +66,7 @@ export default function BlogPostEliteBarista() {
 
 <RecommendedBeans variant="espresso" />
         <RelatedPosts posts={[
-          { title: "World Barista Championship: History, Rules, and How to Qualify", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship.jpg", category: "Coffee Culture" },
+          { title: "World Barista Championship: History, Rules, and How to Qualify", slug: "inside-world-barista-championship-olympics-of-caffeine", image: "/images/world-barista-championship-yearless.webp", category: "Coffee Culture" },
           { title: "The Art of the Perfect Pour-Over", slug: "the-art-of-the-perfect-pour-over", image: "/images/pour-over-kettle.jpg", category: "Brewing Guides" },
         ]} />
 
